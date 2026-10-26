@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-26T19:56:46Z",
+    "ran_at": "2026-10-26T19:59:38Z",
     "starter_as_of": null,
     "schedule_utc": "18:00",
     "new_items": 6,
@@ -14,36 +14,36 @@
       "name": "Evernorth SEC EDGAR",
       "status": "needs_setup",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:56:46Z",
+      "checked_at": "2026-10-26T19:59:38Z",
       "message": "SEC_USER_AGENT not configured. Set repository variable with a real name and contact email."
     },
     "sec_strategy": {
       "name": "Strategy MSTR SEC EDGAR",
       "status": "needs_setup",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:56:46Z",
+      "checked_at": "2026-10-26T19:59:38Z",
       "message": "SEC_USER_AGENT not configured. Set repository variable with a real name and contact email."
     },
     "ripple": {
       "name": "Ripple press centre",
-      "status": "error",
-      "items_seen": 0,
-      "checked_at": "2026-10-26T19:56:46Z",
-      "message": "Ripple press articles found, but dates/details could not be extracted."
+      "status": "ok",
+      "items_seen": 7,
+      "checked_at": "2026-10-26T19:59:38Z",
+      "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 23,
-      "checked_at": "2026-10-26T19:56:46Z",
+      "checked_at": "2026-10-26T19:59:38Z",
       "message": "Fetched 23 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 194,
-      "checked_at": "2026-10-26T19:56:46Z",
-      "message": "Fetched 194 matching items."
+      "items_seen": 193,
+      "checked_at": "2026-10-26T19:59:38Z",
+      "message": "Fetched 193 matching items."
     }
   },
   "items": [
@@ -166,6 +166,36 @@
           "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management",
           "source_type": "Official",
           "published_at": "2026-10-26T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "4c84aca25c40d1",
+      "title": "Aviva Investors expands its tokenised offering with the launch of a Sterling Liquidity Fund tokenised share class",
+      "published_at": "2026-10-26T09:50:51Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 80,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/aviva-investors-expands-its-tokenised-offering-with-the-launch-of-a-sterling-liquidity-fund-tokenised-share-class",
+      "excerpt": "Aviva Investors expands its tokenised offering with the launch of a Sterling Liquidity Fund tokenised share class",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Aviva Investors expands its tokenised offering with the launch of a Sterling Liquidity Fund tokenised share class",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/aviva-investors-expands-its-tokenised-offering-with-the-launch-of-a-sterling-liquidity-fund-tokenised-share-class",
+          "source_type": "Official",
+          "published_at": "2026-10-26T09:50:51Z"
         }
       ]
     },
@@ -832,62 +862,6 @@
       ]
     },
     {
-      "id": "67b8f1ebc0dd9a0c",
-      "title": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
-      "published_at": "2026-10-17T15:38:35Z",
-      "entities": [
-        "Ripple",
-        "XRP Ecosystem"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5",
-      "excerpt": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
-        {
-          "title": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-17T15:38:35Z"
-        },
-        {
-          "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        },
-        {
-          "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        },
-        {
-          "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        },
-        {
-          "title": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZWMzSXlJU1dFRmdOakE0ckpvb3pWbUFzd1BSYVJwZF9YYjBLdzN4WmpOcUtocS1Pb2E1OXBUZ192SDVHV3ZfWUhaa0c0WDN6QTV6R0x4Z2RJUkNFRk1yY0t0d0dTLXFxbFdFS0VJYzQxQjJUY01HLTF4cU5mQ2g1OFBraDh2S3p0TmRpRm5yNWJ2WFNmdy11X0JXN0xsdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-13T17:54:32Z"
-        }
-      ]
-    },
-    {
       "id": "b7994c90b337c6c9",
       "title": "Ripple's RLUSD Enters US Banking Rails Through Cross River Partnership - BigGo Finance",
       "published_at": "2026-10-16T18:05:00Z",
@@ -1134,6 +1108,72 @@
       ]
     },
     {
+      "id": "c9f06c7cad7467",
+      "title": "DriveWealth and Ripple Partner to Bring Institutional Digital Asset Infrastructure to Global Investing",
+      "published_at": "2026-10-14T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple",
+        "XRP Ecosystem"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/drivewealth-and-ripple-partner-to-bring-institutional-digital-asset-infrastructure-to-global-investing",
+      "excerpt": "DriveWealth and Ripple Partner to Bring Institutional Digital Asset Infrastructure to Global Investing",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "DriveWealth and Ripple Partner to Bring Institutional Digital Asset Infrastructure to Global Investing",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/drivewealth-and-ripple-partner-to-bring-institutional-digital-asset-infrastructure-to-global-investing",
+          "source_type": "Official",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-17T15:38:35Z"
+        },
+        {
+          "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZWMzSXlJU1dFRmdOakE0ckpvb3pWbUFzd1BSYVJwZF9YYjBLdzN4WmpOcUtocS1Pb2E1OXBUZ192SDVHV3ZfWUhaa0c0WDN6QTV6R0x4Z2RJUkNFRk1yY0t0d0dTLXFxbFdFS0VJYzQxQjJUY01HLTF4cU5mQ2g1OFBraDh2S3p0TmRpRm5yNWJ2WFNmdy11X0JXN0xsdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T17:54:32Z"
+        }
+      ]
+    },
+    {
       "id": "0cc4e4e1fb59c9",
       "title": "Why Evernorth Fell on Its Nasdaq Debut: Unpacking the $440M XRP Treasury Drop",
       "published_at": "2026-10-14T07:00:00Z",
@@ -1220,6 +1260,36 @@
           "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQnFwQzQycFRWTDBEdVFsTU1ESUo0T3Y2SHNtMXZpQmtiR2pxVHNLc1dROXQwazZ5bWN1SGU4WHFmSkluYzFsYnZtYkppNDdOT1FkbHJ6azd6a3M2Zk5Ha0pHeFgzb2VQLTFWRWRxZFluMnpiR0xIRVhrVy1jbXlPaDVGNm5wX0lqQzcwUDVhOGVFdlo5bGQtZVo1VmVRSnpFYXc1djY5QWFZdUo3czhXZDhHejFVWFVHRlpfaEZrZVhOcS1Mc2tLTTRfeEhKTHRkdHlSRm5oWEMxZEdVVmVwUVllV3RnMmhwcm4wQ2QyVmZKWEhyYkM5Wk85emI?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-14T07:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "fd9b7f0ee63837",
+      "title": "Ripple and Meritz Securities Partner to Bring Institutional Custody and Tokenization to Korea’s Capital Markets",
+      "published_at": "2026-10-14T02:40:18Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 83,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/ripple-and-meritz-securities-partner-to-bring-institutional-custody-and-tokenization-to-korea-s-capital-markets",
+      "excerpt": "Ripple and Meritz Securities Partner to Bring Institutional Custody and Tokenization to Korea’s Capital Markets",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple and Meritz Securities Partner to Bring Institutional Custody and Tokenization to Korea’s Capital Markets",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/ripple-and-meritz-securities-partner-to-bring-institutional-custody-and-tokenization-to-korea-s-capital-markets",
+          "source_type": "Official",
+          "published_at": "2026-10-14T02:40:18Z"
         }
       ]
     },
@@ -1373,7 +1443,6 @@
       "title": "Ripple, Stripe-owned Privy partner to bring embedded wallets to XRP Ledger - The Block",
       "published_at": "2026-10-13T07:00:00Z",
       "entities": [
-        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Partnerships",
@@ -1574,6 +1643,36 @@
           "name": "Google News RSS",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdEhURnNiZ1dYUXhBU1lPNkplZEVia2pjZ1JLWmZhd0tIZldzRGNjOEhKa0UzSDNFN0doMklnODl3djA4S01FOGdMY09nUHlwZU9lQ21fb1h3ZGsxQkFIbUVpLWVSa3VqaTJLeVQ5a3BqY3ZsX25Pd3FsTHI3NTR3UTZ3eEhYYVk0ek5MVm5SMV9kcHZ4RjlDMnB1eEZuUQ?oc=5",
           "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "b16d191477da3a",
+      "title": "Standard Chartered launches RLUSD custody and joins planned collateral integration with Ripple and LMAX Group",
+      "published_at": "2026-10-12T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 80,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/standard-chartered-launches-rlusd-custody-and-joins-planned-collateral-integration-with-ripple-and-lmax-group",
+      "excerpt": "Standard Chartered launches RLUSD custody and joins planned collateral integration with Ripple and LMAX Group",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Standard Chartered launches RLUSD custody and joins planned collateral integration with Ripple and LMAX Group",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/standard-chartered-launches-rlusd-custody-and-joins-planned-collateral-integration-with-ripple-and-lmax-group",
+          "source_type": "Official",
           "published_at": "2026-10-12T07:00:00Z"
         }
       ]
@@ -2075,6 +2174,36 @@
       ]
     },
     {
+      "id": "8a9e69712b6d84",
+      "title": "CSD BR and Ripple Use the XRP Ledger Blockchain to Expand Brazil's Financial Market Infrastructure",
+      "published_at": "2026-09-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 81,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/csdbr-and-ripple-use-the-xrpl-blockchain-to-expand-brazils-financial-market-infrastructure",
+      "excerpt": "CSD BR and Ripple Use the XRP Ledger Blockchain to Expand Brazil's Financial Market Infrastructure",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "CSD BR and Ripple Use the XRP Ledger Blockchain to Expand Brazil's Financial Market Infrastructure",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/csdbr-and-ripple-use-the-xrpl-blockchain-to-expand-brazils-financial-market-infrastructure",
+          "source_type": "Official",
+          "published_at": "2026-09-29T07:00:00Z"
+        }
+      ]
+    },
+    {
       "id": "babde477557a27",
       "title": "SWIFT-Ripple Partnership Rumor Sends XRP Community Into Overdrive, But What’s Actually Confirmed?",
       "published_at": "2026-09-29T07:00:00Z",
@@ -2479,6 +2608,36 @@
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWUxuQmJqdExPWjI1c2NPcy1ibnIyTHgwbjVRTDFMbUJ6ektiUVloR214T04xSXFOZkFBOExOX19BODFPaTJkZzVESks3MEVWQWlybllnajFXZXZGeXpBQUlXTUFud1pFSU9oTTIzUlNSX29JRmw2VFpZWUl4MExtVGhUOXNhNGg1ZllyRnFHX2ZyaEJrUGJnV0ZVZGVtRzFxYVE?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-11T07:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "3f6993b7c8f6f0",
+      "title": "Ripple Treasury Brings Industry’s First Governed AI for Enterprise Treasury",
+      "published_at": "2026-09-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 86,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/ripple-treasury-brings-industry-s-first-governed-ai-for-enterprise-treasury",
+      "excerpt": "Ripple Treasury Brings Industry’s First Governed AI for Enterprise Treasury",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-26T19:59:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury Brings Industry’s First Governed AI for Enterprise Treasury",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/ripple-treasury-brings-industry-s-first-governed-ai-for-enterprise-treasury",
+          "source_type": "Official",
+          "published_at": "2026-09-10T07:00:00Z"
         }
       ]
     },
