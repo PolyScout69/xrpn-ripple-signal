@@ -75,3 +75,9 @@
 .moon-meter.unrated .moon-step .moon-bar{opacity:.30}
 .moon-evidence{font-size:10px;letter-spacing:.03em;color:#8da2ac;margin-top:10px;border-top:1px solid #263740;padding-top:8px}
 .featured .moon-meter.unrated{background:#132320;border-color:#40544e}
+
+/* Conditional scoring labels: keep confidence visually distinct from upside. */
+.moon-scenario{font-size:9px;font-weight:800;letter-spacing:.65px;line-height:1;padding:4px 7px;border:1px solid #45635c;border-radius:5px;color:#b6e1cc;background:#1b302c;white-space:nowrap}
+.moon-scenario.rumour{color:#f0cd99;background:#3b2c22;border-color:#82613c}
+.moon-scenario.assumption{color:#c5d8ff;background:#26334b;border-color:#53668e}
+@media(max-width:560px){.moon-heading{flex-wrap:wrap}.moon-scenario{font-size:8px}}
