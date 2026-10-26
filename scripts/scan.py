@@ -352,7 +352,9 @@ def fetch_ripple_press() -> list[dict]:
                 for tag in article.find_all('time'):
                     meta_date=normalize_date(tag.get('datetime','')) or extract_date(tag.get_text(' ',strip=True)) or ''
                     if meta_date:break
-            date=date_from_listing or meta_date or extract_date(nearby) or extract_date(whole_text[:14000])
+            raw_html=str(article)
+            raw_date=re.search(r'\b(?:datePublished|dateCreated|published_time|publish_date)\b[^<]{0,200}?(20\d{2}-\d{2}-\d{2})', raw_html, re.I)
+            date=date_from_listing or meta_date or extract_date(nearby) or extract_date(whole_text[:14000]) or (normalize_date(raw_date.group(1)) if raw_date else None) or extract_date(raw_html[:50000])
             if not date:continue
             paragraphs=[plain_text(p.get_text(' ',strip=True),260) for p in article.find_all('p')]
             lead=next((p for p in paragraphs if 75<len(p)<260 and not p.lower().startswith(('cookies','read more','forward-looking'))),'')
@@ -364,6 +366,31 @@ def fetch_ripple_press() -> list[dict]:
         except Exception as exc:
             LOG.warning('Could not open Ripple press article %s: %s',link,exc)
         time.sleep(0.15)
+    if not stories:
+        # Some versions of Ripple's front end omit dates from machine-readable
+        # article HTML. Correlate issuer-hosted headlines with indexed RSS dates;
+        # keep the *issuer* URL as the primary story link.
+        try:
+            q=urllib.parse.urlencode({'q':'site:ripple.com/ripple-press Ripple','hl':'en-US','gl':'US','ceid':'US:en'})
+            indexed=rss_items(fetch('https://news.google.com/rss/search?'+q).text)
+            for link,(issuer_title,_) in candidates.items():
+                x=norm_words(issuer_title)
+                if len(x)<3:continue
+                best=None
+                best_score=0
+                for row in indexed:
+                    y=norm_words(row.get('title',''))
+                    common=len(x & y)
+                    score=common/max(1,min(len(x),len(y)))
+                    if common>=3 and score>best_score:
+                        best,best_score=row,score
+                if best and best_score>=.67:
+                    story=make_story(title=issuer_title,date=best.get('date'),url=link,
+                        source='Ripple press centre',source_type='Official',source_id='ripple',
+                        entities=['Ripple'],excerpt=issuer_title)
+                    if story:stories.append(story)
+        except Exception as exc:
+            LOG.warning('Ripple official date fallback unavailable: %s',exc)
     if not stories:raise ValueError('Ripple press articles found, but dates/details could not be extracted.')
     return stories
 

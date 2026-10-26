@@ -70,6 +70,25 @@ class CollectorTests(unittest.TestCase):
         b=self.story('Strategy reports STRC repurchase of $192 million',entity='Strategy',url='https://example.com/b')
         self.assertEqual(len(scan.merge_stories([a,b],[])[0]),2)
 
+    def test_ripple_press_google_date_fallback(self):
+        from email.utils import format_datetime
+        from datetime import datetime,timezone
+        title='Ripple partners with a regulated bank to launch institutional stablecoin settlement'
+        listing=f'<div><a href="/ripple-press/bank-launch/">{title}</a></div>'
+        article=f'<h1>{title}</h1><p>Ripple develops institutional digital payment and settlement services through global regulated banking partnerships.</p>'
+        rss=f'<rss><channel><item><title>{title} - Ripple</title><pubDate>{format_datetime(datetime.now(timezone.utc))}</pubDate><link>https://news.google.com/rss/articles/a</link></item></channel></rss>'
+        class Fake:
+            def __init__(self,text):self.text=text
+        def fake_fetch(url,*args,**kwargs):
+            if '/bank-launch/' in url:return Fake(article)
+            if 'news.google.com' in url:return Fake(rss)
+            return Fake(listing)
+        with patch.object(scan,'fetch',side_effect=fake_fetch),patch.object(scan.time,'sleep',return_value=None):
+            rows=scan.fetch_ripple_press()
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['source_type'],'Official')
+        self.assertIn('/ripple-press/bank-launch',rows[0]['url'])
+
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
         self.assertTrue(scan.is_investor_news('XRP Ledger launches institutional tokenization infrastructure','On XRPL'))
