@@ -14,7 +14,7 @@ Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **XRP E
 
 ## Moon Meter (−3 to +3)
 
-The Moon Meter is a transparent, conservative headline-level directional heuristic for **XRP**, **XRPN** or **MSTR**, not a price forecast. It rates published news, not standalone filing entries. Scores range from −3 (very bearish), through 0 (neutral), to +3 (very bullish). Where evidence is insufficient, **Not rated (—)** is distinct from neutral. Materiality (Impact) is independent of direction (Moon Meter).
+The Moon Meter is an **IF-TRUE scenario gauge**, scoring the potential directional impact on **XRP**, **XRPN** or **MSTR** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
 
 ## Run locally
 
