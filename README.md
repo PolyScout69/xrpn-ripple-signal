@@ -37,3 +37,14 @@ python -m http.server 8000
 ```
 
 The HTML, CSS and JavaScript do not require a build step or API key. Dependencies are for the scanner only. The data archive is a curated investor feed, **not a complete record of SEC filings or all market news**.
+### Evidence-aware Moon Meter (v2)
+
+The direction gauge is distinct from article **Impact** (importance). Moon scores range from −3 to +3, evaluated separately for XRP, XRPN, and MSTR.
+
+* **±1:** plausible, modest or indirect effects (routine treasury buying, partnerships, capital raising, network upgrade delays).
+* **±2:** material, supported evidence directly tied to the tracked token or shares (confirmed regulatory access, significant per-share dilution/accretion).
+* **±3:** exceptional, strongly evidenced developments (e.g. a verified solvency catastrophe or a very large confirmed change in coin holdings per diluted share).
+* **0:** no clear asset-specific directional catalyst in the available report.
+* **— Not rated:** insufficient reliable information; notably generic SEC filing headings and unconfirmed partnership rumours. This **must not be interpreted as neutral**.
+
+The score is a **headline/short-excerpt heuristic**; it does not read SEC attachments or price history, measure whether the market has already priced news in, or estimate probability/percentage of returns. Its evidence badge distinguishes primary-source from secondary reporting, not confidence in the price forecast. No artificial quota of bullish/bearish ratings is imposed.
