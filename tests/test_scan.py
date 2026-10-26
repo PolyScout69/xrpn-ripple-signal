@@ -1,4 +1,4 @@
-"""Network-free regression tests for SEC matching, four entities and clustering."""
+"""Network-free regression tests for four entities, filing exclusion and clustering."""
 import importlib.util
 import json
 import unittest
@@ -22,31 +22,16 @@ class CollectorTests(unittest.TestCase):
         self.assertNotIn('Ripple',scan.identify_entities('XRPL validators adopt new amendment'))
         self.assertIn('Ripple',scan.identify_entities('Ripple expands RLUSD bank payments'))
 
-    def test_sec_filers_use_distinct_ciks(self):
-        self.assertEqual(scan.SEC_CIK,2092592)
-        self.assertEqual(scan.STRATEGY_CIK,1050446)
-        for cik,company,fn in ((2092592,'Evernorth Holdings Inc.',scan.fetch_sec_filings),
-                               (1050446,'Strategy Inc',scan.fetch_strategy_sec_filings)):
-            payload={'cik':cik,'name':company,'filings':{'recent':{
-                'form':['8-K','4','XYZ'],
-                'accessionNumber':['0001628280-26-067061','0001628280-26-067062','0001628280-26-067063'],
-                'primaryDocument':['report-8k.htm','form4.xml','other.txt'],
-                'filingDate':[scan.timestamp_now()[:10]]*3,
-                'items':['1.01, 9.01','','']}}}
-            class Fake:
-                def json(self):return payload
-            with patch.object(scan,'fetch',return_value=Fake()): rows=fn()
-            self.assertEqual(len(rows),2)
-            self.assertIn(f'/data/{cik}/',rows[0]['url'])
-            self.assertIn('Form 8-K',rows[0]['title'])
-            self.assertIn('1.01',rows[0]['title'])
-            self.assertEqual(rows[0]['entities'],['Evernorth' if cik==2092592 else 'Strategy'])
-
-    def test_sec_different_accessions_not_grouped(self):
-        a=self.story('Strategy files Form 8-K · reported items 1.01',entity='Strategy',kind='SEC',url='https://sec.gov/filing1')
-        b=self.story('Strategy files Form 8-K · reported items 1.01',entity='Strategy',kind='SEC',url='https://sec.gov/filing2')
-        a['accession']='000001';b['accession']='000002'
-        self.assertFalse(scan.duplicates(a,b))
+    def test_sec_filing_entries_are_rejected_and_purged(self):
+        no=scan.make_story(title='Strategy files Form 8-K',date=scan.timestamp_now(),url='https://www.sec.gov/Archives/edgar/data/1/abc',source='SEC EDGAR',source_type='SEC',source_id='sec_strategy',entities=['Strategy'],excerpt='Form 8-K filed',category='SEC filings')
+        self.assertIsNone(no)
+        old={'id':'old-filing','title':'Strategy files Form 8-K','published_at':scan.timestamp_now(),'category':'SEC filings','entities':['Strategy'],'source_type':'SEC','source_id':'sec_strategy','url':'https://www.sec.gov/Archives/edgar/data/1/abc','impact':'High','score':95}
+        good=self.story('Strategy buys 100 BTC in institutional markets',entity='Strategy',kind='Media',url='https://example.com/btc')
+        good['coverage']=[{'title':'Filing','name':'SEC EDGAR','source_type':'SEC','url':'https://www.sec.gov/Archives/edgar/data/1/abc'}, {'title':'Report','name':'Publisher','source_type':'Media','url':'https://example.com/btc'}]
+        merged,_=scan.merge_stories([old,good],[])
+        self.assertEqual(len(merged),1)
+        self.assertEqual(merged[0]['title'],good['title'])
+        self.assertNotIn('sec.gov',str(merged[0].get('coverage',[])))
 
     def test_source_first_grouping_80m_facility(self):
         publisher=self.story('Evernorth Holdings (NASDAQ:XRPN) Secures Potential $80 Million Equity Facility for XRP Strategy',entity='Evernorth',kind='Media',url='https://publisher.com/one')

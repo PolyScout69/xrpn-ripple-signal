@@ -217,6 +217,9 @@ def moon_for_story(item: dict) -> list[dict]:
     Values are integers [-3, 3]; labels and rationale are explanatory, and
     never extrapolate a particular percentage move or prediction horizon.
     """
+    if (item.get('category')=='SEC filings' or item.get('source_type')=='SEC'
+            or str(item.get('source_id','')).startswith('sec_')):
+        return []
     assets = []
     for entity in item.get('entities') or []:
         asset = ENTITY_ASSETS.get(entity)

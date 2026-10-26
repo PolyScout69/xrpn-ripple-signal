@@ -6,7 +6,7 @@
   const STORAGE_READ = 'signal.read.v1';
   const MOON_TICKS = [-3,-2,-1,0,1,2,3];
   const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR'};
-  const DEFAULT_SOURCES = ['sec_evernorth', 'sec_strategy', 'evernorth', 'ripple', 'media'];
+  const DEFAULT_SOURCES = ['evernorth', 'ripple', 'media'];
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
   let toastTimer;
 
@@ -73,7 +73,7 @@
       <p class="featured-excerpt">${esc(item.excerpt)}</p>
       <div class="investor-angle"><strong>WHY INVESTORS SHOULD CARE</strong>${esc(item.why_it_matters)}</div>
       ${moonHTML(item)}
-      <div class="feature-bottom"><div class="feature-source"><span class="feature-authority">${item.source_type==='SEC'?'PRIMARY FILING':item.source_type==='Official'?'OFFICIAL SOURCE':'FINANCIAL NEWS'}</span><span>${esc(item.source)} · ${esc(dateLine(item))}</span></div><div class="feature-actions">${saveButton(item)}<a class="feature-open" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">Read original source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div>${coverageHTML(item)}
+      <div class="feature-bottom"><div class="feature-source"><span class="feature-authority">${item.source_type==='Official'?'OFFICIAL SOURCE':'FINANCIAL NEWS'}</span><span>${esc(item.source)} · ${esc(dateLine(item))}</span></div><div class="feature-actions">${saveButton(item)}<a class="feature-open" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">Read original source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div>${coverageHTML(item)}
     </article>`;
   }
   function storyHTML(item) {
@@ -87,6 +87,7 @@
   }
   function matches(item) {
     if (!item || !Array.isArray(item.entities)) return false;
+    if (item.category==='SEC filings'||item.source_type==='SEC'||String(item.source_id||'').startsWith('sec_')) return false;
     if (state.entity !== 'All' && !item.entities.includes(state.entity)) return false;
     if (state.category !== 'All' && item.category !== state.category) return false;
     if (state.impact !== 'All' && item.impact !== state.impact) return false;
@@ -97,7 +98,6 @@
     if (state.moon === 'unrated' && mv !== null) return false;
     if (!recent(item,state.days)) return false;
     if (state.view === 'high' && item.impact !== 'High') return false;
-    if (state.view === 'sec' && item.category !== 'SEC filings') return false;
     if (state.view === 'partnerships' && item.category !== 'Partnerships') return false;
     if (state.view === 'saved' && !state.saved.has(item.id)) return false;
     if (state.query.trim()) {
@@ -106,7 +106,7 @@
     }
     return true;
   }
-  const VIEWS = {overview:'Latest developments',high:'High-impact developments',sec:'SEC filing monitor',partnerships:'Partnership tracker',saved:'Saved stories'};
+  const VIEWS = {overview:'Latest developments',high:'High-impact developments',partnerships:'Partnership tracker',saved:'Saved stories'};
   function chooseFeature(items) {
     if (state.view !== 'overview' || !items.length) return null;
     // Feature score balances materiality and news freshness; the rest remain chronological.
@@ -140,7 +140,7 @@
     const items=state.data.items;
     $('stat-new').textContent=fmtNum(items.filter(i=>recent(i,1)).length);
     $('stat-high').textContent=fmtNum(items.filter(i=>i.impact==='High'&&recent(i,7)).length);
-    $('stat-sec').textContent=fmtNum(items.filter(i=>i.category==='SEC filings'&&recent(i,30)).length);
+    $('stat-treasury').textContent=fmtNum(items.filter(i=>i.category==='Treasury'&&recent(i,30)).length);
     const sources=Object.keys(state.data.sources||{});
     const ok=sources.filter(k=>state.data.sources?.[k]?.status==='ok').length;
     $('stat-health').textContent=`${ok}/${sources.length}`;
@@ -167,7 +167,7 @@
     const num=DEFAULT_SOURCES.filter(id=>src[id]?.status==='ok').length;
     const mode=state.data.scan?.status||'starter';
     $('health-legend').textContent=mode==='starter'?'NOT STARTED':`${num} / ${DEFAULT_SOURCES.length} CHECKED`;
-    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Daily automation refreshes the source feed.':num===DEFAULT_SOURCES.length?'All five sources checked at the last run; reporting may be delayed.':'Some source checks need attention. SEC EDGAR requires a valid SEC_USER_AGENT repository variable; other sources may be delayed.';
+    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Daily automation refreshes the source feed.':num===DEFAULT_SOURCES.length?'All five sources checked at the last run; reporting may be delayed.':'Some monitoring sources were unavailable at the last run; published items may be delayed.';
     const pulse=$('sidebar-pulse');pulse.className='signal-pulse';
     if(mode==='starter')pulse.classList.add('pending');else if(mode==='failed')pulse.classList.add('error');
     $('sidebar-status-title').textContent=mode==='starter'?'Starter edition':mode==='live'||mode==='ok'?'Automated monitoring':mode==='partial'?'Partial coverage':'Source errors';
@@ -189,6 +189,9 @@
       const data=await response.json();
       if(!Array.isArray(data.items)||!data.scan)throw new Error('Invalid data format');
       const previous=state.data?.scan?.ran_at;
+      // Drop legacy filing items and links from previously cached snapshots.
+      data.items=data.items.filter(x=>x.category!=='SEC filings'&&x.source_type!=='SEC'&&!String(x.source_id||'').startsWith('sec_'));
+      data.items.forEach(x=>{if(Array.isArray(x.coverage))x.coverage=x.coverage.filter(c=>c.source_type!=='SEC'&&!/sec\.gov\/Archives\/edgar/i.test(c.url||''));});
       state.data=data;renderAll();
       if(showFeedback)notify(previous!==data.scan.ran_at?'Latest published snapshot loaded':'Already showing the latest published snapshot');
     } catch(error) {
@@ -200,7 +203,7 @@
   function setView(view) {
     if(!VIEWS[view])return;
     state.view=view;
-    if(view==='sec'||view==='partnerships'){state.category='All';}
+    if(view==='partnerships'){state.category='All';}
     state.days=view==='saved'?3650:30;
     state.entity='All';state.query='';$('search-input').value='';
     renderFeed();

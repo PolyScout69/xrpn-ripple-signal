@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """Daily, source-first investor news scan for Evernorth, Ripple, XRP Ledger and Strategy.
 
-Sources: two SEC registrants (Evernorth CIK 2092592, Strategy CIK 1050446),
-issuer releases, plus issuer / XRP ecosystem RSS. Coverage is grouped by event.
-The script does *not* use LLMs to invent summaries or investment conclusions.
+Sources: Ripple and Evernorth issuer news and focused financial / XRP ecosystem RSS.
+Standalone SEC filing records are deliberately excluded from the feed and Moon Meter.
+Coverage is grouped by event. No language model invents summaries or ratings.
 
-Run: SEC_USER_AGENT='Your Name you@example.com' python scripts/scan.py
+Run: python scripts/scan.py
 """
 from __future__ import annotations
 
 import hashlib
 import json
 import logging
-import os
 import re
 import sys
 import time
@@ -34,8 +33,6 @@ DATA_PATH = ROOT / 'data' / 'news.json'
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.moon_meter import moon_for_story
-SEC_CIK = 2092592  # Evernorth Holdings Inc., XRPN
-STRATEGY_CIK = 1050446  # Strategy Inc. (formerly MicroStrategy), MSTR
 RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
 EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
@@ -43,23 +40,16 @@ MAX_AGE_DAYS = 365
 MAX_STORIES = 500
 REQUEST_TIMEOUT = 22
 USER_AGENT = 'SignalInvestorNews/1.0 (investor news aggregator; public sources)'
-SEC_USER_AGENT = os.getenv('SEC_USER_AGENT', '').strip()
 NEWS_QUERIES = [
     '"Evernorth Holdings" XRP financing treasury shares -Cigna -pharmacy',
-    '"XRPN" SEC filing partnership XRP treasury',
+    '"XRPN" partnership XRP treasury capital raise',
     '"Ripple Labs" OR "Ripple Treasury" OR "Ripple Custody" partnership OR launch OR banking',
     '"XRP Ledger" XRPL adoption tokenization validators amendment',
     '"XRPL" DeFi AMM lending validator network institution',
-    '"XRP" ETF SEC filing institutional adoption regulation',
+    '"XRP" ETF approval institutional adoption regulation',
     '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
     '"MicroStrategy" "MSTR" bitcoin preferred STRC earnings',
 ]
-WATCH_FORMS = {
-    '8-K', '8-K/A', '10-K', '10-K/A', '10-Q', '10-Q/A', 'S-1', 'S-1/A',
-    'S-3', 'S-3/A', 'S-4', 'S-4/A', '424B2', '424B3', '424B4', '424B5',
-    'DEF 14A', 'DEFA14A', 'SC 13D', 'SC 13D/A', 'SC 13G', 'SC 13G/A',
-    '4', '4/A', '3', '5', '144', 'EFFECT', 'FWP', 'NT 10-K', 'NT 10-Q',
-}
 MONTH_DATE = re.compile(r'\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+\d{1,2},?\s+20\d{2}\b',re.I)
 DATE_PATTERNS = ('%b %d, %Y', '%B %d, %Y', '%b %d %Y', '%B %d %Y', '%b. %d, %Y')
 STOP = set('the a an and or in of for to on by with from as at into that is will new has have its their about announces announce says launch launches unveils introduces today company inc holdings labs support investor global'.split())
@@ -76,7 +66,7 @@ NEGATIVE_MEDIA = (
     'how high can', 'crypto millionaire', 'bitcoin windfall', 'as xrp jumps',
     'what price will', 'massive rally', 'millionaire', 'meme coin',
 )
-TOPIC_HINTS = ('filing','8-k','10-k','10-q','sec','share','equity','offering','warrant',
+TOPIC_HINTS = ('share','equity','offering','warrant',
     'capital','rais','fund','facility','financ','treasury','xrp per share','yield','liquidity','institution','partnership',
     'partner','collaborat','custody','payment','settlement','tokeniz','tokenis',
     'product','launch','license','licence','lawsuit','regulat','merger','acquisition',
@@ -98,11 +88,9 @@ def session_factory() -> requests.Session:
 SESSION = session_factory()
 
 
-def fetch(url: str, sec: bool = False) -> requests.Response:
-    if sec and not SEC_USER_AGENT:
-        raise ValueError('SEC_USER_AGENT not configured. Set repository variable with a real name and contact email.')
+def fetch(url: str) -> requests.Response:
     headers = {
-        'User-Agent': SEC_USER_AGENT if sec else USER_AGENT,
+        'User-Agent': USER_AGENT,
         'Accept': 'application/json,text/html,application/rss+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.8',
     }
@@ -259,6 +247,8 @@ def make_story(*, title: str, date: str, url: str, source: str, source_type: str
     if len(title)<16 or not safe_url or not normalized or not is_recent(normalized) or not entities:
         return None
     category=category or classify(title,excerpt)
+    if category=='SEC filings' or source_type=='SEC' or str(source_id).startswith('sec_'):
+        return None
     impact,score=score_story(title,category,source_type,entities)
     return {
         'id':hashlib.sha1(safe_url.encode()).hexdigest()[:14],
@@ -269,45 +259,6 @@ def make_story(*, title: str, date: str, url: str, source: str, source_type: str
         'why_it_matters':investor_angle(category),'tags':[],
         'added_at':timestamp_now(),'verified_seed':False,
     }
-
-
-def fetch_sec_for(cik: int, company: str, entity: str, source_id: str) -> list[dict]:
-    payload = fetch(f'https://data.sec.gov/submissions/CIK{cik:010d}.json', sec=True).json()
-    legal_name = str(payload.get('name', '')).lower()
-    expected = 'evernorth' if entity == 'Evernorth' else 'strategy'
-    aliases = ('strategy', 'microstrategy') if entity == 'Strategy' else ('evernorth',)
-    if int(payload.get('cik', 0)) != cik or not any(alias in legal_name for alias in aliases):
-        raise ValueError(f'SEC returned an unexpected registrant for {company}; skipped')
-    recent = payload.get('filings',{}).get('recent',{})
-    stories = []
-    for idx, form in enumerate(recent.get('form', [])):
-        if form not in WATCH_FORMS: continue
-        def col(key, default=''):
-            arr = recent.get(key, [])
-            return arr[idx] if idx < len(arr) else default
-        accession, doc, filed = col('accessionNumber'), col('primaryDocument'), col('filingDate')
-        if not accession or not filed or not is_recent(normalize_date(filed, date_only=True)): continue
-        accession_digits = str(accession).replace('-', '')
-        # Prefer the unique submission index to ensure a stable filing link.
-        url = f'https://www.sec.gov/Archives/edgar/data/{cik}/{accession_digits}/{urllib.parse.quote(str(doc),safe=".-_") if doc else accession_digits+"-index.html"}'
-        filing_items = str(col('items') or '').strip()
-        detail = (' · reported items ' + ', '.join(f.strip() for f in filing_items.split(',')[:5]) if filing_items and form.startswith('8-K') else '')
-        story = make_story(title=f'{company} files Form {form}{detail}',date=filed,url=url,
-            source='SEC EDGAR',source_type='SEC',source_id=source_id,entities=[entity],
-            excerpt=f'Official {company} Form {form} filed on {filed}. Review exhibits, balance-sheet effects, share count and material disclosures in the filing.',
-            category='SEC filings',date_only=True)
-        if story:
-            story['accession'] = str(accession)
-            stories.append(story)
-    return stories
-
-
-def fetch_sec_filings() -> list[dict]:
-    return fetch_sec_for(SEC_CIK, 'Evernorth', 'Evernorth', 'sec_evernorth')
-
-
-def fetch_strategy_sec_filings() -> list[dict]:
-    return fetch_sec_for(STRATEGY_CIK, 'Strategy', 'Strategy', 'sec_strategy')
 
 
 def extract_date(text: str) -> str | None:
@@ -518,7 +469,6 @@ def fetch_media_news() -> list[dict]:
 
 
 # Multi-outlet coverage of the same announcement must occupy ONE feed card.
-# Dedupe intentionally does not conflate SEC filings with different accession IDs.
 EVENT_STOP = STOP | set('''ripple evernorth strategy microstrategy xrp xrpl ledger bitcoin btc digital assets crypto
     partners partnership announces announced plans planned secures secures potential committed
     reports report backed reveals update updates fund funds funded initiative holdings buys buying
@@ -594,16 +544,25 @@ def coverage(item: dict) -> list[dict]:
     }]
     unique={}
     for entry in links:
+        if entry.get('source_type')=='SEC' or 'sec.gov/archives/edgar' in str(entry.get('url','')).lower():
+            continue
         url=canonical_url(entry.get('url',''))
         if url and url not in unique:
             unique[url]={**entry,'url':url}
     return list(unique.values())[:16]
 
 
+def publishable(item: dict) -> bool:
+    """Exclude standalone filing records from both the site and Moon Meter."""
+    return (isinstance(item,dict) and item.get('category')!='SEC filings'
+            and item.get('source_type')!='SEC'
+            and not str(item.get('source_id','')).startswith('sec_'))
+
+
 def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int]:
     # Re-cluster old archive as well as new entries, fixing historical duplicates.
-    existing_ids={x.get('id') for x in old if isinstance(x,dict)}
-    candidates=[dict(x) for x in [*old,*incoming] if isinstance(x,dict) and is_recent(x.get('published_at'))]
+    existing_ids={x.get('id') for x in old if publishable(x)}
+    candidates=[dict(x) for x in [*old,*incoming] if publishable(x) and is_recent(x.get('published_at'))]
     for item in candidates:
         if item.get('source_type') in ('Media','News') and not is_investor_news(item.get('title',''),item.get('excerpt','')):
             item['rejected_as_noise']=True
@@ -643,18 +602,7 @@ def main() -> int:
     stamp=timestamp_now()
     statuses={}
     incoming=[]
-    # A verified MSTR exhibit gives new deployments a direct, substantive Strategy
-    # reference even if Google News returns no Strategy articles on the first day.
-    strategy_starter=make_story(
-        title='Strategy acquires 250 BTC and repurchases $192 million of STRC',
-        date='2026-10-12',url='https://www.sec.gov/Archives/edgar/data/1050446/000119312526419726/mstr-ex99_1.htm',
-        source='Strategy Inc / SEC EDGAR exhibit',source_type='SEC',source_id='sec_strategy',
-        entities=['Strategy'],excerpt='In its October 12 capital markets update, Strategy detailed 250 BTC acquired, preferred-share repurchases, and its ongoing ATM financing.',
-        category='Capital markets',date_only=True)
-    if strategy_starter: strategy_starter['verified_seed']=True;incoming.append(strategy_starter)
     sources=(
-        ('sec_evernorth','Evernorth SEC EDGAR',fetch_sec_filings),
-        ('sec_strategy','Strategy MSTR SEC EDGAR',fetch_strategy_sec_filings),
         ('ripple','Ripple press centre',fetch_ripple_press),
         ('evernorth','Evernorth official',fetch_evernorth_news),
         ('media','Issuer and XRP ecosystem news',fetch_media_news),
@@ -666,8 +614,7 @@ def main() -> int:
             statuses[key]={'name':name,'status':'ok','items_seen':len(stories),'checked_at':stamp,'message':f'Fetched {len(stories)} matching items.'}
             LOG.info('%s: %s items',name,len(stories))
         except Exception as exc:
-            kind='needs_setup' if key.startswith('sec_') and not SEC_USER_AGENT else 'error'
-            statuses[key]={'name':name,'status':kind,'items_seen':0,'checked_at':stamp,'message':str(exc)[:240]}
+            statuses[key]={'name':name,'status':'error','items_seen':0,'checked_at':stamp,'message':str(exc)[:240]}
             LOG.warning('%s: %s',name,exc)
     ready=sum(1 for x in statuses.values() if x['status']=='ok')
     status='live' if ready==len(sources) else 'partial' if ready else 'failed'
@@ -679,7 +626,7 @@ def main() -> int:
       'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
               'schedule_utc':'18:00','new_items':new_count,
-              'source_note':'Automated scan: source-specific checks; status panel exposes failures and setup needs.'},
+              'source_note':'Automated scan of issuer releases and ecosystem news; standalone filing records excluded.'},
       'sources':statuses,'items':items,
     }
     DATA_PATH.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')

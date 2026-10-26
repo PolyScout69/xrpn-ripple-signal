@@ -36,11 +36,9 @@ jobs:
         run: python -m pip install -r scripts/requirements.txt
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
-      - name: Scan SEC, issuer and ecosystem news
+      - name: Scan issuer and ecosystem news
         id: scan
         continue-on-error: true
-        env:
-          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python scripts/scan.py
       - name: Save current news snapshot
         run: |

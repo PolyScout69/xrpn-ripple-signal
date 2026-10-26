@@ -15,7 +15,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Evernorth files for Chapter 11 bankruptcy')['value'],-3)
         self.assertEqual(score('XRPL security breach and exploit', 'XRP Ecosystem')['value'],-2)
         self.assertEqual(score('Evernorth announces $80m equity purchase facility')['value'],-1)
-        self.assertIsNone(score('Strategy files Form 8-K reported items 7.01', 'Strategy', 'SEC', 'SEC filings')['value'])
+        self.assertEqual(moon_for_story({'title':'Strategy files Form 8-K reported items 7.01','entities':['Strategy'],'source_type':'SEC','category':'SEC filings'}),[])
         self.assertEqual(score('Strategy buys 1,000 bitcoin for treasury', 'Strategy')['value'],1)
         self.assertEqual(score('SEC approves spot XRP ETF','XRP Ecosystem')['value'],2)
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
@@ -37,9 +37,9 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Ripple partners with bank for new corporate payments','Ripple')['value'],0)
         self.assertEqual(score('Ripple integrates XRP Ledger XRPL settlement with institution','Ripple')['value'],1)
 
-    def test_routine_sec_and_generic_disclosures_neutral(self):
-        self.assertIsNone(score('Evernorth files Form S-3','Evernorth','SEC','SEC filings')['value'])
-        self.assertIsNone(score('Strategy files Form 10-Q','Strategy','SEC','SEC filings')['value'])
+    def test_standalone_filing_has_no_moon_rating(self):
+        for form in ('S-3','10-Q','8-K'):
+            self.assertEqual(moon_for_story({'title':f'Evernorth files Form {form}', 'entities':['Evernorth'], 'category':'SEC filings','source_type':'SEC','source_id':'sec_evernorth'}),[])
 
     def test_media_source_caution_and_range(self):
         m=score('Evernorth files for bankruptcy',kind='Media')
