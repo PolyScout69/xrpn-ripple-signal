@@ -47,6 +47,8 @@ NEWS_QUERIES = [
     '"XRP Ledger" XRPL adoption tokenization validators amendment',
     '"XRPL" DeFi AMM lending validator network institution',
     '"XRP" ETF approval institutional adoption regulation',
+    '"Ripple" "XRP" (rumor OR rumour OR reportedly OR potential) (SWIFT OR bank OR partnership OR settlement OR ETF)',
+    '"Evernorth" "XRPN" (rumor OR rumour OR reportedly OR exploring) (yield OR lending OR partnership OR treasury)',
     '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
     '"MicroStrategy" "MSTR" bitcoin preferred STRC earnings',
 ]
