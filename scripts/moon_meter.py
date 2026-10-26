@@ -134,6 +134,71 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
     return 0, 'No clear asset-specific price catalyst established by this headline and summary.'
 
 
+
+def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
+    """Evidence-aware asset-specific rules. None means not rated, not neutral."""
+    title = str(item.get('title', '')).lower()
+    excerpt = str(item.get('excerpt', '')).lower()
+    combined = re.sub(r'\s+', ' ', title + ' ' + excerpt)
+    official = item.get('source_type') in ('Official', 'SEC')
+    evidence = 'High' if official else 'Medium'
+    stock = asset in ('MSTR', 'XRPN')
+
+    # Filing indexes contain form names and item numbers, not the facts inside.
+    if item.get('source_type') == 'SEC' and _contains(title,
+           r'\bfiles? (?:a )?form\b', r'\bform (?:8-k|10-k|10-q|s-3|s-1|4)\b.*\breported items\b',
+           r'\bsec (?:8-k|10-k|10-q|s-3|s-1) filed\b'):
+        return None, 'Filing index only: its contents have not been analysed, so no defensible direction can be inferred.', 'Insufficient'
+    # A rumour must never earn an automatically bullish score.
+    if _contains(combined, r'\brumou?rs?\b', r'\bunconfirmed\b', r'\bnot confirmed\b',
+                 r'\bspeculat(?:ion|ive|es?)\b', r'\bfake (?:news|claim)\b'):
+        return None, 'Unverified report or rumour, not a confirmed price catalyst.', 'Insufficient'
+
+    # Treasury-company signal: coins per diluted share, not total coins acquired.
+    if stock:
+        coin = 'xrp' if asset == 'XRPN' else r'(?:bitcoin|btc)'
+        if _contains(combined, rf'\b{coin} per (?:(?:fully )?diluted )?share\b'):
+            percent = re.search(r'\b(?:by |up |down )?(\d{1,3}(?:\.\d+)?)\s*%', combined)
+            amount = float(percent.group(1)) if percent else None
+            fully = _contains(combined, r'\bfully diluted\b', r'\bafter dilution\b', r'\bnet of issuance\b')
+            down = _contains(combined, r'\b(?:down|fall|falls|fell|drop|drops|dropped|decline|declined|decrease|decreased)\b')
+            up = _contains(combined, r'\b(?:up|rise|rises|rose|increase|increases|increased|grow|grows|grew)\b')
+            if down:
+                if amount is not None and amount >= 40 and official and fully:
+                    return -3, 'Primary source reports a severe decline in coin holdings per diluted share.', evidence
+                if amount is not None and amount >= 10:
+                    return -2, 'Material decline in coin holdings per share; assess the fully diluted share count.', evidence
+                return -1, 'Reported decline in coin holdings per share; materiality remains uncertain.', evidence
+            if up:
+                if amount is not None and amount >= 20 and official and fully:
+                    return 3, 'Exceptional issuer-reported coin-per-diluted-share accretion (20%+); verify calculations and funding.', evidence
+                if amount is not None and amount >= 5 and official:
+                    return 2, 'Measured issuer-reported accretion in coin holdings per share, not just gross purchases.', evidence
+                return 1, 'Coin holdings per share may have improved, subject to dilution and funding costs.', evidence
+        if official and _contains(combined, r'\b(?:severe|massive) dilution (?:confirmed|completed)\b',
+                          r'\bshares? issued at (?:a )?(?:deep|steep) discount\b'):
+            return -2, 'Confirmed materially discounted issuance threatens per-share value.', evidence
+    if asset == 'XRP':
+        if official and _contains(combined, r'\b(?:sec|regulator) approves? (?:spot )?xrp etf\b',
+                                 r'\bspot xrp etf approved\b') and _contains(combined, r'\b(?:net|verified|confirmed) (?:fund )?inflows?\b'):
+            return 3, 'Primary reporting confirms regulated XRP access and observed net investment flows.', evidence
+        if official and _contains(combined, r'\bpermanent (?:xrp ledger|xrpl|network) (?:halt|shutdown|failure)\b'):
+            return -3, 'Verified extraordinary XRPL network disruption threatens token utility.', evidence
+        if _contains(combined, r'\b(?:xrpl|xrp ledger) (?:bug fix|amendment|upgrade) (?:is )?(?:delayed|postponed|stalled)\b',
+                     r'\b(?:bug fix|amendment|upgrade) (?:is )?(?:delayed|postponed|stalled)\b'):
+            return -1, 'Delay or validator friction could modestly slow XRPL functionality.', evidence
+    score, reason = _assess(item, asset)
+    # Do not equate non-cash, mark-to-market accounting profit with exceptional
+    # accretion in crypto-treasury vehicles.
+    if stock and score == 3:
+        return 1, 'Strong reported profit may include crypto fair-value changes; cash earnings and dilution need review.', evidence
+    if asset == 'XRP' and score == 2 and not official:
+        return 1, 'Potentially favourable regulatory/commercial report; secondary-source headline requires verification.', evidence
+    if stock and score == 2 and not official:
+        return 1, 'Reported potential accretion requires a primary disclosure and materiality check.', evidence
+    return score, reason, evidence
+
+
 def moon_for_story(item: dict) -> list[dict]:
     """Produce one Moon Meter per distinct asset affected by item entities.
 
@@ -147,13 +212,15 @@ def moon_for_story(item: dict) -> list[dict]:
             assets.append(asset)
     output = []
     for asset in assets:
-        value, reason = _assess(item, asset)
-        value = max(-3, min(3, int(value)))
+        value, reason, confidence = _assess_v2(item, asset)
+        if value is not None:
+            value = max(-3, min(3, int(value)))
         output.append({
             'asset': asset,
             'value': value,
-            'label': LABELS[value],
+            'label': LABELS.get(value, 'Not rated'),
+            'confidence': confidence,
             'reason': reason,
-            'method': 'headline_rules_v1',
+            'method': 'headline_rules_v2',
         })
     return output
