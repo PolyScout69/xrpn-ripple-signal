@@ -161,7 +161,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
             percent = re.search(r'\b(?:by |up |down )?(\d{1,3}(?:\.\d+)?)\s*%', combined)
             amount = float(percent.group(1)) if percent else None
             fully = _contains(combined, r'\bfully diluted\b', r'\bafter dilution\b', r'\bnet of issuance\b')
-            down = _contains(combined, r'\b(?:down|fall|falls|fell|drop|drops|dropped|decline|declined|decrease|decreased)\b')
+            down = _contains(combined, r'\b(?:down|fall|falls|fell|drop|drops|dropped|decline|declines|declined|decrease|decreases|decreased)\b')
             up = _contains(combined, r'\b(?:up|rise|rises|rose|increase|increases|increased|grow|grows|grew)\b')
             if down:
                 if amount is not None and amount >= 40 and official and fully:
