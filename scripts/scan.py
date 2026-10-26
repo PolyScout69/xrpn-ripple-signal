@@ -1,80 +1,628 @@
 #!/usr/bin/env python3
-"""Source-first daily investor news collector. Standard library only."""
-import datetime as dt, email.utils, hashlib, json, os, pathlib, re, time, urllib.request, urllib.parse, xml.etree.ElementTree as ET
-ROOT=pathlib.Path(__file__).resolve().parents[1]; DEST=ROOT/'data/news.json'
-now=dt.datetime.now(dt.timezone.utc)
-stamp=now.isoformat().replace('+00:00','Z')
-data=json.loads(DEST.read_text())
-items={x['id']:x for x in data.get('items',[])}
-headers={'User-Agent':'SignalInvestNews/1.0 (research news dashboard)','Accept':'application/json,application/xml,application/rss+xml,text/xml'}
-def fetch(url,sec=False):
-    h=dict(headers)
-    if sec:
-        agent=os.getenv('SEC_USER_AGENT','').strip()
-        if '@' not in agent: raise RuntimeError('SEC_USER_AGENT with real contact email must be configured as a repository variable')
-        h['User-Agent']=agent
-    with urllib.request.urlopen(urllib.request.Request(url,headers=h),timeout=18) as response:return response.read()
-def classify(title):
-    t=title.lower()
-    if any(w in t for w in ['8-k','10-k','10-q','form s-','filing','sec filing','prospectus']):return 'SEC filings'
-    if any(w in t for w in ['financ','equity','share sale','offering','capital','dilution']):return 'Capital markets'
-    if any(w in t for w in ['treasury','yield','xrp holdings']):return 'Treasury'
-    if any(w in t for w in ['partner','agreement','collaborat','integrat']):return 'Partnerships'
-    if any(w in t for w in ['platform','launch','product','service','custody','rlusd']):return 'Products'
-    if any(w in t for w in ['sec','regulat','legal','lawsuit']):return 'Regulation'
-    return 'Adoption'
-def add(title,url,date,source,type_,entities,excerpt):
-    if not title or not url:return
-    ident=hashlib.sha256(url.encode()).hexdigest()[:16]
-    if ident in items:return
-    cat=classify(title)
-    high=cat in ['SEC filings','Capital markets','Treasury','Partnerships'] or bool(re.search(r'\b(acquir|merger|approval|lawsuit)\b',title,re.I))
-    impact='High' if high else 'Medium'
-    angle={'SEC filings':'Read original documents and watch material changes to financing, risks and share count.','Capital markets':'Assess cost of capital, dilution and financing execution.','Treasury':'Monitor treasury returns, risk controls and XRP per share.','Partnerships':'Track measurable adoption and whether announced deals generate revenue.','Products':'Monitor real product usage and commercial demand.','Regulation':'Track the legal implications for business operations.'}.get(cat,'Look for measurable adoption and business impact.')
-    items[ident]=dict(id=ident,title=title,published_at=date,entities=entities,category=cat,impact=impact,score=88 if high else 65,source=source,source_type=type_,source_id=type_.lower(),url=url,excerpt=excerpt or title,why_it_matters=angle,added_at=stamp)
-def report(key,fn):
+"""Daily, source-first investor news scan for Evernorth, Ripple, XRP Ledger and Strategy.
+
+Sources: two SEC registrants (Evernorth CIK 2092592, Strategy CIK 1050446),
+issuer releases, plus issuer / XRP ecosystem RSS. Coverage is grouped by event.
+The script does *not* use LLMs to invent summaries or investment conclusions.
+
+Run: SEC_USER_AGENT='Your Name you@example.com' python scripts/scan.py
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import os
+import re
+import sys
+import time
+import urllib.parse
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone, timedelta
+from difflib import SequenceMatcher
+from email.utils import parsedate_to_datetime
+from pathlib import Path
+
+import requests
+from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = ROOT / 'data' / 'news.json'
+SEC_CIK = 2092592  # Evernorth Holdings Inc., XRPN
+STRATEGY_CIK = 1050446  # Strategy Inc. (formerly MicroStrategy), MSTR
+RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
+EVERNORTH_HOME = 'https://www.evernorth.xyz/'
+EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
+MAX_AGE_DAYS = 365
+MAX_STORIES = 500
+REQUEST_TIMEOUT = 22
+USER_AGENT = 'SignalInvestorNews/1.0 (investor news aggregator; public sources)'
+SEC_USER_AGENT = os.getenv('SEC_USER_AGENT', '').strip()
+NEWS_QUERIES = [
+    '"Evernorth Holdings" XRP financing treasury shares -Cigna -pharmacy',
+    '"XRPN" SEC filing partnership XRP treasury',
+    '"Ripple Labs" OR "Ripple Treasury" OR "Ripple Custody" partnership OR launch OR banking',
+    '"XRP Ledger" XRPL adoption tokenization validators amendment',
+    '"XRPL" DeFi AMM lending validator network institution',
+    '"XRP" ETF SEC filing institutional adoption regulation',
+    '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
+    '"MicroStrategy" "MSTR" bitcoin preferred STRC earnings',
+]
+WATCH_FORMS = {
+    '8-K', '8-K/A', '10-K', '10-K/A', '10-Q', '10-Q/A', 'S-1', 'S-1/A',
+    'S-3', 'S-3/A', 'S-4', 'S-4/A', '424B2', '424B3', '424B4', '424B5',
+    'DEF 14A', 'DEFA14A', 'SC 13D', 'SC 13D/A', 'SC 13G', 'SC 13G/A',
+    '4', '4/A', '3', '5', '144', 'EFFECT', 'FWP', 'NT 10-K', 'NT 10-Q',
+}
+MONTH_DATE = re.compile(r'\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+\d{1,2},?\s+20\d{2}\b',re.I)
+DATE_PATTERNS = ('%b %d, %Y', '%B %d, %Y', '%b %d %Y', '%B %d %Y', '%b. %d, %Y')
+STOP = set('the a an and or in of for to on by with from as at into that is will new has have its their about announces announce says launch launches unveils introduces today company inc holdings labs support investor global'.split())
+NEGATIVE_MEDIA = (
+    'price prediction', 'price target', 'could hit $', 'will hit $',
+    'technical analysis', 'whale alert', 'moonshot', 'best altcoins',
+    'buy now', 'surge to $', 'breakout signal', 'top crypto picks',
+    'will xrp reach', 'trader predicts', 'charts signal', 'analyst predicts',
+    'what price will', 'massive rally', 'millionaire', 'meme coin',
+)
+TOPIC_HINTS = ('filing','8-k','10-k','10-q','sec','share','equity','offering','warrant',
+    'capital','treasury','xrp per share','yield','liquidity','institution','partnership',
+    'partner','collaborat','custody','payment','settlement','tokeniz','tokenis',
+    'product','launch','license','licence','lawsuit','regulat','merger','acquisition',
+    'integration','rlusd','lending','bank','rwa','onchain','xrpl',
+    'bitcoin','btc','mstr','microstrategy','saylor','strc','strk','strf',
+    'etf','validator','amendment','amm','dex','defi','network')
+LOG = logging.getLogger('signal')
+
+
+def session_factory() -> requests.Session:
+    session = requests.Session()
+    retries = Retry(total=3, connect=2, read=2, backoff_factor=1.0,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=['GET'], respect_retry_after_header=True)
+    session.mount('https://', HTTPAdapter(max_retries=retries))
+    return session
+
+SESSION = session_factory()
+
+
+def fetch(url: str, sec: bool = False) -> requests.Response:
+    if sec and not SEC_USER_AGENT:
+        raise ValueError('SEC_USER_AGENT not configured. Set repository variable with a real name and contact email.')
+    headers = {
+        'User-Agent': SEC_USER_AGENT if sec else USER_AGENT,
+        'Accept': 'application/json,text/html,application/rss+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.8',
+    }
+    response = SESSION.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+    response.raise_for_status()
+    return response
+
+
+def timestamp_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+
+
+def normalize_date(value: str | None, date_only: bool = False) -> str | None:
+    if not value:
+        return None
+    text = value.strip()
+    dt = None
     try:
-        seen=fn()
-        data['sources'][key]=dict(name=data['sources'][key].get('name',key),status='ok',checked_at=stamp,items_seen=seen,message='Latest scan completed')
+        dt = datetime.fromisoformat(text.replace('Z', '+00:00'))
+    except ValueError:
+        try:
+            dt = parsedate_to_datetime(text)
+        except (ValueError, TypeError, IndexError):
+            clean = text.replace('Sept ', 'Sep ').replace('September.', 'September')
+            for pattern in DATE_PATTERNS:
+                try:
+                    dt = datetime.strptime(clean, pattern)
+                    break
+                except ValueError:
+                    continue
+    if not dt:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    dt = dt.astimezone(timezone.utc)
+    if date_only:
+        dt = dt.replace(hour=12,minute=0,second=0,microsecond=0)
+    return dt.replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+
+
+def is_recent(date_str: str | None) -> bool:
+    try:
+        t = datetime.fromisoformat(str(date_str).replace('Z','+00:00'))
+        return datetime.now(timezone.utc)-timedelta(days=MAX_AGE_DAYS) <= t <= datetime.now(timezone.utc)+timedelta(days=1)
+    except (ValueError,TypeError):
+        return False
+
+
+def plain_text(html: str, max_length: int = 210) -> str:
+    stripped = BeautifulSoup(str(html or ''), 'html.parser').get_text(' ',strip=True)
+    stripped = re.sub(r'\s+', ' ', stripped).strip()
+    if len(stripped) > max_length:
+        return stripped[:max_length].rsplit(' ',1)[0].rstrip('.,;')+'…'
+    return stripped
+
+
+def canonical_url(url: str) -> str:
+    parsed = urllib.parse.urlsplit(url)
+    if parsed.scheme != 'https' or not parsed.netloc:
+        return ''
+    # Advertising / link-tracking fragments shouldn't create duplicate articles.
+    params=[(k,v) for k,v in urllib.parse.parse_qsl(parsed.query) if not k.lower().startswith(('utm_','fbclid','gclid'))]
+    return urllib.parse.urlunsplit((parsed.scheme,parsed.netloc.lower(),parsed.path,urllib.parse.urlencode(params),'')).rstrip('/')
+
+
+def identify_entities(content: str, force: str | None = None) -> list[str]:
+    """Keep issuers distinct from unrelated Ledger-network developments."""
+    if force in ('Ripple', 'Evernorth', 'Strategy', 'XRP Ecosystem'):
+        return [force]
+    x = content.lower()
+    # Strategy is an ordinary English noun; never match it alone.
+    strategy = bool(re.search(r'\bmicrostrategy\b|\bmstr\b|\bstrategy inc\b|\bstrategy incorporated\b|\bstrategy\s*\(nasdaq', x)) or bool(re.search(r'\bstrategy\b', x) and any(v in x for v in ('btc yield','strc','strf','strk','michael saylor','bitcoin treasury company','bitcoin acquisitions')))
+    if 'michael saylor' in x and any(v in x for v in ('bitcoin', 'mstr', 'treasury', 'strategy')):
+        strategy = True
+    evernorth = bool('xrpn' in x or 'evernorth holdings' in x or ('evernorth' in x and ('xrp' in x or 'treasury' in x)))
+    if any(v in x for v in ('pharmacy', 'cigna', 'health services')) and not any(v in x for v in ('xrpn', 'xrp treasury', 'digital asset treasury')):
+        evernorth = False
+    # Ripple company news; a casual "Ripple (XRP)" price headline is not automatically company news.
+    ripple = bool(re.search(r'\bripple\b', x) and any(v in x for v in (
+        'ripple labs', 'ripple treasury', 'ripple payments', 'ripple custody', 'rlusd',
+        'partnership', 'partners', 'payment', 'bank', 'acquir', 'license', 'licence',
+        'company', 'enterprise', 'custody', 'product', 'launch', 'settlement', 'prime')))
+    # Network and token coverage is its own entity even when it mentions Ripple.
+    ecosystem = bool(re.search(r'\bxrp ledger\b|\bxrpl\b|\bxrp ecosystem\b|\bxrp etf\b', x)
+        or ('xrp' in x and any(v in x for v in (
+            'validator', 'amendment', 'amm', 'defi', 'dex', 'network', 'tokeniz',
+            'tokenis', 'spot etf', 'ledger adoption', 'rwa', 'on-chain'))))
+    result = []
+    if evernorth: result.append('Evernorth')
+    if ripple: result.append('Ripple')
+    if ecosystem: result.append('XRP Ecosystem')
+    if strategy: result.append('Strategy')
+    # XRP ecosystem content should not be swallowed by Ripple-only categorisation.
+    return result
+
+
+def classify(title: str, excerpt: str = '', force_sec: bool = False) -> str:
+    if force_sec:return 'SEC filings'
+    text=(title+' '+excerpt).lower()
+    title_low=title.lower()
+    if any(p in title_low for p in ('10-k','10-q','8-k','sec filing','registration statement','form s-1','form s-3','prospectus','insider transaction')):
+        return 'SEC filings'
+    if any(p in title_low for p in ('equity facility','capital raise','share sale','stock offering','shares issued','share issuance','warrant','ipo','nasdaq listing','business combination','shareholder vote','merger','funding round','at-the-market','atm program','preferred stock','convertible notes','buyback','repurchase')):
+        return 'Capital markets'
+    if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share')):
+        return 'Treasury'
+    if any(p in title_low for p in ('regulation','regulatory','sec lawsuit','court rules','license approved','licence','legislation','digital asset policy')):
+        return 'Regulation'
+    if any(p in title_low for p in ('names chief','appoints ','chief investment officer','new ceo','new cfo','board member')):
+        return 'Leadership'
+    if any(p in title_low for p in ('partners','partner with','partner to','partner for','partnership','collaborat','strategic relationship','deepens relationship')):
+        return 'Partnerships'
+    if any(p in title_low for p in ('launch','introduc','new platform','new product','rolls out','unveil','prime expands','perpetual swaps','offering')):
+        return 'Products'
+    if any(p in title_low for p in ('tokenis','tokeniz','institutional','adoption','integrat','custody','xrpl','xrp ledger','stablecoin','payments','validator','amendment','amm','dex','defi','etf')):
+        return 'Adoption'
+    # If the lead doesn't signal a topic, use the supporting snippet as backup.
+    if 'treasury' in text or 'xrp per share' in text:return 'Treasury'
+    if 'sec' in text or 'regulation' in text:return 'Regulation'
+    return 'Adoption'
+
+
+def score_story(title: str, category: str, source_type: str, entities: list[str]) -> tuple[str,int]:
+    x=title.lower()
+    score={'SEC':84,'Official':72,'Media':54,'News':54}.get(source_type,50)
+    bonus={'SEC filings':10,'Capital markets':14,'Treasury':11,'Partnerships':8,'Products':8,'Regulation':10,'Adoption':6,'Leadership':4}.get(category,0)
+    score+=bonus
+    if 'Evernorth' in entities or 'Strategy' in entities:score+=5
+    if any(k in x for k in ('equity facility','dilution','material agreement','financing','s-1','10-k','10-q','share offering','bitcoin purchase','repurchase','preferred stock')):score+=8
+    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement')):score+=3
+    score=min(99,score)
+    return ('High' if score>=83 else 'Medium' if score>=66 else 'Low'),score
+
+
+def investor_angle(category: str) -> str:
+    return {
+      'SEC filings':'Primary regulatory disclosure. Review the full filing for material agreements, risk factors, governance changes and potential effects on share count.',
+      'Capital markets':'Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.',
+      'Treasury':'Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.',
+      'Partnerships':'A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.',
+      'Products':'A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.',
+      'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.',
+      'Regulation':'A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.',
+      'Leadership':'A senior appointment may influence execution, risk controls and strategy. Track subsequent measurable results.',
+    }.get(category,'Check the original report for financial significance, implementation status and risks.')
+
+
+def make_story(*, title: str, date: str, url: str, source: str, source_type: str,
+    source_id: str, entities: list[str], excerpt: str, category: str | None = None,
+    date_only: bool = False) -> dict | None:
+    title=plain_text(title,230)
+    safe_url=canonical_url(url)
+    normalized=normalize_date(date,date_only=date_only)
+    if len(title)<16 or not safe_url or not normalized or not is_recent(normalized) or not entities:
+        return None
+    category=category or classify(title,excerpt)
+    impact,score=score_story(title,category,source_type,entities)
+    return {
+        'id':hashlib.sha1(safe_url.encode()).hexdigest()[:14],
+        'title':title,'published_at':normalized,'date_only':date_only,
+        'entities':entities,'category':category,'impact':impact,'score':score,
+        'source':source,'source_type':source_type,'source_id':source_id,
+        'url':safe_url,'excerpt':plain_text(excerpt,235) or 'Open the original report for details.',
+        'why_it_matters':investor_angle(category),'tags':[],
+        'added_at':timestamp_now(),'verified_seed':False,
+    }
+
+
+def fetch_sec_for(cik: int, company: str, entity: str, source_id: str) -> list[dict]:
+    payload = fetch(f'https://data.sec.gov/submissions/CIK{cik:010d}.json', sec=True).json()
+    legal_name = str(payload.get('name', '')).lower()
+    expected = 'evernorth' if entity == 'Evernorth' else 'strategy'
+    aliases = ('strategy', 'microstrategy') if entity == 'Strategy' else ('evernorth',)
+    if int(payload.get('cik', 0)) != cik or not any(alias in legal_name for alias in aliases):
+        raise ValueError(f'SEC returned an unexpected registrant for {company}; skipped')
+    recent = payload.get('filings',{}).get('recent',{})
+    stories = []
+    for idx, form in enumerate(recent.get('form', [])):
+        if form not in WATCH_FORMS: continue
+        def col(key, default=''):
+            arr = recent.get(key, [])
+            return arr[idx] if idx < len(arr) else default
+        accession, doc, filed = col('accessionNumber'), col('primaryDocument'), col('filingDate')
+        if not accession or not filed or not is_recent(normalize_date(filed, date_only=True)): continue
+        accession_digits = str(accession).replace('-', '')
+        # Prefer the unique submission index to ensure a stable filing link.
+        url = f'https://www.sec.gov/Archives/edgar/data/{cik}/{accession_digits}/{urllib.parse.quote(str(doc),safe=".-_") if doc else accession_digits+"-index.html"}'
+        filing_items = str(col('items') or '').strip()
+        detail = (' · reported items ' + ', '.join(f.strip() for f in filing_items.split(',')[:5]) if filing_items and form.startswith('8-K') else '')
+        story = make_story(title=f'{company} files Form {form}{detail}',date=filed,url=url,
+            source='SEC EDGAR',source_type='SEC',source_id=source_id,entities=[entity],
+            excerpt=f'Official {company} Form {form} filed on {filed}. Review exhibits, balance-sheet effects, share count and material disclosures in the filing.',
+            category='SEC filings',date_only=True)
+        if story:
+            story['accession'] = str(accession)
+            stories.append(story)
+    return stories
+
+
+def fetch_sec_filings() -> list[dict]:
+    return fetch_sec_for(SEC_CIK, 'Evernorth', 'Evernorth', 'sec_evernorth')
+
+
+def fetch_strategy_sec_filings() -> list[dict]:
+    return fetch_sec_for(STRATEGY_CIK, 'Strategy', 'Strategy', 'sec_strategy')
+
+
+def extract_date(text: str) -> str | None:
+    match=MONTH_DATE.search(text or '')
+    return normalize_date(match.group(0)) if match else None
+
+
+def news_context(element) -> str:
+    """Look for a displayed date near a headline, without swallowing the whole page."""
+    node=element
+    for _ in range(4):
+        if node is None:break
+        value=node.get_text(' ',strip=True)
+        if len(value)<1100 and MONTH_DATE.search(value):return value
+        node=node.parent
+    return ''
+
+
+def fetch_ripple_press() -> list[dict]:
+    html=fetch(RIPPLE_PRESS_URL).text
+    soup=BeautifulSoup(html,'html.parser')
+    candidates={}
+    for a in soup.find_all('a',href=True):
+        link=urllib.parse.urljoin(RIPPLE_PRESS_URL,a['href'])
+        if not re.match(r'https://(?:www\.)?ripple\.com/ripple-press/',link):continue
+        title=plain_text(a.get_text(' ',strip=True),240)
+        if len(title)<25:continue
+        candidates[canonical_url(link)]=(title,extract_date(news_context(a)))
+    if not candidates:
+        raise ValueError('Ripple press-centre layout may have changed: no article links found.')
+    stories=[]
+    for link,(fallback_title,date_from_listing) in list(candidates.items())[:13]:
+        try:
+            article=BeautifulSoup(fetch(link).text,'html.parser')
+            heading=article.find('h1')
+            title=heading.get_text(' ',strip=True) if heading else fallback_title
+            date=date_from_listing or extract_date(article.get_text(' ',strip=True)[:1800])
+            if not date:continue
+            paragraphs=[plain_text(p.get_text(' ',strip=True),260) for p in article.find_all('p')]
+            lead=next((p for p in paragraphs if 75<len(p)<260 and not p.lower().startswith(('cookies','read more','forward-looking'))),'')
+            if not lead:
+                # Several Ripple releases use a subtitle rather than a <p> intro.
+                lead=next((plain_text(t.get_text(' ',strip=True),240) for t in article.find_all(['h2','h3']) if len(t.get_text(' ',strip=True))>55),'')
+            story=make_story(title=title,date=date,url=link,source='Ripple press centre',source_type='Official',source_id='ripple',entities=['Ripple'],excerpt=lead or title,date_only=True)
+            if story:stories.append(story)
+        except Exception as exc:
+            LOG.warning('Could not open Ripple press article %s: %s',link,exc)
+        time.sleep(0.15)
+    if not stories:raise ValueError('Ripple press articles found, but dates/details could not be extracted.')
+    return stories
+
+
+def fetch_evernorth_news() -> list[dict]:
+    """Monitor the issuer site, backed by its official PR Newswire release archive.
+
+    Evernorth's homepage includes CMS cards that may be dynamically linked.
+    PR Newswire articles are issuer-issued company releases, not third-party
+    editorials, and provide persistent canonical links when a card has no URL.
+    """
+    sources=[]
+    try:
+        sources.append((EVERNORTH_HOME,BeautifulSoup(fetch(EVERNORTH_HOME).text,'html.parser')))
     except Exception as exc:
-        data['sources'][key]=dict(name=data['sources'][key].get('name',key),status='error',checked_at=stamp,items_seen=0,message=str(exc)[:180])
-def rss():
-    count=0
-    terms=['Evernorth Holdings XRPN XRP','Ripple company partnership payment RLUSD','Evernorth Holdings SEC filing']
-    for q in terms:
-        url='https://news.google.com/rss/search?q='+urllib.parse.quote(q)+'&hl=en-US&gl=US&ceid=US:en'
-        root=ET.fromstring(fetch(url))
-        for el in root.findall('.//item')[:30]:
-            title=(el.findtext('title') or '').strip(); link=(el.findtext('link') or '').strip()
-            low=title.lower()
-            if 'evernorth' not in low and 'ripple' not in low:continue
-            if 'evernorth' in low and not any(x in low for x in ['xrpn','xrp','treasury','crypto','blockchain','digital asset']):continue
-            pub=el.findtext('pubDate') or ''
-            try:date=email.utils.parsedate_to_datetime(pub).astimezone(dt.timezone.utc).isoformat().replace('+00:00','Z')
-            except Exception:continue
-            if (now-dt.datetime.fromisoformat(date.replace('Z','+00:00'))).days>40:continue
-            ent=['Evernorth'] if 'evernorth' in low else ['Ripple']
-            add(title,link,date,'Google News RSS','News',ent,title)
-            count+=1
-    if not count:raise RuntimeError('RSS returned no relevant headlines')
-    return count
-def sec():
-    obj=json.loads(fetch('https://data.sec.gov/submissions/CIK0002092592.json',True))
-    recent=obj.get('filings',{}).get('recent',{})
-    count=0
-    for accession,form,date,doc in zip(recent.get('accessionNumber',[]),recent.get('form',[]),recent.get('filingDate',[]),recent.get('primaryDocument',[])):
-        if form not in ['8-K','10-Q','10-K','S-1','S-3','S-4','424B3','424B5','SC 13D','SC 13G','4','3','5']:continue
-        if (now.date()-dt.date.fromisoformat(date)).days>180:continue
-        link='https://www.sec.gov/Archives/edgar/data/2092592/'+accession.replace('-','')+'/'+doc
-        add('Evernorth SEC '+form+' filed '+date,link,date+'T12:00:00Z','SEC EDGAR','SEC',['Evernorth'],'Official '+form+' filing. Open the original document for full details.')
-        count+=1
-    return count
-report('sec',sec)
-report('media',rss)
-for key in ('ripple','evernorth'):
-    data['sources'][key].update(status='not_checked',checked_at=stamp,message='Official-source discovery not configured; related stories may appear through news feeds')
-data['items']=sorted(items.values(),key=lambda i:i['published_at'],reverse=True)[:500]
-data['scan']={'status':'ok' if any(v['status']=='ok' for v in data['sources'].values()) else 'error','ran_at':stamp,'schedule_utc':'18:00','new_items':max(0,len(items)-len(json.loads(DEST.read_text()).get('items',[]))),'source_note':'Sources with errors are identified; coverage is not exhaustive.'}
-DEST.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
-print('Stories:',len(data['items']),'Source statuses:',{k:v['status'] for k,v in data['sources'].items()})
-if not any(v['status']=='ok' for v in data['sources'].values()):raise SystemExit('All configured news scans failed')
+        LOG.warning('Evernorth company website unavailable: %s',exc)
+    try:
+        sources.append((EVERNORTH_WIRE,BeautifulSoup(fetch(EVERNORTH_WIRE).text,'html.parser')))
+    except Exception as exc:
+        LOG.warning('Evernorth issuer newswire unavailable: %s',exc)
+    if not sources:
+        raise ValueError('Neither the company website nor its issuer newswire responded.')
+    links=[]
+    for homepage,soup in sources:
+        for a in soup.find_all('a',href=True):
+            url=urllib.parse.urljoin(homepage,a['href'])
+            title=plain_text(a.get_text(' ',strip=True),210)
+            allowed=(homepage==EVERNORTH_HOME and 'evernorth.xyz' in urllib.parse.urlsplit(url).netloc) or (homepage==EVERNORTH_WIRE and '/news-releases/' in url)
+            if allowed and 27<=len(title)<=210 and 'evernorth' in title.lower() and not re.search(r'health|pharmacy|cigna',title,re.I):
+                links.append((title,url,extract_date(news_context(a)),homepage))
+        if homepage==EVERNORTH_HOME:
+            for heading in soup.find_all(['h2','h3','h4']):
+                title=plain_text(heading.get_text(' ',strip=True),210)
+                if len(title)<27 or not any(k in title.lower() for k in ('evernorth','xrp liquidity report')):continue
+                anc=heading.find_parent('a',href=True)
+                if not anc:
+                    node=heading
+                    for _ in range(3):
+                        node=node.parent
+                        if not node:break
+                        anc=node.find('a',href=True)
+                        if anc:break
+                if anc:
+                    url=urllib.parse.urljoin(EVERNORTH_HOME,anc.get('href',''))
+                    links.append((title,url,extract_date(news_context(heading)),homepage))
+    stories=[]
+    seen=set()
+    for title,url,date,homepage in links[:55]:
+        safe_url=canonical_url(url)
+        if not safe_url or safe_url in seen or safe_url==canonical_url(homepage):continue
+        source_name='Evernorth official site' if homepage==EVERNORTH_HOME else 'Evernorth Holdings / PR Newswire'
+        if not date:
+            try:
+                article=BeautifulSoup(fetch(url).text,'html.parser')
+                date=extract_date(article.get_text(' ',strip=True)[:2400])
+            except Exception as exc:
+                LOG.debug('Cannot retrieve publisher date %s: %s',url,exc)
+        if not date:continue
+        story=make_story(title=title,date=date,url=url,source=source_name,source_type='Official',source_id='evernorth',entities=['Evernorth'],excerpt=f'Issuer announcement: {title}',date_only=True)
+        if story:
+            stories.append(story)
+            seen.add(safe_url)
+    if not stories:
+        raise ValueError('Company/newswire sites responded but no dated, linked issuer announcements could be extracted.')
+    return stories
+
+def rss_items(xml_text: str) -> list[dict]:
+    root=ET.fromstring(xml_text)
+    result=[]
+    for item in root.findall('.//item'):
+        def value(name):
+            el=item.find(name)
+            return ((el.text or '').strip() if el is not None else '')
+        source_el=item.find('source')
+        result.append({
+            'title':value('title'), 'url':value('link'), 'date':value('pubDate'),
+            'excerpt':value('description'),
+            'publisher':(source_el.text or '').strip() if source_el is not None else '',
+        })
+    return result
+
+
+def is_investor_news(title: str, excerpt: str) -> bool:
+    text=(title+' '+excerpt).lower()
+    if any(term in text for term in NEGATIVE_MEDIA):return False
+    if ('cigna' in text or 'pharmacy' in text or 'health services' in text) and not 'xrpn' in text:return False
+    return any(term in text for term in TOPIC_HINTS)
+
+
+def parse_google_news(xml_text: str) -> list[dict]:
+    stories=[]
+    for entry in rss_items(xml_text):
+        raw_title=plain_text(entry['title'],230)
+        publisher=entry['publisher'] or 'Google News publisher'
+        if raw_title.endswith(' - '+publisher):raw_title=raw_title[:-(len(publisher)+3)]
+        excerpt=plain_text(entry['excerpt'],210)
+        entities=identify_entities(raw_title+' '+excerpt)
+        if not entities or not is_investor_news(raw_title,excerpt):continue
+        category=classify(raw_title,excerpt)
+        # Google's RSS hyperlinks are a gateway to the publisher, not the original URL.
+        story=make_story(title=raw_title,date=entry['date'],url=entry['url'],source=publisher+' · via Google News',source_type='Media',source_id='media',entities=entities,excerpt=excerpt or raw_title,category=category)
+        if story:stories.append(story)
+    return stories
+
+
+def fetch_media_news() -> list[dict]:
+    articles=[]
+    successes=0
+    for query in NEWS_QUERIES:
+        params=urllib.parse.urlencode({'q':query,'hl':'en-US','gl':'US','ceid':'US:en'})
+        url=f'https://news.google.com/rss/search?{params}'
+        try:
+            text=fetch(url).text
+            articles.extend(parse_google_news(text))
+            successes+=1
+        except Exception as exc:
+            LOG.warning('Google News search failed (%s): %s',query[:40],exc)
+    if not successes:raise ValueError('All Google News RSS requests failed.')
+    return articles
+
+
+# Multi-outlet coverage of the same announcement must occupy ONE feed card.
+# Dedupe intentionally does not conflate SEC filings with different accession IDs.
+EVENT_STOP = STOP | set('''ripple evernorth strategy microstrategy xrp xrpl ledger bitcoin btc digital assets crypto
+    partners partnership announces announced plans planned secures secures potential committed
+    reports report backed reveals update updates fund funds funded initiative holdings buys buying
+    purchase purchases acquire acquires acquired announces announces expansion expands 
+    xrpn mstr business cryptocurrency dollars million billion approximately intended'''.split())
+
+
+def norm_words(title: str) -> set[str]:
+    text = plain_text(title, 230).lower()
+    text = re.sub(r'(?<=\d),(?=\d)', '', text)
+    text = re.sub(r'\$?\s*(\d+(?:\.\d+)?)\s*(?:million|mn|m)\b', r'\1m', text)
+    text = re.sub(r'\$?\s*(\d+(?:\.\d+)?)\s*(?:billion|bn|b)\b', r'\1b', text)
+    return {w for w in re.findall(r'[a-z0-9]+', text) if len(w)>2 and w not in EVENT_STOP}
+
+
+def event_key(item: dict) -> str:
+    title = (item.get('title','') or '').lower()
+    entities = set(item.get('entities') or [])
+    stamp = (item.get('published_at') or '')[:7]
+    amount = re.search(r'\$?\s*(\d+(?:\.\d+)?)\s*(?:million|mn|m)\b', title)
+    amount_key = ((amount.group(1) + 'm') if amount else '')
+    if 'Evernorth' in entities and amount_key == '80m' and any(x in title for x in ('facility','raise','equity','fund','buy more xrp','committed')):
+        return 'evernorth:80m-equity-facility:2026-10'
+    if 'arf' in title and ('Ripple' in entities or 'XRP Ecosystem' in entities) and any(v in title for v in ('rlusd','payment','liquidity','partner','xrp ledger','xrpl','lending')):
+        return 'ripple:arf-rlusd-liquidity:2026-10'
+    if 'Strategy' in entities and any(v in title for v in ('acquir','purchas','buys','bitcoin holdings','btc holdings')):
+        btc = re.search(r'(\d[\d,]*)\s*(?:btc|bitcoin)', title)
+        if btc:
+            return 'strategy:btc-purchase:'+btc.group(1).replace(',','')+':'+stamp
+    return ''
+
+
+def duplicates(a: dict, b: dict) -> bool:
+    if canonical_url(a.get('url','')) and canonical_url(a.get('url','')) == canonical_url(b.get('url','')):
+        return True
+    if a.get('source_type') == 'SEC' and b.get('source_type') == 'SEC' and a.get('accession') != b.get('accession'):
+        return False
+    if not set(a.get('entities',[])).intersection(b.get('entities',[])):
+        return False
+    da, db = normalize_date(a.get('published_at')), normalize_date(b.get('published_at'))
+    if not da or not db:return False
+    diff = abs((datetime.fromisoformat(da.replace('Z','+00:00'))-datetime.fromisoformat(db.replace('Z','+00:00'))).total_seconds())/86400
+    ka, kb = event_key(a), event_key(b)
+    if ka and kb and ka == kb and diff <= 9:
+        return True
+    if diff > 4: return False
+    a_words, b_words = norm_words(a.get('title','')), norm_words(b.get('title',''))
+    if not a_words or not b_words: return False
+    shared = a_words & b_words
+    overlap = len(shared) / min(len(a_words),len(b_words))
+    similarity = SequenceMatcher(None,a.get('title','').lower(),b.get('title','').lower()).ratio()
+    # Must share multiple meaningful tokens, never just Ripple/XRP or Strategy/BTC.
+    return (len(shared)>=3 and overlap>=.64 and (similarity>=.38 or len(shared)>=5)) or (len(shared)>=4 and similarity>=.74)
+
+
+def priority(item: dict) -> tuple:
+    return (int(item.get('verified_seed',False)),{'SEC':4,'Official':3,'Media':2,'News':1}.get(item.get('source_type'),0),item.get('score',0),item.get('published_at',''))
+
+
+def coverage(item: dict) -> list[dict]:
+    links = item.get('coverage') if isinstance(item.get('coverage'),list) else []
+    links = list(links)+[{
+        'title':item.get('title',''), 'name':item.get('source','Original source'),
+        'url':item.get('url',''), 'source_type':item.get('source_type','Media'),
+        'published_at':item.get('published_at','')
+    }]
+    unique={}
+    for entry in links:
+        url=canonical_url(entry.get('url',''))
+        if url and url not in unique:
+            unique[url]={**entry,'url':url}
+    return list(unique.values())[:16]
+
+
+def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int]:
+    # Re-cluster old archive as well as new entries, fixing historical duplicates.
+    existing_ids={x.get('id') for x in old if isinstance(x,dict)}
+    candidates=[dict(x) for x in [*old,*incoming] if isinstance(x,dict) and is_recent(x.get('published_at'))]
+    for item in candidates:
+        if item.get('source_type') in ('Media','News'):
+            found=identify_entities((item.get('title') or '')+' '+(item.get('excerpt') or ''))
+            if found: item['entities']=found
+    candidates.sort(key=priority,reverse=True)
+    consolidated=[]
+    for item in candidates:
+        item.setdefault('source_type','Media')
+        if item.get('source_type')=='News': item['source_type']='Media'
+        duplicate=next((target for target in consolidated if duplicates(item,target)),None)
+        if duplicate is None:
+            item['coverage']=coverage(item)
+            consolidated.append(item)
+        else:
+            seen_urls={c['url'] for c in duplicate.get('coverage',[])}
+            for source in coverage(item):
+                if source['url'] not in seen_urls and len(duplicate['coverage']) < 16:
+                    duplicate['coverage'].append(source)
+                    seen_urls.add(source['url'])
+            # Keep the best primary source (SEC or issuer); preserve earlier IDs for saved stories.
+            if item.get('score',0)>duplicate.get('score',0):
+                duplicate['score']=item['score']
+            if item.get('impact')=='High':duplicate['impact']='High'
+            duplicate['entities']=sorted(set(duplicate.get('entities',[]))|set(item.get('entities',[])))
+    consolidated.sort(key=lambda x:(x.get('published_at',''),x.get('score',0)),reverse=True)
+    current=consolidated[:MAX_STORIES]
+    added=sum(1 for x in current if x.get('id') not in existing_ids)
+    return current,added
+
+
+def main() -> int:
+    logging.basicConfig(level=logging.INFO,format='%(levelname)s %(message)s')
+    previous=json.loads(DATA_PATH.read_text(encoding='utf-8'))
+    stamp=timestamp_now()
+    statuses={}
+    incoming=[]
+    # A verified MSTR exhibit gives new deployments a direct, substantive Strategy
+    # reference even if Google News returns no Strategy articles on the first day.
+    strategy_starter=make_story(
+        title='Strategy acquires 250 BTC and repurchases $192 million of STRC',
+        date='2026-10-12',url='https://www.sec.gov/Archives/edgar/data/1050446/000119312526419726/mstr-ex99_1.htm',
+        source='Strategy Inc / SEC EDGAR exhibit',source_type='SEC',source_id='sec_strategy',
+        entities=['Strategy'],excerpt='In its October 12 capital markets update, Strategy detailed 250 BTC acquired, preferred-share repurchases, and its ongoing ATM financing.',
+        category='Capital markets',date_only=True)
+    if strategy_starter: strategy_starter['verified_seed']=True;incoming.append(strategy_starter)
+    sources=(
+        ('sec_evernorth','Evernorth SEC EDGAR',fetch_sec_filings),
+        ('sec_strategy','Strategy MSTR SEC EDGAR',fetch_strategy_sec_filings),
+        ('ripple','Ripple press centre',fetch_ripple_press),
+        ('evernorth','Evernorth official',fetch_evernorth_news),
+        ('media','Issuer and XRP ecosystem news',fetch_media_news),
+    )
+    for key,name,reader in sources:
+        try:
+            stories=reader()
+            incoming.extend(stories)
+            statuses[key]={'name':name,'status':'ok','items_seen':len(stories),'checked_at':stamp,'message':f'Fetched {len(stories)} matching items.'}
+            LOG.info('%s: %s items',name,len(stories))
+        except Exception as exc:
+            kind='needs_setup' if key.startswith('sec_') and not SEC_USER_AGENT else 'error'
+            statuses[key]={'name':name,'status':kind,'items_seen':0,'checked_at':stamp,'message':str(exc)[:240]}
+            LOG.warning('%s: %s',name,exc)
+    ready=sum(1 for x in statuses.values() if x['status']=='ok')
+    status='live' if ready==len(sources) else 'partial' if ready else 'failed'
+    items,new_count=merge_stories(previous.get('items',[]),incoming)
+    out={
+      'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
+      'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
+              'schedule_utc':'18:00','new_items':new_count,
+              'source_note':'Automated scan: source-specific checks; status panel exposes failures and setup needs.'},
+      'sources':statuses,'items':items,
+    }
+    DATA_PATH.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    LOG.info('Wrote %s stories; %s new; %s sources OK',len(items),new_count,ready)
+    if status=='failed':
+        # Persist the failure to the public dashboard, then fail the workflow visibly.
+        return 1
+    return 0
+
+if __name__=='__main__':sys.exit(main())
