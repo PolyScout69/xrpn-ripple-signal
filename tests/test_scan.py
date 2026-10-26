@@ -77,6 +77,9 @@ class CollectorTests(unittest.TestCase):
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
         self.assertTrue(scan.is_investor_news('XRP Ledger launches institutional tokenization infrastructure','On XRPL'))
+        self.assertTrue(scan.is_investor_news('Rumour: SWIFT to partner with Ripple for XRP settlement','Unconfirmed agreement'))
+        self.assertTrue(scan.is_investor_news('Evernorth reportedly exploring XRP treasury lending yield','Potential revenue'))
+        self.assertFalse(scan.is_investor_news('XRP price prediction by analyst predicts $100','Pure speculation'))
 
     def test_url_safety(self):
         self.assertFalse(scan.canonical_url('javascript:alert(1)'))
