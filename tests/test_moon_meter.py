@@ -70,6 +70,11 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(m['scenario'],'assumption')
         self.assertEqual(m['confidence'],'Conditional')
 
+    def test_if_true_evernorth_merger_approval(self):
+        m=score('Evernorth crypto merger reportedly wins shareholder vote','Evernorth','Media')
+        self.assertEqual(m['value'],2)
+        self.assertEqual(m['scenario'],'rumour')
+
     def test_non_catalyst_rumour_is_not_forced_positive(self):
         m=score('Rumour: general XRP market chatter','Ripple','Media')
         self.assertEqual(m['value'],0)
