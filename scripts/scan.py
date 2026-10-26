@@ -64,14 +64,21 @@ NEGATIVE_MEDIA = (
     'technical analysis', 'whale alert', 'moonshot', 'best altcoins',
     'buy now', 'surge to $', 'breakout signal', 'top crypto picks',
     'will xrp reach', 'trader predicts', 'charts signal', 'analyst predicts',
+    'short squeeze', 'stock surges', 'stock moved', 'performance duel',
+    'how to play', 'traders eye', 'price forecast', 'price outlook',
+    'bulls build', 'market sentiment', 'community insights', 'price prediction',
+    'price targets', 'up or down today', 'what signal does', 'buy the dip',
+    'which is the better buy', 'holders have been waiting for',
+    'how high can', 'crypto millionaire', 'bitcoin windfall', 'as xrp jumps',
     'what price will', 'massive rally', 'millionaire', 'meme coin',
 )
 TOPIC_HINTS = ('filing','8-k','10-k','10-q','sec','share','equity','offering','warrant',
-    'capital','treasury','xrp per share','yield','liquidity','institution','partnership',
+    'capital','rais','fund','facility','financ','treasury','xrp per share','yield','liquidity','institution','partnership',
     'partner','collaborat','custody','payment','settlement','tokeniz','tokenis',
     'product','launch','license','licence','lawsuit','regulat','merger','acquisition',
     'integration','rlusd','lending','bank','rwa','onchain','xrpl',
-    'bitcoin','btc','mstr','microstrategy','saylor','strc','strk','strf',
+    'mstr','microstrategy','saylor','strc','strk','strf',
+    'acquir','purchas','repurchas','preferred','convertible','dividend','reserve','earnings',
     'etf','validator','amendment','amm','dex','defi','network')
 LOG = logging.getLogger('signal')
 
@@ -333,7 +340,19 @@ def fetch_ripple_press() -> list[dict]:
             article=BeautifulSoup(fetch(link).text,'html.parser')
             heading=article.find('h1')
             title=heading.get_text(' ',strip=True) if heading else fallback_title
-            date=date_from_listing or extract_date(article.get_text(' ',strip=True)[:1800])
+            whole_text=article.get_text(' ',strip=True)
+            heading_at=whole_text.lower().find(title[:30].lower())
+            nearby=whole_text[heading_at:heading_at+1600] if heading_at >= 0 else whole_text[:4000]
+            meta_date=''
+            for meta in article.find_all('meta'):
+                if meta.get('property','').lower() in ('article:published_time','article:modified_time') or meta.get('name','').lower() in ('date','pubdate','datepublished','dc.date'):
+                    meta_date=normalize_date(meta.get('content','')) or ''
+                    if meta_date:break
+            if not meta_date:
+                for tag in article.find_all('time'):
+                    meta_date=normalize_date(tag.get('datetime','')) or extract_date(tag.get_text(' ',strip=True)) or ''
+                    if meta_date:break
+            date=date_from_listing or meta_date or extract_date(nearby) or extract_date(whole_text[:14000])
             if not date:continue
             paragraphs=[plain_text(p.get_text(' ',strip=True),260) for p in article.find_all('p')]
             lead=next((p for p in paragraphs if 75<len(p)<260 and not p.lower().startswith(('cookies','read more','forward-looking'))),'')
@@ -430,6 +449,7 @@ def rss_items(xml_text: str) -> list[dict]:
 def is_investor_news(title: str, excerpt: str) -> bool:
     text=(title+' '+excerpt).lower()
     if any(term in text for term in NEGATIVE_MEDIA):return False
+    if any(v in text for v in ('binance square', 'price forecast', 'massive price rally', 'exclusive price prediction')):return False
     if ('cigna' in text or 'pharmacy' in text or 'health services' in text) and not 'xrpn' in text:return False
     return any(term in text for term in TOPIC_HINTS)
 
@@ -513,6 +533,13 @@ def duplicates(a: dict, b: dict) -> bool:
     ka, kb = event_key(a), event_key(b)
     if ka and kb and ka == kb and diff <= 9:
         return True
+    # The same named commercial counterparty generates several reworded headlines.
+    # Restrict this shortcut to the same issuer, week and commercial topic.
+    counterparties=('drivewealth','arf','cross river','meritz','settlemint','privy','zilo','licuido','bitso')
+    matching=[p for p in counterparties if p in a.get('title','').lower() and p in b.get('title','').lower()]
+    commercial=('Partnerships','Products','Adoption')
+    if matching and diff <= 6 and a.get('category') in commercial and b.get('category') in commercial:
+        return True
     if diff > 4: return False
     a_words, b_words = norm_words(a.get('title','')), norm_words(b.get('title',''))
     if not a_words or not b_words: return False
@@ -547,9 +574,12 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
     existing_ids={x.get('id') for x in old if isinstance(x,dict)}
     candidates=[dict(x) for x in [*old,*incoming] if isinstance(x,dict) and is_recent(x.get('published_at'))]
     for item in candidates:
+        if item.get('source_type') in ('Media','News') and not is_investor_news(item.get('title',''),item.get('excerpt','')):
+            item['rejected_as_noise']=True
         if item.get('source_type') in ('Media','News'):
             found=identify_entities((item.get('title') or '')+' '+(item.get('excerpt') or ''))
             if found: item['entities']=found
+    candidates=[item for item in candidates if not item.get('rejected_as_noise')]
     candidates.sort(key=priority,reverse=True)
     consolidated=[]
     for item in candidates:
