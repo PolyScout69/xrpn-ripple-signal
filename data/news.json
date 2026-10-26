@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-26T22:51:51Z",
+    "ran_at": "2026-10-26T22:56:50Z",
     "starter_as_of": null,
     "schedule_utc": "18:00",
     "new_items": 0,
@@ -14,22 +14,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-26T22:51:51Z",
+      "checked_at": "2026-10-26T22:56:50Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-26T22:51:51Z",
+      "checked_at": "2026-10-26T22:56:50Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 178,
-      "checked_at": "2026-10-26T22:51:51Z",
-      "message": "Fetched 178 matching items."
+      "items_seen": 221,
+      "checked_at": "2026-10-26T22:56:50Z",
+      "message": "Fetched 221 matching items."
     }
   },
   "items": [
