@@ -17,7 +17,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Evernorth announces $80m equity purchase facility')['value'],-1)
         self.assertEqual(moon_for_story({'title':'Strategy files Form 8-K reported items 7.01','entities':['Strategy'],'source_type':'SEC','category':'SEC filings'}),[])
         self.assertEqual(score('Strategy buys 1,000 bitcoin for treasury', 'Strategy')['value'],1)
-        self.assertEqual(score('SEC approves spot XRP ETF','XRP Ecosystem')['value'],2)
+        self.assertEqual(score('SEC approves spot XRP ETF','XRP Ecosystem')['value'],3)
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
@@ -32,10 +32,10 @@ class MoonMeterTests(unittest.TestCase):
         meter=moon_for_story(dict(title='Evernorth announces share sale',entities=['Evernorth'],source_type='Official',impact='High'))
         self.assertEqual(meter[0]['value'],-1)
 
-    def test_uncertain_company_product_not_guaranteed_xrp_positive(self):
-        self.assertEqual(score('Ripple Treasury introduces RLUSD always-on platform','Ripple')['value'],0)
-        self.assertEqual(score('Ripple partners with bank for new corporate payments','Ripple')['value'],0)
-        self.assertEqual(score('Ripple integrates XRP Ledger XRPL settlement with institution','Ripple')['value'],1)
+    def test_optimistic_ripple_impact_still_distinguishes_direct_token_use(self):
+        self.assertEqual(score('Ripple Treasury introduces RLUSD always-on platform','Ripple')['value'],1)
+        self.assertEqual(score('Ripple partners with bank for new corporate payments','Ripple')['value'],1)
+        self.assertEqual(score('Ripple integrates XRP Ledger XRPL settlement with institution','Ripple')['value'],2)
 
     def test_standalone_filing_has_no_moon_rating(self):
         for form in ('S-3','10-Q','8-K'):
@@ -51,10 +51,29 @@ class MoonMeterTests(unittest.TestCase):
                 self.assertLessEqual(v,3)
                 self.assertGreaterEqual(v,-3)
 
-    def test_rumor_is_not_a_bullish_signal(self):
-        value=score('SWIFT Ripple XRP partnership rumor sparks speculation','Ripple','Media')
-        self.assertIsNone(value['value'])
-        self.assertEqual(value['confidence'],'Insufficient')
+    def test_rumour_scenario_is_scored_as_if_true_and_marked_unverified(self):
+        m=score('SWIFT Ripple XRP partnership rumor sparks speculation','Ripple','Media')
+        self.assertEqual(m['value'],3)
+        self.assertEqual(m['confidence'],'Unverified')
+        self.assertEqual(m['scenario'],'rumour')
+        self.assertTrue(m['if_true'])
+        self.assertIn('RUMOUR IS TRUE',m['reason'])
+
+    def test_negative_rumours_are_not_automatically_bullish(self):
+        m=score('Rumour: Evernorth files for bankruptcy','Evernorth','Media')
+        self.assertEqual(m['value'],-3)
+        self.assertEqual(m['scenario'],'rumour')
+
+    def test_planned_treasury_yield_scenario(self):
+        m=score('Evernorth could earn yield by lending XRP treasury assets','Evernorth','Media')
+        self.assertEqual(m['value'],2)
+        self.assertEqual(m['scenario'],'assumption')
+        self.assertEqual(m['confidence'],'Conditional')
+
+    def test_non_catalyst_rumour_is_not_forced_positive(self):
+        m=score('Rumour: general XRP market chatter','Ripple','Media')
+        self.assertEqual(m['value'],0)
+        self.assertEqual(m['scenario'],'rumour')
 
     def test_funding_and_clickbait_are_not_false_bullish_signals(self):
         self.assertEqual(score('Evernorth to buy more XRP with filing for 11.5M new XRPN stock shares','Evernorth')['value'],-1)
@@ -66,10 +85,10 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per diluted share rises 8%','Strategy')['value'],2)
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share declines 12%','Strategy')['value'],-2)
 
-    def test_xrp_extreme_requires_verification_and_flows(self):
+    def test_xrp_extreme_if_true_score(self):
         m=score('SEC approves spot XRP ETF with net inflows $2 billion','XRP Ecosystem','Official')
         self.assertEqual(m['value'],3)
-        self.assertEqual(m['method'],'headline_rules_v2')
+        self.assertEqual(m['method'],'headline_if_true_v3')
 
     def test_merged_articles_recompute_once_per_asset(self):
         item={'title':'Evernorth announces equity facility','excerpt':'May issue additional shares','entities':['Evernorth','Ripple','XRP Ecosystem'],'source_type':'Official'}
