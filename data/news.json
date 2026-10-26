@@ -3,16 +3,16 @@
   "version": 1,
   "scan": {
     "status": "ok",
-    "ran_at": "2026-10-26T19:14:29.592010Z",
+    "ran_at": "2026-10-26T19:23:25.373411Z",
     "schedule_utc": "18:00",
-    "new_items": 45,
+    "new_items": 23,
     "source_note": "Sources with errors are identified; coverage is not exhaustive."
   },
   "sources": {
     "sec": {
       "name": "SEC EDGAR",
       "status": "error",
-      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "checked_at": "2026-10-26T19:23:25.373411Z",
       "items_seen": 0,
       "message": "SEC_USER_AGENT with real contact email must be configured as a repository variable"
     },
@@ -20,21 +20,21 @@
       "name": "Evernorth official",
       "status": "not_checked",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "checked_at": "2026-10-26T19:23:25.373411Z",
       "message": "Official-source discovery not configured; related stories may appear through news feeds"
     },
     "ripple": {
       "name": "Ripple press centre",
       "status": "not_checked",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "checked_at": "2026-10-26T19:23:25.373411Z",
       "message": "Official-source discovery not configured; related stories may appear through news feeds"
     },
     "media": {
       "name": "Financial news feeds",
       "status": "ok",
-      "checked_at": "2026-10-26T19:14:29.592010Z",
-      "items_seen": 45,
+      "checked_at": "2026-10-26T19:23:25.373411Z",
+      "items_seen": 57,
       "message": "Latest scan completed"
     }
   },
@@ -286,6 +286,42 @@
       "added_at": "2026-10-26T19:14:29.592010Z"
     },
     {
+      "id": "dc1bb59238e7c62b",
+      "title": "Ripple Partner Arf Brings Its $10 Billion Payments Lending Business to the XRP Ledger - Yahoo Finance",
+      "published_at": "2026-10-23T11:30:50Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSXY5QzNPRmtDeC1GT21xZElNakt2Y3NmN0VHRi1OZHZhblZLWkk0SmRTcFE0aVJuTEtkcEpMR09Nb2VndkpVanhVMEpiczg1RTZlbU13UFE2WG01WkNsY2owMV9zTWFIZDJxSXpxczNXZ2pKOU1yLUhUUE5QRmdhQ0x6R0FUM3BQSmsyLWNWb3k2eGJ1VFhJag?oc=5",
+      "excerpt": "Ripple Partner Arf Brings Its $10 Billion Payments Lending Business to the XRP Ledger - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "5a7afe9aa9b7b790",
+      "title": "Arf & Ripple bring RLUSD liquidity to XRPL payments - ChannelLife UK",
+      "published_at": "2026-10-23T08:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUndEekw3VGRKM1huWlBsVVpORXZXVENhclRwWS1UNm8wcnM3Mm5yMVRJb2pMOTRjcjBFYVI0QTEtTkZwdG1tejFCQVVXdUZmb2cwY2dxZzZ1ZUx4eGdaRjg0Tk4yMU4zTjhybGxwOTkwbUFHS2FBSFNkQWl1WF9XM2U5RG4wMjVB?oc=5",
+      "excerpt": "Arf & Ripple bring RLUSD liquidity to XRPL payments - ChannelLife UK",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
       "id": "1f5f80c2b994e978",
       "title": "Evernorth XRP Holdings to Target Higher XRP Per Share, CEO Says - TradingView",
       "published_at": "2026-10-23T06:34:00Z",
@@ -428,6 +464,24 @@
       "excerpt": "Ripple (XRP) Announced a Major New Partnership - Bitcoin Sistemi",
       "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
       "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "72c5d92418383042",
+      "title": "XRP News: Ripple Partners With Arf to Bring RLUSD Settlement Liquidity to XRP Ledger - TradingView",
+      "published_at": "2026-10-22T17:09:20Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOc25IQ2NQWnlaODB6LVJ2ZW9XN2h1UWlJZjllY1JJblVzcjBhRlZXYi1rZWlEZ2hyMXkzeHY0NDFVaHkycVYzMjE5OFRXUnZzbGdjT1lmVFBadHVrXzA1aGlueWZ4VWd0ekMtT29hQXFfWF9ldGVDZGwtbE1fU05wVGgzSklaYVE1ZG1Ka2VkSzBPQ0FjX3kyYUxFUkZzZms4RHhfa2U1bms0VU05c2tGLS11N0ctX0M5YXhxUU1taEdYd1JFcklQRk5XU3BvZlFybVV4RzUtei1oUQ?oc=5",
+      "excerpt": "XRP News: Ripple Partners With Arf to Bring RLUSD Settlement Liquidity to XRP Ledger - TradingView",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
     },
     {
       "id": "ed418152b0964748",
@@ -574,6 +628,96 @@
       "added_at": "2026-10-26T19:14:29.592010Z"
     },
     {
+      "id": "0a814e10cb8a9c37",
+      "title": "A fund reports $11.50 warrants alongside its Evernorth (XRPN) share holdings. - Stock Titan",
+      "published_at": "2026-10-20T01:35:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN2R2LU9JdXVTVkNwenRuQ0NrMjNES1k1ZE1wYy0wOVhBUV9FVnhmTklvQnhLT3g5ZllFaHVRT2JGaHRZRXVaMldHTmJPMXF3NTR3d2FjXy1CdVprbllKbWhvTkhsVG11MFFjV3lBSXFZUnlzV3BGYm92eEFuczIzRmNZSkRVVS1uUktEZGdTbWs5a2lFeHc1MEVRNlFxTmJ0VnlLRnIxTjBIT0RqUzlLRW9sOV9DMmpvV1hOTHM4MlZGOC1jUFZWUDAyMA?oc=5",
+      "excerpt": "A fund reports $11.50 warrants alongside its Evernorth (XRPN) share holdings. - Stock Titan",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "f323b6a153b66909",
+      "title": "Circle Paid Its Partners $819 Million in Six Months. Can Ripple’s RLUSD Compete? - 24/7 Wall St.",
+      "published_at": "2026-10-18T12:31:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNkc0emw1Tk5hRW5hdVZFZXR5UnY3MUI2LXl2RkhPNzBveXh1OWk0U3Bwc2dRbi0xMjA5eTB4MUcwdWVWVU45SnN5cEVKejBtY3dXRVN4VG5nQ0RVVXZNQm5oUXdRa1dhUlZmQ1VOWVY2djJvNjItaV9SUTlyMlluT2dESG1iZHVZTFM1YmZyWDVHaktXUkVScHl3MGVHSXNnSTZvNXJKbVlOZUlSbGF4X0V2MENVUnY2NjhpdEFKY2lhMEdxSmtFOFdrRVZqa1ZX?oc=5",
+      "excerpt": "Circle Paid Its Partners $819 Million in Six Months. Can Ripple’s RLUSD Compete? - 24/7 Wall St.",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "67b8f1ebc0dd9a0c",
+      "title": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
+      "published_at": "2026-10-17T15:38:35Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5",
+      "excerpt": "Ripple and DriveWealth Partner to Connect US Stock Trading With RLUSD Settlement on XRP Ledger - CryptoRank",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "db8d2f72c1ef7964",
+      "title": "Ripple Price Forecast: XRP bulls build new support base amid RLUSD payments expansion - tmgm.com",
+      "published_at": "2026-10-16T22:44:55Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORkotZjFaTzdyampUUC15MmprZGFZR2dqcDduSmpIUkZqS1RxSk5PZzc3QzloMGNBWUhIcm1TMVJORmFTcE5EY3BWeFhoUTM2REdtT0VUX1JMLTFoZG8taUtvTW9jcWhpRFlRb1JHVm5mYXNYSnZVdTJISkk2NWdTUUJuUGV2cHMxYS02bGs1U0dWRVk2OTZhaVZnQVVPbWxSVTIwblBtaVVMbHo5YnlqZXRiRzBTU2ItTm5GbUtiMVBwdEctXzBtT0tkSElYZGJmZ1FIaVFncE0tT1dsSU1zMXgyT3k?oc=5",
+      "excerpt": "Ripple Price Forecast: XRP bulls build new support base amid RLUSD payments expansion - tmgm.com",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "b7994c90b337c6c9",
+      "title": "Ripple's RLUSD Enters US Banking Rails Through Cross River Partnership - BigGo Finance",
+      "published_at": "2026-10-16T18:05:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9INVRVLVlraXZtVUJYSEJtOXJhYU12Tmd2R2lUbjd4NlZ6VzQ0dVB6ZjR4WEZsZkpvWEdNbkpKTTNNN0MydGFCUjA0RXYwTzBfbHRUNlo4TGhKOHJTMmRGMzZWMGNJX2Y0SlJvckNmUWxkVVFidXc?oc=5",
+      "excerpt": "Ripple's RLUSD Enters US Banking Rails Through Cross River Partnership - BigGo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
       "id": "d4fee2e9e024653f",
       "title": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - The Motley Fool",
       "published_at": "2026-10-16T07:00:00Z",
@@ -592,6 +736,42 @@
       "added_at": "2026-10-26T19:14:29.592010Z"
     },
     {
+      "id": "aead1308008fcdab",
+      "title": "Cross River and Ripple Partner to Integrate RLUSD Stablecoin into Core Banking Infrastructure - FF News",
+      "published_at": "2026-10-16T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTDRESjhIclFFQXRwNHNQSjQwTnRnUTVkOEJFYzBnNDFXZjk5MWg3M1BPREtxN24wTnZreC1PUk9RTldDWmN4bGZJRWdJellPWVBzcXNhSHE0R01ZeEpOTG9IcHFHWWtiMVN0Z1NJTmFmbEhoUFlaVTd4RThWSFdHeDBXSy1RM0lfckZ5Y0xuMHhsVTEyQlVnaVp1S0IxSzl4TEVRUzNod1pGaVdsLXlnNndnWQ?oc=5",
+      "excerpt": "Cross River and Ripple Partner to Integrate RLUSD Stablecoin into Core Banking Infrastructure - FF News",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "16abbf852774f587",
+      "title": "XRP Payments on X in Focus as Cross River Bank Partners With Ripple - Coinpedia",
+      "published_at": "2026-10-16T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVWp0QmYzVHhjQ3VlRkNuTXhfTFVvQnhHVEc5Z1hNcnlvTktraS00NGVGTzA4V29UZnRPc2RtNXNGSmRrQVJNeVRTYUpKR0FuU21LTTkxTEtUaG8zR0wyaS1jeEhOQ3o0REhEVjZ0cG5Cc1pUSGk0NHVlVzhHZTJFS1d3cXRGZHE3UEZmaTZYd0c3WGMtUW5VM0R4SdIBoAFBVV95cUxNc2NKVC1SUlpMbUotTko2dndqcVg1M1lPQkY1Qm9ZR2twQ3pPWnZwUy1EX2tDdUtjLTR1Vm5ZU3VjRllySFM5RlQ5SDc4S3RlZlUwUjJoeUpZSU11dEJraWRINFFqeEJUT3FjbXVJWFRsME5GQncwcE9aYU9UcjR2TXc5UmZfUXJPZjBlR1c2MmlFc1lhSHAzN1UzVWNmTVlY?oc=5",
+      "excerpt": "XRP Payments on X in Focus as Cross River Bank Partners With Ripple - Coinpedia",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
       "id": "64bde29bf6b9cbe4",
       "title": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - Yahoo Finance",
       "published_at": "2026-10-15T07:00:00Z",
@@ -608,6 +788,114 @@
       "excerpt": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - Yahoo Finance",
       "why_it_matters": "Assess cost of capital, dilution and financing execution.",
       "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "d36e26765c8b5019",
+      "title": "Ripple Taps DriveWealth to Settle Trades With RLUSD Stablecoin - finance.biggo.com",
+      "published_at": "2026-10-14T18:18:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1CUGNfaFI4Q2dUVFNVSF9XekVZUFRLUDZvOW5JYTliSmpDUU1zbFIteWdpd1FGZENqWVQyMUhkV0VrZWZlODJBYjE1RHFMYms3ekFFaTNxVTNldXVjTFlpWG5HSHY3NEoyblZQZFVhSzBUMUhOS2c?oc=5",
+      "excerpt": "Ripple Taps DriveWealth to Settle Trades With RLUSD Stablecoin - finance.biggo.com",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "0e117be677cd8ddd",
+      "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
+      "published_at": "2026-10-14T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
+      "excerpt": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "45ea079449d5b298",
+      "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
+      "published_at": "2026-10-14T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
+      "excerpt": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "b7b87cb1fc420b4f",
+      "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
+      "published_at": "2026-10-14T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
+      "excerpt": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "dd434695ba4379bc",
+      "title": "Who Really Owns Nasdaq's New XRP Stock? Fresh SEC Filing Names Key Ripple Insiders - Cryptonews.net",
+      "published_at": "2026-10-13T21:23:20Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "SEC filings",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE00Y0hrM3lrUEhjOHFGSnA0N1BDYTQ3NlQyNWpLaDJQMUNTV3c0RENEX3lCcjFIN3ZiZXpKM3FnblZkUF9vdmZjWUNiOXNZZmlKTWdNQlltbzM?oc=5",
+      "excerpt": "Who Really Owns Nasdaq's New XRP Stock? Fresh SEC Filing Names Key Ripple Insiders - Cryptonews.net",
+      "why_it_matters": "Read original documents and watch material changes to financing, risks and share count.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "2ac60052c4735348",
+      "title": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
+      "published_at": "2026-10-13T17:54:32Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZWMzSXlJU1dFRmdOakE0ckpvb3pWbUFzd1BSYVJwZF9YYjBLdzN4WmpOcUtocS1Pb2E1OXBUZ192SDVHV3ZfWUhaa0c0WDN6QTV6R0x4Z2RJUkNFRk1yY0t0d0dTLXFxbFdFS0VJYzQxQjJUY01HLTF4cU5mQ2g1OFBraDh2S3p0TmRpRm5yNWJ2WFNmdy11X0JXN0xsdw?oc=5",
+      "excerpt": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
     },
     {
       "id": "c16b8413968aa995",
@@ -662,6 +950,78 @@
       "excerpt": "Evernorth’s Shareholders Watched 473 Million XRP Lose $443 Million Before the Stock Ever Traded. On Its First Day on Nasdaq the Market Put a Price on What Is Left. - 24/7 Wall St.",
       "why_it_matters": "Look for measurable adoption and business impact.",
       "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "f627a307e8637e3d",
+      "title": "TrustLinq Expands Ripple Partnership, Enabling RLUSD-Funded Bank Payments to 190+ Countries By Chainwire - Investing.com",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNYWIwd0VyeHNXZDlBV2h0WkRCZXpxYkN1M1c5NmtZZ0ticUg4SU04blNWNGRWWHFZdVVacmVtN3JtVjlYeTUzdmJBTjdjaTFPTDNBZ3ZOSldFQkV4Y0tRVWRPcG5qRjFMTnZIbFJ5ckZPdWNmWXVRLVZBVnppZ3FHRk4zY21qRl9kTXdmV2FEbF85eklqZC1QMnllSUJERjFhV01Kbzc5Um0zVVVfMTFlS2Q4LTM1NUZHN1d6eVFUY1QtVl9yRC16NXA2Sm1LRE1aRmRvVVdWQzVYWHJRbHZYTQ?oc=5",
+      "excerpt": "TrustLinq Expands Ripple Partnership, Enabling RLUSD-Funded Bank Payments to 190+ Countries By Chainwire - Investing.com",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "cf5e7a2d4f1c4841",
+      "title": "Ripple, Stripe-owned Privy partner to bring embedded wallets to XRP Ledger - The Block",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNjBxczgtcTVHTmpuSU5wdE9oejBxUUlIMVZtRG8tVG14ZzUtVzFZLURnU1kxcnJZaGQ4T0NWRGplYlVyNkZFaEoxTEpLYzNvWnRUeEVBdTlwUE1FbExxZThiSnd6eDd0UnFMZGJPclZKTDkyNTJ1dHhDbU9FbEhPNUJRNlJDQy1nSG5WY3J4ZFNDaEtySTgyeW5B?oc=5",
+      "excerpt": "Ripple, Stripe-owned Privy partner to bring embedded wallets to XRP Ledger - The Block",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "702c426e2b281879",
+      "title": "XRP News: Ripple Partners With Stripe’s Privy to Expand XRP Ledger Wallets - TradingView",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPV2x6UFZDcF9LZ2dwMjFoVjlPLWtRZmxnZFNobEk0ZFhZQTB5eVN3M0lqdERGNWVBZDVacVZadkthR0k5T1l2Yk0tOUFFQUwyNms2NXVTY1lkOTlMV2s5ZFo3clRWb2xMYjBmWkI5cEIxUU1SLXphVnZoTW1DeWF2cFhnNDZ6bngxb2QwRHZYOEdGOWItTGZ4VEw2bF9pYXVuWnozeTBhVHZMS2VlTy15MFFkWHBTNW9mN2tnekFkeDctejRDb0pPdXdMelVKdw?oc=5",
+      "excerpt": "XRP News: Ripple Partners With Stripe’s Privy to Expand XRP Ledger Wallets - TradingView",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "e8324f20a646bfc1",
+      "title": "Ripple partners with Stripe’s Privy to bring XRP payments to apps - Crypto News",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8yemdod1dtRGdBanEwVnhWVHpJckVULV9iRnJxUEU2cTZEUVlIRllONkJ0WWU0dXV2QUY1OERvRlQ0QzhNVjBaSmVWaF9GanhRWVpheFo2RzFoN3o1LVY3Y1BYTzZwZkdpMUpWdXptQzVqNjF4VWhGYVVEenNyQQ?oc=5",
+      "excerpt": "Ripple partners with Stripe’s Privy to bring XRP payments to apps - Crypto News",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
     },
     {
       "id": "f16cf93c3ea458a1",
@@ -844,6 +1204,42 @@
       "added_at": "2026-10-26T19:14:29.592010Z"
     },
     {
+      "id": "2447526beb7513b9",
+      "title": "Shareholders Approve Evernorth Business Combination; Transaction and Related Private Placements Have Raised Over $1 Billion; Nasdaq Trading Under \"XRPN\" Expected to Begin on October 8 - PR Newswire",
+      "published_at": "2026-10-01T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQbzlkY0ptcVhhcDBSZk9nYTV3ajh1Y2lqTDVMUUctTlRWR0VNMFRnSjc4c0lsQnBXbjlNZXRMSnFublFmODRNY3RsZkdIWnVTc19VUkFGT3IxaldkX1daZjlMbEpwUVAwa0ExVEx3aFdyLTFrX0Z2YWUtTmZMTGpkMmZWNmlqYTVvbEthZ2ZSRzdWVDdIaWtGdnVSZV9qTG9NWUFEZnl0SFh5dzNFNV9rZU9vdUY4T1FzaV8zVUZNdzIzbDNDSmFZTTlpaUU5Q3pJb2wtY3Jlbi1kYU90cHJiTVBYMFpkLWxDRUotRVV6ZTdEZWtzTzFUSURpX01Rd0dveVdvUkZISDZMXzdoaUU3c2hfd01YNzVlOUd0aWV6MnhRX0lEbF94eHZkNl94cTYxWEM2RjE4aHYwSnk2TkFZQm9sbmlqN1NWeF8xb0VyZEo3WWhs?oc=5",
+      "excerpt": "Shareholders Approve Evernorth Business Combination; Transaction and Related Private Placements Have Raised Over $1 Billion; Nasdaq Trading Under \"XRPN\" Expected to Begin on October 8 - PR Newswire",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
+      "id": "672ca5bccaa2efb4",
+      "title": "Evernorth Merger Vote Passes, Clearing Path for $473M XRP Treasury Deal - CCN.com",
+      "published_at": "2026-10-01T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZWdUM1dEMGVZOGNNWUNMdzZJVWJzWGdNTllLT25YV1F4VG5aM2toX3Q4OWRWdHJiUkJUcm9nczhubjVZR2dZVXNNRWRnZllaU2QzX1d2Z0ZBY01oaW1GelpZOEwzLTF2TXBRSEpnSG8wbUpzZGtSVF9FOG9FWjdIUE1oTQ?oc=5",
+      "excerpt": "Evernorth Merger Vote Passes, Clearing Path for $473M XRP Treasury Deal - CCN.com",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
+    },
+    {
       "id": "f63913c2a2faafb0",
       "title": "An XRP Treasury Company Is One Vote Away from Nasdaq: What Happens if Evernorth Lists as XRPN? - Yahoo Finance",
       "published_at": "2026-09-29T07:00:00Z",
@@ -878,6 +1274,24 @@
       "excerpt": "Evernorth Is One Vote Away From Bringing XRP Treasury Stock XRPN to Nasdaq - Yahoo Finance",
       "why_it_matters": "Assess cost of capital, dilution and financing execution.",
       "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "37e80fb0a8d76c95",
+      "title": "South Korea's NH Investment Backs Evernorth's XRP Treasury With $30 Million - Startup Fortune",
+      "published_at": "2026-09-20T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeFlTVGVLdDRKOUQwa2dCVGluSlI4YUVkTDRlNXFqdTFiQUs0VHFMYTJQUXh5ZExXQzhPQ1hqQ2RTOGhxbmE0UUF2dXJ1RkdZQnhaVl8wbXkxMC11Mkp4b0xlTG1iM3hTeXcydFdXSkpDZEZyQmY3ZTNxZDJOR3d5QWRNR05QdVowYWE5MTdzRDR0MklPNlNRZTQxU3Joc0FJOGc?oc=5",
+      "excerpt": "South Korea's NH Investment Backs Evernorth's XRP Treasury With $30 Million - Startup Fortune",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:23:25.373411Z"
     },
     {
       "id": "80e1c9dd94d3e407",
