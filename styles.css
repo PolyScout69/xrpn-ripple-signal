@@ -69,3 +69,9 @@
 .featured .moon-meter.neutral{border-color:#4a5e54;background:#142420}
 .story-card .moon-meters{margin:12px 0}
 @media(max-width:560px){.moon-meter{padding:11px 12px}.moon-scale{gap:4px}.moon-name{font-size:9px}.moon-header{gap:8px}.moon-readout strong{font-size:20px}.moon-readout span{font-size:10px}}
+
+/* Moon Meter v2: no evidence is different from a neutral signal. */
+.moon-meter.unrated{--mm-accent:#a1adb8;--mm-halo:transparent;border-style:dashed;border-color:#35464e;background:#0e171e}
+.moon-meter.unrated .moon-step .moon-bar{opacity:.30}
+.moon-evidence{font-size:10px;letter-spacing:.03em;color:#8da2ac;margin-top:10px;border-top:1px solid #263740;padding-top:8px}
+.featured .moon-meter.unrated{background:#132320;border-color:#40544e}
