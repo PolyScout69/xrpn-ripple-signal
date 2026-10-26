@@ -3,10 +3,10 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-26T19:52:09Z",
+    "ran_at": "2026-10-26T19:56:46Z",
     "starter_as_of": null,
     "schedule_utc": "18:00",
-    "new_items": 190,
+    "new_items": 6,
     "source_note": "Automated scan: source-specific checks; status panel exposes failures and setup needs."
   },
   "sources": {
@@ -14,36 +14,36 @@
       "name": "Evernorth SEC EDGAR",
       "status": "needs_setup",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:52:09Z",
+      "checked_at": "2026-10-26T19:56:46Z",
       "message": "SEC_USER_AGENT not configured. Set repository variable with a real name and contact email."
     },
     "sec_strategy": {
       "name": "Strategy MSTR SEC EDGAR",
       "status": "needs_setup",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:52:09Z",
+      "checked_at": "2026-10-26T19:56:46Z",
       "message": "SEC_USER_AGENT not configured. Set repository variable with a real name and contact email."
     },
     "ripple": {
       "name": "Ripple press centre",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-26T19:52:09Z",
+      "checked_at": "2026-10-26T19:56:46Z",
       "message": "Ripple press articles found, but dates/details could not be extracted."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 23,
-      "checked_at": "2026-10-26T19:52:09Z",
+      "checked_at": "2026-10-26T19:56:46Z",
       "message": "Fetched 23 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 196,
-      "checked_at": "2026-10-26T19:52:09Z",
-      "message": "Fetched 196 matching items."
+      "items_seen": 194,
+      "checked_at": "2026-10-26T19:56:46Z",
+      "message": "Fetched 194 matching items."
     }
   },
   "items": [
@@ -166,63 +166,6 @@
           "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management",
           "source_type": "Official",
           "published_at": "2026-10-26T12:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "e32be4c5f1829e",
-      "title": "Will a $20 Billion Bitcoin Windfall Fuel a Massive MicroStrategy Short Squeeze Oct. 29?",
-      "published_at": "2026-10-25T16:15:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "24/7 Wall St. · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSExvVEN2SldlLXdsSGVDU21lUUZzWGZLMTJNdXBkZWxBTVZVcGNBc2R4Wmg0WEppUXhfM1pQZ3FPVThwc21PMk1aMXhlZlpfQVE5dGhDVzVZcjREOTdzbDlYd3FlYWpsQl9fejRJZEhVRldiZGtfUV90RUF0LWJqeVpuN2VlODAtV19taFUtSldiOEVYTGFSWERjbUFMR2FTcDhGT1N5TUphZDNBM2ViV1AzeS0yaEFmR1YyV1VNaHpjdWJEd0FR?oc=5",
-      "excerpt": "Will a $20 Billion Bitcoin Windfall Fuel a Massive MicroStrategy Short Squeeze Oct. 29? 24/7 Wall St.",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:15Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Will a $20 Billion Bitcoin Windfall Fuel a Massive MicroStrategy Short Squeeze Oct. 29?",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSExvVEN2SldlLXdsSGVDU21lUUZzWGZLMTJNdXBkZWxBTVZVcGNBc2R4Wmg0WEppUXhfM1pQZ3FPVThwc21PMk1aMXhlZlpfQVE5dGhDVzVZcjREOTdzbDlYd3FlYWpsQl9fejRJZEhVRldiZGtfUV90RUF0LWJqeVpuN2VlODAtV19taFUtSldiOEVYTGFSWERjbUFMR2FTcDhGT1N5TUphZDNBM2ViV1AzeS0yaEFmR1YyV1VNaHpjdWJEd0FR?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-25T16:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "bcb65e4e34b4e77d",
-      "title": "Ripple Just Announced What XRP Holders Have Been Waiting For - Times Tabloid",
-      "published_at": "2026-10-25T09:00:53Z",
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUVNUdXJLM2RtOU9JTVl4UXdjS25xM1RYUWJhcW4tZVp6MlhQUGo3MnlWSkpDRHpXMHY1enlmUDhyUXNQMU1VMDNZNk5ncW5NWl9BUF9ibzFSRGo5WjVBTHJVSHM5VmU5Q3ljcWNaU1pVOGo3Uk4wLWZxazNsRzlpelpvN0NFQUQ1bHEyWFVnbw?oc=5",
-      "excerpt": "Ripple Just Announced What XRP Holders Have Been Waiting For - Times Tabloid",
-      "why_it_matters": "Look for measurable adoption and business impact.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "Ripple Just Announced What XRP Holders Have Been Waiting For - Times Tabloid",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUVNUdXJLM2RtOU9JTVl4UXdjS25xM1RYUWJhcW4tZVp6MlhQUGo3MnlWSkpDRHpXMHY1enlmUDhyUXNQMU1VMDNZNk5ncW5NWl9BUF9ibzFSRGo5WjVBTHJVSHM5VmU5Q3ljcWNaU1pVOGo3Uk4wLWZxazNsRzlpelpvN0NFQUQ1bHEyWFVnbw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-25T09:00:53Z"
         }
       ]
     },
@@ -526,36 +469,6 @@
       ]
     },
     {
-      "id": "fd2c62a68c215c",
-      "title": "#xrplproposesconfidentialrwatransfers Community Insights & Market Sentiment | Binance Square",
-      "published_at": "2026-10-22T10:26:23Z",
-      "date_only": false,
-      "entities": [
-        "XRP Ecosystem"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 63,
-      "source": "Binance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbF8zdUQ5SG9McmppdDRCODE0VXBDWjRyT3Jpa2ZMQi1OMUY3RVlLWXREN1p4T1hfMnFnbm1XbFE1X0pGdF9Tc2otdFJYX0l0N1Jtc2huQzJZbXRPU3pLY1loUHNYS0kzNmsxNExaX2tZckc3aUF2Sm0tLVlpX01lZ1RRWEgxY252?oc=5",
-      "excerpt": "#xrplproposesconfidentialrwatransfers Community Insights & Market Sentiment | Binance Square Binance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:14Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "#xrplproposesconfidentialrwatransfers Community Insights & Market Sentiment | Binance Square",
-          "name": "Binance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbF8zdUQ5SG9McmppdDRCODE0VXBDWjRyT3Jpa2ZMQi1OMUY3RVlLWXREN1p4T1hfMnFnbm1XbFE1X0pGdF9Tc2otdFJYX0l0N1Jtc2huQzJZbXRPU3pLY1loUHNYS0kzNmsxNExaX2tZckc3aUF2Sm0tLVlpX01lZ1RRWEgxY252?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-22T10:26:23Z"
-        }
-      ]
-    },
-    {
       "id": "4465859bbd2741",
       "title": "Uphold Lists Evernorth's XRPN Stock, Expanding XRP Treasury Access",
       "published_at": "2026-10-22T00:30:00Z",
@@ -639,33 +552,6 @@
           "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9POGk2eXN3UmFmdUJaSjdSbndHcVp6M1dGZ1VMRGRhWWEyWmdsS0pPamR4Z3RVbHl4dVFJcWl1THhoZkRQdWFZVml1UFVrTEwxV2F0Y3F1NG03TWsyZmJJenYxc2owcTR6R0lVMDBjOXJWQ3RWWVE?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-21T18:27:00Z"
-        }
-      ]
-    },
-    {
-      "id": "9b5af0c8f2928378",
-      "title": "XRP Hits Nasdaq: Evernorth (XRPN) Lists With 473M XRP — But Price Down $61B - Binance",
-      "published_at": "2026-10-21T16:53:39Z",
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9HSzdBaGgzcVBRZzBpZF9lbVFqTGFzOE1Pb2F0RlJUejdkQ3lxOF84OG91R2JjWklOMExfX3Z2UmN4VUdMTmc2REVINF9ienEtOU1DRVp1VnAxaktmWW9yRXJHczM?oc=5",
-      "excerpt": "XRP Hits Nasdaq: Evernorth (XRPN) Lists With 473M XRP — But Price Down $61B - Binance",
-      "why_it_matters": "Look for measurable adoption and business impact.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "XRP Hits Nasdaq: Evernorth (XRPN) Lists With 473M XRP — But Price Down $61B - Binance",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9HSzdBaGgzcVBRZzBpZF9lbVFqTGFzOE1Pb2F0RlJUejdkQ3lxOF84OG91R2JjWklOMExfX3Z2UmN4VUdMTmc2REVINF9ienEtOU1DRVp1VnAxaktmWW9yRXJHczM?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-21T16:53:39Z"
         }
       ]
     },
@@ -970,33 +856,34 @@
           "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWEV5Y1RRVXhLWDRxdmFzb1dGU0Q3Nkg2b1hUb3puNldXdFdMQTEzRjlybEpIb3JqZUtJMURhOU84c0s1cFFGWGhBeVpMalpnNUdkTEVUd2hiMWtjOTd6MDBNVUJZb1FQNzNSb3JaNXQ0ZUtKZWs5NENwUXlOSFF1dEFJTjJtU0VrOXBoX2VndjJXNVcxVjZzbEt4SndpS0IwUGg5RVNyc3RGOUV0RzdPNjlQdEdMZ3B6Z2JmNlNReXdJRFJDRnlfdmpuaWw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-17T15:38:35Z"
-        }
-      ]
-    },
-    {
-      "id": "db8d2f72c1ef7964",
-      "title": "Ripple Price Forecast: XRP bulls build new support base amid RLUSD payments expansion - tmgm.com",
-      "published_at": "2026-10-16T22:44:55Z",
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Products",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORkotZjFaTzdyampUUC15MmprZGFZR2dqcDduSmpIUkZqS1RxSk5PZzc3QzloMGNBWUhIcm1TMVJORmFTcE5EY3BWeFhoUTM2REdtT0VUX1JMLTFoZG8taUtvTW9jcWhpRFlRb1JHVm5mYXNYSnZVdTJISkk2NWdTUUJuUGV2cHMxYS02bGs1U0dWRVk2OTZhaVZnQVVPbWxSVTIwblBtaVVMbHo5YnlqZXRiRzBTU2ItTm5GbUtiMVBwdEctXzBtT0tkSElYZGJmZ1FIaVFncE0tT1dsSU1zMXgyT3k?oc=5",
-      "excerpt": "Ripple Price Forecast: XRP bulls build new support base amid RLUSD payments expansion - tmgm.com",
-      "why_it_matters": "Monitor real product usage and commercial demand.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
+        },
         {
-          "title": "Ripple Price Forecast: XRP bulls build new support base amid RLUSD payments expansion - tmgm.com",
+          "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
           "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORkotZjFaTzdyampUUC15MmprZGFZR2dqcDduSmpIUkZqS1RxSk5PZzc3QzloMGNBWUhIcm1TMVJORmFTcE5EY3BWeFhoUTM2REdtT0VUX1JMLTFoZG8taUtvTW9jcWhpRFlRb1JHVm5mYXNYSnZVdTJISkk2NWdTUUJuUGV2cHMxYS02bGs1U0dWRVk2OTZhaVZnQVVPbWxSVTIwblBtaVVMbHo5YnlqZXRiRzBTU2ItTm5GbUtiMVBwdEctXzBtT0tkSElYZGJmZ1FIaVFncE0tT1dsSU1zMXgyT3k?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
           "source_type": "Media",
-          "published_at": "2026-10-16T22:44:55Z"
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        },
+        {
+          "title": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
+          "name": "Google News RSS",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZWMzSXlJU1dFRmdOakE0ckpvb3pWbUFzd1BSYVJwZF9YYjBLdzN4WmpOcUtocS1Pb2E1OXBUZ192SDVHV3ZfWUhaa0c0WDN6QTV6R0x4Z2RJUkNFRk1yY0t0d0dTLXFxbFdFS0VJYzQxQjJUY01HLTF4cU5mQ2g1OFBraDh2S3p0TmRpRm5yNWJ2WFNmdy11X0JXN0xsdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T17:54:32Z"
         }
       ]
     },
@@ -1088,27 +975,7 @@
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTDRESjhIclFFQXRwNHNQSjQwTnRnUTVkOEJFYzBnNDFXZjk5MWg3M1BPREtxN24wTnZreC1PUk9RTldDWmN4bGZJRWdJellPWVBzcXNhSHE0R01ZeEpOTG9IcHFHWWtiMVN0Z1NJTmFmbEhoUFlaVTd4RThWSFdHeDBXSy1RM0lfckZ5Y0xuMHhsVTEyQlVnaVp1S0IxSzl4TEVRUzNod1pGaVdsLXlnNndnWQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-16T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "16abbf852774f587",
-      "title": "XRP Payments on X in Focus as Cross River Bank Partners With Ripple - Coinpedia",
-      "published_at": "2026-10-16T07:00:00Z",
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVWp0QmYzVHhjQ3VlRkNuTXhfTFVvQnhHVEc5Z1hNcnlvTktraS00NGVGTzA4V29UZnRPc2RtNXNGSmRrQVJNeVRTYUpKR0FuU21LTTkxTEtUaG8zR0wyaS1jeEhOQ3o0REhEVjZ0cG5Cc1pUSGk0NHVlVzhHZTJFS1d3cXRGZHE3UEZmaTZYd0c3WGMtUW5VM0R4SdIBoAFBVV95cUxNc2NKVC1SUlpMbUotTko2dndqcVg1M1lPQkY1Qm9ZR2twQ3pPWnZwUy1EX2tDdUtjLTR1Vm5ZU3VjRllySFM5RlQ5SDc4S3RlZlUwUjJoeUpZSU11dEJraWRINFFqeEJUT3FjbXVJWFRsME5GQncwcE9aYU9UcjR2TXc5UmZfUXJPZjBlR1c2MmlFc1lhSHAzN1UzVWNmTVlY?oc=5",
-      "excerpt": "XRP Payments on X in Focus as Cross River Bank Partners With Ripple - Coinpedia",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
+        },
         {
           "title": "XRP Payments on X in Focus as Cross River Bank Partners With Ripple - Coinpedia",
           "name": "Google News RSS",
@@ -1263,75 +1130,6 @@
           "url": "https://www.evernorth.xyz/press-release-10-14-2026",
           "source_type": "Official",
           "published_at": "2026-10-14T12:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "0e117be677cd8ddd",
-      "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
-      "published_at": "2026-10-14T07:00:00Z",
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
-      "excerpt": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
-        {
-          "title": "Ripple partners with DriveWealth for RLUSD settlement and global payments - Crypto News",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UnVEVHA3d3d2dnpud2JTUWIzeWNFZDZHQi1pdUZRSXJ5X3RDcWZ0NXg2MFdLZ3JiVDFzdGtrVGZkY2xWUG1mSnp0MUhYUW1leTlZRmpBZV9yNXdVbkNJd0RvVTc1TV9WY3N5MXAtWGIxZGZ4MHNTaUhaUTRLaEk?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        },
-        {
-          "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "b7b87cb1fc420b4f",
-      "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
-      "published_at": "2026-10-14T07:00:00Z",
-      "entities": [
-        "Ripple",
-        "XRP Ecosystem"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
-      "excerpt": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
-        {
-          "title": "Ripple Partners With DriveWealth To Expand XRP, RLUSD’s Use For Global Payments - CoinGape",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUnVfYl9OTUFibW5lSktjTnR4RUkzYUljcE8yZ2YyTU8wb1YxR3BDckUtV2ptdzVySnRhY0JhZVp2VVFhSHlwbnRxd3QtbWtHZXozZ29vOUVWLWxLUzNNamJGNldrbXhzb01ZaFNoall0d2Q4ak1ycXIzS1QxdC1IOUNiTHhsYU5Pajk3QkZpTF9pSF9wYWY4Yksxb0JYUzZV?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        },
-        {
-          "title": "Ripple Partners With Privy to Expand XRPL Access for XRP and RLUSD Payments - CoinGape",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZWMzSXlJU1dFRmdOakE0ckpvb3pWbUFzd1BSYVJwZF9YYjBLdzN4WmpOcUtocS1Pb2E1OXBUZ192SDVHV3ZfWUhaa0c0WDN6QTV6R0x4Z2RJUkNFRk1yY0t0d0dTLXFxbFdFS0VJYzQxQjJUY01HLTF4cU5mQ2g1OFBraDh2S3p0TmRpRm5yNWJ2WFNmdy11X0JXN0xsdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-13T17:54:32Z"
         }
       ]
     },
@@ -1575,6 +1373,7 @@
       "title": "Ripple, Stripe-owned Privy partner to bring embedded wallets to XRP Ledger - The Block",
       "published_at": "2026-10-13T07:00:00Z",
       "entities": [
+        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Partnerships",
@@ -1594,55 +1393,14 @@
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNjBxczgtcTVHTmpuSU5wdE9oejBxUUlIMVZtRG8tVG14ZzUtVzFZLURnU1kxcnJZaGQ4T0NWRGplYlVyNkZFaEoxTEpLYzNvWnRUeEVBdTlwUE1FbExxZThiSnd6eDd0UnFMZGJPclZKTDkyNTJ1dHhDbU9FbEhPNUJRNlJDQy1nSG5WY3J4ZFNDaEtySTgyeW5B?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-13T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "702c426e2b281879",
-      "title": "XRP News: Ripple Partners With Stripe’s Privy to Expand XRP Ledger Wallets - TradingView",
-      "published_at": "2026-10-13T07:00:00Z",
-      "entities": [
-        "Ripple",
-        "XRP Ecosystem"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPV2x6UFZDcF9LZ2dwMjFoVjlPLWtRZmxnZFNobEk0ZFhZQTB5eVN3M0lqdERGNWVBZDVacVZadkthR0k5T1l2Yk0tOUFFQUwyNms2NXVTY1lkOTlMV2s5ZFo3clRWb2xMYjBmWkI5cEIxUU1SLXphVnZoTW1DeWF2cFhnNDZ6bngxb2QwRHZYOEdGOWItTGZ4VEw2bF9pYXVuWnozeTBhVHZMS2VlTy15MFFkWHBTNW9mN2tnekFkeDctejRDb0pPdXdMelVKdw?oc=5",
-      "excerpt": "XRP News: Ripple Partners With Stripe’s Privy to Expand XRP Ledger Wallets - TradingView",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
+        },
         {
           "title": "XRP News: Ripple Partners With Stripe’s Privy to Expand XRP Ledger Wallets - TradingView",
           "name": "Google News RSS",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPV2x6UFZDcF9LZ2dwMjFoVjlPLWtRZmxnZFNobEk0ZFhZQTB5eVN3M0lqdERGNWVBZDVacVZadkthR0k5T1l2Yk0tOUFFQUwyNms2NXVTY1lkOTlMV2s5ZFo3clRWb2xMYjBmWkI5cEIxUU1SLXphVnZoTW1DeWF2cFhnNDZ6bngxb2QwRHZYOEdGOWItTGZ4VEw2bF9pYXVuWnozeTBhVHZMS2VlTy15MFFkWHBTNW9mN2tnekFkeDctejRDb0pPdXdMelVKdw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-13T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "e8324f20a646bfc1",
-      "title": "Ripple partners with Stripe’s Privy to bring XRP payments to apps - Crypto News",
-      "published_at": "2026-10-13T07:00:00Z",
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8yemdod1dtRGdBanEwVnhWVHpJckVULV9iRnJxUEU2cTZEUVlIRllONkJ0WWU0dXV2QUY1OERvRlQ0QzhNVjBaSmVWaF9GanhRWVpheFo2RzFoN3o1LVY3Y1BYTzZwZkdpMUpWdXptQzVqNjF4VWhGYVVEenNyQQ?oc=5",
-      "excerpt": "Ripple partners with Stripe’s Privy to bring XRP payments to apps - Crypto News",
-      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
-      "added_at": "2026-10-26T19:23:25.373411Z",
-      "coverage": [
+        },
         {
           "title": "Ripple partners with Stripe’s Privy to bring XRP payments to apps - Crypto News",
           "name": "Google News RSS",
@@ -1911,33 +1669,6 @@
       ]
     },
     {
-      "id": "f16cf93c3ea458a1",
-      "title": "Evernorth’s 473 Million XRP Wager Hikes as XRP Struggles to Regain Ground - Bitcoin Foundation",
-      "published_at": "2026-10-12T07:00:00Z",
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPV1NsMVk2VVQzNnlSZFZORVZ3QTdPTW9pNG9iX2xSODc3SG9zcVVPU09KQ2dELWJxeTBZbWNfQ0lJTlFnYXVXcE9pYV9ISmFGV1FiQ2JHR2Y0OW81NUtjSndSRnhzQ0NZbE42MFNEMzZKb2thVG9jc2pSV3NyRk5XMlYwdWJJR1lET0x2aHBGLTZFV2pqUnhTMXcxdzQybmp0Q1lzUWI3YWU4SndBYmNSUmw2SmoxaDRhN2c?oc=5",
-      "excerpt": "Evernorth’s 473 Million XRP Wager Hikes as XRP Struggles to Regain Ground - Bitcoin Foundation",
-      "why_it_matters": "Look for measurable adoption and business impact.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "Evernorth’s 473 Million XRP Wager Hikes as XRP Struggles to Regain Ground - Bitcoin Foundation",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPV1NsMVk2VVQzNnlSZFZORVZ3QTdPTW9pNG9iX2xSODc3SG9zcVVPU09KQ2dELWJxeTBZbWNfQ0lJTlFnYXVXcE9pYV9ISmFGV1FiQ2JHR2Y0OW81NUtjSndSRnhzQ0NZbE42MFNEMzZKb2thVG9jc2pSV3NyRk5XMlYwdWJJR1lET0x2aHBGLTZFV2pqUnhTMXcxdzQybmp0Q1lzUWI3YWU4SndBYmNSUmw2SmoxaDRhN2c?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-12T07:00:00Z"
-        }
-      ]
-    },
-    {
       "id": "a6dfaa0e05385c",
       "title": "Ripple Treasury integrates with SWIFT, enabling XRP use alongside traditional banking systems.",
       "published_at": "2026-10-12T07:00:00Z",
@@ -1995,97 +1726,6 @@
       ]
     },
     {
-      "id": "ada7a4423fe3e7",
-      "title": "Strategy Inc. (NASDAQ: MSTR) Stock Surges 60% In Three Months As Bitcoin Treasury Expands, But Valuation Concerns Linger",
-      "published_at": "2026-10-11T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Foreign Policy Journal · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOWnNnX2VKcGJMV3FYcGJEMnRBWlBIS0o2M3NxNnhmY3RLN2otRW9MNWxmYWhyMnNRQTBXTGllY2dWdHY0QklUT1BiYXZjWmlKU0hKUTJ5UV9nRWJCSkFHa2Z5X3BZVm9kc3A4MERkVFNKVVNkeVFOamRYYWZ0bVcxTHd3Y2xjWkFBNkFfaVZWLWViYTd5dUpOaTJ5ZTBETk9Bd3dvd2JhcmttZGZoeDVSRGZ0QkZWS29YS0J5bmdMdlNybFkwLWFXd3I0T0UzY2d0V3FYRF81R1FuYkxhVElNYmtMZG00VU9OenNJUkZxZ21sejFyVUE?oc=5",
-      "excerpt": "Strategy Inc. (NASDAQ: MSTR) Stock Surges 60% In Three Months As Bitcoin Treasury Expands, But Valuation Concerns Linger Foreign Policy Journal",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:15Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Inc. (NASDAQ: MSTR) Stock Surges 60% In Three Months As Bitcoin Treasury Expands, But Valuation Concerns Linger",
-          "name": "Foreign Policy Journal · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOWnNnX2VKcGJMV3FYcGJEMnRBWlBIS0o2M3NxNnhmY3RLN2otRW9MNWxmYWhyMnNRQTBXTGllY2dWdHY0QklUT1BiYXZjWmlKU0hKUTJ5UV9nRWJCSkFHa2Z5X3BZVm9kc3A4MERkVFNKVVNkeVFOamRYYWZ0bVcxTHd3Y2xjWkFBNkFfaVZWLWViYTd5dUpOaTJ5ZTBETk9Bd3dvd2JhcmttZGZoeDVSRGZ0QkZWS29YS0J5bmdMdlNybFkwLWFXd3I0T0UzY2d0V3FYRF81R1FuYkxhVElNYmtMZG00VU9OenNJUkZxZ21sejFyVUE?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-11T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "ffe59aaf4c499636",
-      "title": "We Asked ChatGPT Whether Evernorth's Stock Could Trade Above or Below the Value of Its XRP After Its First Week - 24/7 Wall St.",
-      "published_at": "2026-10-11T07:00:00Z",
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNRW5ETk5Kb2w4SkdWMDlYbzNMaVcxdm5pMlRCWlRmQmJyZGhISmVaRnE2el81YWNRVlRXcUg1bjZJak40dnV6RFp0Z0NaTmhCZm80dnhpNWNsd3NBY3ozbDgyMHYxR3hXa3R2NTdVV2I5Nm94N1Uwb29kQXhmT3J5UnZIV3ZTX1dFT2ZSVGRxODg3WDN2VGlaRDFDWmFYVXVDZ1VOR1gtSGdGakdHbzJPNUdPTmthbEFtcndfYklTOThEaGstc2R2VS1uTXpHUnphMVFKRWpjLWxQclMtbzdQRGp4d2Y0NVlGQzlHV1JISkhmOVRhWjQxT0U2YW9lQQ?oc=5",
-      "excerpt": "We Asked ChatGPT Whether Evernorth's Stock Could Trade Above or Below the Value of Its XRP After Its First Week - 24/7 Wall St.",
-      "why_it_matters": "Look for measurable adoption and business impact.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "We Asked ChatGPT Whether Evernorth's Stock Could Trade Above or Below the Value of Its XRP After Its First Week - 24/7 Wall St.",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNRW5ETk5Kb2w4SkdWMDlYbzNMaVcxdm5pMlRCWlRmQmJyZGhISmVaRnE2el81YWNRVlRXcUg1bjZJak40dnV6RFp0Z0NaTmhCZm80dnhpNWNsd3NBY3ozbDgyMHYxR3hXa3R2NTdVV2I5Nm94N1Uwb29kQXhmT3J5UnZIV3ZTX1dFT2ZSVGRxODg3WDN2VGlaRDFDWmFYVXVDZ1VOR1gtSGdGakdHbzJPNUdPTmthbEFtcndfYklTOThEaGstc2R2VS1uTXpHUnphMVFKRWpjLWxQclMtbzdQRGp4d2Y0NVlGQzlHV1JISkhmOVRhWjQxT0U2YW9lQQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-11T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "953c2b8c92419f8e",
-      "title": "Evernorth XRPN vs XRP: Which Is the Better Buy? - Yahoo Finance",
-      "published_at": "2026-10-10T07:00:00Z",
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "High",
-      "score": 88,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMXZSMktyZi1pY0xNaXJsQUlFXzQ0NFNnckUyMWhTWGhEV25LSTVqQ3J6cVpPNVFFWUNtMmZGUk9HQ3Zteml4dHVHb0NaZjBlQ1M2ZXBzMXVNNFZUckY1ZlBHb3J1cm1Uei1tdjBERDV0X3JPVnVMLXJFWlNIeVVmVVpCbVZ3ektwYTdVU0N0S3BrTjdseVhaRg?oc=5",
-      "excerpt": "Evernorth XRPN vs XRP: Which Is the Better Buy? - Yahoo Finance",
-      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "Evernorth XRPN vs XRP: Which Is the Better Buy? - Yahoo Finance",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMXZSMktyZi1pY0xNaXJsQUlFXzQ0NFNnckUyMWhTWGhEV25LSTVqQ3J6cVpPNVFFWUNtMmZGUk9HQ3Zteml4dHVHb0NaZjBlQ1M2ZXBzMXVNNFZUckY1ZlBHb3J1cm1Uei1tdjBERDV0X3JPVnVMLXJFWlNIeVVmVVpCbVZ3ektwYTdVU0N0S3BrTjdseVhaRg?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-10T07:00:00Z"
-        },
-        {
-          "title": "Evernorth XRPN vs XRP: Which Is the Better Buy? - 24/7 Wall St.",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOXBNNkhRTzJpRGM5bGZoUUR1cHN1M0QzdTFvRUpDbTBpdkU2TjNxQmhwZmx4WDEwbzNsNnRZcjlnQzBneGQxUTJwdFZ1THBTQ0xfQUZ2bkhfNlJ5eHMzZV9wU1ZYS21oY1FFYVY5cUdWVmpfTzE1MXo1Q29sdGdYS3IwZG5hQm1JNWNpLTFJY3JfdHFqYnl3c2hBLUdvdThteVlzOGotMA?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-10T07:00:00Z"
-        }
-      ]
-    },
-    {
       "id": "3ece3520610795",
       "title": "Oct 09, 2026, 16:51 ET Evernorth Completes Business Combination with Armada Acquisition Corp. II Evernorth Holdings, Inc., (Nasdaq: XRPN), a digital asset treasury company building institutional access to the…",
       "published_at": "2026-10-09T12:00:00Z",
@@ -2119,36 +1759,6 @@
           "url": "https://www.evernorth.xyz/press-release-10-09-2026",
           "source_type": "Official",
           "published_at": "2026-10-09T12:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "c0b259bc5765de",
-      "title": "Strategy Inc Stock (MSTR) Moved Down by 6.02% on Oct 7: What Signal Does It Send?",
-      "published_at": "2026-10-07T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingKey · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUXZVLW5ucDR6c1RwbjFsMEhpNF9DTnpEZDZFRmxRZ2dHZzY2ejBpby1zNWJ3RTBpa2ZDNVc0M0hMQlIyNTdqSkVHZUNydFduMzJaZnBUazhsWFQ4d1Y4LU9BNnpsbmxkRk0xWk5uQWtPMEU4dXRYOG5QdHFDeGtXQjNtZ2NQTjFBRVhr?oc=5",
-      "excerpt": "Strategy Inc Stock (MSTR) Moved Down by 6.02% on Oct 7: What Signal Does It Send? TradingKey",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:15Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Inc Stock (MSTR) Moved Down by 6.02% on Oct 7: What Signal Does It Send?",
-          "name": "TradingKey · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUXZVLW5ucDR6c1RwbjFsMEhpNF9DTnpEZDZFRmxRZ2dHZzY2ejBpby1zNWJ3RTBpa2ZDNVc0M0hMQlIyNTdqSkVHZUNydFduMzJaZnBUazhsWFQ4d1Y4LU9BNnpsbmxkRk0xWk5uQWtPMEU4dXRYOG5QdHFDeGtXQjNtZ2NQTjFBRVhr?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-07T07:00:00Z"
         }
       ]
     },
@@ -2398,33 +2008,6 @@
       ]
     },
     {
-      "id": "95ac1cd168642cc9",
-      "title": "Armada II holders approve Evernorth XRP deal; trading starts Oct. 8 (XRPN:NASDAQ) - Seeking Alpha",
-      "published_at": "2026-10-01T07:00:00Z",
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Google News RSS",
-      "source_type": "Media",
-      "source_id": "news",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcFd5Qy1vUkZ1dTFXNURCMkxidnBvcTYxN21GY0xvT3lHWGdTaTY1SzNfN253aWN0QVYyeGJRM2hoMVRSRWNFdlhOczg3NTBzVnlxZlkzd0E4ZnlxQnFLaGwybnBidFc2LW1LZDRwcnlOSDY3djNRNGkwTHEtSWRBOTdsMEJla041cm1KS0NVU0w5bFlDVUh0WnYxYkZ0eF9udWt6amNR?oc=5",
-      "excerpt": "Armada II holders approve Evernorth XRP deal; trading starts Oct. 8 (XRPN:NASDAQ) - Seeking Alpha",
-      "why_it_matters": "Look for measurable adoption and business impact.",
-      "added_at": "2026-10-26T19:14:29.592010Z",
-      "coverage": [
-        {
-          "title": "Armada II holders approve Evernorth XRP deal; trading starts Oct. 8 (XRPN:NASDAQ) - Seeking Alpha",
-          "name": "Google News RSS",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcFd5Qy1vUkZ1dTFXNURCMkxidnBvcTYxN21GY0xvT3lHWGdTaTY1SzNfN253aWN0QVYyeGJRM2hoMVRSRWNFdlhOczg3NTBzVnlxZlkzd0E4ZnlxQnFLaGwybnBidFc2LW1LZDRwcnlOSDY3djNRNGkwTHEtSWRBOTdsMEJla041cm1KS0NVU0w5bFlDVUh0WnYxYkZ0eF9udWt6amNR?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-01T07:00:00Z"
-        }
-      ]
-    },
-    {
       "id": "b8480b9e782d7f",
       "title": "Three Amendments Define the Path to XRPL Lending",
       "published_at": "2026-10-01T07:00:00Z",
@@ -2612,6 +2195,36 @@
           "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5ydmRsVWw1bHNibDdJNjk0dTVVSGhMamh6YTI5VTJSRVIwUHgtYl9rNm5VeXd0SWZwTDNreUlMTXp0QTBIX0RFVEtzMkpSdDFpc3ZpR0tuMHROaWtYZ2hodlpDZXlsNDVLdkE?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-25T07:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "a24761c4ba4a25",
+      "title": "Ripple Deploys AI and Red Team to Hunt XRP Ledger Bugs Before Exploits",
+      "published_at": "2026-09-23T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "BigGo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1aaThMYWZ0VXJWWDdma29IOEJ1ZkcxUkR0aDREM1Fhd1R4QjlOY19heG96SlpGNUtMWXhqZzVhVDRaRU1nd3kyOGJuUG54QlJUOWJQT2JrdUtETmxKWGtKa3N2SUVNMll5cHktOTQ4RE9lbjNpcmc?oc=5",
+      "excerpt": "Ripple Deploys AI and Red Team to Hunt XRP Ledger Bugs Before Exploits BigGo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T19:56:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Deploys AI and Red Team to Hunt XRP Ledger Bugs Before Exploits",
+          "name": "BigGo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1aaThMYWZ0VXJWWDdma29IOEJ1ZkcxUkR0aDREM1Fhd1R4QjlOY19heG96SlpGNUtMWXhqZzVhVDRaRU1nd3kyOGJuUG54QlJUOWJQT2JrdUtETmxKWGtKa3N2SUVNMll5cHktOTQ4RE9lbjNpcmc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-23T07:00:00Z"
         }
       ]
     },
@@ -2804,36 +2417,6 @@
           "title": "XRP Treasury Firm Evernorth Secures $30M as Ripple Deal Nears",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQWc1SFk2MXdPNF9fWFhNSHdYZEo4b0hqbDNQbll6bkFTWXF5cThXVUtwc2pLOE52YVl1MDFHb1RQVzF0V2trSGMxRWdNR1FYUE4yM2VoU01HMHpLcF9jM0hpT0lXNUlNVkJRYTNOckNfU2U3bGZ5RjV6cldaazZJQ1duMjBoMVBUYVQ1SDNoX3NqeXVPZEJlZmh1NkRpZUd0NlpDOV9qRUhKa05RMDZHNi0yM1RVMDB1YTRhNw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-09-18T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "a06336ff3d6a88",
-      "title": "XRP Treasury Lines Up $30M as Traders Eye $3 - Bitwise XRP ETF (ARCA:XRP)",
-      "published_at": "2026-09-18T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "XRP Ecosystem"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Benzinga · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTlNkYy1fRE9RMWh6R3Q0QTAyaVVaMmNral8tMkxydlVVWDAtWTB6X2ZhT1pNTDV6Z1VIV0VscHhpRTlsMjEtN2VRcGpOcWk0cmdQV2V6NXI4Tk9fU2Z1RFM1d1J6QlVoSWdwNHNmLTZ3bURZOUVMbngzTERWdGNZRXRFaWxsYzlPc2dKeXhRcWJHVFVtVFpjNGxkRUw?oc=5",
-      "excerpt": "XRP Treasury Lines Up $30M as Traders Eye $3 - Bitwise XRP ETF (ARCA:XRP) Benzinga",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:13Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "XRP Treasury Lines Up $30M as Traders Eye $3 - Bitwise XRP ETF (ARCA:XRP)",
-          "name": "Benzinga · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTlNkYy1fRE9RMWh6R3Q0QTAyaVVaMmNral8tMkxydlVVWDAtWTB6X2ZhT1pNTDV6Z1VIV0VscHhpRTlsMjEtN2VRcGpOcWk0cmdQV2V6NXI4Tk9fU2Z1RFM1d1J6QlVoSWdwNHNmLTZ3bURZOUVMbngzTERWdGNZRXRFaWxsYzlPc2dKeXhRcWJHVFVtVFpjNGxkRUw?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-18T07:00:00Z"
         }
@@ -3051,37 +2634,6 @@
           "title": "SettleMint Integrates Ripple Custody into Digital Asset Lifecycle Platform",
           "name": "Finovate · via Google News",
           "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUmsxNVhsNnlHYnA5VkxoeWVONjVMYWVyUUtZenhFVDdySW4zWVNSVWd0ZFFPZU5zb1M0UUd6bnBuQjc4X3MzdjhxT2M1VVVCNHdHMlJXVHkzV0dLNThyVlBVVU5pWktTZVlNWnNBM0hNMzlrc3NmVld2d0xzb2wtOGs2dFpnbXdxdnRwZnpsdjlGcHhkbXlvQnpqcjc?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-09-01T07:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "d1af4a59032b84",
-      "title": "Ripple and SettleMint Unite Custody and Tokenization as XRP Jumps 2%",
-      "published_at": "2026-09-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple",
-        "XRP Ecosystem"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 60,
-      "source": "Coinpaper · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORnZ6VzFjdkpKejF5eGYxYXQ3TVBUS3NuaWhZdkZTMXpMdS1qdkw5VzBnRjcwOFBiT2E4VEMydFlhekozWWkwelpjUDlWY0lIaUYzYldPdWlHUXZKN25wWXJCbW9KcWtqNFBZamlJdW1aVEx0SU9PMkdmdVdnZWNaZ094OHFKU0NRUDBzOXdfV1FkOFpqdXZ4NXQ3VXVHQ3JTTDBOeTJR?oc=5",
-      "excerpt": "Ripple and SettleMint Unite Custody and Tokenization as XRP Jumps 2% Coinpaper",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:13Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple and SettleMint Unite Custody and Tokenization as XRP Jumps 2%",
-          "name": "Coinpaper · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORnZ6VzFjdkpKejF5eGYxYXQ3TVBUS3NuaWhZdkZTMXpMdS1qdkw5VzBnRjcwOFBiT2E4VEMydFlhekozWWkwelpjUDlWY0lIaUYzYldPdWlHUXZKN25wWXJCbW9KcWtqNFBZamlJdW1aVEx0SU9PMkdmdVdnZWNaZ094OHFKU0NRUDBzOXdfV1FkOFpqdXZ4NXQ3VXVHQ3JTTDBOeTJR?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-01T07:00:00Z"
         }
@@ -3349,9 +2901,9 @@
       ]
     },
     {
-      "id": "cdf4fd9de4cd03",
-      "title": "MicroStrategy vs. Bitcoin: Who Won the 1-Year Performance Duel?",
-      "published_at": "2026-08-16T07:00:00Z",
+      "id": "6f6d3f1f63521f",
+      "title": "MicroStrategy shares soar 14%, outpacing Bitcoin, as mNAV rises to 1.05x",
+      "published_at": "2026-08-19T07:00:00Z",
       "date_only": false,
       "entities": [
         "Strategy"
@@ -3359,22 +2911,22 @@
       "category": "Adoption",
       "impact": "Low",
       "score": 65,
-      "source": "Yahoo Finance · via Google News",
+      "source": "TechStock² · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSWFQYVkzUEdjT0o5SEdVN2RkNWZqbkFhSTk2UWhJN2Nvd1RpZ3djZ3hQRjdsQWF1QVBYT3JGTnVHakdmSWlBNmg3TXFfTFZsNlZ2eFU3bGRvTEpFdTBXdmJMQnpXaTd0NGYyZlZMQUQ5VUk0dERYaTNydmZsSGFrZDlJdU8xOG04ZkdjZVoyNk11YlN1VENKY0ZuOA?oc=5",
-      "excerpt": "MicroStrategy vs. Bitcoin: Who Won the 1-Year Performance Duel? Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdmhuMWg2V3RqXzRjbkdOdV9wQjdXRnpTUmltVHZzc3BMMlBRV1haa3B3VnBoUnhkLTBXZENwRWtyZFBYYUo4M0YyOE5Uc09VakdFVmdoZjFCZGJlTjQ2cXVMSzFGekVrcWtqMVVMeHFEQ1dyT3oyZ2MxWHpuZFVjdjRITUFGSHJqa2c?oc=5",
+      "excerpt": "MicroStrategy shares soar 14%, outpacing Bitcoin, as mNAV rises to 1.05x TechStock²",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-26T19:52:15Z",
+      "added_at": "2026-10-26T19:56:51Z",
       "verified_seed": false,
       "coverage": [
         {
-          "title": "MicroStrategy vs. Bitcoin: Who Won the 1-Year Performance Duel?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSWFQYVkzUEdjT0o5SEdVN2RkNWZqbkFhSTk2UWhJN2Nvd1RpZ3djZ3hQRjdsQWF1QVBYT3JGTnVHakdmSWlBNmg3TXFfTFZsNlZ2eFU3bGRvTEpFdTBXdmJMQnpXaTd0NGYyZlZMQUQ5VUk0dERYaTNydmZsSGFrZDlJdU8xOG04ZkdjZVoyNk11YlN1VENKY0ZuOA?oc=5",
+          "title": "MicroStrategy shares soar 14%, outpacing Bitcoin, as mNAV rises to 1.05x",
+          "name": "TechStock² · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdmhuMWg2V3RqXzRjbkdOdV9wQjdXRnpTUmltVHZzc3BMMlBRV1haa3B3VnBoUnhkLTBXZENwRWtyZFBYYUo4M0YyOE5Uc09VakdFVmdoZjFCZGJlTjQ2cXVMSzFGekVrcWtqMVVMeHFEQ1dyT3oyZ2MxWHpuZFVjdjRITUFGSHJqa2c?oc=5",
           "source_type": "Media",
-          "published_at": "2026-08-16T07:00:00Z"
+          "published_at": "2026-08-19T07:00:00Z"
         }
       ]
     },
@@ -3957,30 +3509,30 @@
       ]
     },
     {
-      "id": "f12290d1dfb2c1",
-      "title": "MicroStrategy Preferred Stock Hits a New All-Time Low. How to Play MSTR, STRC Shares Here.",
+      "id": "8f6e66dd76463c",
+      "title": "XRP Ledger's 'Missing Layer' Draws Closer as Developers Test Lending, Credit Features: Ripple",
       "published_at": "2026-06-29T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Strategy"
+        "XRP Ecosystem"
       ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Barchart.com · via Google News",
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Yahoo Finance · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQTGktaE9hTW1jMjlWSlV4aTdWM2F4RUN6NmtUOTl6NkFzT1UyVkhWcUFKOENYUGVoU2s5UUREMkdHR28wbWhNenA0Nks0ZjdjaGp2WTVVTXVOMzU0VEZoTjNHUE9aaU5ERDNQOHlOUXVYQ0hfQmRxRlVROHNTb0NCaEZNNWtnaG1OcEYzaVJBM0xyTVJwTmtVZjRPWjJrYnhSV2J2ZVhyNUNMcURMU2cydDNfY0l2SkVuQmFlLUljRUp4aXZReWJTd1Q3MA?oc=5",
-      "excerpt": "MicroStrategy Preferred Stock Hits a New All-Time Low. How to Play MSTR, STRC Shares Here. Barchart.com",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdnRrbzBJdlgxeWstbUFwZUgzVl94VUVmd2ZvVkRIaVRSZ2hmY3pveEtnUlh5TmVVN3h4eVRQNjB3cGFvbVdoMVdMOVN0QThEYTdySFV5RjRoRk9Jbk1QTmNaTWtPcFhLelpxekdNbXY3bTlsQWdJWDNxUk1RTG8yYXZOeHV3S1pNSWZoYnlWLU9ZMUF2aDM4NGVHR2o?oc=5",
+      "excerpt": "XRP Ledger's 'Missing Layer' Draws Closer as Developers Test Lending, Credit Features: Ripple Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-26T19:52:15Z",
+      "added_at": "2026-10-26T19:56:50Z",
       "verified_seed": false,
       "coverage": [
         {
-          "title": "MicroStrategy Preferred Stock Hits a New All-Time Low. How to Play MSTR, STRC Shares Here.",
-          "name": "Barchart.com · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQTGktaE9hTW1jMjlWSlV4aTdWM2F4RUN6NmtUOTl6NkFzT1UyVkhWcUFKOENYUGVoU2s5UUREMkdHR28wbWhNenA0Nks0ZjdjaGp2WTVVTXVOMzU0VEZoTjNHUE9aaU5ERDNQOHlOUXVYQ0hfQmRxRlVROHNTb0NCaEZNNWtnaG1OcEYzaVJBM0xyTVJwTmtVZjRPWjJrYnhSV2J2ZVhyNUNMcURMU2cydDNfY0l2SkVuQmFlLUljRUp4aXZReWJTd1Q3MA?oc=5",
+          "title": "XRP Ledger's 'Missing Layer' Draws Closer as Developers Test Lending, Credit Features: Ripple",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdnRrbzBJdlgxeWstbUFwZUgzVl94VUVmd2ZvVkRIaVRSZ2hmY3pveEtnUlh5TmVVN3h4eVRQNjB3cGFvbVdoMVdMOVN0QThEYTdySFV5RjRoRk9Jbk1QTmNaTWtPcFhLelpxekdNbXY3bTlsQWdJWDNxUk1RTG8yYXZOeHV3S1pNSWZoYnlWLU9ZMUF2aDM4NGVHR2o?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-29T07:00:00Z"
         }
@@ -4786,6 +4338,36 @@
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWDkwQjhkNUZES01BRDBFaGZYR1ZpTUFWRmwxcTJHMjV2SzBQQy16WHlpVjJWLWExNHg2emYyWHNoUXM5cEJfZzNDX1JqbDBBeVdRd3VTSEU2b1VBd1hDa3p4Z3BlbHc5bGJDVm1LVlZWM21mTGtlMTVOWS1pZ1lQMUxMWkdDeDZCRWYtWHJyVUEySkd1cGJCRzBaMmhZUnFOVVlBdWhuLWFLRVN0WlE?oc=5",
           "source_type": "Media",
           "published_at": "2026-04-27T07:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "68c8c0530587d7",
+      "title": "Selling The Furniture To Pay The Rent: The Unsustainable Reality Of Strategy Inc Preferred",
+      "published_at": "2026-04-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Seeking Alpha · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSHhEVmp4OHhxeE5FWGlrMzh4MGxZZ2hJSWdjcWNYbzhhREJFS1RCREctZ2p5MGphcnA3ZndETERMU01XWlNMQl80Q1RnaElscWp3X1FCWkpIQTVDWkdQOGNuNnp5QkxBLUo1d3BucUk5OFRSd1d5Ul9pWnhiYl9aWjI3Y0lpNTJpUTJFSHRVTEgzSlRNSnVxV2FvazV6QjJveUVhZUNWRnpBVTdLbTlTVDN1dlhEYlZnbTVGVk1HcnhpR1JGU1IySTN3?oc=5",
+      "excerpt": "Selling The Furniture To Pay The Rent: The Unsustainable Reality Of Strategy Inc Preferred Seeking Alpha",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T19:56:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Selling The Furniture To Pay The Rent: The Unsustainable Reality Of Strategy Inc Preferred",
+          "name": "Seeking Alpha · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSHhEVmp4OHhxeE5FWGlrMzh4MGxZZ2hJSWdjcWNYbzhhREJFS1RCREctZ2p5MGphcnA3ZndETERMU01XWlNMQl80Q1RnaElscWp3X1FCWkpIQTVDWkdQOGNuNnp5QkxBLUo1d3BucUk5OFRSd1d5Ul9pWnhiYl9aWjI3Y0lpNTJpUTJFSHRVTEgzSlRNSnVxV2FvazV6QjJveUVhZUNWRnpBVTdLbTlTVDN1dlhEYlZnbTVGVk1HcnhpR1JGU1IySTN3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-25T07:00:00Z"
         }
       ]
     },
@@ -6102,6 +5684,36 @@
       ]
     },
     {
+      "id": "7a97a8e564f911",
+      "title": "VivoPower executes sale of Ripple Labs stake to KWeather",
+      "published_at": "2026-02-04T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "Proactive financial news · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOeWl1NDFBNENwQXF4UHp3blFuT2VfRnNPcjVmZjhQMnhBRDJ3anhMNDZiT1N3LUItSlppOHZSWG5DUTV1a1JVT0F5d1dZNzdQUEtqYmt3c0hmTERWdjZjdjAxMlZSZnJxQU12N29ZX0FYMDNVd3ZUX0ZBRFlTak4zTlRELWdobVYxRVlnaVZZSjRBQl9pWlhIWTNvUGhPR0RGWURjV043ZHlubFhOVlozRk9HY3VHYi1kU0loMEJnbURZTmJlQ2c?oc=5",
+      "excerpt": "VivoPower executes sale of Ripple Labs stake to KWeather Proactive financial news",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T19:56:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "VivoPower executes sale of Ripple Labs stake to KWeather",
+          "name": "Proactive financial news · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOeWl1NDFBNENwQXF4UHp3blFuT2VfRnNPcjVmZjhQMnhBRDJ3anhMNDZiT1N3LUItSlppOHZSWG5DUTV1a1JVT0F5d1dZNzdQUEtqYmt3c0hmTERWdjZjdjAxMlZSZnJxQU12N29ZX0FYMDNVd3ZUX0ZBRFlTak4zTlRELWdobVYxRVlnaVZZSjRBQl9pWlhIWTNvUGhPR0RGWURjV043ZHlubFhOVlozRk9HY3VHYi1kU0loMEJnbURZTmJlQ2c?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-04T08:00:00Z"
+        }
+      ]
+    },
+    {
       "id": "bdb07884d107b6",
       "title": "Strategy raises STRC dividend as the preferred stock's price drifts below par",
       "published_at": "2026-02-01T08:00:00Z",
@@ -6953,6 +6565,13 @@
           "url": "https://www.prnewswire.com/news-releases/evernorth-acquires-additional-214m-in-xrp-bringing-total-xrp-purchased-and-committed-to-over-473-276-430--302603558.html",
           "source_type": "Official",
           "published_at": "2025-11-04T12:00:00Z"
+        },
+        {
+          "title": "Evernorth Acquires Additional $214M in XRP, Bringing Total XRP Purchased and Committed to Over 473,276,430",
+          "name": "PR Newswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOeTdvdTU2TGM1b1l5Z29jbkJZUzBTbDg3WWhnWmRNNVdaR3ROeUI4SWpqX0tIRGlWSFFORWdPVEdlaFBlWFBTbS1Qa0xUcEQ1SkI1WFFNNzI0MlltYkpHOTZMcDlhRC0yaURLQW1TQVhqcXI0Z1E3dFZCUm1JY0pZY3dRNHlkNHNhQ3NYNFhFQWUySzFWaEVvaVI3dWNLZENlcUIxazRHWmF0QzFXd3VHMU43ZVFrSmxLUnhidVBCNVJyZlVkVW5BdVpBRTB3NjJsUkVUYkxrVUN6OGpDV05SMlZzenpRUHNTdV9vYTlFMnhxYk0?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-04T08:00:00Z"
         }
       ]
     },
@@ -7073,6 +6692,36 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaFB3R25yNEYxa3pKbTl2YXlxdkVUMHBacFhHVGVUMG85MkY5MDFOeGxiWFJqUlRBSnh3MmU1UGxiZnlkOHlJOURJaG5YbjM3WWVEZGVEZWFmM08yTGR4WDhSc3MzQU0yZlZwY2pmZVduYkthV3AtaHdFSHBqd3FCbU5QQkttcDA1aS1IVXJGNWxwamxWNzgzbjRXWTBmTmtBYVNuRE5ZVQ?oc=5",
           "source_type": "Media",
           "published_at": "2025-10-30T06:36:29Z"
+        }
+      ]
+    },
+    {
+      "id": "c341f7462e4230",
+      "title": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5%",
+      "published_at": "2025-10-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPa3dnTGhGYVpRYXhRVjhiaXhZa0RMYmk5REp2WGNDcEhland6LVpPZXJtTkdVT1JiOU54RzNSNDdzMVU5c3JESktpS2hpNG94b3lvN0VubG1NR2gwcF9YeTF1aWJtM3FoYjJEMXgxSjJiSlVFVTVLNjQ2RnRJSHo1WU9EcDI?oc=5",
+      "excerpt": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5% Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T19:56:49Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5%",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPa3dnTGhGYVpRYXhRVjhiaXhZa0RMYmk5REp2WGNDcEhland6LVpPZXJtTkdVT1JiOU54RzNSNDdzMVU5c3JESktpS2hpNG94b3lvN0VubG1NR2gwcF9YeTF1aWJtM3FoYjJEMXgxSjJiSlVFVTVLNjQ2RnRJSHo1WU9EcDI?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-10-28T07:00:00Z"
         }
       ]
     }
