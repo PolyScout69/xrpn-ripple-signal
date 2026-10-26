@@ -49,24 +49,21 @@
     return signals.length && Number.isInteger(signals[0].value) && signals[0].value >= -3 && signals[0].value <= 3 ? signals[0].value : null;
   }
   function moonHTML(item) {
-    const signals = visibleMoonSignals(item);
+    const signals=visibleMoonSignals(item);
     if (!signals.length) return '<div class="moon-awaiting">Moon Meter awaiting next scan</div>';
-    return `<div class="moon-meters">${signals.map(m => {
-      const value = Number(m.value);
-      if (!Number.isInteger(value) || value < -3 || value > 3) return '';
-      const direction = value > 0 ? 'positive' : value < 0 ? 'negative' : 'neutral';
-      const display = value > 0 ? '+' + value : String(value);
-      const label = m.label || (value > 0 ? 'Bullish' : value < 0 ? 'Bearish' : 'Neutral');
-      const segments = MOON_TICKS.map(tick => {
-        const sign = tick < 0 ? 'negative' : tick > 0 ? 'positive' : 'neutral';
-        return `<span class="moon-step ${sign} ${tick === value ? 'is-selected' : ''}" aria-hidden="true"><span class="moon-bar"></span><span class="moon-tick">${tick > 0 ? '+' : ''}${tick}</span></span>`;
+    return '<div class="moon-meters">'+signals.map(m=>{
+      const rated=typeof m.value==='number' && Number.isInteger(m.value) && m.value>=-3 && m.value<=3;
+      const value=rated?m.value:null, direction=!rated?'unrated':value>0?'positive':value<0?'negative':'neutral';
+      const display=!rated?'—':value>0?'+'+value:String(value);
+      const label=m.label||(!rated?'Not rated':value>0?'Bullish':value<0?'Bearish':'Neutral');
+      const segments=MOON_TICKS.map(tick=>{
+        const sign=tick<0?'negative':tick>0?'positive':'neutral';
+        return '<span class="moon-step '+sign+(tick===value?' is-selected':'')+'" aria-hidden="true"><span class="moon-bar"></span><span class="moon-tick">'+(tick>0?'+':'')+tick+'</span></span>';
       }).join('');
-      return `<div class="moon-meter ${direction}">
-        <div class="moon-header"><div class="moon-heading"><span class="moon-orbit" aria-hidden="true">◕</span><span class="moon-name">MOON METER</span><span class="moon-asset">${esc(m.asset)}</span></div><div class="moon-readout"><strong>${display}</strong><span>${esc(label)}</span></div></div>
-        <div class="moon-scale" role="meter" aria-valuemin="-3" aria-valuemax="3" aria-valuenow="${value}" aria-valuetext="${esc(label)}" aria-label="Moon Meter for ${esc(m.asset)}">${segments}</div>
-        <p class="moon-explanation">${esc(m.reason || 'Headline-only preliminary assessment; verify the original source.')}</p>
-      </div>`;
-    }).join('')}</div>`;
+      const accessible=rated? 'role="meter" aria-valuemin="-3" aria-valuemax="3" aria-valuenow="'+value+'" aria-valuetext="'+esc(label)+'"': 'role="group" aria-label="Not rated because source evidence is insufficient"';
+      const source=m.confidence==='Insufficient'?'Insufficient evidence':m.confidence==='High'?'Primary-source headline':'Secondary news report';
+      return '<div class="moon-meter '+direction+'"><div class="moon-header"><div class="moon-heading"><span class="moon-orbit" aria-hidden="true">◕</span><span class="moon-name">MOON METER</span><span class="moon-asset">'+esc(m.asset)+'</span></div><div class="moon-readout"><strong>'+display+'</strong><span>'+esc(label)+'</span></div></div><div class="moon-scale" '+accessible+' aria-label="Moon Meter for '+esc(m.asset)+'">'+segments+'</div><p class="moon-explanation">'+esc(m.reason||'Verify the original source.')+'</p><div class="moon-evidence">'+esc(source)+' · Not a price forecast</div></div>';
+    }).join('')+'</div>';
   }
 
   function featureHTML(item) {
@@ -97,6 +94,7 @@
     if (state.moon === 'bullish' && !(mv > 0)) return false;
     if (state.moon === 'bearish' && !(mv < 0)) return false;
     if (state.moon === 'neutral' && mv !== 0) return false;
+    if (state.moon === 'unrated' && mv !== null) return false;
     if (!recent(item,state.days)) return false;
     if (state.view === 'high' && item.impact !== 'High') return false;
     if (state.view === 'sec' && item.category !== 'SEC filings') return false;
@@ -214,8 +212,8 @@
   function csvCell(value) {let text=String(value??''); if(/^[\s]*[=+\-@]/.test(text)) text="'"+text; return `"${text.replace(/"/g,'""')}"`;}
   function exportCSV() {
     if(!state.filtered.length){notify('No stories in the current view');return;}
-    const fields=['Date','Entity','Topic','Impact','Moon asset','Moon score','Moon rationale','Headline','Source','Summary','Investor angle','Original URL'];
-    const rows=state.filtered.map(i=>{const meters=visibleMoonSignals(i);return [dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,meters.map(m=>m.asset).join(' | '),meters.map(m=>m.value>0?'+'+m.value:m.value).join(' | '),meters.map(m=>m.reason).join(' | '),i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(',')});
+    const fields=['Date','Entity','Topic','Impact','Moon asset','Moon score','Moon evidence','Moon rationale','Headline','Source','Summary','Investor angle','Original URL'];
+    const rows=state.filtered.map(i=>{const meters=visibleMoonSignals(i);return [dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,meters.map(m=>m.asset).join(' | '),meters.map(m=>m.value===null?'Not rated':m.value>0?'+'+m.value:m.value).join(' | '),meters.map(m=>m.confidence||'').join(' | '),meters.map(m=>m.reason).join(' | '),i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(',')});
     const contents='\ufeff'+[fields.map(csvCell).join(','),...rows].join('\r\n');
     const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([contents],{type:'text/csv;charset=utf-8;'}));link.download=`signal-investor-news-${new Date().toISOString().slice(0,10)}.csv`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000);notify('CSV export prepared');
   }
