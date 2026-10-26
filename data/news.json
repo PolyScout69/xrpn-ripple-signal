@@ -3,10 +3,10 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-26T21:54:52Z",
+    "ran_at": "2026-10-26T22:39:21Z",
     "starter_as_of": null,
     "schedule_utc": "18:00",
-    "new_items": 35,
+    "new_items": 26,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -14,22 +14,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-26T21:54:52Z",
+      "checked_at": "2026-10-26T22:39:21Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-26T21:54:52Z",
+      "checked_at": "2026-10-26T22:39:21Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 181,
-      "checked_at": "2026-10-26T21:54:52Z",
-      "message": "Fetched 181 matching items."
+      "items_seen": 188,
+      "checked_at": "2026-10-26T22:39:21Z",
+      "message": "Fetched 188 matching items."
     }
   },
   "items": [
@@ -68,8 +68,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -105,11 +107,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -145,11 +149,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -232,8 +238,10 @@
           "value": -1,
           "label": "Slightly bearish",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -264,11 +272,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "High",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -307,8 +317,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -341,11 +353,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -385,16 +399,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -536,11 +554,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -576,8 +596,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -613,8 +635,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -647,11 +671,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -697,8 +723,10 @@
           "value": -1,
           "label": "Slightly bearish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Delay or validator friction could modestly slow XRPL functionality.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -737,8 +765,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -777,8 +807,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -788,6 +820,7 @@
       "published_at": "2026-10-21T14:38:12Z",
       "date_only": false,
       "entities": [
+        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Treasury",
@@ -824,8 +857,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -864,8 +899,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Planned funding and buying alone do not establish net accretion or dilution per share.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -901,8 +938,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -941,8 +980,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -981,8 +1022,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1020,9 +1063,11 @@
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1062,16 +1107,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1110,8 +1159,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1157,8 +1208,10 @@
           "value": -1,
           "label": "Slightly bearish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "New shares may dilute holders even if the proceeds acquire more cryptocurrency; check the diluted share count.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1194,8 +1247,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1234,8 +1289,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1268,11 +1325,55 @@
       "moon_meters": [
         {
           "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "6e4a169db89b4c",
+      "title": "Which XRP ETF Is the Biggest? One Fund Holds More Than a Third of the Money.",
+      "published_at": "2026-10-17T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVzRiTlRpNHZWVlh6VExjdklTaWJONUZWVFJVdk1tWHhLR2RFWnFKSGYtbm1ybzlqbU5fSDR0Yjd2bjJFUnZUM1hVZVo1WU93cHpRa0xEM3FyYmtEOXlZNEI2Z0lxcDlQSTlPX3ZnUC1QbVFUTllaRzkyb25ENDQ2dVFFblJYNmNZUWNNUV9Xcng4QUxlZFpiR0plZG1HYVJlb2pfblVTQXN5QVB6WFF0NXlOaS14RDRvMkJxeXlmakRheWgwSEVMaHBSa1RMZw?oc=5",
+      "excerpt": "Which XRP ETF Is the Biggest? One Fund Holds More Than a Third of the Money. 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Which XRP ETF Is the Biggest? One Fund Holds More Than a Third of the Money.",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVzRiTlRpNHZWVlh6VExjdklTaWJONUZWVFJVdk1tWHhLR2RFWnFKSGYtbm1ybzlqbU5fSDR0Yjd2bjJFUnZUM1hVZVo1WU93cHpRa0xEM3FyYmtEOXlZNEI2Z0lxcDlQSTlPX3ZnUC1QbVFUTllaRzkyb25ENDQ2dVFFblJYNmNZUWNNUV9Xcng4QUxlZFpiR0plZG1HYVJlb2pfblVTQXN5QVB6WFF0NXlOaS14RDRvMkJxeXlmakRheWgwSEVMaHBSa1RMZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-17T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1305,11 +1406,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1354,9 +1457,11 @@
           "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1396,11 +1501,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1439,8 +1546,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1476,11 +1585,13 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If XRP treasury assets generate material net income without offsetting dilution or losses, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1519,8 +1630,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1559,8 +1672,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "c91a5e5fdf8402",
+      "title": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management",
+      "published_at": "2026-10-15T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "OneSafe.io · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQUdIZ3dTbXBNSkxNeWFNYU55WlRtM0ZlenBPaVBSNms5bGc0OVNVTEttNlREMTRDQTE2YjA1M2VFTW5XUWJIMlZFMVBsTldHYlYwOF92bDBXSXJSaEE3VXlNMWRmOGFBNURYT1RMVE1WdlNScTd6bE9FWEJFMTFoMlNGZlcwek5ycFhHUkZ3?oc=5",
+      "excerpt": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management OneSafe.io",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:25Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management",
+          "name": "OneSafe.io · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQUdIZ3dTbXBNSkxNeWFNYU55WlRtM0ZlenBPaVBSNms5bGc0OVNVTEttNlREMTRDQTE2YjA1M2VFTW5XUWJIMlZFMVBsTldHYlYwOF92bDBXSXJSaEE3VXlNMWRmOGFBNURYT1RMVE1WdlNScTd6bE9FWEJFMTFoMlNGZlcwek5ycFhHUkZ3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-15T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1597,51 +1754,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
-        }
-      ]
-    },
-    {
-      "id": "c91a5e5fdf8402",
-      "title": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management",
-      "published_at": "2026-10-15T04:08:23Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "OneSafe · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQUdIZ3dTbXBNSkxNeWFNYU55WlRtM0ZlenBPaVBSNms5bGc0OVNVTEttNlREMTRDQTE2YjA1M2VFTW5XUWJIMlZFMVBsTldHYlYwOF92bDBXSXJSaEE3VXlNMWRmOGFBNURYT1RMVE1WdlNScTd6bE9FWEJFMTFoMlNGZlcwek5ycFhHUkZ3?oc=5",
-      "excerpt": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management OneSafe",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-26T21:54:57Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Evernorth’s XRP Treasury Plan Signals Shift in Crypto Management",
-          "name": "OneSafe · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQUdIZ3dTbXBNSkxNeWFNYU55WlRtM0ZlenBPaVBSNms5bGc0OVNVTEttNlREMTRDQTE2YjA1M2VFTW5XUWJIMlZFMVBsTldHYlYwOF92bDBXSXJSaEE3VXlNMWRmOGFBNURYT1RMVE1WdlNScTd6bE9FWEJFMTFoMlNGZlcwek5ycFhHUkZ3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-15T04:08:23Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1677,8 +1796,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1731,8 +1852,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1771,8 +1894,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1811,8 +1936,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1884,11 +2011,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "High",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1927,8 +2056,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -1967,8 +2098,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2005,19 +2138,23 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If XRP treasury assets generate material net income without offsetting dilution or losses, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2053,11 +2190,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "High",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2096,8 +2235,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2140,11 +2281,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2187,8 +2330,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2221,11 +2366,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2272,11 +2419,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2322,8 +2471,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2362,8 +2513,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2409,8 +2562,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2446,8 +2601,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2483,11 +2640,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "High",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2526,8 +2685,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2566,8 +2727,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2606,8 +2769,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2643,11 +2808,55 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 3,
+          "label": "Very bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "cb0f6afb9ebbb8",
+      "title": "Is XRP quietly building the foundation for a DeFi-driven rally in Q4?",
+      "published_at": "2026-10-12T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "Cryptonews.net · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nSDN6c1paZXVyM1RnNzRvRUUtRmNRcXJuWXhoT29WVWVCV2pWcUYxREtsZEN3dlFYZlQtX1ZqUlZyM0ZtRWdZRGhwcXlqeFE0cjA2M3Y2SGdkQQ?oc=5",
+      "excerpt": "Is XRP quietly building the foundation for a DeFi-driven rally in Q4? Cryptonews.net",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Is XRP quietly building the foundation for a DeFi-driven rally in Q4?",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nSDN6c1paZXVyM1RnNzRvRUUtRmNRcXJuWXhoT29WVWVCV2pWcUYxREtsZEN3dlFYZlQtX1ZqUlZyM0ZtRWdZRGhwcXlqeFE0cjA2M3Y2SGdkQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2683,8 +2892,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2730,8 +2941,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2774,11 +2987,13 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "High",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2814,11 +3029,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2857,8 +3074,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2894,8 +3113,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2934,8 +3155,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -2974,8 +3197,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3021,8 +3246,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3061,8 +3288,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3101,8 +3330,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3141,8 +3372,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3179,11 +3412,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3222,8 +3457,136 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "386597368a435e",
+      "title": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances",
+      "published_at": "2026-09-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 76,
+      "source": "CoinGape · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYXBMSHNiYzU0Y1JFZWRmWmk3elhwbmltLVhMamsyd0VwT3U1b0JNTWZIdHhGamNOMXJZclVMRjJlTWJ2ZlRha21XQkJTczRFNUV1VzlnSjZCN2toLUI1eW9peVhIV21vVmVuVzIzNTV4QWVkVVNYRVlCTXVpUUlsM2ctZldHcGNGSE8wNk9GdjgyZnI4cTBldTg5ZVBIdi1ZZHBV?oc=5",
+      "excerpt": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances CoinGape",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances",
+          "name": "CoinGape · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYXBMSHNiYzU0Y1JFZWRmWmk3elhwbmltLVhMamsyd0VwT3U1b0JNTWZIdHhGamNOMXJZclVMRjJlTWJ2ZlRha21XQkJTczRFNUV1VzlnSjZCN2toLUI1eW9peVhIV21vVmVuVzIzNTV4QWVkVVNYRVlCTXVpUUlsM2ctZldHcGNGSE8wNk9GdjgyZnI4cTBldTg5ZVBIdi1ZZHBV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "8e5c086d1d03cc",
+      "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
+      "published_at": "2026-09-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Crypto News · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
+      "excerpt": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes Crypto News",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
+          "name": "Crypto News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Unverified",
+          "scenario": "rumour",
+          "if_true": true,
+          "reason": "IF THE RUMOUR IS TRUE: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "af948cbd8f275a",
+      "title": "Evernorth crypto merger reportedly wins vote—what comes next for XRPN?",
+      "published_at": "2026-09-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "AMBCrypto · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVWw0Sy1TZXNyQzBpd1h5R255SDM3eXdLX3N6amkySUdTT0t4X3d2cU1RRVFOZHVhQTUxdS1JVTJIeTJZWk5XcnNtLVo3ZGJIQ1RHeEZQTGNQeGR0b2ZHSWFRazZ1aFkzZmZZZjVJUnBsQ0tRUVFOYTlSRHBPTnc2akVzYWhWOVFFQmk2NXZFcWV6WmRLaTdJ?oc=5",
+      "excerpt": "Evernorth crypto merger reportedly wins vote—what comes next for XRPN? AMBCrypto",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth crypto merger reportedly wins vote—what comes next for XRPN?",
+          "name": "AMBCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVWw0Sy1TZXNyQzBpd1h5R255SDM3eXdLX3N6amkySUdTT0t4X3d2cU1RRVFOZHVhQTUxdS1JVTJIeTJZWk5XcnNtLVo3ZGJIQ1RHeEZQTGNQeGR0b2ZHSWFRazZ1aFkzZmZZZjVJUnBsQ0tRUVFOYTlSRHBPTnc2akVzYWhWOVFFQmk2NXZFcWV6WmRLaTdJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Unverified",
+          "scenario": "rumour",
+          "if_true": true,
+          "reason": "IF THE RUMOUR IS TRUE: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3269,8 +3632,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3306,11 +3671,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "High",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3341,16 +3708,25 @@
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcnRycTRLdUNmdWlfVmpOUVpjSVdrV2pZc1hDNlR5SkpBRGZQbTdpRmFwWE1uZVQ1bGtzZlpsTU12T3FwVEVFeUFFYmRoZjhWbnlmTkU3TldoNHlXRElOUS14UnZkZi1SWGlRWk5kM0RWaDQ3b3pVc2EzZVdqRDZWZzVPcHFCZkpZMWY5R0J4NlozUzdlOUhzTU01eUdYTEZnYVdV?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-29T07:00:00Z"
+        },
+        {
+          "title": "SWIFT-Ripple Partnership Rumor Sends XRP Community Into Overdrive, But What’s Actually Confirmed?",
+          "name": "CCN.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcTEzSW1jUmgyeDBmRURMNmJNVFBHWEg1WFhLcGpUNkJOVVNiVUwyVjFjV1hXelp3c3ZKVTY0dVBDTkR4eEZDMDI1NWVuZDlMVncwUzZzQV94alVYUEN0Q2VtdEpIdHJJa01GVHJBZVdqSGhBREFPZzVDZG5FMjJ0Zlh0M0lBZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
         }
       ],
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": null,
-          "label": "Not rated",
-          "confidence": "Insufficient",
-          "reason": "Unverified report or rumour, not a confirmed price catalyst.",
-          "method": "headline_rules_v2"
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Unverified",
+          "scenario": "rumour",
+          "if_true": true,
+          "reason": "IF THE RUMOUR IS TRUE: A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3389,8 +3765,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3426,8 +3804,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3472,9 +3852,11 @@
           "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3513,8 +3895,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3552,9 +3936,11 @@
           "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3597,11 +3983,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3637,11 +4025,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3680,8 +4070,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3720,8 +4112,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3767,8 +4161,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3807,8 +4203,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3847,8 +4245,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3884,11 +4284,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "High",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3924,11 +4326,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -3967,8 +4371,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4007,8 +4413,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4047,8 +4455,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4091,11 +4501,55 @@
       "moon_meters": [
         {
           "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "7827e5ace91e56",
+      "title": "Ripple, SettleMint Team Up Amid 'Surprisingly Resilient' XRP ETF Flows",
+      "published_at": "2026-09-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPaTBxUUtzLWpCYnAwZ2ZrU0R5bkZ1TUNUSXJBSUwxekc4VmpLcVBqMUEtLWZtS1ZIZ2d2RmxhWVJJZEZXSUlkdWVycjJ2UGltakNqSzhRX0g2R2Jzc1lmemlXUlRVMGdNTWpVMHExTElUb05VRHprcXFIb3pMa044bk9qQ1hsM0tJZEF5Nnk2c0JTajVVVkVrYXhmYzRmRDlzQktqbDRjQXRaZTVFR0ZrMG96ai1IZkdOaUtBUy1sYW1fb3d4?oc=5",
+      "excerpt": "Ripple, SettleMint Team Up Amid 'Surprisingly Resilient' XRP ETF Flows TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple, SettleMint Team Up Amid 'Surprisingly Resilient' XRP ETF Flows",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPaTBxUUtzLWpCYnAwZ2ZrU0R5bkZ1TUNUSXJBSUwxekc4VmpLcVBqMUEtLWZtS1ZIZ2d2RmxhWVJJZEZXSUlkdWVycjJ2UGltakNqSzhRX0g2R2Jzc1lmemlXUlRVMGdNTWpVMHExTElUb05VRHprcXFIb3pMa044bk9qQ1hsM0tJZEF5Nnk2c0JTajVVVkVrYXhmYzRmRDlzQktqbDRjQXRaZTVFR0ZrMG96ai1IZkdOaUtBUy1sYW1fb3d4?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4133,9 +4587,11 @@
           "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4174,8 +4630,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4221,8 +4679,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4261,8 +4721,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4301,8 +4763,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4338,11 +4802,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4381,8 +4847,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "8e8619ee20a617",
+      "title": "U.S. Evernorth's S-4 Goes Effective with SEC, XRP Asset Manager Nears Final Stage of Nasdaq Listing",
+      "published_at": "2026-08-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "BigGo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5wY3VraUhYblN6ekRDTlhVWjFFTVpiMFFRd3AycXBOem85djFtTTZ1YWRlVGJoWHd2T2VyTDZQa0d4eVAyMmlEb2Q4Qmh1cVctc1ZZclVTQTNpMHNHZ3ZDY2R5eVdWbHpBSXc0bXRzczR3UnZUckE?oc=5",
+      "excerpt": "U.S. Evernorth's S-4 Goes Effective with SEC, XRP Asset Manager Nears Final Stage of Nasdaq Listing BigGo Finance",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "U.S. Evernorth's S-4 Goes Effective with SEC, XRP Asset Manager Nears Final Stage of Nasdaq Listing",
+          "name": "BigGo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5wY3VraUhYblN6ekRDTlhVWjFFTVpiMFFRd3AycXBOem85djFtTTZ1YWRlVGJoWHd2T2VyTDZQa0d4eVAyMmlEb2Q4Qmh1cVctc1ZZclVTQTNpMHNHZ3ZDY2R5eVdWbHpBSXc0bXRzczR3UnZUckE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-27T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4421,8 +4931,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "e13cc0b5352343",
+      "title": "XRP vs. SWIFT Cross-Border Battle Heats Up as HSBC, Standard Chartered Go Live With Tokenized Deposits",
+      "published_at": "2026-08-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "CCN.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNajlaRWxxOUwxbWxSOV9ZWjJfaFBsZFl3T2JBSnJMUEZsQVRaakluWEx1azZHZDJ4akNIQmhmaEVQM3dhS21sVjRkcTk3a1dtRVp1YnNPNUpJT3pVMTJkX0IzTWs2RFk2a0NIOVZHVTRpM2YwWmhpSGNBbHVNUEVUMTNLaFFNQVg1UXhHcHU0cG5wS01EUHJF?oc=5",
+      "excerpt": "XRP vs. SWIFT Cross-Border Battle Heats Up as HSBC, Standard Chartered Go Live With Tokenized Deposits CCN.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP vs. SWIFT Cross-Border Battle Heats Up as HSBC, Standard Chartered Go Live With Tokenized Deposits",
+          "name": "CCN.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNajlaRWxxOUwxbWxSOV9ZWjJfaFBsZFl3T2JBSnJMUEZsQVRaakluWEx1azZHZDJ4akNIQmhmaEVQM3dhS21sVjRkcTk3a1dtRVp1YnNPNUpJT3pVMTJkX0IzTWs2RFk2a0NIOVZHVTRpM2YwWmhpSGNBbHVNUEVUMTNLaFFNQVg1UXhHcHU0cG5wS01EUHJF?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4461,8 +5015,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4501,8 +5057,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4541,8 +5099,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4578,11 +5138,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4628,8 +5190,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4665,11 +5229,13 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4708,8 +5274,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4747,9 +5315,11 @@
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4785,11 +5355,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4825,11 +5397,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4868,8 +5442,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4905,11 +5481,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4948,8 +5526,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -4989,16 +5569,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5037,8 +5621,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5077,8 +5663,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "b8c274c826359e",
+      "title": "Ripple CEO’s Kansas Roots Lead To Landmark Five-Year XRP Athletics Partnership",
+      "published_at": "2026-07-08T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 62,
+      "source": "Yahoo Sports · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWFloS0tUeUpCRkNRQnM0MnBncXhpZlNSTjdyRC11eVRrNVpaYmhkcEVkbG4zRVpoVXh5M1ZGS2lxRUtUOW1YbkdzVm1lcTdhN1h5TW5HbkcxenJXVlVYZENjd29MUERXMWx0Z1ZBQ0l0UmpYcnpaMzE4LUxVckRMV1pUOA?oc=5",
+      "excerpt": "Ripple CEO’s Kansas Roots Lead To Landmark Five-Year XRP Athletics Partnership Yahoo Sports",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple CEO’s Kansas Roots Lead To Landmark Five-Year XRP Athletics Partnership",
+          "name": "Yahoo Sports · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWFloS0tUeUpCRkNRQnM0MnBncXhpZlNSTjdyRC11eVRrNVpaYmhkcEVkbG4zRVpoVXh5M1ZGS2lxRUtUOW1YbkdzVm1lcTdhN1h5TW5HbkcxenJXVlVYZENjd29MUERXMWx0Z1ZBQ0l0UmpYcnpaMzE4LUxVckRMV1pUOA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-08T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5114,11 +5744,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5157,8 +5789,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5196,9 +5830,11 @@
           "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5237,8 +5873,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5277,8 +5915,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5317,8 +5957,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5357,8 +5999,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5404,8 +6048,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5444,8 +6090,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5484,8 +6132,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5523,9 +6173,11 @@
           "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5564,8 +6216,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5604,8 +6258,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5644,8 +6300,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5685,16 +6343,62 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "cb61b10747ba16",
+      "title": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs",
+      "published_at": "2026-06-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTFpbFhnTWQtdmF0VkxQVUVsb3J6VWE2ZjVQRU5kVlhXTk1YMU42UmFKQVRvbG5vQzlwN1FpNFV6S1A2UjliVC1ZLTR4UTVHdjJ0RF90MS1GQU9DajV0Tm8taFJqVHpCaXVXeEg1VS10TjZ6dmJXaU1BM1MwVTNFMVF1LVJBYmZ4RXBxZ0xEZEUzcDN1a0c1ZDdKODRWWUJLeDgyZjBNMHRkS1VjMThJZ21YVW0yMDhGV0UwSEM2VlM?oc=5",
+      "excerpt": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTFpbFhnTWQtdmF0VkxQVUVsb3J6VWE2ZjVQRU5kVlhXTk1YMU42UmFKQVRvbG5vQzlwN1FpNFV6S1A2UjliVC1ZLTR4UTVHdjJ0RF90MS1GQU9DajV0Tm8taFJqVHpCaXVXeEg1VS10TjZ6dmJXaU1BM1MwVTNFMVF1LVJBYmZ4RXBxZ0xEZEUzcDN1a0c1ZDdKODRWWUJLeDgyZjBNMHRkS1VjMThJZ21YVW0yMDhGV0UwSEM2VlM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5733,8 +6437,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5770,11 +6476,55 @@
       "moon_meters": [
         {
           "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "2cf26c4f37fc27",
+      "title": "Ripple’s Early Banking Ally Now Connected To X Money Expansion",
+      "published_at": "2026-05-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbDlNZnNadi11M0V2RzZ3QXBpMmZjQmlPSU56RnpqWS1iLXZCaEEzQUU4SmszLU9PYjVSTHBLS2E2aWZMRFZvNkN1R3hLMUpOd2YwOE1HUm1EeE9XODJ3bTdfUkJSWjlyMHlScm1uZXhNbkJoOFEyV1kwN0JkR2FLcS15dlM0d2pjcDZiTzdDWEhUM29lWF9GVXRkcDBpNlc3N1gwdC1XSWNvaXFudG1QUVVabW9BU3dmVlhUcQ?oc=5",
+      "excerpt": "Ripple’s Early Banking Ally Now Connected To X Money Expansion TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple’s Early Banking Ally Now Connected To X Money Expansion",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbDlNZnNadi11M0V2RzZ3QXBpMmZjQmlPSU56RnpqWS1iLXZCaEEzQUU4SmszLU9PYjVSTHBLS2E2aWZMRFZvNkN1R3hLMUpOd2YwOE1HUm1EeE9XODJ3bTdfUkJSWjlyMHlScm1uZXhNbkJoOFEyV1kwN0JkR2FLcS15dlM0d2pjcDZiTzdDWEhUM29lWF9GVXRkcDBpNlc3N1gwdC1XSWNvaXFudG1QUVVabW9BU3dmVlhUcQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5813,8 +6563,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5853,8 +6605,53 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "c0d55d09aacbb6",
+      "title": "XRP Price Analysis: Adoption Thesis Weakens as Banks Prefer Ripple’s Stablecoin Over XRP - News and Statistics",
+      "published_at": "2026-05-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple",
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "IndexBox · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSm81MTlQUUxvUGdxemw5STgwLTI1TXZmV1dtUEVGaVd0cWZ6aEt5RjNVak5rZ1ZpN3FKRmNFNUdxWkU4dGxBUHpMSHpzaU5wZnd1aDlUYzJSWW5GNy1HRWEySHdsdExXaTgtc2h5bUhfUTNWMHNtbmtCdUNhYU5ZVFBONEZpaWVpTWdBbWdQczREcjRVNWc?oc=5",
+      "excerpt": "XRP Price Analysis: Adoption Thesis Weakens as Banks Prefer Ripple’s Stablecoin Over XRP - News and Statistics IndexBox",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Price Analysis: Adoption Thesis Weakens as Banks Prefer Ripple’s Stablecoin Over XRP - News and Statistics",
+          "name": "IndexBox · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSm81MTlQUUxvUGdxemw5STgwLTI1TXZmV1dtUEVGaVd0cWZ6aEt5RjNVak5rZ1ZpN3FKRmNFNUdxWkU4dGxBUHpMSHpzaU5wZnd1aDlUYzJSWW5GNy1HRWEySHdsdExXaTgtc2h5bUhfUTNWMHNtbmtCdUNhYU5ZVFBONEZpaWVpTWdBbWdQczREcjRVNWc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-10T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5893,8 +6690,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5933,8 +6732,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -5973,8 +6774,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6020,8 +6823,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6060,8 +6865,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6101,16 +6908,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6149,8 +6960,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6188,9 +7001,53 @@
           "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "a64c67a9825896",
+      "title": "XRP News: XRP Ledger Just Tokenized $3 Billion in Real-World Assets",
+      "published_at": "2026-05-03T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNX0JmcWxrek56b0ZoZUFjcXNrMzZicHdrYmhRVmM2YzdMcjllV1dOXzFDVG1GazZnUFRXY0hpOW5TQW5sSWNGY2NMLUxNRGR3WExRSnYyMDBqcFI2WlN6TElBTW1UVmFGdUxNTWpDc0F2dnZmb2hEb0s4eVFhOWlZampBM01kN0ppcWF1QVF1b3VLdzZaaE5iQ3hiRV9VZXpsbWtSVTBWcHk4ZFNoOFE?oc=5",
+      "excerpt": "XRP News: XRP Ledger Just Tokenized $3 Billion in Real-World Assets 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP News: XRP Ledger Just Tokenized $3 Billion in Real-World Assets",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNX0JmcWxrek56b0ZoZUFjcXNrMzZicHdrYmhRVmM2YzdMcjllV1dOXzFDVG1GazZnUFRXY0hpOW5TQW5sSWNGY2NMLUxNRGR3WExRSnYyMDBqcFI2WlN6TElBTW1UVmFGdUxNTWpDc0F2dnZmb2hEb0s4eVFhOWlZampBM01kN0ppcWF1QVF1b3VLdzZaaE5iQ3hiRV9VZXpsbWtSVTBWcHk4ZFNoOFE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-03T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6229,8 +7086,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6266,11 +7125,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6313,11 +7174,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6356,8 +7219,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "039e652875a502",
+      "title": "Could Ripple XRP Power Cross-Border Payments? Russia’s Early Tests Suggest Potential",
+      "published_at": "2026-04-23T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR204djlBaWYyS20zUzVGaFAzMjFjUUU0SGpfYjhrek5iWHA4Szd1ODVhRVdTcnZDbGQwR0YzWlpUQlFTcS1pTjFZWVUxY01xV2x1VmhVWnR1RG9HSEdrUlB1SDJOcm45eThCNXJhd2VnMHRYcnhEMGU5ZGxDY2JCYW1uN1NTT3FSamJESUNidnR3ajdCY2N5WVN2OTNldFVEeTZWRW1fNlJwUU5ZMVNTcjZ0TElVR0MzTU5EanUxSDU2c3NtbDgtUXp1SGw3RHBXSEVTM2E4SDc?oc=5",
+      "excerpt": "Could Ripple XRP Power Cross-Border Payments? Russia’s Early Tests Suggest Potential TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Could Ripple XRP Power Cross-Border Payments? Russia’s Early Tests Suggest Potential",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR204djlBaWYyS20zUzVGaFAzMjFjUUU0SGpfYjhrek5iWHA4Szd1ODVhRVdTcnZDbGQwR0YzWlpUQlFTcS1pTjFZWVUxY01xV2x1VmhVWnR1RG9HSEdrUlB1SDJOcm45eThCNXJhd2VnMHRYcnhEMGU5ZGxDY2JCYW1uN1NTT3FSamJESUNidnR3ajdCY2N5WVN2OTNldFVEeTZWRW1fNlJwUU5ZMVNTcjZ0TElVR0MzTU5EanUxSDU2c3NtbDgtUXp1SGw3RHBXSEVTM2E4SDc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-23T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6393,11 +7300,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6436,8 +7345,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6476,8 +7387,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6513,11 +7426,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6556,8 +7471,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6596,8 +7513,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6633,11 +7552,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6673,11 +7594,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6713,11 +7636,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6753,11 +7678,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6796,8 +7723,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6836,8 +7765,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "fcb4e3f772a6d2",
+      "title": "XRP Price Sticky As Evernorth Plans Nasdaq Listing",
+      "published_at": "2026-04-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "MarketForces Africa · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSTl5Y09keDJQd213cnZKaXltTHQ0X3FacUZ0NkhTR3h6S01wOWNmakExRDNSODh3V3BKejgzWUNLMkdVMkZkOGUtb3JQemROZlEwSWlfN2pDcU5HaVNnODRRMzVXY2x6MFhYcEhtdkh2VDZvbjl3TzVtUmQ4c2kzR09FWQ?oc=5",
+      "excerpt": "XRP Price Sticky As Evernorth Plans Nasdaq Listing MarketForces Africa",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Price Sticky As Evernorth Plans Nasdaq Listing",
+          "name": "MarketForces Africa · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSTl5Y09keDJQd213cnZKaXltTHQ0X3FacUZ0NkhTR3h6S01wOWNmakExRDNSODh3V3BKejgzWUNLMkdVMkZkOGUtb3JQemROZlEwSWlfN2pDcU5HaVNnODRRMzVXY2x6MFhYcEhtdkh2VDZvbjl3TzVtUmQ4c2kzR09FWQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-10T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6876,8 +7849,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6913,11 +7888,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6953,11 +7930,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
+          "value": 3,
+          "label": "Very bullish",
           "confidence": "Medium",
-          "reason": "Possible XRP ecosystem adoption; actual XRP usage and lasting demand remain unproven.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -6996,8 +7975,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7033,11 +8014,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7076,8 +8059,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7120,11 +8105,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7160,11 +8147,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7200,11 +8189,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7240,11 +8231,97 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "a9a63bb64030cb",
+      "title": "XRP Price Rises 3.2% On Ripple's Convera Partnership",
+      "published_at": "2026-04-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 62,
+      "source": "MarketForces Africa · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYzVoX2NiWk5nY2hkVlduNG5ScDFRck14RWZGeDRUR3dxOUV1dGdSZnNRR3ZrcDhqdVlxY3NhMHpobUs0M0I0TEs3bjhtOTFZT0ZDbU51VWZmbmExNjV5WENlbHRxMzlwSU1vazVjQm5GTHdBN3FONjNtcnNfWEtVYThkNA?oc=5",
+      "excerpt": "XRP Price Rises 3.2% On Ripple's Convera Partnership MarketForces Africa",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Price Rises 3.2% On Ripple's Convera Partnership",
+          "name": "MarketForces Africa · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYzVoX2NiWk5nY2hkVlduNG5ScDFRck14RWZGeDRUR3dxOUV1dGdSZnNRR3ZrcDhqdVlxY3NhMHpobUs0M0I0TEs3bjhtOTFZT0ZDbU51VWZmbmExNjV5WENlbHRxMzlwSU1vazVjQm5GTHdBN3FONjNtcnNfWEtVYThkNA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "701d9741ddfa16",
+      "title": "XRP Positioned At The Center Of Wall Street’s Tokenization Boom — Is A Rally Emerging?",
+      "published_at": "2026-03-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUmZ3UUNrV0p0cDhlSm9sbHJaUkVLNHdvOFRoS2MyRGF3aTZHTDFLeGNGdXNma2VUeEs5ZTU2X0xCVk5FT09OWHFHZ3dsVDhUa2xMcjNOX0luS2QxTDU4OFhuS2YyMVhyeTZPcEZOTnAwcFMzdVJha3dYMnNna1hkcnJuZU1QNmYwaHhPVDBoSnZYZjZBT1Y5eE1MQjFHVG5sMnJISTB1WDZyQnN4WFpJZV9rWEJYb0kwQUZPT3kyNnJRYlQ5RXRPcGpjc2hJS1F5WnhMSzY1TEc?oc=5",
+      "excerpt": "XRP Positioned At The Center Of Wall Street’s Tokenization Boom — Is A Rally Emerging? TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Positioned At The Center Of Wall Street’s Tokenization Boom — Is A Rally Emerging?",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUmZ3UUNrV0p0cDhlSm9sbHJaUkVLNHdvOFRoS2MyRGF3aTZHTDFLeGNGdXNma2VUeEs5ZTU2X0xCVk5FT09OWHFHZ3dsVDhUa2xMcjNOX0luS2QxTDU4OFhuS2YyMVhyeTZPcEZOTnAwcFMzdVJha3dYMnNna1hkcnJuZU1QNmYwaHhPVDBoSnZYZjZBT1Y5eE1MQjFHVG5sMnJISTB1WDZyQnN4WFpJZV9rWEJYb0kwQUZPT3kyNnJRYlQ5RXRPcGpjc2hJS1F5WnhMSzY1TEc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-03-27T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7283,8 +8360,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7323,8 +8402,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7370,8 +8451,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7411,16 +8494,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7459,8 +8546,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7499,8 +8588,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7539,8 +8630,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7579,8 +8672,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7626,8 +8721,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7666,8 +8763,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7706,8 +8805,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "fe851b60aa6543",
+      "title": "If XRP Hits $6, Ripple Becomes A Top 10 Global Bank With $240B Valuation, Teucrium CEO Says",
+      "published_at": "2026-03-17T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA2c1BCVWRTVUpIZzI5NFo1eEIxTjEzUDBBYkVoSF9QejRCUzF0c1JsTHhzVTdia053MVdqSEhDZ2lqbEFPRS1wSF9sb3k4bVE4SWtSVTd4VG1aTi1rbEgyYmJ2Y1BqeXdKRVJId1h5WWtyaEZmQnlyTWNIcw?oc=5",
+      "excerpt": "If XRP Hits $6, Ripple Becomes A Top 10 Global Bank With $240B Valuation, Teucrium CEO Says Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "If XRP Hits $6, Ripple Becomes A Top 10 Global Bank With $240B Valuation, Teucrium CEO Says",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA2c1BCVWRTVUpIZzI5NFo1eEIxTjEzUDBBYkVoSF9QejRCUzF0c1JsTHhzVTdia053MVdqSEhDZ2lqbEFPRS1wSF9sb3k4bVE4SWtSVTd4VG1aTi1rbEgyYmJ2Y1BqeXdKRVJId1h5WWtyaEZmQnlyTWNIcw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-03-17T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7746,8 +8889,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7786,8 +8931,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7826,8 +8973,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7866,8 +9015,52 @@
           "value": null,
           "label": "Not rated",
           "confidence": "Insufficient",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Speculative market commentary, not a verified company or network development.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "7a6c98c40b3852",
+      "title": "Bank of Japan Launches Blockchain Settlement Sandbox, XRP Ledger be Chosen?",
+      "published_at": "2026-03-03T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYWhrNkc2US1naG12cHYzc0ZKb2llRFhxRVR5eTlHemFPak93WlZaaHAwLTR0MkEwQmVvbFF1am8yNG01bnEwYTJVc3plaGQ0NERrdU54dWdxVlA1N1BSVmlsRVVmZkZMa0hMOFUwblg1WWYtejFQakF1dVhLNnVVR3ZmaXdqVnM2bXVBbHJVeHRhRVpfSG9tMmdfdGtyaExrVnQxbUxCbllNaEJuSmNjN1hGdGlXbHhXQU1WUlJZME1kUEZrazZlbFY2em1pZw?oc=5",
+      "excerpt": "Bank of Japan Launches Blockchain Settlement Sandbox, XRP Ledger be Chosen? TradingView",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Bank of Japan Launches Blockchain Settlement Sandbox, XRP Ledger be Chosen?",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYWhrNkc2US1naG12cHYzc0ZKb2llRFhxRVR5eTlHemFPak93WlZaaHAwLTR0MkEwQmVvbFF1am8yNG01bnEwYTJVc3plaGQ0NERrdU54dWdxVlA1N1BSVmlsRVVmZkZMa0hMOFUwblg1WWYtejFQakF1dVhLNnVVR3ZmaXdqVnM2bXVBbHJVeHRhRVpfSG9tMmdfdGtyaExrVnQxbUxCbllNaEJuSmNjN1hGdGlXbHhXQU1WUlJZME1kUEZrazZlbFY2em1pZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-03-03T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7906,8 +9099,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7946,8 +9141,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -7986,8 +9183,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8026,8 +9225,136 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "41adb46080424f",
+      "title": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved?",
+      "published_at": "2026-02-24T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZi1qR0cxX01RZDA1MWRuZlRHYk0zWjFIdU0tQ1owRVFMM1FMSlh1N1c3WlJzUk9nV0YwUGp2elJJSldMSTB1SGpHemFnX1A3SjA2Ti1VWGFhMnN6UV9vM2xXbDhOR3FGam9TaGFybTRYUnBIWGx4SEw4SmU4ZnNWWkQwWmlYeFhHMXYzMzVmSTk1Z2pPVFZnR2lmZEVTSmNLM0JwdU5nTVpLZHpMdWV2MXVNcGVlVkdf?oc=5",
+      "excerpt": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved? 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZi1qR0cxX01RZDA1MWRuZlRHYk0zWjFIdU0tQ1owRVFMM1FMSlh1N1c3WlJzUk9nV0YwUGp2elJJSldMSTB1SGpHemFnX1A3SjA2Ti1VWGFhMnN6UV9vM2xXbDhOR3FGam9TaGFybTRYUnBIWGx4SEw4SmU4ZnNWWkQwWmlYeFhHMXYzMzVmSTk1Z2pPVFZnR2lmZEVTSmNLM0JwdU5nTVpLZHpMdWV2MXVNcGVlVkdf?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-24T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "7f0be4a9d2e19c",
+      "title": "Fact Check: Are BRICS Nations Partnering With Ripple to Use XRP Ledger for a Global Digital Currency?",
+      "published_at": "2026-02-18T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQTHFIbklQS2NqbDZRaDl0SmEwYjZHQlpHcGN4LVdqZDZiQ1F1R0J6N1F6dDg0YnJmWDhPdVdRZDFteTlnb1hUbFBydGxSQUpINWhoMUFsaTZDc3BGaTdJekkzSUkyWVNaUnUwLVQ3WGFZNExyLXViS0dZLW5pTzFfNmlsM1phZzBKWjd3Mm9GM19kTUtsZXphMHd3QUV5N3oxVFNnVFRfWWR0WVpYa3VicE5ydEZ0MGFxLU9PcXZ2VlFmWVV1U0VQMGxPdnF5WW56ZXNHYlVFRFhhek1POEZNZURLNjBoUmg5aU9RTUlWZw?oc=5",
+      "excerpt": "Fact Check: Are BRICS Nations Partnering With Ripple to Use XRP Ledger for a Global Digital Currency? TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Fact Check: Are BRICS Nations Partnering With Ripple to Use XRP Ledger for a Global Digital Currency?",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQTHFIbklQS2NqbDZRaDl0SmEwYjZHQlpHcGN4LVdqZDZiQ1F1R0J6N1F6dDg0YnJmWDhPdVdRZDFteTlnb1hUbFBydGxSQUpINWhoMUFsaTZDc3BGaTdJekkzSUkyWVNaUnUwLVQ3WGFZNExyLXViS0dZLW5pTzFfNmlsM1phZzBKWjd3Mm9GM19kTUtsZXphMHd3QUV5N3oxVFNnVFRfWWR0WVpYa3VicE5ydEZ0MGFxLU9PcXZ2VlFmWVV1U0VQMGxPdnF5WW56ZXNHYlVFRFhhek1POEZNZURLNjBoUmg5aU9RTUlWZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-18T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "7c362339b40502",
+      "title": "SWIFT Ready To Move Forward With XRP? Rumors Swirl Of Private Meeting",
+      "published_at": "2026-02-13T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVld1RUo4Vmx3anF5Qlh5N0tyNXpDRDMwNmFyMVV0S2FGd0ZURFhMb2dqS2htUUpVVVFPNTV2Umd6YkxtTGk4N0tuSE1IS0ZXUnM4bTVyWVZVUnVwVEtPMkdNaVpJNG9qVlVDRm9FVkxUNWhzMDJOdWJLOV9ZVnphVjdvUElUdVRHTzBPa09MWWMtdkY4WExpVmZOenJRa0taUnNfVEh1N2gtM0xtOXVLRnhjUFZLY05jZjFGRm1lTVh0Q1Ja?oc=5",
+      "excerpt": "SWIFT Ready To Move Forward With XRP? Rumors Swirl Of Private Meeting TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SWIFT Ready To Move Forward With XRP? Rumors Swirl Of Private Meeting",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVld1RUo4Vmx3anF5Qlh5N0tyNXpDRDMwNmFyMVV0S2FGd0ZURFhMb2dqS2htUUpVVVFPNTV2Umd6YkxtTGk4N0tuSE1IS0ZXUnM4bTVyWVZVUnVwVEtPMkdNaVpJNG9qVlVDRm9FVkxUNWhzMDJOdWJLOV9ZVnphVjdvUElUdVRHTzBPa09MWWMtdkY4WExpVmZOenJRa0taUnNfVEh1N2gtM0xtOXVLRnhjUFZLY05jZjFGRm1lTVh0Q1Ja?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-13T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Unverified",
+          "scenario": "rumour",
+          "if_true": true,
+          "reason": "IF THE RUMOUR IS TRUE: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8063,11 +9390,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8106,8 +9435,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8147,16 +9478,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8195,8 +9530,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8235,8 +9572,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8275,8 +9614,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8321,9 +9662,11 @@
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8359,11 +9702,13 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "High",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If XRP treasury assets generate material net income without offsetting dilution or losses, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8399,11 +9744,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8439,11 +9786,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8479,11 +9828,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8519,11 +9870,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8563,16 +9916,20 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         },
         {
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8608,11 +9965,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8648,11 +10007,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8690,9 +10051,11 @@
           "asset": "XRP",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8731,8 +10094,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8768,11 +10133,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8811,8 +10178,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8851,8 +10220,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8888,11 +10259,13 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
-          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8931,8 +10304,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -8971,8 +10346,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9011,8 +10388,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9051,8 +10430,94 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "09a4380db7b15d",
+      "title": "Ripple’s Next Big Bet: Amazon Bedrock AI for XRPL Efficiency — What It Means for XRP Price",
+      "published_at": "2026-01-09T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "CCN.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZHhQZkJRVUFvYXgtbEdMdUFPRlhrUG9iQzc0WGNKajI1NlRnMHRZdWhtc29TLURMWXo2eXoxeG5zZ2syVV9VNlpaUGtVaWg1YjZjSV9xS2lIdHpfd0Z3RUk1Ty1odTJqU3ZGanIxejhpcVZwdDFtSnpzTVRoUmF0YkZ5bXM4ZHNEUUtlejAwS3EzVVhaWGhTcmNGWQ?oc=5",
+      "excerpt": "Ripple’s Next Big Bet: Amazon Bedrock AI for XRPL Efficiency — What It Means for XRP Price CCN.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple’s Next Big Bet: Amazon Bedrock AI for XRPL Efficiency — What It Means for XRP Price",
+          "name": "CCN.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZHhQZkJRVUFvYXgtbEdMdUFPRlhrUG9iQzc0WGNKajI1NlRnMHRZdWhtc29TLURMWXo2eXoxeG5zZ2syVV9VNlpaUGtVaWg1YjZjSV9xS2lIdHpfd0Z3RUk1Ty1odTJqU3ZGanIxejhpcVZwdDFtSnpzTVRoUmF0YkZ5bXM4ZHNEUUtlejAwS3EzVVhaWGhTcmNGWQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-09T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "49dcd45cdd6f48",
+      "title": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption",
+      "published_at": "2026-01-09T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 62,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT3QwN0xFYVZRMWlGdWdKdUNacVBwbC15VXJPblducU5mNlpTUE9MNjFHR2ZjaFdDVDlqNUFUYnN3NDZwdTdkZnh5Vk5udE95Vl9hVnZnM1VFME9GTEZSVE9KQXBmTHladVhSQUt0XzN5anFEVWdJZVlpamRIenRyZWFIUGFYOFpWeEs4eTBLM2NKWUhJY2J5SWpXb3lRUnJzdjhsOExIQjJWVFhKbXk5WURtY1oySTBtNnBkR2N6NHc?oc=5",
+      "excerpt": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption TradingView",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT3QwN0xFYVZRMWlGdWdKdUNacVBwbC15VXJPblducU5mNlpTUE9MNjFHR2ZjaFdDVDlqNUFUYnN3NDZwdTdkZnh5Vk5udE95Vl9hVnZnM1VFME9GTEZSVE9KQXBmTHladVhSQUt0XzN5anFEVWdJZVlpamRIenRyZWFIUGFYOFpWeEs4eTBLM2NKWUhJY2J5SWpXb3lRUnJzdjhsOExIQjJWVFhKbXk5WURtY1oySTBtNnBkR2N6NHc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-09T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9091,8 +10556,10 @@
           "value": 1,
           "label": "Slightly bullish",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9131,8 +10598,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9171,8 +10640,52 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "5850650448eca5",
+      "title": "XRP Holders Eye ‘Institutional Grade Yield’ as Ripple Engineer Details Upcoming XRPL Lending Protocol",
+      "published_at": "2025-12-20T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTDU0OURtdkxFd0NlUWhXU3hyNEJyWHYwaTNEeWx1ZXZUUWp0b3FaSl9YNFNGejdaTnJ5MENzSHVlMXFCam1nU1FmMEM3T2Q5SzVOakl6eXctQXNIMHZkSzhWRFc3Z2lGYUx4RXlyV0hTMnVlMGtoczFaTW9oUEI3azBsWE5RdFJl?oc=5",
+      "excerpt": "XRP Holders Eye ‘Institutional Grade Yield’ as Ripple Engineer Details Upcoming XRPL Lending Protocol Yahoo Finance",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:26Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Holders Eye ‘Institutional Grade Yield’ as Ripple Engineer Details Upcoming XRPL Lending Protocol",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTDU0OURtdkxFd0NlUWhXU3hyNEJyWHYwaTNEeWx1ZXZUUWp0b3FaSl9YNFNGejdaTnJ5MENzSHVlMXFCam1nU1FmMEM3T2Q5SzVOakl6eXctQXNIMHZkSzhWRFc3Z2lGYUx4RXlyV0hTMnVlMGtoczFaTW9oUEI3azBsWE5RdFJl?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-12-20T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9211,8 +10724,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9251,8 +10766,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9291,8 +10808,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9331,8 +10850,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9371,8 +10892,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9415,11 +10938,13 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "High",
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9458,8 +10983,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9498,8 +11025,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9538,8 +11067,10 @@
           "value": -1,
           "label": "Slightly bearish",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9578,8 +11109,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9618,8 +11151,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9658,8 +11193,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9698,8 +11235,63 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "643725028f14be",
+      "title": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury",
+      "published_at": "2025-10-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth",
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdFVydExaa2RfQm5PdjBZYWktZURlSzM2cTJSU3BWYXpOZkdkQVNCYW8xS3lXbExUWkpsd3JJUmhnVXZUcDRpM1dnZi1lMzZpU3NCeUNfOEJRdGVXYjROR3BrTHA4dExNeUlkT0tNSjA3Y0FlR1A2Tk40V00yWTBWZzBDQmltQTRKbmpUNExyTENFUlBCNXZnUzA4VUpRaEVVZXZJTlRxTXVfMC0wSmZUYlh6bXFFVTFzNExCNE9UTVY0WVQ1XzJTZmw2dGE?oc=5",
+      "excerpt": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury TradingView",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-26T22:39:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdFVydExaa2RfQm5PdjBZYWktZURlSzM2cTJSU3BWYXpOZkdkQVNCYW8xS3lXbExUWkpsd3JJUmhnVXZUcDRpM1dnZi1lMzZpU3NCeUNfOEJRdGVXYjROR3BrTHA4dExNeUlkT0tNSjA3Y0FlR1A2Tk40V00yWTBWZzBDQmltQTRKbmpUNExyTENFUlBCNXZnUzA4VUpRaEVVZXZJTlRxTXVfMC0wSmZUYlh6bXFFVTFzNExCNE9UTVY0WVQ1XzJTZmw2dGE?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-10-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
         }
       ]
     },
@@ -9738,8 +11330,10 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_rules_v2"
+          "method": "headline_if_true_v3"
         }
       ]
     }
