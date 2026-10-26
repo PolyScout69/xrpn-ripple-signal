@@ -244,6 +244,10 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
             return 1, 'Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.', evidence
 
     if asset == 'XRPN':
+        if _contains(combined, r'\bmerger\b', r'\bbusiness combination\b') and _contains(combined,
+            r'\bvote\b', r'\bshareholders?\b') and _contains(combined,
+            r'\bpasses?\b', r'\bapproved?\b', r'\bwins?\b'):
+            return 2, 'If the reported merger approval is valid and closes, it could remove uncertainty and improve XRPN market access.', evidence
         if _contains(combined, r'\bxrp\b') and _contains(combined,
             r'\byield\b', r'\blending\b', r'\blends?\b', r'\bcollateral\b',
             r'\bearn(?:s|ing)? interest\b', r'\bincome from (?:its )?treasury\b'):
