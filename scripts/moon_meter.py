@@ -1,7 +1,8 @@
-"""Conservative, transparent headline-based Moon Meter for Signal.
+"""Scenario-based, transparent headline Moon Meter for Signal.
 
-Not a prediction, recommendation, or analysis of full filing contents. News impact
-(significance) is deliberately separate from price-direction signalling.
+Direction scores estimate potential asset impact IF the reported claim, rumour
+or assumption proves true. This is not a probability-of-truth estimate,
+price prediction, trade recommendation or examination of full filing contents.
 """
 from __future__ import annotations
 
@@ -26,6 +27,21 @@ LABELS = {
 
 def _contains(text: str, *expressions: str) -> bool:
     return any(re.search(exp, text, re.IGNORECASE) for exp in expressions)
+
+
+
+def scenario_kind(item: dict) -> str:
+    """Keep verification separate from potential impact if the claim is true."""
+    text = re.sub(r'\s+', ' ', str(item.get('title', '')) + ' ' + str(item.get('excerpt', '')))
+    if _contains(text, r'\brumou?rs?\b', r'\bunconfirmed\b', r'\bnot confirmed\b',
+                 r'\bspeculat(?:ion|ive|es?)\b', r'\breportedly\b', r'\bunverified\b',
+                 r'\bunnamed sources?\b'):
+        return 'rumour'
+    if _contains(text, r'\b(?:could|might|may|would|potential(?:ly)?|possible)\b',
+                 r'\b(?:considering|exploring|in talks)\b', r'\bplans? to\b',
+                 r'\bpropos(?:al|ed)\b', r'\bassum(?:e|ing|ption)\b'):
+        return 'assumption'
+    return 'reported'
 
 
 def _assess(item: dict, asset: str) -> tuple[int, str]:
@@ -136,12 +152,15 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
 
 
 def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
-    """Evidence-aware asset-specific rules. None means not rated, not neutral."""
+    """Asset-specific upside/downside IF the story or hypothesis proves true."""
     title = str(item.get('title', '')).lower()
     excerpt = str(item.get('excerpt', '')).lower()
     combined = re.sub(r'\s+', ' ', title + ' ' + excerpt)
     official = item.get('source_type') in ('Official', 'SEC')
-    evidence = 'High' if official else 'Medium'
+    scenario = scenario_kind(item)
+    evidence = ('Unverified' if scenario == 'rumour' else
+                'Conditional' if scenario == 'assumption' else
+                'High' if official else 'Medium')
     stock = asset in ('MSTR', 'XRPN')
 
     # Filing indexes contain form names and item numbers, not the facts inside.
@@ -149,10 +168,8 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
            r'\bfiles? (?:a )?form\b', r'\bform (?:8-k|10-k|10-q|s-3|s-1|4)\b.*\breported items\b',
            r'\bsec (?:8-k|10-k|10-q|s-3|s-1) filed\b'):
         return None, 'Filing index only: its contents have not been analysed, so no defensible direction can be inferred.', 'Insufficient'
-    # A rumour must never earn an automatically bullish score.
-    if _contains(combined, r'\brumou?rs?\b', r'\bunconfirmed\b', r'\bnot confirmed\b',
-                 r'\bspeculat(?:ion|ive|es?)\b', r'\bfake (?:news|claim)\b'):
-        return None, 'Unverified report or rumour, not a confirmed price catalyst.', 'Insufficient'
+    # Unverified claims are rated for their IF-TRUE impact and tagged as rumours.
+    # Never present a directional score as evidence that the rumour is true.
 
     # Editorial price speculation has no new issuer/network fact to rate.
     if _contains(title, r'\bbubble bursting\?', r'\bis (?:the )?(?:mstr|xrpn|xrp) (?:bubble|rally) (?:bursting|over)\?'):
@@ -182,10 +199,10 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
                     return -2, 'Material decline in coin holdings per share; assess the fully diluted share count.', evidence
                 return -1, 'Reported decline in coin holdings per share; materiality remains uncertain.', evidence
             if up:
-                if amount is not None and amount >= 20 and official and fully:
-                    return 3, 'Exceptional issuer-reported coin-per-diluted-share accretion (20%+); verify calculations and funding.', evidence
-                if amount is not None and amount >= 5 and official:
-                    return 2, 'Measured issuer-reported accretion in coin holdings per share, not just gross purchases.', evidence
+                if amount is not None and amount >= 20 and fully:
+                    return 3, 'If realised, 20%+ growth in coin holdings per diluted share would be exceptionally accretive.', evidence
+                if amount is not None and amount >= 5:
+                    return 2, 'If realised, meaningful coin-per-share growth would be bullish; verify dilution and funding.', evidence
                 return 1, 'Coin holdings per share may have improved, subject to dilution and funding costs.', evidence
         if official and _contains(combined, r'\b(?:severe|massive) dilution (?:confirmed|completed)\b',
                           r'\bshares? issued at (?:a )?(?:deep|steep) discount\b'):
@@ -199,7 +216,46 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
         if _contains(combined, r'\b(?:xrpl|xrp ledger) (?:bug fix|amendment|upgrade) (?:is )?(?:delayed|postponed|stalled)\b',
                      r'\b(?:bug fix|amendment|upgrade) (?:is )?(?:delayed|postponed|stalled)\b'):
             return -1, 'Delay or validator friction could modestly slow XRPL functionality.', evidence
+    # IF-TRUE upside: rate plausible material scenarios without requiring
+    # revenues, token flows or transaction volumes to have happened already.
+    # These scores do NOT indicate that the claim itself is credible.
+    if asset == 'XRP':
+        direct_xrp = _contains(combined, r'\bxrp\b', r'\bxrpl\b', r'\bxrp ledger\b')
+        adoption = _contains(combined, r'\bpartner(?:ship|s|ed)?\b',
+                             r'\bintegrat(?:e|es|ed|ion)\b', r'\bsettle(?:ment|s|d)?\b',
+                             r'\badopt(?:s|ed|ion)?\b', r'\btokeniz\w*\b',
+                             r'\buse(?:s|d)?\b')
+        systemic = _contains(combined, r'\bswift\b', r'\bblackrock\b',
+                             r'\bfederal reserve\b', r'\bcentral banks?\b',
+                             r'\bmajor global banks?\b', r'\bglobal settlement\b')
+        if direct_xrp and systemic and adoption:
+            return 3, 'A major financial-network integration using XRP, if realised, could transform adoption and demand.', evidence
+        if direct_xrp and _contains(combined,
+            r'\b(?:sec|regulator) approves? (?:spot )?xrp etf\b',
+            r'\bspot xrp etf (?:approved|authori[sz]ed)\b',
+            r'\bxrp etf approval granted\b'):
+            return 3, 'If realised, regulated spot ETF access could unlock substantial demand; future flows remain unknown.', evidence
+        if direct_xrp and adoption:
+            return 2, 'If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.', evidence
+        if _contains(combined, r'\bripple\b', r'\brlusd\b') and _contains(combined,
+            r'\bpartner(?:ship|s|ed)?\b', r'\bplatform\b', r'\btreasury\b',
+            r'\bproduct\b', r'\blaunch(?:es|ed)?\b', r'\bpayments?\b',
+            r'\bcustody\b', r'\bcommercial\b'):
+            return 1, 'Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.', evidence
+
+    if asset == 'XRPN':
+        if _contains(combined, r'\bxrp\b') and _contains(combined,
+            r'\byield\b', r'\blending\b', r'\blends?\b', r'\bcollateral\b',
+            r'\bearn(?:s|ing)? interest\b', r'\bincome from (?:its )?treasury\b'):
+            return 2, 'If XRP treasury assets generate material net income without offsetting dilution or losses, XRPN could benefit.', evidence
+        if _contains(combined, r'\bpartner(?:ship|s|ed)?\b',
+            r'\bacqui(?:re|res|red|sition)\b', r'\bcommercial (?:deal|agreement)\b') and _contains(combined,
+            r'\bxrp\b', r'\btreasury\b', r'\binstitution\b', r'\bbank\b'):
+            return 2, 'If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.', evidence
+
     score, reason = _assess(item, asset)
+    if scenario == 'rumour' and score <= -2 and _contains(combined, r'\bbankrupt(?:cy)?\b', r'\binsolvenc\w*\b', r'\bfraud charges\b'):
+        return -3, 'If this severe solvency or enforcement claim were true, the downside could be extreme.', evidence
     # Do not equate non-cash, mark-to-market accounting profit with exceptional
     # accretion in crypto-treasury vehicles.
     if stock and score == 3:
@@ -228,14 +284,21 @@ def moon_for_story(item: dict) -> list[dict]:
     output = []
     for asset in assets:
         value, reason, confidence = _assess_v2(item, asset)
+        scenario = scenario_kind(item)
         if value is not None:
             value = max(-3, min(3, int(value)))
+            if scenario == 'rumour':
+                reason = 'IF THE RUMOUR IS TRUE: ' + reason
+            elif scenario == 'assumption':
+                reason = 'IF THE ASSUMPTION HOLDS: ' + reason
         output.append({
             'asset': asset,
             'value': value,
             'label': LABELS.get(value, 'Not rated'),
             'confidence': confidence,
+            'scenario': scenario,
+            'if_true': True,
             'reason': reason,
-            'method': 'headline_rules_v2',
+            'method': 'headline_if_true_v3',
         })
     return output
