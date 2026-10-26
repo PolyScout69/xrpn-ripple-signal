@@ -82,16 +82,37 @@
 .moon-scenario.assumption{color:#c5d8ff;background:#26334b;border-color:#53668e}
 @media(max-width:560px){.moon-heading{flex-wrap:wrap}.moon-scenario{font-size:8px}}
 
-/* Mobile search spacing fix: the desktop flex-basis (230px) becomes
-   a vertical height when .filter-top switches to flex-direction:column.
-   Keep the search control content-sized on phones and small tablets. */
+/* Mobile filter layout: use grid rows, not the desktop flex-basis.
+   This prevents the search wrapper from growing hundreds of pixels tall. */
 @media (max-width:820px){
-  .filter-top .field-search{
-    flex:0 0 auto;
+  .filter-panel .filter-top{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:max-content 42px;
+    gap:10px;
+    align-items:start;
+  }
+  .filter-panel .filter-top .segment-tabs{
+    min-width:0;
     width:100%;
     max-width:100%;
-    height:auto;
-    min-height:0;
+    overflow-x:auto;
   }
-  .filter-top .field-search input{display:block;}
+  .filter-panel .filter-top .field-search{
+    display:block;
+    flex:none;
+    width:100%;
+    max-width:100%;
+    height:42px;
+    min-height:42px;
+    margin:0;
+  }
+  .filter-panel .filter-top .field-search input{
+    display:block;
+    width:100%;
+    height:42px;
+  }
+  .filter-panel .filter-top .field-search svg{
+    top:21px;
+  }
 }
