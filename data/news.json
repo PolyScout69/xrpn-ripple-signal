@@ -2,35 +2,79 @@
   "name": "Signal | Evernorth + Ripple",
   "version": 1,
   "scan": {
-    "status": "starter",
-    "ran_at": null,
-    "starter_as_of": "2026-10-26T18:14:00Z",
+    "status": "ok",
+    "ran_at": "2026-10-26T19:14:29.592010Z",
     "schedule_utc": "18:00",
-    "source_note": "Curated starter headlines; automated monitoring has not yet run."
+    "new_items": 45,
+    "source_note": "Sources with errors are identified; coverage is not exhaustive."
   },
   "sources": {
     "sec": {
       "name": "SEC EDGAR",
-      "status": "pending",
-      "items_seen": 0
+      "status": "error",
+      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "items_seen": 0,
+      "message": "SEC_USER_AGENT with real contact email must be configured as a repository variable"
     },
     "evernorth": {
       "name": "Evernorth official",
-      "status": "pending",
-      "items_seen": 0
+      "status": "not_checked",
+      "items_seen": 0,
+      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "message": "Official-source discovery not configured; related stories may appear through news feeds"
     },
     "ripple": {
       "name": "Ripple press centre",
-      "status": "pending",
-      "items_seen": 0
+      "status": "not_checked",
+      "items_seen": 0,
+      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "message": "Official-source discovery not configured; related stories may appear through news feeds"
     },
     "media": {
       "name": "Financial news feeds",
-      "status": "pending",
-      "items_seen": 0
+      "status": "ok",
+      "checked_at": "2026-10-26T19:14:29.592010Z",
+      "items_seen": 45,
+      "message": "Latest scan completed"
     }
   },
   "items": [
+    {
+      "id": "5227e4b4e515cf53",
+      "title": "Evernorth Holdings (NASDAQ:XRPN) Secures Potential $80 Million Equity Facility for XRP Strategy - Kalkine",
+      "published_at": "2026-10-26T13:25:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNTROVDlCSkRaeEY5MlUyaTNpckJSV05FOURZSmM2UVVEVndkd1NEdFpySUV6NVdqX3QtRmk2bTNkdHI5VGQyaUdNNUVJMjhDWGdxX1BxV1BtQlRSZXlNVWdNUXpGdUcxLWZGNXNlc0JOcWtZeU9wV2hhdDVRblFYN2YwMzloQ25QbzUwMkVfcXN1RWgtWnZPLUpmdzU1ZkhJLTRaVXQ4a3lDWTlvOFVEaS1WRzl2dkswb2dSN0VmSFVTNDF4TEdIRQ?oc=5",
+      "excerpt": "Evernorth Holdings (NASDAQ:XRPN) Secures Potential $80 Million Equity Facility for XRP Strategy - Kalkine",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "4c1edd881e33c9f8",
+      "title": "Evernorth Secures Committed Equity Facility for Approximately $80 Million to Support XRP Treasury Growth - markets.businessinsider.com",
+      "published_at": "2026-10-26T12:53:19Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxObWxZVFBQNTZJT3J6MGRCNW50c3Jwek03NFd3c1J5aFhUSWZLTFBETDJPdkJPSFVjdVZpUG5kWGt4dnE1MlFNcC1vNF9FcWNfZkJtLXRYSjdKN1U0YVFadnNIaV9VVE5GM2tOcTFmNmpVSGFrbjRGcHYyQVVjVGFSNWpPekEtQ0o2T0RIWmFuN0ZabTQ4YkZxMVNUQjE3VnE2VjdHZy1INl9VcF9Ta3ZoM3hJWmZ3WGt3ckF5QlBtRVZZaHZ6Z2NSYXg3NE5DM1BWZWQyWk9PakhGWkVfeWlUZkJuTlg1WkRDbEhBWHpwbm1iTHY4?oc=5",
+      "excerpt": "Evernorth Secures Committed Equity Facility for Approximately $80 Million to Support XRP Treasury Growth - markets.businessinsider.com",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
     {
       "id": "oct26equity",
       "title": "Evernorth agrees conditional equity facility worth approximately $80 million",
@@ -46,6 +90,148 @@
       "url": "https://www.globenewswire.com/news-release/2026/10/26/3388042/0/en/evernorth-secures-committed-equity-facility-for-approximately-80-million-to-support-xrp-treasury-growth.html",
       "excerpt": "Evernorth announced a committed equity purchase facility; the headline value is conditional, not capital already received.",
       "why_it_matters": "Track share dilution, pricing and whether additional XRP per share outweighs issuance effects."
+    },
+    {
+      "id": "oct26treasury",
+      "title": "Ripple Treasury introduces an always-on corporate treasury platform",
+      "published_at": "2026-10-26T12:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "High",
+      "score": 92,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management/",
+      "excerpt": "Ripple introduced enterprise treasury functionality covering cash operations and digital payment rails.",
+      "why_it_matters": "Watch customer adoption, actual revenue and any demonstrated XRP demand rather than assuming they follow from launch."
+    },
+    {
+      "id": "5a3c178b57920fc2",
+      "title": "About $80 million could be raised by Evernorth; it intends to use some for XRP, a digital currency. - Stock Titan",
+      "published_at": "2026-10-26T12:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ2ZlVGJrRlE3RUFJVVIxaEctS3lJRDFCa041c01sM3YxSlprR3owQXNKbVJINnZhMDNJWDZLRHB5UWtQdE96NXNxVjZpR0pPTXI0dXJFa2dsVktYckFTeTNEbVQxS1FTT3NaaUxFZUFuU0F0UllscG40N0l0NGVoU0NiVmZVVE8wV2FFaDk4a2swWTVqdzdmems3cnhvNGcyWS1aUFdpSE5xZjk2M3JycVFEUld0S0hsTGFZ?oc=5",
+      "excerpt": "About $80 million could be raised by Evernorth; it intends to use some for XRP, a digital currency. - Stock Titan",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "afa5b1b0ef58aeae",
+      "title": "XRP News: Ripple-Backed Evernorth Holdings Plans to Raise $80M to Buy More XRP - CoinGape",
+      "published_at": "2026-10-26T06:26:02Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRFg1NTg3LVJhaTNOaV9Rd2tWai05bk1LRW1aWVl4ckwwY1pjeTh0MFRJX0JVTncxTm9fYzVZVlZNdUhMNU91Rjd4YmptTlFfQ0hlOWZaSS1fZWJxYUliXzlvWlhDN2lHa1llTU9KTnZpcUNUV3BIR2RMMzhGRlNaaFYyT1J6VWtHX29KeVQyTE5OVjdPYUVBS3VvXzBONDQ?oc=5",
+      "excerpt": "XRP News: Ripple-Backed Evernorth Holdings Plans to Raise $80M to Buy More XRP - CoinGape",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "bcb65e4e34b4e77d",
+      "title": "Ripple Just Announced What XRP Holders Have Been Waiting For - Times Tabloid",
+      "published_at": "2026-10-25T09:00:53Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUVNUdXJLM2RtOU9JTVl4UXdjS25xM1RYUWJhcW4tZVp6MlhQUGo3MnlWSkpDRHpXMHY1enlmUDhyUXNQMU1VMDNZNk5ncW5NWl9BUF9ibzFSRGo5WjVBTHJVSHM5VmU5Q3ljcWNaU1pVOGo3Uk4wLWZxazNsRzlpelpvN0NFQUQ1bHEyWFVnbw?oc=5",
+      "excerpt": "Ripple Just Announced What XRP Holders Have Been Waiting For - Times Tabloid",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ee9b6299946c3020",
+      "title": "XRP Wallets Reach Record 8.24M as Ripple and Arf Expand RLUSD Settlement - KuCoin",
+      "published_at": "2026-10-24T19:43:17Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSHFKT0pPRHoyUEhUYmYwVUxBMDNkVERHTldNaEkwZTBWODNIY1puN0F0UHBMM0E1bUMtU0gyRDJZYWhyR25ZRnhpa2l4RVluUThoQ0pPR2lFLXhXTC1FXzJiMVNGMC10NDNUV2pDcy1COWNhS3FqTlRSNmFZRGhHSk5FbWFCLXpjc3ZmcU92TlFFUm1kNkx3QWI4NTY3cVRUS1NzYVlKVGVqQQ?oc=5",
+      "excerpt": "XRP Wallets Reach Record 8.24M as Ripple and Arf Expand RLUSD Settlement - KuCoin",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "b9e948a485255392",
+      "title": "Ripple (XRP) News: RLUSD Takes Aim at Payment Funding as - openPR.com",
+      "published_at": "2026-10-24T16:58:18Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONjhmZmFPQjREZlZMR0dmbXM1d3RxQXRYdFBlMEZ3MTRXcE9xVy1qNFhMRnU1YjFCY0xlNHcwV21SckJLblJ1MUVJVXZpeTJGS1FUTzktUkw1bllXczVNd3hrTm5vbm1PMjdvOHZHS2FnOXAxMzQyU2xlVjFJcnpNWUtDYVNvZVlidy1YR21lajZYMk0?oc=5",
+      "excerpt": "Ripple (XRP) News: RLUSD Takes Aim at Payment Funding as - openPR.com",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "162462fd0bba78fd",
+      "title": "Ripple and Arf Target $10B Payment Market With RLUSD as XRP Ledger Lending Awaits Validator Approval - Coinpaper",
+      "published_at": "2026-10-23T13:28:19Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcnpzeVBiSkNQM0w3a0JBc2ktaS1tLXp6dUJPUFlpa3dsZkt3WGc4elE0MlpXWUxKZjMwWFhnb2ZQNDQ1S3hlTzBDS2twSkRoN1QyQ2lNVVRnSG9aWEZHTmYtdWNZREtXOW5EalJ3QWM1SFBFY0NyYi1WWEMwdDdjNTFFTFJrQmdaY1NHcl9WSzl1OWd2eTVIVUU5dzgxN1BRTkpHcy1ueWpxZVJNYWlmSGd0dDBSbE1pdGNZVmFjQkJHUk9fSVZv?oc=5",
+      "excerpt": "Ripple and Arf Target $10B Payment Market With RLUSD as XRP Ledger Lending Awaits Validator Approval - Coinpaper",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ebc0e551b7343a3a",
+      "title": "XRP defends $1.30 support as Ripple partners with Arf to bring RLUSD settlement liquidity to XRPL - FXStreet",
+      "published_at": "2026-10-23T12:13:17Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPNEFuQWdlSEFFS243allMNDZDd25BSzdlWHN1SnMtek5nMHFOXzBUOW56REFXa1JvWm1yTlgxaWZIb2pCTm1iWkptSTNwSndsMGlmSG9IbUNEX2lIUFBkVmxDT3plNG5sQ0RhTmVDTV9zUm4wdnZnaUNzZFFBUFdmRndIc1dLN0hYRFFTblh3SmN2dFRZcWtlMHdEUUdic2Y5UXh3SG1QQ3J1eU8tWDVBdmpCeXByRmlmV2JYUEJCUGN3cmlqWHdma3pxb1FIaUpFaUl0TEIzWEJjRkRxaTU3Tm5xY0ZlaVFWaXB3?oc=5",
+      "excerpt": "XRP defends $1.30 support as Ripple partners with Arf to bring RLUSD settlement liquidity to XRPL - FXStreet",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
     },
     {
       "id": "oct23sec",
@@ -64,20 +250,652 @@
       "why_it_matters": "Review legally binding terms, issuance limits and actual outstanding share count."
     },
     {
-      "id": "oct26treasury",
-      "title": "Ripple Treasury introduces an always-on corporate treasury platform",
-      "published_at": "2026-10-26T12:00:00Z",
+      "id": "c886edb7b0386000",
+      "title": "Ripple Partners With Arf to Bring RLUSD Liquidity to XRP Ledger - Benzinga",
+      "published_at": "2026-10-23T11:59:02Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOckhNOHNaX0tPdU1xWFdoemJDa1VoVDFnMEdwS19FY08yOWpxZ1BtY2FkTW1WRWRueVp6UHBpZTNHUC1YMERySFRhQnE0WGwwVC1mTmJCVkdlaTJiS1RCU2tpMWdMWjdTSE1ZV2VudnVkNl9NaEI1SDZhT1ZkTUZKT3dpTDhpYnctUXBENVdBeXg4QzBxc0NZZlBkRXpLZjBXQXg5ajJPTlFvUmlDb3FNdUdZd2NvRFBOSEY1X0w1R2Zoc3M?oc=5",
+      "excerpt": "Ripple Partners With Arf to Bring RLUSD Liquidity to XRP Ledger - Benzinga",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "9824131964b9f8e0",
+      "title": "Ripple Partner Arf Brings Its $10 Billion Payments Lending Business to the XRP Ledger - 99Bitcoins",
+      "published_at": "2026-10-23T11:39:22Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVnhWMzQwb2JWUGJUOTk5UU9vSmxQaklqQlJYOUYxcHU4UEFqQ0ZEMnpPMndqN2ZZWkpocldhQVZtZkVRVmZwRWE0WjRxMzFmZ3dDTTNhYWtPRmZGNU9pVTdmOV82ekRwdl9EcGd0Zm0wMFh2akVGdFJTSTlmTlM2Qy1rRWpxcnZqN1NYXw?oc=5",
+      "excerpt": "Ripple Partner Arf Brings Its $10 Billion Payments Lending Business to the XRP Ledger - 99Bitcoins",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "1f5f80c2b994e978",
+      "title": "Evernorth XRP Holdings to Target Higher XRP Per Share, CEO Says - TradingView",
+      "published_at": "2026-10-23T06:34:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRWlURjZHTXlkUks0aG45allNX3NwQm0yd1pHUV9KSVBlUlJ5WVBKbVhqYnRaTU5RXy1sZEZmc2xwYTJ2dUV2MlFmeE5UX1FpUTFrMEcxek1nVUtUc1ZMNldhQjBQWWk1c1F5bnV2ZmU1YzU3bktsS1BuR1NrRjBFbjNBZTc4dDk1LUZoc1I2M25CWUtXX2w1eTZXTlpEVGhQdTdCTzF0SUdWMTZuZzdYZkRhejFlamk4UmUxVzhCWQ?oc=5",
+      "excerpt": "Evernorth XRP Holdings to Target Higher XRP Per Share, CEO Says - TradingView",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "20390cb65f86315a",
+      "title": "Arf partners with Ripple to support cross-border payments - IBS Intelligence",
+      "published_at": "2026-10-23T05:17:43Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPakpDcVJuRzZTaGxFVGlMdUNsMENrUEJNUi1sNDM5VjQwX3ZiQVp2VnJENHFiSE5OY1RIMWZuejhweXdLWUhsejJhNlM2R2NXOWk2em5IeDdPLXBjUDBjZUVLU0dMeGt5aGhOVXJLZWM2anJnSmRDdXdobl9wNndSZ2Zwc2RmdTY3Z0JySmFYQ1BjVkNTcUVXc2E0UmI?oc=5",
+      "excerpt": "Arf partners with Ripple to support cross-border payments - IBS Intelligence",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "751e4e351691f251",
+      "title": "Ripple Teams With Arf to Bring RLUSD Lending to XRP Ledger - Bitcoin News",
+      "published_at": "2026-10-23T01:10:47Z",
       "entities": [
         "Ripple"
       ],
       "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcTRzUjVZdFU2QjVaNXNJN29UUUhLbDJxT0lUV3NSTXg5N0R6MnhOY0w3RlQ1SVNPUUxXQUpsRnNTamV6SkdnVzNlNk9FWGZDQXZsTG9HVVlZaFpWY3dkWnd0NEk5UDVWSXFXTHFvQ05GNFlFYlQtQ1ZzOTFHNlpFRDI3WmsyNzZydi1kYk53?oc=5",
+      "excerpt": "Ripple Teams With Arf to Bring RLUSD Lending to XRP Ledger - Bitcoin News",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "7c9938fd6e6218d5",
+      "title": "XRP Treasury Firm Evernorth Gets SEC Nod, Eyes Nasdaq Listing - CoinMarketCap",
+      "published_at": "2026-10-22T23:08:41Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
       "impact": "High",
-      "score": 92,
-      "source": "Ripple press centre",
-      "source_type": "Official",
-      "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management/",
-      "excerpt": "Ripple introduced enterprise treasury functionality covering cash operations and digital payment rails.",
-      "why_it_matters": "Watch customer adoption, actual revenue and any demonstrated XRP demand rather than assuming they follow from launch."
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWXBnU2NZTkFGR3RfSkhoa1pkNVMwYkQzN3dLUXRfQ0lwcnFPQUVqTURlQnBoVXpGejFLZ0hFbFFqVDhMb3NsUXVaLWpGN1hCYmtRZjh1UEo4QWVPYzM0cTBBMUVEYjR0bEJsNmZVTnRzUXFxQmVnMENrUnJtcUtNdmVjdlFuTW15M1hEMGZBWVQ?oc=5",
+      "excerpt": "XRP Treasury Firm Evernorth Gets SEC Nod, Eyes Nasdaq Listing - CoinMarketCap",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ae9018d17dae1e17",
+      "title": "Ripple and Arf Partner on RLUSD Settlement Liquidity for XRPL - Altcoin Buzz",
+      "published_at": "2026-10-22T18:29:15Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVzFNRml6N0g2T0hWc3ZKWFhfWUo0d0ZPbzd1eWFDWVBVbXpnbWFWaG1UdkpUZ0stWWhLcmFiUFR3ZGdDY21JVWVzbzUzMmpURF9ONTZuWF9ydVNOYndmM2N4SUpaeHk2U3JVUGRmbUFyRFZhTklOYUxid0pQR1ZreEpiajFVS0JwTW5WWDExMlJHcDVMNTk0?oc=5",
+      "excerpt": "Ripple and Arf Partner on RLUSD Settlement Liquidity for XRPL - Altcoin Buzz",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "8720905b0bf43da9",
+      "title": "XRP News: Ripple Partners With Arf to Bring RLUSD Settlement Liquidity to XRP Ledger - Coinpedia",
+      "published_at": "2026-10-22T18:26:30Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOM0VqWk0xX0VzYUkwX1lHRUp3NE9kQzViMjRyN1pwaUN0UElZRzVsQjByQVd1VlBkWUxPNjBRQmxwcF9oOEt2UEI3UnBDeUI0MUJrZEpQNl9xU2p2YnFDX0NzX2dWNVFQMm1GcFdZaGRieXVQTkxadlZaeFhGeEVkeDRENk1mUHphY0M2YnAzNGxvbk02VTE4b1ppNDRlbndGcFhUTlpzN05LZGZkcGdaMdIBtgFBVV95cUxPTExzblBSSWxTdlFnbENvdlB2dV92X19oazNsUWVaYWpvTU9reHREU0xQRjJLVE4wZGQ1dHBMbDh2bU05Y0xWWFoyQlR3cVlIdUNiN3phSlVTa3V5QzhCX29hZ3dUUlYxRW9BY0RnT1hPZlNkRnlKWGlpMUFLdTJWUTJIbEVEZUZVUF9QczBVYlNJbVpHbXJ1ejVqS3doSFk5MmJtZFBsYmczaVhuTkFoMzhWN09FUQ?oc=5",
+      "excerpt": "XRP News: Ripple Partners With Arf to Bring RLUSD Settlement Liquidity to XRP Ledger - Coinpedia",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "409cc64fb3d631d8",
+      "title": "Ripple Taps Arf to Supply RLUSD Settlement Liquidity on XRP Ledger - BigGo Finance",
+      "published_at": "2026-10-22T18:26:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1BR19fUHNaTnRiVzczTTI4SEsxSXh1WUtrMWMyN1NTS1cybGVqX2pHVVQxU3ZWZW5qNGFiQUlnalJCeGlnN3dQTnVWUEVqanI1Vkh5VmI2UWVuOWR3LWdGWTVQR3p5LTJiSHNiOVdyMHZVaEUwaHc?oc=5",
+      "excerpt": "Ripple Taps Arf to Supply RLUSD Settlement Liquidity on XRP Ledger - BigGo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "339f0e55b8df34d9",
+      "title": "Ripple (XRP) Announced a Major New Partnership - Bitcoin Sistemi",
+      "published_at": "2026-10-22T17:21:07Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPd3BnLV81X3c1dHpxUEdvbm1PdURHY2RKc201OTdyckU3eE1wUkdTTi1sMHJ4dFJHZGdUSXVOMW0yb2dkeURBQ1U1Tm1XUHVPUUU2ZmxKb0lBV0RrRGh0WExlQnZ2dXI3djBXU3A4TlhuZS1lYnlBWmVxOUhPbThnQg?oc=5",
+      "excerpt": "Ripple (XRP) Announced a Major New Partnership - Bitcoin Sistemi",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ed418152b0964748",
+      "title": "Ripple Partners With Arf To Boost RLUSD Settlement Liquidity On XRP Ledger - CoinGape",
+      "published_at": "2026-10-22T14:57:51Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRzM0OWtIelpIaV81dEwzZUIzX2J5SXQwa1dVX2RseHU2MnhhcHNVUElFMlltaDIwV3hrQnhKZ2VRdElyZ0ROM2t1cFdBMGNFRmRDd2prdVZBVlNmc1p1TjVsTmN4Q3cyZ0NEMEV5UzBWR2EyRkpGWHJMTkVERFJrX29sT2E5ZDR6aVJab01pNXhYOWRqRVJpeXVFNVU?oc=5",
+      "excerpt": "Ripple Partners With Arf To Boost RLUSD Settlement Liquidity On XRP Ledger - CoinGape",
+      "why_it_matters": "Track measurable adoption and whether announced deals generate revenue.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "5ce8e16214799ea7",
+      "title": "Ripple Arf Settlement Liquidity Enables XRPL Financing Expansion - The Cryptonomist",
+      "published_at": "2026-10-22T14:18:54Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9aSnZvRi1VS0NCdGE4cjFaLWI4X3pKYWl6b3VRRURpUVJHdHJYT1czNFZ5eFRvOW40dXEtWlM5Z0hwMXZQb0ZuUmprR295QXBBYVNEeXlXR2JtVlJ2b09hblp4V19TczZPaExxSUxiNTZpLTZHanFtUWJB?oc=5",
+      "excerpt": "Ripple Arf Settlement Liquidity Enables XRPL Financing Expansion - The Cryptonomist",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "293b26568c7b210b",
+      "title": "Ripple teams up with $10B payments firm Arf to expand RLUSD use on XRPL - Crypto News",
+      "published_at": "2026-10-22T13:56:23Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAzaWtOUzRtd0h6V19DTGJlbEdueV9vSUl2R3EtRjlnS1N4ZGxTcVlTR1Rjcm1IR0doR3BzNjJaYnJOaWRwc1UtWG54R2dzR252cWVPbk1kUlJRZ21TazEtWU1IZXdpRjhOMEpvNmxiMGU?oc=5",
+      "excerpt": "Ripple teams up with $10B payments firm Arf to expand RLUSD use on XRPL - Crypto News",
+      "why_it_matters": "Monitor real product usage and commercial demand.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "53b67bdcab9fb262",
+      "title": "Evernorth Files SEC Prospectus to Raise Up to $132 Million for XRP Treasury - KuCoin",
+      "published_at": "2026-10-21T20:45:01Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "SEC filings",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcGJaRFdKWjlvakJtMVdTVG1EMW1YOHQ1RzFHdFdqT1hoUVU1bGVBNUVwTnV1aXNoMDgyVlMzaUtsQVlzS0dad01Lc3BQRE1sZVRPbmU2NURmX0gwcTlLVWlrTFNTVEpoMlV1bjI1Z1RPR0ViTTF3S2dVb0U0emloenNjUEFaT0VVcEUwTWtxWEVLNklIWkVmZHlKdEUzZUtSRDZUUXlMdERnUjlB?oc=5",
+      "excerpt": "Evernorth Files SEC Prospectus to Raise Up to $132 Million for XRP Treasury - KuCoin",
+      "why_it_matters": "Read original documents and watch material changes to financing, risks and share count.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "9b5af0c8f2928378",
+      "title": "XRP Hits Nasdaq: Evernorth (XRPN) Lists With 473M XRP — But Price Down $61B - Binance",
+      "published_at": "2026-10-21T16:53:39Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9HSzdBaGgzcVBRZzBpZF9lbVFqTGFzOE1Pb2F0RlJUejdkQ3lxOF84OG91R2JjWklOMExfX3Z2UmN4VUdMTmc2REVINF9ienEtOU1DRVp1VnAxaktmWW9yRXJHczM?oc=5",
+      "excerpt": "XRP Hits Nasdaq: Evernorth (XRPN) Lists With 473M XRP — But Price Down $61B - Binance",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "92937178547dbc4e",
+      "title": "XRP News: SEC Approves Ripple-Backed Evernorth to Raise Funds to Buy More XRP - Yahoo Finance",
+      "published_at": "2026-10-21T11:23:35Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNjFvR2tTQVdObmRrSDZtUTB1LTlZYlUzVXNUS0d1TEJTRFpjbm9LcFFnWFNyWkVjSGdKSmdEUW9fVm1DbXBEb2Vqb2RCejVMaEg5LVBzXzE5VHJuMFllYUh2aDN4bHd4RURHdkY2SnBFRzdRcUh2SVVmbUxnSnFlRzBIZVlvTVVOTGZIcHFvSktvbDRFWFhqVg?oc=5",
+      "excerpt": "XRP News: SEC Approves Ripple-Backed Evernorth to Raise Funds to Buy More XRP - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "cd8b61c62ea90356",
+      "title": "A 39.9% group ownership cap restricts a shareholder's stock conversion at Evernorth Holdings (XRPN). - Stock Titan",
+      "published_at": "2026-10-21T01:25:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPRVdWYjhfMlcyeXJwSEUxMUljdUR4clg0bDBodVJvYkh4eGxYMERxZ0RuczdrbXZZTnRCdlNsLUhad2xnYkRCV00yd2lSS0NXR0Y3ZlNPckdZZWM4ellIVEFicFFPekt3WkUyUjBJbkY3VGwzeUNqQ2NablN4SlJUTFRlZ0VkT3ZSTE51d2poY2JUS2I1clBfLVlFbVhVLU1XSng5alh3UW1LaHdrcllnNDJ6ZTJwOVRFZU56WlVfRktnSnd6TFBZdUVDWQ?oc=5",
+      "excerpt": "A 39.9% group ownership cap restricts a shareholder's stock conversion at Evernorth Holdings (XRPN). - Stock Titan",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "9812ca28edd460ec",
+      "title": "Ripple-Backed Evernorth Files to Register 11.5 Million Shares Linked to Its XRP Treasury - Coinpaper",
+      "published_at": "2026-10-20T17:51:36Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeDF1aWtOV090TU1vRGt6aDVGMmlJV01Cc0FnZEN4Z0dIeGR5THRreVhzdFFiY19RSlBFODk4WXhual93WUQtMG1kQlBrVHl0SzdpMFBKTkZtVW90azBXR2pibUc1VmxCQlVySDhLZlFicGtfR01qTVhuT1N2eXdfN2ZWMXF0SDhSbEp3aUw1VTJOdTZqbFNFeUxyYmQ4WktzVUFqTVBILWpzVExMRW92bklFcFV6OVU?oc=5",
+      "excerpt": "Ripple-Backed Evernorth Files to Register 11.5 Million Shares Linked to Its XRP Treasury - Coinpaper",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "d4fee2e9e024653f",
+      "title": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - The Motley Fool",
+      "published_at": "2026-10-16T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSElRR0dhYWcyVVhhU1huM2JFUDFlal9PZFlGLWV4a2NINEpvYkJnN0FJbVNyczZmVzJyclN6TEJ3ZHVwX1ZLemlPdGprb3pVbWhzWGY5LWh3OF9PZ0ZWeTJXcTNmWnVjS3Bqa3dlRTdObHhSLWhvclBPZDltS0VrRGhjWFUzUVRhdy15MVZMZjUwT21Rclh2Zw?oc=5",
+      "excerpt": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - The Motley Fool",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "64bde29bf6b9cbe4",
+      "title": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - Yahoo Finance",
+      "published_at": "2026-10-15T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaTFfQWllY01VMEl5SEUxdGIwNGdzVlczVF9FcE5XSUZObG0talY1TTNkQUFEMjJBZUhtOEFMWHF4ZHJyMno4bmhXYTJVM3cwOUdWcXJYZWo1OUttYWEyQVE2SVVaVzRRZXBxckVMSDlmeUI2blZxYjZrbzNLS3N2ckxxdjZlaTRlS2RVaTRXdFFTLXZOYUwxZVUzVWMxd0ZrbFE?oc=5",
+      "excerpt": "XRP Treasury Company Evernorth Just Went Public on Nasdaq. Here's How It Could Impact the Price of XRP. - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "c16b8413968aa995",
+      "title": "Evernorth Revises SEC Filing, Adds 415K Shares to XRP-Linked Investor Count - The Crypto Times",
+      "published_at": "2026-10-13T16:50:32Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "SEC filings",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNb1NzVlZrb3U2QVhvNC05UlNLZE1KWE1HZE5hYWFiQ0IzM0pHNW9ERWVqV243YUt0YUUzQlF5a3hUTldDbUdadDlxZDhxam0zR0tHa0tMLUhaaUlIZDktWS1fR2thVmRIQ0xFR1o2YWRTMEFiRTVhOFRSeVptaE1xNU95X3FyWXlnZTMybFJHVVVIaEUySFM2aGFEV1lJb2Npc1VNcHNVcE1ibGMwQlNYNlpidw?oc=5",
+      "excerpt": "Evernorth Revises SEC Filing, Adds 415K Shares to XRP-Linked Investor Count - The Crypto Times",
+      "why_it_matters": "Read original documents and watch material changes to financing, risks and share count.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "c7c5ade029b93ca5",
+      "title": "Evernorth’s Shareholders Watched 473 Million XRP Lose $443 Million Before the Stock Ever Traded. On Its First Day on Nasdaq the Market Put a Price on What Is Left. - Yahoo Finance",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOX25sMGV2RnpRWVhVQjh1NU4wRG1zdHEyMjRLQ05jRzNrM2xlVVhmdWoxUDlERXJXNEJPUmM1S1MxaDZiZnpkMXF3UWo4MEVlMEpHbXNvOHMwQURPRnJITWxCR0VKWTk2Yjl3a0NxNXNiUkpjQmR4MDh4WkNMa1B4VUpJNXE0Q3l0XzM4TVdfSDBnNDlpcmdteFlSZDNCRjVJRzgtdlk1TmVzLTg?oc=5",
+      "excerpt": "Evernorth’s Shareholders Watched 473 Million XRP Lose $443 Million Before the Stock Ever Traded. On Its First Day on Nasdaq the Market Put a Price on What Is Left. - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "b2883372f285ff3e",
+      "title": "Evernorth’s Shareholders Watched 473 Million XRP Lose $443 Million Before the Stock Ever Traded. On Its First Day on Nasdaq the Market Put a Price on What Is Left. - 24/7 Wall St.",
+      "published_at": "2026-10-13T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPelJneXBUVnVLOG90Vi1JWFFVTWdHY2pkeE0wYkUwOEZKX1lzWllGOVhYMmFGaEs0WTY1dFBQR2RUMkcta0VwWFVoTnFJQ0l0YmpaWHBZbWZfWEUwRlZ6emlVOVl6N1ZBWUpxNjd6Rmp0RWtkTHRRSzVoMkZPQ29CTFpiTmx4YU5nei1HREpzTGRtdTBlOHJvS3dEQk1aWmNHU1hld1ljU0JQSG1RTFVzOTZoX09rTElQSC05YmNjMVp5N3FXb1JGNVk3VElsY3c2MzdaZklKbEtYSGpUUE1OSldkTEd4VExwOUtVVkZjSnNVVXQzbk5JR01qcW0wenJkVXk3YXZpZTY4U1pJTlRsT04yRGJHOGV1NHhKSlVQajAtSEpKWG11VmNxUVp6V19UNl9VOS1yUmJpVTFtZkZz?oc=5",
+      "excerpt": "Evernorth’s Shareholders Watched 473 Million XRP Lose $443 Million Before the Stock Ever Traded. On Its First Day on Nasdaq the Market Put a Price on What Is Left. - 24/7 Wall St.",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "f16cf93c3ea458a1",
+      "title": "Evernorth’s 473 Million XRP Wager Hikes as XRP Struggles to Regain Ground - Bitcoin Foundation",
+      "published_at": "2026-10-12T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPV1NsMVk2VVQzNnlSZFZORVZ3QTdPTW9pNG9iX2xSODc3SG9zcVVPU09KQ2dELWJxeTBZbWNfQ0lJTlFnYXVXcE9pYV9ISmFGV1FiQ2JHR2Y0OW81NUtjSndSRnhzQ0NZbE42MFNEMzZKb2thVG9jc2pSV3NyRk5XMlYwdWJJR1lET0x2aHBGLTZFV2pqUnhTMXcxdzQybmp0Q1lzUWI3YWU4SndBYmNSUmw2SmoxaDRhN2c?oc=5",
+      "excerpt": "Evernorth’s 473 Million XRP Wager Hikes as XRP Struggles to Regain Ground - Bitcoin Foundation",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "97f60ebeffb891a5",
+      "title": "Evernorth Brings 473M XRP to Nasdaq as Analyst’s $50 Forecast Raises the Stakes - Yahoo Finance",
+      "published_at": "2026-10-12T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdEhURnNiZ1dYUXhBU1lPNkplZEVia2pjZ1JLWmZhd0tIZldzRGNjOEhKa0UzSDNFN0doMklnODl3djA4S01FOGdMY09nUHlwZU9lQ21fb1h3ZGsxQkFIbUVpLWVSa3VqaTJLeVQ5a3BqY3ZsX25Pd3FsTHI3NTR3UTZ3eEhYYVk0ek5MVm5SMV9kcHZ4RjlDMnB1eEZuUQ?oc=5",
+      "excerpt": "Evernorth Brings 473M XRP to Nasdaq as Analyst’s $50 Forecast Raises the Stakes - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "4782e75f01f58222",
+      "title": "XRP treasury Evernorth’s shares rise 5% at Nasdaq opening print - TradingView",
+      "published_at": "2026-10-12T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWnRKWW41WWJFd2dST2cyV0Y5REVON3M5RVlCM3drdEFELVFxNmlHdk0yTHpoOFpOWC1TZzc4SkJaZ1BZN3BkY1lMejdrRVdtUkpheUk5OUhPQi1DOFRlYmp3SXd3NkQzSGZZVHc5cWNNZVVJa01jSGg2amx6SUE0S1Z5d2lnajVrTXVRTnVsMzktRlBVSUpueWpNd3ZfbU10ZEFGZ2JqVDdOelBlRFhUOWptMG5tVi1pZ2ZralNNTGJ5Z1A5?oc=5",
+      "excerpt": "XRP treasury Evernorth’s shares rise 5% at Nasdaq opening print - TradingView",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "1721e67aff36cb2c",
+      "title": "XRP’s Nasdaq Moment Nears: 5 Things to Know About Evernorth - Yahoo Finance",
+      "published_at": "2026-10-11T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMEU4ZjBiNmVsc3dWZVFERnBuS3B5RkRoQUZSQmF2SGtXVXpfOGJLV1I3Qm9oMTZYSEJvZU1XZ2E3N1dqY21GeUhOWXU3QWxQNmtMSVExSUo1X2lSSFZxLU1sVk1xdGV3UmdOeS1YNXJDUEd1NHJiRDlDV09xQnFKNEtqQlJhNkJheFVKcmt4R2k5TmRG?oc=5",
+      "excerpt": "XRP’s Nasdaq Moment Nears: 5 Things to Know About Evernorth - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ffe59aaf4c499636",
+      "title": "We Asked ChatGPT Whether Evernorth's Stock Could Trade Above or Below the Value of Its XRP After Its First Week - 24/7 Wall St.",
+      "published_at": "2026-10-11T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNRW5ETk5Kb2w4SkdWMDlYbzNMaVcxdm5pMlRCWlRmQmJyZGhISmVaRnE2el81YWNRVlRXcUg1bjZJak40dnV6RFp0Z0NaTmhCZm80dnhpNWNsd3NBY3ozbDgyMHYxR3hXa3R2NTdVV2I5Nm94N1Uwb29kQXhmT3J5UnZIV3ZTX1dFT2ZSVGRxODg3WDN2VGlaRDFDWmFYVXVDZ1VOR1gtSGdGakdHbzJPNUdPTmthbEFtcndfYklTOThEaGstc2R2VS1uTXpHUnphMVFKRWpjLWxQclMtbzdQRGp4d2Y0NVlGQzlHV1JISkhmOVRhWjQxT0U2YW9lQQ?oc=5",
+      "excerpt": "We Asked ChatGPT Whether Evernorth's Stock Could Trade Above or Below the Value of Its XRP After Its First Week - 24/7 Wall St.",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "466144d6f748c6d4",
+      "title": "Evernorth XRPN vs XRP: Which Is the Better Buy? - 24/7 Wall St.",
+      "published_at": "2026-10-10T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOXBNNkhRTzJpRGM5bGZoUUR1cHN1M0QzdTFvRUpDbTBpdkU2TjNxQmhwZmx4WDEwbzNsNnRZcjlnQzBneGQxUTJwdFZ1THBTQ0xfQUZ2bkhfNlJ5eHMzZV9wU1ZYS21oY1FFYVY5cUdWVmpfTzE1MXo1Q29sdGdYS3IwZG5hQm1JNWNpLTFJY3JfdHFqYnl3c2hBLUdvdThteVlzOGotMA?oc=5",
+      "excerpt": "Evernorth XRPN vs XRP: Which Is the Better Buy? - 24/7 Wall St.",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "953c2b8c92419f8e",
+      "title": "Evernorth XRPN vs XRP: Which Is the Better Buy? - Yahoo Finance",
+      "published_at": "2026-10-10T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMXZSMktyZi1pY0xNaXJsQUlFXzQ0NFNnckUyMWhTWGhEV25LSTVqQ3J6cVpPNVFFWUNtMmZGUk9HQ3Zteml4dHVHb0NaZjBlQ1M2ZXBzMXVNNFZUckY1ZlBHb3J1cm1Uei1tdjBERDV0X3JPVnVMLXJFWlNIeVVmVVpCbVZ3ektwYTdVU0N0S3BrTjdseVhaRg?oc=5",
+      "excerpt": "Evernorth XRPN vs XRP: Which Is the Better Buy? - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "d0f2fcad8a8ea3b6",
+      "title": "Evernorth Lists on October 8 With 473 Million XRP and More Than $1 Billion Behind It. What Does That Do to XRP? - Yahoo Finance",
+      "published_at": "2026-10-02T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOa1pVLXNTcFJuSDZDSXFyeXkyNWVRQmI0RVZmVjI1MzN4Qi1aOWg1MElRV0lqUW9DaEJiOHZVbVlUaDFKNTR5WURvYnJ3RlJTRTJjLVk0OURMSWhBYkJyeC1namxuNzd3WGRLY0lqVENlVFg5eEo0cmhXQlNQSUVvVGRtRms4a2Vva2lWY2l3SXhBOUI0TEo0anpn?oc=5",
+      "excerpt": "Evernorth Lists on October 8 With 473 Million XRP and More Than $1 Billion Behind It. What Does That Do to XRP? - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "c8389d6c41205a06",
+      "title": "Ripple Backed Evernorth to Go Public With 473M XRP Treasury - Yahoo Finance",
+      "published_at": "2026-10-01T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOb2xyVzBxSnNpa29xaXJ6VVFqM3BDa0hNcHVVdktsbnZUYmxiNy02cm42aWlNNlYtX0VHalhNNzFPY243ZzJzdTBELUhXR29Zb3A0aHl0cEE4bFNBX3dPNmxfaExFSFpSUTZCakFQZnhJMG5OQ0xHbS1zd3Vla0tZMjZ2WlNPbDNyZE51cGtyTzF5SzNzc1NoOUV0TVZ2UFFfTXc?oc=5",
+      "excerpt": "Ripple Backed Evernorth to Go Public With 473M XRP Treasury - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "95ac1cd168642cc9",
+      "title": "Armada II holders approve Evernorth XRP deal; trading starts Oct. 8 (XRPN:NASDAQ) - Seeking Alpha",
+      "published_at": "2026-10-01T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcFd5Qy1vUkZ1dTFXNURCMkxidnBvcTYxN21GY0xvT3lHWGdTaTY1SzNfN253aWN0QVYyeGJRM2hoMVRSRWNFdlhOczg3NTBzVnlxZlkzd0E4ZnlxQnFLaGwybnBidFc2LW1LZDRwcnlOSDY3djNRNGkwTHEtSWRBOTdsMEJla041cm1KS0NVU0w5bFlDVUh0WnYxYkZ0eF9udWt6amNR?oc=5",
+      "excerpt": "Armada II holders approve Evernorth XRP deal; trading starts Oct. 8 (XRPN:NASDAQ) - Seeking Alpha",
+      "why_it_matters": "Look for measurable adoption and business impact.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "f63913c2a2faafb0",
+      "title": "An XRP Treasury Company Is One Vote Away from Nasdaq: What Happens if Evernorth Lists as XRPN? - Yahoo Finance",
+      "published_at": "2026-09-29T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOREVtUlFETWswSUg3cWF4LV8zUXNqcEZqc2FyVWpVZk5YWGNqcG4yYU5ZRkRBOVgwVjhsX3JaMURsdzA3Z0YtTENBMGJneV81am9uNEpBZjN3aTQ0U1ZBYXJ2WnNva0ZMVUM0T3JJNmNCd09HM2I5N3h1YmE0UzVrMlNWZURRSFh6eFpleko5bWp3UC1QZkdKTEh3?oc=5",
+      "excerpt": "An XRP Treasury Company Is One Vote Away from Nasdaq: What Happens if Evernorth Lists as XRPN? - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "ae1431c24b811c80",
+      "title": "Evernorth Is One Vote Away From Bringing XRP Treasury Stock XRPN to Nasdaq - Yahoo Finance",
+      "published_at": "2026-09-25T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYlRHS2NMZFdYazB3V2xZemg1SmpUVTB6aEdhbnZJRlRGckwwLVk3bFF2ZElWSE1jREhzdkRIWVJPaHZnbWFIUFpQQlNjVGltbW1na2JJajEtRVVqcXY3UTZYWFhDeUs0NGlOT0RhU1NRWm9TOXNCQUhwRm44YU40ZUphbFVJYVZxZllBSmpuZzJNRGNLVmVvbE5nVS1zdw?oc=5",
+      "excerpt": "Evernorth Is One Vote Away From Bringing XRP Treasury Stock XRPN to Nasdaq - Yahoo Finance",
+      "why_it_matters": "Assess cost of capital, dilution and financing execution.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
+    },
+    {
+      "id": "80e1c9dd94d3e407",
+      "title": "XRP Treasury Firm Evernorth Secures $30M as Ripple Deal Nears - TradingView",
+      "published_at": "2026-09-18T07:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 88,
+      "source": "Google News RSS",
+      "source_type": "News",
+      "source_id": "news",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQWc1SFk2MXdPNF9fWFhNSHdYZEo4b0hqbDNQbll6bkFTWXF5cThXVUtwc2pLOE52YVl1MDFHb1RQVzF0V2trSGMxRWdNR1FYUE4yM2VoU01HMHpLcF9jM0hpT0lXNUlNVkJRYTNOckNfU2U3bGZ5RjV6cldaazZJQ1duMjBoMVBUYVQ1SDNoX3NqeXVPZEJlZmh1NkRpZUd0NlpDOV9qRUhKa05RMDZHNi0yM1RVMDB1YTRhNw?oc=5",
+      "excerpt": "XRP Treasury Firm Evernorth Secures $30M as Ripple Deal Nears - TradingView",
+      "why_it_matters": "Monitor treasury returns, risk controls and XRP per share.",
+      "added_at": "2026-10-26T19:14:29.592010Z"
     }
   ]
 }
