@@ -61,8 +61,9 @@
         return '<span class="moon-step '+sign+(tick===value?' is-selected':'')+'" aria-hidden="true"><span class="moon-bar"></span><span class="moon-tick">'+(tick>0?'+':'')+tick+'</span></span>';
       }).join('');
       const accessible=rated? 'role="meter" aria-valuemin="-3" aria-valuemax="3" aria-valuenow="'+value+'" aria-valuetext="'+esc(label)+'"': 'role="group" aria-label="Not rated because source evidence is insufficient"';
-      const source=m.confidence==='Insufficient'?'Insufficient evidence':m.confidence==='High'?'Primary-source headline':'Secondary news report';
-      return '<div class="moon-meter '+direction+'"><div class="moon-header"><div class="moon-heading"><span class="moon-orbit" aria-hidden="true">◕</span><span class="moon-name">MOON METER</span><span class="moon-asset">'+esc(m.asset)+'</span></div><div class="moon-readout"><strong>'+display+'</strong><span>'+esc(label)+'</span></div></div><div class="moon-scale" '+accessible+' aria-label="Moon Meter for '+esc(m.asset)+'">'+segments+'</div><p class="moon-explanation">'+esc(m.reason||'Verify the original source.')+'</p><div class="moon-evidence">'+esc(source)+' · Not a price forecast</div></div>';
+      const source=m.confidence==='Insufficient'?'Insufficient detail':m.confidence==='Unverified'?'UNVERIFIED CLAIM':m.confidence==='Conditional'?'Forward-looking assumption':m.confidence==='High'?'Primary-source headline':'Secondary news report';
+      const scenario=m.scenario==='rumour'?'RUMOUR · IF TRUE':m.scenario==='assumption'?'ASSUMED TRUE':'IF TRUE';
+      return '<div class="moon-meter '+direction+'"><div class="moon-header"><div class="moon-heading"><span class="moon-orbit" aria-hidden="true">◕</span><span class="moon-name">MOON METER</span><span class="moon-asset">'+esc(m.asset)+'</span><span class="moon-scenario '+esc(m.scenario||'reported')+'">'+esc(scenario)+'</span></div><div class="moon-readout"><strong>'+display+'</strong><span>'+esc(label)+'</span></div></div><div class="moon-scale" '+accessible+' aria-label="Moon Meter for '+esc(m.asset)+'">'+segments+'</div><p class="moon-explanation">'+esc(m.reason||'Verify the original source.')+'</p><div class="moon-evidence">'+esc(source)+' · Impact IF TRUE, not likelihood or a price forecast</div></div>';
     }).join('')+'</div>';
   }
 
@@ -215,8 +216,8 @@
   function csvCell(value) {let text=String(value??''); if(/^[\s]*[=+\-@]/.test(text)) text="'"+text; return `"${text.replace(/"/g,'""')}"`;}
   function exportCSV() {
     if(!state.filtered.length){notify('No stories in the current view');return;}
-    const fields=['Date','Entity','Topic','Impact','Moon asset','Moon score','Moon evidence','Moon rationale','Headline','Source','Summary','Investor angle','Original URL'];
-    const rows=state.filtered.map(i=>{const meters=visibleMoonSignals(i);return [dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,meters.map(m=>m.asset).join(' | '),meters.map(m=>m.value===null?'Not rated':m.value>0?'+'+m.value:m.value).join(' | '),meters.map(m=>m.confidence||'').join(' | '),meters.map(m=>m.reason).join(' | '),i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(',')});
+    const fields=['Date','Entity','Topic','Impact','Moon asset','Moon score','Moon evidence','Moon scenario','Moon rationale','Headline','Source','Summary','Investor angle','Original URL'];
+    const rows=state.filtered.map(i=>{const meters=visibleMoonSignals(i);return [dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,meters.map(m=>m.asset).join(' | '),meters.map(m=>m.value===null?'Not rated':m.value>0?'+'+m.value:m.value).join(' | '),meters.map(m=>m.confidence||'').join(' | '),meters.map(m=>m.scenario||'reported').join(' | '),meters.map(m=>m.reason).join(' | '),i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(',')});
     const contents='\ufeff'+[fields.map(csvCell).join(','),...rows].join('\r\n');
     const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([contents],{type:'text/csv;charset=utf-8;'}));link.download=`signal-investor-news-${new Date().toISOString().slice(0,10)}.csv`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000);notify('CSV export prepared');
   }
