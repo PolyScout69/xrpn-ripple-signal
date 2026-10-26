@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1118">
+  <meta name="description" content="An investor intelligence dashboard tracking SEC filings, treasury strategy, product launches and partnerships for Evernorth Holdings (XRPN) and Ripple.">
+  <title>Signal — Evernorth & Ripple Investor Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#overview" aria-label="Signal homepage">
+        <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><circle cx="19" cy="19" r="14.5" stroke="currentColor" stroke-opacity=".35"/><circle cx="19" cy="19" r="8.2" stroke="currentColor" stroke-opacity=".55"/><circle cx="19" cy="19" r="2.7" fill="currentColor"/><path d="M19 19L30 8" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/></svg></span>
+        <span class="brand-text"><strong>signal<span class="brand-period">.</span></strong><small>INVESTOR INTELLIGENCE</small></span>
+      </a>
+      <div class="sidebar-rule"></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav-links" aria-label="Views">
+        <button class="nav-link is-active" type="button" data-view="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg><span>Overview</span></button>
+        <button class="nav-link" type="button" data-view="high"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.7 7.3H4l8 11 1.7-7.3H20L12 3Z"/></svg><span>High impact</span><span class="nav-count" id="high-nav-count">–</span></button>
+        <button class="nav-link" type="button" data-view="sec"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5V8h4M9 12h6M9 16h6"/></svg><span>SEC filings</span></button>
+        <button class="nav-link" type="button" data-view="partnerships"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="m8 8.5 3 7M16 8.5l-3 7M8.3 7h7.4"/></svg><span>Partnerships</span></button>
+        <button class="nav-link" type="button" data-view="saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21l-6-4-6 4V4.5Z"/></svg><span>Saved stories</span><span class="nav-count" id="saved-nav-count">0</span></button>
+      </nav>
+      <div class="nav-label nav-label-top">MONITORING</div>
+      <div class="watch-ticker"><span class="ticker-logo ticker-e">E</span><span><strong>Evernorth Holdings</strong><small>NASDAQ: XRPN</small></span><span class="ticker-track"></span></div>
+      <div class="watch-ticker"><span class="ticker-logo ticker-r">R</span><span><strong>Ripple / XRP Ledger</strong><small>PRIVATE COMPANY · XRPL</small></span><span class="ticker-track"></span></div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-status"><span class="signal-pulse" id="sidebar-pulse"></span><div><strong id="sidebar-status-title">Starter edition</strong><small id="sidebar-status-desc">Automatic scans not yet run</small></div></div>
+        <button class="sidebar-about" type="button" id="about-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg> How monitoring works <span>↗</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <div class="topbar">
+        <div class="breadcrumbs"><span>INTELLIGENCE</span><span class="crumb-slash">/</span><strong id="crumb-view">OVERVIEW</strong></div>
+        <div class="topbar-right"><span class="edition-label">INDEPENDENT INVESTOR DASHBOARD</span><span class="top-divider"></span><span id="header-date">—</span></div>
+      </div>
+      <div class="page-container">
+        <header class="hero">
+          <div class="hero-glow"></div>
+          <div class="hero-lines" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><div class="orbit-core"></div><div class="orbit-ray"></div></div>
+          <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-bar"></span> THE EDGE IS INFORMATION <span class="eyebrow-line"></span> 001</div>
+            <h1>Less noise.<br><span>More signal.</span></h1>
+            <p>What matters to <strong>Evernorth (XRPN)</strong> and <strong>Ripple</strong> investors — from SEC disclosures to the next institutional deal.</p>
+            <div class="hero-meta"><span class="meta-pill"><span class="tiny-dot"></span> SOURCE-FIRST REPORTING</span><span class="meta-pill">NO PRICE HYPE</span></div>
+          </div>
+        </header>
+
+        <div class="refresh-strip" role="status" aria-live="polite"><div class="refresh-left"><span class="scan-icon" id="scan-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.7M20 4v7h-7"/></svg></span><strong id="scan-label">Curated starter edition</strong><span class="strip-separator">·</span><span id="scan-description">Automation begins when deployed</span></div><button id="refresh-btn" class="text-action" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.7M20 4v7h-7"/></svg> Check for updates</button></div>
+
+        <section class="stats-grid" aria-label="Investor monitoring statistics">
+          <article class="stat-card"><div class="stat-label"><span>NEW IN 24 HOURS</span><span class="stat-symbol">↗</span></div><div class="stat-value" id="stat-new">–</div><div class="stat-desc" id="stat-new-sub">Developments worth watching</div></article>
+          <article class="stat-card"><div class="stat-label"><span>HIGH IMPACT · 7D</span><span class="stat-symbol">✳</span></div><div class="stat-value" id="stat-high">–</div><div class="stat-desc">Material investor developments</div></article>
+          <article class="stat-card"><div class="stat-label"><span>SEC FILINGS · 30D</span><span class="stat-symbol">▤</span></div><div class="stat-value" id="stat-sec">–</div><div class="stat-desc">Direct EDGAR source links</div></article>
+          <article class="stat-card stat-health"><div class="stat-label"><span>SOURCE COVERAGE</span><span class="stat-symbol">⌁</span></div><div class="stat-value" id="stat-health">–</div><div class="stat-desc" id="stat-health-sub">Across four monitoring channels</div></article>
+        </section>
+
+        <div class="content-columns">
+          <section class="feed-column" aria-labelledby="feed-heading">
+            <div class="section-heading"><div><div class="section-pretitle"><span class="mini-accent"></span> INTELLIGENCE STREAM</div><h2 id="feed-heading">Latest developments <span id="feed-total" class="count-indicator">—</span></h2></div><button class="export-button" id="export-button" type="button" title="Export currently filtered news as CSV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3"/></svg><span>Export CSV</span></button></div>
+            <div class="filter-panel"><div class="filter-top"><div class="segment-tabs" role="group" aria-label="Filter by company"><button type="button" class="segment selected" data-entity="All">All stories</button><button type="button" class="segment" data-entity="Evernorth">Evernorth</button><button type="button" class="segment" data-entity="Ripple">Ripple</button></div><div class="field-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.3"/><path d="m15.5 15.5 5 5"/></svg><input id="search-input" type="search" placeholder="Search news..." aria-label="Search news"></div></div>
+              <div class="filter-bottom"><div class="select-wrap"><label for="category-select">TOPIC</label><select id="category-select"><option value="All">All categories</option><option value="SEC filings">SEC filings</option><option value="Capital markets">Capital markets</option><option value="Treasury">XRP treasury</option><option value="Partnerships">Partnerships</option><option value="Products">Products</option><option value="Adoption">Adoption</option><option value="Regulation">Regulation</option><option value="Leadership">Leadership</option></select></div><div class="select-wrap"><label for="period-select">PERIOD</label><select id="period-select"><option value="30">Last 30 days</option><option value="7">Last 7 days</option><option value="90">Last 90 days</option><option value="3650">All retained</option></select></div><div class="select-wrap select-sort"><label for="sort-select">SORT BY</label><select id="sort-select"><option value="latest">Newest first</option><option value="impact">Highest impact</option><option value="oldest">Oldest first</option></select></div></div>
+            </div>
+            <div id="featured-container"></div>
+            <div class="feed-list" id="feed-list" aria-live="polite"></div>
+            <div id="no-results" class="empty-state" hidden><div class="empty-icon">⌕</div><h3>Nothing matches this view</h3><p>Try a different company, period or search term.</p><button id="clear-filters" class="secondary-button" type="button">Clear filters</button></div>
+            <div class="feed-foot" id="feed-foot"></div>
+          </section>
+          <aside class="insights-column" aria-label="Investor watchpoints and feed status">
+            <section class="insight-panel thesis-panel"><div class="rail-kicker"><span>01 / THE WATCHLIST</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 5-5 4 3 7-8M15 7h5v5"/></svg></div><h3>Follow what<br><em>moves the thesis.</em></h3><p class="rail-intro">Four developments to track beyond the headlines.</p>
+              <div class="watch-item"><span class="watch-icon teal">01</span><div><strong>XRP per share</strong><p>Does treasury deployment create value after costs and risk?</p></div></div>
+              <div class="watch-item"><span class="watch-icon amber">02</span><div><strong>Share dilution</strong><p>New equity, warrants and the actual share count.</p></div></div>
+              <div class="watch-item"><span class="watch-icon lilac">03</span><div><strong>Institutional adoption</strong><p>Real integrations, usage and recurring commercial activity.</p></div></div>
+              <div class="watch-item"><span class="watch-icon blue">04</span><div><strong>Regulatory change</strong><p>SEC filings, legal rulings, licences and market structure.</p></div></div>
+            </section>
+            <section class="insight-panel activity-panel"><div class="rail-kicker"><span>02 / NEWS ACTIVITY</span><span class="chart-period">30 DAYS</span></div><div class="activity-title"><strong id="chart-total">—</strong><span>tracked developments</span></div><div class="bar-chart" id="bar-chart" role="img" aria-label="Story frequency for the last 30 days"></div><div class="chart-legend"><span>30 DAYS AGO</span><span>TODAY</span></div></section>
+            <section class="insight-panel sources-panel"><div class="rail-kicker"><span>03 / SOURCE HEALTH</span><span class="health-legend" id="health-legend">PENDING</span></div><div class="source-list" id="source-list"></div><div class="source-note" id="source-note">Updates will start after your first workflow run.</div></section>
+            <section class="rail-note"><div class="rail-note-mark">↳</div><p><strong>How to read this feed</strong><br>“High impact” means potentially material to the investment thesis — <em>not</em> a prediction of the share or XRP price.</p><button type="button" id="method-btn">View methodology ↗</button></section>
+          </aside>
+        </div>
+        <footer class="site-footer"><span>© <span id="footer-year">2026</span> SIGNAL <span class="foot-em">/</span> INVESTOR INTELLIGENCE</span><span>Source links for verification. Not investment advice. <span class="foot-em">•</span> No tracking cookies.</span></footer>
+      </div>
+    </main>
+  </div>
+  <dialog id="method-dialog" class="method-dialog" aria-labelledby="method-heading"><div class="dialog-top"><span class="rail-kicker">SOURCE FIRST / TRANSPARENT RULES</span><button id="dialog-close" type="button" class="dialog-close" aria-label="Close">×</button></div><h2 id="method-heading">How Signal works</h2><p>Each scheduled run checks the company’s SEC EDGAR filing history, official Ripple announcements, Evernorth’s corporate site and focused Google News RSS searches. Results are deduplicated, classified and scored using transparent keyword rules.</p><h3>What “high impact” means</h3><p>A high-impact label identifies disclosures that may affect capital structure, treasury strategy, institutional adoption or core products. It is <strong>not</strong> AI sentiment, investment advice or a forecast.</p><h3>Important limits</h3><p>RSS feeds may be incomplete or delayed. Publisher summaries can omit nuances. A new share facility is not the same as completed financing; an announced partnership is not the same as realised revenue. Always open original disclosures before acting.</p><h3>Automation</h3><p>When published through GitHub Pages, GitHub Actions attempts a scan daily at <strong>18:00 UTC</strong> (timing is approximate). A named SEC User-Agent with a real contact email must be configured for EDGAR requests. The source panel reports failures rather than silently pretending updates worked.</p><form method="dialog"><button class="secondary-button dialog-done" type="submit">Understood</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
