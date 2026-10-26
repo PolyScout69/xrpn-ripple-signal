@@ -154,6 +154,18 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
                  r'\bspeculat(?:ion|ive|es?)\b', r'\bfake (?:news|claim)\b'):
         return None, 'Unverified report or rumour, not a confirmed price catalyst.', 'Insufficient'
 
+    # Editorial price speculation has no new issuer/network fact to rate.
+    if _contains(title, r'\bbubble bursting\?', r'\bis (?:the )?(?:mstr|xrpn|xrp) (?:bubble|rally) (?:bursting|over)\?'):
+        return None, 'Speculative market commentary, not a verified company or network development.', 'Insufficient'
+
+    # Financing terms matter more than planned gross coin accumulation.
+    if stock and _contains(title,
+           r'\bnew (?:xrpn |mstr )?(?:stock )?shares\b',
+           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr )?(?:stock )?shares\b'):
+        return -1, 'New shares may dilute holders even if the proceeds acquire more cryptocurrency; check the diluted share count.', evidence
+    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc)\b'):
+        return 0, 'Planned funding and buying alone do not establish net accretion or dilution per share.', evidence
+
     # Treasury-company signal: coins per diluted share, not total coins acquired.
     if stock:
         coin = 'xrp' if asset == 'XRPN' else r'(?:bitcoin|btc)'
