@@ -1,0 +1,83 @@
+{
+  "name": "Signal | Evernorth + Ripple",
+  "version": 1,
+  "scan": {
+    "status": "starter",
+    "ran_at": null,
+    "starter_as_of": "2026-10-26T18:14:00Z",
+    "schedule_utc": "18:00",
+    "source_note": "Curated starter headlines; automated monitoring has not yet run."
+  },
+  "sources": {
+    "sec": {
+      "name": "SEC EDGAR",
+      "status": "pending",
+      "items_seen": 0
+    },
+    "evernorth": {
+      "name": "Evernorth official",
+      "status": "pending",
+      "items_seen": 0
+    },
+    "ripple": {
+      "name": "Ripple press centre",
+      "status": "pending",
+      "items_seen": 0
+    },
+    "media": {
+      "name": "Financial news feeds",
+      "status": "pending",
+      "items_seen": 0
+    }
+  },
+  "items": [
+    {
+      "id": "oct26equity",
+      "title": "Evernorth agrees conditional equity facility worth approximately $80 million",
+      "published_at": "2026-10-26T12:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 99,
+      "source": "GlobeNewswire / Evernorth",
+      "source_type": "Official",
+      "url": "https://www.globenewswire.com/news-release/2026/10/26/3388042/0/en/evernorth-secures-committed-equity-facility-for-approximately-80-million-to-support-xrp-treasury-growth.html",
+      "excerpt": "Evernorth announced a committed equity purchase facility; the headline value is conditional, not capital already received.",
+      "why_it_matters": "Track share dilution, pricing and whether additional XRP per share outweighs issuance effects."
+    },
+    {
+      "id": "oct23sec",
+      "title": "Evernorth Form 8-K documents conditional equity purchase agreement",
+      "published_at": "2026-10-23T12:00:00Z",
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "SEC filings",
+      "impact": "High",
+      "score": 97,
+      "source": "SEC EDGAR",
+      "source_type": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/2092592/000162828026067061/evernorth-elocx8xk.htm",
+      "excerpt": "The filing describes an equity purchase arrangement and associated terms.",
+      "why_it_matters": "Review legally binding terms, issuance limits and actual outstanding share count."
+    },
+    {
+      "id": "oct26treasury",
+      "title": "Ripple Treasury introduces an always-on corporate treasury platform",
+      "published_at": "2026-10-26T12:00:00Z",
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "High",
+      "score": 92,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management/",
+      "excerpt": "Ripple introduced enterprise treasury functionality covering cash operations and digital payment rails.",
+      "why_it_matters": "Watch customer adoption, actual revenue and any demonstrated XRP demand rather than assuming they follow from launch."
+    }
+  ]
+}
