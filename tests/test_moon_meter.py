@@ -56,6 +56,11 @@ class MoonMeterTests(unittest.TestCase):
         self.assertIsNone(value['value'])
         self.assertEqual(value['confidence'],'Insufficient')
 
+    def test_funding_and_clickbait_are_not_false_bullish_signals(self):
+        self.assertEqual(score('Evernorth to buy more XRP with filing for 11.5M new XRPN stock shares','Evernorth')['value'],-1)
+        self.assertEqual(score('Evernorth raises funds to buy more XRP','Evernorth')['value'],0)
+        self.assertIsNone(score('Is the MSTR Bubble Bursting?','Strategy','Media')['value'])
+
     def test_per_share_accumulation_stronger_than_gross_buying(self):
         self.assertEqual(score('Strategy buys 1,000 bitcoin','Strategy')['value'],1)
         self.assertEqual(score('Strategy reports Bitcoin per diluted share rises 8%','Strategy')['value'],2)
