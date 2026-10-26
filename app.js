@@ -4,8 +4,10 @@
   const DATA_URL = './data/news.json';
   const STORAGE_SAVED = 'signal.saved.v1';
   const STORAGE_READ = 'signal.read.v1';
+  const MOON_TICKS = [-3,-2,-1,0,1,2,3];
+  const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR'};
   const DEFAULT_SOURCES = ['sec_evernorth', 'sec_strategy', 'evernorth', 'ripple', 'media'];
-  const state = { data: null, view: 'overview', entity: 'All', impact: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
+  const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
   let toastTimer;
 
   const $ = id => document.getElementById(id);
@@ -37,12 +39,43 @@
   }
   function dateLine(item) { return fmtDate(item.published_at,{day:'numeric',month:'short',year:'numeric'}).toUpperCase(); }
 
+  function visibleMoonSignals(item) {
+    const signals = Array.isArray(item.moon_meters) ? item.moon_meters : [];
+    const asset = MOON_ASSETS[state.entity];
+    return asset ? signals.filter(m => m.asset === asset) : signals;
+  }
+  function moonValue(item) {
+    const signals = visibleMoonSignals(item);
+    return signals.length && Number.isInteger(signals[0].value) && signals[0].value >= -3 && signals[0].value <= 3 ? signals[0].value : null;
+  }
+  function moonHTML(item) {
+    const signals = visibleMoonSignals(item);
+    if (!signals.length) return '<div class="moon-awaiting">Moon Meter awaiting next scan</div>';
+    return `<div class="moon-meters">${signals.map(m => {
+      const value = Number(m.value);
+      if (!Number.isInteger(value) || value < -3 || value > 3) return '';
+      const direction = value > 0 ? 'positive' : value < 0 ? 'negative' : 'neutral';
+      const display = value > 0 ? '+' + value : String(value);
+      const label = m.label || (value > 0 ? 'Bullish' : value < 0 ? 'Bearish' : 'Neutral');
+      const segments = MOON_TICKS.map(tick => {
+        const sign = tick < 0 ? 'negative' : tick > 0 ? 'positive' : 'neutral';
+        return `<span class="moon-step ${sign} ${tick === value ? 'is-selected' : ''}" aria-hidden="true"><span class="moon-bar"></span><span class="moon-tick">${tick > 0 ? '+' : ''}${tick}</span></span>`;
+      }).join('');
+      return `<div class="moon-meter ${direction}">
+        <div class="moon-header"><div class="moon-heading"><span class="moon-orbit" aria-hidden="true">◕</span><span class="moon-name">MOON METER</span><span class="moon-asset">${esc(m.asset)}</span></div><div class="moon-readout"><strong>${display}</strong><span>${esc(label)}</span></div></div>
+        <div class="moon-scale" role="meter" aria-valuemin="-3" aria-valuemax="3" aria-valuenow="${value}" aria-valuetext="${esc(label)}" aria-label="Moon Meter for ${esc(m.asset)}">${segments}</div>
+        <p class="moon-explanation">${esc(m.reason || 'Headline-only preliminary assessment; verify the original source.')}</p>
+      </div>`;
+    }).join('')}</div>`;
+  }
+
   function featureHTML(item) {
     return `<article class="featured" aria-label="Lead investor story">
       <div class="feature-tagline"><span class="feature-icon"></span> TOP INVESTOR SIGNAL <span class="feature-faint">/</span> ${esc(item.category.toUpperCase())} ${impactPill(item.impact)}</div>
       <h3 class="featured-title">${esc(item.title)}</h3>
       <p class="featured-excerpt">${esc(item.excerpt)}</p>
       <div class="investor-angle"><strong>WHY INVESTORS SHOULD CARE</strong>${esc(item.why_it_matters)}</div>
+      ${moonHTML(item)}
       <div class="feature-bottom"><div class="feature-source"><span class="feature-authority">${item.source_type==='SEC'?'PRIMARY FILING':item.source_type==='Official'?'OFFICIAL SOURCE':'FINANCIAL NEWS'}</span><span>${esc(item.source)} · ${esc(dateLine(item))}</span></div><div class="feature-actions">${saveButton(item)}<a class="feature-open" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">Read original source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div>${coverageHTML(item)}
     </article>`;
   }
@@ -51,6 +84,7 @@
       <div class="story-top"><div class="story-tags">${entityLabel(item)}<span class="tag-slash">/</span><span class="category-label">${esc((item.category||'News').toUpperCase())}</span></div><span class="story-date">${esc(dateLine(item))}</span></div>
       <h3 class="story-title">${esc(item.title)}</h3><p class="story-desc">${esc(item.excerpt)}</p>
       <div class="story-why"><strong>INVESTOR ANGLE</strong> ${esc(item.why_it_matters)}</div>
+      ${moonHTML(item)}
       <div class="story-bottom"><div class="story-source"><span class="source-dot ${esc((item.source_type||'').toLowerCase())}"></span>${esc(item.source)} ${impactPill(item.impact)}</div><div class="story-actions"><button class="read-button" data-read="${esc(item.id)}" type="button" title="${state.read.has(item.id)?'Mark unread':'Mark read'}" aria-label="${state.read.has(item.id)?'Mark unread':'Mark read'}">${state.read.has(item.id)?'Unread':'Mark read'}</button>${saveButton(item)}<a class="story-open" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer" aria-label="Read original source: ${esc(item.title)}">Source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div>${coverageHTML(item)}
     </article>`;
   }
@@ -59,6 +93,10 @@
     if (state.entity !== 'All' && !item.entities.includes(state.entity)) return false;
     if (state.category !== 'All' && item.category !== state.category) return false;
     if (state.impact !== 'All' && item.impact !== state.impact) return false;
+    const mv = moonValue(item);
+    if (state.moon === 'bullish' && !(mv > 0)) return false;
+    if (state.moon === 'bearish' && !(mv < 0)) return false;
+    if (state.moon === 'neutral' && mv !== 0) return false;
     if (!recent(item,state.days)) return false;
     if (state.view === 'high' && item.impact !== 'High') return false;
     if (state.view === 'sec' && item.category !== 'SEC filings') return false;
@@ -79,7 +117,7 @@
   function renderFeed() {
     if (!state.data) return;
     const match=state.data.items.filter(matches);
-    match.sort((a,b)=>state.sort==='impact'?(b.score||0)-(a.score||0)||time(b.published_at)-time(a.published_at):state.sort==='oldest'?time(a.published_at)-time(b.published_at):time(b.published_at)-time(a.published_at));
+    match.sort((a,b)=>state.sort==='moon-bullish'?(moonValue(b)??-4)-(moonValue(a)??-4)||time(b.published_at)-time(a.published_at):state.sort==='moon-bearish'?(moonValue(a)??4)-(moonValue(b)??4)||time(b.published_at)-time(a.published_at):state.sort==='impact'?(b.score||0)-(a.score||0)||time(b.published_at)-time(a.published_at):state.sort==='oldest'?time(a.published_at)-time(b.published_at):time(b.published_at)-time(a.published_at));
     state.filtered=match;
     const feature=chooseFeature(match);
     const rest=feature?match.filter(x=>x.id!==feature.id):match;
@@ -96,6 +134,7 @@
     $('high-nav-count').textContent=state.data.items.filter(x=>x.impact==='High'&&recent(x,30)).length;
     $('category-select').value=state.category;
     $('impact-select').value=state.impact;
+    $('moon-select').value=state.moon;
     $('period-select').value=String(state.days);
     $('sort-select').value=state.sort;
   }
@@ -170,13 +209,13 @@
     if(window.matchMedia('(max-width:820px)').matches) document.querySelector('.section-heading')?.scrollIntoView({behavior:'smooth',block:'start'});
   }
   function clearFilters() {
-    state.view='overview';state.entity='All';state.impact='All';state.category='All';state.days=30;state.sort='latest';state.query='';$('search-input').value='';renderFeed();
+    state.view='overview';state.entity='All';state.impact='All';state.moon='All';state.category='All';state.days=30;state.sort='latest';state.query='';$('search-input').value='';renderFeed();
   }
   function csvCell(value) {let text=String(value??''); if(/^[\s]*[=+\-@]/.test(text)) text="'"+text; return `"${text.replace(/"/g,'""')}"`;}
   function exportCSV() {
     if(!state.filtered.length){notify('No stories in the current view');return;}
-    const fields=['Date','Entity','Topic','Impact','Headline','Source','Summary','Investor angle','Original URL'];
-    const rows=state.filtered.map(i=>[dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(','));
+    const fields=['Date','Entity','Topic','Impact','Moon asset','Moon score','Moon rationale','Headline','Source','Summary','Investor angle','Original URL'];
+    const rows=state.filtered.map(i=>{const meters=visibleMoonSignals(i);return [dateLine(i),(i.entities||[]).join(' / '),i.category,i.impact,meters.map(m=>m.asset).join(' | '),meters.map(m=>m.value>0?'+'+m.value:m.value).join(' | '),meters.map(m=>m.reason).join(' | '),i.title,i.source,i.excerpt,i.why_it_matters,i.url].map(csvCell).join(',')});
     const contents='\ufeff'+[fields.map(csvCell).join(','),...rows].join('\r\n');
     const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([contents],{type:'text/csv;charset=utf-8;'}));link.download=`signal-investor-news-${new Date().toISOString().slice(0,10)}.csv`;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000);notify('CSV export prepared');
   }
@@ -189,6 +228,7 @@
   $('search-input').addEventListener('input',e=>{state.query=e.target.value;renderFeed();});
   $('category-select').addEventListener('change',e=>{state.category=e.target.value;renderFeed();});
   $('impact-select').addEventListener('change',e=>{state.impact=e.target.value;renderFeed();});
+  $('moon-select').addEventListener('change',e=>{state.moon=e.target.value;renderFeed();});
   $('period-select').addEventListener('change',e=>{state.days=Number(e.target.value);renderFeed();});
   $('sort-select').addEventListener('change',e=>{state.sort=e.target.value;renderFeed();});
   $('clear-filters').addEventListener('click',clearFilters);

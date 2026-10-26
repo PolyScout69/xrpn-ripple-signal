@@ -30,6 +30,10 @@ from urllib3.util.retry import Retry
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / 'data' / 'news.json'
+# Make shared price-direction scoring importable for both CI and local tests.
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.moon_meter import moon_for_story
 SEC_CIK = 2092592  # Evernorth Holdings Inc., XRPN
 STRATEGY_CIK = 1050446  # Strategy Inc. (formerly MicroStrategy), MSTR
 RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
@@ -668,6 +672,9 @@ def main() -> int:
     ready=sum(1 for x in statuses.values() if x['status']=='ok')
     status='live' if ready==len(sources) else 'partial' if ready else 'failed'
     items,new_count=merge_stories(previous.get('items',[]),incoming)
+    # Rate all visible stories, including previously collected items and clustered sources.
+    for item in items:
+        item['moon_meters'] = moon_for_story(item)
     out={
       'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),

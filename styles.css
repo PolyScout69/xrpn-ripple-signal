@@ -38,3 +38,34 @@
 @media(max-width:1280px){.field-search{flex:1 1 230px;max-width:100%}.select-sort{margin-left:0}.filter-top{gap:10px}}
 @media(max-width:820px){.shell{display:block}.sidebar{position:relative;width:100%;height:auto;min-height:0}.main-content{width:100%}.segment-tabs{width:100%;flex-wrap:nowrap;overflow:auto;scrollbar-width:thin}.segment{flex:0 0 auto}.field-search{width:100%}.filter-top{display:flex;flex-direction:column;align-items:stretch}}
 @media(max-width:560px){.segment-tabs{justify-content:flex-start}.segment{flex:0 0 auto;padding:10px}.filter-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.filter-bottom .select-wrap{min-width:0}.select-sort{margin:0}.filter-top{gap:8px}.story-tags{flex-wrap:wrap}.coverage-links{grid-template-columns:1fr}}
+
+/* Moon Meter — seven-point price-direction signal, distinct from investor impact */
+.moon-meters{display:flex;flex-direction:column;gap:9px;margin:16px 0 13px}
+.moon-meter{border:1px solid #2c4146;background:linear-gradient(115deg,#0c171d,#0e1c23);border-radius:10px;padding:13px 15px 12px;min-width:0;--mm-accent:#b8c7cc;--mm-halo:rgba(174,194,202,.15)}
+.moon-meter.positive{border-color:#31554e;--mm-accent:#9ae1b4;--mm-halo:rgba(114,211,164,.19)}
+.moon-meter.negative{border-color:#59413e;--mm-accent:#f4aa96;--mm-halo:rgba(244,170,150,.18)}
+.moon-meter.neutral{--mm-accent:#d4d8df;--mm-halo:rgba(208,216,225,.18)}
+.moon-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px;flex-wrap:wrap}
+.moon-heading{display:flex;align-items:center;gap:7px;min-width:0}
+.moon-orbit{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:#24353d;color:var(--mm-accent);font-size:17px;line-height:1}
+.moon-name{font-size:10px;font-weight:800;letter-spacing:1.2px;color:#cce0dd;white-space:nowrap}
+.moon-asset{font-size:10px;font-weight:800;color:#89adae;background:#1b323a;border:1px solid #2d4b4d;padding:3px 7px;border-radius:5px;line-height:1;letter-spacing:.7px}
+.moon-readout{display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.moon-readout strong{font-size:22px;line-height:1;font-variant-numeric:tabular-nums;font-weight:790;letter-spacing:-.5px;color:var(--mm-accent)}
+.moon-readout span{font-size:10px;color:var(--mm-accent);font-weight:720;letter-spacing:.2px}
+.moon-scale{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;align-items:start;min-height:43px}
+.moon-step{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;position:relative}
+.moon-bar{display:block;width:100%;height:11px;background:#24353c;border:1px solid #35505a;border-radius:4px;opacity:.73}
+.moon-step.negative .moon-bar{background:#48302e;border-color:#68413e}
+.moon-step.neutral .moon-bar{background:#38424c;border-color:#596b73}
+.moon-step.positive .moon-bar{background:#23463d;border-color:#3c6558}
+.moon-step.is-selected .moon-bar{background:var(--mm-accent);border-color:var(--mm-accent);opacity:1;box-shadow:0 0 0 2px var(--mm-halo),0 0 16px var(--mm-halo);height:13px;transform:translateY(-1px)}
+.moon-tick{font-family:ui-monospace,Consolas,monospace;font-size:10px;line-height:1;color:#729096;font-variant-numeric:tabular-nums}
+.moon-step.is-selected .moon-tick{font-size:11px;font-weight:850;color:var(--mm-accent)}
+.moon-explanation{font-size:11px;line-height:1.5;color:#a3b6b8;margin:0!important}
+.moon-awaiting{font-size:11px;color:#9db5bb;border:1px dashed #334e55;border-radius:8px;padding:12px;margin:12px 0}
+.featured .moon-meter{background:#10271f;border-color:#375f4c}
+.featured .moon-meter.negative{border-color:#654840;background:#251d20}
+.featured .moon-meter.neutral{border-color:#4a5e54;background:#142420}
+.story-card .moon-meters{margin:12px 0}
+@media(max-width:560px){.moon-meter{padding:11px 12px}.moon-scale{gap:4px}.moon-name{font-size:9px}.moon-header{gap:8px}.moon-readout strong{font-size:20px}.moon-readout span{font-size:10px}}
