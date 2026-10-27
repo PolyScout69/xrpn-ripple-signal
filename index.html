@@ -7,8 +7,9 @@
   <meta name="description" content="An investor intelligence dashboard tracking treasury strategy, product launches and partnerships for Evernorth Holdings (XRPN), Ripple, XRP Ledger ecosystem and Strategy (MSTR).">
   <title>Signal — Evernorth & Ripple Investor Intelligence</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=mobile-grid-20261026-v2">
+  <link rel="stylesheet" href="styles.css?v=share-quotes-20261027-v1">
   <script defer src="app.js?v=scan-3x-20261027"></script>
+  <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
 </head>
 <body>
   <div class="shell">
@@ -42,6 +43,37 @@
         <div class="topbar-right"><span class="edition-label">INDEPENDENT INVESTOR DASHBOARD</span><span class="top-divider"></span><span id="header-date">—</span></div>
       </div>
       <div class="page-container">
+        <section class="market-pulse" aria-labelledby="market-pulse-heading">
+          <div class="market-pulse-top">
+            <div class="market-pulse-heading"><span class="mini-accent"></span><h2 id="market-pulse-heading">MARKET PULSE</h2><span class="market-pulse-tag">NASDAQ · USD</span></div>
+            <span class="market-pulse-note">Latest available quotes · may be delayed</span>
+          </div>
+          <div class="market-pulse-grid">
+            <article class="quote-card" aria-label="Evernorth Holdings XRPN stock quote">
+              <div class="quote-card-top">
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-xrpn">E</span><span><strong>XRPN</strong><small>EVERNORTH HOLDINGS</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-XRPN/" target="_blank" rel="noopener noreferrer" aria-label="View XRPN share price on TradingView">Full quote ↗</a>
+              </div>
+              <div class="quote-widget-wrap">
+                <tv-single-ticker symbol="NASDAQ:XRPN" theme="dark">
+                  <span class="quote-loading">Loading XRPN price and daily change…</span>
+                </tv-single-ticker>
+              </div>
+            </article>
+            <article class="quote-card" aria-label="Strategy Incorporated MSTR stock quote">
+              <div class="quote-card-top">
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-mstr">S</span><span><strong>MSTR</strong><small>STRATEGY INC.</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-MSTR/" target="_blank" rel="noopener noreferrer" aria-label="View MSTR share price on TradingView">Full quote ↗</a>
+              </div>
+              <div class="quote-widget-wrap">
+                <tv-single-ticker symbol="NASDAQ:MSTR" theme="dark">
+                  <span class="quote-loading">Loading MSTR price and daily change…</span>
+                </tv-single-ticker>
+              </div>
+            </article>
+          </div>
+          <p class="market-pulse-footnote">Daily % change versus the previous regular-session close. Quotes supplied by TradingView and may be delayed. Links open the provider's stock pages.</p>
+        </section>
         <header class="hero">
           <div class="hero-glow"></div>
           <div class="hero-lines" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><div class="orbit-core"></div><div class="orbit-ray"></div></div>
@@ -84,11 +116,11 @@
             <section class="rail-note"><div class="rail-note-mark">↳</div><p><strong>How to read this feed</strong><br>“High impact” means potentially material to the investment thesis — <em>not</em> a prediction of the share or XRP price.</p><button type="button" id="method-btn">View methodology ↗</button></section>
           </aside>
         </div>
-        <footer class="site-footer"><span>© <span id="footer-year">2026</span> SIGNAL <span class="foot-em">/</span> INVESTOR INTELLIGENCE</span><span>Source links for verification. Not investment advice. <span class="foot-em">•</span> No tracking cookies.</span></footer>
+        <footer class="site-footer"><span>© <span id="footer-year">2026</span> SIGNAL <span class="foot-em">/</span> INVESTOR INTELLIGENCE</span><span>Source links for verification. Not investment advice. <span class="foot-em">•</span> Quotes via TradingView (third party).</span></footer>
       </div>
     </main>
   </div>
-  <dialog id="method-dialog" class="method-dialog" aria-labelledby="method-heading"><div class="dialog-top"><span class="rail-kicker">SOURCE FIRST / TRANSPARENT RULES</span><button id="dialog-close" type="button" class="dialog-close" aria-label="Close">×</button></div><h2 id="method-heading">How Signal works</h2><p>Signal monitors official Ripple and Evernorth announcements and targeted financial news feeds for Ripple, the XRP Ledger, Evernorth and Strategy. Reports covering the same event are grouped, with alternate publisher links retained. Standalone regulatory filing records are excluded from the feed and Moon Meter.</p><h3>Moon Meter (−3 to +3) — IF TRUE</h3><p>Moon scores estimate how bullish or bearish a development <strong>could be if the headline, rumour or proposed scenario proved true</strong>. A +3 means potentially exceptional upside, <strong>not</strong> a high probability of happening or a forecast return. Rumours are labelled <strong>UNVERIFIED RUMOUR</strong>; forward-looking claims are labelled <strong>ASSUMED TRUE</strong>. Reported announcements remain distinct. Zero means no obvious price direction even if true; <strong>Not rated (—)</strong> means the headline itself is too thin to assess (for example, a filing index with no terms). XRP is used for Ripple and XRP ecosystem news, XRPN for Evernorth, and MSTR for Strategy. This is a headline-based scenario gauge, not a valuation or verification service.</p><h3>What “high impact” means</h3><p>Impact tracks the potential significance of a development, independently of its price direction. Funding rounds, equity dilution, treasury activity, product launches, partnerships and regulations may each be important without automatically being bullish.</p><h3>Important limits</h3><p><strong>An IF TRUE rating does not mean the story is true.</strong> Rumours may be inaccurate, unsubstantiated, outdated or contradicted. Assuming that Ripple business growth benefits XRP, or that treasury lending creates shareholder value, is a scenario rather than an established economic relationship. Publisher feeds can be incomplete or delayed, and plans may not translate into revenues or returns. Verify primary sources before investing.</p><h3>Automation</h3><p>GitHub Actions attempts <strong>three scans every day at 09:15, 14:35 and 23:35 UTC</strong> (timing approximate), capturing UK and European morning announcements, US pre-market and early-session headlines, and US after-market news. The source panel shows any fetch failures.</p><form method="dialog"><button class="secondary-button dialog-done" type="submit">Understood</button></form></dialog>
+  <dialog id="method-dialog" class="method-dialog" aria-labelledby="method-heading"><div class="dialog-top"><span class="rail-kicker">SOURCE FIRST / TRANSPARENT RULES</span><button id="dialog-close" type="button" class="dialog-close" aria-label="Close">×</button></div><h2 id="method-heading">How Signal works</h2><p>Signal monitors official Ripple and Evernorth announcements and targeted financial news feeds for Ripple, the XRP Ledger, Evernorth and Strategy. Reports covering the same event are grouped, with alternate publisher links retained. Standalone regulatory filing records are excluded from the feed and Moon Meter.</p><h3>Moon Meter (−3 to +3) — IF TRUE</h3><p>Moon scores estimate how bullish or bearish a development <strong>could be if the headline, rumour or proposed scenario proved true</strong>. A +3 means potentially exceptional upside, <strong>not</strong> a high probability of happening or a forecast return. Rumours are labelled <strong>UNVERIFIED RUMOUR</strong>; forward-looking claims are labelled <strong>ASSUMED TRUE</strong>. Reported announcements remain distinct. Zero means no obvious price direction even if true; <strong>Not rated (—)</strong> means the headline itself is too thin to assess (for example, a filing index with no terms). XRP is used for Ripple and XRP ecosystem news, XRPN for Evernorth, and MSTR for Strategy. This is a headline-based scenario gauge, not a valuation or verification service.</p><h3>What “high impact” means</h3><p>Impact tracks the potential significance of a development, independently of its price direction. Funding rounds, equity dilution, treasury activity, product launches, partnerships and regulations may each be important without automatically being bullish.</p><h3>Important limits</h3><p><strong>An IF TRUE rating does not mean the story is true.</strong> Rumours may be inaccurate, unsubstantiated, outdated or contradicted. Assuming that Ripple business growth benefits XRP, or that treasury lending creates shareholder value, is a scenario rather than an established economic relationship. Publisher feeds can be incomplete or delayed, and plans may not translate into revenues or returns. Verify primary sources before investing.</p><h3>Share prices</h3><p>XRPN and MSTR share-price widgets at the top of the page are supplied by TradingView, a third-party market-data provider. They display the latest available USD price and daily percentage change relative to the previous regular-session close. Quotes can be delayed or unavailable, especially outside market hours; their updates do not depend on Signal's scheduled news scans. Opening these widgets may involve TradingView's own data requests and privacy practices.</p><h3>Automation</h3><p>GitHub Actions attempts <strong>three scans every day at 09:15, 14:35 and 23:35 UTC</strong> (timing approximate), capturing UK and European morning announcements, US pre-market and early-session headlines, and US after-market news. The source panel shows any fetch failures.</p><form method="dialog"><button class="secondary-button dialog-done" type="submit">Understood</button></form></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
