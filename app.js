@@ -140,15 +140,59 @@
     $('period-select').value=String(state.days);
     $('sort-select').value=state.sort;
   }
+  function renderSentiment(asset) {
+    const id=asset.toLowerCase();
+    const item=state.data?.sentiment_30d?.[asset];
+    const card=$('sentiment-card-'+id);
+    const valueEl=$('sentiment-'+id+'-value');
+    const labelEl=$('sentiment-'+id+'-label');
+    const scale=$('sentiment-'+id+'-scale');
+    const line=$('sentiment-'+id+'-subline');
+    const detail=$('sentiment-'+id+'-details');
+    if(!item || !Number.isInteger(item.value) || item.value < -3 || item.value > 3) {
+      valueEl.textContent='—';
+      labelEl.textContent='Awaiting scan';
+      line.textContent='Sentiment calculated during the next news scan';
+      scale.innerHTML='';
+      detail.textContent='Once scanned, this card will show a weighted 30-day summary of relevant stories.';
+      return;
+    }
+    const value=item.value;
+    const tone=value>0?'positive':value<0?'negative':'neutral';
+    card.classList.remove('sentiment-positive','sentiment-negative','sentiment-neutral');
+    card.classList.add('sentiment-'+tone);
+    valueEl.textContent=value>0?'+'+value:String(value);
+    labelEl.textContent=item.label || (value>0?'Bullish':value<0?'Bearish':'Neutral');
+    scale.setAttribute('role','meter');
+    scale.setAttribute('aria-valuemin','-3');
+    scale.setAttribute('aria-valuemax','3');
+    scale.setAttribute('aria-valuenow',String(value));
+    scale.setAttribute('aria-valuetext',labelEl.textContent);
+    scale.innerHTML=MOON_TICKS.map(tick=>'<span class="sentiment-step '+(tick<0?'negative':tick>0?'positive':'neutral')+(tick===value?' is-selected':'')+'"><span class="sentiment-bar"></span><span class="sentiment-tick">'+(tick>0?'+'+tick:tick)+'</span></span>').join('');
+    const all=Number(item.stories)||0;
+    const directional=Number(item.directional_events)||0;
+    const coverage=item.coverage||'Coverage unknown';
+    line.innerHTML='<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' stories <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
+    const raw=Number(item.raw_score);
+    const rawText=Number.isFinite(raw)?(raw>0?'+':'')+raw.toFixed(2):'—';
+    const stats='<div class="sentiment-detail-stats">Weighted index <strong>'+esc(rawText)+'</strong> / 3 · '+Number(item.independent_events||0)+' distinct events · '+Number(item.neutral_events||0)+' non-directional events</div>';
+    const drivers=Array.isArray(item.drivers)?item.drivers.slice(0,4):[];
+    const driverList=drivers.length?'<ol class="sentiment-driver-list">'+drivers.map(d=>{
+      const dv=Number(d.value)||0;
+      const url=safeUrl(d.url);
+      const title=esc(d.title||'Investor news');
+      const label='<span class="sentiment-driver-score '+(dv>0?'positive':'negative')+'">'+(dv>0?'+'+dv:dv)+'</span>';
+      const link=url!=='#'?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+'</a>':title;
+      return '<li>'+label+'<span>'+link+'<small>'+esc(d.impact||'')+' impact · '+esc(d.scenario||'reported')+'</small></span></li>';
+    }).join('')+'</ol>':'<p>No directional catalysts in the selected period.</p>';
+    detail.innerHTML=stats+driverList+'<p class="sentiment-disclaimer">Impact-weighted, recency-adjusted, deduplicated IF-TRUE scenarios. A score is not a price forecast or evidence a rumour is true. See methodology for details.</p>';
+  }
   function renderStats() {
     const items=state.data.items;
     $('stat-new').textContent=fmtNum(items.filter(i=>recent(i,1)).length);
     $('stat-high').textContent=fmtNum(items.filter(i=>i.impact==='High'&&recent(i,7)).length);
-    $('stat-treasury').textContent=fmtNum(items.filter(i=>i.category==='Treasury'&&recent(i,30)).length);
-    const sources=Object.keys(state.data.sources||{});
-    const ok=sources.filter(k=>state.data.sources?.[k]?.status==='ok').length;
-    $('stat-health').textContent=`${ok}/${sources.length}`;
-    $('stat-health-sub').textContent=ok===sources.length?'All monitoring sources checked':ok===0?'Sources need attention':`${sources.length-ok} channels need attention`;
+    renderSentiment('XRPN');
+    renderSentiment('MSTR');
     $('chart-total').textContent=fmtNum(items.filter(i=>recent(i,30)).length);
     renderChart(items);
   }
@@ -202,7 +246,7 @@
       if(showFeedback)notify(previous!==data.scan.ran_at?'Latest published snapshot loaded':'Already showing the latest published snapshot');
     } catch(error) {
       console.error('Could not load news.json:',error);
-      if(!state.data){ $('scan-label').textContent='News file unavailable';$('scan-description').textContent='Serve this folder over HTTP (see README).';$('no-results').hidden=false;$('stat-health').textContent='—'; }
+      if(!state.data){ $('scan-label').textContent='News file unavailable';$('scan-description').textContent='Serve this folder over HTTP (see README).';$('no-results').hidden=false; }
       notify('Could not load news snapshot. Please check your connection.');
     } finally {button.classList.remove('is-loading');button.disabled=false;}
   }
