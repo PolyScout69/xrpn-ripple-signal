@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:39:44Z",
+    "ran_at": "2026-10-27T08:42:06Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T08:39:44Z",
+      "checked_at": "2026-10-27T08:42:06Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:39:44Z",
+      "checked_at": "2026-10-27T08:42:06Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 308,
-      "checked_at": "2026-10-27T08:39:44Z",
-      "message": "Fetched 308 matching items."
+      "items_seen": 252,
+      "checked_at": "2026-10-27T08:42:06Z",
+      "message": "Fetched 252 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.12,
+      "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-27T08:39:44Z",
-      "stories": 45,
-      "independent_events": 35,
-      "directional_events": 16,
-      "distinct_catalysts": 14,
-      "bullish_events": 12,
+      "as_of": "2026-10-27T08:42:06Z",
+      "stories": 40,
+      "independent_events": 34,
+      "directional_events": 15,
+      "distinct_catalysts": 13,
+      "bullish_events": 11,
       "bearish_events": 4,
       "neutral_events": 19,
       "coverage": "Broad coverage",
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.12,
       "window_days": 30,
-      "as_of": "2026-10-27T08:39:44Z",
+      "as_of": "2026-10-27T08:42:06Z",
       "stories": 24,
       "independent_events": 20,
       "directional_events": 6,
@@ -1459,7 +1459,8 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth"
+        "Evernorth",
+        "XRP Ecosystem"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -1505,6 +1506,16 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4379,42 +4390,7 @@
           "url": "https://www.evernorth.xyz/press-release-10-01-2026",
           "source_type": "Official",
           "published_at": "2026-10-01T12:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "7fca177daf9101",
-      "title": "Oct 01, 2026, 08:00 ET Shareholders Approve Evernorth Business Combination; Transaction and Related Private Placements Have Raised Over $1 Billion; Nasdaq Trading Under \"XRPN\" Expected to Begin on October 8…",
-      "published_at": "2026-10-01T12:00:00Z",
-      "date_only": true,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "High",
-      "score": 91,
-      "source": "Evernorth Holdings / PR Newswire",
-      "source_type": "Official",
-      "source_id": "evernorth",
-      "url": "https://www.prnewswire.com/news-releases/shareholders-approve-evernorth-business-combination-transaction-and-related-private-placements-have-raised-over-1-billion-nasdaq-trading-under-xrpn-expected-to-begin-on-october-8-302895260.html",
-      "excerpt": "Issuer announcement: Oct 01, 2026, 08:00 ET Shareholders Approve Evernorth Business Combination; Transaction and Related Private Placements Have Raised Over $1 Billion; Nasdaq Trading Under \"XRPN\" Expected to Begin on October 8…",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:12Z",
-      "verified_seed": false,
-      "coverage": [
+        },
         {
           "title": "Oct 01, 2026, 08:00 ET Shareholders Approve Evernorth Business Combination; Transaction and Related Private Placements Have Raised Over $1 Billion; Nasdaq Trading Under \"XRPN\" Expected to Begin on October 8…",
           "name": "Evernorth Holdings / PR Newswire",
@@ -4428,59 +4404,45 @@
           "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQbzlkY0ptcVhhcDBSZk9nYTV3ajh1Y2lqTDVMUUctTlRWR0VNMFRnSjc4c0lsQnBXbjlNZXRMSnFublFmODRNY3RsZkdIWnVTc19VUkFGT3IxaldkX1daZjlMbEpwUVAwa0ExVEx3aFdyLTFrX0Z2YWUtTmZMTGpkMmZWNmlqYTVvbEthZ2ZSRzdWVDdIaWtGdnVSZV9qTG9NWUFEZnl0SFh5dzNFNV9rZU9vdUY4T1FzaV8zVUZNdzIzbDNDSmFZTTlpaUU5Q3pJb2wtY3Jlbi1kYU90cHJiTVBYMFpkLWxDRUotRVV6ZTdEZWtzTzFUSURpX01Rd0dveVdvUkZISDZMXzdoaUU3c2hfd01YNzVlOUd0aWV6MnhRX0lEbF94eHZkNl94cTYxWEM2RjE4aHYwSnk2TkFZQm9sbmlqN1NWeF8xb0VyZEo3WWhs?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the reported merger approval is valid and closes, it could remove uncertainty and improve XRPN market access.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "a5a87fe5bb5c79",
-      "title": "Evernorth Merger Vote Passes, Clearing Path for $473M XRP Treasury Deal",
-      "published_at": "2026-10-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "High",
-      "score": 88,
-      "source": "CCN.com · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZWdUM1dEMGVZOGNNWUNMdzZJVWJzWGdNTllLT25YV1F4VG5aM2toX3Q4OWRWdHJiUkJUcm9nczhubjVZR2dZVXNNRWRnZllaU2QzX1d2Z0ZBY01oaW1GelpZOEwzLTF2TXBRSEpnSG8wbUpzZGtSVF9FOG9FWjdIUE1oTQ?oc=5",
-      "excerpt": "Evernorth Merger Vote Passes, Clearing Path for $473M XRP Treasury Deal CCN.com",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-26T19:52:13Z",
-      "verified_seed": false,
-      "coverage": [
+        },
         {
           "title": "Evernorth Merger Vote Passes, Clearing Path for $473M XRP Treasury Deal",
           "name": "CCN.com · via Google News",
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZWdUM1dEMGVZOGNNWUNMdzZJVWJzWGdNTllLT25YV1F4VG5aM2toX3Q4OWRWdHJiUkJUcm9nczhubjVZR2dZVXNNRWRnZllaU2QzX1d2Z0ZBY01oaW1GelpZOEwzLTF2TXBRSEpnSG8wbUpzZGtSVF9FOG9FWjdIUE1oTQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-01T07:00:00Z"
+        },
+        {
+          "title": "Evernorth clears shareholder vote ahead of Nasdaq debut with 473M XRP treasury",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSUFwYXV2RGhFaWNEUEEzT3NFYWRLM3RkOG8zTnVYdFNaTkFITVBDRDdIMGkxRUd2cEFtemZDVk9MQnowNjdJOWMzVUZoTXh1d081dG9VWDVuUjljQTZzSkJ4LXRBMDdnNHVlc2Y0eUY2Qkxla3ZIaC1GcUlOZElfOFNXcHdWWFRPR2MtNk1QeGZfOUw0SUV4ZVhzdDcwYnJpazNjS0Z0NVVtRW0tUnFKWnc0LWZCdV9Ec21UMFZrSjRYdEx2OGktMmI1SWNRUlVIenBxUzNDVVVEdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-01T07:00:00Z"
+        },
+        {
+          "title": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances",
+          "name": "CoinGape · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYXBMSHNiYzU0Y1JFZWRmWmk3elhwbmltLVhMamsyd0VwT3U1b0JNTWZIdHhGamNOMXJZclVMRjJlTWJ2ZlRha21XQkJTczRFNUV1VzlnSjZCN2toLUI1eW9peVhIV21vVmVuVzIzNTV4QWVkVVNYRVlCTXVpUUlsM2ctZldHcGNGSE8wNk9GdjgyZnI4cTBldTg5ZVBIdi1ZZHBV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-30T07:00:00Z"
+        },
+        {
+          "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
+          "name": "Crypto News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-30T07:00:00Z"
         }
       ],
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "High",
           "scenario": "reported",
           "if_true": true,
-          "reason": "If the reported merger approval is valid and closes, it could remove uncertainty and improve XRPN market access.",
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4510,48 +4472,6 @@
           "title": "Ripple Backed Evernorth to Go Public With 473M XRP Treasury",
           "name": "Yahoo Finance · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOb2xyVzBxSnNpa29xaXJ6VVFqM3BDa0hNcHVVdktsbnZUYmxiNy02cm42aWlNNlYtX0VHalhNNzFPY243ZzJzdTBELUhXR29Zb3A0aHl0cEE4bFNBX3dPNmxfaExFSFpSUTZCakFQZnhJMG5OQ0xHbS1zd3Vla0tZMjZ2WlNPbDNyZE51cGtyTzF5SzNzc1NoOUV0TVZ2UFFfTXc?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "60100a76795bed",
-      "title": "Evernorth clears shareholder vote ahead of Nasdaq debut with 473M XRP treasury",
-      "published_at": "2026-10-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 76,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSUFwYXV2RGhFaWNEUEEzT3NFYWRLM3RkOG8zTnVYdFNaTkFITVBDRDdIMGkxRUd2cEFtemZDVk9MQnowNjdJOWMzVUZoTXh1d081dG9VWDVuUjljQTZzSkJ4LXRBMDdnNHVlc2Y0eUY2Qkxla3ZIaC1GcUlOZElfOFNXcHdWWFRPR2MtNk1QeGZfOUw0SUV4ZVhzdDcwYnJpazNjS0Z0NVVtRW0tUnFKWnc0LWZCdV9Ec21UMFZrSjRYdEx2OGktMmI1SWNRUlVIenBxUzNDVVVEdw?oc=5",
-      "excerpt": "Evernorth clears shareholder vote ahead of Nasdaq debut with 473M XRP treasury TradingView",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-26T21:54:57Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Evernorth clears shareholder vote ahead of Nasdaq debut with 473M XRP treasury",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSUFwYXV2RGhFaWNEUEEzT3NFYWRLM3RkOG8zTnVYdFNaTkFITVBDRDdIMGkxRUd2cEFtemZDVk9MQnowNjdJOWMzVUZoTXh1d081dG9VWDVuUjljQTZzSkJ4LXRBMDdnNHVlc2Y0eUY2Qkxla3ZIaC1GcUlOZElfOFNXcHdWWFRPR2MtNk1QeGZfOUw0SUV4ZVhzdDcwYnJpazNjS0Z0NVVtRW0tUnFKWnc0LWZCdV9Ec21UMFZrSjRYdEx2OGktMmI1SWNRUlVIenBxUzNDVVVEdw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-01T07:00:00Z"
         }
@@ -4650,90 +4570,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "386597368a435e",
-      "title": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances",
-      "published_at": "2026-09-30T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 76,
-      "source": "CoinGape · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYXBMSHNiYzU0Y1JFZWRmWmk3elhwbmltLVhMamsyd0VwT3U1b0JNTWZIdHhGamNOMXJZclVMRjJlTWJ2ZlRha21XQkJTczRFNUV1VzlnSjZCN2toLUI1eW9peVhIV21vVmVuVzIzNTV4QWVkVVNYRVlCTXVpUUlsM2ctZldHcGNGSE8wNk9GdjgyZnI4cTBldTg5ZVBIdi1ZZHBV?oc=5",
-      "excerpt": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances CoinGape",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-26T22:39:27Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances",
-          "name": "CoinGape · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYXBMSHNiYzU0Y1JFZWRmWmk3elhwbmltLVhMamsyd0VwT3U1b0JNTWZIdHhGamNOMXJZclVMRjJlTWJ2ZlRha21XQkJTczRFNUV1VzlnSjZCN2toLUI1eW9peVhIV21vVmVuVzIzNTV4QWVkVVNYRVlCTXVpUUlsM2ctZldHcGNGSE8wNk9GdjgyZnI4cTBldTg5ZVBIdi1ZZHBV?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-09-30T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the reported merger approval is valid and closes, it could remove uncertainty and improve XRPN market access.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "8e5c086d1d03cc",
-      "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
-      "published_at": "2026-09-30T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Crypto News · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
-      "excerpt": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes Crypto News",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-26T22:39:27Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "XRP rebounds past $1.50 as Evernorth merger vote reportedly passes",
-          "name": "Crypto News · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-09-30T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Unverified",
-          "scenario": "rumour",
-          "if_true": true,
-          "reason": "IF THE RUMOUR IS TRUE: If the reported merger approval is valid and closes, it could remove uncertainty and improve XRPN market access.",
           "method": "headline_if_true_v4"
         }
       ]
