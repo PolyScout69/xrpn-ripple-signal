@@ -43,8 +43,8 @@ class MoonMeterTests(unittest.TestCase):
 
     def test_media_source_caution_and_range(self):
         m=score('Evernorth files for bankruptcy',kind='Media')
-        self.assertEqual(m['value'],-2)
-        self.assertIn('primary',m['reason'])
+        self.assertEqual(m['value'],-3)
+        self.assertIn('solvency',m['reason'])
         for title in ('ETF approval denied','Strategy reports new bitcoin treasury plan','Spot XRP ETF launch date'):
             for ent in ['Ripple','Evernorth','XRP Ecosystem','Strategy']:
                 v=score(title,ent)['value']
@@ -93,7 +93,34 @@ class MoonMeterTests(unittest.TestCase):
     def test_xrp_extreme_if_true_score(self):
         m=score('SEC approves spot XRP ETF with net inflows $2 billion','XRP Ecosystem','Official')
         self.assertEqual(m['value'],3)
-        self.assertEqual(m['method'],'headline_if_true_v3')
+        self.assertEqual(m['method'],'headline_if_true_v4')
+
+    def test_xrpn_scaled_institutional_treasury_yield_is_plus_three(self):
+        m=score('Nasdaq-Listed Evernorth Targets Yield on $648 Million XRP Treasury as Four Institutional Partners Join',kind='Media')
+        self.assertEqual(m['value'],3)
+        self.assertIn('sustainable net income',m['reason'])
+        m2=score('Evernorth Puts 473 Million XRP Treasury to Work With Ripple, Coinbase, Kraken and BitGo',kind='Media')
+        self.assertEqual(m2['value'],3)
+
+    def test_xrpn_per_share_and_listing_are_bullish_if_true(self):
+        self.assertEqual(score('Evernorth XRP Holdings to Target Higher XRP Per Share',kind='Media')['value'],2)
+        self.assertEqual(score('Evernorth Completes Business Combination with Armada',kind='Official')['value'],2)
+        self.assertEqual(score('XRP Treasury Firm Evernorth Gets SEC Nod, Eyes Nasdaq Listing',kind='Media')['value'],2)
+        self.assertEqual(score('Uphold Lists Evernorth XRPN Stock, Expanding Access',kind='Media')['value'],1)
+
+    def test_xrpn_warrant_dilution_and_treasury_drawdown_not_optimistic(self):
+        self.assertEqual(score('Evernorth Registers 11.5 Million Shares Tied to Warrants',kind='Media')['value'],-1)
+        self.assertEqual(score('Evernorth XRP treasury lost $443 Million before its debut',kind='Media')['value'],-2)
+        self.assertEqual(score('Evernorth announces $80m equity purchase facility',kind='Media')['value'],-1)
+
+    def test_strategy_preferred_repurchase_if_true(self):
+        m=score('Strategy Acquires 250 Bitcoin for $21.5M, Repurchases $192.4M of STRC Preferred Stock','Strategy','Media')
+        self.assertEqual(m['value'],2)
+        self.assertEqual(score('Strategy proposes daily preferred dividends','Strategy','Media')['value'],0)
+
+    def test_generic_hype_does_not_become_plus_three(self):
+        self.assertEqual(score('Evernorth says something special is planned','Evernorth','Media')['value'],0)
+        self.assertEqual(score('Ripple new product launch for RLUSD','Ripple','Media')['value'],1)
 
     def test_merged_articles_recompute_once_per_asset(self):
         item={'title':'Evernorth announces equity facility','excerpt':'May issue additional shares','entities':['Evernorth','Ripple','XRP Ecosystem'],'source_type':'Official'}
