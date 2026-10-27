@@ -518,10 +518,12 @@ def _news_week(date: str) -> str:
 
 def _strc_transaction_amount(title: str) -> float | None:
     """Find the STRC amount even when a headline also states BTC spending."""
-    anchors=[m.start() for m in re.finditer(
-        r'\bstrc\b|\brepurchas\w*\b|\bbuy[\s-]?backs?\b|\bpreferred(?:\s+(?:stock|shares?))?\b',
-        title, re.I)]
-    if not anchors:
+    instrument=[m.start() for m in re.finditer(
+        r'\bstrc\b|\bpreferred(?:\s+(?:stock|shares?))?\b',title,re.I)]
+    action=[m.start() for m in re.finditer(
+        r'\brepurchas\w*\b|\bbuy[\s-]?backs?\b',title,re.I)]
+    bitcoin=[m.start() for m in re.finditer(r'\b(?:bitcoin|btc)\b',title,re.I)]
+    if not instrument and not action:
         return None
     ranked=[]
     for match in NEWS_MONEY.finditer(title):
@@ -530,12 +532,13 @@ def _strc_transaction_amount(title: str) -> float | None:
             amount*=1000
         if amount <= 0:
             continue
-        distance=min(abs(match.start()-i) for i in anchors)
-        context=title[max(0,match.start()-24):min(len(title),match.end()+24)].lower()
-        # "Buys $21.5m Bitcoin, repurchases $192m STRC": the first
-        # amount belongs to BTC and must not be mistaken for the buyback.
-        if re.search(r'\b(?:bitcoin|btc)\b',context) and not re.search(
-            r'\b(?:strc|preferred|repurchas\w*|buy[\s-]?back\w*)\b',context):
+        asset_distance=min((abs(match.start()-i) for i in instrument),default=100)
+        action_distance=min((abs(match.start()-i) for i in action),default=100)
+        btc_distance=min((abs(match.start()-i) for i in bitcoin),default=999)
+        # The amount closest to STRC/preferred stock is the repurchase.
+        # Penalise an amount explicitly closest to the BTC leg.
+        distance=2*asset_distance+0.35*action_distance
+        if btc_distance<asset_distance and btc_distance<32:
             distance+=120
         ranked.append((distance,amount))
     return min(ranked,default=(999,None))[1]
