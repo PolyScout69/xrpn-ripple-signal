@@ -199,7 +199,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
         if _contains(title, r'\b(?:completes?|completed)\s+(?:its\s+)?(?:business combination|merger)\b'):
             return 2, 'If the transaction closes as reported, listing/treasury-access risk falls; valuation remains uncertain.', evidence
         if _contains(title, r'\b(?:nasdaq|go(?:es|ing)? public)\b') and _contains(title,
-                            r'\b(?:debut|list(?:ed|ing)?|begins trading|went public|go public)\b'):
+                            r'\b(?:debut|debuts|lists?|listing|begins trading|went public|go public)\b'):
             return 2, 'If completed, public-market access and XRP treasury exposure could broaden the investor base.', evidence
         if _contains(title, r'\bsec (?:nod|clearance|approval)\b', r'\bsec approves?\b') and _contains(title,
                             r'\b(?:nasdaq|listing|go public)\b'):
