@@ -96,7 +96,7 @@ class SentimentTests(unittest.TestCase):
         self.assertLess(s['value'], 3)
 
     def test_mstr_thin_coverage_is_flagged_not_forced_to_zero(self):
-        s = self.check([story('Strategy purchases BTC', 'MSTR', value=1)])
+        s = self.check([story('Strategy purchases BTC', 'MSTR', value=1)], ticker='MSTR')
         self.assertEqual(s['value'], 1)
         self.assertEqual(s['coverage'], 'Limited coverage')
         self.assertEqual(s['stories'], 1)
