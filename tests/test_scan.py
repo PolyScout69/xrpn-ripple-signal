@@ -78,7 +78,7 @@ class CollectorTests(unittest.TestCase):
         """Keep GitHub cron, site display and published scanner metadata aligned."""
         import re
         workflow=(ROOT/'.github/workflows/daily-scan.yml').read_text(encoding='utf-8')
-        cron=re.findall(r"- cron: '(\\d+) (\\d+) \\* \\* \\*'",workflow)
+        cron=re.findall(r"- cron: '(\d+) (\d+) \* \* \*'",workflow)
         scheduled=sorted(f'{int(hour):02d}:{int(minute):02d}' for minute,hour in cron)
         self.assertEqual(scheduled,['14:35','23:35'])
         site=(ROOT/'app.js').read_text(encoding='utf-8')
