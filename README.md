@@ -12,6 +12,10 @@ Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **XRP E
 - Multiple publications of the same event are grouped with additional source links.
 - Source Health reflects **three** channels: Ripple official, Evernorth official, and issuer/ecosystem news.
 
+## Homepage share-price widgets
+
+The top of the homepage shows **XRPN (Evernorth)** and **MSTR (Strategy)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:XRPN` and `NASDAQ:MSTR`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
+
 ## Moon Meter (−3 to +3)
 
 The Moon Meter is an **IF-TRUE scenario gauge**, scoring the potential directional impact on **XRP**, **XRPN** or **MSTR** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
