@@ -205,7 +205,7 @@
       directional.length<7?'Moderate coverage':'Broad coverage';
     return {value,label:labels[String(value)],raw_score:Math.round(raw*100)/100,
       stories:total,independent_events:entries.length,directional_events:directional.length,
-      neutral_events:neutral.length,coverage,provisional:true,
+      distinct_catalysts:directional.length,neutral_events:neutral.length,coverage,provisional:true,
       drivers:directional.sort((a,b)=>Math.abs(b.value*b.weight)-Math.abs(a.value*a.weight)).slice(0,4)};
   }
 
@@ -244,7 +244,7 @@
     line.innerHTML=(item.provisional?'<span class="sentiment-provisional">Provisional · awaiting recalculated scan</span>':'')+'<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' '+(all===1?'story':'stories')+' <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
     const raw=Number(item.raw_score);
     const rawText=Number.isFinite(raw)?(raw>0?'+':'')+raw.toFixed(2):'—';
-    const stats='<div class="sentiment-detail-stats">Weighted index <strong>'+esc(rawText)+'</strong> / 3 · '+Number(item.independent_events||0)+' distinct events · '+Number(item.neutral_events||0)+' non-directional events</div>';
+    const stats='<div class="sentiment-detail-stats">Weighted index <strong>'+esc(rawText)+'</strong> / 3 · '+Number(item.independent_events||0) +' distinct events · '+Number(item.distinct_catalysts||0)+' catalyst themes · '+Number(item.neutral_events||0)+' neutral events</div>';
     const drivers=Array.isArray(item.drivers)?item.drivers.slice(0,4):[];
     const driverList=drivers.length?'<ol class="sentiment-driver-list">'+drivers.map(d=>{
       const dv=Number(d.value)||0;
