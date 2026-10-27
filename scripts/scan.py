@@ -593,7 +593,7 @@ def event_key(item: dict) -> str:
     if 'Strategy' in entities and any(v in title for v in ('acquir','purchas','buys','bitcoin holdings','btc holdings')):
         btc = re.search(r'(\d[\d,]*)\s*(?:btc|bitcoin)', title)
         if btc:
-            return 'strategy:btc-purchase:'+btc.group(1).replace(',')+':'+_news_week(item['published_at'])
+            return 'strategy:btc-purchase:'+btc.group(1).replace(',','')+':'+_news_week(item['published_at'])
     return ''
 
 
