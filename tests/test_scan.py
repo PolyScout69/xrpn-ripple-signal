@@ -143,6 +143,22 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(len(merged),2)
         self.assertEqual(sorted(len(x['coverage']) for x in merged),[2,2])
 
+    def test_evernorth_merger_vote_articles_are_one_story_but_closing_is_new(self):
+        original=self.story('Evernorth Merger Vote Passes, Clearing Path for 473M XRP Treasury Deal',
+                            entity='Evernorth',kind='Media',url='https://example.com/approved')
+        other=self.story('XRP Gains After Evernorth Merger Vote Passes As 473M XRP Treasury Deal Advances',
+                         entity='Evernorth',kind='Media',url='https://example.com/merger-vote')
+        official=self.story('Shareholders Approve Evernorth Business Combination; Nasdaq Trading Soon',
+                            entity='Evernorth',kind='Official',url='https://example.com/issuer')
+        closing=self.story('Evernorth Completes Business Combination with Armada',
+                           entity='Evernorth',kind='Official',url='https://example.com/closing')
+        merged,_=scan.merge_stories([original,other,official,closing],[])
+        self.assertEqual(len(merged),2)
+        vote=[x for x in merged if 'Approval' in x['title'] or 'Approve' in x['title'] or 'Vote' in x['title']]
+        self.assertEqual(len(vote),1)
+        self.assertEqual(vote[0]['source_type'],'Official')
+        self.assertEqual(len(vote[0]['coverage']),3)
+
     def test_ripple_press_google_date_fallback(self):
         from email.utils import format_datetime
         from datetime import datetime,timezone
@@ -205,6 +221,7 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('Limited coverage',script)
         self.assertIn('.moon-sentiment-card',css)
         self.assertIn("'sentiment_30d':sentiment_30d",scanner)
+        self.assertIn('.slice(0,48)',script)
 
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
