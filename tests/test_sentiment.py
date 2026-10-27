@@ -85,6 +85,18 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(summary['stories'],3)
         self.assertEqual(summary['directional_events'],1)
 
+    def test_repeated_weekly_story_has_one_catalyst_theme(self):
+        rows=[
+            story('Strategy repurchases $200m STRC preferred', 'MSTR', value=2, age=1),
+            story('Strategy STRC buyback reaches $190m', 'MSTR', value=2, age=8),
+            story('Strategy repurchases preferred STRC worth $180m', 'MSTR', value=2, age=15),
+        ]
+        summary=self.check(rows,ticker='MSTR')
+        self.assertEqual(summary['independent_events'],3)
+        self.assertEqual(summary['distinct_catalysts'],1)
+        self.assertEqual(summary['coverage'],'Limited coverage')
+        self.assertEqual(len(summary['drivers']),1)
+
     def test_recency_half_life_rewards_recent_major_catalyst(self):
         recent = story('XRPN fresh institutional event', value=2, impact='High', age=1)
         old = story('XRPN older competing event', value=-2, impact='High', age=27)
