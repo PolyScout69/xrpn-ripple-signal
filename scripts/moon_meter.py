@@ -175,6 +175,50 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     if _contains(title, r'\bbubble bursting\?', r'\bis (?:the )?(?:mstr|xrpn|xrp) (?:bubble|rally) (?:bursting|over)\?'):
         return None, 'Speculative market commentary, not a verified company or network development.', 'Insufficient'
 
+    # Obvious solvency disasters must outrank positive-looking partnership
+    # language in the same headline, including in unverified rumours.
+    if _contains(combined, r'\bchapter 11\b', r'\bbankrupt(?:cy)?\b',
+                 r'\binsolven\w*\b', r'\bgoing.concern\b', r'\bfraud charges\b'):
+        return -3, 'If a severe solvency or enforcement crisis is genuine, substantial downside is possible.', evidence
+
+    # Material mark-to-market losses still matter to a coin-backed stock,
+    # even where they are not realised cash losses. Do not treat a daily
+    # stock-price move alone as a fresh operating catalyst.
+    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|treasury)\b') and _contains(combined,
+                      r'\b(?:lose|lost|loss|drop|fall|down)\b') and _contains(combined,
+                      r'\$\s*[\d,.]+\s*(?:million|m|billion|bn)\b'):
+        return -2, 'If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.', evidence
+
+    if stock and _contains(title, r'\b(?:registers?|registered|registration)\b') and _contains(title,
+                         r'\bshares?\b') and _contains(title,r'\b(?:warrants?|issuance|new)\b'):
+        return -1, 'Registered shares or warrants create potential future dilution; net treasury accretion is unknown.', evidence
+
+    # Completion of the issuer's public listing removes execution/access
+    # risk, but does not by itself prove appreciation per diluted share.
+    if asset == 'XRPN':
+        if _contains(title, r'\b(?:completes?|completed)\s+(?:its\s+)?(?:business combination|merger)\b'):
+            return 2, 'If the transaction closes as reported, listing/treasury-access risk falls; valuation remains uncertain.', evidence
+        if _contains(title, r'\b(?:nasdaq|go(?:es|ing)? public)\b') and _contains(title,
+                            r'\b(?:debut|list(?:ed|ing)?|begins trading|went public|go public)\b'):
+            return 2, 'If completed, public-market access and XRP treasury exposure could broaden the investor base.', evidence
+        if _contains(title, r'\bsec (?:nod|clearance|approval)\b', r'\bsec approves?\b') and _contains(title,
+                            r'\b(?:nasdaq|listing|go public)\b'):
+            return 2, 'If the necessary listing approvals hold, a material execution hurdle is reduced.', evidence
+        if _contains(title, r'\buphold\b') and _contains(title,
+                            r'\b(?:lists?|listing|available|access)\b'):
+            return 1, 'If distribution broadens investor access to XRPN shares, demand could improve modestly.', evidence
+        if _contains(combined, r'\b(?:targets?|targeting|higher|grow|boost|increase)\b') and _contains(combined,
+                            r'\bxrp per (?:(?:fully )?diluted )?share\b'):
+            return 2, 'If the strategy increases XRP per diluted share, treasury accretion could create meaningful upside.', evidence
+        if _contains(combined, r'\binaugural institutional execution partners?\b',
+                     r'\bnames? institutional execution partners?\b'):
+            return 2, 'If the institutional execution relationships deliver scalable, economical XRP deployment, they could improve XRPN operations.', evidence
+
+    if asset == 'MSTR':
+        if _contains(combined, r'\brepurchas\w*\b',r'\bredeem\w*\b') and _contains(combined,
+                            r'\b(?:strc|strk|strf|preferred (?:stock|shares?))\b'):
+            return 2, 'If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.', evidence
+
     # Financing terms matter more than planned gross coin accumulation.
     if stock and _contains(title,
            r'\bnew (?:xrpn |mstr )?(?:stock )?shares\b',
@@ -244,6 +288,24 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
             return 1, 'Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.', evidence
 
     if asset == 'XRPN':
+        # Exceptional IF-TRUE upside requires *both* unusually large balance-
+        # sheet exposure and multiple institutional execution relationships.
+        # This is a scenario score, never a claim of realised yield or profit.
+        yield_plan = _contains(combined, r'\byield\b', r'\blending\b',
+                               r'\b(?:treasury|xrp)\b.{0,50}\b(?:to work|put to work|deployment)\b')
+        usd_sizes = [float(x) * (1000 if unit in ('billion','bn') else 1)
+                     for x, unit in re.findall(
+                         r'\$\s*(\d+(?:\.\d+)?)\s*(million|m|billion|bn)\b', combined)]
+        xrp_sizes = [float(x) for x in re.findall(
+                         r'\b(\d+(?:\.\d+)?)\s*(?:million|m)\s+xrp\b', combined)]
+        multiple_partners = (
+            sum(p in combined for p in ('ripple','coinbase','kraken','bitgo')) >= 2 or
+            _contains(combined, r'\b(?:four|4|multiple)\s+institutional\s+partners?\b')
+        )
+        if yield_plan and multiple_partners and (
+                any(x >= 500 for x in usd_sizes) or any(x >= 400 for x in xrp_sizes)):
+            return 3, ('If large-scale institutional XRP yield deployment produces material, '
+                       'sustainable net income after risk and funding costs, the impact on XRPN could be exceptional.'), evidence
         if _contains(combined, r'\bmerger\b', r'\bbusiness combination\b') and _contains(combined,
             r'\bvote\b', r'\bshareholders?\b') and _contains(combined,
             r'\bpasses?\b', r'\bapproved?\b', r'\bwins?\b'):
@@ -303,6 +365,6 @@ def moon_for_story(item: dict) -> list[dict]:
             'scenario': scenario,
             'if_true': True,
             'reason': reason,
-            'method': 'headline_if_true_v3',
+            'method': 'headline_if_true_v4',
         })
     return output
