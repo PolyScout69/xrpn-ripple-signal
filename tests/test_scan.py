@@ -55,6 +55,94 @@ class CollectorTests(unittest.TestCase):
         b=self.story('Strategy reports STRC repurchase of $192 million',entity='Strategy',url='https://example.com/b')
         self.assertEqual(len(scan.merge_stories([a,b],[])[0]),2)
 
+    @staticmethod
+    def this_week_story(title, days_before_this_monday=0, kind='Media', url='https://example.com/story'):
+        """Fixture anchored to this week, so weekly dedup tests remain current."""
+        from datetime import datetime, timedelta, timezone
+        today=datetime.now(timezone.utc)
+        monday=(today-timedelta(days=today.weekday()+7*days_before_this_monday)).replace(
+            hour=1,minute=0,second=0,microsecond=0)
+        item=CollectorTests.story(title,entity='Strategy',kind=kind,url=url)
+        item['published_at']=monday.isoformat().replace('+00:00','Z')
+        return item
+
+    def test_strc_buyback_aliases_205m_and_204_9m_collapse_to_one_event(self):
+        stories=[
+            self.this_week_story(
+                'Strategy spends $205 million on STRC preferred buyback instead of buying bitcoin',
+                url='https://example.com/buyback-a'),
+            self.this_week_story(
+                'Strategy Bitcoin Purchases Pause as STRC Buybacks Hit $205M',
+                url='https://example.com/buyback-b'),
+            self.this_week_story(
+                'MicroStrategy Pauses Bitcoin Purchases, Spends $205M on STRC Buybacks',
+                url='https://example.com/buyback-c'),
+            self.this_week_story(
+                'Strategy Pauses Bitcoin Buys, Spends $204.9M on STRC Buyback',
+                url='https://example.com/buyback-d'),
+            self.this_week_story(
+                'Strategy (MSTR) Pauses Bitcoin Buying and Spends $205 Million on Preferred Stock',
+                url='https://example.com/buyback-e'),
+        ]
+        merged,_=scan.merge_stories(stories,[])
+        self.assertEqual(len(merged),1)
+        self.assertEqual(len(merged[0]['coverage']),5)
+        self.assertEqual({row['url'] for row in merged[0]['coverage']},
+                         {item['url'] for item in stories})
+
+    def test_strc_buybacks_distinct_week_and_distinct_transaction_size(self):
+        this_week=self.this_week_story('Strategy repurchases $205M STRC',
+                                        url='https://example.com/now')
+        last_week=self.this_week_story('Strategy repurchases $193M STRC',
+                                        days_before_this_monday=1,
+                                        url='https://example.com/lastweek')
+        also_this_week=self.this_week_story('Strategy repurchases $139M STRC',
+                                             url='https://example.com/other')
+        merged,_=scan.merge_stories([this_week,last_week,also_this_week],[])
+        self.assertEqual(len(merged),3)
+
+    def test_strc_buyback_not_same_as_authorisation_or_dividend(self):
+        current=self.this_week_story('Strategy STRC repurchases total $205M',
+                                       url='https://example.com/current')
+        cap=self.this_week_story('Strategy expands STRC buyback program cap to $3 billion',
+                                  url='https://example.com/authorization')
+        dividend=self.this_week_story('Strategy declares conditional daily STRC dividends for November',
+                                       url='https://example.com/dividend')
+        x,_=scan.merge_stories([current,cap,dividend],[])
+        self.assertEqual(len(x),3)
+        self.assertEqual(scan.strategy_strc_event(current)[0],'buyback')
+        self.assertEqual(scan.strategy_strc_event(cap)[0],'buyback-cap')
+        self.assertIsNone(scan.strategy_strc_event(dividend))
+
+    def test_strc_amount_picks_buyback_not_bitcoin_purchase(self):
+        title='Strategy buys $21.5M in Bitcoin as STRC buyback tops $192M'
+        item=self.this_week_story(title)
+        self.assertAlmostEqual(scan.strategy_strc_event(item)[2],192.0)
+        title='Strategy Acquires 250 Bitcoin for $21.5M, Repurchases $192.4M of STRC Preferred Stock'
+        item=self.this_week_story(title)
+        self.assertAlmostEqual(scan.strategy_strc_event(item)[2],192.4)
+
+    def test_strc_many_reporters_are_preserved_not_new_feed_cards(self):
+        articles=[self.this_week_story(
+            'Strategy pauses BTC buying after $205M STRC buyback; outlet '+str(i),
+            url='https://example.com/report-'+str(i)) for i in range(23)]
+        merged,_=scan.merge_stories(articles,[])
+        self.assertEqual(len(merged),1)
+        self.assertEqual(len(merged[0]['coverage']),23)
+
+    def test_evernorth_similar_named_events_merge_but_not_unrelated(self):
+        facility=self.story('Evernorth Holdings Secures $80.7 Million Equity Facility for XRP Treasury',
+                            entity='Evernorth',url='https://example.com/facility')
+        facility2=self.story('Evernorth announces committed $80M equity funding via Cantor',
+                             entity='Evernorth',url='https://example.com/facility2')
+        warrant=self.story('Evernorth Registers 11.5M Shares Tied to Warrants',
+                            entity='Evernorth',url='https://example.com/warrants')
+        warrant2=self.story('Evernorth Holdings files to register 11.5 million shares with warrants',
+                             entity='Evernorth',url='https://example.com/warrants2')
+        merged,_=scan.merge_stories([facility,facility2,warrant,warrant2],[])
+        self.assertEqual(len(merged),2)
+        self.assertEqual(sorted(len(x['coverage']) for x in merged),[2,2])
+
     def test_ripple_press_google_date_fallback(self):
         from email.utils import format_datetime
         from datetime import datetime,timezone
