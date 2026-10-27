@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T15:22:37Z",
+    "ran_at": "2026-10-27T19:33:38Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,30 +15,30 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 9,
+    "new_items": 4,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
     "ripple": {
       "name": "Ripple press centre",
       "status": "ok",
-      "items_seen": 6,
-      "checked_at": "2026-10-27T15:22:37Z",
-      "message": "Fetched 6 matching items."
+      "items_seen": 7,
+      "checked_at": "2026-10-27T19:33:38Z",
+      "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T15:22:37Z",
+      "checked_at": "2026-10-27T19:33:38Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 291,
-      "checked_at": "2026-10-27T15:22:37Z",
-      "message": "Fetched 291 matching items."
+      "items_seen": 290,
+      "checked_at": "2026-10-27T19:33:38Z",
+      "message": "Fetched 290 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-27T15:22:37Z",
+      "as_of": "2026-10-27T19:33:38Z",
       "stories": 40,
       "independent_events": 34,
       "directional_events": 15,
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.11,
       "window_days": 30,
-      "as_of": "2026-10-27T15:22:37Z",
+      "as_of": "2026-10-27T19:33:38Z",
       "stories": 25,
       "independent_events": 21,
       "directional_events": 6,
@@ -160,10 +160,11 @@
     {
       "id": "ff55f4c0e1b96e",
       "title": "Ripple Expands Strategic Digital Assets Collaboration with BNY Across Custody and Tokenized Trade Finance",
-      "published_at": "2026-10-27T14:03:45Z",
+      "published_at": "2026-10-27T15:33:45Z",
       "date_only": false,
       "entities": [
-        "Ripple"
+        "Ripple",
+        "XRP Ecosystem"
       ],
       "category": "Partnerships",
       "impact": "High",
@@ -175,7 +176,7 @@
       "excerpt": "Ripple Expands Strategic Digital Assets Collaboration with BNY Across Custody and Tokenized Trade Finance",
       "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
       "tags": [],
-      "added_at": "2026-10-27T15:22:40Z",
+      "added_at": "2026-10-27T19:33:41Z",
       "verified_seed": false,
       "coverage": [
         {
@@ -183,7 +184,14 @@
           "name": "Ripple press centre",
           "url": "https://ripple.com/ripple-press/ripple-expands-collaboration-with-bny-across-custody-and-tokenized-trade-finance",
           "source_type": "Official",
-          "published_at": "2026-10-27T14:03:45Z"
+          "published_at": "2026-10-27T15:33:45Z"
+        },
+        {
+          "title": "Ripple expands BNY partnership as XRP custody and tokenized trade finance advance",
+          "name": "Altcoin Buzz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FQTluV29DRjhJRXk2SXRqVi1BSVhhbXV3bkRoNVdOZVI3bFdJNWxpLXZ2U1R6aEhCYk5FSVU3dmt5N0g0cENfaDVtZkJSbEJjQU5NYXZUM2RUY3Z3ejRzVUd3THRRYnRVbzlZQ3NiUDRQSDhjU0JZbw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T14:36:07Z"
         }
       ],
       "moon_meters": [
@@ -237,6 +245,90 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0a008577c055bb",
+      "title": "Robinhood integrates Ripple Treasury and RLUSD ...",
+      "published_at": "2026-10-27T13:54:19Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Pluang · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWEoySDRQQzBoMGM4YkgxNkRzOEN4NUFBV2wzZXBXN1QzTllFZDh1WVp2VFhncFdmUmRYd2lHcUE0Y0lWMm1aMHh4MUVwN1JJVVFWd01zeTJ2dFdtTEt1dGJWT2Z4Smp3b1JGemFtckVRQ2loZXd5N2pDUzd4STBFVVNyUl9YcFJyWVBySjJNTmhqelRBMXprSGZmbnNvdw?oc=5",
+      "excerpt": "Robinhood integrates Ripple Treasury and RLUSD ... Pluang",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T19:33:43Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Robinhood integrates Ripple Treasury and RLUSD ...",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWEoySDRQQzBoMGM4YkgxNkRzOEN4NUFBV2wzZXBXN1QzTllFZDh1WVp2VFhncFdmUmRYd2lHcUE0Y0lWMm1aMHh4MUVwN1JJVVFWd01zeTJ2dFdtTEt1dGJWT2Z4Smp3b1JGemFtckVRQ2loZXd5N2pDUzd4STBFVVNyUl9YcFJyWVBySjJNTmhqelRBMXprSGZmbnNvdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T13:54:19Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "12d0277b460cb3",
+      "title": "C2FO and Ripple Partner to Modernize Trade Finance Using the XRP Ledger",
+      "published_at": "2026-10-27T12:38:23Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 83,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/c2fo-and-ripple-partner-to-modernize-trade-finance-using-the-xrp-ledger",
+      "excerpt": "C2FO and Ripple Partner to Modernize Trade Finance Using the XRP Ledger",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-27T19:33:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "C2FO and Ripple Partner to Modernize Trade Finance Using the XRP Ledger",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/c2fo-and-ripple-partner-to-modernize-trade-finance-using-the-xrp-ledger",
+          "source_type": "Official",
+          "published_at": "2026-10-27T12:38:23Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -818,6 +910,13 @@
           "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOeUFaLUNvNFh6Q25OUGxISklTSDdOWVdLWVpPM2xGallVN2VGUTdNTi1nWmVWX1BzNUlSTzk0XzV5aC11OHBZWExlQm80cVpCSkJ2dkNlTjdhM21kbVo4TDR2MEVGMEJwUWFXeUxPckZ4QmNrQWFQdEZMeFBFSzhlSkxmZmltcnJGU2JBdnZ3ZDk3b3F3VHVwY0xxQmUyZDVnS005VW5tWnk5RkxyX1V6ejRVNHBWUlZnektRbzctNmh3Z3l2bnN5UGJ2MGtsbndRaElmTjRRLVFUc2NjTG1wbGQ5THhlUVE?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-27T08:31:40Z"
+        },
+        {
+          "title": "Ripple Treasury Introduces Always-On Corporate Treasury Platform to Modernize Corporate Cash Management",
+          "name": "Financial IT · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPbDAxbm1ncFlGcEhYSGh5M2xqUEJtMzVuM3VjMmFkb2tDR1NMZjVmMVhMQnJLVmwwOEJCa2g4TVhRNU81dlduMlZrY0JrU2loZFVhcHQzWkE5WXRMR1V1dEZ3YllJbUJLb1FvZ1Y4a1hhNy1xZVR3d29SNGg1WUc0QTdMQm1hUWw0TGlHZW10NWxWQlVwSDd4V1h2djdZOTJJS0g1V0NTc1dYeUxra1lTX3dqRnVEUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T15:38:48Z"
         }
       ],
       "moon_meters": [
@@ -1641,8 +1740,7 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth",
-        "XRP Ecosystem"
+        "Evernorth"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -1688,16 +1786,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -10342,6 +10430,13 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOLWFiUWlSaUd3ZXlSTUpxclo2OHVwOC1VeTl0NUt4VGNuTzIwNUFOdDJXUlFPa1JfSVhNODU4bzQ3dGZ2Q3ZTSGlXYmNaVXlvU3I0a0ExSlRwa0VrOHZjTHhYQlVYOEJwYTJ3c25JYzdfMUhnWDVkNnlKeDlwZHlUZXNTWXJDVS1mTm5mUjh3QkNJN3NfLWdnRG82ZGt5U0VsRmtibVBEbw?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-18T07:00:00Z"
+        },
+        {
+          "title": "Saylor Created MicroStrategy’s STRC Stock with AI, and Now It Crashed Below $100",
+          "name": "BeInCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1kR2VYemdRaWZGbEFBWi1lZ1dtV3BIM2hvMC1jUTdoSzV1M0NxcnI3MDRkb1RuWHN5dUduclR6NHdoQzhBRERlUHUzSl91eHZyX3d2QVhRQUFXaFdPTi0xR2l4SlFKVFRlSmxZQmE1NWt6SV9IZmNvbWZRMA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-18T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -13333,6 +13428,13 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVEVIVmJ6MF8td0UzTXQ0QWY3VENRWTY3Z2ZtWkFMcjAwdFBTekdhalYzR2p2NGtvYWk5ZFB2UUJmQk5HLURfTnpBZjl0WGItVEowSHRUbXdQdTJOM0xLWnRrM2IxN1A1VFRFaC15SDd2T1NpZ2Y5ZU9wYVFfdU8zQ3BFaGRCcjMxakduYi1JRGd3RFU2dEpfNUw2TmxwYl9GZ18xN214Zw?oc=5",
           "source_type": "Media",
           "published_at": "2026-04-03T07:00:00Z"
+        },
+        {
+          "title": "Ripple Joins SWIFT Messaging Network and Banking Tools: Key Details",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZWRhWjNNMFQ0WWo5cVNkc0dQTmc5aWt1Z1NuX0l2R1R6LU93N0l2NmZCbmZFOElFU1ZnTlNKY0cydVpMTVEzYUZlMDdGV0hQZXBXMGVlcTdMSWw1NHVvalNkQy02dzFFNVVPLUhmeXpWTjFQVG56LXlpOTNBbTlZZ1puRFM2Q2xpdVlPQkVGVGN2bFVGVFRERy13?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-03T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14144,6 +14246,48 @@
       ]
     },
     {
+      "id": "04b8fb516858bb",
+      "title": "MicroStrategy Adds $1.2B in Bitcoin, Signals New Profit Model",
+      "published_at": "2026-03-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Coin Republic · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdWg4MF9ndnBqSTdJZXAtQkt0QVZMWWUzS2t6cUNfNUROXzFvMC1EVkhULUJxQmxxZnVaTVNHWElnRHYxU3VjT3RuMGZ5bkYzdzVJVXhsMHB2d2FXZm5teFdVMmVoMGV3NzZOTExwY0t2NVhOVlQxZGpMTjh6b1dLR1NzNUZCQXdKVlBhZnd6ZWN6RnN3cWJwSWVVdnp1aHpESE9fV0p30gGrAUFVX3lxTE5kZEVKbUVhQ1RvczJnQlpITjNSUXZ6X2V5UzNPQ1FxcUZDd2I4b2VkS2FEZ19tLUVVVUpETDFnZ21hWHJQWmxPalNHNkJFcjJoSWI5TDI3a1NfZ3VTVGd1Vk11S1h3VWRHbTBNZ05kR0hmYjdrcWo1bGpueE5FR1FoOHlxUFFMSnowYzBUSlNyb2x4WlFNVE4zNFFRalVMWkNrOExSWURpNE5TNA?oc=5",
+      "excerpt": "MicroStrategy Adds $1.2B in Bitcoin, Signals New Profit Model The Coin Republic",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T19:33:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy Adds $1.2B in Bitcoin, Signals New Profit Model",
+          "name": "The Coin Republic · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdWg4MF9ndnBqSTdJZXAtQkt0QVZMWWUzS2t6cUNfNUROXzFvMC1EVkhULUJxQmxxZnVaTVNHWElnRHYxU3VjT3RuMGZ5bkYzdzVJVXhsMHB2d2FXZm5teFdVMmVoMGV3NzZOTExwY0t2NVhOVlQxZGpMTjh6b1dLR1NzNUZCQXdKVlBhZnd6ZWN6RnN3cWJwSWVVdnp1aHpESE9fV0p30gGrAUFVX3lxTE5kZEVKbUVhQ1RvczJnQlpITjNSUXZ6X2V5UzNPQ1FxcUZDd2I4b2VkS2FEZ19tLUVVVUpETDFnZ21hWHJQWmxPalNHNkJFcjJoSWI5TDI3a1NfZ3VTVGd1Vk11S1h3VWRHbTBNZ05kR0hmYjdrcWo1bGpueE5FR1FoOHlxUFFMSnowYzBUSlNyb2x4WlFNVE4zNFFRalVMWkNrOExSWURpNE5TNA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-03-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "fe851b60aa6543",
       "title": "If XRP Hits $6, Ripple Becomes A Top 10 Global Bank With $240B Valuation, Teucrium CEO Says",
       "published_at": "2026-03-17T07:00:00Z",
@@ -14727,6 +14871,49 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "40ae6dbb7d6f69",
+      "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
+      "published_at": "2026-02-20T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple",
+        "XRP Ecosystem"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
+      "excerpt": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger TradingView",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-27T19:33:43Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-20T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
           "method": "headline_if_true_v4"
         }
       ]
