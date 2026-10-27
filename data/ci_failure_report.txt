@@ -1,0 +1,65 @@
+test_asset_routing (test_moon_meter.MoonMeterTests.test_asset_routing) ... ok
+test_funding_and_clickbait_are_not_false_bullish_signals (test_moon_meter.MoonMeterTests.test_funding_and_clickbait_are_not_false_bullish_signals) ... ok
+test_generic_hype_does_not_become_plus_three (test_moon_meter.MoonMeterTests.test_generic_hype_does_not_become_plus_three) ... ok
+test_if_true_evernorth_merger_approval (test_moon_meter.MoonMeterTests.test_if_true_evernorth_merger_approval) ... ok
+test_impact_is_not_price_direction (test_moon_meter.MoonMeterTests.test_impact_is_not_price_direction) ... ok
+test_media_source_caution_and_range (test_moon_meter.MoonMeterTests.test_media_source_caution_and_range) ... ok
+test_merged_articles_recompute_once_per_asset (test_moon_meter.MoonMeterTests.test_merged_articles_recompute_once_per_asset) ... ok
+test_negative_rumours_are_not_automatically_bullish (test_moon_meter.MoonMeterTests.test_negative_rumours_are_not_automatically_bullish) ... ok
+test_non_catalyst_rumour_is_not_forced_positive (test_moon_meter.MoonMeterTests.test_non_catalyst_rumour_is_not_forced_positive) ... ok
+test_optimistic_ripple_impact_still_distinguishes_direct_token_use (test_moon_meter.MoonMeterTests.test_optimistic_ripple_impact_still_distinguishes_direct_token_use) ... ok
+test_per_share_accumulation_stronger_than_gross_buying (test_moon_meter.MoonMeterTests.test_per_share_accumulation_stronger_than_gross_buying) ... ok
+test_planned_treasury_yield_scenario (test_moon_meter.MoonMeterTests.test_planned_treasury_yield_scenario) ... ok
+test_rumour_scenario_is_scored_as_if_true_and_marked_unverified (test_moon_meter.MoonMeterTests.test_rumour_scenario_is_scored_as_if_true_and_marked_unverified) ... ok
+test_seven_point_scale (test_moon_meter.MoonMeterTests.test_seven_point_scale) ... ok
+test_standalone_filing_has_no_moon_rating (test_moon_meter.MoonMeterTests.test_standalone_filing_has_no_moon_rating) ... ok
+test_strategy_preferred_repurchase_if_true (test_moon_meter.MoonMeterTests.test_strategy_preferred_repurchase_if_true) ... ok
+test_xrp_extreme_if_true_score (test_moon_meter.MoonMeterTests.test_xrp_extreme_if_true_score) ... ok
+test_xrpn_per_share_and_listing_are_bullish_if_true (test_moon_meter.MoonMeterTests.test_xrpn_per_share_and_listing_are_bullish_if_true) ... ok
+test_xrpn_scaled_institutional_treasury_yield_is_plus_three (test_moon_meter.MoonMeterTests.test_xrpn_scaled_institutional_treasury_yield_is_plus_three) ... FAIL
+test_xrpn_warrant_dilution_and_treasury_drawdown_not_optimistic (test_moon_meter.MoonMeterTests.test_xrpn_warrant_dilution_and_treasury_drawdown_not_optimistic) ... ok
+test_different_strategy_events_remain_separate (test_scan.CollectorTests.test_different_strategy_events_remain_separate) ... ok
+test_homepage_has_both_stock_price_widgets (test_scan.CollectorTests.test_homepage_has_both_stock_price_widgets)
+XRPN and MSTR should be visible at the top, including on mobile. ... ok
+test_homepage_has_weighted_moon_sentiment_instead_of_old_cards (test_scan.CollectorTests.test_homepage_has_weighted_moon_sentiment_instead_of_old_cards) ... ok
+test_identifies_four_entities_without_false_positives (test_scan.CollectorTests.test_identifies_four_entities_without_false_positives) ... ok
+test_no_price_hype (test_scan.CollectorTests.test_no_price_hype) ... ok
+test_ripple_arf_single_event_multiple_publishers (test_scan.CollectorTests.test_ripple_arf_single_event_multiple_publishers) ... ok
+test_ripple_press_google_date_fallback (test_scan.CollectorTests.test_ripple_press_google_date_fallback) ... ok
+test_sec_filing_entries_are_rejected_and_purged (test_scan.CollectorTests.test_sec_filing_entries_are_rejected_and_purged) ... ok
+test_source_first_grouping_80m_facility (test_scan.CollectorTests.test_source_first_grouping_80m_facility) ... ok
+test_three_daily_europe_us_and_us_evening_schedule (test_scan.CollectorTests.test_three_daily_europe_us_and_us_evening_schedule)
+Keep GitHub cron, site display and published scanner metadata aligned. ... ok
+test_url_safety (test_scan.CollectorTests.test_url_safety) ... ok
+test_all_neutral_is_neutral_not_bullish (test_sentiment.SentimentTests.test_all_neutral_is_neutral_not_bullish) ... ok
+test_deduplicated_family_does_not_manufacture_bullishness (test_sentiment.SentimentTests.test_deduplicated_family_does_not_manufacture_bullishness) ... ok
+test_insufficient_and_sec_entries_excluded (test_sentiment.SentimentTests.test_insufficient_and_sec_entries_excluded) ... ok
+test_major_negative_event_outweighs_many_minor_positives (test_sentiment.SentimentTests.test_major_negative_event_outweighs_many_minor_positives) ... ok
+test_material_positive_outweighs_minor_negative (test_sentiment.SentimentTests.test_material_positive_outweighs_minor_negative) ... ok
+test_mstr_thin_coverage_is_flagged_not_forced_to_zero (test_sentiment.SentimentTests.test_mstr_thin_coverage_is_flagged_not_forced_to_zero) ... FAIL
+test_neutral_headlines_do_not_drown_material_news (test_sentiment.SentimentTests.test_neutral_headlines_do_not_drown_material_news) ... ok
+test_outside_30_days_and_future_stories_are_ignored (test_sentiment.SentimentTests.test_outside_30_days_and_future_stories_are_ignored) ... ok
+test_recency_half_life_rewards_recent_major_catalyst (test_sentiment.SentimentTests.test_recency_half_life_rewards_recent_major_catalyst) ... ok
+test_rumour_is_not_presented_as_verified (test_sentiment.SentimentTests.test_rumour_is_not_presented_as_verified) ... ok
+test_two_exceptional_independent_events_may_reach_plus_three (test_sentiment.SentimentTests.test_two_exceptional_independent_events_may_reach_plus_three) ... ok
+
+======================================================================
+FAIL: test_xrpn_scaled_institutional_treasury_yield_is_plus_three (test_moon_meter.MoonMeterTests.test_xrpn_scaled_institutional_treasury_yield_is_plus_three)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/xrpn-ripple-signal/xrpn-ripple-signal/tests/test_moon_meter.py", line 100, in test_xrpn_scaled_institutional_treasury_yield_is_plus_three
+    self.assertEqual(m['value'],3)
+AssertionError: 2 != 3
+
+======================================================================
+FAIL: test_mstr_thin_coverage_is_flagged_not_forced_to_zero (test_sentiment.SentimentTests.test_mstr_thin_coverage_is_flagged_not_forced_to_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/xrpn-ripple-signal/xrpn-ripple-signal/tests/test_sentiment.py", line 100, in test_mstr_thin_coverage_is_flagged_not_forced_to_zero
+    self.assertEqual(s['value'], 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.033s
+
+FAILED (failures=2)
