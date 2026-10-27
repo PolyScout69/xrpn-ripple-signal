@@ -36,7 +36,7 @@
     return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='XRP Ecosystem'?'ecosystem':name==='Strategy'?'strategy':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
   }
   function coverageHTML(item) {
-    const links=(item.coverage||[]).filter(link=>link && link.url && safeUrl(link.url)!=='#' && link.url!==item.url).slice(0,12);
+    const links=(item.coverage||[]).filter(link=>link && link.url && safeUrl(link.url)!=='#' && link.url!==item.url).slice(0,48);
     if (!links.length) return '';
     return `<details class="coverage-details"><summary>${links.length} more ${links.length===1?'source':'sources'} covering this event</summary><div class="coverage-links">${links.map(link=>`<a href="${esc(safeUrl(link.url))}" target="_blank" rel="noopener noreferrer">${esc(link.name || 'Other source')} <span>↗</span></a>`).join('')}</div></details>`;
   }
