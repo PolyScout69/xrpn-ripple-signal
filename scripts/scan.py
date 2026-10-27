@@ -52,6 +52,9 @@ NEWS_QUERIES = [
     '"Evernorth" "XRPN" (rumor OR rumour OR reportedly OR exploring) (yield OR lending OR partnership OR treasury)',
     '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
     '"MicroStrategy" "MSTR" bitcoin preferred STRC earnings',
+    '"Strategy" "MSTR" bitcoin purchase treasury financing',
+    '"Michael Saylor" "MSTR" bitcoin purchases treasury',
+    '"Strategy" ("STRC" OR "STRK" OR "STRF") preferred shares dividends buyback',
 ]
 MONTH_DATE = re.compile(r'\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+\d{1,2},?\s+20\d{2}\b',re.I)
 DATE_PATTERNS = ('%b %d, %Y', '%B %d, %Y', '%b %d %Y', '%B %d %Y', '%b. %d, %Y')
@@ -625,6 +628,16 @@ def main() -> int:
     # Rate all visible stories, including previously collected items and clustered sources.
     for item in items:
         item['moon_meters'] = moon_for_story(item)
+        # Impact is about the potential significance of the claim IF TRUE,
+        # rather than whether an outlet was classified as official or media.
+        # Preserve strong downside and avoid assigning High to generic hype.
+        strongest=max((abs(m.get('value')) for m in item['moon_meters']
+                      if type(m.get('value')) is int), default=0)
+        if strongest == 3 and item.get('category') in (
+                'Treasury','Capital markets','Partnerships','Regulation','Products'):
+            item['impact']='High'
+        elif strongest >= 2 and item.get('impact')=='Low':
+            item['impact']='Medium'
     sentiment_30d = aggregate_sentiment(items, stamp)
     out={
       'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
