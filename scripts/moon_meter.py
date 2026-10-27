@@ -215,8 +215,12 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
             return 2, 'If the institutional execution relationships deliver scalable, economical XRP deployment, they could improve XRPN operations.', evidence
 
     if asset == 'MSTR':
-        if _contains(combined, r'\brepurchas\w*\b',r'\bredeem\w*\b') and _contains(combined,
+        if _contains(combined, r'\brepurchas\w*\b', r'\bredeem\w*\b', r'\bbuybacks?\b') and _contains(combined,
                             r'\b(?:strc|strk|strf|preferred (?:stock|shares?))\b'):
+            if _contains(combined,
+                         r'\bpaus\w*\b.{0,45}\b(?:bitcoin|btc)\b',
+                         r'\b(?:bitcoin|btc)\b.{0,45}\bpaus\w*\b'):
+                return 1, 'If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.', evidence
             return 2, 'If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.', evidence
 
     # Financing terms matter more than planned gross coin accumulation.
