@@ -3,10 +3,17 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-26T22:56:50Z",
+    "ran_at": "2026-10-27T05:27:28Z",
     "starter_as_of": null,
-    "schedule_utc": "18:00",
-    "new_items": 0,
+    "schedule_utc": [
+      "14:35",
+      "23:35"
+    ],
+    "schedule_focus": [
+      "Europe morning and US pre-market",
+      "US after-market and evening"
+    ],
+    "new_items": 5,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -14,25 +21,151 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-26T22:56:50Z",
+      "checked_at": "2026-10-27T05:27:28Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-26T22:56:50Z",
+      "checked_at": "2026-10-27T05:27:28Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 221,
-      "checked_at": "2026-10-26T22:56:50Z",
-      "message": "Fetched 221 matching items."
+      "items_seen": 117,
+      "checked_at": "2026-10-27T05:27:28Z",
+      "message": "Fetched 117 matching items."
     }
   },
   "items": [
+    {
+      "id": "dbbf4033049e05",
+      "title": "Ripple Receives Final OCC Approval to Establish National Trust Bank",
+      "published_at": "2026-10-27T02:03:04Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 81,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank",
+      "excerpt": "Ripple Receives Final OCC Approval to Establish National Trust Bank",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T05:27:31Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Receives Final OCC Approval to Establish National Trust Bank",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank",
+          "source_type": "Official",
+          "published_at": "2026-10-27T02:03:04Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "cd083ed3faac2e",
+      "title": "Ripple Treasury adds 24/7 returns for corporate clients",
+      "published_at": "2026-10-26T22:45:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "CFOtech Australia · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdzZ0ZjgwQm9DRUgyanpEeGRVQWVjOEh4cncyaWdUMi1FUHFZU3hoanlvdy1JTUpGVlpRWmJxZ05HNEdIZGdXVm90eGxWbXBkZHdnYVJULTBGUDF1dHZQZHVPcTRMTWNQV1dPQ25tYmliYlN1LXVpaW9rQ3BLbGNvUDBJR3VjYU5KTU1PdQ?oc=5",
+      "excerpt": "Ripple Treasury adds 24/7 returns for corporate clients CFOtech Australia",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T05:27:32Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury adds 24/7 returns for corporate clients",
+          "name": "CFOtech Australia · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdzZ0ZjgwQm9DRUgyanpEeGRVQWVjOEh4cncyaWdUMi1FUHFZU3hoanlvdy1JTUpGVlpRWmJxZ05HNEdIZGdXVm90eGxWbXBkZHdnYVJULTBGUDF1dHZQZHVPcTRMTWNQV1dPQ25tYmliYlN1LXVpaW9rQ3BLbGNvUDBJR3VjYU5KTU1PdQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T22:45:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "f02d23c926a350",
+      "title": "Evernorth Lines Up $80.7M Cantor Equity Facility to Fund XRP Treasury Push",
+      "published_at": "2026-10-26T18:19:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 84,
+      "source": "BigGo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wRFJSQkhzRGFRUmpQZmlyTGxJZnVZbTN6UEtzRHZyQi1icm1YaXR6TS1iN2VVTWVFbkVJODY3bTY5c2x1YXZsQjlIU3JaeG82UUNqanVyRFpNTzd5MjVCdzV2Yy1wUGRmWUN4TVJFT0NBUWtXZnc?oc=5",
+      "excerpt": "Evernorth Lines Up $80.7M Cantor Equity Facility to Fund XRP Treasury Push BigGo Finance",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T05:27:31Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth Lines Up $80.7M Cantor Equity Facility to Fund XRP Treasury Push",
+          "name": "BigGo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wRFJSQkhzRGFRUmpQZmlyTGxJZnVZbTN6UEtzRHZyQi1icm1YaXR6TS1iN2VVTWVFbkVJODY3bTY5c2x1YXZsQjlIU3JaeG82UUNqanVyRFpNTzd5MjVCdzV2Yy1wUGRmWUN4TVJFT0NBUWtXZnc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T18:19:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": -1,
+          "label": "Slightly bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
     {
       "id": "a97a7fd361da9e",
       "title": "Top Validator to XRP Holders: Take a Moment and Step Back. Here’s why",
@@ -10690,6 +10823,48 @@
       ]
     },
     {
+      "id": "31ffb43457edf7",
+      "title": "XRP ETF Inflows Hit $906M in 14 Days—Approaching $1B Faster Than Bitcoin or Ethereum: Can This Push XRP to $3?",
+      "published_at": "2025-12-10T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcHRVNlp3V29OZkUtN1VfM21YMGRnNFNvTHdnUUt2MDlGWXVyV2otY29qYmh4R2pjcW9NUEZUckdqMk9nSHJQSGR3c3VYYk9zTlg0cHFUZkd3eFVNcGV1V3prdUtlWDhSeUkwV0VIOUctNHpvWWk3QVRKM05zV1J6VU1nYWI1bEZ4elBkN2xaeDNPLXhnV0U2bGhTVDBkZnpMNzFFWG9OTVZyaldMdklsbFJKNUR4bWw0WTlWalBBMmtZLWpEeUd1R2Q3U1c1ZHlrbUV4bkttOGNrdw?oc=5",
+      "excerpt": "XRP ETF Inflows Hit $906M in 14 Days—Approaching $1B Faster Than Bitcoin or Ethereum: Can This Push XRP to $3? 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T05:27:33Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP ETF Inflows Hit $906M in 14 Days—Approaching $1B Faster Than Bitcoin or Ethereum: Can This Push XRP to $3?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcHRVNlp3V29OZkUtN1VfM21YMGRnNFNvTHdnUUt2MDlGWXVyV2otY29qYmh4R2pjcW9NUEZUckdqMk9nSHJQSGR3c3VYYk9zTlg0cHFUZkd3eFVNcGV1V3prdUtlWDhSeUkwV0VIOUctNHpvWWk3QVRKM05zV1J6VU1nYWI1bEZ4elBkN2xaeDNPLXhnV0U2bGhTVDBkZnpMNzFFWG9OTVZyaldMdklsbFJKNUR4bWw0WTlWalBBMmtZLWpEeUd1R2Q3U1c1ZHlrbUV4bkttOGNrdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-12-10T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
       "id": "51d7a49cfa4c44",
       "title": "Michael Saylor's Strategy buys another 10,624 bitcoin for $963 million as treasury holdings reach 660,624 BTC",
       "published_at": "2025-12-08T08:00:00Z",
@@ -11183,6 +11358,48 @@
           "title": "Breaking: XRP Treasury Evernorth Debuts on Nasdaq Under XRPN Ticker After $1B Token Purchase",
           "name": "CoinGape · via Google News",
           "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTczN0lTZXgwd2Z2cUN1ajZnT2pTVkdmemdmTDV1amhYajdNdHhWUlQ1dzdBaDRMZXJua2E0ZTN3SXNPVDQyc2tsNkhaVEg4R3h4TUJaTnA2RTkxZjlwUzg5cnl1cGs3VEtzeEZ2YU1maGFMTFVZT3U2Sl92STFvVl9GMGNHYkx5S1pxeXhLeUtPaDFDeUc5NkxRU19uS0p5Q3otaE9R?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-10-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "0b5f56a45de514",
+      "title": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut",
+      "published_at": "2025-10-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "SQ Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YXzNzN3FJQUhFdHVhZXBtY1ZodWF2Snhrd09QNGFwU3lSa0RRWlVUeUE3UmhZTUJyam5CV0t5TGhmNGQ4UGxzMHp3eUNzSmlpSnNkSkQwZjJKcFdpTjhHSVFSUUY?oc=5",
+      "excerpt": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut SQ Magazine",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T05:27:33Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut",
+          "name": "SQ Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YXzNzN3FJQUhFdHVhZXBtY1ZodWF2Snhrd09QNGFwU3lSa0RRWlVUeUE3UmhZTUJyam5CV0t5TGhmNGQ4UGxzMHp3eUNzSmlpSnNkSkQwZjJKcFdpTjhHSVFSUUY?oc=5",
           "source_type": "Media",
           "published_at": "2025-10-30T07:00:00Z"
         }
