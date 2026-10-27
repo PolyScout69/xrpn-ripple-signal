@@ -240,7 +240,7 @@
     const all=Number(item.stories)||0;
     const directional=Number(item.directional_events)||0;
     const coverage=item.coverage||'Coverage unknown';
-    line.innerHTML=(item.provisional?'<span class="sentiment-provisional">Provisional · awaiting recalculated scan</span>':'')+'<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' stories <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
+    line.innerHTML=(item.provisional?'<span class="sentiment-provisional">Provisional · awaiting recalculated scan</span>':'')+'<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' '+(all===1?'story':'stories')+' <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
     const raw=Number(item.raw_score);
     const rawText=Number.isFinite(raw)?(raw>0?'+':'')+raw.toFixed(2):'—';
     const stats='<div class="sentiment-detail-stats">Weighted index <strong>'+esc(rawText)+'</strong> / 3 · '+Number(item.independent_events||0)+' distinct events · '+Number(item.neutral_events||0)+' non-directional events</div>';
