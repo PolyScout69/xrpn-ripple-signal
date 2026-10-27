@@ -116,3 +116,38 @@
     top:21px;
   }
 }
+
+
+/* Homepage Market Pulse: two TradingView single-ticker quote widgets. */
+.market-pulse{margin:0 0 17px;min-width:0}
+.market-pulse-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.market-pulse-heading{display:flex;align-items:center;gap:9px}
+.market-pulse-heading h2{margin:0;font-size:10px;font-weight:800;letter-spacing:1.65px;color:#a2dfbb}
+.market-pulse-tag{font-size:9px;font-weight:750;letter-spacing:.8px;color:#819da2;background:#15262a;border:1px solid #2d4548;border-radius:5px;padding:4px 7px}
+.market-pulse-note{font-size:10px;color:#8da6a8;letter-spacing:.15px}
+.market-pulse-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.quote-card{background:linear-gradient(130deg,#132620,#111f25 55%,#121d26);border:1px solid #2d4544;border-radius:12px;min-width:0;min-height:157px;padding:14px 16px 8px;overflow:hidden}
+.quote-card:nth-child(2){background:linear-gradient(130deg,#1b222d,#121f29 58%,#111d26);border-color:#374455}
+.quote-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:5px}
+.quote-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.quote-identity strong{display:block;font-size:13px;font-weight:800;letter-spacing:1px;line-height:1.2;color:#e4f2ed}
+.quote-identity small{display:block;margin-top:4px;font-size:9px;letter-spacing:.8px;font-weight:650;color:#88a5a6;white-space:nowrap}
+.quote-symbol-icon{display:grid;place-items:center;width:31px;height:31px;flex-shrink:0;border-radius:8px;border:1px solid #3f6a5b;background:#264737;color:#b5edd2;font-size:16px;font-weight:850}
+.quote-icon-mstr{border-color:#535779;background:#353650;color:#d3cdfd}
+.quote-chart-link{font-size:10px;font-weight:700;color:#a2cfba;white-space:nowrap}
+.quote-chart-link:hover{text-decoration:underline;color:#dcf5e5}
+.quote-widget-wrap{width:100%;height:90px;min-width:0;position:relative}
+.quote-widget-wrap tv-single-ticker{display:block;width:100%;height:90px;min-width:0;color-scheme:dark;
+  --tv-widget-font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --tv-widget-background-color:transparent;--tv-widget-text-color:#e3efee;
+  --tv-widget-price-text-color:#f0f8f5;--tv-widget-positive-color:#93dfb3;--tv-widget-negative-color:#f1a08e}
+.quote-loading{display:block;padding:21px 8px;color:#849fa4;font-size:11px}
+.market-pulse-footnote{margin:9px 1px 0;color:#728e94;font-size:10px;line-height:1.4}
+@media(max-width:640px){
+  .market-pulse{margin-bottom:14px}
+  .market-pulse-grid{grid-template-columns:minmax(0,1fr);gap:9px}
+  .quote-card{min-height:145px;padding:12px 13px 4px}
+  .quote-widget-wrap,.quote-widget-wrap tv-single-ticker{height:88px}
+  .market-pulse-note{font-size:9px}
+  .market-pulse-footnote{font-size:9px}
+}
