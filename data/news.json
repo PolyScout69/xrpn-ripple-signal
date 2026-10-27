@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:37:02Z",
+    "ran_at": "2026-10-27T08:39:44Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T08:37:02Z",
+      "checked_at": "2026-10-27T08:39:44Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:37:02Z",
+      "checked_at": "2026-10-27T08:39:44Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 245,
-      "checked_at": "2026-10-27T08:37:02Z",
-      "message": "Fetched 245 matching items."
+      "items_seen": 308,
+      "checked_at": "2026-10-27T08:39:44Z",
+      "message": "Fetched 308 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.12,
       "window_days": 30,
-      "as_of": "2026-10-27T08:37:02Z",
+      "as_of": "2026-10-27T08:39:44Z",
       "stories": 45,
       "independent_events": 35,
       "directional_events": 16,
@@ -107,16 +107,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.13,
+      "raw_score": 1.12,
       "window_days": 30,
-      "as_of": "2026-10-27T08:37:02Z",
+      "as_of": "2026-10-27T08:39:44Z",
       "stories": 24,
-      "independent_events": 19,
+      "independent_events": 20,
       "directional_events": 6,
       "distinct_catalysts": 2,
       "bullish_events": 5,
       "bearish_events": 1,
-      "neutral_events": 13,
+      "neutral_events": 14,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -1459,8 +1459,7 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth",
-        "XRP Ecosystem"
+        "Evernorth"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -1506,16 +1505,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2186,6 +2175,48 @@
           "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5LckJheWR3Yk5xT2ZHNzZYakdkT2VqMHh0VlZMajZUN25VU1NKZGpVRlJUYVpOX2k0NWI1emhqMW5lTWM4aGNOdnp0cllUQmZRT3E4ZW9JTm9ubzhmczFsbENBekY3UUEwQUZEMXIydjgyanVTS0E?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-16T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "27c525e3948f5a",
+      "title": "MicroStrategy (Strategy) Spends $16 Billion to Support STRC Price Amid Liquidity Strain",
+      "published_at": "2026-10-16T05:45:32Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "KuCoin · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQS3RtOE5NVkJnNE9YaksteVRwOVpNUWxrTmRhcjJVZUlmanotS19kQ2hUQ3h0R2hiQVFBcWhhYXlVQTktTmxhUjZqYnN6TG1xTlM3NnNmYnZQeWd1VEZLX0hmSENzT2dMdGJiWGlrS1plVDRwaUZhY2NncmRPUnFkbUUxNDB6OTBXVlRjbk1vM1pIRzZKdDlaaFFhanhpZU4tcjdyV29uXzJGTkI5YV9rZkx0bzBFSDRIYVE?oc=5",
+      "excerpt": "MicroStrategy (Strategy) Spends $16 Billion to Support STRC Price Amid Liquidity Strain KuCoin",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:39:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy (Strategy) Spends $16 Billion to Support STRC Price Amid Liquidity Strain",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQS3RtOE5NVkJnNE9YaksteVRwOVpNUWxrTmRhcjJVZUlmanotS19kQ2hUQ3h0R2hiQVFBcWhhYXlVQTktTmxhUjZqYnN6TG1xTlM3NnNmYnZQeWd1VEZLX0hmSENzT2dMdGJiWGlrS1plVDRwaUZhY2NncmRPUnFkbUUxNDB6OTBXVlRjbk1vM1pIRzZKdDlaaFFhanhpZU4tcjdyV29uXzJGTkI5YV9rZkx0bzBFSDRIYVE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-16T05:45:32Z"
         }
       ],
       "moon_meters": [
@@ -3230,6 +3261,13 @@
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONmNzYTBqZnZoSy1JUE4xc0VlYkVfbGNhVzdiQkdqZm4xZ2dGY0ZmNWwwQTZBLUJUdXNzZ3JBRDNCMTVDYllPWXpiNDE1WXdZWHdHTE1lVU5hUjdZV25ablhLckFFZk1iTEdqcGFxb1BDT3VkWjZLYXZTVmozU1ZkT09JZmx4UldSYXo5TlNEWEVrNjlFS0NvT2RXTzkzVG45OUtDbTYyOXN3NVha?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-13T07:00:00Z"
+        },
+        {
+          "title": "Strategy Buys $21.5M in Bitcoin as STRC Buyback Tops $192M",
+          "name": "NFTevening · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ENnNKNkpuWGxaV1FnWmZMSHZNQU1aVi1tVUt1RUdrLXB1QS1VTHlnZElMOF9YNHhaWWoxLTZjd0o0YWkzSHhOeXd4eDc2Y2hucmpFRUZVN0w1WjZieFVkMmZhZ05yN05qMlc3UUxEd3ptTy1DU3c?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -3371,55 +3409,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f3dabb64644881",
-      "title": "Strategy Acquires 250 BTC and Repurchases $192 Million of STRC",
-      "published_at": "2026-10-12T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Strategy · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQdFFuSnljZXhEb2NzdWtfUmVRMXdHSEMxQmllNVBTRDkta1JYYWFmemY4ak8yWkFaTmpXWHlqWHRNUGo4VklFQ2pOYXNfc0J3c09Pa3FoeHFyeDZLaGlpcmRzcUhTTnIyZ1VRREtCUldZZ3ExNkw3NTZHOF9icDlKZ3ZkS0h0Wi13SW9zYm8xWEFzdlRLMVdzNWg5N2R1VDVqSjkxYUJB?oc=5",
-      "excerpt": "Strategy Acquires 250 BTC and Repurchases $192 Million of STRC Strategy",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-27T08:37:09Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Acquires 250 BTC and Repurchases $192 Million of STRC",
-          "name": "Strategy · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQdFFuSnljZXhEb2NzdWtfUmVRMXdHSEMxQmllNVBTRDkta1JYYWFmemY4ak8yWkFaTmpXWHlqWHRNUGo4VklFQ2pOYXNfc0J3c09Pa3FoeHFyeDZLaGlpcmRzcUhTTnIyZ1VRREtCUldZZ3ExNkw3NTZHOF9icDlKZ3ZkS0h0Wi13SW9zYm8xWEFzdlRLMVdzNWg5N2R1VDVqSjkxYUJB?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-12T07:00:00Z"
-        },
-        {
-          "title": "Strategy Buys $21.5M in Bitcoin as STRC Buyback Tops $192M",
-          "name": "NFTevening · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ENnNKNkpuWGxaV1FnWmZMSHZNQU1aVi1tVUt1RUdrLXB1QS1VTHlnZElMOF9YNHhaWWoxLTZjd0o0YWkzSHhOeXd4eDc2Y2hucmpFRUZVN0w1WjZieFVkMmZhZ05yN05qMlc3UUxEd3ptTy1DU3c?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
