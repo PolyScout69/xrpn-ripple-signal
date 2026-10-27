@@ -35,8 +35,10 @@ EVENT_FAMILIES = (
     ('nasdaq-debut', r'\b(?:nasdaq|go(?:es|ing)? public)\b.*\b(?:debut|list(?:ed|ing)?|begins trading)\b'),
     ('uphold-access', r'\buphold\b.*\b(?:list|access|stock)\b'),
     ('treasury-drawdown', r'\b(?:treasury|xrp|bitcoin|btc)\b.*\b(?:loss|loses?|lost|drops?|down)\b'),
+    ('preferred-repurchase',
+     r'\b(?:repurchas\w*|redeem\w*|buybacks?)\b.{0,100}\b(?:preferred|strc|strk|strf)\b'
+     r'|\b(?:preferred|strc|strk|strf)\b.{0,100}\b(?:repurchas\w*|redeem\w*|buybacks?)\b'),
     ('btc-purchase', r'\b(?:acquir|buy|buys|bought|purchas)\w*\b.*\b(?:bitcoin|btc)\b'),
-    ('preferred-repurchase', r'\b(?:repurchas|redeem)\w*\b.*\b(?:preferred|strc|strk|strf)\b'),
 )
 
 
