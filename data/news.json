@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T05:47:07Z",
+    "ran_at": "2026-10-27T05:47:35Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T05:47:07Z",
+      "checked_at": "2026-10-27T05:47:35Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T05:47:07Z",
+      "checked_at": "2026-10-27T05:47:35Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 139,
-      "checked_at": "2026-10-27T05:47:07Z",
-      "message": "Fetched 139 matching items."
+      "items_seen": 140,
+      "checked_at": "2026-10-27T05:47:35Z",
+      "message": "Fetched 140 matching items."
     }
   },
   "items": [
@@ -5584,6 +5584,48 @@
       ]
     },
     {
+      "id": "d3e4d4c3bfd7dc",
+      "title": "Mastercard’s Ripple Alliance Reignites XRP Adoption Debate as Tokenization Push Grows",
+      "published_at": "2026-07-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 60,
+      "source": "finance.biggo.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1zTUxBZ0FkYzA5cElMWXZiU0ZDZm4ydWlheXJNUG0xeDVjaG1DMFFQRWNnNkxjNW4tNFp3ZzlZc1pWbng3N1NHdHVoaVNjOUtWR0liVS1ucDg0UEVTVTBUbTRucXJHRjE5TVlCaTVMR3kwUlRZZ0E?oc=5",
+      "excerpt": "Mastercard’s Ripple Alliance Reignites XRP Adoption Debate as Tokenization Push Grows finance.biggo.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T05:47:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Mastercard’s Ripple Alliance Reignites XRP Adoption Debate as Tokenization Push Grows",
+          "name": "finance.biggo.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1zTUxBZ0FkYzA5cElMWXZiU0ZDZm4ydWlheXJNUG0xeDVjaG1DMFFQRWNnNkxjNW4tNFp3ZzlZc1pWbng3N1NHdHVoaVNjOUtWR0liVS1ucDg0UEVTVTBUbTRucXJHRjE5TVlCaTVMR3kwUlRZZ0E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
       "id": "8fadc931f24042",
       "title": "Ripple News: XRP Ledger v3.2.0 Validator Adoption Hits 66% As Fix Amendment Advances",
       "published_at": "2026-07-21T07:00:00Z",
@@ -10850,6 +10892,48 @@
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTDU0OURtdkxFd0NlUWhXU3hyNEJyWHYwaTNEeWx1ZXZUUWp0b3FaSl9YNFNGejdaTnJ5MENzSHVlMXFCam1nU1FmMEM3T2Q5SzVOakl6eXctQXNIMHZkSzhWRFc3Z2lGYUx4RXlyV0hTMnVlMGtoczFaTW9oUEI3azBsWE5RdFJl?oc=5",
           "source_type": "Media",
           "published_at": "2025-12-20T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v3"
+        }
+      ]
+    },
+    {
+      "id": "c51d2b93918d14",
+      "title": "Here’s XRP Price Scenario if Ripple Secures a Banking License",
+      "published_at": "2025-12-13T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Regulation",
+      "impact": "Medium",
+      "score": 67,
+      "source": "Binance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBWUjQxb0lxbUk0ejN4SGdoTFZIMVlkb3hYUmNPTzVqNE9YcmQxTnFWaUJBYjYxU0ZqVjVvR05ETE9ONk55X2RLcU1IZ1dFeXYtU2xMNEh4Qlh5d2JwQ0xONU9pUQ?oc=5",
+      "excerpt": "Here’s XRP Price Scenario if Ripple Secures a Banking License Binance",
+      "why_it_matters": "A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.",
+      "tags": [],
+      "added_at": "2026-10-27T05:47:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Here’s XRP Price Scenario if Ripple Secures a Banking License",
+          "name": "Binance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBWUjQxb0lxbUk0ejN4SGdoTFZIMVlkb3hYUmNPTzVqNE9YcmQxTnFWaUJBYjYxU0ZqVjVvR05ETE9ONk55X2RLcU1IZ1dFeXYtU2xMNEh4Qlh5d2JwQ0xONU9pUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-12-13T08:00:00Z"
         }
       ],
       "moon_meters": [
