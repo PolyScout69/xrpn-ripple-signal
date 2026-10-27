@@ -72,6 +72,19 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(s['independent_events'], 2)
         self.assertEqual(s['directional_events'], 2)
 
+    def test_same_strc_repurchase_headlined_in_reverse_word_order_counts_once(self):
+        items=[
+            story('Strategy pauses Bitcoin purchases, makes STRC preferred buyback',
+                  'MSTR', value=1, identifier='a'),
+            story('STRC repurchases hit $205 million at Strategy',
+                  'MSTR', value=1, identifier='b'),
+            story('MSTR buyback of STRC preferred totals $205 million',
+                  'MSTR', value=1, identifier='c'),
+        ]
+        summary=self.check(items,ticker='MSTR')
+        self.assertEqual(summary['stories'],3)
+        self.assertEqual(summary['directional_events'],1)
+
     def test_recency_half_life_rewards_recent_major_catalyst(self):
         recent = story('XRPN fresh institutional event', value=2, impact='High', age=1)
         old = story('XRPN older competing event', value=-2, impact='High', age=27)
