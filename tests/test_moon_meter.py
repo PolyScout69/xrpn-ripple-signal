@@ -118,6 +118,10 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(m['value'],2)
         self.assertEqual(score('Strategy proposes daily preferred dividends','Strategy','Media')['value'],0)
 
+    def test_strategy_paused_bitcoin_and_strc_buybacks_are_mixed(self):
+        self.assertEqual(score('Strategy pauses Bitcoin buying for a week, repurchases $205M in STRC','Strategy','Media')['value'],1)
+        self.assertEqual(score('Strategy spends $205 million on STRC preferred buyback instead of buying bitcoin','Strategy','Media')['value'],2)
+
     def test_generic_hype_does_not_become_plus_three(self):
         self.assertEqual(score('Evernorth says something special is planned','Evernorth','Media')['value'],0)
         self.assertEqual(score('Ripple new product launch for RLUSD','Ripple','Media')['value'],1)
