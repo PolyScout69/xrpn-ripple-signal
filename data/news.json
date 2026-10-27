@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:43:19Z",
+    "ran_at": "2026-10-27T15:22:37Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,30 +15,30 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 9,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
     "ripple": {
       "name": "Ripple press centre",
       "status": "ok",
-      "items_seen": 7,
-      "checked_at": "2026-10-27T08:43:19Z",
-      "message": "Fetched 7 matching items."
+      "items_seen": 6,
+      "checked_at": "2026-10-27T15:22:37Z",
+      "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:43:19Z",
+      "checked_at": "2026-10-27T15:22:37Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 280,
-      "checked_at": "2026-10-27T08:43:19Z",
-      "message": "Fetched 280 matching items."
+      "items_seen": 291,
+      "checked_at": "2026-10-27T15:22:37Z",
+      "message": "Fetched 291 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-27T08:43:19Z",
+      "as_of": "2026-10-27T15:22:37Z",
       "stories": 40,
       "independent_events": 34,
       "directional_events": 15,
@@ -107,16 +107,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.12,
+      "raw_score": 1.11,
       "window_days": 30,
-      "as_of": "2026-10-27T08:43:19Z",
-      "stories": 24,
-      "independent_events": 20,
+      "as_of": "2026-10-27T15:22:37Z",
+      "stories": 25,
+      "independent_events": 21,
       "directional_events": 6,
       "distinct_catalysts": 2,
       "bullish_events": 5,
       "bearish_events": 1,
-      "neutral_events": 14,
+      "neutral_events": 15,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -157,6 +157,132 @@
     }
   },
   "items": [
+    {
+      "id": "ff55f4c0e1b96e",
+      "title": "Ripple Expands Strategic Digital Assets Collaboration with BNY Across Custody and Tokenized Trade Finance",
+      "published_at": "2026-10-27T14:03:45Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "High",
+      "score": 83,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/ripple-expands-collaboration-with-bny-across-custody-and-tokenized-trade-finance",
+      "excerpt": "Ripple Expands Strategic Digital Assets Collaboration with BNY Across Custody and Tokenized Trade Finance",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:40Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Expands Strategic Digital Assets Collaboration with BNY Across Custody and Tokenized Trade Finance",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/ripple-expands-collaboration-with-bny-across-custody-and-tokenized-trade-finance",
+          "source_type": "Official",
+          "published_at": "2026-10-27T14:03:45Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "8c7e88f6813ce7",
+      "title": "Robinhood to integrate Ripple Treasury in expanded strategic partnership",
+      "published_at": "2026-10-27T14:01:07Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 65,
+      "source": "Crypto Briefing · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk96VTY3ZU5keFhRY3BYZk9jdjhRaEN0aVdqV1NoTEg1OHJQZzVGbXZWSFU4bkdka1Q0cWZSdlFlUmNTaTM2d0VucTRlYlZOQXNlQTdRTndpdmVFLXpLc0ZwaUlKTWlZUEtneHl2R3RpN1ZtR0JkZXRMNGk0MWdtLQ?oc=5",
+      "excerpt": "Robinhood to integrate Ripple Treasury in expanded strategic partnership Crypto Briefing",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:42Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Robinhood to integrate Ripple Treasury in expanded strategic partnership",
+          "name": "Crypto Briefing · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk96VTY3ZU5keFhRY3BYZk9jdjhRaEN0aVdqV1NoTEg1OHJQZzVGbXZWSFU4bkdka1Q0cWZSdlFlUmNTaTM2d0VucTRlYlZOQXNlQTdRTndpdmVFLXpLc0ZwaUlKTWlZUEtneHl2R3RpN1ZtR0JkZXRMNGk0MWdtLQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T14:01:07Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "aeefa71b7f9ef3",
+      "title": "XRP Eyes $15 as Ripple Wins Final Bank Approval Ahead of Swell",
+      "published_at": "2026-10-27T06:28:31Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOb09BTXBqYzJfdmRVVFhSMVZvSUN1SjlTaTI5SkFrdkdRU19HWXpybEJLWXdBOFltanRrRGVrUi1tM0RuanBiMWkwNzdqMU5fQXlrSE1NOENlcnNnYUt5TU9sWDBCOVdGOXJWWWFhX2hPZ2RDNUJnbEhzU3FKaVVRUm41SzNGc2FWaU1Kd0dIcEJ3Zw?oc=5",
+      "excerpt": "XRP Eyes $15 as Ripple Wins Final Bank Approval Ahead of Swell Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:43Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Eyes $15 as Ripple Wins Final Bank Approval Ahead of Swell",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOb09BTXBqYzJfdmRVVFhSMVZvSUN1SjlTaTI5SkFrdkdRU19HWXpybEJLWXdBOFltanRrRGVrUi1tM0RuanBiMWkwNzdqMU5fQXlrSE1NOENlcnNnYUt5TU9sWDBCOVdGOXJWWWFhX2hPZ2RDNUJnbEhzU3FKaVVRUm41SzNGc2FWaU1Kd0dIcEJ3Zw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T06:28:31Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "dbbf4033049e05",
       "title": "Ripple Receives Final OCC Approval to Establish National Trust Bank",
@@ -338,6 +464,13 @@
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0yVXJHYmZJcFdaNmFscERrejdiajF4V3ZNTlZWS0tpX2dveExzTXJQOXY1OEtqT2lVa0w0bWoyR0hZZkpSand2VWMxY1psSlZCa0lzcW1QeWVmNnNFTVZSazJNWFNaZ1ltcld3bENhYW9mSDJfbzFudGJKU0RVUQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-26T14:32:37Z"
+        },
+        {
+          "title": "Strategy Pauses Bitcoin Accumulation and Allocates $205 Million to STRC Stock Buybacks Ahead of Federal Reserve Rate Decision",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPT3J5blVNeWtRejFBX0tNMVhBQUFLN0N5TEN1RDlQTHQ2U05zMVRFYklMUWg5YkpwSXIxWThPdVg1RVhLYmZCMUh1b0RDNUh2VU92WFJxWGNlZHdmekJ6UHczZlFzRnJNQWx2RlNNbWJPVTNZUTBMODk0U3BKWXVqSkhYNHdUMDZoN2JRV0dIYkY4SlNVVTZjandoT0wwc21hWF9MMkFwSjc2TXNGWVRHQnVTSEtEbWZPWmNsN0gxTHNaX1dkX21QZWlfdlZ3aFNqTnVJQWV4TVZwaHhhWXJ0S0xmeFNFdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T09:22:00Z"
         }
       ],
       "moon_meters": [
@@ -678,6 +811,13 @@
           "url": "https://ripple.com/ripple-press/ripple-treasury-introduces-always-on-corporate-treasury-platform-to-modernize-corporate-cash-management",
           "source_type": "Official",
           "published_at": "2026-10-26T12:00:00Z"
+        },
+        {
+          "title": "Ripple Treasury Introduces Always-On Corporate Treasury Platform to Modernize Corporate Cash Management",
+          "name": "Crypto Reporter · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOeUFaLUNvNFh6Q25OUGxISklTSDdOWVdLWVpPM2xGallVN2VGUTdNTi1nWmVWX1BzNUlSTzk0XzV5aC11OHBZWExlQm80cVpCSkJ2dkNlTjdhM21kbVo4TDR2MEVGMEJwUWFXeUxPckZ4QmNrQWFQdEZMeFBFSzhlSkxmZmltcnJGU2JBdnZ3ZDk3b3F3VHVwY0xxQmUyZDVnS005VW5tWnk5RkxyX1V6ejRVNHBWUlZnektRbzctNmh3Z3l2bnN5UGJ2MGtsbndRaElmTjRRLVFUc2NjTG1wbGQ5THhlUVE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T08:31:40Z"
         }
       ],
       "moon_meters": [
@@ -815,6 +955,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "aa0dfa6a86eb38",
+      "title": "Italy’s Generali Group Increases Bitcoin Exposure with $36.4M Stake in Strategy (MSTR)",
+      "published_at": "2026-10-26T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Crypto Times · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNR0E1RkY4OWVoWVF6UENZVWYzbmVMWE9GaFlPWW55VGNQYjN2SWowTUFoSGFqN2luR1h3WWg5d1VUdUxqWXc2NXJwOWFjT2txcnVZMU1FbXktZGhnbGtnck5mdUxQY01kYXhBYWxNT04zRDNENnJzMlhUZkQyMi1TY1NhSkhwRV9zMnZqb2tHZ2RrcVZUZ0x5LTV4UXV5b1pvRzBkdkwtczlQTVhxa2hWUGRQTEoyOF9ab1F1QnJn?oc=5",
+      "excerpt": "Italy’s Generali Group Increases Bitcoin Exposure with $36.4M Stake in Strategy (MSTR) The Crypto Times",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:44Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Italy’s Generali Group Increases Bitcoin Exposure with $36.4M Stake in Strategy (MSTR)",
+          "name": "The Crypto Times · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNR0E1RkY4OWVoWVF6UENZVWYzbmVMWE9GaFlPWW55VGNQYjN2SWowTUFoSGFqN2luR1h3WWg5d1VUdUxqWXc2NXJwOWFjT2txcnVZMU1FbXktZGhnbGtnck5mdUxQY01kYXhBYWxNT04zRDNENnJzMlhUZkQyMi1TY1NhSkhwRV9zMnZqb2tHZ2RrcVZUZ0x5LTV4UXV5b1pvRzBkdkwtczlQTVhxa2hWUGRQTEoyOF9ab1F1QnJn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -1287,7 +1469,6 @@
       "published_at": "2026-10-21T14:38:12Z",
       "date_only": false,
       "entities": [
-        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Treasury",
@@ -4116,6 +4297,55 @@
       ]
     },
     {
+      "id": "b840d50af076a5",
+      "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
+      "published_at": "2026-10-05T13:03:02Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Stocktwits · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSzhrcFIzZU1LNndWTVZsZHd0ZzFFcDV4TjBxb2c5aW9OUDZ2R0tYSTdmM0tJSjZWRWdpT1ZmakVUaElUckVja2pYRkhob3FZSTN0aGZ0S29HVkxoUlNuVzg4bnhLUUxNUkVDbUt4VlFaNzRJSmNHRzhRSGVlN3ZDWkNNSXVud0szaEtkbzlLRHpxNm9YanppMEVmR1JJU0hCbVRwZGNGTWNXY2dlUUo0MERjM3pFRURXMmd4NWtRMXo5YnVLbkktU1dIcVE2UVFWZE5mWEsyWFE3aGV6Z3RmNmRQc0ZyVTA?oc=5",
+      "excerpt": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC Stocktwits",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
+          "name": "Stocktwits · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSzhrcFIzZU1LNndWTVZsZHd0ZzFFcDV4TjBxb2c5aW9OUDZ2R0tYSTdmM0tJSjZWRWdpT1ZmakVUaElUckVja2pYRkhob3FZSTN0aGZ0S29HVkxoUlNuVzg4bnhLUUxNUkVDbUt4VlFaNzRJSmNHRzhRSGVlN3ZDWkNNSXVud0szaEtkbzlLRHpxNm9YanppMEVmR1JJU0hCbVRwZGNGTWNXY2dlUUo0MERjM3pFRURXMmd4NWtRMXo5YnVLbkktU1dIcVE2UVFWZE5mWEsyWFE3aGV6Z3RmNmRQc0ZyVTA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T13:03:02Z"
+        },
+        {
+          "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOdmJNcHFCb3Zua0NrZUxENHJtc3ViV1lFa1FYR3I1MGhPV0dBUjFoNDd6YWtkQUhnM21aOWJvQVJqRDlEa1htRXA4VDBOZjZNMk9rWndYRkg2MWNSS2FHWnZPYkx6MTd3WklZU2JxWDNHVVFXb2szOHk0QVlYSTQwYWwtcUFmcXZhWWtITThDcnJ2RUk3aWp3UVFJX0J1M2x6QkJlemJBX05sQTBnVmVpR0NRcjVuTzF2cHhqQ1FUZGpSSjFySVNOQmt0OGQzTW5JeElZYmdzenAxbTRBOXZYNU5xci1GV3N1WllDanJkZ09yMlZ2UUE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "d573b75958a24d",
       "title": "Michael Saylor’s Strategy (MSTR) Extends Bitcoin Buying Streak With 334 BTC Addition",
       "published_at": "2026-10-05T12:09:12Z",
@@ -4192,48 +4422,6 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "c312b0d063df09",
-      "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
-      "published_at": "2026-10-05T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOdmJNcHFCb3Zua0NrZUxENHJtc3ViV1lFa1FYR3I1MGhPV0dBUjFoNDd6YWtkQUhnM21aOWJvQVJqRDlEa1htRXA4VDBOZjZNMk9rWndYRkg2MWNSS2FHWnZPYkx6MTd3WklZU2JxWDNHVVFXb2szOHk0QVlYSTQwYWwtcUFmcXZhWWtITThDcnJ2RUk3aWp3UVFJX0J1M2x6QkJlemJBX05sQTBnVmVpR0NRcjVuTzF2cHhqQ1FUZGpSSjFySVNOQmt0OGQzTW5JeElZYmdzenAxbTRBOXZYNU5xci1GV3N1WllDanJkZ09yMlZ2UUE?oc=5",
-      "excerpt": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOdmJNcHFCb3Zua0NrZUxENHJtc3ViV1lFa1FYR3I1MGhPV0dBUjFoNDd6YWtkQUhnM21aOWJvQVJqRDlEa1htRXA4VDBOZjZNMk9rWndYRkg2MWNSS2FHWnZPYkx6MTd3WklZU2JxWDNHVVFXb2szOHk0QVlYSTQwYWwtcUFmcXZhWWtITThDcnJ2RUk3aWp3UVFJX0J1M2x6QkJlemJBX05sQTBnVmVpR0NRcjVuTzF2cHhqQ1FUZGpSSjFySVNOQmt0OGQzTW5JeElZYmdzenAxbTRBOXZYNU5xci1GV3N1WllDanJkZ09yMlZ2UUE?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-05T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
@@ -4433,6 +4621,13 @@
           "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BZFlRWWttajNGMjdLdjAwQVl5ZjU4YWg2MW1vMWVxaVZVMEE2V2xyTWhMMVAyaW5QQk10ZHg2SkRvTXdPc1BRd0NCS1AxeVBjaV9JQ0EwanBmZGtZN2lfYUhSaUI3M2puSERzeUczd2RBQWdqbFlB?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-30T07:00:00Z"
+        },
+        {
+          "title": "Evernorth’s 473 Million XRP Treasury Clears Shareholder Vote Ahead of Nasdaq Debut",
+          "name": "https://genfinity.io/ · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPN1RDRGlhZHpGNGhvUEoyakR4SVVLNUE5TFZZTExzWkVLRHdlaEhQZ3hPakFWdnZWVnl0azhUbTN1WjFRVWE0YkF0RXdnOV9lemFjVUVRbkJaQmhHLU1qejhKRXJXVTFkdmhWd0M3OXBwLWVwck9ZTFMxN3l4YVV5OQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-02T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -5219,6 +5414,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "54d6445b471d66",
+      "title": "XRP jumps 8.7% near $1.54 amid whale buying and Ripple custody launch in South Africa",
+      "published_at": "2026-09-22T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 62,
+      "source": "Pluang · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSWs0bV9MdGdxYWdLU3VfWGFYRmJHakltQmRLZ2NNWW9ybURNOWM2QzZYZzFmYkVldWpXQUcwMElacmVlQVUtWDBCX2xuaDdrd1JGX3JHaGNTcGxFb3dhdHdTaVdITUVVS2FfT3pmUWJ2azdxWFl6Wl9HNW03Mk85c0lRMXZMcV8zbUhFODNyRTNiQQ?oc=5",
+      "excerpt": "XRP jumps 8.7% near $1.54 amid whale buying and Ripple custody launch in South Africa Pluang",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:42Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP jumps 8.7% near $1.54 amid whale buying and Ripple custody launch in South Africa",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSWs0bV9MdGdxYWdLU3VfWGFYRmJHakltQmRLZ2NNWW9ybURNOWM2QzZYZzFmYkVldWpXQUcwMElacmVlQVUtWDBCX2xuaDdrd1JGX3JHaGNTcGxFb3dhdHdTaVdITUVVS2FfT3pmUWJ2azdxWFl6Wl9HNW03Mk85c0lRMXZMcV8zbUhFODNyRTNiQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-22T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -9442,6 +9679,48 @@
       ]
     },
     {
+      "id": "f63350ff9fde44",
+      "title": "Michael Saylor's Strategy may have saved bitcoin from a bigger sell-off: 'A balancing force in the market'",
+      "published_at": "2026-07-06T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNRGs3Q1NtcXVzUHEzUG5JaFBSUG1xQ1FNTW1xeGNYYjhCM2Nhd3RaRHpNbTFuOThfSm90eGxOcUNYanVKY2NUaFRpOHdKRG9CU3hBZ1RhU3NnWjdGazIxdFdsOXlRdVZTVWUxRXoySWVNYU5oWW51U0tkamtrZFJYWVAzVTVueGhmRXNpMzZfMHIzaDFBMFJQUEpySnU5cFRsZVJ6QUNRTVJHQm0wd3lsQVJGMUhfNXZjVWdIUms4WFRRX21CWjVXWkhuTTZuWXlTUDk3cUZLMW8yeF9ucVVxOTNfTmxtUVROUXRBa3dISlZNZU9xaF9oMnJB?oc=5",
+      "excerpt": "Michael Saylor's Strategy may have saved bitcoin from a bigger sell-off: 'A balancing force in the market' Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy may have saved bitcoin from a bigger sell-off: 'A balancing force in the market'",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNRGs3Q1NtcXVzUHEzUG5JaFBSUG1xQ1FNTW1xeGNYYjhCM2Nhd3RaRHpNbTFuOThfSm90eGxOcUNYanVKY2NUaFRpOHdKRG9CU3hBZ1RhU3NnWjdGazIxdFdsOXlRdVZTVWUxRXoySWVNYU5oWW51U0tkamtrZFJYWVAzVTVueGhmRXNpMzZfMHIzaDFBMFJQUEpySnU5cFRsZVJ6QUNRTVJHQm0wd3lsQVJGMUhfNXZjVWdIUms4WFRRX21CWjVXWkhuTTZuWXlTUDk3cUZLMW8yeF9ucVVxOTNfTmxtUVROUXRBa3dISlZNZU9xaF9oMnJB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-06T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "ddad0b8bc695d0",
       "title": "XRPL Lending Protocol: XLS-65 & XLS-66 Validator Vote",
       "published_at": "2026-07-02T07:00:00Z",
@@ -11322,6 +11601,48 @@
       ]
     },
     {
+      "id": "247114a4e2118f",
+      "title": "MSTR Stock Forecast: Strategy Adds 535 BTC for $43M as Saylor Defends STRC Financing",
+      "published_at": "2026-05-11T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVmQ1RHFUZ1ZVSzRyNUl2R19STkJCMU9GMnEwTjVtVGUtbnMtTWpZMVlMSE9PVG9ZRWdYeHlSeU5LODFuZ0FBcG03SWtsdWYtLXljcjJ2S2dPRnB6bmh1R3hFOFdEb053ODNLOHJoTnJWVXJmM1pBMjloZHJONHlJMXdSd0NkSFlqaDRmR1llbElQMnJzZC1LUmhIWVVSekx2aW00MzlPQW9BeEVFaV96Nw?oc=5",
+      "excerpt": "MSTR Stock Forecast: Strategy Adds 535 BTC for $43M as Saylor Defends STRC Financing Coinpaper",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Forecast: Strategy Adds 535 BTC for $43M as Saylor Defends STRC Financing",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVmQ1RHFUZ1ZVSzRyNUl2R19STkJCMU9GMnEwTjVtVGUtbnMtTWpZMVlMSE9PVG9ZRWdYeHlSeU5LODFuZ0FBcG03SWtsdWYtLXljcjJ2S2dPRnB6bmh1R3hFOFdEb053ODNLOHJoTnJWVXJmM1pBMjloZHJONHlJMXdSd0NkSFlqaDRmR1llbElQMnJzZC1LUmhIWVVSekx2aW00MzlPQW9BeEVFaV96Nw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-11T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "519e86053f7284",
       "title": "Strategy (MSTR) adds $43M in Bitcoin as Saylor revives aggressive buying",
       "published_at": "2026-05-11T07:00:00Z",
@@ -13187,6 +13508,13 @@
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcHJxM2JQc2JpYm5KSlNMemItdXRMRHQxUWQ3S2FhcHB4dmplNU9vR1k1MG5zckRsdEkwODIteVlCWHVWTHFtVjFqVEVQWm9qUWh5Ml9UZlctc0FtUU1fajlTbjBWNm4xc1Y4VzFVTUdQY0FQanlZOHIzeWhPb2swOWNzWXRITFVqaGdnUUQtOGI5OC1Ua204?oc=5",
           "source_type": "Media",
           "published_at": "2026-04-01T07:00:00Z"
+        },
+        {
+          "title": "Ripple Treasury Launches the First Treasury Management System (TMS) with Native Digital Asset Capabilities",
+          "name": "Business Wire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQd25kR25wUC1kQ0Q0dDh0dkNNNGRYTUplTktKRTBvbWNHXzRhTXJMcHI2ZzUzSUZDM1F5N2FVSDhYcHg2N1FqUVM4TWJ2cWtMcnl2RGt5RVI5UzRCMlFVbzZLUEdPUEtLUDN6d1Z5ck5QNUhVWEtaU2VlQUthV0pJZjZ2OU9XSEVLLUdnS3RjOUFocUVuVFVpVkZlVWRLYng3dm04UlhnVW9YVlFvdl85enVtSXFuYldHR2Zzb29sRjlsZDBxY0wxYXRBQ2hHdVh2T19UYjFVS0dyQ2tQQ3NCNk10WktzVGNHSDRkU0ZSWGRINnc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-01T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14691,6 +15019,48 @@
           "title": "XRP News Today: Bank of America Adds XRP ETF Amid Institutional Demand",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdnVmU3RsR1J6elZfelNsanhoTWVEZ1FDbjJmdnp1cEVqRzM5ZVpaaHY2VEU5M3ZFTWp3RnJ3YlFOQ3J6dldWU0tHajQxVTRYc0FWdGJPT0h5Tjh1bXdQbFYtUTR2bVBJMEFjczY0eEVYcEhUWEZQV0RfNEVPQ0t6bXN0bmY0QUZGdmhYZ0NlTmJKNnVvSExFU25lTTFBbndrZ1B3d3V2c0RYbXRJSDROaGFDRXlyejhXWHMwZjI3a2JKU1Y4a2FyVQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-04T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b0189b3277a219",
+      "title": "XRPL Permissioned Domains to Go Live Today — What It Means for XRP Price",
+      "published_at": "2026-02-04T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "BeInCrypto · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1VdG83RFZ0ZVI1Vk45dlhYX3lVam16TzlSYnVqbkVGbGp1c21VZVIwWHhjM21UVDVTM3FUdnBGV0oxTlBta3hCRHlRZXlhQmlaVTBQakc4NlJfNHlySnd0S1ZycDhqN1JxNktzSDYtNWRfRktt?oc=5",
+      "excerpt": "XRPL Permissioned Domains to Go Live Today — What It Means for XRP Price BeInCrypto",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T15:22:42Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRPL Permissioned Domains to Go Live Today — What It Means for XRP Price",
+          "name": "BeInCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1VdG83RFZ0ZVI1Vk45dlhYX3lVam16TzlSYnVqbkVGbGp1c21VZVIwWHhjM21UVDVTM3FUdnBGV0oxTlBta3hCRHlRZXlhQmlaVTBQakc4NlJfNHlySnd0S1ZycDhqN1JxNktzSDYtNWRfRktt?oc=5",
           "source_type": "Media",
           "published_at": "2026-02-04T08:00:00Z"
         }
