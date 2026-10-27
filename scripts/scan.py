@@ -490,20 +490,110 @@ def norm_words(title: str) -> set[str]:
     return {w for w in re.findall(r'[a-z0-9]+', text) if len(w)>2 and w not in EVENT_STOP}
 
 
+# Semantic event matching for recurring Strategy (MSTR) disclosures.
+# The same STRC repurchase is reported as a buyback, preferred-stock spend,
+# or a week without BTC purchases. Headline token overlap is not sufficient.
+STRC_INSTRUMENT = re.compile(r'\bstrc\b|\bstretch\b|\bpreferred(?:\s+(?:stock|shares?))?\b', re.I)
+STRC_BUYBACK = re.compile(r'\brepurchas\w*\b|\bbuy[\s-]?backs?\b|\bbuying back\b|\bbought back\b', re.I)
+STRC_SPEND = re.compile(
+    r'\b(?:spends?|spent|spending)\b.{0,80}\b(?:strc|preferred\s+(?:stock|shares?))\b', re.I)
+STRC_AUTHORIZATION = re.compile(
+    r'\b(?:raises?|boosts?|doubles?|expands?|increases?)\b.{0,85}\b(?:buy[\s-]?back|repurchas\w*)\b'
+    r'.{0,65}\b(?:cap|program(?:me)?|authoriz\w*|limit)\b|'
+    r'\b(?:buy[\s-]?back|repurchas\w*)\b.{0,60}\b(?:cap|program(?:me)?|authoriz\w*|limit)\b'
+    r'.{0,45}\b(?:to|reaches?|raised|boost\w*|expand\w*)\b|'
+    r'\b(?:doubles?|raises?|boosts?|expands?)\b.{0,70}\bbuy[\s-]?back\b.{0,40}\bto\b'
+    r'.{0,15}\$\s*\d+(?:\.\d+)?\s*(?:billion|bn|b)\b', re.I)
+NEWS_MONEY = re.compile(
+    r'(?:\$\s*|usd\s*)?(\d+(?:,\d{3})*(?:\.\d+)?)\s*(million|mn|m|billion|bn|b)\b', re.I)
+MAX_COVERAGE_LINKS = 48
+
+
+def _news_week(date: str) -> str:
+    """Publication ISO week, not calendar month: weekly repurchases are distinct."""
+    dt = datetime.fromisoformat(date.replace('Z', '+00:00'))
+    year, week, _ = dt.isocalendar()
+    return f'{year}-W{week:02d}'
+
+
+def _strc_transaction_amount(title: str) -> float | None:
+    """Find the STRC amount even when a headline also states BTC spending."""
+    anchors=[m.start() for m in re.finditer(
+        r'\bstrc\b|\brepurchas\w*\b|\bbuy[\s-]?backs?\b|\bpreferred(?:\s+(?:stock|shares?))?\b',
+        title, re.I)]
+    if not anchors:
+        return None
+    ranked=[]
+    for match in NEWS_MONEY.finditer(title):
+        amount=float(match.group(1).replace(',', ''))
+        if match.group(2).lower() in ('billion','bn','b'):
+            amount*=1000
+        if amount <= 0:
+            continue
+        distance=min(abs(match.start()-i) for i in anchors)
+        context=title[max(0,match.start()-24):min(len(title),match.end()+24)].lower()
+        # "Buys $21.5m Bitcoin, repurchases $192m STRC": the first
+        # amount belongs to BTC and must not be mistaken for the buyback.
+        if re.search(r'\b(?:bitcoin|btc)\b',context) and not re.search(
+            r'\b(?:strc|preferred|repurchas\w*|buy[\s-]?back\w*)\b',context):
+            distance+=120
+        ranked.append((distance,amount))
+    return min(ranked,default=(999,None))[1]
+
+
+def strategy_strc_event(item: dict) -> tuple[str,str,float | None] | None:
+    """Return (event type, ISO week, STRC amount in USD millions).
+
+    Distinguishes a weekly repurchase from a buyback-authorisation increase
+    and from a dividend announcement, and preserves a new event next week.
+    """
+    if 'Strategy' not in item.get('entities',[]):
+        return None
+    title=str(item.get('title') or '').lower()
+    if not STRC_INSTRUMENT.search(title):
+        return None
+    date=normalize_date(item.get('published_at'))
+    if not date:
+        return None
+    week=_news_week(date)
+    if STRC_AUTHORIZATION.search(title):
+        return ('buyback-cap',week,None)
+    if STRC_BUYBACK.search(title) or STRC_SPEND.search(title):
+        return ('buyback',week,_strc_transaction_amount(title))
+    return None
+
+
+def _compatible_strc_amount(a: float | None, b: float | None) -> bool:
+    """Allow $204.9m / $205m but not $139m / $205m."""
+    return a is None or b is None or abs(a-b) <= max(2.5, min(a,b)*0.025)
+
+
 def event_key(item: dict) -> str:
     title = (item.get('title','') or '').lower()
     entities = set(item.get('entities') or [])
     stamp = (item.get('published_at') or '')[:7]
     amount = re.search(r'\$?\s*(\d+(?:\.\d+)?)\s*(?:million|mn|m)\b', title)
     amount_key = ((amount.group(1) + 'm') if amount else '')
-    if 'Evernorth' in entities and amount_key == '80m' and any(x in title for x in ('facility','raise','equity','fund','buy more xrp','committed')):
-        return 'evernorth:80m-equity-facility:2026-10'
+    # These issuer-specific one-off announcements can be worded very
+    # differently by different publishers; their economic event is the same.
+    if 'Evernorth' in entities:
+        if re.search(r'\b(?:80|80\.7)\s*(?:m|million)\b', title) and any(
+                x in title for x in ('facility','raise','equity','fund','cantor','committed')):
+            return 'evernorth:80m-equity-facility:'+stamp
+        if re.search(r'\b11\.?5\s*(?:m|million)\b',title) and re.search(
+                r'\bshares?\b',title) and re.search(r'\bregister\w*|\bwarrants?\b',title):
+            return 'evernorth:11.5m-share-registration:'+stamp
+        if 'uphold' in title and any(x in title for x in ('xrpn','stock','shares')):
+            return 'evernorth:uphold-stock-listing:'+stamp
+    if 'Ripple' in entities and re.search(r'\bocc\b|\boffice of the comptroller\b',title):
+        if 'bank' in title and ('final approval' in title or 'receives approval' in title):
+            return 'ripple:occ-final-trust-bank-approval:'+stamp
     if 'arf' in title and ('Ripple' in entities or 'XRP Ecosystem' in entities) and any(v in title for v in ('rlusd','payment','liquidity','partner','xrp ledger','xrpl','lending')):
-        return 'ripple:arf-rlusd-liquidity:2026-10'
+        return 'ripple:arf-rlusd-liquidity:'+stamp
     if 'Strategy' in entities and any(v in title for v in ('acquir','purchas','buys','bitcoin holdings','btc holdings')):
         btc = re.search(r'(\d[\d,]*)\s*(?:btc|bitcoin)', title)
         if btc:
-            return 'strategy:btc-purchase:'+btc.group(1).replace(',','')+':'+stamp
+            return 'strategy:btc-purchase:'+btc.group(1).replace(',')+':'+_news_week(item['published_at'])
     return ''
 
 
@@ -517,9 +607,19 @@ def duplicates(a: dict, b: dict) -> bool:
     da, db = normalize_date(a.get('published_at')), normalize_date(b.get('published_at'))
     if not da or not db:return False
     diff = abs((datetime.fromisoformat(da.replace('Z','+00:00'))-datetime.fromisoformat(db.replace('Z','+00:00'))).total_seconds())/86400
-    ka, kb = event_key(a), event_key(b)
-    if ka and kb and ka == kb and diff <= 9:
+    sa, sb = strategy_strc_event(a), strategy_strc_event(b)
+    if sa and sb:
+        # Never fold two distinct weekly purchases into one story, nor
+        # confuse a new $3bn buyback authorisation with a $205m purchase.
+        if sa[:2] != sb[:2] or diff > 7:
+            return False
+        if sa[0] == 'buyback':
+            return _compatible_strc_amount(sa[2],sb[2])
         return True
+    ka, kb = event_key(a), event_key(b)
+    if ka and kb:
+        # Two different named events must not be joined by generic wording.
+        return ka == kb and diff <= 12
     # The same named commercial counterparty generates several reworded headlines.
     # Restrict this shortcut to the same issuer, week and commercial topic.
     counterparties=('drivewealth','arf','cross river','meritz','settlemint','privy','zilo','licuido','bitso')
@@ -555,7 +655,7 @@ def coverage(item: dict) -> list[dict]:
         url=canonical_url(entry.get('url',''))
         if url and url not in unique:
             unique[url]={**entry,'url':url}
-    return list(unique.values())[:16]
+    return list(unique.values())[:MAX_COVERAGE_LINKS]
 
 
 def publishable(item: dict) -> bool:
@@ -588,7 +688,7 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
         else:
             seen_urls={c['url'] for c in duplicate.get('coverage',[])}
             for source in coverage(item):
-                if source['url'] not in seen_urls and len(duplicate['coverage']) < 16:
+                if source['url'] not in seen_urls and len(duplicate['coverage']) < MAX_COVERAGE_LINKS:
                     duplicate['coverage'].append(source)
                     seen_urls.add(source['url'])
             # Keep the best primary source (SEC or issuer); preserve earlier IDs for saved stories.
