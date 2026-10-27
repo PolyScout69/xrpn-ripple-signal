@@ -64,6 +64,11 @@ def _event_key(item, asset, value, published):
     return f'{asset}:story:{item.get("id") or item.get("url") or title}'
 
 
+def _theme(key: str) -> str:
+    parts = key.split(':', 2)
+    return key if len(parts) < 2 or parts[1] == 'story' else parts[1]
+
+
 def _weight(item, meter, age_days):
     impact = IMPACT_WEIGHTS.get(item.get('impact'), 1.0)
     source = SOURCE_WEIGHTS.get(item.get('source_type'), 1.0)
@@ -97,6 +102,8 @@ def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
              × source/specificity × scenario × exceptional-score multiplier.
     Non-directional news gets only an 8% denominator weight. Reports within
     the same economic-event family and ISO week contribute at most once.
+    Repeated weekly headlines about the same catalyst are also discounted
+    by 55%, 75%, then 85% to prevent single-theme dominance.
     """
     stamp = _parse_date(as_of) if isinstance(as_of, str) else as_of
     if not isinstance(stamp, datetime):
@@ -124,9 +131,10 @@ def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
                 score = meter.get('value')
                 if type(score) is not int or not -3 <= score <= 3:
                     continue
+                key = _event_key(item, asset, score, pub)
                 candidates.append({
                     'asset': asset, 'value': score, 'weight': _weight(item, meter, age),
-                    'key': _event_key(item, asset, score, pub),
+                    'key': key, 'family': _theme(key),
                     'published_at': item['published_at'], 'impact': item.get('impact'),
                     'source_type': item.get('source_type'),
                     'scenario': meter.get('scenario') or 'reported',
@@ -145,16 +153,38 @@ def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
             leader = max(group, key=lambda x: (abs(x['value']), x['weight'], x['source_type'] == 'Official'))
             events.append({**leader, 'reports': len(group)})
 
+        # A single repeated narrative can crowd out genuinely independent
+        # themes. Discount its successive weekly appearances, even though
+        # they are technically distinct announcements.
+        themes = defaultdict(list)
+        for event in events:
+            themes[(event['family'], 1 if event['value'] > 0 else -1 if event['value'] < 0 else 0)].append(event)
+        theme_discounts = (1.0, 0.45, 0.25, 0.15)
+        for group in themes.values():
+            group.sort(key=lambda x: x['weight'], reverse=True)
+            for i, event in enumerate(group):
+                event['weight'] *= theme_discounts[min(i, len(theme_discounts)-1)]
+
         directional = [x for x in events if x['value'] != 0]
         neutral = [x for x in events if x['value'] == 0]
         signed = sum(x['value'] * x['weight'] for x in directional)
         denominator = sum(x['weight'] for x in directional) + NEUTRAL_DAMPENING * sum(x['weight'] for x in neutral)
         raw = signed / denominator if denominator else 0.0
         rating = _rounded_score(raw, len(directional))
-        coverage = ('Limited coverage' if len(directional) < 3 else
-                    'Moderate coverage' if len(directional) < 7 else
+        distinct = len({x['family'] for x in directional})
+        coverage = ('Limited coverage' if distinct < 3 else
+                    'Moderate coverage' if distinct < 7 else
                     'Broad coverage')
-        leaders = sorted(directional, key=lambda x: abs(x['value'] * x['weight']), reverse=True)[:4]
+        ranked = sorted(directional, key=lambda x: abs(x['value'] * x['weight']), reverse=True)
+        leaders, seen_families = [], set()
+        # Show genuinely different drivers instead of four variants of STRC.
+        for event in ranked:
+            signature = (event['family'], 1 if event['value'] > 0 else -1)
+            if signature not in seen_families:
+                leaders.append(event)
+                seen_families.add(signature)
+            if len(leaders) == 4:
+                break
         output[asset] = {
             'value': rating, 'label': LABELS[rating],
             'raw_score': round(raw, 2),
@@ -163,6 +193,7 @@ def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
             'stories': len(candidates),
             'independent_events': len(events),
             'directional_events': len(directional),
+            'distinct_catalysts': distinct,
             'bullish_events': sum(x['value'] > 0 for x in directional),
             'bearish_events': sum(x['value'] < 0 for x in directional),
             'neutral_events': len(neutral),
@@ -173,6 +204,6 @@ def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
                 'reports': x['reports'], 'scenario': x['scenario'],
                 'reason': x['reason'], 'url': x['url'],
             } for x in leaders],
-            'method': 'impact_decay_dedup_v1',
+            'method': 'impact_decay_dedup_v2',
         }
     return output
