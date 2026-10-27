@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:05:27Z",
+    "ran_at": "2026-10-27T08:06:39Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 38,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T08:05:27Z",
+      "checked_at": "2026-10-27T08:06:39Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:05:27Z",
+      "checked_at": "2026-10-27T08:06:39Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 240,
-      "checked_at": "2026-10-27T08:05:27Z",
-      "message": "Fetched 240 matching items."
+      "items_seen": 250,
+      "checked_at": "2026-10-27T08:06:39Z",
+      "message": "Fetched 250 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.08,
       "window_days": 30,
-      "as_of": "2026-10-27T08:05:27Z",
+      "as_of": "2026-10-27T08:06:39Z",
       "stories": 49,
       "independent_events": 36,
       "directional_events": 17,
@@ -108,7 +108,7 @@
       "label": "Bullish",
       "raw_score": 1.66,
       "window_days": 30,
-      "as_of": "2026-10-27T08:05:27Z",
+      "as_of": "2026-10-27T08:06:39Z",
       "stories": 42,
       "independent_events": 20,
       "directional_events": 6,
