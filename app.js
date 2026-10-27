@@ -159,6 +159,7 @@
       ['listing',/(?:nasdaq|go(?:es|ing)? public).*(?:debut|list|begins trading)/],
       ['uphold',/uphold.*(?:list|stock|access)/],
       ['drawdown',/(?:treasury|xrp|bitcoin|btc).*(?:loss|loses?|lost|drop|down)/],
+      ['preferred',/(?:repurchas|redeem|buyback).*(?:preferred|strc|strk|strf)|(?:preferred|strc|strk|strf).*(?:repurchas|redeem|buyback)/],
       ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/]
     ];
     const weekCode=(stamp)=>{
