@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:06:39Z",
+    "ran_at": "2026-10-27T08:09:16Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,34 +23,35 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T08:06:39Z",
+      "checked_at": "2026-10-27T08:09:16Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:06:39Z",
+      "checked_at": "2026-10-27T08:09:16Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 250,
-      "checked_at": "2026-10-27T08:06:39Z",
-      "message": "Fetched 250 matching items."
+      "items_seen": 196,
+      "checked_at": "2026-10-27T08:09:16Z",
+      "message": "Fetched 196 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.08,
+      "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-27T08:06:39Z",
+      "as_of": "2026-10-27T08:09:16Z",
       "stories": 49,
       "independent_events": 36,
       "directional_events": 17,
+      "distinct_catalysts": 15,
       "bullish_events": 13,
       "bearish_events": 4,
       "neutral_events": 19,
@@ -101,21 +102,22 @@
           "url": "https://www.evernorth.xyz/press-release-10-14-2026"
         }
       ],
-      "method": "impact_decay_dedup_v1"
+      "method": "impact_decay_dedup_v2"
     },
     "MSTR": {
-      "value": 2,
-      "label": "Bullish",
-      "raw_score": 1.66,
+      "value": 1,
+      "label": "Slightly bullish",
+      "raw_score": 1.13,
       "window_days": 30,
-      "as_of": "2026-10-27T08:06:39Z",
+      "as_of": "2026-10-27T08:09:16Z",
       "stories": 42,
-      "independent_events": 20,
-      "directional_events": 6,
+      "independent_events": 21,
+      "directional_events": 7,
+      "distinct_catalysts": 2,
       "bullish_events": 6,
-      "bearish_events": 0,
+      "bearish_events": 1,
       "neutral_events": 14,
-      "coverage": "Moderate coverage",
+      "coverage": "Limited coverage",
       "drivers": [
         {
           "id": "fcc6f3107bf232",
@@ -129,40 +131,29 @@
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRVN3UlFhVEJLQXBmejc1SFRzXzBDbjg4UDd1LUpUYzZVcEg1d0hTRzl3Q1EyLXNiNVJNRTJKQnNuWFlBMnV6ZHBlTE8xYmJjQVJzYmtuRkZENC1NRUhtb212RXhnZjlSVEFROHlSU0VZQlRreHc5TW9INVNkVERWOTBoMnJpM3FVejBjVjRZSTBEUDkyZjlqNTduR0lUbWszMS1lQTlYcE84SV85bk40M2haY0s3LWdhSC0wc25zS0R5NXc?oc=5"
         },
         {
-          "id": "6cb3de0dc82054",
-          "title": "Strategy buys $22M in Bitcoin, repurchases $193M in STRC",
-          "value": 2,
+          "id": "c99511c44bba6a",
+          "title": "Strategy stock (MSTR) gains as company adds 267 BTC, raises buyback programme to $3B",
+          "value": 1,
           "impact": "Medium",
-          "published_at": "2026-10-19T12:30:00Z",
-          "reports": 8,
+          "published_at": "2026-10-19T15:06:54Z",
+          "reports": 1,
           "scenario": "reported",
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb0lTbmRxWENSY3F2bGUtZFFkWlgyS1VQRnlKVnVKNkhSWXJvWXFDZWg0Y2NsTzhpSWhueHJPSHhYYjlPa0tEeEZRS3B4RE4tSDRoYjhScjd3OHVqdkZEVDdsVWNPMVpjUDJ4aGJGWTk2T0tZcTU2UnhENDR6Z3FxcHpQcTl3ZVgwZjV2MHFUdVJ6dl80MnliTnVIakc0dXVrSG15ZmR5cGpDOUZDUkJaN3FWS19xOVl3?oc=5"
-        },
-        {
-          "id": "8dc60800eff077",
-          "title": "Strategy Acquires 250 Bitcoin for $21.5M, Repurchases $192.4M of STRC Preferred Stock",
-          "value": 2,
-          "impact": "Medium",
-          "published_at": "2026-10-13T07:00:00Z",
-          "reports": 4,
-          "scenario": "reported",
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTW5Kb1c0NXVWR0Q4R3BMQV94dkdBUGIxZmdrbC0taU9VZDd1c0tYX185WENyUnd5bVVSTFpsU1RNT0lfRnpYcEF4Q1Y1WEtiRV9fcG1xN2tQYjFQYW5DTzJMZHRyR19PWmw0dVdTTWZ6ZmhsWTBMS1ZYYjVLTE9BMkQ5QkZaTkJPdlpzVF9fR0hlRDZreXl4S0VuNnE4d3BDQkZvbUF6UmVfckltbUM5SVZNcVNYWVk2MFFQWldB?oc=5"
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVQyZmRTSWIxeFg1Y0k5Sk1TQV85blh4UnJDZzJmQ3Rmd2d1T2xKamdyWlpIdVpaRHhwQ2ItbGNRc1VQcUdOVl9OMHhjS2duQzBDVktsR21neG1KaG00VTdJR0NLQjFUWFhBSFMySEhKUzVnQnRYYVh4SGxJaXN0NWU1eWY2VFFqajhZN3JZYmIzbmtydEpwZzNiUTJ3aTd4LTFnWUhNQzNxaFpsQ2RNS2NTNjRuMTV2b2plbnBtdXZnM2podWlEamhlMmlBMVhZOUtn?oc=5"
         },
         {
           "id": "cf53629d4e1d85",
           "title": "Strategy’s $150 million-a-day STRC market has a hidden dependency on its own buybacks",
-          "value": 2,
+          "value": -1,
           "impact": "Medium",
           "published_at": "2026-10-09T07:00:00Z",
-          "reports": 2,
+          "reports": 1,
           "scenario": "reported",
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "reason": "If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb2RrSzl3VHB6YU9jQ1JMTmNsR2FlTy1zZzJSOWxvTUJzNkhSZ0lHNWlHRTNXSzVUN3dBeGVqMFplS3YwUVRVdVRIMEdpX1Z5MS05aWFoZEMyRERDVUtibS1kbTNGMlFLdmpqNXQzNURfU1B6SXdhcmpiS3lLaUphRFhwMGdjaFJjRDJPeDJ4NHZxV0U5LVJ1U0ZLbjhidDZILXhPQ1hudTJwcktu?oc=5"
         }
       ],
-      "method": "impact_decay_dedup_v1"
+      "method": "impact_decay_dedup_v2"
     }
   },
   "items": [
@@ -4659,12 +4650,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
+          "value": -1,
+          "label": "Slightly bearish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "reason": "If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.",
           "method": "headline_if_true_v4"
         }
       ]
