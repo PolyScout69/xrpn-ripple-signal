@@ -1,8 +1,12 @@
-name: Signal daily investor scan and GitHub Pages
+name: Signal twice-daily investor scans and GitHub Pages
 
 on:
   schedule:
-    - cron: '0 18 * * *'
+    # 14:35 UTC: European morning coverage + US pre-market/early-market press.
+    # 23:35 UTC: US market close + evening company announcements.
+    # Minutes are intentionally not :00 to reduce GitHub scheduler congestion.
+    - cron: '35 14 * * *'
+    - cron: '35 23 * * *'
   workflow_dispatch:
   push:
     branches: [main]
