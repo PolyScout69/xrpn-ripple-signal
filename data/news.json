@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-27T08:02:32Z",
+    "ran_at": "2026-10-27T08:05:27Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 114,
+    "new_items": 38,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-27T08:02:32Z",
+      "checked_at": "2026-10-27T08:05:27Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-27T08:02:32Z",
+      "checked_at": "2026-10-27T08:05:27Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 309,
-      "checked_at": "2026-10-27T08:02:32Z",
-      "message": "Fetched 309 matching items."
+      "items_seen": 240,
+      "checked_at": "2026-10-27T08:05:27Z",
+      "message": "Fetched 240 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.08,
       "window_days": 30,
-      "as_of": "2026-10-27T08:02:32Z",
+      "as_of": "2026-10-27T08:05:27Z",
       "stories": 49,
       "independent_events": 36,
       "directional_events": 17,
@@ -106,38 +106,27 @@
     "MSTR": {
       "value": 2,
       "label": "Bullish",
-      "raw_score": 1.63,
+      "raw_score": 1.66,
       "window_days": 30,
-      "as_of": "2026-10-27T08:02:32Z",
-      "stories": 31,
-      "independent_events": 24,
-      "directional_events": 5,
-      "bullish_events": 5,
+      "as_of": "2026-10-27T08:05:27Z",
+      "stories": 42,
+      "independent_events": 20,
+      "directional_events": 6,
+      "bullish_events": 6,
       "bearish_events": 0,
-      "neutral_events": 19,
+      "neutral_events": 14,
       "coverage": "Moderate coverage",
       "drivers": [
         {
-          "id": "35900ecfb0cfd8",
-          "title": "Strategy Pauses Bitcoin Buying for a Week, Repurchases $204.9 Million in STRC",
+          "id": "fcc6f3107bf232",
+          "title": "Strategy spends $205 million on STRC preferred buyback instead of buying bitcoin",
           "value": 2,
           "impact": "Medium",
-          "published_at": "2026-10-26T17:11:53Z",
-          "reports": 2,
+          "published_at": "2026-10-27T00:40:30Z",
+          "reports": 11,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBoREVFek9RWDE5VWhIRVNPa0w3dl9jS1VmdzktM0VNNmxxNjQ2S2RKZUl2RmtyWFNrZVZZbTNJMmMwTHhFbXRxTl9Oc3NsUDJNTzFMVXFNMTg?oc=5"
-        },
-        {
-          "id": "804d9442198bc1",
-          "title": "Strategy pauses Bitcoin buys as STRC repurchases reach $205 million",
-          "value": 2,
-          "impact": "Medium",
-          "published_at": "2026-10-26T15:21:49Z",
-          "reports": 1,
-          "scenario": "reported",
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10Mnc4NHNmY2JtODBWZlAtZE9tTEk1MTc4XzctSnE4LVRmOVM2ZUYxSVRoTUxXYlZCV0dBQlRXeS10b0s5VVJxenlrMzlfMHNBdUtXTlFkbldZRTN6U29ENHdXdVByaEV3WEEwWWVNZzVHLWhNX2Uw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRVN3UlFhVEJLQXBmejc1SFRzXzBDbjg4UDd1LUpUYzZVcEg1d0hTRzl3Q1EyLXNiNVJNRTJKQnNuWFlBMnV6ZHBlTE8xYmJjQVJzYmtuRkZENC1NRUhtb212RXhnZjlSVEFROHlSU0VZQlRreHc5TW9INVNkVERWOTBoMnJpM3FVejBjVjRZSTBEUDkyZjlqNTduR0lUbWszMS1lQTlYcE84SV85bk40M2haY0s3LWdhSC0wc25zS0R5NXc?oc=5"
         },
         {
           "id": "6cb3de0dc82054",
@@ -145,7 +134,7 @@
           "value": 2,
           "impact": "Medium",
           "published_at": "2026-10-19T12:30:00Z",
-          "reports": 1,
+          "reports": 8,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb0lTbmRxWENSY3F2bGUtZFFkWlgyS1VQRnlKVnVKNkhSWXJvWXFDZWg0Y2NsTzhpSWhueHJPSHhYYjlPa0tEeEZRS3B4RE4tSDRoYjhScjd3OHVqdkZEVDdsVWNPMVpjUDJ4aGJGWTk2T0tZcTU2UnhENDR6Z3FxcHpQcTl3ZVgwZjV2MHFUdVJ6dl80MnliTnVIakc0dXVrSG15ZmR5cGpDOUZDUkJaN3FWS19xOVl3?oc=5"
@@ -156,10 +145,21 @@
           "value": 2,
           "impact": "Medium",
           "published_at": "2026-10-13T07:00:00Z",
-          "reports": 1,
+          "reports": 4,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTW5Kb1c0NXVWR0Q4R3BMQV94dkdBUGIxZmdrbC0taU9VZDd1c0tYX185WENyUnd5bVVSTFpsU1RNT0lfRnpYcEF4Q1Y1WEtiRV9fcG1xN2tQYjFQYW5DTzJMZHRyR19PWmw0dVdTTWZ6ZmhsWTBMS1ZYYjVLTE9BMkQ5QkZaTkJPdlpzVF9fR0hlRDZreXl4S0VuNnE4d3BDQkZvbUF6UmVfckltbUM5SVZNcVNYWVk2MFFQWldB?oc=5"
+        },
+        {
+          "id": "cf53629d4e1d85",
+          "title": "Strategy’s $150 million-a-day STRC market has a hidden dependency on its own buybacks",
+          "value": 2,
+          "impact": "Medium",
+          "published_at": "2026-10-09T07:00:00Z",
+          "reports": 2,
+          "scenario": "reported",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb2RrSzl3VHB6YU9jQ1JMTmNsR2FlTy1zZzJSOWxvTUJzNkhSZ0lHNWlHRTNXSzVUN3dBeGVqMFplS3YwUVRVdVRIMEdpX1Z5MS05aWFoZEMyRERDVUtibS1kbTNGMlFLdmpqNXQzNURfU1B6SXdhcmpiS3lLaUphRFhwMGdjaFJjRDJPeDJ4NHZxV0U5LVJ1U0ZLbjhidDZILXhPQ1hudTJwcktu?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v1"
@@ -247,12 +247,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -331,12 +331,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -373,12 +373,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -426,6 +426,48 @@
       ]
     },
     {
+      "id": "ac6f5a4f09fc5b",
+      "title": "Strategy Pauses Bitcoin Buys, Spends $204.9M on STRC Buyback",
+      "published_at": "2026-10-26T18:16:46Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "FinanceFeeds · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMzd0VEVxWktKWFJTUmNQMUJCRHh5Z2tzOUpWcUlob0lpbHVyc1NsUU5aQmVyRTRJSjNSTGdGSndPRDV6NWZFU2lJdjB6cG11bzQwcUw2MFd0U2RDR1VFWjVIQ200RGI2NnhrdDBqTDEtZllTSVdlUTM4N0dQRjBYMlk2aVZIX09HMUd5T0JGUHM2amFlbjROOEtIWi1Yb3U4?oc=5",
+      "excerpt": "Strategy Pauses Bitcoin Buys, Spends $204.9M on STRC Buyback FinanceFeeds",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Pauses Bitcoin Buys, Spends $204.9M on STRC Buyback",
+          "name": "FinanceFeeds · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMzd0VEVxWktKWFJTUmNQMUJCRHh5Z2tzOUpWcUlob0lpbHVyc1NsUU5aQmVyRTRJSjNSTGdGSndPRDV6NWZFU2lJdjB6cG11bzQwcUw2MFd0U2RDR1VFWjVIQ200RGI2NnhrdDBqTDEtZllTSVdlUTM4N0dQRjBYMlk2aVZIX09HMUd5T0JGUHM2amFlbjROOEtIWi1Yb3U4?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T18:16:46Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "4e4e13e7b47cff",
       "title": "Strategy’s Weekly STRC Buyback Climbs to $205 Million While Its Bitcoin Stack Stays Put",
       "published_at": "2026-10-26T17:59:00Z",
@@ -457,12 +499,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -541,12 +583,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -583,12 +625,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -793,12 +835,96 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "190b2cb132dc1f",
+      "title": "Strategy buys no Bitcoin, spends $205M repurchasing STRC shares",
+      "published_at": "2026-10-26T14:32:37Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Cryptopolitan · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0yVXJHYmZJcFdaNmFscERrejdiajF4V3ZNTlZWS0tpX2dveExzTXJQOXY1OEtqT2lVa0w0bWoyR0hZZkpSand2VWMxY1psSlZCa0lzcW1QeWVmNnNFTVZSazJNWFNaZ1ltcld3bENhYW9mSDJfbzFudGJKU0RVUQ?oc=5",
+      "excerpt": "Strategy buys no Bitcoin, spends $205M repurchasing STRC shares Cryptopolitan",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy buys no Bitcoin, spends $205M repurchasing STRC shares",
+          "name": "Cryptopolitan · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0yVXJHYmZJcFdaNmFscERrejdiajF4V3ZNTlZWS0tpX2dveExzTXJQOXY1OEtqT2lVa0w0bWoyR0hZZkpSand2VWMxY1psSlZCa0lzcW1QeWVmNnNFTVZSazJNWFNaZ1ltcld3bENhYW9mSDJfbzFudGJKU0RVUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T14:32:37Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 2,
           "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "cffafef50dc1fa",
+      "title": "Strategy Buys Back $204.9 Million STRC, Pauses BTC Buying Spree",
+      "published_at": "2026-10-26T13:37:23Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "CoinLaw · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1Xbjc4UXEtanVmamdlU2xGanBaTE5nRjVFTU9vTXdVNEtEM3NRZkhTQ1hTeVVBbWg4WjRKUWlzNEQ1MEZNYkZCanJjNjZvYUJGR3dZUXlJSlpxT05nU3lCaG1oZm5ueWVwNUFreTVRQTdOdw?oc=5",
+      "excerpt": "Strategy Buys Back $204.9 Million STRC, Pauses BTC Buying Spree CoinLaw",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Buys Back $204.9 Million STRC, Pauses BTC Buying Spree",
+          "name": "CoinLaw · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1Xbjc4UXEtanVmamdlU2xGanBaTE5nRjVFTU9vTXdVNEtEM3NRZkhTQ1hTeVVBbWg4WjRKUWlzNEQ1MEZNYkZCanJjNjZvYUJGR3dZUXlJSlpxT05nU3lCaG1oZm5ueWVwNUFreTVRQTdOdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T13:37:23Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -1042,12 +1168,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -1548,7 +1674,6 @@
       "published_at": "2026-10-21T14:38:12Z",
       "date_only": false,
       "entities": [
-        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Treasury",
@@ -1630,6 +1755,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Planned funding and buying alone do not establish net accretion or dilution per share.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "683c07eaa6461d",
+      "title": "Strategy's 848,517 Bitcoin Treasury Shapes MSTR Shareholder Exposure",
+      "published_at": "2026-10-21T02:39:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TOKENPOST · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5SVTNoQXZrdWtubWJxZEQtbmdQNWs1YWJKYmRKVkp5N2VXcFhsWnItZnplRmtHSFVWelpjek5xcFVEY2xXWGRWOFRHcERSSE0wRlBsLXBrVXM?oc=5",
+      "excerpt": "Strategy's 848,517 Bitcoin Treasury Shapes MSTR Shareholder Exposure TOKENPOST",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's 848,517 Bitcoin Treasury Shapes MSTR Shareholder Exposure",
+          "name": "TOKENPOST · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5SVTNoQXZrdWtubWJxZEQtbmdQNWs1YWJKYmRKVkp5N2VXcFhsWnItZnplRmtHSFVWelpjek5xcFVEY2xXWGRWOFRHcERSSE0wRlBsLXBrVXM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T02:39:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2017,12 +2184,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2098,12 +2265,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2140,12 +2307,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2182,12 +2349,54 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c99511c44bba6a",
+      "title": "Strategy stock (MSTR) gains as company adds 267 BTC, raises buyback programme to $3B",
+      "published_at": "2026-10-19T15:06:54Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVQyZmRTSWIxeFg1Y0k5Sk1TQV85blh4UnJDZzJmQ3Rmd2d1T2xKamdyWlpIdVpaRHhwQ2ItbGNRc1VQcUdOVl9OMHhjS2duQzBDVktsR21neG1KaG00VTdJR0NLQjFUWFhBSFMySEhKUzVnQnRYYVh4SGxJaXN0NWU1eWY2VFFqajhZN3JZYmIzbmtydEpwZzNiUTJ3aTd4LTFnWUhNQzNxaFpsQ2RNS2NTNjRuMTV2b2plbnBtdXZnM2podWlEamhlMmlBMVhZOUtn?oc=5",
+      "excerpt": "Strategy stock (MSTR) gains as company adds 267 BTC, raises buyback programme to $3B TradingView",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy stock (MSTR) gains as company adds 267 BTC, raises buyback programme to $3B",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVQyZmRTSWIxeFg1Y0k5Sk1TQV85blh4UnJDZzJmQ3Rmd2d1T2xKamdyWlpIdVpaRHhwQ2ItbGNRc1VQcUdOVl9OMHhjS2duQzBDVktsR21neG1KaG00VTdJR0NLQjFUWFhBSFMySEhKUzVnQnRYYVh4SGxJaXN0NWU1eWY2VFFqajhZN3JZYmIzbmtydEpwZzNiUTJ3aTd4LTFnWUhNQzNxaFpsQ2RNS2NTNjRuMTV2b2plbnBtdXZnM2podWlEamhlMmlBMVhZOUtn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-19T15:06:54Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2224,12 +2433,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2266,12 +2475,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2303,6 +2512,48 @@
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb0lTbmRxWENSY3F2bGUtZFFkWlgyS1VQRnlKVnVKNkhSWXJvWXFDZWg0Y2NsTzhpSWhueHJPSHhYYjlPa0tEeEZRS3B4RE4tSDRoYjhScjd3OHVqdkZEVDdsVWNPMVpjUDJ4aGJGWTk2T0tZcTU2UnhENDR6Z3FxcHpQcTl3ZVgwZjV2MHFUdVJ6dl80MnliTnVIakc0dXVrSG15ZmR5cGpDOUZDUkJaN3FWS19xOVl3?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-19T12:30:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "dc8473b722388d",
+      "title": "Orange Stack Grows: Michael Saylor’s Strategy Adds 267 Bitcoin, Repurchased $193M in STRC",
+      "published_at": "2026-10-19T12:18:07Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "The Crypto Times · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOdExPd1ZvZUNPcDk2V3Zndnd6QUQxVG9HSFQydWlSUm10TGxid0FvN1Z3Ulh3U0lQdEZGT2h1V1lsZDJpemRDdmhPdV9BcVlwQnk2OHRjZVR5eTRiWGY1eWFpSFZJSlhpZ2FTRmtaMUdqTWxYZFZnMmNqMzdTWE1jR2dqdy1xcjZFMlNZZ05KUXhKUS1VNl9XdEtDVWlTdFFWdE9tdWE0VFlfRmdJUGs0RTFkcWprOGJCUk1UNzluQURpUQ?oc=5",
+      "excerpt": "Orange Stack Grows: Michael Saylor’s Strategy Adds 267 Bitcoin, Repurchased $193M in STRC The Crypto Times",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Orange Stack Grows: Michael Saylor’s Strategy Adds 267 Bitcoin, Repurchased $193M in STRC",
+          "name": "The Crypto Times · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOdExPd1ZvZUNPcDk2V3Zndnd6QUQxVG9HSFQydWlSUm10TGxid0FvN1Z3Ulh3U0lQdEZGT2h1V1lsZDJpemRDdmhPdV9BcVlwQnk2OHRjZVR5eTRiWGY1eWFpSFZJSlhpZ2FTRmtaMUdqTWxYZFZnMmNqMzdTWE1jR2dqdy1xcjZFMlNZZ05KUXhKUS1VNl9XdEtDVWlTdFFWdE9tdWE0VFlfRmdJUGs0RTFkcWprOGJCUk1UNzluQURpUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-19T12:18:07Z"
         }
       ],
       "moon_meters": [
@@ -3625,6 +3876,13 @@
           "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVkdqUVBLTkFZUl9WelJHOTRVUGF3SjFjQTJ3NlpNRXU1cnBGSGNZQ0RtNTBadlhRZkw1NzhmSVJmRjFVRWkwWGYyalhHRk51ZnFyTFZDYnI0YXdSZ2lwMEQxY1VnelhiNl9mS2F0S1FramJ5VFZYeWtuQ3R6UzhkVFhuelliQQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-12T07:00:00Z"
+        },
+        {
+          "title": "Strategy stock (MSTR) slips as Bitcoin purchase hits yearly low of 250 BTC",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMzJGUTV2NXFiSmk1cHVxM05fZGxoNGlHUWZfZjNLbXg5SUdOVGhtbUJBQ2lGM1dYbGRaRUU3R3BxMmFNckR1djBpUERSTGRIWEpHMWxqelVBV0ZQVkRNeVpJUmpMcWMyRE94bGNKcDEtd2VnMzVNSHIxdmRhN0t3clJHd01SeDBaVG9LVWxxa09BbV9URHR1UFhtdUlpdUdrQWk4bTNMcHBoMmxON3htV0ZGbXMwbU1kVmpZOXhlQkh5Z2FXb0czQw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -3672,12 +3930,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -3714,12 +3972,54 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "49ea8b0808494b",
+      "title": "Strategy's STRC stock nears $100 as buybacks ou...",
+      "published_at": "2026-10-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Pluang · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONmNzYTBqZnZoSy1JUE4xc0VlYkVfbGNhVzdiQkdqZm4xZ2dGY0ZmNWwwQTZBLUJUdXNzZ3JBRDNCMTVDYllPWXpiNDE1WXdZWHdHTE1lVU5hUjdZV25ablhLckFFZk1iTEdqcGFxb1BDT3VkWjZLYXZTVmozU1ZkT09JZmx4UldSYXo5TlNEWEVrNjlFS0NvT2RXTzkzVG45OUtDbTYyOXN3NVha?oc=5",
+      "excerpt": "Strategy's STRC stock nears $100 as buybacks ou... Pluang",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's STRC stock nears $100 as buybacks ou...",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONmNzYTBqZnZoSy1JUE4xc0VlYkVfbGNhVzdiQkdqZm4xZ2dGY0ZmNWwwQTZBLUJUdXNzZ3JBRDNCMTVDYllPWXpiNDE1WXdZWHdHTE1lVU5hUjdZV25ablhLckFFZk1iTEdqcGFxb1BDT3VkWjZLYXZTVmozU1ZkT09JZmx4UldSYXo5TlNEWEVrNjlFS0NvT2RXTzkzVG45OUtDbTYyOXN3NVha?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4359,6 +4659,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "701ab48e28c512",
+      "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
+      "published_at": "2026-10-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTnBmUTY5d0ZLdTdTUm5EM2VVZ09vZ21iemx3dlhhbndKUGx1YVN1bkVZRnNWU1Zod2hiYThkODFDa09qSGcxRWEta2xfUXNaWXpmbXVjR1RZZzk5X1dIU2Rrd3dBWjJaVlRjbEt5LUdWemZGRWU1RlQyUlo1YnFBRWZVdDBzUVRtbkc2SmRjZ3Q3RHhsa3J1ZWpSU1dEc1BiSVIzYnFIUzBaTG15YkFRcVFUcE9aczdV?oc=5",
+      "excerpt": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead? TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTnBmUTY5d0ZLdTdTUm5EM2VVZ09vZ21iemx3dlhhbndKUGx1YVN1bkVZRnNWU1Zod2hiYThkODFDa09qSGcxRWEta2xfUXNaWXpmbXVjR1RZZzk5X1dIU2Rrd3dBWjJaVlRjbEt5LUdWemZGRWU1RlQyUlo1YnFBRWZVdDBzUVRtbkc2SmRjZ3Q3RHhsa3J1ZWpSU1dEc1BiSVIzYnFIUzBaTG15YkFRcVFUcE9aczdV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -4396,6 +4738,48 @@
           "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPLWV0ZUhKWmdvajFZZVVZOHZrTTJqUnhGbFNyMEZndUUwbU1MU1dDTGtzX1B2ZnZvelQ4WUpFLUhWNjVvNUZ3bHVVMUdXLXR0b1lPSGRpcmQ0TDZaMkZKUTNZZC1OeHpnWUFTcjBtaUVmc3VDSklPcDcxQTdVd2ZKS2ZnLXNqajg?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-06T22:32:14Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "9b849e628d0ad0",
+      "title": "Strategy (MSTR) stock rises as Bitcoin holdings hit record 848,000",
+      "published_at": "2026-10-06T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 70,
+      "source": "Invezz · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMXJLRjVleVhSOHRWSkVjeXpXR0x5VnNodGJDQ2Y0M2FDOXdBSm8wR2FLS29pTF93NThMOHo2UnNpTUdkS0JZUTVuOFRzYlZteGUyWkpZQlNuNE1fTGx2LW1nR3ppS0NvY2xQekF0WXoyWi13ZTk5OVYxbEVHa1FJN3lrX0o1WFdka3FNMzBST3BJWFdpNlliNmtQTXNhQ0VnYkNMYQ?oc=5",
+      "excerpt": "Strategy (MSTR) stock rises as Bitcoin holdings hit record 848,000 Invezz",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) stock rises as Bitcoin holdings hit record 848,000",
+          "name": "Invezz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMXJLRjVleVhSOHRWSkVjeXpXR0x5VnNodGJDQ2Y0M2FDOXdBSm8wR2FLS29pTF93NThMOHo2UnNpTUdkS0JZUTVuOFRzYlZteGUyWkpZQlNuNE1fTGx2LW1nR3ppS0NvY2xQekF0WXoyWi13ZTk5OVYxbEVHa1FJN3lrX0o1WFdka3FNMzBST3BJWFdpNlliNmtQTXNhQ0VnYkNMYQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-06T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -4569,12 +4953,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -5173,6 +5557,48 @@
       ]
     },
     {
+      "id": "b6917a1e818f4b",
+      "title": "Strategy’s Bitcoin Doctrine Faces Test as Pension Funds Buy MSTR",
+      "published_at": "2026-09-29T15:15:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Analytics Insight · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeVJUbTNFTzBzWHZ5RWZlV0pidUZLSUp4N0tHWVZBaFg3b3BZeXlSRFVMV25PMEw1UUZ5ZV9FQkoyQThzdWlITVNxaDdQOW91NmxXbHRlY0NuNXI1aE9ITjAzWUdEaGF4dy1Gbl96Q0xnajUwXzh6MVprSThBTV8xRlMzbjF4dm45R0J4TFdGUVRWOERLT3ZjVjdZbzhpZzFlTGtv0gGwAUFVX3lxTE8yZWtYU1Q0Q1Q1QW5GcDJqc0FqOHMzN2RUWlhBZHZZVnp2YWJTVzRPa3dpMkZWZHpZVkZfV3VhNldUemhJdzBQbnhwZGdXM1lIU2RsOVR1N0ZGWlJIb2JYekN1VzE2VTRKTmIyZzZvTWYyYnZKVUduSEszVm5SbTUwNk05WEE0VWhaRnJqcTA3TTFhNjBFUzdFOTE4d2ZKT0ZYaVBIOWIxTk9uMXg2ZWpJ?oc=5",
+      "excerpt": "Strategy’s Bitcoin Doctrine Faces Test as Pension Funds Buy MSTR Analytics Insight",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy’s Bitcoin Doctrine Faces Test as Pension Funds Buy MSTR",
+          "name": "Analytics Insight · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeVJUbTNFTzBzWHZ5RWZlV0pidUZLSUp4N0tHWVZBaFg3b3BZeXlSRFVMV25PMEw1UUZ5ZV9FQkoyQThzdWlITVNxaDdQOW91NmxXbHRlY0NuNXI1aE9ITjAzWUdEaGF4dy1Gbl96Q0xnajUwXzh6MVprSThBTV8xRlMzbjF4dm45R0J4TFdGUVRWOERLT3ZjVjdZbzhpZzFlTGtv0gGwAUFVX3lxTE8yZWtYU1Q0Q1Q1QW5GcDJqc0FqOHMzN2RUWlhBZHZZVnp2YWJTVzRPa3dpMkZWZHpZVkZfV3VhNldUemhJdzBQbnhwZGdXM1lIU2RsOVR1N0ZGWlJIb2JYekN1VzE2VTRKTmIyZzZvTWYyYnZKVUduSEszVm5SbTUwNk05WEE0VWhaRnJqcTA3TTFhNjBFUzdFOTE4d2ZKT0ZYaVBIOWIxTk9uMXg2ZWpJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T15:15:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "1357b2ea1353b3",
       "title": "An XRP Treasury Company Is One Vote Away from Nasdaq: What Happens if Evernorth Lists as XRPN?",
       "published_at": "2026-09-29T07:00:00Z",
@@ -5259,6 +5685,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "ba0e561acba94c",
+      "title": "Strategy’s Bitcoin Treasury Faces Its First Real Test as Institutions Pile Into MSTR",
+      "published_at": "2026-09-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Finance Magnates · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPaTB1cUJjQmU5Y1VGYnhIVmc3SXB4R1VvR1F6M2phX0lSQ0RtVDVfTUl3Wm9EczNNSzFfVjN0ZzZqVmFkbUVvV19wbkUwMTJjd3hEM0lrYlBtdHRYYXdpMzlJNTkzam05d2d4R2Y0enI0aEtUWXJFc1E3QUlWdjZURHBQWXVCTTd4SW5PY19uTTM4N3kwMjVMUjE2dG96bFYwRnFZQnJDQU9Pb3RlalFWUWFiM2lscUdpdm1FcU1HanZoQmV6YV90enc0YWd2LXg3?oc=5",
+      "excerpt": "Strategy’s Bitcoin Treasury Faces Its First Real Test as Institutions Pile Into MSTR Finance Magnates",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy’s Bitcoin Treasury Faces Its First Real Test as Institutions Pile Into MSTR",
+          "name": "Finance Magnates · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPaTB1cUJjQmU5Y1VGYnhIVmc3SXB4R1VvR1F6M2phX0lSQ0RtVDVfTUl3Wm9EczNNSzFfVjN0ZzZqVmFkbUVvV19wbkUwMTJjd3hEM0lrYlBtdHRYYXdpMzlJNTkzam05d2d4R2Y0enI0aEtUWXJFc1E3QUlWdjZURHBQWXVCTTd4SW5PY19uTTM4N3kwMjVMUjE2dG96bFYwRnFZQnJDQU9Pb3RlalFWUWFiM2lscUdpdm1FcU1HanZoQmV6YV90enc0YWd2LXg3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -5600,12 +6068,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 1,
+          "label": "Slightly bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6167,12 +6635,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6293,12 +6761,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6587,12 +7055,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6713,12 +7181,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -7914,6 +8382,48 @@
       ]
     },
     {
+      "id": "de90371f05d096",
+      "title": "RBC Expands Strategy Stake by $4.45M, Bolstering Bitcoin Treasury Exposure | MSTR institutional investment",
+      "published_at": "2026-08-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CryptoRank · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzVW9iSFd2NHp0RnpPZk9iTzhzcHV1c3ZjaWQxcjNPZ1FhQkwtTHdva1NnUnZyaG5SZ09vTzZFM204cFRvVGYxdTFTRWhCU1dwbEQ0OWdURGtJR0VRVmhUdjliWWJKYWk0c3Q3VUw3QXlEdw?oc=5",
+      "excerpt": "RBC Expands Strategy Stake by $4.45M, Bolstering Bitcoin Treasury Exposure | MSTR institutional investment CryptoRank",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "RBC Expands Strategy Stake by $4.45M, Bolstering Bitcoin Treasury Exposure | MSTR institutional investment",
+          "name": "CryptoRank · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzVW9iSFd2NHp0RnpPZk9iTzhzcHV1c3ZjaWQxcjNPZ1FhQkwtTHdva1NnUnZyaG5SZ09vTzZFM204cFRvVGYxdTFTRWhCU1dwbEQ0OWdURGtJR0VRVmhUdjliWWJKYWk0c3Q3VUw3QXlEdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "9ead163b671327",
       "title": "Strategy raised $334 million from MSTR shareholders last week — Bitcoin got none of it",
       "published_at": "2026-08-18T07:00:00Z",
@@ -8379,12 +8889,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -8656,6 +9166,48 @@
       ]
     },
     {
+      "id": "05c91b88dd28ca",
+      "title": "Strategy Sells 1,690 Bitcoin, Raises $653.1 Million Through MSTR Stock Sales: 26 outlets compared",
+      "published_at": "2026-08-05T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "NewsCord · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRF9HaFRONFR4bkV3QjZCZ1N3eFNnb3J0emk3U0EwTjB1TTBORTlpeXZoWHlVQ21XNEpKaWZqaXUzRVgyRVlzZUFRSWdnMDFGdlBRNkZVbzRWVHl5bk9lVzFCaFNGTVlwa01ybzNnMTd2b05vWWpvYW5pbTc5V3IzS3BhUGRBdUhJT1ZsM1lXM0RYcnVJdW5hYjFvM1lVSFp2YXdFZmtYMWI5ZEd6YjhvTWRGOGl2X05CRi1ibjVYYVNxakFzVTRUODlSYndRcTdFajVIS3BZdGJPSlNrc3haTVZwWUQ?oc=5",
+      "excerpt": "Strategy Sells 1,690 Bitcoin, Raises $653.1 Million Through MSTR Stock Sales: 26 outlets compared NewsCord",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Sells 1,690 Bitcoin, Raises $653.1 Million Through MSTR Stock Sales: 26 outlets compared",
+          "name": "NewsCord · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRF9HaFRONFR4bkV3QjZCZ1N3eFNnb3J0emk3U0EwTjB1TTBORTlpeXZoWHlVQ21XNEpKaWZqaXUzRVgyRVlzZUFRSWdnMDFGdlBRNkZVbzRWVHl5bk9lVzFCaFNGTVlwa01ybzNnMTd2b05vWWpvYW5pbTc5V3IzS3BhUGRBdUhJT1ZsM1lXM0RYcnVJdW5hYjFvM1lVSFp2YXdFZmtYMWI5ZEd6YjhvTWRGOGl2X05CRi1ibjVYYVNxakFzVTRUODlSYndRcTdFajVIS3BZdGJPSlNrc3haTVZwWUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-05T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b5dad3e8253038",
       "title": "Strategy Taps Bitcoin Reserves to Service Preferred Stock as STRC Trades Below Par",
       "published_at": "2026-08-04T07:00:00Z",
@@ -8855,12 +9407,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
+          "value": 2,
+          "label": "Bullish",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -8892,6 +9444,55 @@
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPM0hEWU5sNXI4cEpaMTlVeXN5NnBqbmxtemVEdDJ5MUI1SlhhUTBwTGFMUVNVanVvSUpBRlJ1anM2TjdiWnQ1Uzh3YkNyYU5TanpmVU5JSkU1d3FKQWQ0NzdsQXlxS29SSk55ZklobUZiSXBITl9NT3RLNm5xVkRha3Z0SmNYaXdxUUFWLTZVUlhGWVJzeExzYXg0UlZLTlhKMkdyXy1LUmxRbXQ2VkxCQWk0RnpWS0FMLWNzaQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-03T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "5b40a1b177a5a2",
+      "title": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars'",
+      "published_at": "2026-08-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOMEJaaGlOeEFicEJLWEZseVBKQlF6d2YteU1kaVVEcXkweWhoQ3dlZmNxbTZ6UFE3WDVEaXB3Vk5DYW94czZYaGF2Y0Ewd2c4TDloay1DMjNNRkpnRnVTdWpBRDk5bnhVUkZSR1lvSG15SGJLVUhRRm96N2tZa2IyRE1Nb1AzazY2NUwtWVEyRVpVRzBLUGxpTTdn?oc=5",
+      "excerpt": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars' Yahoo Finance",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars'",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOMEJaaGlOeEFicEJLWEZseVBKQlF6d2YteU1kaVVEcXkweWhoQ3dlZmNxbTZ6UFE3WDVEaXB3Vk5DYW94czZYaGF2Y0Ewd2c4TDloay1DMjNNRkpnRnVTdWpBRDk5bnhVUkZSR1lvSG15SGJLVUhRRm96N2tZa2IyRE1Nb1AzazY2NUwtWVEyRVpVRzBLUGxpTTdn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-02T07:00:00Z"
+        },
+        {
+          "title": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars'",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNDQtbUFrSkNuSko3SGNYSWpkYS10ckxHWkRfLUloRU84WENLNUFWV3JUemdDSnJZSnhHWXd0REI1MHQwM1VBb1I5U1lJY2c4T2lPT3pFYlNLcVlXa0lJcEpXaVlCUFd5WjVfVkpwMFZNQ0R1VzBneFQ2SE1XSDhPUjgtWXVKZ2l4MFhfRVU5M2FkeVZCZ2hZMnBB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-30T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -9067,48 +9668,6 @@
           "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPei1HX3NOZjZKTjREUUtBRGxILU80dVBrU2U3cTBPOVRXNGdvZkFnWGY4Qjk4Y2RaWHAxenBYZEZWWWhOY3JQZzVtLXZMRXNwNXdqZzhlWTU4RWtNUjVaMFNjZlY4cWVKRHBlY3R3WVhhelRManVSWXlmczA2THJKRGt5WHNXQlNaYU5tN1N6eXkxTEdPM3VTQVcyZzVjdEN0bXlLa05HZDRlVTdrVUkwSXh1YnJlN2pfZU9VM2FhVmVrYlNmUUVXRVBLMHVNVi1PSDhMNzVXSjhFVUlpZm9pLQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-31T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "31e3419b8a6089",
-      "title": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars'",
-      "published_at": "2026-07-30T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNDQtbUFrSkNuSko3SGNYSWpkYS10ckxHWkRfLUloRU84WENLNUFWV3JUemdDSnJZSnhHWXd0REI1MHQwM1VBb1I5U1lJY2c4T2lPT3pFYlNLcVlXa0lJcEpXaVlCUFd5WjVfVkpwMFZNQ0R1VzBneFQ2SE1XSDhPUjgtWXVKZ2l4MFhfRVU5M2FkeVZCZ2hZMnBB?oc=5",
-      "excerpt": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars' Yahoo Finance",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:38Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy CEO Phong Le Reveals 'Biggest Lesson' the Bitcoin Treasury Company Learned in 2026: 'The Importance of Holding Liquid US Dollars'",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNDQtbUFrSkNuSko3SGNYSWpkYS10ckxHWkRfLUloRU84WENLNUFWV3JUemdDSnJZSnhHWXd0REI1MHQwM1VBb1I5U1lJY2c4T2lPT3pFYlNLcVlXa0lJcEpXaVlCUFd5WjVfVkpwMFZNQ0R1VzBneFQ2SE1XSDhPUjgtWXVKZ2l4MFhfRVU5M2FkeVZCZ2hZMnBB?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-07-30T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -9335,6 +9894,48 @@
       ]
     },
     {
+      "id": "3817d07126dd39",
+      "title": "Why Is Michael Saylor Raising Cash Instead of Buying More Bitcoin?",
+      "published_at": "2026-07-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "KuCoin · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5idHFmVy10aDFWN1FpbE9Nc1ZhRFlhWkp4cDlmOW1rbThtMnk2eDVCLWV1WnlZRndSczdBRTJIYUlXWnpDUDUxSmdCRWQ0dDZ4bzB5dktzbXlCUzBCajV6V3liM3pkeUJaWllNdFgxUG1TS1JERUpmWmMxU2w?oc=5",
+      "excerpt": "Why Is Michael Saylor Raising Cash Instead of Buying More Bitcoin? KuCoin",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Is Michael Saylor Raising Cash Instead of Buying More Bitcoin?",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5idHFmVy10aDFWN1FpbE9Nc1ZhRFlhWkp4cDlmOW1rbThtMnk2eDVCLWV1WnlZRndSczdBRTJIYUlXWnpDUDUxSmdCRWQ0dDZ4bzB5dktzbXlCUzBCajV6V3liM3pkeUJaWllNdFgxUG1TS1JERUpmWmMxU2w?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-27T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "8fadc931f24042",
       "title": "Ripple News: XRP Ledger v3.2.0 Validator Adoption Hits 66% As Fix Amendment Advances",
       "published_at": "2026-07-21T07:00:00Z",
@@ -9445,6 +10046,48 @@
           "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBaYWIzdHpIaDlTWUZndnBMQjA3ZWh1cGltTWdhRVY0RC1TVXMxWEZWZC1tOVRLcVBWbXY1VVpHaW4wWkpIaGtCTG1GMi0tTWw3ZXBndTdwMlRscVk4cWlrdUlBbzhReXJMZk5sZTV0Yl9rS00ycjdOLQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-20T12:32:07Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "ed100005138427",
+      "title": "Strategy raises $263.5M through MSTR sales, holds 843,775 Bitcoin",
+      "published_at": "2026-07-20T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQ2lOOXpGaGVyeDM3V3c1ZHl1TlhfOC1ITWtyanRsRVAtTmhjQkZWZXd0TEowRG00Y0JjYXdxOVg4ZWlMcmRWemUwajZrUEdpclNkNE1hLVk0b2t3TFY1WXdCcno4OTNQMTZRakN1cGNVNHpvQXhwaHpGUlhOVDJiR0oyV2FiNXJDclZqa01Tb2RPQTEybFR1MkQ1dklidWd0TjBXclRycUg3aVdrUVlMTlNmTlJnVXUxR2NfZkRUZWQ2dVVaY3c?oc=5",
+      "excerpt": "Strategy raises $263.5M through MSTR sales, holds 843,775 Bitcoin TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy raises $263.5M through MSTR sales, holds 843,775 Bitcoin",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQ2lOOXpGaGVyeDM3V3c1ZHl1TlhfOC1ITWtyanRsRVAtTmhjQkZWZXd0TEowRG00Y0JjYXdxOVg4ZWlMcmRWemUwajZrUEdpclNkNE1hLVk0b2t3TFY1WXdCcno4OTNQMTZRakN1cGNVNHpvQXhwaHpGUlhOVDJiR0oyV2FiNXJDclZqa01Tb2RPQTEybFR1MkQ1dklidWd0TjBXclRycUg3aVdrUVlMTlNmTlJnVXUxR2NfZkRUZWQ2dVVaY3c?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-20T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -9724,6 +10367,90 @@
       ]
     },
     {
+      "id": "bda50bef030984",
+      "title": "Strategy (MSTR) Sells 3,588 Bitcoin And Rewrites Its Treasury Playbook",
+      "published_at": "2026-07-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOY0FFczBoeUx5N0wwOTIzaWhhLTd0WUdqalNjUmE3MVhxRktQVVY5SUNCUG0tSTl0b0d3MFJLWEhsc1hYRmRGc1NORUY2T0RWSWNnZThyRkdjSV85SGNpaGNMZVlydnJ3dlJrWE42UGs5YW14V0k1d2xFcUU4THRZRmk0MFFEUnZqcUVzVVpsMEt4d2Zx?oc=5",
+      "excerpt": "Strategy (MSTR) Sells 3,588 Bitcoin And Rewrites Its Treasury Playbook Yahoo Finance",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Sells 3,588 Bitcoin And Rewrites Its Treasury Playbook",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOY0FFczBoeUx5N0wwOTIzaWhhLTd0WUdqalNjUmE3MVhxRktQVVY5SUNCUG0tSTl0b0d3MFJLWEhsc1hYRmRGc1NORUY2T0RWSWNnZThyRkdjSV85SGNpaGNMZVlydnJ3dlJrWE42UGs5YW14V0k1d2xFcUU4THRZRmk0MFFEUnZqcUVzVVpsMEt4d2Zx?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-10T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "e9893e511fd646",
+      "title": "Strategy's Trilemma: How Saylor Can Offset Bitcoin Losses With STRC Buybacks (NASDAQ:MSTR)",
+      "published_at": "2026-07-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Seeking Alpha · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdnV5clhVR0ZGWVp3X0ZSbEFzcktab3c5RTJVVjVvWUQzSUZFV2V6NXJHcUNlNnppUGNINzBSb2NON2F5LVVwQVItVVJmZHY5dExfVmNFS3hGY0J0Nk1ReW5SX1JTX1VWZS0tcm5yQWhsS0VEY0tjbGRRd3B2QWxvbHdkdkNwRUdhaXdVVk9OYzBaR0FYYlFrOE1lYWpHZ01lTnZSYzdxX29OVkJnWUljSUZfU00?oc=5",
+      "excerpt": "Strategy's Trilemma: How Saylor Can Offset Bitcoin Losses With STRC Buybacks (NASDAQ:MSTR) Seeking Alpha",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's Trilemma: How Saylor Can Offset Bitcoin Losses With STRC Buybacks (NASDAQ:MSTR)",
+          "name": "Seeking Alpha · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdnV5clhVR0ZGWVp3X0ZSbEFzcktab3c5RTJVVjVvWUQzSUZFV2V6NXJHcUNlNnppUGNINzBSb2NON2F5LVVwQVItVVJmZHY5dExfVmNFS3hGY0J0Nk1ReW5SX1JTX1VWZS0tcm5yQWhsS0VEY0tjbGRRd3B2QWxvbHdkdkNwRUdhaXdVVk9OYzBaR0FYYlFrOE1lYWpHZ01lTnZSYzdxX29OVkJnWUljSUZfU00?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-10T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "80f8e672f8dba9",
       "title": "XRPL Security Fixes for Lending and Vaults Stalled as Upgrade Sails Through",
       "published_at": "2026-07-09T07:00:00Z",
@@ -9845,6 +10572,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "bcf0f6e6f279a8",
+      "title": "Strategy: It's Always Darkest Before Dawn (NASDAQ:MSTR)",
+      "published_at": "2026-07-07T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Seeking Alpha · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNN3RXQ0pwX1JyYlhzTm1yZFFmOVl5TUVpY2xtYnJGSzNMN3RaNmlpZktNRDVoQlpfd0RkNUZWa3lTb1ZmS3dwQzRCTU5pM21PdUp0bE5hTHZYTnpMR01HcXkzTEtJeEhlVmxWTDBMWXVLNkZ2TUhlQXFoWmpwT3VoaWZ3ZEhPTmc?oc=5",
+      "excerpt": "Strategy: It's Always Darkest Before Dawn (NASDAQ:MSTR) Seeking Alpha",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy: It's Always Darkest Before Dawn (NASDAQ:MSTR)",
+          "name": "Seeking Alpha · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNN3RXQ0pwX1JyYlhzTm1yZFFmOVl5TUVpY2xtYnJGSzNMN3RaNmlpZktNRDVoQlpfd0RkNUZWa3lTb1ZmS3dwQzRCTU5pM21PdUp0bE5hTHZYTnpMR01HcXkzTEtJeEhlVmxWTDBMWXVLNkZ2TUhlQXFoWmpwT3VoaWZ3ZEhPTmc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-07T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -9976,6 +10745,48 @@
       ]
     },
     {
+      "id": "5fbc57db65725a",
+      "title": "Strategy (MSTR) stock slides as Bitcoin weakness prompts TD Cowen target cut",
+      "published_at": "2026-06-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMkJWTzF2SFpiRldtMmhDSWNHTHE5U2I0TS1ZWWtLWjRKOGlhSEZSRnpqbGhlMGtQdW9EOEQtU1JUbFdYV05JRzlxN1psU2JoYk0wMUhLM0p1cjdFbW1lalhxM2ZNU2tNUmVGbmdSZzVMUXlDTWM5cFprTC04UlYtcG9fcmJneFA2Vk5yalFkNlQtYWlFSjh5Vm9yTm9LcEFNWTBad1ZDSjh1MzlRV2FfNXpjU2psZWdZS2VPd0NCSGczc1ZRMTVaSjRWbw?oc=5",
+      "excerpt": "Strategy (MSTR) stock slides as Bitcoin weakness prompts TD Cowen target cut TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) stock slides as Bitcoin weakness prompts TD Cowen target cut",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMkJWTzF2SFpiRldtMmhDSWNHTHE5U2I0TS1ZWWtLWjRKOGlhSEZSRnpqbGhlMGtQdW9EOEQtU1JUbFdYV05JRzlxN1psU2JoYk0wMUhLM0p1cjdFbW1lalhxM2ZNU2tNUmVGbmdSZzVMUXlDTWM5cFprTC04UlYtcG9fcmJneFA2Vk5yalFkNlQtYWlFSjh5Vm9yTm9LcEFNWTBad1ZDSjh1MzlRV2FfNXpjU2psZWdZS2VPd0NCSGczc1ZRMTVaSjRWbw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "66ec0fedcbddfb",
       "title": "Strategy Announces Digital Credit Capital Framework, USD Reserve Policy, STRC Dividend Policy, Digital Credit and MSTR Repurchase Authorizations, and BTC Monetization Program",
       "published_at": "2026-06-29T07:00:00Z",
@@ -10049,12 +10860,138 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7a06a607e47818",
+      "title": "Strategy's New Capital Plan Draws Optimism, While Critics Warn Of A 'Dead Cat Bounce' In Michael Saylor-Chaired Bitcoin Treasury Company",
+      "published_at": "2026-06-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQnQwNjJHXzRYbmswS1hfMXdIOUZSS3dhVEdzRWotakE5Wm5qVkRRRmtiWS1qUEdZR2N0aWZTQVJna2dPMFc3b0NxOEVsNjNnemFreDhiYmlkNTlTUW80YmcwRlhtTGdxMDV2Zm8ya25hWHQ5YklmelEzbmwzTG9DS1dDYVdnamE0ZjY4ZFNLRHNFbmNsX1B4R0JFTm5RU3ZuSzM2dQ?oc=5",
+      "excerpt": "Strategy's New Capital Plan Draws Optimism, While Critics Warn Of A 'Dead Cat Bounce' In Michael Saylor-Chaired Bitcoin Treasury Company Yahoo Finance",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's New Capital Plan Draws Optimism, While Critics Warn Of A 'Dead Cat Bounce' In Michael Saylor-Chaired Bitcoin Treasury Company",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQnQwNjJHXzRYbmswS1hfMXdIOUZSS3dhVEdzRWotakE5Wm5qVkRRRmtiWS1qUEdZR2N0aWZTQVJna2dPMFc3b0NxOEVsNjNnemFreDhiYmlkNTlTUW80YmcwRlhtTGdxMDV2Zm8ya25hWHQ5YklmelEzbmwzTG9DS1dDYVdnamE0ZjY4ZFNLRHNFbmNsX1B4R0JFTm5RU3ZuSzM2dQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "eaf6b8cf3981b1",
+      "title": "MSTR jumps after Strategy says it may sell more Bitcoin to fund dividends and buybacks",
+      "published_at": "2026-06-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CryptoSlate · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYjZFeWFBV015LUdlSkFVRHh5RUJ4ZjVhU1NJZmRwdzU2Nl94bms0dF9TNVNHMnc1MUNKY0VlbXFkSTNTdV9XbEJmY1cwUml6RV93MDFhYVprTUk5MVI4bFlpQlpqZjB4eHJ3b1ctbFJTV1pfSUlVU1pZUHRyUDRmUFVkRkkyZmlGUm90Z3BIZEdxZHQydlNzTE5FVTc3Rkd3YlFFUmx0TTVkQQ?oc=5",
+      "excerpt": "MSTR jumps after Strategy says it may sell more Bitcoin to fund dividends and buybacks CryptoSlate",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR jumps after Strategy says it may sell more Bitcoin to fund dividends and buybacks",
+          "name": "CryptoSlate · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYjZFeWFBV015LUdlSkFVRHh5RUJ4ZjVhU1NJZmRwdzU2Nl94bms0dF9TNVNHMnc1MUNKY0VlbXFkSTNTdV9XbEJmY1cwUml6RV93MDFhYVprTUk5MVI4bFlpQlpqZjB4eHJ3b1ctbFJTV1pfSUlVU1pZUHRyUDRmUFVkRkkyZmlGUm90Z3BIZEdxZHQydlNzTE5FVTc3Rkd3YlFFUmx0TTVkQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "be26df4bd72c6c",
+      "title": "Strategy (MSTR) Raises STRC Dividend, Authorizes $2B in Buybacks, and Unlocks Further Bitcoin Sales",
+      "published_at": "2026-06-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE41Um13UDhIM1NtbFBiVjVOUGNFWGtBVlFLb01Qb0gzenB0UXpVMVp1UlJsNmtJT3pZTWJyRFZQNVZKYjJjOEdMbnlFTm04VHRGZW5LeU82SmdUUlc5S1dpdGY1d0RQN3pWdVl1SEtGYWRkNlJHQUNuM3J3S2JLNGc?oc=5",
+      "excerpt": "Strategy (MSTR) Raises STRC Dividend, Authorizes $2B in Buybacks, and Unlocks Further Bitcoin Sales Bitcoin Magazine",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Raises STRC Dividend, Authorizes $2B in Buybacks, and Unlocks Further Bitcoin Sales",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE41Um13UDhIM1NtbFBiVjVOUGNFWGtBVlFLb01Qb0gzenB0UXpVMVp1UlJsNmtJT3pZTWJyRFZQNVZKYjJjOEdMbnlFTm04VHRGZW5LeU82SmdUUlc5S1dpdGY1d0RQN3pWdVl1SEtGYWRkNlJHQUNuM3J3S2JLNGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -10347,6 +11284,48 @@
       ]
     },
     {
+      "id": "2cc4e0ea0880aa",
+      "title": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh’s First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65?",
+      "published_at": "2026-06-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOYThVbmlpRWpvZllHUXRLd0hYbE53bVlXUzBaOWpfQ18tZzJ5TmdXdkxvOWdHem80ZFcxNmV1cklSRWdUOE8xLVNKb1poWnJrOFJTelJ6RldQOVkydHR2cms5YXYtT29KT2E4bUlfOVdmaE1GVF83eGx2a2RUVktFeDdFVk9McHM2U1VmeTZYZkhpNDJET0JrYllCaTQ0b2NGR3lLQzhmall4cXctaXplc2pqLV9BbVRLUDNodkctdWZXN09uVUQ5Q1VsaEF0T3gwd1J3ZE5OVWJQM0xfblZUT0xFVm5PQUZFSlp1a1ppUW4wYWpieWFxdnVsclNwNURpcU9yeEZJNzdha0ZuSDhodjRBS0FXRlNtaWNF?oc=5",
+      "excerpt": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh’s First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65? 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh’s First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOYThVbmlpRWpvZllHUXRLd0hYbE53bVlXUzBaOWpfQ18tZzJ5TmdXdkxvOWdHem80ZFcxNmV1cklSRWdUOE8xLVNKb1poWnJrOFJTelJ6RldQOVkydHR2cms5YXYtT29KT2E4bUlfOVdmaE1GVF83eGx2a2RUVktFeDdFVk9McHM2U1VmeTZYZkhpNDJET0JrYllCaTQ0b2NGR3lLQzhmall4cXctaXplc2pqLV9BbVRLUDNodkctdWZXN09uVUQ5Q1VsaEF0T3gwd1J3ZE5OVWJQM0xfblZUT0xFVm5PQUZFSlp1a1ppUW4wYWpieWFxdnVsclNwNURpcU9yeEZJNzdha0ZuSDhodjRBS0FXRlNtaWNF?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "8e12c3d1bea47f",
       "title": "Saylor Created MicroStrategy’s STRC Stock with AI, and Now It Crashed Below $100",
       "published_at": "2026-06-18T07:00:00Z",
@@ -10559,6 +11538,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c8d53cfa70b7e9",
+      "title": "Strategy Stock Is Down 75%: Has Billionaire Michael Saylor's Bitcoin Treasury Experiment Failed?",
+      "published_at": "2026-06-08T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Motley Fool · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOa2dsQW9IcjE4TG1YbEg5QkJHalZSUEhmVEFlVDJHZW5mZlZDSzBKdzFfdkxPbXBCM2I3aUZDbjBIMlAxaENjckw4YU91NDlwdUktSlpJV3R1blhBZWo1aVBQTFg3QW8xNGtMSlhDcmhDV201VHRHZ2p3WU9FZ0I0WHd6MG9yd2t3U1gyYWhuZjRrRWREN2U0?oc=5",
+      "excerpt": "Strategy Stock Is Down 75%: Has Billionaire Michael Saylor's Bitcoin Treasury Experiment Failed? The Motley Fool",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Stock Is Down 75%: Has Billionaire Michael Saylor's Bitcoin Treasury Experiment Failed?",
+          "name": "The Motley Fool · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOa2dsQW9IcjE4TG1YbEg5QkJHalZSUEhmVEFlVDJHZW5mZlZDSzBKdzFfdkxPbXBCM2I3aUZDbjBIMlAxaENjckw4YU91NDlwdUktSlpJV3R1blhBZWo1aVBQTFg3QW8xNGtMSlhDcmhDV201VHRHZ2p3WU9FZ0I0WHd6MG9yd2t3U1gyYWhuZjRrRWREN2U0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-08T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -11037,6 +12058,48 @@
       ]
     },
     {
+      "id": "0aad0b2a73052c",
+      "title": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact'",
+      "published_at": "2026-06-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxORFhSWGQwV1Q4bkd2VzhSWEloSnBtODc5a051TjFCeG9rZUFXUFU2OF9aSTNvQ2FlLTdFZ0duakwtSDh0UC1kV0hRN1NnWWgzc3YyNXl0SFh2QUN2elcza1JFWGpqNEd5RkxXWWZnQUd4QUJyQUFDRUJBTHRnOE9YblhGX2JqV1BwcU9jbXY5SWI1cFh2bkc2Nm9SRzRiNVFWS25paV9sRjdFUUtGQ2ViMzE1b3dyZ2FuWkhjaUJEZTJDcTE4VEpiU3NXWXd1anNBOUdmaHhab0wzS2NVS1VTcXl4NGlVUkhHZThoenNZNDNiTE9ZWkdsZTZJZVdDY0EyOUpKUA?oc=5",
+      "excerpt": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact' TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact'",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxORFhSWGQwV1Q4bkd2VzhSWEloSnBtODc5a051TjFCeG9rZUFXUFU2OF9aSTNvQ2FlLTdFZ0duakwtSDh0UC1kV0hRN1NnWWgzc3YyNXl0SFh2QUN2elcza1JFWGpqNEd5RkxXWWZnQUd4QUJyQUFDRUJBTHRnOE9YblhGX2JqV1BwcU9jbXY5SWI1cFh2bkc2Nm9SRzRiNVFWS25paV9sRjdFUUtGQ2ViMzE1b3dyZ2FuWkhjaUJEZTJDcTE4VEpiU3NXWXd1anNBOUdmaHhab0wzS2NVS1VTcXl4NGlVUkhHZThoenNZNDNiTE9ZWkdsZTZJZVdDY0EyOUpKUA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "cb61b10747ba16",
       "title": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs",
       "published_at": "2026-06-01T07:00:00Z",
@@ -11247,6 +12310,97 @@
       ]
     },
     {
+      "id": "16e0ade42b4c16",
+      "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
+      "published_at": "2026-05-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Cryptonews · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZFFPSmVRZHZJc2gwRUJMZzVrcldqTFNEOWFfN0thTE9rV3ZOTzNhRXdnWnhObTZGN2xpdWxCX1owRlM5QlhMX0drSlFDOG9HMTBJeGdvX1ZWc0ZGazcwUjVWX0JuWU9WVDRidlRHSTh3Wl9WLVdlYlVzdGVwS2ZSRFFsSGJTZjNHR2ljNlBraWVRbG00MlNMeDNPWDF2VzFkWjVmRw?oc=5",
+      "excerpt": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC Cryptonews",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
+          "name": "Cryptonews · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZFFPSmVRZHZJc2gwRUJMZzVrcldqTFNEOWFfN0thTE9rV3ZOTzNhRXdnWnhObTZGN2xpdWxCX1owRlM5QlhMX0drSlFDOG9HMTBJeGdvX1ZWc0ZGazcwUjVWX0JuWU9WVDRidlRHSTh3Wl9WLVdlYlVzdGVwS2ZSRFFsSGJTZjNHR2ljNlBraWVRbG00MlNMeDNPWDF2VzFkWjVmRw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-25T07:00:00Z"
+        },
+        {
+          "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQeHZPVVl0b2w5VmllLWplM2tTM1JpLXVENWpIaTJpa0JBd3VsSUJMTDRFRG40QWE5aUp0djg5eTdWUEhqTWUwYUFJRVNLTTRfXy1OVUJxQUplVEgxYVMtNWVxRTZ0UldqY3p3NHZpd2NoSG5oa2g4OE1qS1BqQUdiZXJqdXVudi1PYnVENEwtdzdxX3Npdk16cEdLZnQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-25T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "2b423c6567a38d",
+      "title": "Michael Saylor’s Strategy Buys Bonds Over Bitcoin, Here’s Why It’s Bullish",
+      "published_at": "2026-05-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOGtpQVk4UGd5dXhiQXAzWmZuVGNmenRJOXhyVm1KeWZWX3A5Z0hHcW9aRWJHczY3aDd1UlNrOXYwT0NmTk5oWHVMbnBmRXl4Y1loR0F5OWQzd28wVVNKRFR2ZDJzd3F5eFdkNFhTV0xrN2x0eUgzN290dWtDV1k4ZVU0dkhUZDZhbDRHajNvYlg1NEZ0Yms4bzYzVkxvYkVz?oc=5",
+      "excerpt": "Michael Saylor’s Strategy Buys Bonds Over Bitcoin, Here’s Why It’s Bullish Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s Strategy Buys Bonds Over Bitcoin, Here’s Why It’s Bullish",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOGtpQVk4UGd5dXhiQXAzWmZuVGNmenRJOXhyVm1KeWZWX3A5Z0hHcW9aRWJHczY3aDd1UlNrOXYwT0NmTk5oWHVMbnBmRXl4Y1loR0F5OWQzd28wVVNKRFR2ZDJzd3F5eFdkNFhTV0xrN2x0eUgzN290dWtDV1k4ZVU0dkhUZDZhbDRHajNvYlg1NEZ0Yms4bzYzVkxvYkVz?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-25T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b2647520a6dc55",
       "title": "SWIFT Lists Ripple Treasury As Certified Partner In America",
       "published_at": "2026-05-20T07:00:00Z",
@@ -11284,6 +12438,90 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7372c212e107da",
+      "title": "MSTR Stock Forecast: Strategy Buys 24,869 Bitcoin for $2B to Hit 843,738 BTC Holdings",
+      "published_at": "2026-05-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 70,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWkVjcGdQdTBLeThmNHl6UUExdzRZUkxBS2tRZ1dJV25pRks3VEh0NWJ3Wk5SVmpvR3RTblpMalZZcmFHOGdvellvdjl6XzUtcGJDeGVuVURMTkpidmVKN2RqVy1VVUxvc2lyVzN3eElVZ1l2Qmpfb0Z5Qm9vUnUxRXc4Sk15QjZvVFc3VzhuaFRZcEszRlpsMWtXdThydWFpVUMwMTlqR2tNbmtrek9FR3hR?oc=5",
+      "excerpt": "MSTR Stock Forecast: Strategy Buys 24,869 Bitcoin for $2B to Hit 843,738 BTC Holdings Coinpaper",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Forecast: Strategy Buys 24,869 Bitcoin for $2B to Hit 843,738 BTC Holdings",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWkVjcGdQdTBLeThmNHl6UUExdzRZUkxBS2tRZ1dJV25pRks3VEh0NWJ3Wk5SVmpvR3RTblpMalZZcmFHOGdvellvdjl6XzUtcGJDeGVuVURMTkpidmVKN2RqVy1VVUxvc2lyVzN3eElVZ1l2Qmpfb0Z5Qm9vUnUxRXc4Sk15QjZvVFc3VzhuaFRZcEszRlpsMWtXdThydWFpVUMwMTlqR2tNbmtrek9FR3hR?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "235770b4b19dea",
+      "title": "Strategy (MSTR) buys another $2B in Bitcoin as holdings top 843,000 BTC",
+      "published_at": "2026-05-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQTdhSzRSeVY5Zmh4bVE0UXVmU0YtT04td0Jkd3NfaEF6b20xUGxBVmhyeEVSMi10LWoyMFBockxFTmFudEFxTEJvazB5ZFFyTHBPR0p0dmUyX2s2Nzl1cENURWlUVTNOTU1BZHBQeGRvcnBZVHo0ZkQwVEJYTTlVNHFtS3FJVmVMSVJFUmh4SzFYX04wRi1xVjlpUHJ5TjROQ25VeDZlUEZrZjgtdkxvRklJb0VWcVRKY2dHYjV6RzZ6VnM?oc=5",
+      "excerpt": "Strategy (MSTR) buys another $2B in Bitcoin as holdings top 843,000 BTC TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) buys another $2B in Bitcoin as holdings top 843,000 BTC",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQTdhSzRSeVY5Zmh4bVE0UXVmU0YtT04td0Jkd3NfaEF6b20xUGxBVmhyeEVSMi10LWoyMFBockxFTmFudEFxTEJvazB5ZFFyTHBPR0p0dmUyX2s2Nzl1cENURWlUVTNOTU1BZHBQeGRvcnBZVHo0ZkQwVEJYTTlVNHFtS3FJVmVMSVJFUmh4SzFYX04wRi1xVjlpUHJ5TjROQ25VeDZlUEZrZjgtdkxvRklJb0VWcVRKY2dHYjV6RzZ6VnM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -11975,6 +13213,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7da52e907e72b4",
+      "title": "Strategy (MSTR) adds $255 million more bitcoin to its treasury which now holds 818,334",
+      "published_at": "2026-04-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSHhQWTJZLTkxRXNZZjFmQWtscWhmcWduSllfUnJkYmVqeENIS2twYVh4QUppbFFLM1RpS0pwREQyby1Vc29jY21nOEQzZkZiVHZuQVB6MUNxdlFjMGFwOWpiellEMHphVG9sNUF1UVBNdkg4ZzJIYjBrdDRiR0hWN2lFaWF4ako5MkQ1eW9mbVczTk9NeGhILVpjbU1WLXk3QkEtUUdhNEs5SndrTk9kaXBaRWM4bnFGcGY4b0RTdmFwOHQ1bUFGa2dXcTk?oc=5",
+      "excerpt": "Strategy (MSTR) adds $255 million more bitcoin to its treasury which now holds 818,334 CoinDesk",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) adds $255 million more bitcoin to its treasury which now holds 818,334",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSHhQWTJZLTkxRXNZZjFmQWtscWhmcWduSllfUnJkYmVqeENIS2twYVh4QUppbFFLM1RpS0pwREQyby1Vc29jY21nOEQzZkZiVHZuQVB6MUNxdlFjMGFwOWpiellEMHphVG9sNUF1UVBNdkg4ZzJIYjBrdDRiR0hWN2lFaWF4ako5MkQ1eW9mbVczTk9NeGhILVpjbU1WLXk3QkEtUUdhNEs5SndrTk9kaXBaRWM4bnFGcGY4b0RTdmFwOHQ1bUFGa2dXcTk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-27T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -14497,6 +15777,48 @@
       ]
     },
     {
+      "id": "a6ca886e32ba4d",
+      "title": "Michael Saylor's Strategy buys another 1,142 BTC for $90 million as total bitcoin treasury value remains below cost",
+      "published_at": "2026-02-09T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Block · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbmlDVmRTcl9uaHQtNUlkOGlUbEtfMDlESzBWVDJvX0Z0YXFfUmlUSUs4MEY1a2xzVER5OWNqZ2lKNlpOck5xTC1EdDhyYlZ5N3gxZDBhOWw1Yjc3eVA0ZTJPQ2Zpc3pyTUZYajFGNWU5R0tVZjRqeWQtYmFfajJuanNzZ1JSTDIwRTljdEpEbEdhVjc3Z0k1RElSVy05cXNyOXZ6UVFRN195cXFOSWJKMGlKZmlwRkRqeDJidG1qR3B5T3g2dkJIQXlfNmlHTUxRUXdJ?oc=5",
+      "excerpt": "Michael Saylor's Strategy buys another 1,142 BTC for $90 million as total bitcoin treasury value remains below cost The Block",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy buys another 1,142 BTC for $90 million as total bitcoin treasury value remains below cost",
+          "name": "The Block · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbmlDVmRTcl9uaHQtNUlkOGlUbEtfMDlESzBWVDJvX0Z0YXFfUmlUSUs4MEY1a2xzVER5OWNqZ2lKNlpOck5xTC1EdDhyYlZ5N3gxZDBhOWw1Yjc3eVA0ZTJPQ2Zpc3pyTUZYajFGNWU5R0tVZjRqeWQtYmFfajJuanNzZ1JSTDIwRTljdEpEbEdhVjc3Z0k1RElSVy05cXNyOXZ6UVFRN195cXFOSWJKMGlKZmlwRkRqeDJidG1qR3B5T3g2dkJIQXlfNmlHTUxRUXdJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-09T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "966aed6e18c27d",
       "title": "XRP Treasury Firm Evernorth Sits on $380 Million Loss as Price Struggles",
       "published_at": "2026-02-05T08:00:00Z",
@@ -14676,6 +15998,48 @@
       ]
     },
     {
+      "id": "fba5a5056e7a51",
+      "title": "Michael Saylor's Strategy Is Now Underwater on Bitcoin. Is The Dam Breaking Open?",
+      "published_at": "2026-02-02T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQNV9YNk1WZjJLOW83LVhJUDBoX2V1Q1lHVV96MjVHeGh6Zl9IUTR0UlFKd2RrY0toM05TNGRGaFBsVmFYWERVY19NVUQyUzBtS1RVdjQyMWVnZUMwbjVUVzlCUG4yUUxOOW5HQzh5WW1yZ1JoUFFvRVU0SXFTUkYtamZadlpWdkxicFFOUHNn?oc=5",
+      "excerpt": "Michael Saylor's Strategy Is Now Underwater on Bitcoin. Is The Dam Breaking Open? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy Is Now Underwater on Bitcoin. Is The Dam Breaking Open?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQNV9YNk1WZjJLOW83LVhJUDBoX2V1Q1lHVV96MjVHeGh6Zl9IUTR0UlFKd2RrY0toM05TNGRGaFBsVmFYWERVY19NVUQyUzBtS1RVdjQyMWVnZUMwbjVUVzlCUG4yUUxOOW5HQzh5WW1yZ1JoUFFvRVU0SXFTUkYtamZadlpWdkxicFFOUHNn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-02T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "bdb07884d107b6",
       "title": "Strategy raises STRC dividend as the preferred stock's price drifts below par",
       "published_at": "2026-02-01T08:00:00Z",
@@ -14791,6 +16155,48 @@
           "title": "Strategy Inc. (MSTR) Bolsters Bitcoin Holdings after Shares Sale",
           "name": "Yahoo Finance · via Google News",
           "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVnJiZzhYMEZpeEozN2lyc0ItNDc5bk9faEtITnVwcTh3cXVLUlpxYUpIc0ZmOUQ2ZEVrdTI3OUJtQy1nRThaRlhnSDJsTHVGeFotT3FldHhsdnNCYUM4WW51OTB2Q2c4NmpkWVMxdXlXd3dTRTlMUXRZYTN5UTBLemF6NEVhUzQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-31T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b1262675aeef5e",
+      "title": "Michael Saylor’s bitcoin stack is officially underwater, but here’s why he likely won't reach for the panic button",
+      "published_at": "2026-01-31T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPR3BOWWJkNlVHQVpoVHg1b1ZQcGhLMWV0cWRBZkVSU2lOc0tvakZ1Y0lNQnpXV21McG9Qdm9haC1LNkJvVUdvNlRkM1AxNnM0UGF4TXNCc2VhbHRRaXJrODVub2RfRkxsUW0zZ0hpR1ROU0d0bl9NQk9FTjJfVGtXTXBVTmM5TjJSZXpfd0FqU3JVbXlpTG1hRXNWUTJzdXd4Sl9qNkFWVDRGaDc5V0RHRzJDa1hBNkVXMm9KaDVGTUhSemJiSGFuRExaNC1RcWt0SGhPSVh4T1pXbXhpT0RQVmdDS1MtR09fV1gtSmNoOA?oc=5",
+      "excerpt": "Michael Saylor’s bitcoin stack is officially underwater, but here’s why he likely won't reach for the panic button CoinDesk",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s bitcoin stack is officially underwater, but here’s why he likely won't reach for the panic button",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPR3BOWWJkNlVHQVpoVHg1b1ZQcGhLMWV0cWRBZkVSU2lOc0tvakZ1Y0lNQnpXV21McG9Qdm9haC1LNkJvVUdvNlRkM1AxNnM0UGF4TXNCc2VhbHRRaXJrODVub2RfRkxsUW0zZ0hpR1ROU0d0bl9NQk9FTjJfVGtXTXBVTmM5TjJSZXpfd0FqU3JVbXlpTG1hRXNWUTJzdXd4Sl9qNkFWVDRGaDc5V0RHRzJDa1hBNkVXMm9KaDVGTUhSemJiSGFuRExaNC1RcWt0SGhPSVh4T1pXbXhpT0RQVmdDS1MtR09fV1gtSmNoOA?oc=5",
           "source_type": "Media",
           "published_at": "2026-01-31T08:00:00Z"
         }
@@ -15324,6 +16730,48 @@
       ]
     },
     {
+      "id": "f3d7381b454397",
+      "title": "Michael Saylor’s Bitcoin Playbook: What He Says Will Win",
+      "published_at": "2026-01-22T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQX3FLNXowa2s1TmFIUHlFQUg1eWVPUnlyd3psNEE5LWFzZXZab2FkS2c5aHplU3VfQkNrcEFyRE13YW1DeGVRVXNQX2E3S1A5eTZiOGtKRldlQWVVVDBDaHpuRVU3cUwyVzJmckFoNFpoVUZXLUF3ckNHSXV5WmV6R0t2eElmZEZDaUNWckJ1LTJNZDdla3NTWTJ2V1k3Qk0?oc=5",
+      "excerpt": "Michael Saylor’s Bitcoin Playbook: What He Says Will Win 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s Bitcoin Playbook: What He Says Will Win",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQX3FLNXowa2s1TmFIUHlFQUg1eWVPUnlyd3psNEE5LWFzZXZab2FkS2c5aHplU3VfQkNrcEFyRE13YW1DeGVRVXNQX2E3S1A5eTZiOGtKRldlQWVVVDBDaHpuRVU3cUwyVzJmckFoNFpoVUZXLUF3ckNHSXV5WmV6R0t2eElmZEZDaUNWckJ1LTJNZDdla3NTWTJ2V1k3Qk0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-22T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "0e8d878989bdac",
       "title": "Evernorth Announces Strategic Collaboration with t54",
       "published_at": "2026-01-21T12:00:00Z",
@@ -15786,6 +17234,48 @@
       ]
     },
     {
+      "id": "c0e34ca2ccb2be",
+      "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
+      "published_at": "2026-01-05T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Block · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
+      "excerpt": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC The Block",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
+          "name": "The Block · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-05T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "5f79483b93eac3",
       "title": "MSTR Leverages STRC to Amplify Bitcoin Exposure as Preferred Stock Hits $100",
       "published_at": "2026-01-04T08:00:00Z",
@@ -16064,6 +17554,90 @@
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRTJwa1pmSGxMX1hNam5FQU5tZGthNlNfdktKdlBuNm1idHREVGZjSGc1YzB3dV9xeHJ2Ti1QUnYtbXZZYmxEVnBOeDhIckNONE4weUdIMl9obGJ5eGdNdzloUm16eDdkV0xQZUF6alhSVHBrRFQyelItdE5ybGFVWGtGdWZxOVF1cmtzaGNtZTFFNUtRNS1RYnFuRGV4RnM?oc=5",
           "source_type": "Media",
           "published_at": "2025-12-08T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7c1040cc1ab180",
+      "title": "Strategy (MSTR), bitcoin treasury companies",
+      "published_at": "2025-12-02T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "eToro · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObG1STkVGRl9sLVJabU9EU3Z1QVlFZEpEMFlJR0hPWkZEbUtZMkNXdTNsZkJtcUJpcFh4cFNSTXhQUGprZkU2cDFZS29IamdOWjVBblMydy1NUk8yZlJQLWZBS2JIUVpSS093NnRQc0IyYzhoQ1NuVzhyWENJcmpvRVE5azJhaXJuMjlHYU9fSERhb3hkdDI5VU5VbEpKZTRZbEZUZkRDVS1ud0N0MXRJQ2lzLUxYTTFpZmVlWg?oc=5",
+      "excerpt": "Strategy (MSTR), bitcoin treasury companies eToro",
+      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR), bitcoin treasury companies",
+          "name": "eToro · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObG1STkVGRl9sLVJabU9EU3Z1QVlFZEpEMFlJR0hPWkZEbUtZMkNXdTNsZkJtcUJpcFh4cFNSTXhQUGprZkU2cDFZS29IamdOWjVBblMydy1NUk8yZlJQLWZBS2JIUVpSS093NnRQc0IyYzhoQ1NuVzhyWENJcmpvRVE5azJhaXJuMjlHYU9fSERhb3hkdDI5VU5VbEpKZTRZbEZUZkRDVS1ud0N0MXRJQ2lzLUxYTTFpZmVlWg?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-12-02T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "e40989fe418462",
+      "title": "Michael Saylor's MicroStrategy moves billions in Bitcoin",
+      "published_at": "2025-11-28T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa1BFSTZjVzJNQ2NwRmY5bWplVEhkSndFSml2Wm1ENjBzRWU0eFM2d25haU03Ny1ZaDFWZm96NHAyZUFwQzlQa01xWVBKUmxCSEdPRWFLY1NleGg5Y2xpNjR0QlhKWTUzYVdhUFgwWmFMMWtrd0RqVHpDS3g5MV9ZN3ozNV9mTGFfMmFfZmF6OUZJS2Jn?oc=5",
+      "excerpt": "Michael Saylor's MicroStrategy moves billions in Bitcoin Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-27T08:05:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's MicroStrategy moves billions in Bitcoin",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa1BFSTZjVzJNQ2NwRmY5bWplVEhkSndFSml2Wm1ENjBzRWU0eFM2d25haU03Ny1ZaDFWZm96NHAyZUFwQzlQa01xWVBKUmxCSEdPRWFLY1NleGg5Y2xpNjR0QlhKWTUzYVdhUFgwWmFMMWtrd0RqVHpDS3g5MV9ZN3ozNV9mTGFfMmFfZmF6OUZJS2Jn?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-28T08:00:00Z"
         }
       ],
       "moon_meters": [
