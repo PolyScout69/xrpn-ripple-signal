@@ -33,6 +33,7 @@ DATA_PATH = ROOT / 'data' / 'news.json'
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.moon_meter import moon_for_story
+from scripts.sentiment import aggregate_sentiment
 RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
 EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
@@ -624,6 +625,7 @@ def main() -> int:
     # Rate all visible stories, including previously collected items and clustered sources.
     for item in items:
         item['moon_meters'] = moon_for_story(item)
+    sentiment_30d = aggregate_sentiment(items, stamp)
     out={
       'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
@@ -631,7 +633,7 @@ def main() -> int:
               'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],
               'new_items':new_count,
               'source_note':'Automated scan of issuer releases and ecosystem news; standalone filing records excluded.'},
-      'sources':statuses,'items':items,
+      'sources':statuses,'sentiment_30d':sentiment_30d,'items':items,
     }
     DATA_PATH.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     LOG.info('Wrote %s stories; %s new; %s sources OK',len(items),new_count,ready)
