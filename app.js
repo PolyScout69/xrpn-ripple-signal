@@ -5,6 +5,9 @@
   const STORAGE_SAVED = 'signal.saved.v1';
   const STORAGE_READ = 'signal.read.v1';
   const MOON_TICKS = [-3,-2,-1,0,1,2,3];
+  // Keep in sync with .github/workflows/daily-scan.yml and scripts/scan.py.
+  // Morning: European releases + US pre-market. Evening: US market-close news.
+  const SCAN_TIMES_UTC = [{hour:14,minute:35},{hour:23,minute:35}];
   const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR'};
   const DEFAULT_SOURCES = ['evernorth', 'ripple', 'media'];
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
@@ -157,8 +160,10 @@
     $('bar-chart').setAttribute('aria-label',`News published in the last 30 days, per two-day interval: ${counts.join(', ')}`);
   }
   function nextScanUTC() {
-    const now=new Date(); let next=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),18));
-    if (+next<=+now) next=new Date(+next+86400000);
+    const now=new Date();
+    const y=now.getUTCFullYear(), m=now.getUTCMonth(), day=now.getUTCDate();
+    const slots=SCAN_TIMES_UTC.map(slot=>new Date(Date.UTC(y,m,day,slot.hour,slot.minute)));
+    const next=slots.find(slot=>slot>now) || new Date(Date.UTC(y,m,day+1,SCAN_TIMES_UTC[0].hour,SCAN_TIMES_UTC[0].minute));
     return `Next scheduled ~${new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'UTC',hourCycle:'h23'}).format(next)} UTC`;
   }
   function renderSources() {
@@ -168,11 +173,11 @@
     const num=DEFAULT_SOURCES.filter(id=>src[id]?.status==='ok').length;
     const mode=state.data.scan?.status||'starter';
     $('health-legend').textContent=mode==='starter'?'NOT STARTED':`${num} / ${DEFAULT_SOURCES.length} CHECKED`;
-    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Daily automation refreshes the source feed.':num===DEFAULT_SOURCES.length?'All five sources checked at the last run; reporting may be delayed.':'Some monitoring sources were unavailable at the last run; published items may be delayed.';
+    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Twice-daily automation refreshes the source feed.':num===DEFAULT_SOURCES.length?'All monitored sources checked at the last run; reporting may be delayed.':'Some monitoring sources were unavailable at the last run; published items may be delayed.';
     const pulse=$('sidebar-pulse');pulse.className='signal-pulse';
     if(mode==='starter')pulse.classList.add('pending');else if(mode==='failed')pulse.classList.add('error');
     $('sidebar-status-title').textContent=mode==='starter'?'Starter edition':mode==='live'||mode==='ok'?'Automated monitoring':mode==='partial'?'Partial coverage':'Source errors';
-    $('sidebar-status-desc').textContent=mode==='starter'?'Automatic scans not yet run':mode==='failed'?'Latest scan failed':`Daily checks · 18:00 UTC`;
+    $('sidebar-status-desc').textContent=mode==='starter'?'Automatic scans not yet run':mode==='failed'?'Latest scan failed':`Twice daily · 14:35 & 23:35 UTC`;
   }
   function renderScan() {
     const scan=state.data.scan||{};
