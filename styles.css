@@ -173,6 +173,7 @@
 .sentiment-subline strong{color:#cfdfdb}
 .sentiment-coverage{display:block;font-size:9px;margin-top:4px;font-weight:700;color:#91c7a9}
 .sentiment-coverage.limited{color:#e6be81}
+.sentiment-provisional{display:block;font-size:9px;line-height:1.4;color:#d4b986;margin-bottom:4px}
 .sentiment-details{margin-top:10px;border-top:1px solid #2c4143;padding-top:8px}
 .sentiment-details summary{cursor:pointer;font-size:10px;font-weight:750;color:#abdbc5;list-style-position:outside}
 .sentiment-details summary:hover{color:#e1fae9}
