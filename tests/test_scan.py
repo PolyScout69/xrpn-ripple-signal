@@ -88,6 +88,19 @@ class CollectorTests(unittest.TestCase):
         guidance=(ROOT/'index.html').read_text(encoding='utf-8')
         self.assertIn('three scans every day at 09:15, 14:35 and 23:35 UTC',guidance)
 
+    def test_homepage_has_both_stock_price_widgets(self):
+        """XRPN and MSTR should be visible at the top, including on mobile."""
+        homepage=(ROOT/'index.html').read_text(encoding='utf-8')
+        stylesheet=(ROOT/'styles.css').read_text(encoding='utf-8')
+        self.assertEqual(homepage.count('<tv-single-ticker symbol="NASDAQ:XRPN"'), 1)
+        self.assertEqual(homepage.count('<tv-single-ticker symbol="NASDAQ:MSTR"'), 1)
+        self.assertIn('widgets.tradingview-widget.com/w/en/tv-single-ticker.js', homepage)
+        self.assertIn('Latest available quotes', homepage)
+        self.assertIn('Quotes supplied by TradingView and may be delayed', homepage)
+        self.assertLess(homepage.index('class="market-pulse"'), homepage.index('<header class="hero">'))
+        self.assertIn('.market-pulse-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))', stylesheet)
+        self.assertIn('.market-pulse-grid{grid-template-columns:minmax(0,1fr)', stylesheet)
+
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
         self.assertTrue(scan.is_investor_news('XRP Ledger launches institutional tokenization infrastructure','On XRPL'))
