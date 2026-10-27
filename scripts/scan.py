@@ -580,6 +580,14 @@ def event_key(item: dict) -> str:
     # These issuer-specific one-off announcements can be worded very
     # differently by different publishers; their economic event is the same.
     if 'Evernorth' in entities:
+        # Distinct publisher headlines for the same shareholder approval of
+        # the Armada business combination are one event (not the later closing).
+        vote = bool(re.search(r'\b(?:merger|business combination|shareholder vote)\b', title))
+        vote_approval = bool(re.search(
+            r'\b(?:approv\w*|passes?|passed|clears?|cleared)\b', title))
+        if vote and vote_approval and not re.search(
+                r'\b(?:completes?|completed|closed|closing)\b', title):
+            return 'evernorth:armada-business-combination-vote:2026'
         if re.search(r'\b(?:80|80\.7)\s*(?:m|million)\b', title) and any(
                 x in title for x in ('facility','raise','equity','fund','cantor','committed')):
             return 'evernorth:80m-equity-facility:'+stamp
