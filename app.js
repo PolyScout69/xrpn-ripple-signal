@@ -6,8 +6,8 @@
   const STORAGE_READ = 'signal.read.v1';
   const MOON_TICKS = [-3,-2,-1,0,1,2,3];
   // Keep in sync with .github/workflows/daily-scan.yml and scripts/scan.py.
-  // Morning: European releases + US pre-market. Evening: US market-close news.
-  const SCAN_TIMES_UTC = [{hour:14,minute:35},{hour:23,minute:35}];
+  // European morning, US morning and US after-hours news cycles (UTC).
+  const SCAN_TIMES_UTC = [{hour:9,minute:15},{hour:14,minute:35},{hour:23,minute:35}];
   const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR'};
   const DEFAULT_SOURCES = ['evernorth', 'ripple', 'media'];
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
@@ -173,11 +173,11 @@
     const num=DEFAULT_SOURCES.filter(id=>src[id]?.status==='ok').length;
     const mode=state.data.scan?.status||'starter';
     $('health-legend').textContent=mode==='starter'?'NOT STARTED':`${num} / ${DEFAULT_SOURCES.length} CHECKED`;
-    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Twice-daily automation refreshes the source feed.':num===DEFAULT_SOURCES.length?'All monitored sources checked at the last run; reporting may be delayed.':'Some monitoring sources were unavailable at the last run; published items may be delayed.';
+    $('source-note').textContent=mode==='starter'?'A hand-verified snapshot is included. Three daily scans refresh the source feed.':num===DEFAULT_SOURCES.length?'All monitored sources checked at the last run; reporting may be delayed.':'Some monitoring sources were unavailable at the last run; published items may be delayed.';
     const pulse=$('sidebar-pulse');pulse.className='signal-pulse';
     if(mode==='starter')pulse.classList.add('pending');else if(mode==='failed')pulse.classList.add('error');
     $('sidebar-status-title').textContent=mode==='starter'?'Starter edition':mode==='live'||mode==='ok'?'Automated monitoring':mode==='partial'?'Partial coverage':'Source errors';
-    $('sidebar-status-desc').textContent=mode==='starter'?'Automatic scans not yet run':mode==='failed'?'Latest scan failed':`Twice daily · 14:35 & 23:35 UTC`;
+    $('sidebar-status-desc').textContent=mode==='starter'?'Automatic scans not yet run':mode==='failed'?'Latest scan failed':`3 daily scans · 09:15, 14:35 & 23:35 UTC`;
   }
   function renderScan() {
     const scan=state.data.scan||{};
