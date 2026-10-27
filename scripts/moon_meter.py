@@ -215,6 +215,10 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
             return 2, 'If the institutional execution relationships deliver scalable, economical XRP deployment, they could improve XRPN operations.', evidence
 
     if asset == 'MSTR':
+        if _contains(combined, r'\bhidden dependency\b',
+                     r'\breliance on (?:its |own )?buybacks?\b',
+                     r'\bartificially supported by (?:its |own )?buybacks?\b'):
+            return -1, 'If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.', evidence
         if _contains(combined, r'\brepurchas\w*\b', r'\bredeem\w*\b', r'\bbuybacks?\b') and _contains(combined,
                             r'\b(?:strc|strk|strf|preferred (?:stock|shares?))\b'):
             if _contains(combined,
