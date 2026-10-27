@@ -101,6 +101,23 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('.market-pulse-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))', stylesheet)
         self.assertIn('.market-pulse-grid{grid-template-columns:minmax(0,1fr)', stylesheet)
 
+    def test_homepage_has_weighted_moon_sentiment_instead_of_old_cards(self):
+        html=(ROOT/'index.html').read_text(encoding='utf-8')
+        script=(ROOT/'app.js').read_text(encoding='utf-8')
+        css=(ROOT/'styles.css').read_text(encoding='utf-8')
+        scanner=(ROOT/'scripts/scan.py').read_text(encoding='utf-8')
+        for asset in ('xrpn','mstr'):
+            self.assertIn('id="sentiment-card-'+asset+'"',html)
+            self.assertIn('id="sentiment-'+asset+'-value"',html)
+            self.assertIn("renderSentiment('"+asset.upper()+"')",script)
+        self.assertNotIn('id="stat-treasury"',html)
+        self.assertNotIn('id="stat-health"',html)
+        self.assertNotIn("'stat-health'",script)
+        self.assertIn('Moon Sentiment — 30-day weighted index',html)
+        self.assertIn('Limited coverage',script)
+        self.assertIn('.moon-sentiment-card',css)
+        self.assertIn("'sentiment_30d':sentiment_30d",scanner)
+
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
         self.assertTrue(scan.is_investor_news('XRP Ledger launches institutional tokenization infrastructure','On XRPL'))
