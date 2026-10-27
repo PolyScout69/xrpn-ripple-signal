@@ -140,9 +140,77 @@
     $('period-select').value=String(state.days);
     $('sort-select').value=state.sort;
   }
+  // Browser fallback for pre-upgrade snapshots or delayed CI scans. Uses the
+  // same weighted event principles as scripts/sentiment.py; server data wins.
+  function provisionalSentiment(asset) {
+    const end=time(state.data?.scan?.ran_at) || Date.now();
+    const ms=86400000;
+    const iw={High:4.5,Medium:2.25,Low:1};
+    const sw={Official:1.15,SEC:1.15,Media:1,News:1};
+    const qw={reported:1,assumption:0.90,rumour:0.72};
+    const events=new Map();
+    const families=[
+      ['equity',/equity (?:purchase )?facility|cantor.*facility/],
+      ['warrants',/11\.?5\s*m(?:illion)?.*shares|register.*shares.*warrant/],
+      ['vote',/(?:shareholder|merger) (?:vote|approval)|shareholders? approve/],
+      ['merger',/complet.*(?:business combination|merger)/],
+      ['yield',/(?:xrp.*(?:yield|lending)|(?:yield|lending).*xrp|(?:treasury|xrp).*(?:coinbase|kraken|bitgo))/],
+      ['pershare',/(?:xrp|bitcoin|btc) per (?:fully diluted |diluted )?share/],
+      ['listing',/(?:nasdaq|go(?:es|ing)? public).*(?:debut|list|begins trading)/],
+      ['uphold',/uphold.*(?:list|stock|access)/],
+      ['drawdown',/(?:treasury|xrp|bitcoin|btc).*(?:loss|loses?|lost|drop|down)/],
+      ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/]
+    ];
+    const weekCode=(stamp)=>{
+      const d=new Date(stamp);
+      d.setUTCHours(0,0,0,0);
+      d.setUTCDate(d.getUTCDate()+4-(d.getUTCDay()||7));
+      const y=d.getUTCFullYear(), start=Date.UTC(y,0,1);
+      return y+'W'+Math.ceil(((+d-start)/ms+1)/7);
+    };
+    let total=0;
+    for(const story of (state.data?.items || [])) {
+      const date=time(story.published_at), age=(end-date)/ms;
+      if(!date || age<0 || age>30 || story.source_type==='SEC' || story.category==='SEC filings')continue;
+      const meter=(story.moon_meters||[]).find(m=>m.asset===asset);
+      if(!meter || !Number.isInteger(meter.value) || meter.value < -3 || meter.value > 3)continue;
+      total++;
+      const strength=Math.abs(meter.value), impact=iw[story.impact]||1;
+      const weight=impact*(sw[story.source_type]||1)*(qw[meter.scenario]||1)*
+        Math.exp(-Math.LN2*age/17)*Math.max(.9,Math.min(1.12,1+((Number(story.score)||70)-75)/250))*
+        (1+.2*Math.max(0,strength-1));
+      const headline=String(story.title||'').toLowerCase();
+      const family=families.find(([name,exp])=>exp.test(headline));
+      const key=family?asset+':'+family[0]+':'+weekCode(date)+':'+Math.sign(meter.value):
+        asset+':story:'+(story.id||story.url||story.title);
+      const candidate={id:story.id,title:story.title,url:story.url,value:meter.value,weight,
+        impact:story.impact,scenario:meter.scenario||'reported',published_at:story.published_at,
+        reason:meter.reason};
+      const prior=events.get(key);
+      if(!prior || strength>Math.abs(prior.value) ||
+          (strength===Math.abs(prior.value) && weight>prior.weight))events.set(key,candidate);
+    }
+    const entries=[...events.values()],directional=entries.filter(x=>x.value!==0),
+      neutral=entries.filter(x=>x.value===0);
+    const numerator=directional.reduce((sum,x)=>sum+x.value*x.weight,0);
+    const denominator=directional.reduce((sum,x)=>sum+x.weight,0)+.08*
+      neutral.reduce((sum,x)=>sum+x.weight,0);
+    const raw=denominator?numerator/denominator:0;
+    const mag=Math.abs(raw), step=mag<.35?0:mag>=2.3&&directional.length>=2?3:mag>=1.35?2:1;
+    const value=raw<0?-step:step;
+    const labels={'-3':'Very bearish','-2':'Bearish','-1':'Slightly bearish',
+      '0':'Neutral','1':'Slightly bullish','2':'Bullish','3':'Very bullish'};
+    const coverage=directional.length<3?'Limited coverage':
+      directional.length<7?'Moderate coverage':'Broad coverage';
+    return {value,label:labels[String(value)],raw_score:Math.round(raw*100)/100,
+      stories:total,independent_events:entries.length,directional_events:directional.length,
+      neutral_events:neutral.length,coverage,provisional:true,
+      drivers:directional.sort((a,b)=>Math.abs(b.value*b.weight)-Math.abs(a.value*a.weight)).slice(0,4)};
+  }
+
   function renderSentiment(asset) {
     const id=asset.toLowerCase();
-    const item=state.data?.sentiment_30d?.[asset];
+    const item=state.data?.sentiment_30d?.[asset] || provisionalSentiment(asset);
     const card=$('sentiment-card-'+id);
     const valueEl=$('sentiment-'+id+'-value');
     const labelEl=$('sentiment-'+id+'-label');
@@ -172,7 +240,7 @@
     const all=Number(item.stories)||0;
     const directional=Number(item.directional_events)||0;
     const coverage=item.coverage||'Coverage unknown';
-    line.innerHTML='<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' stories <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
+    line.innerHTML=(item.provisional?'<span class="sentiment-provisional">Provisional · awaiting recalculated scan</span>':'')+'<strong>'+directional+'</strong> directional '+(directional===1?'event':'events')+' · '+all+' stories <span class="sentiment-coverage '+(coverage==='Limited coverage'?'limited':'')+'">'+esc(coverage)+'</span>';
     const raw=Number(item.raw_score);
     const rawText=Number.isFinite(raw)?(raw>0?'+':'')+raw.toFixed(2):'—';
     const stats='<div class="sentiment-detail-stats">Weighted index <strong>'+esc(rawText)+'</strong> / 3 · '+Number(item.independent_events||0)+' distinct events · '+Number(item.neutral_events||0)+' non-directional events</div>';
