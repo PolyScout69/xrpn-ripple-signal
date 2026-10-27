@@ -20,7 +20,7 @@ The top of the homepage shows **XRPN (Evernorth)** and **MSTR (Strategy)** in se
 
 The two bottom cards of the homepage score **weighted 30-day Moon Sentiment** for XRPN and MSTR, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
 
-The calculation runs during each of the three daily news scans and publishes \`sentiment_30d\` into \`data/news.json\`, including the rounded −3 to +3 score, raw score, source counts and top contributing stories. **A 0 headline is not a negative vote**: neutral articles only add 8% of their normal weight to the denominator. Only evidence with a signed directional Moon Meter contributes directly to the numerator.
+The calculation runs during each of the three daily news scans and publishes `sentiment_30d` into `data/news.json`, including the rounded −3 to +3 score, raw score, source counts and top contributing stories. If a new snapshot is delayed, the site shows a clearly labelled **provisional** calculation from the previous published Moon Meter values. **A 0 headline is not a negative vote**: neutral articles only add 8% of their normal weight to the denominator. Only evidence with a signed directional Moon Meter contributes directly to the numerator.
 
 For each unique event the model uses:
 
@@ -34,7 +34,7 @@ The index is the directional weighted mean, mildly damped by routine news. Appro
 
 ## Moon Meter calibration
 
-The \`scripts/moon_meter.py\` headline rules now recognise the potential if-true effect of real stock-listing milestones, XRP-per-diluted-share growth targets, wider share distribution, institutional execution partnerships and scaled XRP treasury yield opportunities. Exceptional +3 is possible for a large, multi-partner XRP yield-deployment scenario, but does **not** imply that revenue, profits or risk-adjusted value have been realised. SEC registration, financing dilution and large treasury drawdowns remain potentially bearish. +3 is not a target quota: some months will have none, and a neutral headline without a clear catalyst stays neutral.
+The `scripts/moon_meter.py` headline rules now recognise the potential if-true effect of real stock-listing milestones, XRP-per-diluted-share growth targets, wider share distribution, institutional execution partnerships and scaled XRP treasury yield opportunities. Exceptional +3 is possible for a large, multi-partner XRP yield-deployment scenario, but does **not** imply that revenue, profits or risk-adjusted value have been realised. SEC registration, financing dilution and large treasury drawdowns remain potentially bearish. MSTR preferred-stock repurchases are assessed conditionally: pausing BTC purchases can offset part of their potential benefit. +3 is not a target quota: some months will have none, and a neutral headline without a clear catalyst stays neutral.
 
 ## Moon Meter (−3 to +3)
 
