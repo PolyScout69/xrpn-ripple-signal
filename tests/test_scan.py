@@ -74,19 +74,19 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(rows[0]['source_type'],'Official')
         self.assertIn('/ripple-press/bank-launch',rows[0]['url'])
 
-    def test_twice_daily_europe_us_and_us_evening_schedule(self):
+    def test_three_daily_europe_us_and_us_evening_schedule(self):
         """Keep GitHub cron, site display and published scanner metadata aligned."""
         import re
         workflow=(ROOT/'.github/workflows/daily-scan.yml').read_text(encoding='utf-8')
         cron=re.findall(r"- cron: '(\d+) (\d+) \* \* \*'",workflow)
         scheduled=sorted(f'{int(hour):02d}:{int(minute):02d}' for minute,hour in cron)
-        self.assertEqual(scheduled,['14:35','23:35'])
+        self.assertEqual(scheduled,['09:15','14:35','23:35'])
         site=(ROOT/'app.js').read_text(encoding='utf-8')
-        self.assertIn('SCAN_TIMES_UTC = [{hour:14,minute:35},{hour:23,minute:35}]',site)
+        self.assertIn('SCAN_TIMES_UTC = [{hour:9,minute:15},{hour:14,minute:35},{hour:23,minute:35}]',site)
         scanner=(ROOT/'scripts/scan.py').read_text(encoding='utf-8')
-        self.assertIn("'schedule_utc':['14:35','23:35']",scanner)
+        self.assertIn("'schedule_utc':['09:15','14:35','23:35']",scanner)
         guidance=(ROOT/'index.html').read_text(encoding='utf-8')
-        self.assertIn('two scans every day at 14:35 UTC and 23:35 UTC',guidance)
+        self.assertIn('three scans every day at 09:15, 14:35 and 23:35 UTC',guidance)
 
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
