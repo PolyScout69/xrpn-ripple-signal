@@ -627,8 +627,8 @@ def main() -> int:
     out={
       'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
-              'schedule_utc':['14:35','23:35'],
-              'schedule_focus':['Europe morning and US pre-market','US after-market and evening'],
+              'schedule_utc':['09:15','14:35','23:35'],
+              'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],
               'new_items':new_count,
               'source_note':'Automated scan of issuer releases and ecosystem news; standalone filing records excluded.'},
       'sources':statuses,'items':items,
