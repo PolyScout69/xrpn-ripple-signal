@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-28T08:26:28Z",
+    "ran_at": "2026-10-28T08:36:10Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 23,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,43 +23,43 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-28T08:26:28Z",
+      "checked_at": "2026-10-28T08:36:10Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T08:26:28Z",
+      "checked_at": "2026-10-28T08:36:10Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-28T08:26:28Z",
+      "checked_at": "2026-10-28T08:36:10Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 313,
-      "checked_at": "2026-10-28T08:26:28Z",
-      "message": "Fetched 313 matching items."
+      "items_seen": 259,
+      "checked_at": "2026-10-28T08:36:10Z",
+      "message": "Fetched 259 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.07,
+      "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-28T08:26:28Z",
-      "stories": 42,
-      "independent_events": 36,
-      "directional_events": 15,
-      "distinct_catalysts": 13,
-      "bullish_events": 11,
+      "as_of": "2026-10-28T08:36:10Z",
+      "stories": 43,
+      "independent_events": 37,
+      "directional_events": 16,
+      "distinct_catalysts": 14,
+      "bullish_events": 12,
       "bearish_events": 4,
       "neutral_events": 21,
       "coverage": "Broad coverage",
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-28T08:26:28Z",
+      "as_of": "2026-10-28T08:36:10Z",
       "stories": 26,
       "independent_events": 20,
       "directional_events": 5,
@@ -167,7 +167,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.29,
       "window_days": 30,
-      "as_of": "2026-10-28T08:26:28Z",
+      "as_of": "2026-10-28T08:36:10Z",
       "stories": 8,
       "independent_events": 8,
       "directional_events": 1,
@@ -1885,7 +1885,6 @@
       "published_at": "2026-10-21T14:38:12Z",
       "date_only": false,
       "entities": [
-        "Ripple",
         "XRP Ecosystem"
       ],
       "category": "Treasury",
@@ -4425,6 +4424,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "eb090296d62afe",
+      "title": "Ripple-backed Evernorth debuts on Nasdaq with 473M XRP",
+      "published_at": "2026-10-12T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Altcoin Buzz · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iaVpYLVBadWpkWDdZVUx2Z29mM3hKcVpFa01EcEVfZ0FhUXB1eVluaWJYVGlmOVQtNE1INDNKMEVsZjUwU1NVMmZ5SVNlQU9KTVU2SDduLV9xLWo3SXNBeS05OFRXNUNfcER0TXU1Umh0Zkk?oc=5",
+      "excerpt": "Ripple-backed Evernorth debuts on Nasdaq with 473M XRP Altcoin Buzz",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:36:15Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple-backed Evernorth debuts on Nasdaq with 473M XRP",
+          "name": "Altcoin Buzz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iaVpYLVBadWpkWDdZVUx2Z29mM3hKcVpFa01EcEVfZ0FhUXB1eVluaWJYVGlmOVQtNE1INDNKMEVsZjUwU1NVMmZ5SVNlQU9KTVU2SDduLV9xLWo3SXNBeS05OFRXNUNfcER0TXU1Umh0Zkk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -7260,6 +7301,13 @@
           "title": "MSTR Stock Slips After Strategy Leaves Bitcoin Stash Untouched, Doubles Buyback Program To $2B",
           "name": "Yahoo Finance · via Google News",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSXlwNy1RbXBlYk4zZVNMXzFRb0RpS0tKT1paTndlQ0FRaTdxOEpfRnp2NWZfbk5fY3NJNTAtdWpuM3ZTZUlELWhkV1YxR3RGbV9mcTEyR1BqWDlJazBWdzZEVnAxeDRQM0pHRVMycXl4UVRjWVRycmM1bVlHRHlBVGQ3S0NpNjlFb25XVUNPVEdIU1NtOUttRUNDNzBuZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-08T07:00:00Z"
+        },
+        {
+          "title": "MSTR Stock Slips After Strategy Leaves Bitcoin Stash Untouched, Doubles Buyback Program To $2B",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPaDc5SElDWVM4d09HY2dQQXFYNFBBZzRCX2JoSUZwaTdqSFRRY01RMmZIaEN2TTRVWGdNYUN0bVM4MFZvRkpDanM4YUlqekVMbjVlRlJacW1NVjNsTnpaNjN0QXV1dkx4VE9CM1M5dUhjYW1OY3lpa3ZLMG4yNmgxb2JUZFh6eEZ6dFpQMk43ZzdncC01eVo5VmxjT3EzMTl5SC1ZbnB3cnZUTU55T3FYUTVkMkQ1a2pSbE1ORDN5Sk9WcXkxSkpPeTBVQlhPamFpcjJrenozVWxDYmstY19ZNURRa0hfWVRq?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-08T07:00:00Z"
         }
@@ -16780,6 +16828,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "24ed0a3bb39dc5",
+      "title": "Ripple Just Launched a $1 Billion Treasury Platform: Here’s What It Means for XRP’s Path to $5",
+      "published_at": "2026-02-04T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVEdlSjlJcU9NdmduVWRsRDRYemJyWXFDT3g2ZVpMVWZkclVfcVpRU2lNcTdWN01kTE1fa3J6RFFpRlNaelpicWY1LTl0eGpHU3Z0NGZPdjVJRTJzd0xjOEFJR3NJOVZwX3ZseS1xTC14Zk1NVFdHMWlsRWM4cm1zN2N2V01aSXVEcDlIOV9WWEpLejBtZjU2aEVma1BXYVBNY1gxVEN4aXJCTkVVcjVSd2RiaEo1dDA2ek4yWnpkVWplMzBCTHlGcnd5NlBTZw?oc=5",
+      "excerpt": "Ripple Just Launched a $1 Billion Treasury Platform: Here’s What It Means for XRP’s Path to $5 24/7 Wall St.",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-28T08:36:16Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Just Launched a $1 Billion Treasury Platform: Here’s What It Means for XRP’s Path to $5",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVEdlSjlJcU9NdmduVWRsRDRYemJyWXFDT3g2ZVpMVWZkclVfcVpRU2lNcTdWN01kTE1fa3J6RFFpRlNaelpicWY1LTl0eGpHU3Z0NGZPdjVJRTJzd0xjOEFJR3NJOVZwX3ZseS1xTC14Zk1NVFdHMWlsRWM4cm1zN2N2V01aSXVEcDlIOV9WWEpLejBtZjU2aEVma1BXYVBNY1gxVEN4aXJCTkVVcjVSd2RiaEo1dDA2ek4yWnpkVWplMzBCTHlGcnd5NlBTZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-04T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
