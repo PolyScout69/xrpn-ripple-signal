@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-28T16:04:46Z",
+    "ran_at": "2026-10-28T19:45:40Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 5,
+    "new_items": 4,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,43 +23,43 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-28T16:04:46Z",
+      "checked_at": "2026-10-28T19:45:40Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T16:04:46Z",
+      "checked_at": "2026-10-28T19:45:40Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-28T16:04:46Z",
+      "checked_at": "2026-10-28T19:45:40Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 313,
-      "checked_at": "2026-10-28T16:04:46Z",
-      "message": "Fetched 313 matching items."
+      "items_seen": 279,
+      "checked_at": "2026-10-28T19:45:40Z",
+      "message": "Fetched 279 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.1,
+      "raw_score": 1.12,
       "window_days": 30,
-      "as_of": "2026-10-28T16:04:46Z",
-      "stories": 44,
-      "independent_events": 38,
-      "directional_events": 16,
-      "distinct_catalysts": 14,
-      "bullish_events": 12,
+      "as_of": "2026-10-28T19:45:40Z",
+      "stories": 45,
+      "independent_events": 39,
+      "directional_events": 17,
+      "distinct_catalysts": 15,
+      "bullish_events": 13,
       "bearish_events": 4,
       "neutral_events": 22,
       "coverage": "Broad coverage",
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-28T16:04:46Z",
+      "as_of": "2026-10-28T19:45:40Z",
       "stories": 26,
       "independent_events": 20,
       "directional_events": 5,
@@ -167,7 +167,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.29,
       "window_days": 30,
-      "as_of": "2026-10-28T16:04:46Z",
+      "as_of": "2026-10-28T19:45:40Z",
       "stories": 8,
       "independent_events": 8,
       "directional_events": 1,
@@ -193,6 +193,48 @@
     }
   },
   "items": [
+    {
+      "id": "730ed9c339ed09",
+      "title": "Three Bank Approvals Put Ripple’s XRP Strategy Under Scrutiny",
+      "published_at": "2026-10-28T17:16:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "DailyCoin · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeGJLdDA3UUpaWWhRX1FmWmpDYzlRZVVGaUZVdER5VGZCMU1lVVNHVGtWYVBfRTdTalM3bG12UXQteEo0SW1MLTRBWHBpLTU0d19HaWt6WXEwa1VYbU9mQWwxUjdUZThxNGEtb3VNNXdCWnR0R2R1U21jbmItaFpSREFoY25udkJEaXc0?oc=5",
+      "excerpt": "Three Bank Approvals Put Ripple’s XRP Strategy Under Scrutiny DailyCoin",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T19:45:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Three Bank Approvals Put Ripple’s XRP Strategy Under Scrutiny",
+          "name": "DailyCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeGJLdDA3UUpaWWhRX1FmWmpDYzlRZVVGaUZVdER5VGZCMU1lVVNHVGtWYVBfRTdTalM3bG12UXQteEo0SW1MLTRBWHBpLTU0d19HaWt6WXEwa1VYbU9mQWwxUjdUZThxNGEtb3VNNXdCWnR0R2R1U21jbmItaFpSREFoY25udkJEaXc0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-28T17:16:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "e3c736d36edb1f",
       "title": "Ripple and Coinbase Partner to Expand Access to Ripple USD",
@@ -2120,7 +2162,8 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth"
+        "Evernorth",
+        "XRP Ecosystem"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -2166,6 +2209,16 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4788,6 +4841,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "d487478172e765",
+      "title": "When Will Evernorth List Its XRP (XRP) Treasury on Nasdaq?",
+      "published_at": "2026-10-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "kalkine.ca · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOb0NpVm1IYlFqSjhfQUczd0M2ODVIekpjdlpQTndvZGYzTXk0M1JDdkM5dXhfbzZXSzdXRE0wOTEyZ1lXTlU4SVAwZzhLczhJaVNGeGc0dE54bTFwa0xHZTRraERKbGdaN0w2bGkwNTdISlVtSUVicHdPTl9EbjZNSnpRdlFKd3I0Z0llSmJZRzd5enVHX3lv?oc=5",
+      "excerpt": "When Will Evernorth List Its XRP (XRP) Treasury on Nasdaq? kalkine.ca",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-28T19:45:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "When Will Evernorth List Its XRP (XRP) Treasury on Nasdaq?",
+          "name": "kalkine.ca · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOb0NpVm1IYlFqSjhfQUczd0M2ODVIekpjdlpQTndvZGYzTXk0M1JDdkM5dXhfbzZXSzdXRE0wOTEyZ1lXTlU4SVAwZzhLczhJaVNGeGc0dE54bTFwa0xHZTRraERKbGdaN0w2bGkwNTdISlVtSUVicHdPTl9EbjZNSnpRdlFKd3I0Z0llSmJZRzd5enVHX3lv?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -8305,6 +8400,48 @@
           "title": "Strategy Raises $2B From MSTR With Bitcoin Buying On Hold",
           "name": "Yellow.com · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1PM2F5eUNOV09fb2laZFRuWUdiYWpMbE1CeHg2YV9sSFdMM01aM0JhYTNaZy1OQ3hvMHNQb00tU2NKd1ZyQ2FKeWNna2hETmh3aUE5Mjk5S0RRZXFGTWxHYzVIX2ZPNTA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-24T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "8b733b6f638a9c",
+      "title": "Strategy Raises $2B Selling MSTR Stock, Establishes 'USD Cash' Pot",
+      "published_at": "2026-08-24T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbk9oUnBQTUZSVVJsWVNxSnRxWVN3VHlWdmZFc29PWldGRXVUd2kxYmhCN0dESGU4RlJESzdXV29fYlllc1c4ZWozbjJPak5FVnl1ajNFcHpnZmhwY19Ud0M3dU5RLTJMcV9PbFBTUkJzX2tVbDViV01SLTFHQ1ZJTG5qdnJkOGYtWjJVcV9lMzI0d1pBWGR4ODhCN3g?oc=5",
+      "excerpt": "Strategy Raises $2B Selling MSTR Stock, Establishes 'USD Cash' Pot Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T19:45:53Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Raises $2B Selling MSTR Stock, Establishes 'USD Cash' Pot",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbk9oUnBQTUZSVVJsWVNxSnRxWVN3VHlWdmZFc29PWldGRXVUd2kxYmhCN0dESGU4RlJESzdXV29fYlllc1c4ZWozbjJPak5FVnl1ajNFcHpnZmhwY19Ud0M3dU5RLTJMcV9PbFBTUkJzX2tVbDViV01SLTFHQ1ZJTG5qdnJkOGYtWjJVcV9lMzI0d1pBWGR4ODhCN3g?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-24T07:00:00Z"
         }
@@ -13570,6 +13707,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c86b15b101462d",
+      "title": "Strategy (MSTR) Is Up 8.7% After Hinting It May Sell Bitcoin To Fund Dividends",
+      "published_at": "2026-05-08T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNXpPNm9nM0ZKRnBQOGc3Sm1hcXY0UW9mUm90bTBsckRiZ1NYdTVyVTBRbDhqcjVDdDNqYXlPWVA2dXJhMzlpQmpRT0RZNTRJTmE4bm5RZEJ5Si1KNzZxM2xFUHFRemZOZkRkMVFMS19kNDdrY0dVMWpUSlJOMmdHYklRTWxQdWlwSV9KZnQ1WnVZQmJ6?oc=5",
+      "excerpt": "Strategy (MSTR) Is Up 8.7% After Hinting It May Sell Bitcoin To Fund Dividends Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T19:45:53Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Is Up 8.7% After Hinting It May Sell Bitcoin To Fund Dividends",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNXpPNm9nM0ZKRnBQOGc3Sm1hcXY0UW9mUm90bTBsckRiZ1NYdTVyVTBRbDhqcjVDdDNqYXlPWVA2dXJhMzlpQmpRT0RZNTRJTmE4bm5RZEJ5Si1KNzZxM2xFUHFRemZOZkRkMVFMS19kNDdrY0dVMWpUSlJOMmdHYklRTWxQdWlwSV9KZnQ1WnVZQmJ6?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-08T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
