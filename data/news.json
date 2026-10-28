@@ -1,9 +1,9 @@
 {
-  "name": "Signal | Evernorth · Ripple · XRP ecosystem · Strategy",
+  "name": "Signal | Evernorth · Ripple · XRP ecosystem · Strategy · Lite Strategy",
   "version": 2,
   "scan": {
-    "status": "live",
-    "ran_at": "2026-10-28T06:50:37Z",
+    "status": "partial",
+    "ran_at": "2026-10-28T08:26:28Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 23,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-28T06:50:37Z",
+      "checked_at": "2026-10-28T08:26:28Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T06:50:37Z",
+      "checked_at": "2026-10-28T08:26:28Z",
       "message": "Fetched 20 matching items."
+    },
+    "lits": {
+      "name": "Lite Strategy official",
+      "status": "error",
+      "items_seen": 0,
+      "checked_at": "2026-10-28T08:26:28Z",
+      "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 284,
-      "checked_at": "2026-10-28T06:50:37Z",
-      "message": "Fetched 284 matching items."
+      "items_seen": 313,
+      "checked_at": "2026-10-28T08:26:28Z",
+      "message": "Fetched 313 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,14 +54,14 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-28T06:50:37Z",
-      "stories": 41,
-      "independent_events": 35,
+      "as_of": "2026-10-28T08:26:28Z",
+      "stories": 42,
+      "independent_events": 36,
       "directional_events": 15,
       "distinct_catalysts": 13,
       "bullish_events": 11,
       "bearish_events": 4,
-      "neutral_events": 20,
+      "neutral_events": 21,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -107,14 +114,14 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.1,
+      "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-28T06:50:37Z",
-      "stories": 27,
-      "independent_events": 21,
-      "directional_events": 6,
+      "as_of": "2026-10-28T08:26:28Z",
+      "stories": 26,
+      "independent_events": 20,
+      "directional_events": 5,
       "distinct_catalysts": 2,
-      "bullish_events": 5,
+      "bullish_events": 4,
       "bearish_events": 1,
       "neutral_events": 15,
       "coverage": "Limited coverage",
@@ -151,6 +158,35 @@
           "scenario": "reported",
           "reason": "If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb2RrSzl3VHB6YU9jQ1JMTmNsR2FlTy1zZzJSOWxvTUJzNkhSZ0lHNWlHRTNXSzVUN3dBeGVqMFplS3YwUVRVdVRIMEdpX1Z5MS05aWFoZEMyRERDVUtibS1kbTNGMlFLdmpqNXQzNURfU1B6SXdhcmpiS3lLaUphRFhwMGdjaFJjRDJPeDJ4NHZxV0U5LVJ1U0ZLbjhidDZILXhPQ1hudTJwcktu?oc=5"
+        }
+      ],
+      "method": "impact_decay_dedup_v2"
+    },
+    "LITS": {
+      "value": 1,
+      "label": "Slightly bullish",
+      "raw_score": 1.29,
+      "window_days": 30,
+      "as_of": "2026-10-28T08:26:28Z",
+      "stories": 8,
+      "independent_events": 8,
+      "directional_events": 1,
+      "distinct_catalysts": 1,
+      "bullish_events": 1,
+      "bearish_events": 0,
+      "neutral_events": 7,
+      "coverage": "Limited coverage",
+      "drivers": [
+        {
+          "id": "f63ffc0f4e1ddc",
+          "title": "Lite Strategy buys 900K+ Litecoin, holding over 1% of total supply, boosts treasury and share buybacks.",
+          "value": 2,
+          "impact": "Medium",
+          "published_at": "2026-09-29T07:00:00Z",
+          "reports": 1,
+          "scenario": "reported",
+          "reason": "If LITS repurchases shares at an attractive discount to LTC NAV, holdings per share may improve.",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTzJIdFRjdXRyWFE5VXBFbFZ4aWtURnlGMXZNVDhXQThHbGV5Tmd4QXFjaGw5Mks2M1VuLWIwS243NVRqX0xBY2s0Y3gwM2o1ZmtERnJOZDR0X1g5Vnd0alFNZ3lnajFpRXlLRENGTUVFaFpZS0F4SmF0clJlZi1Ca3Z5YUdpdkFselJ0b1dncEJ3c0E?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v2"
@@ -1795,6 +1831,55 @@
       ]
     },
     {
+      "id": "59fa732415f103",
+      "title": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Earnings Volatility Report",
+      "published_at": "2026-10-21T21:33:27Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "https://www.dars.gov.et/ · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQQUl5VmR0TE1BZm0zak1iQjd4S3lFa2o5M3dQN3IxSzhKZnBHY1M1cF9lLXg4YXFuWGZHR0ROekVuWHFJUTRLTms1Xzk5RGdDUjlMUnM0NEhuUVJQRjhSX2t5S1dMZDdDdlJScTVKc1prcmV2ZENPQ1NkWTAtcVZQclV4WWJSUEJiRE5aUGx0dkhkYlZwT01UTU5JT0tCQ1NCby1Qd25sYjQxbi1NMV9DSmFvMkZsTURQOTJZWk5zU1kwaThL?oc=5",
+      "excerpt": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Earnings Volatility Report https://www.dars.gov.et/",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Earnings Volatility Report",
+          "name": "https://www.dars.gov.et/ · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQQUl5VmR0TE1BZm0zak1iQjd4S3lFa2o5M3dQN3IxSzhKZnBHY1M1cF9lLXg4YXFuWGZHR0ROekVuWHFJUTRLTms1Xzk5RGdDUjlMUnM0NEhuUVJQRjhSX2t5S1dMZDdDdlJScTVKc1prcmV2ZENPQ1NkWTAtcVZQclV4WWJSUEJiRE5aUGx0dkhkYlZwT01UTU5JT0tCQ1NCby1Qd25sYjQxbi1NMV9DSmFvMkZsTURQOTJZWk5zU1kwaThL?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T21:33:27Z"
+        },
+        {
+          "title": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Strong Earnings Momentum",
+          "name": "https://www.dars.gov.et/ · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPb0VZdlJCNnlrMzhVLWFRMnlWSVU2LVQ2eWNObEh4dU1seWpIVHliTkhTSVNXYzJFTFNRMWxJZ0ZhSkJCb2pzMDIyWk9LQWtxSEFwOWFYZEhvanI1OEJiN0hYSGpnTmRhVEtFeURJaWFRSC01NlBCWkJfZDZvOXhNRWlnZkxYQUZnaGJORTFfWnlWNTJjNUtJdHAtZWF0RllpaWVrMy1TODRMYUhkSE1NY2lXWHFYQTJydGc3NlJsSG5Idw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T21:33:06Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b2aea06b1df1c9",
       "title": "XRP Ledger Lending Protocol Remains 10 Votes Short as October 23 Bug Fix Nears Activation",
       "published_at": "2026-10-21T14:38:12Z",
@@ -1973,7 +2058,8 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth"
+        "Evernorth",
+        "XRP Ecosystem"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -2019,6 +2105,16 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2705,6 +2801,55 @@
       ]
     },
     {
+      "id": "ccc10736457980",
+      "title": "Lite Strategy launches Proof of Time archive. Lite Strategy stock sits 46.90 percent below its high",
+      "published_at": "2026-10-16T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 67,
+      "source": "ad-hoc-news.de · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNOHU2d2pjZk5CM1Vwd0NQYjVZUUJFLTN4VW9vYmtUUTBFUUMzbDVtdzluUl8zX1ctaVFySTlLNHJTWDlZN2E0bDlmQllLak9zVDUxVHg4d0xDWkdvVjdtWEtFbFZKRDBhYXREZzJXYW9wVTVnTWF5Q09yRUprLVpsanhTUTY1dGFnRXRFLVZWQjJFMWFmcHBMaExnSzkxOG16aVg2dWR5Ui1IVTNsOC1FcjBjTHVFTVNtY2RYdWJ1UHBiM1liUmFtQkxhMVllSUpHRUNBa0hITGVkenMwZ3ZWM1N0WDFtZUtmaXhVXzZ3?oc=5",
+      "excerpt": "Lite Strategy launches Proof of Time archive. Lite Strategy stock sits 46.90 percent below its high ad-hoc-news.de",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy launches Proof of Time archive. Lite Strategy stock sits 46.90 percent below its high",
+          "name": "ad-hoc-news.de · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNOHU2d2pjZk5CM1Vwd0NQYjVZUUJFLTN4VW9vYmtUUTBFUUMzbDVtdzluUl8zX1ctaVFySTlLNHJTWDlZN2E0bDlmQllLak9zVDUxVHg4d0xDWkdvVjdtWEtFbFZKRDBhYXREZzJXYW9wVTVnTWF5Q09yRUprLVpsanhTUTY1dGFnRXRFLVZWQjJFMWFmcHBMaExnSzkxOG16aVg2dWR5Ui1IVTNsOC1FcjBjTHVFTVNtY2RYdWJ1UHBiM1liUmFtQkxhMVllSUpHRUNBa0hITGVkenMwZ3ZWM1N0WDFtZUtmaXhVXzZ3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-16T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy launches Proof of Time archive: what it means for Lite Strategy stock",
+          "name": "AD HOC NEWS · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcnp0NVRHUlFhTnRjcDJIbTZGeDV6WUdpTUR1SVJsUGNNbThRcVlONDRwNmRIWXF3STRkOHBiUkswY2FIb3VWVjNvdmI4QkswV0oyRS1MWjltOU9GZG1lLU13ZFRWdF84QXBULTg5Tl96UHV6dXdpVy1rYUF2SnoyMXdpX1NQQWxHYUFxb2s2YzdKSEpFRW8wN1Rkdy1qSWhRNDNDdXFBS0w4SVhPN2lSOExOdWVPcG85MUFSa3ZyMWpDWFhzY3h1ck12SzlhTzc1ek9paHotNWQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T02:52:20Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "27c525e3948f5a",
       "title": "MicroStrategy (Strategy) Spends $16 Billion to Support STRC Price Amid Liquidity Strain",
       "published_at": "2026-10-16T05:45:32Z",
@@ -2953,6 +3098,62 @@
       "moon_meters": [
         {
           "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "4529f102439223",
+      "title": "Lite Strategy Launches Litecoin History Archive",
+      "published_at": "2026-10-15T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 70,
+      "source": "Cryptonews.net · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1Ud3VKR01UbERXWDA4YnljUDRyaml6N0VjR01MN1Vzd1EwUjJ3bEtNWTYzZEl4T2xxVFFRTC03SUgxSEdZMmo0U1VnS2hGdnlhTDkzVzkzQ3Uzdw?oc=5",
+      "excerpt": "Lite Strategy Launches Litecoin History Archive Cryptonews.net",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Launches Litecoin History Archive",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1Ud3VKR01UbERXWDA4YnljUDRyaml6N0VjR01MN1Vzd1EwUjJ3bEtNWTYzZEl4T2xxVFFRTC03SUgxSEdZMmo0U1VnS2hGdnlhTDkzVzkzQ3Uzdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-15T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Marks 15 Years of Litecoin with Launch of \"Proof of Time\" Public Industry Archive",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZnRfTFEzYWg2RjlYaEZGOFdyMGpUUGVkQjl0SE5Hc1dyNl9IZjBYMGJ2RlI4MllGUFNzZTFhTlZXQ0pEdnpLbDFvQ05CblVQTEpHV2JPeng3VTBPbG9DODdSbC1fdWxXTWp1ZEZQT1R5SVJNZFkyVkx5OE84WlY0VXNYTlZyLXV4ZDhLaDRlTWRJN3RUN0xsUTNWSEgwRFJnMktlNnlUemZmajRHdWkxLWFELVRnUmMwN2MzdS1UTFk5YjVEek9DSjJaMWd0MjRJcnNaNEhvdmppU3NsU0kyb2w2NVNWQl9tRnZQQy1VVVZua2VLbjR4Uw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy launches 'Proof of Time' archive to mark 15 years of Litecoin's continuous operation.",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMUdlVzc0UXpkX2U5QmtzTk55MFRQVkQzOUY3bHJ2OHNVenlNaEN4Y2dndDRrckpmeTVNaDVIS0FhYW9TdV9qOFdFZ2FUZ2g5VXcyQjZlR3ZjcEVGYkd6MmtGSGwzNXJLY1JmN0dibmNNb3BINmpvNzgxUzVNMUJCWEJHUEdyX0tPUlJHOXJENjZDRVo2XzJ6Z3JRaGw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -3800,6 +4001,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "aac9e57e5a7d50",
+      "title": "Evernorth XRPN Stock Slips Below Debut Close as 473M XRP Plan Waits",
+      "published_at": "2026-10-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Altcoin Buzz · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOMnh3YjZRVHhaY0x4aVZ2cFg3RDh6VUZ5ZnMxS2dhdlFIY2s3YWs3LWs0ZW9QS1VvVF9ZX2toNHFldklLbHQxRGRDb1VYUk9MSHJsaGdWNExVb2x1aFNBSG9pNDN4LS1TcnN0MC1qV3pwQXltNG54RU1KVmdzSW1HdTlFa004ZEk5YlViU3VOeW8?oc=5",
+      "excerpt": "Evernorth XRPN Stock Slips Below Debut Close as 473M XRP Plan Waits Altcoin Buzz",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:33Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth XRPN Stock Slips Below Debut Close as 473M XRP Plan Waits",
+          "name": "Altcoin Buzz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOMnh3YjZRVHhaY0x4aVZ2cFg3RDh6VUZ5ZnMxS2dhdlFIY2s3YWs3LWs0ZW9QS1VvVF9ZX2toNHFldklLbHQxRGRDb1VYUk9MSHJsaGdWNExVb2x1aFNBSG9pNDN4LS1TcnN0MC1qV3pwQXltNG54RU1KVmdzSW1HdTlFa004ZEk5YlViU3VOeW8?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -5246,6 +5489,48 @@
       ]
     },
     {
+      "id": "5177a79866f154",
+      "title": "Lite Strategy (LITS): Litecoin Treasury Strategy Enters the Execution Test",
+      "published_at": "2026-09-29T22:08:25Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "AlphaStreet · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc3Rxb1pWTlJBYm5TUF9qbnhsRmtNS0pLR3pxSHRwc0k1UXZCUlE3TkVHMFkwMjNqRFBzS0xKM1hoRVlHX2t6aWhEdnM3ckQtUVB3LUJPWC12UVFXclAxc08tVlBCNjVXUDl2cXJkTkJiTXNzOGVtTGdlckdfWWJWWmRKdk95Sy1VaG9YWjFCY3QtV0hKT2lwa1ozWXJ6R01acG9v0gGjAUFVX3lxTE9zdHFvWlZOUkFiblNQX2pueGxGa01LSktHenFIdHBzSTVRdkJSUTdORUcwWTAyM2pEUHNLTEozWGhFWUdfa3ppaER2czdyRC1RUHctQk9YLXZRUVdyUDFzTy1WUEI2NVdQOXZxcmROQmJNc3M4ZW1MZ2VyR19ZYlZaZEp2T3lLLVVob1haMUJjdC1XSEpPaXBrWjNZcnpHTVpwb28?oc=5",
+      "excerpt": "Lite Strategy (LITS): Litecoin Treasury Strategy Enters the Execution Test AlphaStreet",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy (LITS): Litecoin Treasury Strategy Enters the Execution Test",
+          "name": "AlphaStreet · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc3Rxb1pWTlJBYm5TUF9qbnhsRmtNS0pLR3pxSHRwc0k1UXZCUlE3TkVHMFkwMjNqRFBzS0xKM1hoRVlHX2t6aWhEdnM3ckQtUVB3LUJPWC12UVFXclAxc08tVlBCNjVXUDl2cXJkTkJiTXNzOGVtTGdlckdfWWJWWmRKdk95Sy1VaG9YWjFCY3QtV0hKT2lwa1ozWXJ6R01acG9v0gGjAUFVX3lxTE9zdHFvWlZOUkFiblNQX2pueGxGa01LSktHenFIdHBzSTVRdkJSUTdORUcwWTAyM2pEUHNLTEozWGhFWUdfa3ppaER2czdyRC1RUHctQk9YLXZRUVdyUDFzTy1WUEI2NVdQOXZxcmROQmJNc3M4ZW1MZ2VyR19ZYlZaZEp2T3lLLVVob1haMUJjdC1XSEpPaXBrWjNZcnpHTVpwb28?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T22:08:25Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b6917a1e818f4b",
       "title": "Strategy’s Bitcoin Doctrine Faces Test as Pension Funds Buy MSTR",
       "published_at": "2026-09-29T15:15:00Z",
@@ -5277,6 +5562,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "db3f248170efee",
+      "title": "Lite Strategy Holds 832,716 LTC, Exceeding 1% of Total Mined Supply",
+      "published_at": "2026-09-29T12:58:29Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "bloomingbit · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBaZzM3Y1RibnVmRE45T1lwMmxHS3BOWGdadGdVU3c4NElUVWd1VzlBUUpBNlllRzZhanMzY3AzYl81SGw1RG1mZzRlOXFRYWFzczdpWQ?oc=5",
+      "excerpt": "Lite Strategy Holds 832,716 LTC, Exceeding 1% of Total Mined Supply bloomingbit",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Holds 832,716 LTC, Exceeding 1% of Total Mined Supply",
+          "name": "bloomingbit · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBaZzM3Y1RibnVmRE45T1lwMmxHS3BOWGdadGdVU3c4NElUVWd1VzlBUUpBNlllRzZhanMzY3AzYl81SGw1RG1mZzRlOXFRYWFzczdpWQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T12:58:29Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -5379,6 +5706,48 @@
       ]
     },
     {
+      "id": "f63ffc0f4e1ddc",
+      "title": "Lite Strategy buys 900K+ Litecoin, holding over 1% of total supply, boosts treasury and share buybacks.",
+      "published_at": "2026-09-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 76,
+      "source": "Pluang · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTzJIdFRjdXRyWFE5VXBFbFZ4aWtURnlGMXZNVDhXQThHbGV5Tmd4QXFjaGw5Mks2M1VuLWIwS243NVRqX0xBY2s0Y3gwM2o1ZmtERnJOZDR0X1g5Vnd0alFNZ3lnajFpRXlLRENGTUVFaFpZS0F4SmF0clJlZi1Ca3Z5YUdpdkFselJ0b1dncEJ3c0E?oc=5",
+      "excerpt": "Lite Strategy buys 900K+ Litecoin, holding over 1% of total supply, boosts treasury and share buybacks. Pluang",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy buys 900K+ Litecoin, holding over 1% of total supply, boosts treasury and share buybacks.",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTzJIdFRjdXRyWFE5VXBFbFZ4aWtURnlGMXZNVDhXQThHbGV5Tmd4QXFjaGw5Mks2M1VuLWIwS243NVRqX0xBY2s0Y3gwM2o1ZmtERnJOZDR0X1g5Vnd0alFNZ3lnajFpRXlLRENGTUVFaFpZS0F4SmF0clJlZi1Ca3Z5YUdpdkFselJ0b1dncEJ3c0E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If LITS repurchases shares at an attractive discount to LTC NAV, holdings per share may improve.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "ba0e561acba94c",
       "title": "Strategy’s Bitcoin Treasury Faces Its First Real Test as Institutions Pile Into MSTR",
       "published_at": "2026-09-29T07:00:00Z",
@@ -5410,6 +5779,97 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "18865b981d1825",
+      "title": "Lite Strategy Holds More Than 1% of Mined Litecoin Supply",
+      "published_at": "2026-09-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "tokenpost.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8tbV96TTBURTdBTU9RalQ0bEN3clpWeTh5OTAtTE04MnNLQWJPdERaVXlEclZ6T3IwRUM2eVFuOTYxZlZNeUp3dU01UnF5UXFlZzFJaFRFQ2w?oc=5",
+      "excerpt": "Lite Strategy Holds More Than 1% of Mined Litecoin Supply tokenpost.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Holds More Than 1% of Mined Litecoin Supply",
+          "name": "tokenpost.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8tbV96TTBURTdBTU9RalQ0bEN3clpWeTh5OTAtTE04MnNLQWJPdERaVXlEclZ6T3IwRUM2eVFuOTYxZlZNeUp3dU01UnF5UXFlZzFJaFRFQ2w?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "745ec3c53e9fed",
+      "title": "Lite Strategy Reports Fiscal Year 2026 Financial Results",
+      "published_at": "2026-09-29T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "GlobeNewswire · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ2xmSmx2Yng1UkUybDM5X2FjaEFZekF2WHRZTVUybm0yWnZzcnRoTXd0alhyT0RnTmFob0JKNmhqd2tlczhjUGdIeUtQR0dxTER1di04UldfenQ5TkYtblR1Y1JXYlNBdGNnZHZQYnRiM19nUk9SRGZRdnM3ZGhmejh4TTJ5MEdPN1pKQ3VKcEtVWHhCX0VWbnA2bk9RR0R5RFZBM2Z0cnVfX0puS0pfZE54UHYwbXFPaDhkR1ZkbmtNOG4tS21Z?oc=5",
+      "excerpt": "Lite Strategy Reports Fiscal Year 2026 Financial Results GlobeNewswire",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Reports Fiscal Year 2026 Financial Results",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ2xmSmx2Yng1UkUybDM5X2FjaEFZekF2WHRZTVUybm0yWnZzcnRoTXd0alhyT0RnTmFob0JKNmhqd2tlczhjUGdIeUtQR0dxTER1di04UldfenQ5TkYtblR1Y1JXYlNBdGNnZHZQYnRiM19nUk9SRGZRdnM3ZGhmejh4TTJ5MEdPN1pKQ3VKcEtVWHhCX0VWbnA2bk9RR0R5RFZBM2Z0cnVfX0puS0pfZE54UHYwbXFPaDhkR1ZkbmtNOG4tS21Z?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Reports Fiscal Year 2026 Financial Results",
+          "name": "Stock Titan · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPanpUbUloOGNyM0lLNG9jRGFBblF4NmZoVFRWcm9TMUprc2FFMklkSE51ZmZKcVBjTDBWLVFBaU9Pak5hMzRSV3F0TFJLck1qOVdneVFVelREb3pCalFvc0UyU0l6REQ1SUZNT0xEejRBejhuQkxpVERpanpoeGhiWnN3ZHp0SXA4d3Bpb1kxTW5BQkkycFY2M2EzWERDcW1VN09ZTGln?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -5512,6 +5972,48 @@
       ]
     },
     {
+      "id": "c8f0e04ba87891",
+      "title": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity",
+      "published_at": "2026-09-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "https://www.dars.gov.et/ · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ3hqRVBBdnhXTUJ3cm54SU5BTVJZZmZSdU1pU3h4LTBUSGt1anI0bF9Hdm9IRzd6VHlhelk5M0VnMmc3NERtMEhiRk5vQUR6TFU3NDQ4SnoyQzdTX2pYOVF1ekZOSElOV19mQ0ZVanhhWmNodkJVNnptN3BoT1Vpd0w2MmtlcFd3Ni0weTdNM0UybEpfMnpjcGlQWGc2ZnJoVkZNYkg1TVk?oc=5",
+      "excerpt": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity https://www.dars.gov.et/",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity",
+          "name": "https://www.dars.gov.et/ · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ3hqRVBBdnhXTUJ3cm54SU5BTVJZZmZSdU1pU3h4LTBUSGt1anI0bF9Hdm9IRzd6VHlhelk5M0VnMmc3NERtMEhiRk5vQUR6TFU3NDQ4SnoyQzdTX2pYOVF1ekZOSElOV19mQ0ZVanhhWmNodkJVNnptN3BoT1Vpd0w2MmtlcFd3Ni0weTdNM0UybEpfMnpjcGlQWGc2ZnJoVkZNYkg1TVk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "4756ac184a99db",
       "title": "Strategy (MSTR) Proposes Daily Dividends On Four Preferred Shares",
       "published_at": "2026-09-27T07:00:00Z",
@@ -5549,6 +6051,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b3085f1f239969",
+      "title": "XRPL Batch Upgrade Delayed 10 Days After Support Falls Below 80%",
+      "published_at": "2026-09-26T15:08:18Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "CryptoRank · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUFRsSS1RNFVyOW9zaHI4TjU5emdnUkYzNXB0Q09icUZlZHJGdnBrUkxGZDQ4TjJxX0FoNmVtcVFyOVBlRVBWUDMzcXJmbll1amoxN1AxQmdBSFRqUGE4ak0wMVJkblNEVUthWVVLM0lpVlNYMzRWSkY5RnNOcFg4UHdUT3h1R0kzdUJHc09uUXAwX0hYNTcxNWhnVHNQa2tlVTFj?oc=5",
+      "excerpt": "XRPL Batch Upgrade Delayed 10 Days After Support Falls Below 80% CryptoRank",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRPL Batch Upgrade Delayed 10 Days After Support Falls Below 80%",
+          "name": "CryptoRank · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUFRsSS1RNFVyOW9zaHI4TjU5emdnUkYzNXB0Q09icUZlZHJGdnBrUkxGZDQ4TjJxX0FoNmVtcVFyOVBlRVBWUDMzcXJmbll1amoxN1AxQmdBSFRqUGE4ak0wMVJkblNEVUthWVVLM0lpVlNYMzRWSkY5RnNOcFg4UHdUT3h1R0kzdUJHc09uUXAwX0hYNTcxNWhnVHNQa2tlVTFj?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-26T15:08:18Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": -1,
+          "label": "Slightly bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Delay or validator friction could modestly slow XRPL functionality.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6086,6 +6630,13 @@
           "title": "XRP News: Absa Launches Ripple-Powered Crypto Custody in Africa",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOaE8tbF9QQ2FhYTFSOWtURUcyR1FOSDhoZmVmUHNMNlRudEhDb0hPSjdfeUxqUGlDM1FQR3J0azNWMDd0amtqdWdYNHdLTEdZZ01nNW5FaGUxWmNtYXVYQmUyRkt4Y0pqLXNOSGNLaDBzLUhIQXpsZW4yY2JzY2UwUENoOEZjNUltTFVHR3ZtRk9aYzRRTUc2SFhJVzhabGlDTk9aMHh6YWFoeTlybEI2cHEzTkNFZVFKQkxaNkF3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-21T07:00:00Z"
+        },
+        {
+          "title": "XRP News: Absa Launches Ripple-Powered Crypto Custody in Africa",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSUNJOW0xRngzbm00aU5hVFlWWk9ObzBuUUZYaktHYkxPTTZBZ1ktYU5pem9Ibmt1NHpVOFAtUGoxMjRxMFhiWmcxUFBmYzZ3aFJUNTh6WDBzdDlFUTJVcHBpWmlWYjZsQTl0Y3hoWFl0VXpqZUMyUll0dzJlT2ZXd0ZfTWZQSVplSHk2ZUxyWTlqNy10RTJoWlV6MEtINzB0QTZ6dnNFUWJxbWF3UXNNdHVzY05tRWdsTzhqQlNBZw?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-21T07:00:00Z"
         }
@@ -7917,6 +8468,48 @@
       ]
     },
     {
+      "id": "1e35e4811b4d0e",
+      "title": "Strategy (MSTR) Stock Climbs 5% as Saylor Dismisses Share Buyback Plans Amid $4.8B Cash Stockpile",
+      "published_at": "2026-08-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Blockonomi · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbTVBa3k0cTRzbnlxdE9XQmdvbDBZNEhMakowY0otSVdDQjd3QmJBby1vWXplRjlZc0NDWkVSRGU0MDF4Q05qVkI1UjBjVzREVkZVVERKSnFUMi1JOWhPR3k0TTViQjZmUG14a25hcklzSDd3bFlKUmVYaDBtaEp4YjB1enZURGU3bzNoWWhRZ2w0Um5rMVV6T1hVZlZkVTlhZFN4cDNNSkZiZl92Um5VOWl3bENNSTJT?oc=5",
+      "excerpt": "Strategy (MSTR) Stock Climbs 5% as Saylor Dismisses Share Buyback Plans Amid $4.8B Cash Stockpile Blockonomi",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Stock Climbs 5% as Saylor Dismisses Share Buyback Plans Amid $4.8B Cash Stockpile",
+          "name": "Blockonomi · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbTVBa3k0cTRzbnlxdE9XQmdvbDBZNEhMakowY0otSVdDQjd3QmJBby1vWXplRjlZc0NDWkVSRGU0MDF4Q05qVkI1UjBjVzREVkZVVERKSnFUMi1JOWhPR3k0TTViQjZmUG14a25hcklzSDd3bFlKUmVYaDBtaEp4YjB1enZURGU3bzNoWWhRZ2w0Um5rMVV6T1hVZlZkVTlhZFN4cDNNSkZiZl92Um5VOWl3bENNSTJT?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "9ead163b671327",
       "title": "Strategy raised $334 million from MSTR shareholders last week — Bitcoin got none of it",
       "published_at": "2026-08-18T07:00:00Z",
@@ -9086,6 +9679,62 @@
       ]
     },
     {
+      "id": "2e9ebd2fe647f9",
+      "title": "Lite Strategy Repurchases 13% of Shares Using Litecoin Sales, Boosts LTC Per Share by 1.66%",
+      "published_at": "2026-08-02T02:40:50Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 84,
+      "source": "KuCoin · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdEpSejlZNkZ4NHVaRUhCMnd6OUJKQnFuRDVpbEViUW0zMjVjODVEMEVOQlVBQUg0a2FYWjY0aVUxM0xyN0czb3NjbXl3b25jSjFkX1NKRWlJVWNiLTJNS3JoMEdqcVY5emx0anl4RDdUbi1XWG1GS0kzUEdpSWd2bkJvZHo2R2xON29xRzh3UWZJbjF1YWZRWm0yeFYtZUpRYk0xa0k3aU5IRG1hNV8yODRHUkw3TElQN2huQU5ISQ?oc=5",
+      "excerpt": "Lite Strategy Repurchases 13% of Shares Using Litecoin Sales, Boosts LTC Per Share by 1.66% KuCoin",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Repurchases 13% of Shares Using Litecoin Sales, Boosts LTC Per Share by 1.66%",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdEpSejlZNkZ4NHVaRUhCMnd6OUJKQnFuRDVpbEViUW0zMjVjODVEMEVOQlVBQUg0a2FYWjY0aVUxM0xyN0czb3NjbXl3b25jSjFkX1NKRWlJVWNiLTJNS3JoMEdqcVY5emx0anl4RDdUbi1XWG1GS0kzUEdpSWd2bkJvZHo2R2xON29xRzh3UWZJbjF1YWZRWm0yeFYtZUpRYk0xa0k3aU5IRG1hNV8yODRHUkw3TElQN2huQU5ISQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-02T02:40:50Z"
+        },
+        {
+          "title": "Lite Strategy repurchased 13% of shares, bought ~4.9M shares for $5.4M — LTC backing rises",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNVDVhVHY0SDV0M3Y0czJWWFd4bFREV1JRNl9OWlhENVU3bXkyZzE3U19lb01FOEhVTUM3cUtWdWdPcENQQ3MyVDgxZVVnYTI0VmpYUjQwU1N6b0Z5Y0t4NUpHYkw5Q0J0dWRKMEdpbmZDNndoa01Qb1dsSV9tN3NyZFY4V05lZUVNR3dwVDB0S1gwUl9yZ1Q4YnBVOWlObC1oWXVZUDlER1BOaUgtc2pZSVkweF9YMXBldW9zT2JMbjhONmg1dUlPUHp4VEFseDIyX0h6bjBPMFAwa2FMOXpZ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-30T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Funds $5.4M Buyback With Litecoin Sales And Covered Calls",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNamstRG01YTVTRVZRak5oQm95MklFTkhoV2hGQ0VoU3VBUjhYV0xyQVFGSFY4bmd5UU9kSlRINUlYYmx5UU00emlzUEtkdENMOF9TeGgydGVNM0tOZ1pHRW9DZzV6OXUyQVZ5NktIMFo0T2JLbWtNakdfT3FfY2QxMEFGSmRyV2ZfdGItNDNWNE8tNVZEWldYNGpxX1gzT1pFaHN6UzA4TzVObUhrYmpGUzdNRi1SSzNJR2xPQXRqZ3JXWDdDcW1B?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-31T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If retiring 10%+ of outstanding shares meaningfully increases LTC backing per diluted share without damaging liquidity, LITS upside could be exceptional.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "1735f0c588d1ed",
       "title": "Michael Saylor Has Paused Strategy's Regular Bitcoin Buys. What Does That Mean for MSTR Stock?",
       "published_at": "2026-08-01T07:00:00Z",
@@ -9214,6 +9863,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "79c1fc001f4d3b",
+      "title": "Lite Strategy repurchases 4.9M shares at average $1.11 price",
+      "published_at": "2026-07-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "Investing.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeE9jQXJkZW9DOUZvOVJvNklYVlNUeW1rVjRwdjYtVEk5ZkNhaTFrRjJodG14c2ltOWt0Mkdnd1dUdkdtV0kwVlA0NU5Hd2dLQ2lwVWJ1cGxkMVd6TFdEOGJSeENHcjNrUjZtVXZPR3N4dnBtTmV6WDAwbW01UWpEaHFuTnI0ZXB5cnNmWDN1OEZRUmN4OGNoTlZHa0VWMVdEM01RV1pqN3RXeWFKdFhhNkFZX3U?oc=5",
+      "excerpt": "Lite Strategy repurchases 4.9M shares at average $1.11 price Investing.com",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy repurchases 4.9M shares at average $1.11 price",
+          "name": "Investing.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeE9jQXJkZW9DOUZvOVJvNklYVlNUeW1rVjRwdjYtVEk5ZkNhaTFrRjJodG14c2ltOWt0Mkdnd1dUdkdtV0kwVlA0NU5Hd2dLQ2lwVWJ1cGxkMVd6TFdEOGJSeENHcjNrUjZtVXZPR3N4dnBtTmV6WDAwbW01UWpEaHFuTnI0ZXB5cnNmWDN1OEZRUmN4OGNoTlZHa0VWMVdEM01RV1pqN3RXeWFKdFhhNkFZX3U?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If LITS repurchases shares at an attractive discount to LTC NAV, holdings per share may improve.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -9425,6 +10116,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "412fdc71283078",
+      "title": "Lite Strategy readies investor deck, discloses 830,378 LTC treasury, $25M buyback plan",
+      "published_at": "2026-07-24T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 76,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQUJETFhtVFMyM3pwVkZCMXhhQ1ZPX0laQm1fdzFJUm40RVI1elVZYktrM3VLRkpCbVd3WWpidlRTbUYybUg5SW1oc1l2dUFPZmwzdDlvNjBEZk9Cd3otY1B3MUQwS0lQcTNwckNhYWt3TThjU2ZVQmpDQUhEaDlqalVUZFlNNEE2Y2V4b2tSTDZzN1RySmJmWG5XNkNaX3ZTYVVFR1hibkFHLXZKcjkxbC1pRVpocGFZd2NCRXRYWDR3YlZXdXpkU0w4eUVRcU91U0NRZC1iNGtyNUJPQ1E?oc=5",
+      "excerpt": "Lite Strategy readies investor deck, discloses 830,378 LTC treasury, $25M buyback plan TradingView",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy readies investor deck, discloses 830,378 LTC treasury, $25M buyback plan",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQUJETFhtVFMyM3pwVkZCMXhhQ1ZPX0laQm1fdzFJUm40RVI1elVZYktrM3VLRkpCbVd3WWpidlRTbUYybUg5SW1oc1l2dUFPZmwzdDlvNjBEZk9Cd3otY1B3MUQwS0lQcTNwckNhYWt3TThjU2ZVQmpDQUhEaDlqalVUZFlNNEE2Y2V4b2tSTDZzN1RySmJmWG5XNkNaX3ZTYVVFR1hibkFHLXZKcjkxbC1pRVpocGFZd2NCRXRYWDR3YlZXdXpkU0w4eUVRcU91U0NRZC1iNGtyNUJPQ1E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-24T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -10840,6 +11573,104 @@
       ]
     },
     {
+      "id": "4c7b6b2dfdf1ff",
+      "title": "Lite Strategy invests $1M in Litecoin Layer-2 LitVM",
+      "published_at": "2026-06-19T15:37:20Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Dealroom · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOOVlOTFp4NHhuY01jVVhCLXVvMUh6WE1FeElYS1ZreUNMd2NyRnc3S2YxYXpWNURNaE40QUhnOXZiN1hMcGN6d3F5RF82cVJKeXFRSHBaRU5wSXdWV0cyZnJBSHdKc19vVGRYYUhwcDNPRU1TZDdJNnhwMGZDMDJVYnVlUXpqUXZxV2VPTw?oc=5",
+      "excerpt": "Lite Strategy invests $1M in Litecoin Layer-2 LitVM Dealroom",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy invests $1M in Litecoin Layer-2 LitVM",
+          "name": "Dealroom · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOOVlOTFp4NHhuY01jVVhCLXVvMUh6WE1FeElYS1ZreUNMd2NyRnc3S2YxYXpWNURNaE40QUhnOXZiN1hMcGN6d3F5RF82cVJKeXFRSHBaRU5wSXdWV0cyZnJBSHdKc19vVGRYYUhwcDNPRU1TZDdJNnhwMGZDMDJVYnVlUXpqUXZxV2VPTw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-19T15:37:20Z"
+        },
+        {
+          "title": "Exclusive: Lite Strategy leads $1m investment in Litecoin Layer 2 platform LitVM",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPN0NqRlF4WDdFdFFpalpNeHVlN2lyd3hnVUptOWE2dS02aWRHRmhhamE2SURUNnFPUE1IZ21lNHpGdF8tQ1hNTHVtVG8tNUh6Z3RpeUpncGE2N0Z0MklYWm1IMGtRMlhyU1REOFdTQTFDaE94aVdENWVhZ2R4Vl9xaXp3WHpWZS03SFBRMmgzZ2FkQmZFdmtfM0NvZHVGdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-18T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Leads Strategic Investment in LitVM",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWEZWaEZOWllka0RndDdWRHpZMzlaWEtFYzlQaTJMV3NlZ1pQQ25YMWpadDJZZUJVTFdJWURob0F4TjhRT0ZxLUpIR0JfeW9SMHFvSVM3bU9XSVlGUVhOck10dDZmMnNwOEJKbTh5WFFBN3hMd05RUHROY1JQYkFUZnA1NWNKQUJISGZSVVR3N2I2aUhnXzY1MVBpOTlHUUlYV3dCVmE4eEgwMTU0Nkl6TzdnLTAzXzZCNXdUY09n?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If LitVM adoption materialises, the strategic investment may add ecosystem optionality; value remains uncertain.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0bfeeeecbb66df",
+      "title": "Lite Strategy to Attend Panel at Litecoin Foundation Summit in Amsterdam",
+      "published_at": "2026-06-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "GlobeNewswire · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQZjJIRE1OZTNpVGNZVHBuUmNSRmR4VXZzTTlVYkFqTHE0QUlFbjhqVHZHaExJWWJ3cjZaWlFtUlItVjNiT1FEV1AwbVVLY1JWcVNfU0ZGeVZHUC11RU5zYy0xZENTMjlzakkxNkF4OVFCOFl6SmpzQXRTd3BabzFFSk1lZV9IOGt5aXZRbDAycmM1NjRROGU5MTdwTjFWLVV2bkduN0tZZktfQ2NvMjV1NG5rbzNEaFoxdXdOdDNMQWRNUXRZRTNSTVRLQUw3MUdMQXhEVHd3Z29MMFc1?oc=5",
+      "excerpt": "Lite Strategy to Attend Panel at Litecoin Foundation Summit in Amsterdam GlobeNewswire",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy to Attend Panel at Litecoin Foundation Summit in Amsterdam",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQZjJIRE1OZTNpVGNZVHBuUmNSRmR4VXZzTTlVYkFqTHE0QUlFbjhqVHZHaExJWWJ3cjZaWlFtUlItVjNiT1FEV1AwbVVLY1JWcVNfU0ZGeVZHUC11RU5zYy0xZENTMjlzakkxNkF4OVFCOFl6SmpzQXRTd3BabzFFSk1lZV9IOGt5aXZRbDAycmM1NjRROGU5MTdwTjFWLVV2bkduN0tZZktfQ2NvMjV1NG5rbzNEaFoxdXdOdDNMQWRNUXRZRTNSTVRLQUw3MUdMQXhEVHd3Z29MMFc1?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "2cc4e0ea0880aa",
       "title": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh’s First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65?",
       "published_at": "2026-06-19T07:00:00Z",
@@ -10919,6 +11750,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "e56be81ecb6cdb",
+      "title": "Lite Strategy Backs Litecoin Layer-2 Developer ZK Innovations With $1 Million",
+      "published_at": "2026-06-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "The Currency analytics · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYlZ6WXlTaEUzaWF2T003UmNEYU9qQUNjVmxBcTZoY2lWbjNoTC1TWEtlZ1RkZzVHam1BelJLWEJfTjk1dEFqOTc3bzJqSDRZdHpPQ0Q4WWprQ0NieXBmQWc0UzkwbjNnVTlEOEpmQm5tM0tmeklaT09BdlRTcXh4Y0h2d0R1OGI0Vkh1RW9VLVloWW5MOE1ZaDhESWRWZl84bjdSRzZWN3RNT0hFOXhwaV9RS0Q1VW04SUZzTFFJcERXNWc?oc=5",
+      "excerpt": "Lite Strategy Backs Litecoin Layer-2 Developer ZK Innovations With $1 Million The Currency analytics",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Backs Litecoin Layer-2 Developer ZK Innovations With $1 Million",
+          "name": "The Currency analytics · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYlZ6WXlTaEUzaWF2T003UmNEYU9qQUNjVmxBcTZoY2lWbjNoTC1TWEtlZ1RkZzVHam1BelJLWEJfTjk1dEFqOTc3bzJqSDRZdHpPQ0Q4WWprQ0NieXBmQWc0UzkwbjNnVTlEOEpmQm5tM0tmeklaT09BdlRTcXh4Y0h2d0R1OGI0Vkh1RW9VLVloWW5MOE1ZaDhESWRWZl84bjdSRzZWN3RNT0hFOXhwaV9RS0Q1VW04SUZzTFFJcERXNWc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -12258,6 +13131,48 @@
       ]
     },
     {
+      "id": "0a8ed6b1d0165c",
+      "title": "Lite Strategy reports continued LTC yield generation and share repurchases",
+      "published_at": "2026-05-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "High",
+      "score": 84,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQkV1RWRESjNQWXoxWTA0Y2JHN3RSUlhDSmJCR1pXV3FYeng2ZFRsb285RTQwLXJCMmRJampOVUlYOE9XYTVMVFhCbERPdkM2d3liUXJQMnVWUEVKVGRkQlRPTkZxTVF4dWJva2sxN2FGUU1ma0o4dnI3NHU1dVRfOFVlYTkyM3k4M0lMc2loMlluOTRRX3lUclpSNnBlQXlmQVFKOWxtR2dEUlNRaFBpRXJTaWdjNHl2Z0t1azBjcWlOXzRlQ2J1VDdzT3pBRU95eWc?oc=5",
+      "excerpt": "Lite Strategy reports continued LTC yield generation and share repurchases TradingView",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy reports continued LTC yield generation and share repurchases",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQkV1RWRESjNQWXoxWTA0Y2JHN3RSUlhDSmJCR1pXV3FYeng2ZFRsb285RTQwLXJCMmRJampOVUlYOE9XYTVMVFhCbERPdkM2d3liUXJQMnVWUEVKVGRkQlRPTkZxTVF4dWJva2sxN2FGUU1ma0o4dnI3NHU1dVRfOFVlYTkyM3k4M0lMc2loMlluOTRRX3lUclpSNnBlQXlmQVFKOWxtR2dEUlNRaFBpRXJTaWdjNHl2Z0t1azBjcWlOXzRlQ2J1VDdzT3pBRU95eWc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If LITS repurchases shares at an attractive discount to LTC NAV, holdings per share may improve.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "c0f3ab9aee7e9d",
       "title": "Should You Buy, Sell or Hold MSTR Stock After Mixed Q1 Earnings?",
       "published_at": "2026-05-13T07:00:00Z",
@@ -13071,6 +13986,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "5610efcda6d7d6",
+      "title": "Is Lite Strategy (NASDAQ:LITS) In A Good Position To Invest In Growth?",
+      "published_at": "2026-04-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNckNRZ1ZUR2JQTHJUX0hNOHRGTkxlVXFLNnZ4YVlBZUNseWdLS1d4c1FkQ3gwMEUzYkluczZiRURQUWhpbVRjcVRhUnl4R0hvVDRxVWVVSjBsclNaNGF5TmwySlRjWFRSQmhEaUU0amhsUUtxNTlFeHZoNFc4MERvMXlWY0JQT3NSeEN4UC1abmFnSEpkdThGNHpzSQ?oc=5",
+      "excerpt": "Is Lite Strategy (NASDAQ:LITS) In A Good Position To Invest In Growth? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Is Lite Strategy (NASDAQ:LITS) In A Good Position To Invest In Growth?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNckNRZ1ZUR2JQTHJUX0hNOHRGTkxlVXFLNnZ4YVlBZUNseWdLS1d4c1FkQ3gwMEUzYkluczZiRURQUWhpbVRjcVRhUnl4R0hvVDRxVWVVSjBsclNaNGF5TmwySlRjWFRSQmhEaUU0amhsUUtxNTlFeHZoNFc4MERvMXlWY0JQT3NSeEN4UC1abmFnSEpkdThGNHpzSQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-25T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -17610,6 +18567,90 @@
       ]
     },
     {
+      "id": "e2e5a3e32ab437",
+      "title": "Lite Strategy Litecoin Treasuries: LITS.US LTC Holdings Chart, Purchase History & More",
+      "published_at": "2025-11-19T05:04:22Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CoinGecko · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE13YVlfczE1YzNhTlE3VlQ5SGlWMElidWg3eTMzTlE4MElSX3o5aEZzOGFOSDdST1JNQlBUY0preE9IREtLMzBmRzJsZWpTaTc3ZDRmamRGX2F5RDg1dWo3amhSRGFOajF0dW1TRktvbXo?oc=5",
+      "excerpt": "Lite Strategy Litecoin Treasuries: LITS.US LTC Holdings Chart, Purchase History & More CoinGecko",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Litecoin Treasuries: LITS.US LTC Holdings Chart, Purchase History & More",
+          "name": "CoinGecko · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE13YVlfczE1YzNhTlE3VlQ5SGlWMElidWg3eTMzTlE4MElSX3o5aEZzOGFOSDdST1JNQlBUY0preE9IREtLMzBmRzJsZWpTaTc3ZDRmamRGX2F5RDg1dWo3amhSRGFOajF0dW1TRktvbXo?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-19T05:04:22Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "eb345e38dcc327",
+      "title": "Lite Strategy becomes first US public company to hold Litecoin",
+      "published_at": "2025-11-17T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Investing.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQXNHcFU0dHVrX1FkSG9ORVhDX3lWZ1E2NmVlMVljcjdMLVBVNGQ1bnRmdnh6dVZlalk0ZEtta1VBNGJMTkdibVJoZVUtdGxLU0xiRFZfbC0wRzh6b2l0SUtSWFltWVRtNGZPdnFzN202NUNtQ3lQNjBhUlA5LWN1eXBpZEx5ajRrNlpLc1hnaEtKMU0yMi0xN2RxOXRONUpXbVROSmd4WHYtQ2RkZ05Pd18zbjVyMEpieTFv?oc=5",
+      "excerpt": "Lite Strategy becomes first US public company to hold Litecoin Investing.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:35Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy becomes first US public company to hold Litecoin",
+          "name": "Investing.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQXNHcFU0dHVrX1FkSG9ORVhDX3lWZ1E2NmVlMVljcjdMLVBVNGQ1bnRmdnh6dVZlalk0ZEtta1VBNGJMTkdibVJoZVUtdGxLU0xiRFZfbC0wRzh6b2l0SUtSWFltWVRtNGZPdnFzN202NUNtQ3lQNjBhUlA5LWN1eXBpZEx5ajRrNlpLc1hnaEtKMU0yMi0xN2RxOXRONUpXbVROSmd4WHYtQ2RkZ05Pd18zbjVyMEpieTFv?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-17T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "07ff249a0f678a",
       "title": "'Big week': Michael Saylor's Strategy buys another 8,178 bitcoin for $836 million, bringing total holdings to 649,870 BTC",
       "published_at": "2025-11-17T08:00:00Z",
@@ -18037,6 +19078,48 @@
       ]
     },
     {
+      "id": "b9a2dc9d8b9d81",
+      "title": "Lite Strategy, Inc. (LITS) Stock Forum & Discussion - Yahoo Finance",
+      "published_at": "2025-11-02T23:52:11Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo! Finance Canada · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBCRm8taWdHZG9IOGJTbVUyMU43OGQyY05fMWxHUE1RRE4wQWIxQlhScWE0X0lDZHBxTTdSYnAzN0ZjUUZ3VUFpTExqSEc3b200clZMRzRIYWFHbURDVFhV?oc=5",
+      "excerpt": "Lite Strategy, Inc. (LITS) Stock Forum & Discussion - Yahoo Finance Yahoo! Finance Canada",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T08:26:36Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy, Inc. (LITS) Stock Forum & Discussion - Yahoo Finance",
+          "name": "Yahoo! Finance Canada · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBCRm8taWdHZG9IOGJTbVUyMU43OGQyY05fMWxHUE1RRE4wQWIxQlhScWE0X0lDZHBxTTdSYnAzN0ZjUUZ3VUFpTExqSEc3b200clZMRzRIYWFHbURDVFhV?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-02T23:52:11Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "afbef7de42bf20",
       "title": "Research Signals XRP Advancing Toward Institutional Maturity With XRPL and RLUSD Expansion",
       "published_at": "2025-11-02T07:00:00Z",
@@ -18242,144 +19325,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "643725028f14be",
-      "title": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury",
-      "published_at": "2025-10-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth",
-        "Ripple"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdFVydExaa2RfQm5PdjBZYWktZURlSzM2cTJSU3BWYXpOZkdkQVNCYW8xS3lXbExUWkpsd3JJUmhnVXZUcDRpM1dnZi1lMzZpU3NCeUNfOEJRdGVXYjROR3BrTHA4dExNeUlkT0tNSjA3Y0FlR1A2Tk40V00yWTBWZzBDQmltQTRKbmpUNExyTENFUlBCNXZnUzA4VUpRaEVVZXZJTlRxTXVfMC0wSmZUYlh6bXFFVTFzNExCNE9UTVY0WVQ1XzJTZmw2dGE?oc=5",
-      "excerpt": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury TradingView",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-26T22:39:27Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple-backed Evernorth nears launch of publicly traded XRP treasury",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdFVydExaa2RfQm5PdjBZYWktZURlSzM2cTJSU3BWYXpOZkdkQVNCYW8xS3lXbExUWkpsd3JJUmhnVXZUcDRpM1dnZi1lMzZpU3NCeUNfOEJRdGVXYjROR3BrTHA4dExNeUlkT0tNSjA3Y0FlR1A2Tk40V00yWTBWZzBDQmltQTRKbmpUNExyTENFUlBCNXZnUzA4VUpRaEVVZXZJTlRxTXVfMC0wSmZUYlh6bXFFVTFzNExCNE9UTVY0WVQ1XzJTZmw2dGE?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "c341f7462e4230",
-      "title": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5%",
-      "published_at": "2025-10-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPa3dnTGhGYVpRYXhRVjhiaXhZa0RMYmk5REp2WGNDcEhland6LVpPZXJtTkdVT1JiOU54RzNSNDdzMVU5c3JESktpS2hpNG94b3lvN0VubG1NR2gwcF9YeTF1aWJtM3FoYjJEMXgxSjJiSlVFVTVLNjQ2RnRJSHo1WU9EcDI?oc=5",
-      "excerpt": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5% Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T21:54:57Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple’s New Venture Evernorth Buys $1B in XRP, Price Climbs 1.5%",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPa3dnTGhGYVpRYXhRVjhiaXhZa0RMYmk5REp2WGNDcEhland6LVpPZXJtTkdVT1JiOU54RzNSNDdzMVU5c3JESktpS2hpNG94b3lvN0VubG1NR2gwcF9YeTF1aWJtM3FoYjJEMXgxSjJiSlVFVTVLNjQ2RnRJSHo1WU9EcDI?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "a126a6671a701c",
-      "title": "Ripple News: New Report Reveals XRP ETF Launch Timeline",
-      "published_at": "2025-10-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple",
-        "XRP Ecosystem"
-      ],
-      "category": "Products",
-      "impact": "Low",
-      "score": 62,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNb0NpbHJJZ0o5X05paHpWa0twS3pOVFk0OEh3UFkzN2I5dXg5NmdTYW8xOTM5cFhFN2pSekNiZk5xb2k2cEVDaHVJWVBrTkpJMmFKOG1reFFpTU5Cb19IeEd2aG1GZXM3bm5BRmNQQnBXZnBLVnVpTHFRUW5Yd0YwV2p4MDd4SHhkcEVCalZrWGxEV052ZXlYcXp5YU4zNzhhVG9VMFJyRFF3bUtoc3lPbXNkUko?oc=5",
-      "excerpt": "Ripple News: New Report Reveals XRP ETF Launch Timeline TradingView",
-      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
-      "tags": [],
-      "added_at": "2026-10-28T06:50:42Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple News: New Report Reveals XRP ETF Launch Timeline",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNb0NpbHJJZ0o5X05paHpWa0twS3pOVFk0OEh3UFkzN2I5dXg5NmdTYW8xOTM5cFhFN2pSekNiZk5xb2k2cEVDaHVJWVBrTkpJMmFKOG1reFFpTU5Cb19IeEd2aG1GZXM3bm5BRmNQQnBXZnBLVnVpTHFRUW5Yd0YwV2p4MDd4SHhkcEVCalZrWGxEV052ZXlYcXp5YU4zNzhhVG9VMFJyRFF3bUtoc3lPbXNkUko?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
