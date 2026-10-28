@@ -72,7 +72,7 @@
 
   function featureHTML(item) {
     return `<article class="featured" aria-label="Lead investor story">
-      <div class="feature-tagline"><span class="feature-icon"></span> TOP INVESTOR SIGNAL <span class="feature-faint">/</span> ${esc(item.category.toUpperCase())} ${impactPill(item.impact)}</div>
+      <div class="feature-tagline"><span class="feature-icon"></span> <span title="Last 72 hours · Importance 35% · Freshness 30% · Absolute Moon Meter 20% · Source credibility 15%">TOP INVESTOR SIGNAL · 72H</span> <span class="feature-faint">/</span> ${esc(item.category.toUpperCase())} ${impactPill(item.impact)}</div>
       <h3 class="featured-title">${esc(item.title)}</h3>
       <p class="featured-excerpt">${esc(item.excerpt)}</p>
       <div class="investor-angle"><strong>WHY INVESTORS SHOULD CARE</strong>${esc(item.why_it_matters)}</div>
@@ -111,10 +111,49 @@
     return true;
   }
   const VIEWS = {overview:'Latest developments',high:'High-impact developments',partnerships:'Partnership tracker',saved:'Saved stories'};
-  function chooseFeature(items) {
-    if (state.view !== 'overview' || !items.length) return null;
-    // Feature score balances materiality and news freshness; the rest remain chronological.
-    return [...items].sort((a,b)=>(b.score||0)-(a.score||0) || time(b.published_at)-time(a.published_at))[0];
+  // A high-impact story must not remain the homepage lead for weeks:
+  // fresh news is eligible for the featured slot for at most 72 hours.
+  // Separate price direction (Moon Meter) from its magnitude (importance).
+  const TOP_SIGNAL_WINDOW_MS = 72 * 60 * 60 * 1000;
+  const TOP_SIGNAL_WEIGHTS = Object.freeze({ importance: 35, freshness: 30, moon: 20, source: 15 });
+  function topSignalScore(item, now=Date.now()) {
+    if (!item || !Number.isFinite(now)) return null;
+    const pub=time(item.published_at);
+    if (!pub) return null;
+    let age=now-pub;
+    if (age<0) {
+      // Issuer feeds sometimes publish a calendar date only; the scanner
+      // stores those at noon UTC. Today's date-only release is eligible.
+      const sameDate=new Date(pub).toISOString().slice(0,10)===new Date(now).toISOString().slice(0,10);
+      if (!item.date_only || !sameDate) return null;
+      age=0;
+    }
+    if (age>TOP_SIGNAL_WINDOW_MS) return null;
+    const importance = ({High:1, Medium:.68, Low:.35})[item.impact] ?? .35;
+    const freshness = Math.max(0, 1-age/TOP_SIGNAL_WINDOW_MS);
+    const meters = Array.isArray(item.moon_meters) ? item.moon_meters.filter(m=>
+      Number.isInteger(m.value) && m.value>=-3 && m.value<=3) : [];
+    // Both -3 and +3 are potentially major investor developments.
+    const moon = meters.length ? Math.max(...meters.map(m=>Math.abs(m.value))) / 3 : 0;
+    const source = ({Official:1, SEC:1, Media:.72, News:.6})[item.source_type] ?? .6;
+    const reliability = meters.some(m=>m.scenario==='rumour') ? .75 :
+      meters.some(m=>m.scenario==='assumption') ? .9 : 1;
+    return TOP_SIGNAL_WEIGHTS.importance*importance +
+      TOP_SIGNAL_WEIGHTS.freshness*freshness +
+      TOP_SIGNAL_WEIGHTS.moon*moon +
+      TOP_SIGNAL_WEIGHTS.source*source*reliability;
+  }
+  function chooseFeature(items, now=Date.now()) {
+    if (state.view!=='overview' || !Array.isArray(items) || !items.length) return null;
+    let winner=null, best=-Infinity;
+    for(const item of items){
+      const score=topSignalScore(item, now);
+      if(score===null)continue;
+      if(score>best || (score===best && winner && time(item.published_at)>time(winner.published_at))){
+        best=score; winner=item;
+      }
+    }
+    return winner;
   }
   function renderFeed() {
     if (!state.data) return;
