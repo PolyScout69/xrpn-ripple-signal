@@ -18,6 +18,12 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('Evernorth',scan.identify_entities('Evernorth Holdings XRPN issues new equity'))
         self.assertIn('Strategy',scan.identify_entities('Strategy Inc (NASDAQ: MSTR) purchases bitcoin'))
         self.assertIn('Strategy',scan.identify_entities('MicroStrategy MSTR STRC preferred dividend'))
+        self.assertEqual(scan.identify_entities('Lite Strategy Inc (NASDAQ: LITS) builds LTC treasury'),['Lite Strategy'])
+        self.assertEqual(scan.identify_entities('Lite Strategy announces Litecoin buybacks'),['Lite Strategy'])
+        self.assertNotIn('Lite Strategy',scan.identify_entities('Strategy Inc (MSTR) buys Bitcoin'))
+        self.assertNotIn('Lite Strategy',scan.identify_entities('Litecoin price rises after halving'))
+        self.assertEqual(scan.identify_entities('Lite Strategy partners with Strategy MSTR on digital assets'),
+                         ['Strategy','Lite Strategy'])
         self.assertIn('XRP Ecosystem',scan.identify_entities('XRP Ledger XRPL validators adopt new amendment'))
         self.assertNotIn('Ripple',scan.identify_entities('XRPL validators adopt new amendment'))
         self.assertIn('Ripple',scan.identify_entities('Ripple expands RLUSD bank payments'))
@@ -159,6 +165,39 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(vote[0]['source_type'],'Official')
         self.assertEqual(len(vote[0]['coverage']),3)
 
+    def test_lits_issuer_archive_parsing_and_date(self):
+        """A real linked issuer announcement should become one dated LITS story."""
+        from datetime import datetime,timezone
+        date=datetime.now(timezone.utc).strftime('%B %d, %Y')
+        title='Lite Strategy Announces Covered Call Income from Litecoin Treasury'
+        link='https://litestrategy.gcs-web.com/news-releases/news-release-details/lite-strategy-income'
+        listing=f'<div><time>{date}</time><a href="{link}">{title}</a></div>'
+        article=f'<h1>{title}</h1><time>{date}</time><p>Lite Strategy reports recurring covered call options income from the LTC treasury and plans to add more LTC per share for existing shareholders.</p>'
+        class Fake:
+            def __init__(self,text):self.text=text
+        def fake_fetch(url):
+            if url==link:return Fake(article)
+            return Fake(listing)
+        with patch.object(scan,'fetch',side_effect=fake_fetch):
+            rows=scan.fetch_lits_news()
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['entities'],['Lite Strategy'])
+        self.assertEqual(rows[0]['source_type'],'Official')
+        self.assertEqual(rows[0]['source_id'],'lits')
+        self.assertEqual(rows[0]['url'],link)
+
+    def test_lits_story_classification_and_dedup(self):
+        main=self.story('Lite Strategy Marks 15 Years of Litecoin with Launch of Proof of Time Archive',
+                        entity='Lite Strategy',kind='Official',url='https://example.com/lits-issuer')
+        alt=self.story('Lite Strategy LITS launches Proof of Time Litecoin archive for 15th anniversary',
+                       entity='Lite Strategy',kind='Media',url='https://example.com/lits-media')
+        other=self.story('Lite Strategy Announces LTC Covered Call Yield Program',
+                         entity='Lite Strategy',kind='Official',url='https://example.com/lits-options')
+        merged,_=scan.merge_stories([main,alt,other],[])
+        self.assertEqual(len(merged),2)
+        self.assertEqual(sorted(len(x['coverage']) for x in merged),[1,2])
+        self.assertEqual(scan.classify('Lite Strategy reports increasing LTC per share'),'Treasury')
+
     def test_ripple_press_google_date_fallback(self):
         from email.utils import format_datetime
         from datetime import datetime,timezone
@@ -222,6 +261,21 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('.moon-sentiment-card',css)
         self.assertIn("'sentiment_30d':sentiment_30d",scanner)
         self.assertIn('.slice(0,48)',script)
+
+    def test_homepage_lits_price_filter_and_sentiment(self):
+        homepage=(ROOT/'index.html').read_text(encoding='utf-8')
+        script=(ROOT/'app.js').read_text(encoding='utf-8')
+        css=(ROOT/'styles.css').read_text(encoding='utf-8')
+        scanner=(ROOT/'scripts/scan.py').read_text(encoding='utf-8')
+        self.assertEqual(homepage.count('<tv-single-ticker symbol="NASDAQ:LITS"'),1)
+        self.assertIn('https://www.tradingview.com/symbols/NASDAQ-LITS/',homepage)
+        self.assertIn('data-entity="Lite Strategy"',homepage)
+        self.assertIn('id="sentiment-card-lits"',homepage)
+        self.assertIn("renderSentiment('LITS')",script)
+        self.assertIn("'Lite Strategy':'LITS'",script)
+        self.assertIn("'lits', 'media'",script)
+        self.assertIn(".quote-icon-lits",css)
+        self.assertIn("('lits','Lite Strategy official',fetch_lits_news)",scanner)
 
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
