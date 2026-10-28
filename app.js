@@ -8,8 +8,8 @@
   // Keep in sync with .github/workflows/daily-scan.yml and scripts/scan.py.
   // European morning, US morning and US after-hours news cycles (UTC).
   const SCAN_TIMES_UTC = [{hour:9,minute:15},{hour:14,minute:35},{hour:23,minute:35}];
-  const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR'};
-  const DEFAULT_SOURCES = ['evernorth', 'ripple', 'media'];
+  const MOON_ASSETS = {Ripple:'XRP', 'XRP Ecosystem':'XRP', Evernorth:'XRPN', Strategy:'MSTR', 'Lite Strategy':'LITS'};
+  const DEFAULT_SOURCES = ['evernorth', 'ripple', 'lits', 'media'];
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
   let toastTimer;
 
@@ -33,7 +33,7 @@
   function entityLabel(item) {
     const names=(item.entities||[]);
     if (!names.length) return `<span class="entity-label">OTHER</span>`;
-    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='XRP Ecosystem'?'ecosystem':name==='Strategy'?'strategy':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
+    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='XRP Ecosystem'?'ecosystem':name==='Strategy'?'strategy':name==='Lite Strategy'?'lits':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
   }
   function coverageHTML(item) {
     const links=(item.coverage||[]).filter(link=>link && link.url && safeUrl(link.url)!=='#' && link.url!==item.url).slice(0,48);
@@ -190,14 +190,18 @@
     const events=new Map();
     const families=[
       ['equity',/equity (?:purchase )?facility|cantor.*facility/],
+      ['lits-buyback',/(?:lite strategy|lits).*(?:repurchas|buy[ -]?back)|(?:repurchas|buy[ -]?back).*(?:ltc|litecoin|lits)/],
+      ['litecoin-yield',/(?:ltc|litecoin|treasury).*(?:covered calls?|option premiums?)|(?:covered calls?|option premiums?).*(?:ltc|litecoin|treasury)/],
+      ['litvm',/litvm/],
+      ['ltc-per-share',/(?:ltc|litecoin)(?: backing)? per (?:fully diluted |diluted )?share/],
       ['warrants',/11\.?5\s*m(?:illion)?.*shares|register.*shares.*warrant/],
       ['vote',/(?:shareholder|merger) (?:vote|approval)|shareholders? approve/],
       ['merger',/complet.*(?:business combination|merger)/],
       ['yield',/(?:xrp.*(?:yield|lending)|(?:yield|lending).*xrp|(?:treasury|xrp).*(?:coinbase|kraken|bitgo))/],
-      ['pershare',/(?:xrp|bitcoin|btc) per (?:fully diluted |diluted )?share/],
+      ['pershare',/(?:xrp|bitcoin|btc|ltc|litecoin) per (?:fully diluted |diluted )?share/],
       ['listing',/(?:nasdaq|go(?:es|ing)? public).*(?:debut|list|begins trading)/],
       ['uphold',/uphold.*(?:list|stock|access)/],
-      ['drawdown',/(?:treasury|xrp|bitcoin|btc).*(?:loss|loses?|lost|drop|down)/],
+      ['drawdown',/(?:treasury|xrp|bitcoin|btc|ltc|litecoin).*(?:loss|loses?|lost|drop|down)/],
       ['preferred',/(?:repurchas|redeem|buyback).*(?:preferred|strc|strk|strf)|(?:preferred|strc|strk|strf).*(?:repurchas|redeem|buyback)/],
       ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/]
     ];
@@ -257,12 +261,12 @@
     const scale=$('sentiment-'+id+'-scale');
     const line=$('sentiment-'+id+'-subline');
     const detail=$('sentiment-'+id+'-details');
-    if(!item || !Number.isInteger(item.value) || item.value < -3 || item.value > 3) {
+    if(!item || !Number.isInteger(item.value) || item.value < -3 || item.value > 3 || Number(item.stories || 0) === 0) {
       valueEl.textContent='—';
-      labelEl.textContent='Awaiting scan';
-      line.textContent='Sentiment calculated during the next news scan';
+      labelEl.textContent=item && Number(item.stories||0)===0?'No coverage':'Awaiting scan';
+      line.textContent=item && Number(item.stories||0)===0?'No rated stories in the past 30 days':'Sentiment calculated during the next news scan';
       scale.innerHTML='';
-      detail.textContent='Once scanned, this card will show a weighted 30-day summary of relevant stories.';
+      detail.textContent=item && Number(item.stories||0)===0?'No eligible investor news in the current 30-day window.':'Once scanned, this card will show a weighted 30-day summary of relevant stories.';
       return;
     }
     const value=item.value;
@@ -301,6 +305,7 @@
     $('stat-high').textContent=fmtNum(items.filter(i=>i.impact==='High'&&recent(i,7)).length);
     renderSentiment('XRPN');
     renderSentiment('MSTR');
+    renderSentiment('LITS');
     $('chart-total').textContent=fmtNum(items.filter(i=>recent(i,30)).length);
     renderChart(items);
   }
