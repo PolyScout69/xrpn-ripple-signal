@@ -21,7 +21,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
-        for entity, asset in [('Ripple','XRP'),('XRP Ecosystem','XRP'),('Evernorth','XRPN'),('Strategy','MSTR')]:
+        for entity, asset in [('Ripple','XRP'),('XRP Ecosystem','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS')]:
             self.assertEqual(score('Routine update',entity)['asset'],asset)
         both=moon_for_story(dict(title='Ripple and XRPL cooperate on network',entities=['Ripple','XRP Ecosystem'],source_type='Official'))
         self.assertEqual([m['asset'] for m in both],['XRP'])
@@ -129,6 +129,31 @@ class MoonMeterTests(unittest.TestCase):
     def test_generic_hype_does_not_become_plus_three(self):
         self.assertEqual(score('Evernorth says something special is planned','Evernorth','Media')['value'],0)
         self.assertEqual(score('Ripple new product launch for RLUSD','Ripple','Media')['value'],1)
+
+    def test_lits_litecoin_share_buyback_and_yield(self):
+        buyback=score('Lite Strategy repurchases 13% of outstanding shares, increasing Litecoin backing per share',
+                      'Lite Strategy','Official')
+        self.assertEqual(buyback['asset'],'LITS')
+        self.assertEqual(buyback['value'],3)
+        earned=score('Lite Strategy generates $930,000 in LTC covered call option premiums',
+                     'Lite Strategy','Official')
+        self.assertEqual(earned['value'],2)
+        program=score('Lite Strategy launches covered call options treasury program for LTC',
+                      'Lite Strategy','Media')
+        self.assertEqual(program['value'],1)
+        ecosystem=score('Lite Strategy leads strategic investment in LitVM',
+                        'Lite Strategy','Media')
+        self.assertEqual(ecosystem['value'],1)
+
+    def test_lits_bearish_scenario_and_coin_per_share(self):
+        self.assertEqual(score('Lite Strategy plans to liquidate LTC treasury',
+                               'Lite Strategy','Media')['value'],-3)
+        self.assertEqual(score('Lite Strategy raises funds to buy more LTC',
+                               'Lite Strategy','Media')['value'],0)
+        self.assertEqual(score('Lite Strategy reports Litecoin per fully diluted share increases 25% after dilution',
+                               'Lite Strategy','Official')['value'],3)
+        self.assertEqual(score('Lite Strategy general shareholder presentation',
+                               'Lite Strategy','Media')['value'],0)
 
     def test_merged_articles_recompute_once_per_asset(self):
         item={'title':'Evernorth announces equity facility','excerpt':'May issue additional shares','entities':['Evernorth','Ripple','XRP Ecosystem'],'source_type':'Official'}
