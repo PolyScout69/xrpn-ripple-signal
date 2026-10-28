@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1118">
-  <meta name="description" content="An investor intelligence dashboard tracking treasury strategy, product launches and partnerships for Evernorth Holdings (XRPN), Ripple, XRP Ledger ecosystem and Strategy (MSTR).">
+  <meta name="description" content="An investor intelligence dashboard tracking treasury strategy, product launches and partnerships for Evernorth Holdings (XRPN), Ripple, XRP Ledger ecosystem, Strategy (MSTR) and Lite Strategy (LITS).">
   <title>Signal — Evernorth & Ripple Investor Intelligence</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=moon-sentiment-20261027-v2">
-  <script defer src="app.js?v=top-signal-72h-20261028-v1"></script>
+  <link rel="stylesheet" href="styles.css?v=lits-20261028-v1">
+  <script defer src="app.js?v=lits-20261028-v1"></script>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
 </head>
 <body>
@@ -31,6 +31,7 @@
       <div class="watch-ticker"><span class="ticker-logo ticker-r">R</span><span><strong>Ripple</strong><small>PRIVATE COMPANY · PRODUCTS</small></span><span class="ticker-track"></span></div>
       <div class="watch-ticker"><span class="ticker-logo ticker-x">X</span><span><strong>XRP ecosystem</strong><small>XRPL NETWORK &amp; ADOPTION</small></span><span class="ticker-track"></span></div>
       <div class="watch-ticker"><span class="ticker-logo ticker-m">M</span><span><strong>Strategy Inc.</strong><small>NASDAQ: MSTR · BTC TREASURY</small></span><span class="ticker-track"></span></div>
+      <div class="watch-ticker"><span class="ticker-logo ticker-l">L</span><span><strong>Lite Strategy Inc.</strong><small>NASDAQ: LITS · LTC TREASURY</small></span><span class="ticker-track"></span></div>
       <div class="sidebar-bottom">
         <div class="sidebar-status"><span class="signal-pulse" id="sidebar-pulse"></span><div><strong id="sidebar-status-title">Starter edition</strong><small id="sidebar-status-desc">Automatic scans not yet run</small></div></div>
         <button class="sidebar-about" type="button" id="about-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg> How monitoring works <span>↗</span></button>
@@ -71,6 +72,17 @@
                 </tv-single-ticker>
               </div>
             </article>
+            <article class="quote-card" aria-label="Lite Strategy Incorporated LITS stock quote">
+              <div class="quote-card-top">
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-lits">L</span><span><strong>LITS</strong><small>LITE STRATEGY INC.</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-LITS/" target="_blank" rel="noopener noreferrer" aria-label="View LITS share price on TradingView">Full quote ↗</a>
+              </div>
+              <div class="quote-widget-wrap">
+                <tv-single-ticker symbol="NASDAQ:LITS" theme="dark">
+                  <span class="quote-loading">Loading LITS price and daily change…</span>
+                </tv-single-ticker>
+              </div>
+            </article>
           </div>
           <p class="market-pulse-footnote">Daily % change versus the previous regular-session close. Quotes supplied by TradingView and may be delayed. Links open the provider's stock pages.</p>
         </section>
@@ -79,7 +91,7 @@
           <div class="hero-lines" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><div class="orbit-core"></div><div class="orbit-ray"></div></div>
           <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-bar"></span> THE EDGE IS INFORMATION <span class="eyebrow-line"></span> 001</div>
             <h1>Less noise.<br><span>More signal.</span></h1>
-            <p>What matters to <strong>Evernorth (XRPN)</strong>, <strong>Ripple</strong>, <strong>Strategy (MSTR)</strong> and the <strong>XRP ecosystem</strong> — clear investor signals, without the noise.</p>
+            <p>What matters to <strong>Evernorth (XRPN)</strong>, <strong>Ripple</strong>, <strong>Strategy (MSTR)</strong>, <strong>Lite Strategy (LITS)</strong> and the <strong>XRP ecosystem</strong> — clear investor signals, without the noise.</p>
             <div class="hero-meta"><span class="meta-pill"><span class="tiny-dot"></span> SOURCE-FIRST REPORTING</span><span class="meta-pill">NO PRICE HYPE</span></div>
           </div>
         </header>
@@ -103,12 +115,19 @@
             <div class="sentiment-subline" id="sentiment-mstr-subline">Awaiting the latest scan</div>
             <details class="sentiment-details"><summary>Why this score?</summary><div class="sentiment-detail-content" id="sentiment-mstr-details">Calculated from 30 days of investor news.</div></details>
           </article>
+          <article class="stat-card moon-sentiment-card" id="sentiment-card-lits" aria-label="LITS 30-day weighted Moon Sentiment">
+            <div class="stat-label"><span>LITS MOON SENTIMENT* · 30D</span><span class="stat-symbol">◕</span></div>
+            <div class="sentiment-headline"><div class="stat-value sentiment-value" id="sentiment-lits-value">—</div><span class="sentiment-verdict" id="sentiment-lits-label">Calculating…</span></div>
+            <div class="sentiment-scale" id="sentiment-lits-scale" aria-label="30-day Moon Sentiment scale from minus 3 to plus 3"></div>
+            <div class="sentiment-subline" id="sentiment-lits-subline">Awaiting the latest scan</div>
+            <details class="sentiment-details"><summary>Why this score?</summary><div class="sentiment-detail-content" id="sentiment-lits-details">Calculated from 30 days of investor news.</div></details>
+          </article>
         </section>
 
         <div class="content-columns">
           <section class="feed-column" aria-labelledby="feed-heading">
             <div class="section-heading"><div><div class="section-pretitle"><span class="mini-accent"></span> INTELLIGENCE STREAM</div><h2 id="feed-heading">Latest developments <span id="feed-total" class="count-indicator">—</span></h2></div><button class="export-button" id="export-button" type="button" title="Export currently filtered news as CSV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3"/></svg><span>Export CSV</span></button></div>
-            <div class="filter-panel"><div class="filter-top"><div class="segment-tabs" role="group" aria-label="Filter by company"><button type="button" class="segment selected" data-entity="All">All stories</button><button type="button" class="segment" data-entity="Evernorth">Evernorth</button><button type="button" class="segment" data-entity="Ripple">Ripple</button><button type="button" class="segment" data-entity="XRP Ecosystem">XRP ecosystem</button><button type="button" class="segment" data-entity="Strategy">Strategy (MSTR)</button></div><div class="field-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.3"/><path d="m15.5 15.5 5 5"/></svg><input id="search-input" type="search" placeholder="Search news..." aria-label="Search news"></div></div>
+            <div class="filter-panel"><div class="filter-top"><div class="segment-tabs" role="group" aria-label="Filter by company"><button type="button" class="segment selected" data-entity="All">All stories</button><button type="button" class="segment" data-entity="Evernorth">Evernorth</button><button type="button" class="segment" data-entity="Ripple">Ripple</button><button type="button" class="segment" data-entity="XRP Ecosystem">XRP ecosystem</button><button type="button" class="segment" data-entity="Strategy">Strategy (MSTR)</button><button type="button" class="segment" data-entity="Lite Strategy">Lite Strategy (LITS)</button></div><div class="field-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.3"/><path d="m15.5 15.5 5 5"/></svg><input id="search-input" type="search" placeholder="Search news..." aria-label="Search news"></div></div>
               <div class="filter-bottom"><div class="select-wrap"><label for="moon-select">MOON METER</label><select id="moon-select" aria-label="Filter by Moon Meter direction"><option value="All">All signals</option><option value="bullish">Bullish (+1 to +3)</option><option value="neutral">Neutral (0)</option><option value="unrated">Not rated (insufficient story detail)</option><option value="bearish">Bearish (−1 to −3)</option></select></div><div class="select-wrap"><label for="impact-select">IMPACT</label><select id="impact-select"><option value="All">All impact</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select></div><div class="select-wrap"><label for="category-select">TOPIC</label><select id="category-select"><option value="All">All categories</option><option value="Capital markets">Capital markets</option><option value="Treasury">Treasury</option><option value="Partnerships">Partnerships</option><option value="Products">Products</option><option value="Adoption">Adoption</option><option value="Regulation">Regulation</option><option value="Leadership">Leadership</option></select></div><div class="select-wrap"><label for="period-select">PERIOD</label><select id="period-select"><option value="30">Last 30 days</option><option value="7">Last 7 days</option><option value="90">Last 90 days</option><option value="3650">All retained</option></select></div><div class="select-wrap select-sort"><label for="sort-select">SORT BY</label><select id="sort-select"><option value="latest">Newest first</option><option value="impact">Highest impact</option><option value="moon-bullish">Most bullish</option><option value="moon-bearish">Most bearish</option><option value="oldest">Oldest first</option></select></div></div>
             </div>
             <div id="featured-container"></div>
@@ -118,14 +137,14 @@
           </section>
           <aside class="insights-column" aria-label="Investor watchpoints and feed status">
             <section class="insight-panel thesis-panel"><div class="rail-kicker"><span>01 / THE WATCHLIST</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 5-5 4 3 7-8M15 7h5v5"/></svg></div><h3>Follow what<br><em>moves the thesis.</em></h3><p class="rail-intro">Four developments to track beyond the headlines.</p>
-              <div class="watch-item"><span class="watch-icon teal">01</span><div><strong>XRP per share</strong><p>Track XRP/BTC per share, financing costs and realised treasury value.</p></div></div>
+              <div class="watch-item"><span class="watch-icon teal">01</span><div><strong>XRP per share</strong><p>Track XRP, BTC and LTC per share, financing costs and realised treasury value.</p></div></div>
               <div class="watch-item"><span class="watch-icon amber">02</span><div><strong>Share dilution</strong><p>New equity, warrants and the actual share count.</p></div></div>
               <div class="watch-item"><span class="watch-icon lilac">03</span><div><strong>Institutional adoption</strong><p>Real integrations, usage and recurring commercial activity.</p></div></div>
               <div class="watch-item"><span class="watch-icon blue">04</span><div><strong>Regulatory change</strong><p>Legal rulings, licences and market structure.</p></div></div>
             </section>
             <section class="insight-panel activity-panel"><div class="rail-kicker"><span>02 / NEWS ACTIVITY</span><span class="chart-period">30 DAYS</span></div><div class="activity-title"><strong id="chart-total">—</strong><span>tracked developments</span></div><div class="bar-chart" id="bar-chart" role="img" aria-label="Story frequency for the last 30 days"></div><div class="chart-legend"><span>30 DAYS AGO</span><span>TODAY</span></div></section>
             <section class="insight-panel sources-panel"><div class="rail-kicker"><span>03 / SOURCE HEALTH</span><span class="health-legend" id="health-legend">PENDING</span></div><div class="source-list" id="source-list"></div><div class="source-note" id="source-note">Updates will start after your first workflow run.</div></section>
-            <section class="rail-note"><div class="rail-note-mark">↳</div><p><strong>How to read this feed</strong><br>“High impact” means potentially material to the investment thesis — <em>not</em> a prediction of the share or XRP price.</p><button type="button" id="method-btn">View methodology ↗</button></section>
+            <section class="rail-note"><div class="rail-note-mark">↳</div><p><strong>How to read this feed</strong><br>“High impact” means potentially material to the investment thesis — <em>not</em> a prediction of share prices or cryptocurrency prices.</p><button type="button" id="method-btn">View methodology ↗</button></section>
           </aside>
         </div>
         <footer class="site-footer"><span>© <span id="footer-year">2026</span> SIGNAL <span class="foot-em">/</span> INVESTOR INTELLIGENCE</span><span>Source links for verification. Not investment advice. <span class="foot-em">•</span> Quotes via TradingView (third party).</span></footer>
