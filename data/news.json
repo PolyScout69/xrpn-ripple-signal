@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-28T08:36:10Z",
+    "ran_at": "2026-10-28T16:04:46Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,37 +15,37 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 5,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
     "ripple": {
       "name": "Ripple press centre",
       "status": "ok",
-      "items_seen": 7,
-      "checked_at": "2026-10-28T08:36:10Z",
-      "message": "Fetched 7 matching items."
+      "items_seen": 6,
+      "checked_at": "2026-10-28T16:04:46Z",
+      "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T08:36:10Z",
+      "checked_at": "2026-10-28T16:04:46Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-28T08:36:10Z",
+      "checked_at": "2026-10-28T16:04:46Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 259,
-      "checked_at": "2026-10-28T08:36:10Z",
-      "message": "Fetched 259 matching items."
+      "items_seen": 313,
+      "checked_at": "2026-10-28T16:04:46Z",
+      "message": "Fetched 313 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,14 +54,14 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-28T08:36:10Z",
-      "stories": 43,
-      "independent_events": 37,
+      "as_of": "2026-10-28T16:04:46Z",
+      "stories": 44,
+      "independent_events": 38,
       "directional_events": 16,
       "distinct_catalysts": 14,
       "bullish_events": 12,
       "bearish_events": 4,
-      "neutral_events": 21,
+      "neutral_events": 22,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-28T08:36:10Z",
+      "as_of": "2026-10-28T16:04:46Z",
       "stories": 26,
       "independent_events": 20,
       "directional_events": 5,
@@ -167,7 +167,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.29,
       "window_days": 30,
-      "as_of": "2026-10-28T08:36:10Z",
+      "as_of": "2026-10-28T16:04:46Z",
       "stories": 8,
       "independent_events": 8,
       "directional_events": 1,
@@ -193,6 +193,48 @@
     }
   },
   "items": [
+    {
+      "id": "e3c736d36edb1f",
+      "title": "Ripple and Coinbase Partner to Expand Access to Ripple USD",
+      "published_at": "2026-10-28T12:17:34Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Medium",
+      "score": 80,
+      "source": "Ripple press centre",
+      "source_type": "Official",
+      "source_id": "ripple",
+      "url": "https://ripple.com/ripple-press/ripple-and-coinbase-partner-to-expand-access-to-rlusd",
+      "excerpt": "Ripple and Coinbase Partner to Expand Access to Ripple USD",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-28T16:04:49Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple and Coinbase Partner to Expand Access to Ripple USD",
+          "name": "Ripple press centre",
+          "url": "https://ripple.com/ripple-press/ripple-and-coinbase-partner-to-expand-access-to-rlusd",
+          "source_type": "Official",
+          "published_at": "2026-10-28T12:17:34Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "16953772ab0a10",
       "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
@@ -656,6 +698,13 @@
           "url": "https://ripple.com/ripple-press/ripple-receives-final-occ-approval-to-establish-national-trust-bank",
           "source_type": "Official",
           "published_at": "2026-10-27T02:03:04Z"
+        },
+        {
+          "title": "Ripple Labs gains approval for new trust bank in the US",
+          "name": "finway.com.ua · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA5N20zal9UWi1IcEJrRC1hb2FTYXl3a3Y4T2VGVEtTOU1peUJOUGwtTFM3b0d4aUlYVk5pc3FobFR6OUdWX3Z5T2Z3OWlnZ2xxVjNURDJ1NjNkQXlCcG8zemc5b2JzZGZyQVIw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T08:34:42Z"
         }
       ],
       "moon_meters": [
@@ -817,6 +866,13 @@
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPT3J5blVNeWtRejFBX0tNMVhBQUFLN0N5TEN1RDlQTHQ2U05zMVRFYklMUWg5YkpwSXIxWThPdVg1RVhLYmZCMUh1b0RDNUh2VU92WFJxWGNlZHdmekJ6UHczZlFzRnJNQWx2RlNNbWJPVTNZUTBMODk0U3BKWXVqSkhYNHdUMDZoN2JRV0dIYkY4SlNVVTZjandoT0wwc21hWF9MMkFwSjc2TXNGWVRHQnVTSEtEbWZPWmNsN0gxTHNaX1dkX21QZWlfdlZ3aFNqTnVJQWV4TVZwaHhhWXJ0S0xmeFNFdw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-27T09:22:00Z"
+        },
+        {
+          "title": "Strategy halts bitcoin purchases and allocates $204.9M to buying back STRC preferred shares",
+          "name": "Capmad · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbFlfOS1fX1dtUjFqZHRMVnFuSjcyV1ByM3ZobndwY2lZUDE1eWltNV9VQUVmOTY4UlI2R1FELVRZNlNnQVlHWmRTaW1LWmRqQmluODAtNnhRUURWZW1OOGw4QUJCczltY1NKWkVDdFBzZ21KcFUyVE5MMGoyTG5hQzlXNWdqZ3JXWHNXMU1ZTnRWZmIyUzRNR1RpOHRneFZnZ2dqZVBRZXpMV05FRUxLbUdoRHB6VlM0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T00:12:00Z"
         }
       ],
       "moon_meters": [
@@ -1134,6 +1190,13 @@
           "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wRFJSQkhzRGFRUmpQZmlyTGxJZnVZbTN6UEtzRHZyQi1icm1YaXR6TS1iN2VVTWVFbkVJODY3bTY5c2x1YXZsQjlIU3JaeG82UUNqanVyRFpNTzd5MjVCdzV2Yy1wUGRmWUN4TVJFT0NBUWtXZnc?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-26T18:19:00Z"
+        },
+        {
+          "title": "XRP News: Evernorth Files $80M Share Deal with Cantor",
+          "name": "CryptoRank · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNd0JNekR1LWpMSUpPQjRsUUJlUk1peGJzM0YxSU5oLUZPYktKeGRxUnAtZlZHN0FKeFdwYUtOd2Zzb3B3WjBRZHR0QTFQTUJyWFZyNWZLbGlIOUlrbUR5QVItRG9rUFdYTDM5TU94Z0NnNE1Zd0VxaEo4dl9pWUkzNFRleHFWQ2N6aXJ2cWg0M3F5SFU?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -2057,8 +2120,7 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth",
-        "XRP Ecosystem"
+        "Evernorth"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -2104,16 +2166,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4863,6 +4915,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "193c0eb12dafdc",
+      "title": "Evernorth Sets New XRP Treasury Timeline After Administrative Delay",
+      "published_at": "2026-10-06T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Bitcoin News · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPem02VVVpeGY0MTNUTTQ4b2c5aUtjNFJuUU5HNFlmd3YtblpIVS1kdm43bS1hOVZUSkZZV25lLUVackgxMHdxVnkyVldCUTZpY2FzUjgxdWk2eFcxS3J5MXE3cjJEcjlfV0VJTVpqNXVTcjM3TThXeTVYd3BEMTUyWmZlc1lfaWZQRTBXbkk5NU1fUGhvQTZsaERsWnh6N183Mi16bA?oc=5",
+      "excerpt": "Evernorth Sets New XRP Treasury Timeline After Administrative Delay Bitcoin News",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-28T16:04:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth Sets New XRP Treasury Timeline After Administrative Delay",
+          "name": "Bitcoin News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPem02VVVpeGY0MTNUTTQ4b2c5aUtjNFJuUU5HNFlmd3YtblpIVS1kdm43bS1hOVZUSkZZV25lLUVackgxMHdxVnkyVldCUTZpY2FzUjgxdWk2eFcxS3J5MXE3cjJEcjlfV0VJTVpqNXVTcjM3TThXeTVYd3BEMTUyWmZlc1lfaWZQRTBXbkk5NU1fUGhvQTZsaERsWnh6N183Mi16bA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-06T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -7870,6 +7964,13 @@
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQek9RWk93SmpmUElxZEszbFNzVnRqVnBfZi04Tkt0OTQ2Y0x0d3ZTOHhSbm9MUzhpUnc1YVFLOTZXc2lTTWFQOUFsOFpGOW93WkRIX1cxUDVyZTYtYWlCd3Jpd1ZESVNqQTRPYTVmNFVZQUFIQnQ1TDFubHE0eW1UT3l2SkoxR1hMTmp2dHZ1TzJSRUlWRUl5QS1CZ0RUMXNQSmZFQUxadWV0TTlCU01F?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-28T07:00:00Z"
+        },
+        {
+          "title": "XRP Treasury Giant Evernorth Clears SEC Hurdle, Nasdaq Debut Moves Closer",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWXBXeUhwaWJ6aGszUExIa1hBdTBKLUY3OVhyZjBFMlo3NER0OGMtM3JpT3V0U1RyZ3d4aEtZMktfLTZjY0hBTkIwaHpOZktib0huZUVVRndoSHBSRnoxUFNEeDJEcHpnNFpab0ZUeGwxQm5YbmdtZmh3R1FuRDZjZ0gyaE1jVTUtWTZNcGp1Uk5MQUlEeXpnSVBsT1BRRWgxSHc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-28T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -10732,6 +10833,48 @@
       ]
     },
     {
+      "id": "1af9267fd14446",
+      "title": "Prediction: Bitcoin’s Next Move Could Make or Break MicroStrategy Stock",
+      "published_at": "2026-07-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeU9TbmoyY1BWRXJadVBxajY5X0wzZ0g0MTRBWC16RjVna0VSNVpHTVNZbXExamxZejVsdGp0U25YeFpCZFlfUTB0dzlyTG9TTUtkTGo3NnRub1VNUTNmZlhTa19obUtyYlY2UnhwS3hRRVZ3QVhpcW1jRmlXdWFkbmRmeTNHX2JRWWdfbG5DVnFBeDFJWGJMczN4RldSSjB6MXQwVnpqX2Z2ZmxuYWUwMjZqbw?oc=5",
+      "excerpt": "Prediction: Bitcoin’s Next Move Could Make or Break MicroStrategy Stock 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T16:04:54Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Prediction: Bitcoin’s Next Move Could Make or Break MicroStrategy Stock",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeU9TbmoyY1BWRXJadVBxajY5X0wzZ0g0MTRBWC16RjVna0VSNVpHTVNZbXExamxZejVsdGp0U25YeFpCZFlfUTB0dzlyTG9TTUtkTGo3NnRub1VNUTNmZlhTa19obUtyYlY2UnhwS3hRRVZ3QVhpcW1jRmlXdWFkbmRmeTNHX2JRWWdfbG5DVnFBeDFJWGJMczN4RldSSjB6MXQwVnpqX2Z2ZmxuYWUwMjZqbw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "80f8e672f8dba9",
       "title": "XRPL Security Fixes for Lending and Vaults Stalled as Upgrade Sails Through",
       "published_at": "2026-07-09T07:00:00Z",
@@ -13006,6 +13149,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "96fd87ef4d8dc1",
+      "title": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying?",
+      "published_at": "2026-05-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVJ1bkhia3AzcncxWGpxR1pqNWE0OFFXX2FWZEN1bFpTVzV4YnZTa3pCaGNQbmhGNzEwMEVSMjR2SmVFcVpSWEZ4WGFsVEo1VnVWV2dGSGNBOWFDemhMcDc1UUtUWV92dDc2WDNqRVhJUVRFajdMWFdlWm1VQUh5MmVJS2JSNkZxR3FVVkZvTGZGbDJFenRXZUFhd2ZTb0pwSUt4Y0VYVGs4UFNqNXItVXNpZnVHTkJJ?oc=5",
+      "excerpt": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying? 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T16:04:54Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVJ1bkhia3AzcncxWGpxR1pqNWE0OFFXX2FWZEN1bFpTVzV4YnZTa3pCaGNQbmhGNzEwMEVSMjR2SmVFcVpSWEZ4WGFsVEo1VnVWV2dGSGNBOWFDemhMcDc1UUtUWV92dDc2WDNqRVhJUVRFajdMWFdlWm1VQUh5MmVJS2JSNkZxR3FVVkZvTGZGbDJFenRXZUFhd2ZTb0pwSUt4Y0VYVGs4UFNqNXItVXNpZnVHTkJJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -17980,6 +18165,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7380a766b8ebab",
+      "title": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN)",
+      "published_at": "2026-01-19T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Seeking Alpha · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMmhsdlo2ZEt1Y29LcFpMSGJZU3NwV0syOUhpenFKc3FYTXJNNTBRbTJkOHBiMXZ0dWxMWVdWSEJqTmM1Vm5PYlZBNElKMXNrOVJUcXhfb2hpR0xkQ252dV9tSjE2LTBkVWtuSDVZMHAtV21hNmVSSjg2LWstQ3NoWDFobm9Hb1o1ZzVtMm53?oc=5",
+      "excerpt": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN) Seeking Alpha",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-28T16:04:51Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN)",
+          "name": "Seeking Alpha · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMmhsdlo2ZEt1Y29LcFpMSGJZU3NwV0syOUhpenFKc3FYTXJNNTBRbTJkOHBiMXZ0dWxMWVdWSEJqTmM1Vm5PYlZBNElKMXNrOVJUcXhfb2hpR0xkQ252dV9tSjE2LTBkVWtuSDVZMHAtV21hNmVSSjg2LWstQ3NoWDFobm9Hb1o1ZzVtMm53?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-19T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
