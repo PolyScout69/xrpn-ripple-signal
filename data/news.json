@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-28T06:48:17Z",
+    "ran_at": "2026-10-28T06:50:37Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 6,
+    "new_items": 1,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-28T06:48:17Z",
+      "checked_at": "2026-10-28T06:50:37Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T06:48:17Z",
+      "checked_at": "2026-10-28T06:50:37Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 287,
-      "checked_at": "2026-10-28T06:48:17Z",
-      "message": "Fetched 287 matching items."
+      "items_seen": 284,
+      "checked_at": "2026-10-28T06:50:37Z",
+      "message": "Fetched 284 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-28T06:48:17Z",
+      "as_of": "2026-10-28T06:50:37Z",
       "stories": 41,
       "independent_events": 35,
       "directional_events": 15,
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-28T06:48:17Z",
+      "as_of": "2026-10-28T06:50:37Z",
       "stories": 27,
       "independent_events": 21,
       "directional_events": 6,
@@ -1973,8 +1973,7 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth",
-        "XRP Ecosystem"
+        "Evernorth"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -2020,16 +2019,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4627,6 +4616,13 @@
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMXJLRjVleVhSOHRWSkVjeXpXR0x5VnNodGJDQ2Y0M2FDOXdBSm8wR2FLS29pTF93NThMOHo2UnNpTUdkS0JZUTVuOFRzYlZteGUyWkpZQlNuNE1fTGx2LW1nR3ppS0NvY2xQekF0WXoyWi13ZTk5OVYxbEVHa1FJN3lrX0o1WFdka3FNMzBST3BJWFdpNlliNmtQTXNhQ0VnYkNMYQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-06T07:00:00Z"
+        },
+        {
+          "title": "Strategy (MSTR) stock rises as Bitcoin holdings hit record 848,000",
+          "name": "Invezz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOc0RLM3lNTnZUMndUbjRhVmxnZllsMTUydkstNkxlLWpWNGNHSzAzY0JoOEIwbi1kb2JBcFlyUHBzUHY0OE94UktEclF3MjZ2dXFaWUMweUEzZkxWdHhEaVFrQlJfNThBVXZtbktLT21UNlpkSF9tbnFpV2lzS2xVUTlmM3dwbVZMYnRpVEtfaTlDeU5IT0xvVXU2cTNPYWt0M1VrUw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -18341,6 +18337,49 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "a126a6671a701c",
+      "title": "Ripple News: New Report Reveals XRP ETF Launch Timeline",
+      "published_at": "2025-10-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple",
+        "XRP Ecosystem"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 62,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNb0NpbHJJZ0o5X05paHpWa0twS3pOVFk0OEh3UFkzN2I5dXg5NmdTYW8xOTM5cFhFN2pSekNiZk5xb2k2cEVDaHVJWVBrTkpJMmFKOG1reFFpTU5Cb19IeEd2aG1GZXM3bm5BRmNQQnBXZnBLVnVpTHFRUW5Yd0YwV2p4MDd4SHhkcEVCalZrWGxEV052ZXlYcXp5YU4zNzhhVG9VMFJyRFF3bUtoc3lPbXNkUko?oc=5",
+      "excerpt": "Ripple News: New Report Reveals XRP ETF Launch Timeline TradingView",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-28T06:50:42Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple News: New Report Reveals XRP ETF Launch Timeline",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNb0NpbHJJZ0o5X05paHpWa0twS3pOVFk0OEh3UFkzN2I5dXg5NmdTYW8xOTM5cFhFN2pSekNiZk5xb2k2cEVDaHVJWVBrTkpJMmFKOG1reFFpTU5Cb19IeEd2aG1GZXM3bm5BRmNQQnBXZnBLVnVpTHFRUW5Yd0YwV2p4MDd4SHhkcEVCalZrWGxEV052ZXlYcXp5YU4zNzhhVG9VMFJyRFF3bUtoc3lPbXNkUko?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-10-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
