@@ -13,6 +13,7 @@ ENTITY_ASSETS = {
     'XRP Ecosystem': 'XRP',
     'Evernorth': 'XRPN',
     'Strategy': 'MSTR',
+    'Lite Strategy': 'LITS',
 }
 LABELS = {
     -3: 'Very bearish',
@@ -51,7 +52,7 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
     # mentions risks even when the underlying headline contains no such news.
     combined = re.sub(r'\s+', ' ', title + ' ' + excerpt)
     official = item.get('source_type') in ('Official', 'SEC')
-    stock = asset in ('MSTR', 'XRPN')
+    stock = asset in ('MSTR', 'XRPN', 'LITS')
     is_sec = item.get('source_type') == 'SEC'
 
     # Primary SEC entry titles list forms and item numbers, NOT what a filing
@@ -91,7 +92,7 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
 
     if _contains(combined, r'\b(?:ceo|cfo|chief executive) resigns?\b',
                  r'\bexecutive (?:departure|resignation)\b',
-                 r'\b(?:guidance|forecast) cut\b', r'\b(?:btc|xrp) (?:sold|liquidated)\b'):
+                 r'\b(?:guidance|forecast) cut\b', r'\b(?:btc|xrp|ltc|litecoin) (?:sold|liquidated)\b'):
         return -1, 'Leadership, outlook or treasury reduction may be a headwind; materiality is not yet established.'
 
     # Reserve +3 for unambiguous, exceptional earnings evidence (not generic
@@ -120,9 +121,9 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
         return 2, 'Evidence of sustained commercial use or contracted business could improve economics.'
 
     if stock and _contains(combined,
-                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp)\b',
-                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp) (?:holdings|treasury|reserves)\b',
-                          r'\b(?:bitcoin|btc|xrp) per share (?:rises?|increases?)\b'):
+                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp|ltc|litecoin)\b',
+                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp|ltc|litecoin) (?:holdings|treasury|reserves)\b',
+                          r'\b(?:bitcoin|btc|xrp|ltc|litecoin) per share (?:rises?|increases?)\b'):
         return 1, 'Treasury growth could help if it is accretive per diluted share after funding and risk.'
 
     if asset == 'XRP':
@@ -161,7 +162,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     evidence = ('Unverified' if scenario == 'rumour' else
                 'Conditional' if scenario == 'assumption' else
                 'High' if official else 'Medium')
-    stock = asset in ('MSTR', 'XRPN')
+    stock = asset in ('MSTR', 'XRPN', 'LITS')
 
     # Filing indexes contain form names and item numbers, not the facts inside.
     if item.get('source_type') == 'SEC' and _contains(title,
@@ -184,7 +185,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     # Material mark-to-market losses still matter to a coin-backed stock,
     # even where they are not realised cash losses. Do not treat a daily
     # stock-price move alone as a fresh operating catalyst.
-    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|treasury)\b') and _contains(combined,
+    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|ltc|litecoin|treasury)\b') and _contains(combined,
                       r'\b(?:lose|lost|loss|drop|fall|down)\b') and _contains(combined,
                       r'\$\s*[\d,.]+\s*(?:million|m|billion|bn)\b'):
         return -2, 'If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.', evidence
@@ -227,17 +228,45 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
                 return 1, 'If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.', evidence
             return 2, 'If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.', evidence
 
+    if asset == 'LITS':
+        # Company-specific signals: LTC/share and capital allocation matter
+        # more to LITS than general LTC network headlines or MEI-era biotech.
+        if _contains(combined,
+                    r'\b(?:abandons?|ends?|exits?|liquidates?)\b.{0,55}\b(?:ltc|litecoin)\b.{0,20}\btreasury\b'):
+            return -3, 'Abandoning or liquidating the Litecoin treasury would undermine the central LITS investment thesis.', evidence
+        if _contains(combined, r'\b(?:repurchas\w*|buy[\s-]?backs?|bought back)\b') and _contains(
+                combined, r'\b(?:shares?|stock)\b'):
+            percent_match = re.search(
+                r'\b(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:its\s+|the\s+)?(?:outstanding\s+)?shares?\b',
+                combined)
+            percent = float(percent_match.group(1)) if percent_match else 0.0
+            if percent >= 10 and _contains(combined,r'\b(?:ltc|litecoin)\b') and _contains(
+                    combined,r'\b(?:per share|backing|holdings)\b'):
+                return 3, ('If retiring 10%+ of outstanding shares meaningfully increases LTC '
+                           'backing per diluted share without damaging liquidity, LITS upside could be exceptional.'), evidence
+            return 2, 'If LITS repurchases shares at an attractive discount to LTC NAV, holdings per share may improve.', evidence
+        if _contains(combined,r'\b(?:covered call|covered-call|options? premiums?)\b') and _contains(
+                combined,r'\b(?:ltc|litecoin|treasury|yield)\b'):
+            if _contains(combined,r'\b(?:generat\w*|earns?|earned|proceeds|receiv\w*)\b'):
+                return 2, 'If repeatable covered-call income exceeds trading, tax and option risks, LTC treasury yield could benefit LITS.', evidence
+            return 1, 'If adopted prudently, covered-call treasury income may help LITS, with upside caps and counterparty risks.', evidence
+        if _contains(combined,r'\blitvm\b') and _contains(combined,r'\b(?:invest\w*|partner\w*|stake)\b'):
+            return 1, 'If LitVM adoption materialises, the strategic investment may add ecosystem optionality; value remains uncertain.', evidence
+        if _contains(combined,r'\b(?:litecoin|ltc)\b') and _contains(
+                combined,r'\b(?:yield|treasury income|lending|income generat\w*)\b'):
+            return 2, 'If active Litecoin treasury deployment creates material net income, LITS economics could improve.', evidence
+
     # Financing terms matter more than planned gross coin accumulation.
     if stock and _contains(title,
-           r'\bnew (?:xrpn |mstr )?(?:stock )?shares\b',
-           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr )?(?:stock )?shares\b'):
+           r'\bnew (?:xrpn |mstr |lits )?(?:stock )?shares\b',
+           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr |lits )?(?:stock )?shares\b'):
         return -1, 'New shares may dilute holders even if the proceeds acquire more cryptocurrency; check the diluted share count.', evidence
-    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc)\b'):
+    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc|ltc|litecoin)\b'):
         return 0, 'Planned funding and buying alone do not establish net accretion or dilution per share.', evidence
 
     # Treasury-company signal: coins per diluted share, not total coins acquired.
     if stock:
-        coin = 'xrp' if asset == 'XRPN' else r'(?:bitcoin|btc)'
+        coin = 'xrp' if asset == 'XRPN' else r'(?:ltc|litecoin)' if asset == 'LITS' else r'(?:bitcoin|btc)'
         if _contains(combined, rf'\b{coin} per (?:(?:fully )?diluted )?share\b'):
             percent = re.search(r'\b(?:by |up |down )?(\d{1,3}(?:\.\d+)?)\s*%', combined)
             amount = float(percent.group(1)) if percent else None
