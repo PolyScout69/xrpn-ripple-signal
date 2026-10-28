@@ -13,7 +13,7 @@ def story(title, asset='XRPN', value=1, impact='Medium', age=1,
     return {
         'id': identifier or title, 'title': title,
         'published_at': published.isoformat().replace('+00:00', 'Z'),
-        'entities': ['Evernorth'] if asset == 'XRPN' else ['Strategy'],
+        'entities': ['Evernorth'] if asset == 'XRPN' else ['Lite Strategy'] if asset == 'LITS' else ['Strategy'],
         'source_type': source_type, 'category': 'Treasury',
         'impact': impact, 'score': score,
         'url': 'https://example.com/' + str(len(title)),
@@ -134,6 +134,26 @@ class SentimentTests(unittest.TestCase):
                   value=3, impact='High'),
         ])
         self.assertEqual(s['value'], 3)
+
+    def test_lits_is_separate_from_mstr_and_xrpn(self):
+        events=[
+            story('Lite Strategy repurchases 13% of LTC-backed shares', 'LITS', value=3, impact='High'),
+            story('Lite Strategy dilution raises risk to LTC holders', 'LITS', value=-1, impact='Low'),
+            story('Strategy bitcoin reserve hit by severe loss', 'MSTR', value=-3, impact='High'),
+            story('Evernorth XRP treasury neutral update', 'XRPN', value=0),
+        ]
+        result=aggregate_sentiment(events,AS_OF)
+        self.assertEqual(set(result),{'XRPN','MSTR','LITS'})
+        self.assertEqual(result['LITS']['stories'],2)
+        self.assertGreater(result['LITS']['value'],0)
+        self.assertLess(result['MSTR']['value'],0)
+        self.assertEqual(result['XRPN']['value'],0)
+
+    def test_lits_no_recent_stories_has_limited_coverage(self):
+        result=self.check([],ticker='LITS')
+        self.assertEqual(result['stories'],0)
+        self.assertEqual(result['value'],0)
+        self.assertEqual(result['coverage'],'Limited coverage')
 
     def test_insufficient_and_sec_entries_excluded(self):
         bad = story('Unrated hypothetical', value=0)
