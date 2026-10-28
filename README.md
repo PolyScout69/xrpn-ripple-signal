@@ -12,6 +12,17 @@ Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **XRP E
 - Multiple publications of the same event are grouped with additional source links.
 - Source Health reflects **three** channels: Ripple official, Evernorth official, and issuer/ecosystem news.
 
+## Top Investor Signal — ranked recent developments
+
+The highlighted story on the Overview page is **not** simply the article with the highest original 0–99 score. Only articles published in the last **72 hours** can occupy this position. Each eligible article is ranked by:
+
+- **35% investor importance** — High impact receives full weight, Medium 68% and Low 35%.
+- **30% freshness** — linearly declines as an article approaches 72 hours old.
+- **20% Moon Meter magnitude** — the highest absolute asset score among the story's Moon Meters; an exceptional **−3** matters just as much as **+3** for choosing the important lead.
+- **15% credibility** — issuer announcements rank above media-only reporting. Unverified rumours and assumptions retain their *if-true* Moon scores but receive a source-reliability discount.
+
+The algorithm favours high-impact **new** information and does not arbitrarily boost bullish news. Ties favour the most recently published story. Articles older than 72 hours stay in the regular feed but cannot remain featured. If no eligible recent article exists, the featured section is empty. An issuer story with only a calendar date is eligible on that date even though the collector may normalise its time to noon UTC. The ranking recalculates on page load or user refresh/filter changes.
+
 ## Homepage share-price widgets
 
 The top of the homepage shows **XRPN (Evernorth)** and **MSTR (Strategy)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:XRPN` and `NASDAQ:MSTR`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
