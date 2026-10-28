@@ -219,7 +219,10 @@
 @media(max-width:820px){
   .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats-grid>.stat-card{grid-column:span 1}
-  .stats-grid>.moon-sentiment-card:last-child{grid-column:span 2}
+  /* Mobile: XRPN gets the full-width lead; MSTR and LITS share the next row. */
+  .stats-grid>#sentiment-card-xrpn{grid-column:1 / -1}
+  .stats-grid>#sentiment-card-mstr{grid-column:1}
+  .stats-grid>#sentiment-card-lits{grid-column:2}
 }
 @media(max-width:640px){
   .market-pulse-grid{grid-template-columns:minmax(0,1fr)}
