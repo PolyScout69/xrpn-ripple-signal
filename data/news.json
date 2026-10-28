@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-10-28T02:31:43Z",
+    "ran_at": "2026-10-28T06:48:17Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 14,
+    "new_items": 6,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 7,
-      "checked_at": "2026-10-28T02:31:43Z",
+      "checked_at": "2026-10-28T06:48:17Z",
       "message": "Fetched 7 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T02:31:43Z",
+      "checked_at": "2026-10-28T06:48:17Z",
       "message": "Fetched 20 matching items."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 293,
-      "checked_at": "2026-10-28T02:31:43Z",
-      "message": "Fetched 293 matching items."
+      "items_seen": 287,
+      "checked_at": "2026-10-28T06:48:17Z",
+      "message": "Fetched 287 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,7 +47,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-10-28T02:31:43Z",
+      "as_of": "2026-10-28T06:48:17Z",
       "stories": 41,
       "independent_events": 35,
       "directional_events": 15,
@@ -107,10 +107,10 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.11,
+      "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-28T02:31:43Z",
-      "stories": 25,
+      "as_of": "2026-10-28T06:48:17Z",
+      "stories": 27,
       "independent_events": 21,
       "directional_events": 6,
       "distinct_catalysts": 2,
@@ -158,6 +158,48 @@
   },
   "items": [
     {
+      "id": "16953772ab0a10",
+      "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
+      "published_at": "2026-10-28T02:34:36Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "CoinMarketCap · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
+      "excerpt": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin CoinMarketCap",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:26Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
+          "name": "CoinMarketCap · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-28T02:34:36Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "d442c0d7fedeaf",
       "title": "XRP’s Wall Street Push Accelerates: America’s Oldest Bank BNY Joins Ripple for Tokenized Trade Finance on XRP Ledger",
       "published_at": "2026-10-27T23:25:26Z",
@@ -196,6 +238,55 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "f1042c12d92b2c",
+      "title": "Robinhood Integrates Ripple Treasury, Stablecoin, And Brokerage Solutions",
+      "published_at": "2026-10-27T18:45:31Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Blockzeit · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPbnIwak1PX0JPMGs4SkVjdGxrZWhzRHVnNWhmYmJveFZhSHByOXNpSHF0RnRRc2QzZVdtd1B5cThOOG9JbzFHOTZObFZYYU14a0pyZzFsTjNfenBxVkIwbThWUl93cDdNLTZVTDZBTFMyZnFaR2phT3B4dXRWWUlGZFMxS1ZRYjZ3d0xETGhHUkFVdnl6cGhGUkFR?oc=5",
+      "excerpt": "Robinhood Integrates Ripple Treasury, Stablecoin, And Brokerage Solutions Blockzeit",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:22Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Robinhood Integrates Ripple Treasury, Stablecoin, And Brokerage Solutions",
+          "name": "Blockzeit · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPbnIwak1PX0JPMGs4SkVjdGxrZWhzRHVnNWhmYmJveFZhSHByOXNpSHF0RnRRc2QzZVdtd1B5cThOOG9JbzFHOTZObFZYYU14a0pyZzFsTjNfenBxVkIwbThWUl93cDdNLTZVTDZBTFMyZnFaR2phT3B4dXRWWUlGZFMxS1ZRYjZ3d0xETGhHUkFVdnl6cGhGUkFR?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T18:45:31Z"
+        },
+        {
+          "title": "Robinhood integrates Ripple Treasury and RLUSD ...",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWEoySDRQQzBoMGM4YkgxNkRzOEN4NUFBV2wzZXBXN1QzTllFZDh1WVp2VFhncFdmUmRYd2lHcUE0Y0lWMm1aMHh4MUVwN1JJVVFWd01zeTJ2dFdtTEt1dGJWT2Z4Smp3b1JGemFtckVRQ2loZXd5N2pDUzd4STBFVVNyUl9YcFJyWVBySjJNTmhqelRBMXprSGZmbnNvdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-27T13:54:19Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -319,48 +410,6 @@
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk96VTY3ZU5keFhRY3BYZk9jdjhRaEN0aVdqV1NoTEg1OHJQZzVGbXZWSFU4bkdka1Q0cWZSdlFlUmNTaTM2d0VucTRlYlZOQXNlQTdRTndpdmVFLXpLc0ZwaUlKTWlZUEtneHl2R3RpN1ZtR0JkZXRMNGk0MWdtLQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-27T14:01:07Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0a008577c055bb",
-      "title": "Robinhood integrates Ripple Treasury and RLUSD ...",
-      "published_at": "2026-10-27T13:54:19Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 63,
-      "source": "Pluang · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWEoySDRQQzBoMGM4YkgxNkRzOEN4NUFBV2wzZXBXN1QzTllFZDh1WVp2VFhncFdmUmRYd2lHcUE0Y0lWMm1aMHh4MUVwN1JJVVFWd01zeTJ2dFdtTEt1dGJWT2Z4Smp3b1JGemFtckVRQ2loZXd5N2pDUzd4STBFVVNyUl9YcFJyWVBySjJNTmhqelRBMXprSGZmbnNvdw?oc=5",
-      "excerpt": "Robinhood integrates Ripple Treasury and RLUSD ... Pluang",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T19:33:43Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Robinhood integrates Ripple Treasury and RLUSD ...",
-          "name": "Pluang · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWEoySDRQQzBoMGM4YkgxNkRzOEN4NUFBV2wzZXBXN1QzTllFZDh1WVp2VFhncFdmUmRYd2lHcUE0Y0lWMm1aMHh4MUVwN1JJVVFWd01zeTJ2dFdtTEt1dGJWT2Z4Smp3b1JGemFtckVRQ2loZXd5N2pDUzd4STBFVVNyUl9YcFJyWVBySjJNTmhqelRBMXprSGZmbnNvdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-27T13:54:19Z"
         }
       ],
       "moon_meters": [
@@ -1924,7 +1973,8 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth"
+        "Evernorth",
+        "XRP Ecosystem"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -1970,6 +2020,16 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        },
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4096,6 +4156,48 @@
       ]
     },
     {
+      "id": "f47cfe15de2611",
+      "title": "Strategy Pauses Bitcoin Buys, Spends $205M on STRC Buybacks",
+      "published_at": "2026-10-12T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Altcoin Buzz · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVkdqUVBLTkFZUl9WelJHOTRVUGF3SjFjQTJ3NlpNRXU1cnBGSGNZQ0RtNTBadlhRZkw1NzhmSVJmRjFVRWkwWGYyalhHRk51ZnFyTFZDYnI0YXdSZ2lwMEQxY1VnelhiNl9mS2F0S1FramJ5VFZYeWtuQ3R6UzhkVFhuelliQQ?oc=5",
+      "excerpt": "Strategy Pauses Bitcoin Buys, Spends $205M on STRC Buybacks Altcoin Buzz",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:26Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Pauses Bitcoin Buys, Spends $205M on STRC Buybacks",
+          "name": "Altcoin Buzz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVkdqUVBLTkFZUl9WelJHOTRVUGF3SjFjQTJ3NlpNRXU1cnBGSGNZQ0RtNTBadlhRZkw1NzhmSVJmRjFVRWkwWGYyalhHRk51ZnFyTFZDYnI0YXdSZ2lwMEQxY1VnelhiNl9mS2F0S1FramJ5VFZYeWtuQ3R6UzhkVFhuelliQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "a6dfaa0e05385c",
       "title": "Ripple Treasury integrates with SWIFT, enabling XRP use alongside traditional banking systems.",
       "published_at": "2026-10-12T07:00:00Z",
@@ -4208,48 +4310,6 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "16953772ab0a10",
-      "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
-      "published_at": "2026-10-11T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
-      "excerpt": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin CoinMarketCap",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-11T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -4432,6 +4492,13 @@
           "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTnBmUTY5d0ZLdTdTUm5EM2VVZ09vZ21iemx3dlhhbndKUGx1YVN1bkVZRnNWU1Zod2hiYThkODFDa09qSGcxRWEta2xfUXNaWXpmbXVjR1RZZzk5X1dIU2Rrd3dBWjJaVlRjbEt5LUdWemZGRWU1RlQyUlo1YnFBRWZVdDBzUVRtbkc2SmRjZ3Q3RHhsa3J1ZWpSU1dEc1BiSVIzYnFIUzBaTG15YkFRcVFUcE9aczdV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-09T07:00:00Z"
+        },
+        {
+          "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMUN2R1UyZnZMNHFJVzBCaVpDR3F5QmlZMnh6Z3RsSVNLVzRYOXZsYzdEemoxR29Cbm5PeGtnM1RNaW1XLTBhTGxSb09qUG84bzhRc0ZxbGlyWVUtUGdpNFVzLU1LSy1JUkhBUERzRUp0M0RoVlk4VkwtZ2FkeDYxNW5Tb01VYnM0c1BHSkFCTjBtSlpObzBLQ2JDWXhMYkpSRnFOLS00V2o5cE5nYTd1ZnFMQWtFMG5XX0E?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-09T07:00:00Z"
         }
@@ -4743,6 +4810,48 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "High",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "d9e57b28a4a444",
+      "title": "MicroStrategy Buys Just 334 Bitcoin, Spends 6x More on Buybacks: What Changed?",
+      "published_at": "2026-10-05T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "BeInCrypto · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9rQTNnOFQ3SndjN0ljNXBWdlFsTzMtRFBZckhpSEhaeTVPS3dEQ1dkUTJfQnJEa2VXSlR3d1NycGx1a2J4Y2VtREQzOEt5N042Z1liWnJ0UXZBVnNNcjQwclY0eHNTaHQ5SEpCUEozdE8?oc=5",
+      "excerpt": "MicroStrategy Buys Just 334 Bitcoin, Spends 6x More on Buybacks: What Changed? BeInCrypto",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:26Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy Buys Just 334 Bitcoin, Spends 6x More on Buybacks: What Changed?",
+          "name": "BeInCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9rQTNnOFQ3SndjN0ljNXBWdlFsTzMtRFBZckhpSEhaeTVPS3dEQ1dkUTJfQnJEa2VXSlR3d1NycGx1a2J4Y2VtREQzOEt5N042Z1liWnJ0UXZBVnNNcjQwclY0eHNTaHQ5SEpCUEozdE8?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
@@ -7938,6 +8047,48 @@
       ]
     },
     {
+      "id": "3c111036fd6184",
+      "title": "Strategy (MSTR) stock rises 3% as company raises $333M through share sale",
+      "published_at": "2026-08-17T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNUg2akd2UnBpZi16dkpHWjV2VFFtWms2SWRzSnd5R3VpZnJZNDFUOGhDT0tNOENhclNiNUpFQlUyUlhwcUhTWkI2UzUyWEh6UE1lRE5taVlKWlphOWpoYW1aQnhJak9nNzc4b1U4ZS16ZVg1dElyaGU0ZWdXSkI2Y25xT3I4ZVI4RUc1LXk5NVFvNmRYQWtRMW91T2ktLWxhZUlmaC05eDhJQUlwU25sc0xTRkN0bW1qWDR6OHdzeF9KSE95?oc=5",
+      "excerpt": "Strategy (MSTR) stock rises 3% as company raises $333M through share sale TradingView",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:25Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) stock rises 3% as company raises $333M through share sale",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNUg2akd2UnBpZi16dkpHWjV2VFFtWms2SWRzSnd5R3VpZnJZNDFUOGhDT0tNOENhclNiNUpFQlUyUlhwcUhTWkI2UzUyWEh6UE1lRE5taVlKWlphOWpoYW1aQnhJak9nNzc4b1U4ZS16ZVg1dElyaGU0ZWdXSkI2Y25xT3I4ZVI4RUc1LXk5NVFvNmRYQWtRMW91T2ktLWxhZUlmaC05eDhJQUlwU25sc0xTRkN0bW1qWDR6OHdzeF9KSE95?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-17T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": -1,
+          "label": "Slightly bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b3b14dcad188a1",
       "title": "Strategy Leaves Bitcoin Untouched, Raises $334M Selling MSTR Stock",
       "published_at": "2026-08-17T07:00:00Z",
@@ -10413,6 +10564,48 @@
       ]
     },
     {
+      "id": "39129c681057db",
+      "title": "Rosen Law Firm Launches Probe Into MicroStrategy",
+      "published_at": "2026-06-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 67,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWC1PVG9EQW9SaTVGV3h6Zk5JRUVsVDdQRGlWZU5vakZDQlZueUZhcmowMmJUUkFHeGNhLWRnVVN6Ukc5ZE9OZkdSMFpiQl9ncUtXZWt2UzlrZmJubEczejBUOGdFZE5sVHRVXzNMaXV4dWxhQS1WNGYydkhOQTd0c3BXVWpXbVQ2VzgtQkQtWFNXeWpSdjRrT0JB?oc=5",
+      "excerpt": "Rosen Law Firm Launches Probe Into MicroStrategy Yahoo Finance",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:25Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Rosen Law Firm Launches Probe Into MicroStrategy",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWC1PVG9EQW9SaTVGV3h6Zk5JRUVsVDdQRGlWZU5vakZDQlZueUZhcmowMmJUUkFHeGNhLWRnVVN6Ukc5ZE9OZkdSMFpiQl9ncUtXZWt2UzlrZmJubEczejBUOGdFZE5sVHRVXzNMaXV4dWxhQS1WNGYydkhOQTd0c3BXVWpXbVQ2VzgtQkQtWFNXeWpSdjRrT0JB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-25T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "1c3c49bf673eca",
       "title": "MicroStrategy's STRC Stock Falls 25% Amid Bitcoin Slump, Arkham Says Not a Crisis for Saylor",
       "published_at": "2026-06-25T07:00:00Z",
@@ -10688,6 +10881,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c77adf94ea418d",
+      "title": "Strategy (MSTR) Buys $100 Million Of Bitcoin As Dilution Debate Gets Louder",
+      "published_at": "2026-06-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUVliei1zbHRwdmo0OVNwRWs1aHd5WDV6YXFPU0xWdEtGVVlIQzRyWE5uMXVsaHlpNnEyYmduaVY4c25POWZrbWIyTUFlRTgxdXR5M1NudnpaTllTbExWUTQtS3RoNXFkdV9fQjFNZ2d2X01GSWl2TGZaT3lGTE9OYm1CLXBBZVhXcXpXd3RCVndVY0xOcWFtZDJvSQ?oc=5",
+      "excerpt": "Strategy (MSTR) Buys $100 Million Of Bitcoin As Dilution Debate Gets Louder Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-28T06:48:25Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Buys $100 Million Of Bitcoin As Dilution Debate Gets Louder",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUVliei1zbHRwdmo0OVNwRWs1aHd5WDV6YXFPU0xWdEtGVVlIQzRyWE5uMXVsaHlpNnEyYmduaVY4c25POWZrbWIyTUFlRTgxdXR5M1NudnpaTllTbExWUTQtS3RoNXFkdV9fQjFNZ2d2X01GSWl2TGZaT3lGTE9OYm1CLXBBZVhXcXpXd3RCVndVY0xOcWFtZDJvSQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": -1,
+          "label": "Slightly bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
           "method": "headline_if_true_v4"
         }
       ]
