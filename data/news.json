@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-29T16:08:32Z",
+    "ran_at": "2026-10-29T19:09:09Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 12,
+    "new_items": 3,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,29 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-29T16:08:32Z",
+      "checked_at": "2026-10-29T19:09:09Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-29T16:08:32Z",
+      "checked_at": "2026-10-29T19:09:09Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-29T16:08:32Z",
+      "checked_at": "2026-10-29T19:09:09Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 272,
-      "checked_at": "2026-10-29T16:08:32Z",
-      "message": "Fetched 272 matching items."
+      "items_seen": 283,
+      "checked_at": "2026-10-29T19:09:09Z",
+      "message": "Fetched 283 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,14 +54,14 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-29T16:08:32Z",
-      "stories": 45,
-      "independent_events": 39,
+      "as_of": "2026-10-29T19:09:09Z",
+      "stories": 47,
+      "independent_events": 41,
       "directional_events": 17,
       "distinct_catalysts": 14,
       "bullish_events": 13,
       "bearish_events": 4,
-      "neutral_events": 22,
+      "neutral_events": 24,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.98,
       "window_days": 30,
-      "as_of": "2026-10-29T16:08:32Z",
+      "as_of": "2026-10-29T19:09:09Z",
       "stories": 34,
       "independent_events": 28,
       "directional_events": 5,
@@ -167,7 +167,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-29T16:08:32Z",
+      "as_of": "2026-10-29T19:09:09Z",
       "stories": 4,
       "independent_events": 4,
       "directional_events": 0,
@@ -4960,6 +4960,48 @@
       ]
     },
     {
+      "id": "56ef2f2f4cdf2b",
+      "title": "XRP Treasury Evernorth Set to Begin Trading: Can XRP Price Extend Its Rally?",
+      "published_at": "2026-10-12T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TradingKey · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdVVlX1h1V3Fna3RrM1RrRUxzT1gxRHF2dDNQanRFR2FpZnNmOHBpYTdOeXJuY0ppYlA0ZS1WYmg1SzRKdW43c19aVDVZS1NXeWZ3M3dacEZHak0tN2IyOWQxUkJjQm9abm51LUJLOEJ0R0pVTUdUNkRiZFN6QS1nejNGR0N2UDRYOXVYa3d0cWthTUJXd1ItdS13QzdHSHlnZzdEeFJuU2ZYeGtTd1hySHk2eFBTemRhUlJhc2t3UmVkMXM?oc=5",
+      "excerpt": "XRP Treasury Evernorth Set to Begin Trading: Can XRP Price Extend Its Rally? TradingKey",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-29T19:09:16Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Treasury Evernorth Set to Begin Trading: Can XRP Price Extend Its Rally?",
+          "name": "TradingKey · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdVVlX1h1V3Fna3RrM1RrRUxzT1gxRHF2dDNQanRFR2FpZnNmOHBpYTdOeXJuY0ppYlA0ZS1WYmg1SzRKdW43c19aVDVZS1NXeWZ3M3dacEZHak0tN2IyOWQxUkJjQm9abm51LUJLOEJ0R0pVTUdUNkRiZFN6QS1nejNGR0N2UDRYOXVYa3d0cWthTUJXd1ItdS13QzdHSHlnZzdEeFJuU2ZYeGtTd1hySHk2eFBTemRhUlJhc2t3UmVkMXM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "eb090296d62afe",
       "title": "Ripple-backed Evernorth debuts on Nasdaq with 473M XRP",
       "published_at": "2026-10-12T07:00:00Z",
@@ -6080,6 +6122,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "2267bbaa4ea4ed",
+      "title": "Evernorth’s XRP Treasury Vote Has Passed: Here’s What It Means for XRP Holders",
+      "published_at": "2026-10-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQm45R1BLY19TbUVGeFBZQVhjOGkzUjBBM01HT1ZmOUJRN3h0MWZwd0pnU1EyX2FJRy1EcVVHWFQtb0pZQ3N5M0RRaUpJcEdVU1B1TnpaN0txdWxtTkU0MnFOOXRrb1d2NGlSSjZ6R2cwSVE2Q29PTXpHbGhjanJLNU4tRHVtMHg5dHp2MTFCSHc5U0xJcC1HZjA3b0s3TlJn?oc=5",
+      "excerpt": "Evernorth’s XRP Treasury Vote Has Passed: Here’s What It Means for XRP Holders Yahoo Finance",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-29T19:09:14Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth’s XRP Treasury Vote Has Passed: Here’s What It Means for XRP Holders",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQm45R1BLY19TbUVGeFBZQVhjOGkzUjBBM01HT1ZmOUJRN3h0MWZwd0pnU1EyX2FJRy1EcVVHWFQtb0pZQ3N5M0RRaUpJcEdVU1B1TnpaN0txdWxtTkU0MnFOOXRrb1d2NGlSSjZ6R2cwSVE2Q29PTXpHbGhjanJLNU4tRHVtMHg5dHp2MTFCSHc5U0xJcC1HZjA3b0s3TlJn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -19888,6 +19972,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "329385e6731706",
+      "title": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening?",
+      "published_at": "2025-11-12T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObVZxUXBWXzY3YXltTjRidjk2QkNBUzlZS21Ea2paQmh3emI3Y2U0Ykx6eEhzOGMwQTh2YzZCZUxlVVlpdWFSc1ktWVdCaTZUWTNVVXZzYmIwQWQ2NVhCdVF0SjREN2hjRkFZblhEa0dXaUZfZ1hZcmYwcS03UTZnaDFST0VZZERZOWow?oc=5",
+      "excerpt": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T19:09:14Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObVZxUXBWXzY3YXltTjRidjk2QkNBUzlZS21Ea2paQmh3emI3Y2U0Ykx6eEhzOGMwQTh2YzZCZUxlVVlpdWFSc1ktWVdCaTZUWTNVVXZzYmIwQWQ2NVhCdVF0SjREN2hjRkFZblhEa0dXaUZfZ1hZcmYwcS03UTZnaDFST0VZZERZOWow?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-11-12T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
