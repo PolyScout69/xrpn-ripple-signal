@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-28T19:45:40Z",
+    "ran_at": "2026-10-29T02:42:33Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,29 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-28T19:45:40Z",
+      "checked_at": "2026-10-29T02:42:33Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-28T19:45:40Z",
+      "checked_at": "2026-10-29T02:42:33Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-28T19:45:40Z",
+      "checked_at": "2026-10-29T02:42:33Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 279,
-      "checked_at": "2026-10-28T19:45:40Z",
-      "message": "Fetched 279 matching items."
+      "items_seen": 206,
+      "checked_at": "2026-10-29T02:42:33Z",
+      "message": "Fetched 206 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,7 +54,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.12,
       "window_days": 30,
-      "as_of": "2026-10-28T19:45:40Z",
+      "as_of": "2026-10-29T02:42:33Z",
       "stories": 45,
       "independent_events": 39,
       "directional_events": 17,
@@ -114,16 +114,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.09,
+      "raw_score": 1.06,
       "window_days": 30,
-      "as_of": "2026-10-28T19:45:40Z",
-      "stories": 26,
-      "independent_events": 20,
+      "as_of": "2026-10-29T02:42:33Z",
+      "stories": 28,
+      "independent_events": 22,
       "directional_events": 5,
       "distinct_catalysts": 2,
       "bullish_events": 4,
       "bearish_events": 1,
-      "neutral_events": 15,
+      "neutral_events": 17,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -167,7 +167,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.29,
       "window_days": 30,
-      "as_of": "2026-10-28T19:45:40Z",
+      "as_of": "2026-10-29T02:42:33Z",
       "stories": 8,
       "independent_events": 8,
       "directional_events": 1,
@@ -193,6 +193,48 @@
     }
   },
   "items": [
+    {
+      "id": "cddd4f624aaf28",
+      "title": "Strategy's bitcoin buying hinges on one number: STRC at $100",
+      "published_at": "2026-10-28T22:26:36Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "investingLive · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYlJxb3c0cjVXZXlTWWhWTVhhUmpNcFo4dGo5MzA4UkY0cXpTclZ4Zk9rdFUtdnNHQnpxLXdmNXNBd0FjeVBlY3pkeXc5a3dacnBqY05tZlpNMnkzVXJRd3hPSmgzVFQzc0puUklBTGxLRFJmLWUyckRFb2FOdzExQ3Jtb0VvdDJ1dVdLTVZTalBzQ01rbG1PTTB0MmtOTHVwOVE?oc=5",
+      "excerpt": "Strategy's bitcoin buying hinges on one number: STRC at $100 investingLive",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T02:42:42Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's bitcoin buying hinges on one number: STRC at $100",
+          "name": "investingLive · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYlJxb3c0cjVXZXlTWWhWTVhhUmpNcFo4dGo5MzA4UkY0cXpTclZ4Zk9rdFUtdnNHQnpxLXdmNXNBd0FjeVBlY3pkeXc5a3dacnBqY05tZlpNMnkzVXJRd3hPSmgzVFQzc0puUklBTGxLRFJmLWUyckRFb2FOdzExQ3Jtb0VvdDJ1dVdLTVZTalBzQ01rbG1PTTB0MmtOTHVwOVE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-28T22:26:36Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "730ed9c339ed09",
       "title": "Three Bank Approvals Put Ripple’s XRP Strategy Under Scrutiny",
@@ -1471,6 +1513,48 @@
       ]
     },
     {
+      "id": "1efc9ed013ba77",
+      "title": "Strategy (MSTR), Strive (ASST) must balance bitcoin (BTC) purchases, preferred stock dividends",
+      "published_at": "2026-10-24T16:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZHh1bXQxbngxTUNGWmNxZmxfYWlISGs1U2xULThnNDdsdVIyXzI0WnF5Y1FmUlZFYVYtbnZyQV9HQTN0eEJSakdCV29tYm80ZFN6Q3RkM2JiVzVaSlpzN0twZE1oZjFUWGtRV1VIQ2FPVnJSNUluNHNsemwtOTRtQlZrTjhwcWJsQmZQbDQ0U0JSLXNwSVMyWnlXYTNieGlRUy1SNTRtNTc4bm5TcmJ6LXlpd3BtTDh3cnAxcnBKTDNrMG1oWHBiSUVmUXE?oc=5",
+      "excerpt": "Strategy (MSTR), Strive (ASST) must balance bitcoin (BTC) purchases, preferred stock dividends CoinDesk",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-29T02:42:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR), Strive (ASST) must balance bitcoin (BTC) purchases, preferred stock dividends",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZHh1bXQxbngxTUNGWmNxZmxfYWlISGs1U2xULThnNDdsdVIyXzI0WnF5Y1FmUlZFYVYtbnZyQV9HQTN0eEJSakdCV29tYm80ZFN6Q3RkM2JiVzVaSlpzN0twZE1oZjFUWGtRV1VIQ2FPVnJSNUluNHNsemwtOTRtQlZrTjhwcWJsQmZQbDQ0U0JSLXNwSVMyWnlXYTNieGlRUy1SNTRtNTc4bm5TcmJ6LXlpd3BtTDh3cnAxcnBKTDNrMG1oWHBiSUVmUXE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-24T16:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "3a1a01aef29704",
       "title": "Ripple Custody added Canton support on October 5: What it means for the Canton price",
       "published_at": "2026-10-23T16:33:50Z",
@@ -2162,8 +2246,7 @@
       "published_at": "2026-10-20T17:51:36Z",
       "date_only": false,
       "entities": [
-        "Evernorth",
-        "XRP Ecosystem"
+        "Evernorth"
       ],
       "category": "Treasury",
       "impact": "High",
@@ -2209,16 +2292,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -9648,6 +9721,13 @@
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQakRvMVBDM1ZrMG5VdGN4bWpaSTZsZDFPSmtRV1pwTms2NTdSTGkyZHR2X2ZWOXg1TEMxQ0VkNHE1Qmlrc0ZuNUc4S2R2ZTlWaTlNMmk4VGVfeWlzNm5IR0pncmVrMlhlekxIVHJkU1Rka1ZsZzAwQ0JRSjUwUTZCR9IBhgFBVV95cUxNb01OdHlEeEQwVXFnVWZURUJ5aUhPNnAyZk1PRGFIZkRyX2ZPNnpkWWFwR1FPeE1tZGZhOVV0N0N2ck1FM2E0M1l0RWhja2p6V0FfMjJQTnZRemRBRGdFdk5GVmFyZDR2MVlyTzh5N0dTaHpqVWFxWDBPNjJFSUoxZUlPRFpWZw?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-04T07:00:00Z"
+        },
+        {
+          "title": "Strategy Taps Bitcoin Reserves to Service Preferred Stock as STRC Trades Below Par",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY1ZNY1JPWU4xTWlXUGtsLXhGTW9EOThNcGNxVVY0R1gtbTdXdTVQeXpNZWpVc1lwZGpHMTk4LWxlSmpvbmIzQzRJWEJheGxXWGI5Qk1XdTVnRG1QeGltQ3hkRzNyQTZWSFhiVVFpWVAwR2dxeGNHUDIyUFpPa3k3UG5mUjY5bElFMWtjYldKSlVZZ0drMjBuWDlWSE95aVdlM3JxSlBsMTY?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-04T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -10143,6 +10223,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "05db625ca47a3c",
+      "title": "XRP Ledger v3.3.0 Upgrade to Add Privacy, Sponsored Fees, and Institutional Features",
+      "published_at": "2026-07-31T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "XRP Ecosystem"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "tokenpost.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1TZUtuQV9uUVpaaUtJNjU1azRCUmZoeHIxeEpUXzVFVnRadTNsb1A4bk4zY3pOU1FvdXVlME85RjNhaURjWHRxRzQ4dVFuOUlZU2hCOXFFUTk1UQ?oc=5",
+      "excerpt": "XRP Ledger v3.3.0 Upgrade to Add Privacy, Sponsored Fees, and Institutional Features tokenpost.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T02:42:38Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP Ledger v3.3.0 Upgrade to Add Privacy, Sponsored Fees, and Institutional Features",
+          "name": "tokenpost.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1TZUtuQV9uUVpaaUtJNjU1azRCUmZoeHIxeEpUXzVFVnRadTNsb1A4bk4zY3pOU1FvdXVlME85RjNhaURjWHRxRzQ4dVFuOUlZU2hCOXFFUTk1UQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-31T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -14145,6 +14267,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "85dca7e47f1527",
+      "title": "Assessing MicroStrategy (MSTR) Valuation After Institutional Buying And Expanded Bitcoin Treasury",
+      "published_at": "2026-05-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVUhCY0NuV3ZTYWZMd194UElEUnJmXzl0SFk4NDBlTFVqcGoyNmdYeTRpMjItQVRGZ1VkY3BPS3RqcEhxN0JrMmhUUVpVMVhrVHNWaTFyRnpkcXZ4LTZzWVJtNGZHdU5UcnozV2dXV2gzZ2RXb084U0pEb25qZVFISkxzbFE0YUVnRWZPTG5lc253MmY5bl9kVHVtTXNDMmZNb2VXbVpENTE5cmJnZk1LcWlxYVk4Ym1i?oc=5",
+      "excerpt": "Assessing MicroStrategy (MSTR) Valuation After Institutional Buying And Expanded Bitcoin Treasury Yahoo Finance",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-29T02:42:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Assessing MicroStrategy (MSTR) Valuation After Institutional Buying And Expanded Bitcoin Treasury",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVUhCY0NuV3ZTYWZMd194UElEUnJmXzl0SFk4NDBlTFVqcGoyNmdYeTRpMjItQVRGZ1VkY3BPS3RqcEhxN0JrMmhUUVpVMVhrVHNWaTFyRnpkcXZ4LTZzWVJtNGZHdU5UcnozV2dXV2gzZ2RXb084U0pEb25qZVFISkxzbFE0YUVnRWZPTG5lc253MmY5bl9kVHVtTXNDMmZNb2VXbVpENTE5cmJnZk1LcWlxYVk4Ym1i?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-02T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
