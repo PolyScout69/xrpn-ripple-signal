@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-29T19:09:09Z",
+    "ran_at": "2026-10-29T19:46:49Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 3,
+    "new_items": 5,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,29 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-29T19:09:09Z",
+      "checked_at": "2026-10-29T19:46:49Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-29T19:09:09Z",
+      "checked_at": "2026-10-29T19:46:49Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-29T19:09:09Z",
+      "checked_at": "2026-10-29T19:46:49Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 283,
-      "checked_at": "2026-10-29T19:09:09Z",
-      "message": "Fetched 283 matching items."
+      "items_seen": 290,
+      "checked_at": "2026-10-29T19:46:49Z",
+      "message": "Fetched 290 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,7 +54,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-29T19:09:09Z",
+      "as_of": "2026-10-29T19:46:49Z",
       "stories": 47,
       "independent_events": 41,
       "directional_events": 17,
@@ -114,16 +114,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.98,
+      "raw_score": 0.97,
       "window_days": 30,
-      "as_of": "2026-10-29T19:09:09Z",
-      "stories": 34,
-      "independent_events": 28,
+      "as_of": "2026-10-29T19:46:49Z",
+      "stories": 35,
+      "independent_events": 29,
       "directional_events": 5,
       "distinct_catalysts": 2,
       "bullish_events": 4,
       "bearish_events": 1,
-      "neutral_events": 23,
+      "neutral_events": 24,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -167,7 +167,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-29T19:09:09Z",
+      "as_of": "2026-10-29T19:46:49Z",
       "stories": 4,
       "independent_events": 4,
       "directional_events": 0,
@@ -181,6 +181,48 @@
     }
   },
   "items": [
+    {
+      "id": "59e69c5161dd60",
+      "title": "Strategy Stock in Focus Ahead of Q3 Earnings as MSTR Trades Lower",
+      "published_at": "2026-10-29T17:02:46Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Crypto Times · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdE01a3FlN1d5dkN6QkxSWUN5UV84UEVzRVZVdzlLQmJOdjg4elhTTm5ya3dnZnJkTVFDM3pPeFNfRFRGblVoaEpiUTE5akp2NktZRS15NmFLWXE3X2lkbU5DX3lUYWs0UjV1NFZhbU5QYVNqOXFFRTFGWFI4VzNfWUxMMTlvNkIwdlRNRV90X1BOa2VaTGFEZWxobjljSFRmTzZKelZsZw?oc=5",
+      "excerpt": "Strategy Stock in Focus Ahead of Q3 Earnings as MSTR Trades Lower The Crypto Times",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T19:46:57Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Stock in Focus Ahead of Q3 Earnings as MSTR Trades Lower",
+          "name": "The Crypto Times · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdE01a3FlN1d5dkN6QkxSWUN5UV84UEVzRVZVdzlLQmJOdjg4elhTTm5ya3dnZnJkTVFDM3pPeFNfRFRGblVoaEpiUTE5akp2NktZRS15NmFLWXE3X2lkbU5DX3lUYWs0UjV1NFZhbU5QYVNqOXFFRTFGWFI4VzNfWUxMMTlvNkIwdlRNRV90X1BOa2VaTGFEZWxobjljSFRmTzZKelZsZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-29T17:02:46Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "88a7e91a334459",
       "title": "Strategy’s STRC nears $100 level that could reopen a Bitcoin funding channel",
@@ -5387,6 +5429,13 @@
           "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMUN2R1UyZnZMNHFJVzBCaVpDR3F5QmlZMnh6Z3RsSVNLVzRYOXZsYzdEemoxR29Cbm5PeGtnM1RNaW1XLTBhTGxSb09qUG84bzhRc0ZxbGlyWVUtUGdpNFVzLU1LSy1JUkhBUERzRUp0M0RoVlk4VkwtZ2FkeDYxNW5Tb01VYnM0c1BHSkFCTjBtSlpObzBLQ2JDWXhMYkpSRnFOLS00V2o5cE5nYTd1ZnFMQWtFMG5XX0E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-09T07:00:00Z"
+        },
+        {
+          "title": "MSTR Stock Rises 60% in Three Months: Is More Upside Still Ahead?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOTFd3R2ZHaDRTUnN2M0hnV1R0OE9yNDBYUDF5Mk54Z3BFWVJMMFAxVm1hUkxvMGV4U01NaHkwbk85QkttUjZwNWc2ak9SWXEtajA0Tnk2T1BwVy12elhZc3NFRkVzc2ZnMnNveGxLRWYwdjN1cVZoUkV2RnYyTGg4NndxLThqV2ZhY3BzYUt2LU1VeUM3?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-09T07:00:00Z"
         }
@@ -10673,6 +10722,13 @@
           "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNamstRG01YTVTRVZRak5oQm95MklFTkhoV2hGQ0VoU3VBUjhYV0xyQVFGSFY4bmd5UU9kSlRINUlYYmx5UU00emlzUEtkdENMOF9TeGgydGVNM0tOZ1pHRW9DZzV6OXUyQVZ5NktIMFo0T2JLbWtNakdfT3FfY2QxMEFGSmRyV2ZfdGItNDNWNE8tNVZEWldYNGpxX1gzT1pFaHN6UzA4TzVObUhrYmpGUzdNRi1SSzNJR2xPQXRqZ3JXWDdDcW1B?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-31T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy funds $5.4M share buyback using L...",
+          "name": "Pluang · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBlcDBFdTc3VlBLeUQ2RlpDS3ZYSGhzMGpMTm9POXA1d1F3MVoySk5NcVNJNGlHQXJyUFZSQXFCTWRWcDlfUXpXcXFyNGtIeUstNk9zVjZSN282T2NmQXlWc0VBYjFfdFZtSXBNaUFrTnhZNzh3NllLbDg2WQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-31T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14001,6 +14057,48 @@
       ]
     },
     {
+      "id": "a58073747b4b14",
+      "title": "Schiff Slams MicroStrategy Again Amid Rising Leverage Concerns",
+      "published_at": "2026-05-23T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "BeInCrypto · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT2gyU3Buc1FsYmNLNjFUMkhJNklnekI4U1k0RzRMbEdRSnZtNUhFWWpaNVBYY0h1NXlfRzBuRDVDOFpwWV9QUXRDdXBVMW9CWWZzWnI0LVY4S0hmOHJ6YWhHYm0wXzRyOXcycTlsd2Zsalk?oc=5",
+      "excerpt": "Schiff Slams MicroStrategy Again Amid Rising Leverage Concerns BeInCrypto",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T19:46:56Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Schiff Slams MicroStrategy Again Amid Rising Leverage Concerns",
+          "name": "BeInCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT2gyU3Buc1FsYmNLNjFUMkhJNklnekI4U1k0RzRMbEdRSnZtNUhFWWpaNVBYY0h1NXlfRzBuRDVDOFpwWV9QUXRDdXBVMW9CWWZzWnI0LVY4S0hmOHJ6YWhHYm0wXzRyOXcycTlsd2Zsalk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-23T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b2647520a6dc55",
       "title": "SWIFT Lists Ripple Treasury As Certified Partner In America",
       "published_at": "2026-05-20T07:00:00Z",
@@ -14206,6 +14304,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "de65ddc1214abc",
+      "title": "Don’t Let MicroStrategy’s Q1 Loss Scare You Off. A New Preferred Stock Strategy Could Benefit Long-Term MSTR Holders.",
+      "published_at": "2026-05-14T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNbVdkMDRma2M4d2VqN2xENEt4MUdCU19OZ0c0bmdnWHhqYmhXVXppSHlfT0dPd3NtTDRtcUp4RmdFdXZSeGl0a2wzU0t0N05qdzFYdUJ0UjJOTGNwOFo2WkJiSmY1WWZVQnd0ZFpNUzAzS3U4WnRHZVczLVpsRkVFQXZoMGhKeW11LXRtcGw4Yktsak1JQ1E?oc=5",
+      "excerpt": "Don’t Let MicroStrategy’s Q1 Loss Scare You Off. A New Preferred Stock Strategy Could Benefit Long-Term MSTR Holders. Yahoo Finance",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-29T19:46:56Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Don’t Let MicroStrategy’s Q1 Loss Scare You Off. A New Preferred Stock Strategy Could Benefit Long-Term MSTR Holders.",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNbVdkMDRma2M4d2VqN2xENEt4MUdCU19OZ0c0bmdnWHhqYmhXVXppSHlfT0dPd3NtTDRtcUp4RmdFdXZSeGl0a2wzU0t0N05qdzFYdUJ0UjJOTGNwOFo2WkJiSmY1WWZVQnd0ZFpNUzAzS3U4WnRHZVczLVpsRkVFQXZoMGhKeW11LXRtcGw4Yktsak1JQ1E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-14T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -15875,6 +16015,49 @@
       ]
     },
     {
+      "id": "e2e4b8b7b912b8",
+      "title": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed",
+      "published_at": "2026-04-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple",
+        "XRP Ecosystem"
+      ],
+      "category": "Regulation",
+      "impact": "Low",
+      "score": 64,
+      "source": "디지털투데이 · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEpodGtHdUM4ZlpmVFliZVBjN0ZjckZLQmF6TFNtbDhOREV0eGVLZ1FpdHNTSmgtTGlLRzZLQUxuQklIWWFIQUdWU0pFMEdxYWJPNVZzUm05Y09VQ19NeGUwOVpqSzFRckd4MmRTRVEzUERaSG1yX25JNFM5bEczVEttNWY3VzdVQXpsRzltalAxY0Y0WTM3N3RBUk1YRzY3ZE01T1ZjODFTMWJBOWpVZ05kQ3NCSnkydkwwYkt0SUZvdDMteTNZREltQlBsUVFYTEpJRFZpMGNvM3c?oc=5",
+      "excerpt": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed 디지털투데이",
+      "why_it_matters": "A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.",
+      "tags": [],
+      "added_at": "2026-10-29T19:46:55Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed",
+          "name": "디지털투데이 · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEpodGtHdUM4ZlpmVFliZVBjN0ZjckZLQmF6TFNtbDhOREV0eGVLZ1FpdHNTSmgtTGlLRzZLQUxuQklIWWFIQUdWU0pFMEdxYWJPNVZzUm05Y09VQ19NeGUwOVpqSzFRckd4MmRTRVEzUERaSG1yX25JNFM5bEczVEttNWY3VzdVQXpsRzltalAxY0Y0WTM3N3RBUk1YRzY3ZE01T1ZjODFTMWJBOWpVZ05kQ3NCSnkydkwwYkt0SUZvdDMteTNZREltQlBsUVFYTEpJRFZpMGNvM3c?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "22f7eb207ea66c",
       "title": "Michael Saylor Says Just 2% Bitcoin Growth Covers MicroStrategy’s Dividends Forever",
       "published_at": "2026-04-12T07:00:00Z",
@@ -16206,6 +16389,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "99290f1decb918",
+      "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
+      "published_at": "2026-04-03T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
+      "excerpt": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-29T19:46:56Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-03T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
