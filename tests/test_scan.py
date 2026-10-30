@@ -101,14 +101,51 @@ class CollectorTests(unittest.TestCase):
 
     def test_new_official_source_failures_are_not_reported_as_success(self):
         with patch.object(scan,'fetch',side_effect=RuntimeError('Source unavailable')):
-            for reader in (scan.fetch_sbet_news,scan.fetch_fwdi_news):
-                with self.assertRaisesRegex(RuntimeError,'Source unavailable'):
-                    reader()
+            with self.assertRaisesRegex(RuntimeError,'Source unavailable'):
+                scan.fetch_sbet_news()
+            with self.assertRaisesRegex(ValueError,'GlobeNewswire RSS: Source unavailable.*company archive: Source unavailable'):
+                scan.fetch_fwdi_news()
+            self.assertNotIn('fwdi',scan.SOURCE_WARNINGS)
         for reader,empty in ((scan.fetch_sbet_news,'<html>No releases</html>'),
                              (scan.fetch_fwdi_news,'<rss><channel/></rss>')):
             with patch.object(scan,'fetch',return_value=type('Response',(),{'text':empty})()):
                 with self.assertRaises(ValueError):
                     reader()
+
+    def test_fwdi_primary_failure_uses_dated_first_party_archive_with_warning(self):
+        from datetime import datetime,timezone
+        day=datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        link='https://forwardindustries.com/insights/forward-industries-reports-sol-staking'
+        sitemap=f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{link}</loc></url><url><loc>https://example.com/insights/untrusted</loc></url></urlset>'
+        article=f'<div data-framer-name="Article Hero"><h1>Forward Industries Reports SOL Staking Rewards</h1><time datetime="{day}T00:00:00.000Z">{day}</time></div><div data-framer-name="Article Wrapper"><div data-framer-component-type="RichTextContainer"><p>Forward Industries reports additional SOL staking rewards from its institutional validator strategy.</p></div></div>'
+        calls=[]
+        def fake_fetch(url):
+            calls.append(url)
+            if url==scan.FWDI_NEWS_RSS:
+                raise RuntimeError('403 from syndicator')
+            return type('Response',(),{'text':sitemap if url==scan.FWDI_SITEMAP else article})()
+        with patch.object(scan,'fetch',side_effect=fake_fetch):
+            rows=scan.fetch_fwdi_news()
+        self.assertEqual(calls,[scan.FWDI_NEWS_RSS,scan.FWDI_SITEMAP,link])
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['url'],link)
+        self.assertEqual(rows[0]['published_at'][:10],day)
+        self.assertEqual(rows[0]['source_type'],'Official')
+        self.assertEqual(rows[0]['source_id'],'fwdi')
+        self.assertIn('coverage may be incomplete',scan.SOURCE_WARNINGS['fwdi'])
+
+    def test_fwdi_fallback_caps_details_and_does_not_invent_publication_dates(self):
+        links=[f'https://forwardindustries.com/insights/release-{i}' for i in range(20)]
+        sitemap='<urlset>'+''.join(f'<url><loc>{url}</loc></url>' for url in links)+'</urlset>'
+        calls=[]
+        def fake_fetch(url):
+            calls.append(url)
+            text=sitemap if url==scan.FWDI_SITEMAP else '<h1>Forward Industries Announces New Solana Treasury Program</h1>'
+            return type('Response',(),{'text':text})()
+        with patch.object(scan,'fetch',side_effect=fake_fetch):
+            with self.assertRaisesRegex(ValueError,'no usable dated'):
+                scan.fetch_fwdi_site_news()
+        self.assertEqual(calls,[scan.FWDI_SITEMAP]+links[:16])
 
     def test_new_treasury_event_dedup_preserves_different_purchases_and_issuers(self):
         first=self.story('Sharplink Acquires 1,000,000 ETH for Ethereum Treasury',

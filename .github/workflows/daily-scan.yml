@@ -32,6 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # Queued scans must start from the latest snapshot commit.
+          ref: main
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
@@ -42,7 +44,7 @@ jobs:
         run: python -m pip install -r scripts/requirements.txt
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
-      - name: Scan issuer and ecosystem news
+      - name: Scan company investor news
         id: scan
         continue-on-error: true
         run: python scripts/scan.py

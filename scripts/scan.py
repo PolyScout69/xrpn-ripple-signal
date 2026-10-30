@@ -45,6 +45,7 @@ HYPESTRAT_HOME = 'https://hypestrat.xyz/'
 # The B2i API parameter is a public website identifier, not a private token.
 SBET_NEWS_URL = 'https://www.b2i.us/b2i/LibraryFeed.asp?b=2597&api=Ex4Bw5Wv2&i=30&out=38&a=1'
 FWDI_NEWS_RSS = 'https://www.globenewswire.com/rssfeed/organization/OPQRMVxN84Rh7J5kh66nZA=='
+FWDI_SITEMAP = 'https://forwardindustries.com/sitemap.xml'
 TRACKED_ENTITIES = ('Evernorth', 'Ripple', 'Strategy', 'Lite Strategy',
                     'Hyperliquid Strategies', 'SharpLink Gaming', 'Forward Industries')
 MAX_AGE_DAYS = 365
@@ -105,6 +106,7 @@ TOPIC_HINTS = ('share','equity','offering','warrant',
     'sharplink','sbet','ethereum','ether treasury','eth per share',
     'forward industries','fwdi','solana','sol per share')
 LOG = logging.getLogger('signal')
+SOURCE_WARNINGS: dict[str,str] = {}
 
 
 def session_factory() -> requests.Session:
@@ -627,7 +629,7 @@ def fetch_sbet_news() -> list[dict]:
     return stories
 
 
-def fetch_fwdi_news() -> list[dict]:
+def fetch_fwdi_rss() -> list[dict]:
     """Read the issuer-specific GlobeNewswire RSS embedded on Forward's IR page."""
     stories=[]
     for entry in rss_items(fetch(FWDI_NEWS_RSS).text):
@@ -647,6 +649,73 @@ def fetch_fwdi_news() -> list[dict]:
     if not stories:
         raise ValueError('Forward Industries official RSS yielded no usable dated release links.')
     return stories
+
+
+def fetch_fwdi_site_news() -> list[dict]:
+    """Read up to 16 first-party releases when the syndicator feed is unavailable.
+
+    Forward publishes complete press releases under /insights/. Its sitemap
+    lists current releases first but supplies no lastmod, so preserve issuer
+    document order and always obtain publication dates from each article.
+    The bounded archive is a fallback and is not claimed to be exhaustive.
+    """
+    root=ET.fromstring(fetch(FWDI_SITEMAP).text)
+    links=[]
+    for entry in root.findall('.//{*}url'):
+        url=canonical_url((entry.findtext('{*}loc') or '').strip())
+        parsed=urllib.parse.urlsplit(url)
+        if (parsed.hostname in ('forwardindustries.com','www.forwardindustries.com')
+                and parsed.path.startswith('/insights/') and url not in links):
+            links.append(url)
+    if not links:
+        raise ValueError('Company sitemap yielded no first-party release links.')
+    stories=[]
+    consecutive_errors=0
+    for url in links[:16]:
+        try:
+            article=BeautifulSoup(fetch(url).text,'html.parser')
+            heading=article.select_one('[data-framer-name="Article Hero"] h1') or article.find('h1')
+            date_node=article.select_one('time[datetime]')
+            title=plain_text(heading.get_text(' ',strip=True),230) if heading else ''
+            date=normalize_date(date_node.get('datetime','')) if date_node else None
+            if not title or not date:
+                continue
+            paragraphs=article.select('[data-framer-name="Article Wrapper"] [data-framer-component-type="RichTextContainer"] p')
+            lead=next((plain_text(p.get_text(' ',strip=True),235) for p in paragraphs
+                       if len(p.get_text(' ',strip=True))>=70
+                       and 'forward-looking statements' not in p.get_text(' ',strip=True).lower()),'')
+            item=make_story(title=title,date=date,url=url,
+                            source='Forward Industries official site',source_type='Official',
+                            source_id='fwdi',entities=['Forward Industries'],
+                            excerpt=lead or 'Issuer announcement: '+title,date_only=True)
+            if item:
+                stories.append(item)
+            consecutive_errors=0
+        except Exception as exc:
+            LOG.warning('Forward Industries archive article unavailable %s: %s',url,exc)
+            consecutive_errors+=1
+            if consecutive_errors>=3:
+                break
+    if not stories:
+        raise ValueError('Company archive yielded no usable dated issuer announcements.')
+    return stories
+
+
+def fetch_fwdi_news() -> list[dict]:
+    """Use the issuer RSS, then its independently published first-party archive."""
+    SOURCE_WARNINGS.pop('fwdi',None)
+    errors=[]
+    for name,reader in (('GlobeNewswire RSS',fetch_fwdi_rss),
+                        ('company archive',fetch_fwdi_site_news)):
+        try:
+            stories=reader()
+            if name=='company archive':
+                SOURCE_WARNINGS['fwdi']='Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete.'
+            return stories
+        except Exception as exc:
+            errors.append(f'{name}: {exc}')
+            LOG.warning('Forward Industries %s unavailable: %s',name,exc)
+    raise ValueError('Forward Industries official sources unavailable. '+'; '.join(errors))
 
 
 def rss_items(xml_text: str) -> list[dict]:
@@ -1001,6 +1070,7 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
 
 def main() -> int:
     logging.basicConfig(level=logging.INFO,format='%(levelname)s %(message)s')
+    SOURCE_WARNINGS.clear()
     previous=json.loads(DATA_PATH.read_text(encoding='utf-8'))
     stamp=timestamp_now()
     statuses={}
@@ -1018,13 +1088,15 @@ def main() -> int:
         try:
             stories=reader()
             incoming.extend(stories)
-            statuses[key]={'name':name,'status':'ok','items_seen':len(stories),'checked_at':stamp,'message':f'Fetched {len(stories)} matching items.'}
+            warning=SOURCE_WARNINGS.get(key)
+            statuses[key]={'name':name,'status':'degraded' if warning else 'ok','items_seen':len(stories),'checked_at':stamp,'message':(warning+' ' if warning else '')+f'Fetched {len(stories)} matching items.'}
             LOG.info('%s: %s items',name,len(stories))
         except Exception as exc:
             statuses[key]={'name':name,'status':'error','items_seen':0,'checked_at':stamp,'message':str(exc)[:240]}
             LOG.warning('%s: %s',name,exc)
     ready=sum(1 for x in statuses.values() if x['status']=='ok')
-    status='live' if ready==len(sources) else 'partial' if ready else 'failed'
+    usable=sum(1 for x in statuses.values() if x['status'] in ('ok','degraded'))
+    status='live' if ready==len(sources) else 'partial' if usable else 'failed'
     items,new_count=merge_stories(previous.get('items',[]),incoming)
     # Rate all visible stories, including previously collected items and clustered sources.
     for item in items:
