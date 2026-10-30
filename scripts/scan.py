@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Daily, source-first investor news scan for Evernorth, Ripple, XRPL, Strategy and Lite Strategy.
+"""Daily, source-first investor news scan for Evernorth, Ripple, XRPL, Strategy, Lite Strategy and Hyperliquid Strategies.
 
-Sources: Ripple, Evernorth, Lite Strategy issuer news, and targeted financial RSS.
+Sources: Ripple, Evernorth, Lite Strategy and Hyperliquid Strategies issuer news, plus targeted financial RSS.
 Standalone SEC filing records are deliberately excluded from the feed and Moon Meter.
 Coverage is grouped by event. No language model invents summaries or ratings.
 
@@ -39,6 +39,8 @@ EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
 LITS_IR_URL = 'https://litestrategy.gcs-web.com/'
 LITS_IR_FALLBACK = 'https://kimbrxtherapeutics.gcs-web.com/press-releases'
+HYPESTRAT_WIRE = 'https://www.prnewswire.com/news/hyperliquid-strategies-inc/'
+HYPESTRAT_HOME = 'https://hypestrat.xyz/'
 MAX_AGE_DAYS = 365
 MAX_STORIES = 500
 REQUEST_TIMEOUT = 22
@@ -57,6 +59,10 @@ NEWS_QUERIES = [
     '"Lite Strategy" (LITS OR Litecoin OR LTC) (treasury OR earnings OR buyback OR yield OR partnership)',
     '"Lite Strategy" (Litecoin OR LTC OR LITS)',
     '"LITS" (treasury OR Litecoin OR repurchase OR covered call OR LitVM)',
+    '"Hyperliquid Strategies Inc" (PURR OR HYPE) (treasury OR staking OR repurchase OR earnings OR shares)',
+    '"Hyperliquid Strategies" "PURR" (buyback OR NAV OR validator OR yield OR partnership)',
+    '"NASDAQ:PURR" (HYPE OR treasury OR share OR staking OR earnings)',
+    'site:prnewswire.com/news-releases/ "Hyperliquid Strategies Inc" PURR',
     '"Strategy" "MSTR" bitcoin purchase treasury financing',
     '"Michael Saylor" "MSTR" bitcoin purchases treasury',
     '"Strategy" ("STRC" OR "STRK" OR "STRF") preferred shares dividends buyback',
@@ -85,7 +91,8 @@ TOPIC_HINTS = ('share','equity','offering','warrant',
     'mstr','microstrategy','saylor','strc','strk','strf',
     'acquir','purchas','repurchas','preferred','convertible','dividend','reserve','earnings',
     'etf','validator','amendment','amm','dex','defi','network',
-    'litecoin','ltc','litvm','covered call','nav per share','option premium','voruciclib','zandelisib')
+    'litecoin','ltc','litvm','covered call','nav per share','option premium','voruciclib','zandelisib',
+    'hype','hyperliquid','purr','staking','validator commission','adjusted nav')
 LOG = logging.getLogger('signal')
 
 
@@ -170,7 +177,7 @@ def canonical_url(url: str) -> str:
 
 def identify_entities(content: str, force: str | None = None) -> list[str]:
     """Keep issuers distinct from unrelated Ledger-network developments."""
-    if force in ('Ripple', 'Evernorth', 'Strategy', 'XRP Ecosystem', 'Lite Strategy'):
+    if force in ('Ripple', 'Evernorth', 'Strategy', 'XRP Ecosystem', 'Lite Strategy', 'Hyperliquid Strategies'):
         return [force]
     x = content.lower()
     # Strategy is an ordinary English noun; never match it alone.
@@ -179,6 +186,12 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
         strategy = True
     # "Lite Strategy, Inc." must not be mistaken for Strategy (MSTR).
     lite_strategy = bool(re.search(r'\blite\s+strategy\b|\blits\b',x))
+    # PURR is a Nasdaq equity; bare HYPE is a token and bare PURR can refer
+    # to unrelated tokens. Require explicit issuer or stock context.
+    hypestrat = bool(
+        re.search(r'\bhyperliquid strategies(?:\s+inc(?:orporated)?)?\b|\bhypestrat(?:egies)?\b', x)
+        or re.search(r'\b(?:nasdaq\s*[:\-]?\s*purr|purr\s+(?:stock|shares|equity|common\s+stock)|(?:shares|stock|ticker)\s+(?:of\s+)?purr)\b',x)
+    )
     if lite_strategy and not re.search(r'\bmstr\b|\bmicrostrategy\b|\bmichael\s+saylor\b|\bstrc\b|\bstrk\b|\bstrf\b',x):
         strategy = False
     evernorth = bool('xrpn' in x or 'evernorth holdings' in x or ('evernorth' in x and ('xrp' in x or 'treasury' in x)))
@@ -200,6 +213,7 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
     if ecosystem: result.append('XRP Ecosystem')
     if strategy: result.append('Strategy')
     if lite_strategy: result.append('Lite Strategy')
+    if hypestrat: result.append('Hyperliquid Strategies')
     # XRP ecosystem content should not be swallowed by Ripple-only categorisation.
     return result
 
@@ -212,7 +226,8 @@ def classify(title: str, excerpt: str = '', force_sec: bool = False) -> str:
         return 'SEC filings'
     if any(p in title_low for p in ('equity facility','capital raise','share sale','stock offering','shares issued','share issuance','warrant','ipo','nasdaq listing','business combination','shareholder vote','merger','funding round','at-the-market','atm program','preferred stock','convertible notes','buyback','repurchase')):
         return 'Capital markets'
-    if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','litecoin treasury','ltc treasury','ltc per share','litecoin backing per share','ltc holdings','litecoin holdings','covered call options','option premium')):
+    if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','litecoin treasury','ltc treasury','ltc per share','litecoin backing per share','ltc holdings','litecoin holdings','covered call options','option premium',
+            'hype treasury','hype per share','hype holdings','hyperliquid treasury','staking revenue','staking yield','validator commissions')):
         return 'Treasury'
     if any(p in title_low for p in ('regulation','regulatory','sec lawsuit','court rules','license approved','licence','legislation','digital asset policy')):
         return 'Regulation'
@@ -235,9 +250,9 @@ def score_story(title: str, category: str, source_type: str, entities: list[str]
     score={'SEC':84,'Official':72,'Media':54,'News':54}.get(source_type,50)
     bonus={'SEC filings':10,'Capital markets':14,'Treasury':11,'Partnerships':8,'Products':8,'Regulation':10,'Adoption':6,'Leadership':4}.get(category,0)
     score+=bonus
-    if any(e in entities for e in ('Evernorth','Strategy','Lite Strategy')):score+=5
+    if any(e in entities for e in ('Evernorth','Strategy','Lite Strategy','Hyperliquid Strategies')):score+=5
     if any(k in x for k in ('equity facility','dilution','material agreement','financing','s-1','10-k','10-q','share offering','bitcoin purchase','repurchase','preferred stock')):score+=8
-    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','litecoin','ltc','litvm','covered call')):score+=3
+    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','litecoin','ltc','litvm','covered call','hype','hyperliquid','staking','validator')):score+=3
     score=min(99,score)
     return ('High' if score>=83 else 'Medium' if score>=66 else 'Low'),score
 
@@ -246,7 +261,7 @@ def investor_angle(category: str) -> str:
     return {
       'SEC filings':'Primary regulatory disclosure. Review the full filing for material agreements, risk factors, governance changes and potential effects on share count.',
       'Capital markets':'Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.',
-      'Treasury':'Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
+      'Treasury':'Track XRP, BTC, LTC or HYPE holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
       'Partnerships':'A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.',
       'Products':'A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.',
       'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.',
@@ -502,6 +517,68 @@ def fetch_lits_news() -> list[dict]:
     return stories
 
 
+
+def fetch_hypestrat_news() -> list[dict]:
+    """Scan primary Nasdaq PURR issuer releases via its PR Newswire archive."""
+    soup=BeautifulSoup(fetch(HYPESTRAT_WIRE).text,'html.parser')
+    candidates={}
+    for anchor in soup.find_all('a',href=True):
+        url=urllib.parse.urljoin(HYPESTRAT_WIRE,anchor['href'])
+        parsed=urllib.parse.urlsplit(url)
+        if (parsed.hostname not in ('www.prnewswire.com','prnewswire.com')
+                or '/news-releases/' not in parsed.path):
+            continue
+        title=plain_text(anchor.get_text(' ',strip=True),230)
+        if len(title)<24 or not re.search(r'\bhyperliquid strategies\b',title,re.I):
+            continue
+        safe=canonical_url(url)
+        if safe and safe not in candidates:
+            candidates[safe]=(title,extract_date(news_context(anchor)))
+    if not candidates:
+        raise ValueError('Hyperliquid Strategies newswire yielded no issuer release links.')
+    stories=[]
+    for url,(fallback_title,date) in list(candidates.items())[:16]:
+        title=fallback_title
+        lead=''
+        try:
+            article=BeautifulSoup(fetch(url).text,'html.parser')
+            heading=article.find('h1')
+            if heading:
+                heading_text=plain_text(heading.get_text(' ',strip=True),230)
+                if len(heading_text)>=24:
+                    title=heading_text
+            if not date:
+                for meta in article.find_all('meta'):
+                    key=(meta.get('property') or meta.get('name') or '').lower()
+                    if key in ('article:published_time','date','pubdate','datepublished','dc.date'):
+                        date=normalize_date(meta.get('content',''))
+                        if date:break
+            if not date:
+                for el in article.find_all('time'):
+                    date=normalize_date(el.get('datetime','')) or extract_date(el.get_text(' ',strip=True))
+                    if date:break
+            if not date:
+                date=extract_date(article.get_text(' ',strip=True)[:3500])
+            for p in article.find_all('p'):
+                t=plain_text(p.get_text(' ',strip=True),240)
+                if 75<=len(t)<=240 and 'forward-looking statements' not in t.lower():
+                    lead=t
+                    break
+        except Exception as exc:
+            LOG.debug('Hyperliquid Strategies release detail unavailable %s: %s',url,exc)
+        if not date or not re.search(r'\bhyperliquid strategies\b',title,re.I):
+            continue
+        story=make_story(title=title,date=date,url=url,
+            source='Hyperliquid Strategies / PR Newswire',
+            source_type='Official',source_id='hypestrat',
+            entities=['Hyperliquid Strategies'],
+            excerpt=lead or title,date_only=True)
+        if story:stories.append(story)
+    if not stories:
+        raise ValueError('Hyperliquid Strategies newswire releases lacked dated issuer stories.')
+    return stories
+
+
 def rss_items(xml_text: str) -> list[dict]:
     root=ET.fromstring(xml_text)
     result=[]
@@ -663,6 +740,12 @@ def event_key(item: dict) -> str:
     amount_key = ((amount.group(1) + 'm') if amount else '')
     # These issuer-specific one-off announcements can be worded very
     # differently by different publishers; their economic event is the same.
+    if 'Hyperliquid Strategies' in entities:
+        if re.search(r'\b(?:100|100\.0)\s*(?:m|million)\b',title) and re.search(
+                r'\b(?:repurchas\w*|buy[\s-]?back)\b',title):
+            return 'hypestrat:100m-buyback-authorisation:'+stamp
+        if 'validator' in title and any(w in title for w in ('unit labs','unit','staking')):
+            return 'hypestrat:validator-unit:'+stamp
     if 'Lite Strategy' in entities:
         if 'proof of time' in title:
             return 'lits:proof-of-time:'+stamp
@@ -817,6 +900,7 @@ def main() -> int:
         ('ripple','Ripple press centre',fetch_ripple_press),
         ('evernorth','Evernorth official',fetch_evernorth_news),
         ('lits','Lite Strategy official',fetch_lits_news),
+        ('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news),
         ('media','Issuer and XRP ecosystem news',fetch_media_news),
     )
     for key,name,reader in sources:
@@ -846,7 +930,7 @@ def main() -> int:
             item['impact']='Medium'
     sentiment_30d = aggregate_sentiment(items, stamp)
     out={
-      'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy · Lite Strategy', 'version':2,
+      'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy · Lite Strategy · Hyperliquid Strategies', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
               'schedule_utc':['09:15','14:35','23:35'],
               'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],
