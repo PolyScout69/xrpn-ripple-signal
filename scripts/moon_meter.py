@@ -14,6 +14,7 @@ ENTITY_ASSETS = {
     'Evernorth': 'XRPN',
     'Strategy': 'MSTR',
     'Lite Strategy': 'LITS',
+    'Hyperliquid Strategies': 'PURR',
 }
 LABELS = {
     -3: 'Very bearish',
@@ -52,7 +53,7 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
     # mentions risks even when the underlying headline contains no such news.
     combined = re.sub(r'\s+', ' ', title + ' ' + excerpt)
     official = item.get('source_type') in ('Official', 'SEC')
-    stock = asset in ('MSTR', 'XRPN', 'LITS')
+    stock = asset in ('MSTR', 'XRPN', 'LITS', 'PURR')
     is_sec = item.get('source_type') == 'SEC'
 
     # Primary SEC entry titles list forms and item numbers, NOT what a filing
@@ -162,7 +163,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     evidence = ('Unverified' if scenario == 'rumour' else
                 'Conditional' if scenario == 'assumption' else
                 'High' if official else 'Medium')
-    stock = asset in ('MSTR', 'XRPN', 'LITS')
+    stock = asset in ('MSTR', 'XRPN', 'LITS', 'PURR')
 
     # Filing indexes contain form names and item numbers, not the facts inside.
     if item.get('source_type') == 'SEC' and _contains(title,
@@ -185,7 +186,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     # Material mark-to-market losses still matter to a coin-backed stock,
     # even where they are not realised cash losses. Do not treat a daily
     # stock-price move alone as a fresh operating catalyst.
-    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|ltc|litecoin|treasury)\b') and _contains(combined,
+    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|ltc|litecoin|hype|hyperliquid|treasury)\b') and _contains(combined,
                       r'\b(?:lose|lost|loss|drop|fall|down)\b') and _contains(combined,
                       r'\$\s*[\d,.]+\s*(?:million|m|billion|bn)\b'):
         return -2, 'If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.', evidence
@@ -228,6 +229,33 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
                 return 1, 'If preferred buybacks reduce financing costs, they may help, but paused BTC accumulation offsets some upside.', evidence
             return 2, 'If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.', evidence
 
+    if asset == 'PURR':
+        # PURR is equity in the independent HYPE treasury issuer, not the
+        # Hyperliquid protocol token. Only issuer-specific news is routed here.
+        if _contains(combined,
+            r'\b(?:abandons?|exits?|liquidates?)\b.{0,55}\b(?:hype|hyperliquid)\b.{0,25}\btreasury\b'):
+            return -3, 'If the issuer abandons its HYPE treasury strategy, the PURR investment thesis could be severely impaired.', evidence
+        if _contains(combined, r'\b(?:100|100\.0)\s*(?:million|m)\b') and _contains(combined,
+            r'\b(?:stock|share)\s+repurchase\b', r'\bbuy[\s-]?back\b') and _contains(combined,
+            r'\b(?:program|authoriz\w*|increase|raises?|expand\w*)\b'):
+            return 1, 'If the enlarged PURR buyback authorisation is used prudently below asset value, per-share backing may improve; approval alone is not an executed repurchase.', evidence
+        if _contains(combined,
+            r'\b(?:repurchas\w*|buy[\s-]?backs?|bought back)\b') and _contains(combined,
+            r'\b(?:purr|shares?|common stock)\b'):
+            if _contains(combined,r'\b(?:below|discount to)\b.{0,25}\b(?:nav|net asset value)\b',
+                         r'\bhype per (?:fully diluted |diluted )?share\b'):
+                return 3, 'If material repurchases below NAV increase HYPE per diluted share substantially, PURR could experience exceptional accretion.', evidence
+            return 2, 'If executed at an attractive discount to HYPE-backed NAV, share repurchases could increase PURR treasury backing per share.', evidence
+        if _contains(combined, r'\bstaking revenue\b',r'\bvalidator commissions?\b') and _contains(combined,
+            r'\b(?:9\.5\s*million|[1-9]\d?\.\d\s*million|material|record|grew|increased|earns?|generated)\b'):
+            return 2, 'If material recurring HYPE staking and validator income is sustainable after costs and risks, PURR could benefit.', evidence
+        if _contains(combined,r'\b(?:launch(?:es|ed)?|operat\w*|activat\w*)\b') and _contains(combined,
+            r'\bvalidator\b',r'\bstaking\b'):
+            return 1, 'If the HYPE validator or staking operation generates reliable net yield, it could incrementally compound the treasury.', evidence
+        if _contains(combined,r'\b(?:hype|hyperliquid)\b') and _contains(combined,
+            r'\b(?:staking yield|treasury yield|validator income|defi optimization)\b'):
+            return 2, 'If active deployment of the HYPE treasury generates material risk-adjusted income, PURR economics could improve.', evidence
+
     if asset == 'LITS':
         # Company-specific signals: LTC/share and capital allocation matter
         # more to LITS than general LTC network headlines or MEI-era biotech.
@@ -258,15 +286,17 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
 
     # Financing terms matter more than planned gross coin accumulation.
     if stock and _contains(title,
-           r'\bnew (?:xrpn |mstr |lits )?(?:stock )?shares\b',
-           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr |lits )?(?:stock )?shares\b'):
+           r'\bnew (?:xrpn |mstr |lits |purr )?(?:stock )?shares\b',
+           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr |lits |purr )?(?:stock )?shares\b'):
         return -1, 'New shares may dilute holders even if the proceeds acquire more cryptocurrency; check the diluted share count.', evidence
-    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc|ltc|litecoin)\b'):
+    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc|ltc|litecoin|hype)\b'):
         return 0, 'Planned funding and buying alone do not establish net accretion or dilution per share.', evidence
 
     # Treasury-company signal: coins per diluted share, not total coins acquired.
     if stock:
-        coin = 'xrp' if asset == 'XRPN' else r'(?:ltc|litecoin)' if asset == 'LITS' else r'(?:bitcoin|btc)'
+        coin = ('xrp' if asset == 'XRPN' else
+                r'(?:ltc|litecoin)' if asset == 'LITS' else
+                'hype' if asset == 'PURR' else r'(?:bitcoin|btc)')
         if _contains(combined, rf'\b{coin} per (?:(?:fully )?diluted )?share\b'):
             percent = re.search(r'\b(?:by |up |down )?(\d{1,3}(?:\.\d+)?)\s*%', combined)
             amount = float(percent.group(1)) if percent else None
