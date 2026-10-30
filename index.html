@@ -7,7 +7,7 @@
   <meta name="description" content="An investor intelligence dashboard tracking treasury strategy, product launches and partnerships for Evernorth Holdings (XRPN), Ripple, Strategy (MSTR), Lite Strategy (LITS), Hyperliquid Strategies (PURR), SharpLink Gaming (SBET) and Forward Industries (FWDI).">
   <title>Signal — Crypto Treasury Investor Intelligence</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=six-treasuries-20261030-v2">
+  <link rel="stylesheet" href="styles.css?v=market-order-20261030">
   <script defer src="app.js?v=six-treasuries-20261030-v2"></script>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-single-ticker.js"></script>
 </head>
@@ -52,18 +52,7 @@
             <span class="market-pulse-note">Latest available quotes · may be delayed</span>
           </div>
           <div class="market-pulse-grid">
-            <article class="quote-card" aria-label="Evernorth Holdings XRPN stock quote">
-              <div class="quote-card-top">
-                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-xrpn">E</span><span><strong>XRPN</strong><small>EVERNORTH HOLDINGS</small></span></div>
-                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-XRPN/" target="_blank" rel="noopener noreferrer" aria-label="View XRPN share price on TradingView">Full quote ↗</a>
-              </div>
-              <div class="quote-widget-wrap">
-                <tv-single-ticker symbol="NASDAQ:XRPN" theme="dark">
-                  <span class="quote-loading">Loading XRPN price and daily change…</span>
-                </tv-single-ticker>
-              </div>
-            </article>
-            <article class="quote-card" aria-label="Strategy Incorporated MSTR stock quote">
+            <article class="quote-card quote-card-mstr" aria-label="Strategy Incorporated MSTR stock quote">
               <div class="quote-card-top">
                 <div class="quote-identity"><span class="quote-symbol-icon quote-icon-mstr">S</span><span><strong>MSTR</strong><small>STRATEGY INC.</small></span></div>
                 <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-MSTR/" target="_blank" rel="noopener noreferrer" aria-label="View MSTR share price on TradingView">Full quote ↗</a>
@@ -74,29 +63,18 @@
                 </tv-single-ticker>
               </div>
             </article>
-            <article class="quote-card" aria-label="Lite Strategy Incorporated LITS stock quote">
+            <article class="quote-card quote-card-xrpn" aria-label="Evernorth Holdings XRPN stock quote">
               <div class="quote-card-top">
-                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-lits">L</span><span><strong>LITS</strong><small>LITE STRATEGY INC.</small></span></div>
-                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-LITS/" target="_blank" rel="noopener noreferrer" aria-label="View LITS share price on TradingView">Full quote ↗</a>
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-xrpn">E</span><span><strong>XRPN</strong><small>EVERNORTH HOLDINGS</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-XRPN/" target="_blank" rel="noopener noreferrer" aria-label="View XRPN share price on TradingView">Full quote ↗</a>
               </div>
               <div class="quote-widget-wrap">
-                <tv-single-ticker symbol="NASDAQ:LITS" theme="dark">
-                  <span class="quote-loading">Loading LITS price and daily change…</span>
+                <tv-single-ticker symbol="NASDAQ:XRPN" theme="dark">
+                  <span class="quote-loading">Loading XRPN price and daily change…</span>
                 </tv-single-ticker>
               </div>
             </article>
-            <article class="quote-card" aria-label="Hyperliquid Strategies Inc. PURR stock quote">
-              <div class="quote-card-top">
-                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-purr">P</span><span><strong>PURR</strong><small>HYPERLIQUID STRATEGIES</small></span></div>
-                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-PURR/" target="_blank" rel="noopener noreferrer" aria-label="View PURR share price on TradingView">Full quote ↗</a>
-              </div>
-              <div class="quote-widget-wrap">
-                <tv-single-ticker symbol="NASDAQ:PURR" theme="dark">
-                  <span class="quote-loading">Loading PURR price and daily change…</span>
-                </tv-single-ticker>
-              </div>
-            </article>
-            <article class="quote-card" aria-label="SharpLink Gaming SBET stock quote">
+            <article class="quote-card quote-card-sbet" aria-label="SharpLink Gaming SBET stock quote">
               <div class="quote-card-top">
                 <div class="quote-identity"><span class="quote-symbol-icon quote-icon-sbet">S</span><span><strong>SBET</strong><small>SHARPLINK GAMING</small></span></div>
                 <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-SBET/" target="_blank" rel="noopener noreferrer" aria-label="View SBET share price on TradingView">Full quote ↗</a>
@@ -107,7 +85,18 @@
                 </tv-single-ticker>
               </div>
             </article>
-            <article class="quote-card" aria-label="Forward Industries FWDI stock quote">
+            <article class="quote-card quote-card-purr" aria-label="Hyperliquid Strategies Inc. PURR stock quote">
+              <div class="quote-card-top">
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-purr">P</span><span><strong>PURR</strong><small>HYPERLIQUID STRATEGIES</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-PURR/" target="_blank" rel="noopener noreferrer" aria-label="View PURR share price on TradingView">Full quote ↗</a>
+              </div>
+              <div class="quote-widget-wrap">
+                <tv-single-ticker symbol="NASDAQ:PURR" theme="dark">
+                  <span class="quote-loading">Loading PURR price and daily change…</span>
+                </tv-single-ticker>
+              </div>
+            </article>
+            <article class="quote-card quote-card-fwdi" aria-label="Forward Industries FWDI stock quote">
               <div class="quote-card-top">
                 <div class="quote-identity"><span class="quote-symbol-icon quote-icon-fwdi">F</span><span><strong>FWDI</strong><small>FORWARD INDUSTRIES</small></span></div>
                 <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-FWDI/" target="_blank" rel="noopener noreferrer" aria-label="View FWDI share price on TradingView">Full quote ↗</a>
@@ -115,6 +104,17 @@
               <div class="quote-widget-wrap">
                 <tv-single-ticker symbol="NASDAQ:FWDI" theme="dark">
                   <span class="quote-loading">Loading FWDI price and daily change…</span>
+                </tv-single-ticker>
+              </div>
+            </article>
+            <article class="quote-card quote-card-lits" aria-label="Lite Strategy Incorporated LITS stock quote">
+              <div class="quote-card-top">
+                <div class="quote-identity"><span class="quote-symbol-icon quote-icon-lits">L</span><span><strong>LITS</strong><small>LITE STRATEGY INC.</small></span></div>
+                <a class="quote-chart-link" href="https://www.tradingview.com/symbols/NASDAQ-LITS/" target="_blank" rel="noopener noreferrer" aria-label="View LITS share price on TradingView">Full quote ↗</a>
+              </div>
+              <div class="quote-widget-wrap">
+                <tv-single-ticker symbol="NASDAQ:LITS" theme="dark">
+                  <span class="quote-loading">Loading LITS price and daily change…</span>
                 </tv-single-ticker>
               </div>
             </article>

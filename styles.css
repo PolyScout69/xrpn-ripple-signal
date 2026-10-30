@@ -125,7 +125,7 @@
 .market-pulse-note{font-size:10px;color:#8da6a8;letter-spacing:.15px}
 .market-pulse-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
 .quote-card{background:linear-gradient(130deg,#132620,#111f25 55%,#121d26);border:1px solid #2d4544;border-radius:12px;min-width:0;min-height:157px;padding:14px 16px 8px;overflow:hidden}
-.quote-card:nth-child(2){background:linear-gradient(130deg,#1b222d,#121f29 58%,#111d26);border-color:#374455}
+.quote-card-mstr{background:linear-gradient(130deg,#1b222d,#121f29 58%,#111d26);border-color:#374455}
 .quote-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:5px}
 .quote-identity{display:flex;align-items:center;gap:10px;min-width:0}
 .quote-identity strong{display:block;font-size:13px;font-weight:800;letter-spacing:1px;line-height:1.2;color:#e4f2ed}
@@ -201,7 +201,7 @@
 .ticker-l{background:#2b3e2f;color:#b9e8a0;border-color:#51745e}
 .entity-label.lits{color:#bfe5a3}
 .quote-icon-lits{background:#29452c;color:#c8efab;border-color:#547959}
-.quote-card:nth-child(3){background:linear-gradient(135deg,#1d2b21,#121f29 60%,#14212a);border-color:#456249}
+.quote-card-lits{background:linear-gradient(135deg,#1d2b21,#121f29 60%,#14212a);border-color:#456249}
 .market-pulse-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .quote-card-top{flex-wrap:wrap}
 @media(min-width:821px){
@@ -261,7 +261,7 @@
 .ticker-p{background:#183e3b;color:#9beed5;border-color:#396e65}
 .entity-label.hypestrat{color:#a6e8d8}
 .quote-icon-purr{background:#193e3a;color:#a2f1df;border-color:#3e7166}
-.quote-card:nth-child(4){background:linear-gradient(145deg,#102a29,#101f28 68%,#151d27);border-color:#335c56}
+.quote-card-purr{background:linear-gradient(145deg,#102a29,#101f28 68%,#151d27);border-color:#335c56}
 @media(max-width:560px){
   .stats-grid>#sentiment-card-purr .sentiment-ticker{font-size:21px}
 }
@@ -272,8 +272,8 @@
 .entity-label.sbet{color:#c4c0ff}
 .ticker-fwdi,.quote-icon-fwdi{background:#263c41;color:#a0ebdc;border-color:#4d756f}
 .entity-label.fwdi{color:#a0ebdc}
-.quote-card:nth-child(5){background:linear-gradient(135deg,#24243b,#151e2c 65%);border-color:#504f75}
-.quote-card:nth-child(6){background:linear-gradient(135deg,#1c3232,#131f2b 65%);border-color:#3d6660}
+.quote-card-sbet{background:linear-gradient(135deg,#24243b,#151e2c 65%);border-color:#504f75}
+.quote-card-fwdi{background:linear-gradient(135deg,#1c3232,#131f2b 65%);border-color:#3d6660}
 @media(max-width:820px){
   .stats-grid>#sentiment-card-sbet{grid-column:1}
   .stats-grid>#sentiment-card-fwdi{grid-column:2}
