@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-30T19:36:27Z",
+    "ran_at": "2026-10-30T19:41:52Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 34,
+    "new_items": 8,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,64 +23,64 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-30T19:36:27Z",
+      "checked_at": "2026-10-30T19:41:52Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-30T19:36:27Z",
+      "checked_at": "2026-10-30T19:41:52Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-30T19:36:27Z",
+      "checked_at": "2026-10-30T19:41:52Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "hypestrat": {
       "name": "Hyperliquid Strategies official",
       "status": "ok",
       "items_seen": 12,
-      "checked_at": "2026-10-30T19:36:27Z",
+      "checked_at": "2026-10-30T19:41:52Z",
       "message": "Fetched 12 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-10-30T19:36:27Z",
+      "checked_at": "2026-10-30T19:41:52Z",
       "message": "Fetched 22 matching items."
     },
     "fwdi": {
       "name": "Forward Industries official",
-      "status": "error",
-      "items_seen": 0,
-      "checked_at": "2026-10-30T19:36:27Z",
-      "message": "403 Client Error: Forbidden for url: https://www.globenewswire.com/rssfeed/organization/OPQRMVxN84Rh7J5kh66nZA=="
+      "status": "degraded",
+      "items_seen": 16,
+      "checked_at": "2026-10-30T19:41:52Z",
+      "message": "Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete. Fetched 16 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 735,
-      "checked_at": "2026-10-30T19:36:27Z",
-      "message": "Fetched 735 matching items."
+      "items_seen": 601,
+      "checked_at": "2026-10-30T19:41:52Z",
+      "message": "Fetched 601 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.09,
+      "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
-      "stories": 47,
-      "independent_events": 43,
-      "directional_events": 18,
+      "as_of": "2026-10-30T19:41:52Z",
+      "stories": 48,
+      "independent_events": 44,
+      "directional_events": 19,
       "distinct_catalysts": 15,
-      "bullish_events": 14,
+      "bullish_events": 15,
       "bearish_events": 4,
       "neutral_events": 25,
       "coverage": "Broad coverage",
@@ -135,16 +135,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.93,
+      "raw_score": 0.92,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
-      "stories": 39,
-      "independent_events": 34,
+      "as_of": "2026-10-30T19:41:52Z",
+      "stories": 40,
+      "independent_events": 35,
       "directional_events": 5,
       "distinct_catalysts": 2,
       "bullish_events": 4,
       "bearish_events": 1,
-      "neutral_events": 29,
+      "neutral_events": 30,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -188,7 +188,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
+      "as_of": "2026-10-30T19:41:52Z",
       "stories": 2,
       "independent_events": 2,
       "directional_events": 0,
@@ -205,7 +205,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.34,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
+      "as_of": "2026-10-30T19:41:52Z",
       "stories": 14,
       "independent_events": 13,
       "directional_events": 2,
@@ -232,16 +232,16 @@
     "SBET": {
       "value": -2,
       "label": "Bearish",
-      "raw_score": -1.41,
+      "raw_score": -1.39,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
-      "stories": 28,
-      "independent_events": 28,
+      "as_of": "2026-10-30T19:41:52Z",
+      "stories": 29,
+      "independent_events": 29,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 25,
+      "neutral_events": 26,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -274,7 +274,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.45,
       "window_days": 30,
-      "as_of": "2026-10-30T19:36:27Z",
+      "as_of": "2026-10-30T19:41:52Z",
       "stories": 18,
       "independent_events": 17,
       "directional_events": 4,
@@ -2616,6 +2616,13 @@
           "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5vRVl6bmE3a21XazNyOWs1cW5XMEFtQUVMdnpDcWJaa1FnYmlTaGlqcFFZenFJeFpkdXdjYVVSbk1fYkFSM3FUU2EzYnk1UXVvRjQ1cGZXcHZ5dw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-26T16:04:34Z"
+        },
+        {
+          "title": "Evernorth Secures Committed Equity Facility for Approximately $80 Million to Support XRP Treasury Growth",
+          "name": "Nasdaq · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQb09QM2ZuVktYdHVlcTFDNlFvd2JGdnhoS2kzRFJGMjhISDFva2owal9ha2xFeXR4U2ZwQ2N5X05XaktGWVFKUHRHVHd6QmVVT2lEekotT2lCR214RXhydDZwR2hUZVlGV1pteUNzZTVqQmZuZHRkSWFMUGdvaFJhVXpqamFGNUNXRmt3VEMxS29yRUVMZ1dkazIzUnlpRW5RcFNDZlB1VTgyR0hqZkVVRlpUdDFCMHYz?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -3610,6 +3617,48 @@
       "tags": []
     },
     {
+      "id": "04aa5ecbea5684",
+      "title": "Anchorage Enables SharpLink’s $200 Million ETH Treasury Onchain Deployment",
+      "published_at": "2026-10-22T19:22:18Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Crypto Times · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYVNGMGtEU3dCandfb2dVZWN5VE9iS1RJdHJFQVplZ0Fvdk9YcFpEeE5LNHdRUDN1ZncySHlJU1UzbVlaZS0tYnJ2dGNxOU9vdlZCQzNabmxmdzBnYmcyOEJiekRqcjNYVm1vbDRWbU5rLUItajFhNmFLSzlwUkhUdzhHd3VkVVNaQWdOdmZyRHc0dnpKMUswN19ESDk4djhtRXQxaUxSeTY5Z0lKTVIzbw?oc=5",
+      "excerpt": "Anchorage Enables SharpLink’s $200 Million ETH Treasury Onchain Deployment The Crypto Times",
+      "why_it_matters": "Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:06Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Anchorage Enables SharpLink’s $200 Million ETH Treasury Onchain Deployment",
+          "name": "The Crypto Times · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYVNGMGtEU3dCandfb2dVZWN5VE9iS1RJdHJFQVplZ0Fvdk9YcFpEeE5LNHdRUDN1ZncySHlJU1UzbVlaZS0tYnJ2dGNxOU9vdlZCQzNabmxmdzBnYmcyOEJiekRqcjNYVm1vbDRWbU5rLUItajFhNmFLSzlwUkhUdzhHd3VkVVNaQWdOdmZyRHc0dnpKMUswN19ESDk4djhtRXQxaUxSeTY5Z0lKTVIzbw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-22T19:22:18Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "339f0e55b8df34d9",
       "title": "Ripple (XRP) Announced a Major New Partnership - Bitcoin Sistemi",
       "published_at": "2026-10-22T17:21:07Z",
@@ -3954,6 +4003,48 @@
       "moon_meters": [
         {
           "asset": "FWDI",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7e00507d71e723",
+      "title": "Bitcoin Taps $84,000 but It's MSTR That's 'Massively Undervalued,' Samson Mow Argues",
+      "published_at": "2026-10-21T14:38:03Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX05sblZ6NkdoTHRvclhqVUNJeVZKQTRiOVB2b04zSjcta010aHJDWnFmLXU5T1c1QW9EZ19pSEFpN0Y4bzJKbTltWWFtbVlBSmxuMmcyN0VNQWowYkZWbmNWLU5IQTNoeDJfMmxXVWQ5QzlqWGxONkpEUmNsb3BkRnlxYVhOWDA0dlZOZUlDbGFVekNpdkU3Y3BpNUE4NWhwcFZYM3RUS3RfUjdXN2NMSTM4UzZfMUNPSTl1WjRGQ2xjem5vYlJZNDVQRWNSY3p5SF9HSQ?oc=5",
+      "excerpt": "Bitcoin Taps $84,000 but It's MSTR That's 'Massively Undervalued,' Samson Mow Argues TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:09Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Bitcoin Taps $84,000 but It's MSTR That's 'Massively Undervalued,' Samson Mow Argues",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX05sblZ6NkdoTHRvclhqVUNJeVZKQTRiOVB2b04zSjcta010aHJDWnFmLXU5T1c1QW9EZ19pSEFpN0Y4bzJKbTltWWFtbVlBSmxuMmcyN0VNQWowYkZWbmNWLU5IQTNoeDJfMmxXVWQ5QzlqWGxONkpEUmNsb3BkRnlxYVhOWDA0dlZOZUlDbGFVekNpdkU3Y3BpNUE4NWhwcFZYM3RUS3RfUjdXN2NMSTM4UzZfMUNPSTl1WjRGQ2xjem5vYlJZNDVQRWNSY3p5SF9HSQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T14:38:03Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -8892,6 +8983,48 @@
       ]
     },
     {
+      "id": "458604783d1a52",
+      "title": "Evernorth’s $1 Billion XRP Treasury Moves Closer to Nasdaq Listing",
+      "published_at": "2026-10-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 76,
+      "source": "Altcoin Buzz · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQi0xcUgtc1JrNUVUdWR6Uk1IODlDU1p2RnZOVERUN3lkeVQtU19aWU03RFRWSkQwUUQtVzh2bmVtTGdDSFZLRkh2VGNmVGw0ZldEcjh4aEw5cEJMVnJvaXJJSUFMY09uSGxsaFA0NmtmbWY2NzI3by1xaENtQm52cjVvZHE5dXdGLTZBS2VFSjBXeU9LV1RJ?oc=5",
+      "excerpt": "Evernorth’s $1 Billion XRP Treasury Moves Closer to Nasdaq Listing Altcoin Buzz",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:02Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth’s $1 Billion XRP Treasury Moves Closer to Nasdaq Listing",
+          "name": "Altcoin Buzz · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQi0xcUgtc1JrNUVUdWR6Uk1IODlDU1p2RnZOVERUN3lkeVQtU19aWU03RFRWSkQwUUQtVzh2bmVtTGdDSFZLRkh2VGNmVGw0ZldEcjh4aEw5cEJMVnJvaXJJSUFMY09uSGxsaFA0NmtmbWY2NzI3by1xaENtQm52cjVvZHE5dXdGLTZBS2VFSjBXeU9LV1RJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "2267bbaa4ea4ed",
       "title": "Evernorth’s XRP Treasury Vote Has Passed: Here’s What It Means for XRP Holders",
       "published_at": "2026-10-01T07:00:00Z",
@@ -9094,6 +9227,48 @@
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "f56eee8db18668",
+      "title": "Binance Adds Forward Industries (FWDIB) bStocks Trading on Binance Spot",
+      "published_at": "2026-09-30T12:00:00Z",
+      "date_only": true,
+      "entities": [
+        "Forward Industries"
+      ],
+      "category": "Adoption",
+      "impact": "High",
+      "score": 83,
+      "source": "Forward Industries official site",
+      "source_type": "Official",
+      "source_id": "fwdi",
+      "url": "https://forwardindustries.com/insights/binance-adds-forward-industries-fwdib-bstocks-trading-on-binance-spot",
+      "excerpt": "Binance Exchange has added Forward Industries bStocks (FWDIB) to Binance Spot and Binance Convert. Spot trading for the FWDIB/USDT pair opened on September 30, 2026 at 12:00 (UTC), alongside Spot Algo Trading Bots, with Rebalancing…",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Binance Adds Forward Industries (FWDIB) bStocks Trading on Binance Spot",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/binance-adds-forward-industries-fwdib-bstocks-trading-on-binance-spot",
+          "source_type": "Official",
+          "published_at": "2026-09-30T12:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "FWDI",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "High",
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
@@ -10281,6 +10456,27 @@
           "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcW5rVzllMTNJWWdwbkpnZjM3cFIyblowc2xGazBpYVp4T21TUmpEMC1hNTRZaElneWEwVHZyVmdsamwyWnZ1NHVYcS1GVllrenJpUTdpbjFlcVQySzBQRS1RajBkT3BIQzVtaXhvck92OVpyamtyRWF1RXctem1aTlQ3YXhBUTFTdEN4czlneDJHRVF2MVFWcFIwVXNPcEtSNzZwd2lnYl8tZ0d3NE1MUmRBS29ZQzVqa25Z?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-23T07:00:00Z"
+        },
+        {
+          "title": "Forward Industries Completes $25 Million Registered Direct Offering with an Institutional Investor",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-completes-25-million-registered-direct-offering-with-an-institutional-investor",
+          "source_type": "Official",
+          "published_at": "2026-09-24T12:00:00Z"
+        },
+        {
+          "title": "UPDATE: Forward Industries Announces $25 Million Registered Direct Offering with Institutional Investor",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/update-forward-industries-announces-25-million-registered-direct-offering-with-institutional-investor",
+          "source_type": "Official",
+          "published_at": "2026-09-23T12:00:00Z"
+        },
+        {
+          "title": "Forward Industries Announces $25 Million Registered Direct Offering with Institutional Investor",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-announces-25-million-registered-direct-offering-with-institutional-investor",
+          "source_type": "Official",
+          "published_at": "2026-09-23T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -10862,6 +11058,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/09/21/3365847/0/en/forward-industries-sol-holdings-rise-to-approximately-8-16-million-sol.html",
           "source_type": "Official",
           "published_at": "2026-09-21T20:00:00Z"
+        },
+        {
+          "title": "Forward Industriesâ SOL Holdings Rise to Approximately 8.16 Million SOL",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries%E2%80%99-sol-holdings-rise-to-approximately-8.16-million-sol",
+          "source_type": "Official",
+          "published_at": "2026-09-21T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -11562,6 +11765,13 @@
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNcjJEYXA0YXoxWDd2NHlKN3pzQ3c0NHFCVVpvYXN6OUE1UGJneTVNZkhRVEk1RzdLa2pEanJ5VEtpZ0g4SWFaaHZWcXdnMXZsdE9BZnJVcFY0UG94SW55TnZYMEVqXy16ZGFtZVNyWGhKZXZVWktCUldUMmpDVHh5WFhhMGoxU2xkLUZpcW5wdGdsWmdNLXhuamlnM1JtMGlvR2hZ?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-15T07:00:00Z"
+        },
+        {
+          "title": "Forward Industries Announces Updated Proposal to Acquire SkyAI, Inc.",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-announces-updated-proposal-to-acquire-skyai-inc.",
+          "source_type": "Official",
+          "published_at": "2026-09-15T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -12220,6 +12430,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/09/09/3358951/0/en/forward-industries-urges-shareholders-of-skyai-to-vote-no-at-the-2026-annual-meeting.html",
           "source_type": "Official",
           "published_at": "2026-09-09T16:22:00Z"
+        },
+        {
+          "title": "Forward Industries Urges Shareholders of SkyAI to Vote No at the 2026 Annual Meeting",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-urges-shareholders-of-skyai-to-vote-no-at-the-2026-annual-meeting",
+          "source_type": "Official",
+          "published_at": "2026-09-09T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -15666,26 +15883,33 @@
       ]
     },
     {
-      "id": "fb0892732b4153",
+      "id": "440b46ec9828b1",
       "title": "Forward Industries Reports Fiscal Third Quarter 2026 Financial and Operating Results",
-      "published_at": "2026-08-12T20:05:00Z",
-      "date_only": false,
+      "published_at": "2026-08-12T12:00:00Z",
+      "date_only": true,
       "entities": [
         "Forward Industries"
       ],
-      "category": "Adoption",
+      "category": "Treasury",
       "impact": "High",
-      "score": 83,
-      "source": "Forward Industries / GlobeNewswire",
+      "score": 88,
+      "source": "Forward Industries official site",
       "source_type": "Official",
       "source_id": "fwdi",
-      "url": "https://www.globenewswire.com/news-release/2026/08/12/3344072/0/en/forward-industries-reports-fiscal-third-quarter-2026-financial-and-operating-results.html",
-      "excerpt": "Management to Host Conference Call Today at 5:00 p.m. Eastern Time",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "url": "https://forwardindustries.com/insights/forward-industries-reports-fiscal-third-quarter-2026-financial-and-operating-results",
+      "excerpt": "AUSTIN, TX, Aug. 12, 2026 (GLOBE NEWSWIRE) -- Forward Industries, Inc. (NASDAQ: FWDI) (the âCompanyâ or âForwardâ), the leading Solana treasury company, today announced its financial and operating results for its fiscal third…",
+      "why_it_matters": "Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
       "tags": [],
-      "added_at": "2026-10-30T19:24:26Z",
+      "added_at": "2026-10-30T19:42:01Z",
       "verified_seed": false,
       "coverage": [
+        {
+          "title": "Forward Industries Reports Fiscal Third Quarter 2026 Financial and Operating Results",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-reports-fiscal-third-quarter-2026-financial-and-operating-results",
+          "source_type": "Official",
+          "published_at": "2026-08-12T12:00:00Z"
+        },
         {
           "title": "Forward Industries Reports Fiscal Third Quarter 2026 Financial and Operating Results",
           "name": "Forward Industries / GlobeNewswire",
@@ -17449,6 +17673,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/07/29/3335456/0/en/forward-industries-schedules-fiscal-third-quarter-2026-conference-call-for-august-12-2026-at-5-00-p-m-et.html",
           "source_type": "Official",
           "published_at": "2026-07-29T16:00:00Z"
+        },
+        {
+          "title": "Forward Industries Schedules Fiscal Third Quarter 2026 Conference Call for August 12, 2026 at 5:00 p.m. ET",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-schedules-fiscal-third-quarter-2026-conference-call-for-august-12-2026-at-5-00-p.m.-et",
+          "source_type": "Official",
+          "published_at": "2026-07-29T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -17766,26 +17997,33 @@
       ]
     },
     {
-      "id": "44fb13cccd6012",
-      "title": "Statement of no intention to make an offer for Brera Holdings plc (the “Company”)",
-      "published_at": "2026-07-21T04:00:00Z",
-      "date_only": false,
+      "id": "649784804233ba",
+      "title": "Statement of no intention to make an offer for Brera Holdings plc (the âCompanyâ)",
+      "published_at": "2026-07-21T12:00:00Z",
+      "date_only": true,
       "entities": [
         "Forward Industries"
       ],
       "category": "Adoption",
       "impact": "High",
       "score": 83,
-      "source": "Forward Industries / GlobeNewswire",
+      "source": "Forward Industries official site",
       "source_type": "Official",
       "source_id": "fwdi",
-      "url": "https://www.globenewswire.com/news-release/2026/07/21/3330178/0/en/statement-of-no-intention-to-make-an-offer-for-brera-holdings-plc-the-company.html",
-      "excerpt": "THIS IS AN ANNOUNCEMENT UNDER RULE 2.8 OF THE IRISH TAKEOVER PANEL ACT, 1997, TAKEOVER RULES, 2022 (THE “IRISH TAKEOVER RULES”).",
+      "url": "https://forwardindustries.com/insights/statement-of-no-intention-to-make-an-offer-for-brera-holdings-plc-(the-%E2%80%9Ccompany%E2%80%9D)",
+      "excerpt": "THIS IS AN ANNOUNCEMENT UNDER RULE 2.8 OF THE IRISH TAKEOVER PANEL ACT, 1997, TAKEOVER RULES, 2022 (THE âIRISH TAKEOVER RULESâ).",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-30T19:24:26Z",
+      "added_at": "2026-10-30T19:42:01Z",
       "verified_seed": false,
       "coverage": [
+        {
+          "title": "Statement of no intention to make an offer for Brera Holdings plc (the âCompanyâ)",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/statement-of-no-intention-to-make-an-offer-for-brera-holdings-plc-(the-%E2%80%9Ccompany%E2%80%9D)",
+          "source_type": "Official",
+          "published_at": "2026-07-21T12:00:00Z"
+        },
         {
           "title": "Statement of no intention to make an offer for Brera Holdings plc (the “Company”)",
           "name": "Forward Industries / GlobeNewswire",
@@ -18002,6 +18240,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/07/15/3328110/0/en/forward-industries-announces-appointment-of-michael-ashe-to-board-of-directors.html",
           "source_type": "Official",
           "published_at": "2026-07-15T20:05:00Z"
+        },
+        {
+          "title": "Forward Industries Announces Appointment of Michael Ashe to Board of Directors",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-announces-appointment-of-michael-ashe-to-board-of-directors",
+          "source_type": "Official",
+          "published_at": "2026-07-15T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -18743,6 +18988,48 @@
       ]
     },
     {
+      "id": "a8edd1bd76ebe5",
+      "title": "Strategy (MSTR) Sells 3,588 Bitcoin, Raises $216 Million",
+      "published_at": "2026-07-06T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE43VUVTbzd5dEdzVWo1Sy14bGtGaE1TeEM4amIxdG51aDVZcWRFZVYtOG1ORFo1NnhzSzhRZ09rNVpCZ1J0NlFaU1dBTDVKVDd0eUJGT0l0M0JWT0xZTk5fanlZWXpaZzllQURWc3pDeWZ5N1E?oc=5",
+      "excerpt": "Strategy (MSTR) Sells 3,588 Bitcoin, Raises $216 Million Bitcoin Magazine",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:09Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Sells 3,588 Bitcoin, Raises $216 Million",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE43VUVTbzd5dEdzVWo1Sy14bGtGaE1TeEM4amIxdG51aDVZcWRFZVYtOG1ORFo1NnhzSzhRZ09rNVpCZ1J0NlFaU1dBTDVKVDd0eUJGT0l0M0JWT0xZTk5fanlZWXpaZzllQURWc3pDeWZ5N1E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-06T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "37234815a0fd98",
       "title": "Forward Industries Boosts Solana Treasury With $40M Buy, FWDI Stock Pops 11%",
       "published_at": "2026-07-02T07:00:00Z",
@@ -18986,6 +19273,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/07/01/3320680/0/en/forward-industries-expands-solana-treasury-by-over-500k-sol-in-fiscal-q3-2026-now-holds-over-7-5m-sol.html",
           "source_type": "Official",
           "published_at": "2026-07-01T13:16:00Z"
+        },
+        {
+          "title": "Forward Industries Expands Solana Treasury by Over 500k SOL in Fiscal Q3 2026; Now Holds Over 7.5M SOL",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-expands-solana-treasury-by-over-500k-sol-in-fiscal-q3-2026-now-holds-over-7.5m-sol",
+          "source_type": "Official",
+          "published_at": "2026-07-01T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -19039,6 +19333,55 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "978cc2d68fb950",
+      "title": "Forward Industries, Inc (âForwardâ) - Rule 2.12 Announcement",
+      "published_at": "2026-07-01T12:00:00Z",
+      "date_only": true,
+      "entities": [
+        "Forward Industries"
+      ],
+      "category": "Regulation",
+      "impact": "High",
+      "score": 87,
+      "source": "Forward Industries official site",
+      "source_type": "Official",
+      "source_id": "fwdi",
+      "url": "https://forwardindustries.com/insights/forward-industries-inc-(%E2%80%9Cforward%E2%80%9D)---rule-2.12-announcement",
+      "excerpt": "NOT FOR RELEASE, PUBLICATION OR DISTRIBUTION, IN WHOLE OR IN PART, IN, INTO OR FROM ANY JURISDICTION WHERE TO DO SO WOULD CONSTITUTE A VIOLATION OF THE RELEVANT LAWS OR REGULATIONS OF SUCH JURISDICTION",
+      "why_it_matters": "A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.",
+      "tags": [],
+      "added_at": "2026-10-30T19:42:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Forward Industries, Inc (âForwardâ) - Rule 2.12 Announcement",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/forward-industries-inc-(%E2%80%9Cforward%E2%80%9D)---rule-2.12-announcement",
+          "source_type": "Official",
+          "published_at": "2026-07-01T12:00:00Z"
+        },
+        {
+          "title": "Forward Industries, Inc (“Forward”) - Rule 2.12 Announcement",
+          "name": "Forward Industries / GlobeNewswire",
+          "url": "https://www.globenewswire.com/news-release/2026/07/01/3320310/0/en/forward-industries-inc-forward-rule-2-12-announcement.html",
+          "source_type": "Official",
+          "published_at": "2026-07-01T04:30:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "FWDI",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -19172,48 +19515,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "7562d8fda99021",
-      "title": "Forward Industries, Inc (“Forward”) - Rule 2.12 Announcement",
-      "published_at": "2026-07-01T04:30:00Z",
-      "date_only": false,
-      "entities": [
-        "Forward Industries"
-      ],
-      "category": "Regulation",
-      "impact": "High",
-      "score": 87,
-      "source": "Forward Industries / GlobeNewswire",
-      "source_type": "Official",
-      "source_id": "fwdi",
-      "url": "https://www.globenewswire.com/news-release/2026/07/01/3320310/0/en/forward-industries-inc-forward-rule-2-12-announcement.html",
-      "excerpt": "NOT FOR RELEASE, PUBLICATION OR DISTRIBUTION, IN WHOLE OR IN PART, IN, INTO OR FROM ANY JURISDICTION WHERE TO DO SO WOULD CONSTITUTE A VIOLATION OF THE RELEVANT LAWS OR REGULATIONS OF SUCH JURISDICTION",
-      "why_it_matters": "A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:26Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Forward Industries, Inc (“Forward”) - Rule 2.12 Announcement",
-          "name": "Forward Industries / GlobeNewswire",
-          "url": "https://www.globenewswire.com/news-release/2026/07/01/3320310/0/en/forward-industries-inc-forward-rule-2-12-announcement.html",
-          "source_type": "Official",
-          "published_at": "2026-07-01T04:30:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "FWDI",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Conditional",
-          "scenario": "assumption",
-          "if_true": true,
-          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -20099,6 +20400,13 @@
           "url": "https://www.globenewswire.com/news-release/2026/06/24/3317087/0/en/opening-position-disclosure-under-rule-8-1-a-and-b-of-the-irish-takeover-panel-act-1997-takeover-rules-2022-by-an-offeror-or-an-offeree.html",
           "source_type": "Official",
           "published_at": "2026-06-24T16:13:00Z"
+        },
+        {
+          "title": "OPENING POSITION DISCLOSURE UNDER RULE 8.1(a) AND (b) OF THE IRISH TAKEOVER PANEL ACT, 1997, TAKEOVER RULES, 2022 BY AN OFFEROR OR AN OFFEREE",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/opening-position-disclosure-under-rule-8.1(a)-and-(b)-of-the-irish-takeover-panel-act-1997-takeover-rules-2022-by-an-offeror-or-an-offeree",
+          "source_type": "Official",
+          "published_at": "2026-06-24T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -20337,6 +20645,13 @@
           "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=167524&m=rl&g=1772",
           "source_type": "Official",
           "published_at": "2026-06-22T12:00:00Z"
+        },
+        {
+          "title": "Sharplink Announces $75 Million Registered Direct Offering at Premium to Share Price and ETH Holdings",
+          "name": "Quiver Quantitative · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQdXM2VWxtVjhlVUNqellCREZIY0p4aVl4emNmS3dLSlNnOUk5VElhX3h6a1FSOHhRVHhBREsxVWN0NlE3cWEyVm5lSmRmRmFzTER1d3dOS1VPUHprczdydEVkU1gwOG9xQTZlcGlHN2U0Y2ExbnZQN29xbWZMQTlGc2pkQlJjaVNhYTlYVnh5VTVzUmt3LXRnN2dwTW1icllBVnlnRklBaVVJT3BWcFVoVXhxQ0FhWmtzTXk3eHMwRTZFQm91S3RKdzJGUlUxWVh2U1E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-22T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -21219,6 +21534,20 @@
           "url": "https://www.globenewswire.com/news-release/2026/06/15/3311836/0/en/forward-industries-announces-letter-of-intent-to-acquire-skyai-inc-skya.html",
           "source_type": "Official",
           "published_at": "2026-06-15T13:00:00Z"
+        },
+        {
+          "title": "UPDATED: Forward Industries Announces Letter of Intent to Acquire Solana Company (HSDT)",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/updated-forward-industries-announces-letter-of-intent-to-acquire-solana-company-(hsdt)",
+          "source_type": "Official",
+          "published_at": "2026-06-15T12:00:00Z"
+        },
+        {
+          "title": "UPDATED: Forward Industries Announces Letter of Intent to Acquire SkyAI, Inc. (SKYA)",
+          "name": "Forward Industries official site",
+          "url": "https://forwardindustries.com/insights/updated-forward-industries-announces-letter-of-intent-to-acquire-skyai-inc.-(skya)",
+          "source_type": "Official",
+          "published_at": "2026-06-15T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -22817,305 +23146,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "369236e1838de7",
-      "title": "Sharplink to Join the Russell 2000 and 3000 Indexes",
-      "published_at": "2026-05-26T12:00:00Z",
-      "date_only": true,
-      "entities": [
-        "Forward Industries",
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "High",
-      "score": 83,
-      "source": "Sharplink investor relations",
-      "source_type": "Official",
-      "source_id": "sbet",
-      "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=166675&m=rl&g=1772",
-      "excerpt": "Issuer announcement: Sharplink to Join the Russell 2000 and 3000 Indexes",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:26Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink to Join the Russell 2000 and 3000 Indexes",
-          "name": "Sharplink investor relations",
-          "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=166675&m=rl&g=1772",
-          "source_type": "Official",
-          "published_at": "2026-05-26T12:00:00Z"
-        },
-        {
-          "title": "Ethereum Firm Sharplink, Solana Treasury Forward Industries Joining Russell 2000, 3000 Indexes",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQODNHdWYyLVBNSXBYMkZJcFdFZkpIbzNEOTRvYzlpakZPaFZQalRwRS1HZ0haM1JwQVZlTl9jR2NJZVVaUzlvWUphdndGdl8xWW1sX25fcThWZkZtS0JPOWt5TktLY3Y2ZHM2amNtLW51OWM4Q1hQbWJuYVRPVkxsMTJaZU5OY1p1Z2t5T0NOc2ltNFIyVDZIX1d0SU1DX2pqakxoNW96bw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        },
-        {
-          "title": "SharpLink and Forward Industries To Join Russell Indexes With Ethereum, Solana Treasuries",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUW5VTWJKZExmdXcxMUxzenhEQXJVMlV3VjZDcExpbTRwVWltRnNlNWg2QS1YM0ZlZ3BWdlhwXzE3dEhtR25YVGlZWFZpM1lmWE9hUHU0Q0ZPVUc4aTRmRFltTDd2R0RyLTJ0Q0VRYUFyajZMNm1XR3RhYTdiMEQxdQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-27T03:01:04Z"
-        },
-        {
-          "title": "Ethereum news: Joe Lubin's SharpLink (SBET) to join the Russel 2000, 3000 indexes",
-          "name": "CoinDesk · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNzV5N0NrcVFEbFBrbTVJWkdTcF81RlgwNExBaTlYcUtqa0VfREhLdWhRRXFvVEl3UWZjOWJzdkJlY2ZBNWZRaVpfYkNqWWtGMEZZWVN6RGt1dWkxX0dNOHlJdnk0TkloRzRPR1ZMOXRHZEFrbzRDcm1vTFF3Wkw4dDJqbFE3WjBFQ2FWWFdJX0RpODdNTkp4cWtDRHI1M2Z4U0Rqd3dudUhSYnEyWmpCU1QtNTNORmN0bHp2am9R?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        },
-        {
-          "title": "Forward Industries Set to Join the Russell 2000® and 3000® Indexes",
-          "name": "Forward Industries / GlobeNewswire",
-          "url": "https://www.globenewswire.com/news-release/2026/05/26/3301005/0/en/forward-industries-set-to-join-the-russell-2000-and-3000-indexes.html",
-          "source_type": "Official",
-          "published_at": "2026-05-26T12:00:00Z"
-        },
-        {
-          "title": "Ethereum Firm Sharplink, Solana Treasury Forward Industries Joining Russell 2000, 3000 Indexes",
-          "name": "Decrypt · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdENicW85Q24zQTR2V1JUUERXOUc2NDdseFNyWEdudDZ5LTlsYU80VnROSXhsQ0NwMTNVVEF1RTZ1WVFtdjNncW0wTTQwN190NnlDNVU5Tk5rQUstOUlHbG5fMVAzVVpTXzBmLVRQNVNoOUFjMzZ0RUFRc1BiUHNHY3hDQnVQRE5EX3lfYV96elQ2dw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        },
-        {
-          "title": "Ethereum, Solana treasury firms Sharplink and Forward join Russell indexes",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVjRPYXZNYmZPakprSDhxcHd6RW1aOG9sa1kybXB6dDZra19vOFNtNWxpT29qTTBSbGRfaE1qaWlxMUFOQjVjRUJIQ1FlMXdvRFZweDZOYVQtR3p2ZXdUc0ljYkdENnB0NEE4RktKVmhvTjl3M1A5NGJGMk5yZHRLZ0EzRVRXdHJkSTJxcW5ySkdSX3RtR3ZTSHFITmxGS2dJdkJMdXg3ODMzbnBubEIzQV9YSjYtOFRlVk15anRfX3Zqdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        },
-        {
-          "title": "Sharplink $SBET to join Russell 2000 and Russell 3000 indexes on June 29, 2026",
-          "name": "Crypto Briefing · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPWnNXU1J2SHRGRkRlZTE1QnZ1MVd4dGw4b2ktczB4VXdoTjdQd2d3dDBnQ0hNNHcxQ0RJd1dMQ2VaMTdrNW5WeE1fX2l5SGdYb3VvdmR1S193R3BmY2ROVU9VVGRXVjIwZnY5MDVzWGhCdmZZU3N0cHg2MnhhS3FnSnJ3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "FWDI",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "b9cd01f16ef85d",
-      "title": "Strategy Completes $1.5 Billion Debt Repurchase and achieves BTC Yield of 13.3% YTD; Now Holds 843,738 BTC",
-      "published_at": "2026-05-26T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Strategy · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORS1Xd3I0YXZkSU1GMU1HMmV5THlnaERMVWw4NHVUeTBsV3VCbmRSYXNTUDl2clRqZEhoV3ZmRkN0Nlk3dl9jSmw5TU4xNHNwUUJSWm00eTNmR2Ztd3JSLXQ3akNyck9DR1Vtbmd0TEJwdFhwd2lGR2NFZDJTVkRlX3RxOWVSU3d1UWYyRUdvQWVhUVRxWUJ5amkzOUFwV1JXMmVtX0tQZUxRNGlhNGgwQmhWYVJOSXFfZFlKOGtGUmVxVGxXSVdwSWQwWmNoUVBTZmU3U0szb3VSU2U2?oc=5",
-      "excerpt": "Strategy Completes $1.5 Billion Debt Repurchase and achieves BTC Yield of 13.3% YTD; Now Holds 843,738 BTC Strategy",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Completes $1.5 Billion Debt Repurchase and achieves BTC Yield of 13.3% YTD; Now Holds 843,738 BTC",
-          "name": "Strategy · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORS1Xd3I0YXZkSU1GMU1HMmV5THlnaERMVWw4NHVUeTBsV3VCbmRSYXNTUDl2clRqZEhoV3ZmRkN0Nlk3dl9jSmw5TU4xNHNwUUJSWm00eTNmR2Ztd3JSLXQ3akNyck9DR1Vtbmd0TEJwdFhwd2lGR2NFZDJTVkRlX3RxOWVSU3d1UWYyRUdvQWVhUVRxWUJ5amkzOUFwV1JXMmVtX0tQZUxRNGlhNGgwQmhWYVJOSXFfZFlKOGtGUmVxVGxXSVdwSWQwWmNoUVBTZmU3U0szb3VSU2U2?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "82227ca547236a",
-      "title": "Sharplink, Forward Industries among crypto firms considered for Russell indexes",
-      "published_at": "2026-05-26T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming",
-        "Forward Industries"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPaGZxSnYzNjBacGp5ZDhJYW1NeXFfanFIVDBwc0ZVWDM4dEdJYWJtZjE5c19zSWdvX3dtQkFUT2NPZllETWZlXzhZVFdvRHhIUFJheW9ZUHZaWXpCdnVkeno4MnQ4UElNejJMaVNZYzZrd216OG83TXpMMi05RlhJdHIyZ2dTRWFtTUY2LVRNdS1vT2lBT241UFd5RERZbXVUX1VJUVh0M2lnVmdqR3NMY0RjT3Z4S0N6Z0lCcmJObWZPcHRlY0U0dHpHTnM5cHd3MTZlMlhidjhHQQ?oc=5",
-      "excerpt": "Sharplink, Forward Industries among crypto firms considered for Russell indexes TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:36:40Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink, Forward Industries among crypto firms considered for Russell indexes",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPaGZxSnYzNjBacGp5ZDhJYW1NeXFfanFIVDBwc0ZVWDM4dEdJYWJtZjE5c19zSWdvX3dtQkFUT2NPZllETWZlXzhZVFdvRHhIUFJheW9ZUHZaWXpCdnVkeno4MnQ4UElNejJMaVNZYzZrd216OG83TXpMMi05RlhJdHIyZ2dTRWFtTUY2LVRNdS1vT2lBT241UFd5RERZbXVUX1VJUVh0M2lnVmdqR3NMY0RjT3Z4S0N6Z0lCcmJObWZPcHRlY0U0dHpHTnM5cHd3MTZlMlhidjhHQQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-26T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "FWDI",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "16e0ade42b4c16",
-      "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
-      "published_at": "2026-05-25T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Cryptonews · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZFFPSmVRZHZJc2gwRUJMZzVrcldqTFNEOWFfN0thTE9rV3ZOTzNhRXdnWnhObTZGN2xpdWxCX1owRlM5QlhMX0drSlFDOG9HMTBJeGdvX1ZWc0ZGazcwUjVWX0JuWU9WVDRidlRHSTh3Wl9WLVdlYlVzdGVwS2ZSRFFsSGJTZjNHR2ljNlBraWVRbG00MlNMeDNPWDF2VzFkWjVmRw?oc=5",
-      "excerpt": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC Cryptonews",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-27T08:05:34Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
-          "name": "Cryptonews · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZFFPSmVRZHZJc2gwRUJMZzVrcldqTFNEOWFfN0thTE9rV3ZOTzNhRXdnWnhObTZGN2xpdWxCX1owRlM5QlhMX0drSlFDOG9HMTBJeGdvX1ZWc0ZGazcwUjVWX0JuWU9WVDRidlRHSTh3Wl9WLVdlYlVzdGVwS2ZSRFFsSGJTZjNHR2ljNlBraWVRbG00MlNMeDNPWDF2VzFkWjVmRw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-25T07:00:00Z"
-        },
-        {
-          "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQeHZPVVl0b2w5VmllLWplM2tTM1JpLXVENWpIaTJpa0JBd3VsSUJMTDRFRG40QWE5aUp0djg5eTdWUEhqTWUwYUFJRVNLTTRfXy1OVUJxQUplVEgxYVMtNWVxRTZ0UldqY3p3NHZpd2NoSG5oa2g4OE1qS1BqQUdiZXJqdXVudi1PYnVENEwtdzdxX3Npdk16cEdLZnQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-25T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "a1b3899e64be4b",
-      "title": "Hyperliquid Strategies (PURR) Surpasses MicroStrategy in HYPE Gains, But Is It Worth the Investment?",
-      "published_at": "2026-05-25T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy",
-        "Hyperliquid Strategies"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "KuCoin · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQUU2RTRUOXVsWDcyUTlSbnVGZXRLUXhJMlR6dVV1SEVkV2ZUNVo1aTV4UjNMMGdpeHhYcEs3cnkydzFxZXFPUnpqZmhSSlJNOFVUYlFJakh4WVRHZVhVXzJ2dDVmcm1GSEFJMjZXMmIzaFNNZHB5Z1NVTGg4Ry1MbDY1aW9DSS1iVUtLd0txUEdaRS1iaXF2WVdpY0xYcVExbXpTMndHS2ctd0ctLXNrOGJtcGpPX0tfNk9EYnY3ODRKd0doeWx2cHV3?oc=5",
-      "excerpt": "Hyperliquid Strategies (PURR) Surpasses MicroStrategy in HYPE Gains, But Is It Worth the Investment? KuCoin",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T17:27:27Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Hyperliquid Strategies (PURR) Surpasses MicroStrategy in HYPE Gains, But Is It Worth the Investment?",
-          "name": "KuCoin · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQUU2RTRUOXVsWDcyUTlSbnVGZXRLUXhJMlR6dVV1SEVkV2ZUNVo1aTV4UjNMMGdpeHhYcEs3cnkydzFxZXFPUnpqZmhSSlJNOFVUYlFJakh4WVRHZVhVXzJ2dDVmcm1GSEFJMjZXMmIzaFNNZHB5Z1NVTGg4Ry1MbDY1aW9DSS1iVUtLd0txUEdaRS1iaXF2WVdpY0xYcVExbXpTMndHS2ctd0ctLXNrOGJtcGpPX0tfNk9EYnY3ODRKd0doeWx2cHV3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-25T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        },
-        {
-          "asset": "PURR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
