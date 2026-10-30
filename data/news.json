@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-30T02:49:35Z",
+    "ran_at": "2026-10-30T15:56:36Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 10,
+    "new_items": 5,
     "source_note": "Automated scan of issuer releases and ecosystem news; standalone filing records excluded."
   },
   "sources": {
@@ -23,43 +23,43 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-30T02:49:35Z",
+      "checked_at": "2026-10-30T15:56:36Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-30T02:49:35Z",
+      "checked_at": "2026-10-30T15:56:36Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-30T02:49:35Z",
+      "checked_at": "2026-10-30T15:56:36Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "media": {
       "name": "Issuer and XRP ecosystem news",
       "status": "ok",
-      "items_seen": 335,
-      "checked_at": "2026-10-30T02:49:35Z",
-      "message": "Fetched 335 matching items."
+      "items_seen": 261,
+      "checked_at": "2026-10-30T15:56:36Z",
+      "message": "Fetched 261 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.11,
+      "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-10-30T02:49:35Z",
-      "stories": 48,
-      "independent_events": 44,
-      "directional_events": 19,
-      "distinct_catalysts": 16,
-      "bullish_events": 15,
+      "as_of": "2026-10-30T15:56:36Z",
+      "stories": 47,
+      "independent_events": 43,
+      "directional_events": 18,
+      "distinct_catalysts": 15,
+      "bullish_events": 14,
       "bearish_events": 4,
       "neutral_events": 25,
       "coverage": "Broad coverage",
@@ -114,16 +114,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.95,
+      "raw_score": 0.94,
       "window_days": 30,
-      "as_of": "2026-10-30T02:49:35Z",
-      "stories": 36,
-      "independent_events": 31,
+      "as_of": "2026-10-30T15:56:36Z",
+      "stories": 38,
+      "independent_events": 33,
       "directional_events": 5,
       "distinct_catalysts": 2,
       "bullish_events": 4,
       "bearish_events": 1,
-      "neutral_events": 26,
+      "neutral_events": 28,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -167,7 +167,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-30T02:49:35Z",
+      "as_of": "2026-10-30T15:56:36Z",
       "stories": 3,
       "independent_events": 3,
       "directional_events": 0,
@@ -181,6 +181,90 @@
     }
   },
   "items": [
+    {
+      "id": "82b634d38c57e1",
+      "title": "MSTR Stock Is Down 44% in a Year, but Michael Saylor Says Strategy Doesn’t Need Bitcoin Or Equity to Do t",
+      "published_at": "2026-10-30T06:36:58Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Benzinga · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQM2h3X0g2WXBxWHdYNFkyYkk2NVMtR3dRZ1liYWJNQ1g5V2pWWFBQcENXNVl2cDEwbUZ0cERnVHZQWVNiSV9kcW0yR0lRMDlzSTVhUEVYUUUyTnNkZTZyS3F3TEdjU21ZLWhkVG82ZThmWkFGbWthRWw5U3dpLTlEa24yRWx1RXJvNEYzQjZZNlFJNGg4em5NUnNjSExrdFFLeURpUXR5TTc?oc=5",
+      "excerpt": "MSTR Stock Is Down 44% in a Year, but Michael Saylor Says Strategy Doesn’t Need Bitcoin Or Equity to Do t Benzinga",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T15:56:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Is Down 44% in a Year, but Michael Saylor Says Strategy Doesn’t Need Bitcoin Or Equity to Do t",
+          "name": "Benzinga · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQM2h3X0g2WXBxWHdYNFkyYkk2NVMtR3dRZ1liYWJNQ1g5V2pWWFBQcENXNVl2cDEwbUZ0cERnVHZQWVNiSV9kcW0yR0lRMDlzSTVhUEVYUUUyTnNkZTZyS3F3TEdjU21ZLWhkVG82ZThmWkFGbWthRWw5U3dpLTlEa24yRWx1RXJvNEYzQjZZNlFJNGg4em5NUnNjSExrdFFLeURpUXR5TTc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-30T06:36:58Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "49ede85acd531f",
+      "title": "Strategy (MSTR) Posts Record Operating Income as Bitcoin Rebounds in Q3 2026",
+      "published_at": "2026-10-30T00:14:35Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Cryptonews.net · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83RFc2c3I3QlpxTWpfU3NZa1RXZW9GbjFua2dXZ0xQYmxrV0tuUkNXV0tsU3VCUzI1UVphY0pTNHliVmtrbVVWYVVram1MUGlDajBWTi1jbXY?oc=5",
+      "excerpt": "Strategy (MSTR) Posts Record Operating Income as Bitcoin Rebounds in Q3 2026 Cryptonews.net",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T15:56:45Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Posts Record Operating Income as Bitcoin Rebounds in Q3 2026",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83RFc2c3I3QlpxTWpfU3NZa1RXZW9GbjFua2dXZ0xQYmxrV0tuUkNXV0tsU3VCUzI1UVphY0pTNHliVmtrbVVWYVVram1MUGlDajBWTi1jbXY?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-30T00:14:35Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "02637df663a9e2",
       "title": "Strategy reports $19.5B Q3 profit on Bitcoin gains as MSTR slips 2.5% after hours",
@@ -639,6 +723,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "6c4dd6fe62f1fa",
+      "title": "XRP recovery stalls as Ripple and Robinhood expand partnership scope",
+      "published_at": "2026-10-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Medium",
+      "score": 62,
+      "source": "tmgm.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdEw1Z2xuZDM1eGRHUTV5ZWJ4WWZFLS1HaDBNbG8xbmhCd3RxSTN4WnBDRUQ0ZC02Zm16N0ZBYzhfMzhZS1BmemNWd3ZZdEhaenFDclZlVWU0SXFFUUpqRGZyTzdhWDNRMUQ3VGlkdTRsV05PdHdISDhOZFU3UGVDa2JTMW1kQ1pyQ085UTd2RFhXMTlQR0ZBWE5XYW0zTENfdVlWUkZCdkFsMkFoeWxBbmpKYUtZeU1uc0hiRFZaajNwS1dkT2N5emRaQVRGSUU?oc=5",
+      "excerpt": "XRP recovery stalls as Ripple and Robinhood expand partnership scope tmgm.com",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-10-30T15:56:43Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP recovery stalls as Ripple and Robinhood expand partnership scope",
+          "name": "tmgm.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdEw1Z2xuZDM1eGRHUTV5ZWJ4WWZFLS1HaDBNbG8xbmhCd3RxSTN4WnBDRUQ0ZC02Zm16N0ZBYzhfMzhZS1BmemNWd3ZZdEhaenFDclZlVWU0SXFFUUpqRGZyTzdhWDNRMUQ3VGlkdTRsV05PdHdISDhOZFU3UGVDa2JTMW1kQ1pyQ085UTd2RFhXMTlQR0ZBWE5XYW0zTENfdVlWUkZCdkFsMkFoeWxBbmpKYUtZeU1uc0hiRFZaajNwS1dkT2N5emRaQVRGSUU?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4179,6 +4305,55 @@
       ]
     },
     {
+      "id": "38e8f3d3b27061",
+      "title": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo",
+      "published_at": "2026-10-14T12:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "FinancialContent · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPc20wNEtENm9uNnR0OVgtV1VEel9QR3dtbFZaNF8ya0N3aXE2TTBfYmtxbk5JcEtzUk9pZjN5eW9rUmRNb1Ntb3J1d2JTM3htc2NKS0Vha29YVDMxbzVqQmRVRFVCbmU5Q1R0LWxMYURDcW9WZUJJdlJReUNhZXBEOU1qX2U1Z2l1VlctVVNHWFJVVnBfMjVRS3Nyd25IbWE3TjZLWVhDaFh6ODczVFd4M2RzUmZoaE9FaFFjSzhDcVBWZExtbW5Lem5yNlZZc0JOVE5UTEZIeVY1ZFRHWEFYOTZYbV9jbGdRRVE?oc=5",
+      "excerpt": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo FinancialContent",
+      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-30T15:56:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo",
+          "name": "FinancialContent · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPc20wNEtENm9uNnR0OVgtV1VEel9QR3dtbFZaNF8ya0N3aXE2TTBfYmtxbk5JcEtzUk9pZjN5eW9rUmRNb1Ntb3J1d2JTM3htc2NKS0Vha29YVDMxbzVqQmRVRFVCbmU5Q1R0LWxMYURDcW9WZUJJdlJReUNhZXBEOU1qX2U1Z2l1VlctVVNHWFJVVnBfMjVRS3Nyd25IbWE3TjZLWVhDaFh6ODczVFd4M2RzUmZoaE9FaFFjSzhDcVBWZExtbW5Lem5yNlZZc0JOVE5UTEZIeVY1ZFRHWEFYOTZYbV9jbGdRRVE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T12:00:00Z"
+        },
+        {
+          "title": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQnFwQzQycFRWTDBEdVFsTU1ESUo0T3Y2SHNtMXZpQmtiR2pxVHNLc1dROXQwazZ5bWN1SGU4WHFmSkluYzFsYnZtYkppNDdOT1FkbHJ6azd6a3M2Zk5Ha0pHeFgzb2VQLTFWRWRxZFluMnpiR0xIRVhrVy1jbXlPaDVGNm5wX0lqQzcwUDVhOGVFdlo5bGQtZVo1VmVRSnpFYXc1djY5QWFZdUo3czhXZDhHejFVWFVHRlpfaEZrZVhOcS1Mc2tLTTRfeEhKTHRkdHlSRm5oWEMxZEdVVmVwUVllV3RnMmhwcm4wQ2QyVmZKWEhyYkM5Wk85emI?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-14T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "c9f06c7cad7467",
       "title": "DriveWealth and Ripple Partner to Bring Institutional Digital Asset Infrastructure to Global Investing",
       "published_at": "2026-10-14T07:00:00Z",
@@ -4365,48 +4540,6 @@
           "title": "Evernorth Rings Nasdaq Closing Bell, Showcasing XRP Treasury",
           "name": "Bitcoin News · via Google News",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQczdUd3l3bWJ3VzRqeVI4Q3lIeEcybHVFRERYaDVkVWhrZGE3NjQtVkNKdTJCSmRieWE4V0tNS3VISEx2NzZvd202YlRabmpqeHY1X0JOWk4zdFprOW9WcmZXRnZtMGhoOUxmdE14R1lsQ2FxZ2QwTkFHMU9PMTRpN3dVTEVaZGYtZHhEY01wTDFOMjg4VTZzekdn?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-14T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f2cc610f9e83df",
-      "title": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo",
-      "published_at": "2026-10-14T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "GlobeNewswire · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQnFwQzQycFRWTDBEdVFsTU1ESUo0T3Y2SHNtMXZpQmtiR2pxVHNLc1dROXQwazZ5bWN1SGU4WHFmSkluYzFsYnZtYkppNDdOT1FkbHJ6azd6a3M2Zk5Ha0pHeFgzb2VQLTFWRWRxZFluMnpiR0xIRVhrVy1jbXlPaDVGNm5wX0lqQzcwUDVhOGVFdlo5bGQtZVo1VmVRSnpFYXc1djY5QWFZdUo3czhXZDhHejFVWFVHRlpfaEZrZVhOcS1Mc2tLTTRfeEhKTHRkdHlSRm5oWEMxZEdVVmVwUVllV3RnMmhwcm4wQ2QyVmZKWEhyYkM5Wk85emI?oc=5",
-      "excerpt": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo GlobeNewswire",
-      "why_it_matters": "Track XRP, BTC or LTC purchases, coin holdings per diluted share, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-30T02:49:40Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Evernorth to Begin Deploying from 473 Million XRP Treasury with Ripple, Kraken, Coinbase and BitGo",
-          "name": "GlobeNewswire · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQnFwQzQycFRWTDBEdVFsTU1ESUo0T3Y2SHNtMXZpQmtiR2pxVHNLc1dROXQwazZ5bWN1SGU4WHFmSkluYzFsYnZtYkppNDdOT1FkbHJ6azd6a3M2Zk5Ha0pHeFgzb2VQLTFWRWRxZFluMnpiR0xIRVhrVy1jbXlPaDVGNm5wX0lqQzcwUDVhOGVFdlo5bGQtZVo1VmVRSnpFYXc1djY5QWFZdUo3czhXZDhHejFVWFVHRlpfaEZrZVhOcS1Mc2tLTTRfeEhKTHRkdHlSRm5oWEMxZEdVVmVwUVllV3RnMmhwcm4wQ2QyVmZKWEhyYkM5Wk85emI?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-14T07:00:00Z"
         }
@@ -4904,6 +5037,13 @@
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9LMERNZ3NxTElqcmNUN1F2UkY2V2FIdUtQZHFQd2JyVU80M09KSHRyVzlWSTdET1E5YWJYSUxqMWQ3Sjl4QTduTmsyMkFiQVluMEx4bzl5dF9GS0tiMFh2WjlKMExZZ3ZnUXZMSExEVUV0UQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-12T07:00:00Z"
+        },
+        {
+          "title": "XRP treasury Evernorth’s shares rise 5% at Nasdaq opening print",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE84S0tXSnpraTVLblBfTHdSQVBadThUbllCS1dsNDdTblBKaElsaEp5Mk5YM0VKbkxWNm9HZGJPYXl5U05yNml0TEt3NE03UjdSSjhpZmI1eko?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -6837,6 +6977,13 @@
           "title": "Lite Strategy buys 900K+ Litecoin, holding over 1% of total supply, boosts treasury and share buybacks.",
           "name": "Pluang · via Google News",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTzJIdFRjdXRyWFE5VXBFbFZ4aWtURnlGMXZNVDhXQThHbGV5Tmd4QXFjaGw5Mks2M1VuLWIwS243NVRqX0xBY2s0Y3gwM2o1ZmtERnJOZDR0X1g5Vnd0alFNZ3lnajFpRXlLRENGTUVFaFpZS0F4SmF0clJlZi1Ca3Z5YUdpdkFselJ0b1dncEJ3c0E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
+        },
+        {
+          "title": "LITS: Treasury operations shifted from LTC accumulation to yield generation and accretive buybacks",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQTEkxZG9NbnFveVRUcXpWSG9rZDgtcWU3Z1gyeEhmd1E1dko2SzhGZTgwUmdFMy1oRFdOOExoLWNwelM0b2RENDRZZldNSjM1czBXMUFEaGV0NWJlU2twclA2bjRERV9Ndlg5LWpGb29UNUxOS2REajZTR3dWM1R0dUZrQWFZd3hBcmJmS18ta1g3MVdLT2p0N0xTcjF2aE5VbmlJS29veXdRWWFoV0dDX2FSSFpuWi1abnlNbmYtamhKSEMxT0NmcVJtVFd5MTE4VmxqWTljdHVBVEVMcFFEOU5DZnZqQlVfY1NQR1FZVkdqdjk4Vm52b1hHWGVXYnV6NXltOUR1SlNQd1lX?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-29T07:00:00Z"
         }
@@ -11474,7 +11621,7 @@
     {
       "id": "0ef90381a3a241",
       "title": "XRPL Validators Resist New Reserve Cut As Security Debate Deepens",
-      "published_at": "2026-07-21T04:52:03Z",
+      "published_at": "2026-07-21T07:00:00Z",
       "date_only": false,
       "entities": [
         "XRP Ecosystem"
@@ -11489,7 +11636,7 @@
       "excerpt": "XRPL Validators Resist New Reserve Cut As Security Debate Deepens Yellow.com",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-26T19:52:14Z",
+      "added_at": "2026-10-30T15:56:42Z",
       "verified_seed": false,
       "coverage": [
         {
@@ -11497,7 +11644,7 @@
           "name": "Yellow.com · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9YQ0hoSXZLZGRLeDc2Njk4SGpZNVFyQTNua1ItVklIQ3A1dFdJSjFXU0RnQUNrTjJ5TDMzRkdJVWIwdnNnTGlkYlRrbXN0U2FsMW53Vm42d2NkeXMtVTdBdw?oc=5",
           "source_type": "Media",
-          "published_at": "2026-07-21T04:52:03Z"
+          "published_at": "2026-07-21T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -12580,6 +12727,48 @@
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQVNBZXZxajBaRDBQMVQta2JWajhUTGRNVG1UeVV3bFFYdHpSRUMxWnFoQ0lYQjVDQzR4WTR1MndxWU5tQjk1VjhPQ0dDV3lnWVZUOEd2OTYyZ2tFNXN4dlFOR3plUE5UdG5sSnJGNnR4Zkw3YV9LMDRVTm5Kejhja2NRaFFaaXB5Z2drZU9TSzZFX19YTk1kaVRGYjNsc3NqNmpLaGlpSW9rYTZGakgteTMwcWdXc2l2ZEJxeg?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b23d5ded4967c0",
+      "title": "Strategy (MSTR) Stock Faces Fresh Scrutiny As STRC Slide Fuels Funding Fears",
+      "published_at": "2026-06-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORWpoVkJMTjJlV0d4bV85cDdib2FsVUVLVW55QTlfU1hmS3oxY0cyMlhTT2lJb2h0UDh5TE0zZlVKUnhPTG1HdXEyd1BxakZrcWh6RmRxSmlFN01wdGxLQ2NyTmNtSG04RjVIZUVPWU9vRmljbnBwSW9IYlB3ajJiRXFKYjQxMW8xelZiUWpOaldoTGRqMjZZaGZ3LXo?oc=5",
+      "excerpt": "Strategy (MSTR) Stock Faces Fresh Scrutiny As STRC Slide Fuels Funding Fears Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-30T15:56:44Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Stock Faces Fresh Scrutiny As STRC Slide Fuels Funding Fears",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORWpoVkJMTjJlV0d4bV85cDdib2FsVUVLVW55QTlfU1hmS3oxY0cyMlhTT2lJb2h0UDh5TE0zZlVKUnhPTG1HdXEyd1BxakZrcWh6RmRxSmlFN01wdGxLQ2NyTmNtSG04RjVIZUVPWU9vRmljbnBwSW9IYlB3ajJiRXFKYjQxMW8xelZiUWpOaldoTGRqMjZZaGZ3LXo?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-27T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -21064,132 +21253,6 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "fa07a5e4ab859c",
-      "title": "Breaking: XRP Treasury Evernorth Debuts on Nasdaq Under XRPN Ticker After $1B Token Purchase",
-      "published_at": "2025-10-30T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "CoinGape · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTczN0lTZXgwd2Z2cUN1ajZnT2pTVkdmemdmTDV1amhYajdNdHhWUlQ1dzdBaDRMZXJua2E0ZTN3SXNPVDQyc2tsNkhaVEg4R3h4TUJaTnA2RTkxZjlwUzg5cnl1cGs3VEtzeEZ2YU1maGFMTFVZT3U2Sl92STFvVl9GMGNHYkx5S1pxeXhLeUtPaDFDeUc5NkxRU19uS0p5Q3otaE9R?oc=5",
-      "excerpt": "Breaking: XRP Treasury Evernorth Debuts on Nasdaq Under XRPN Ticker After $1B Token Purchase CoinGape",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-26T21:54:57Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Breaking: XRP Treasury Evernorth Debuts on Nasdaq Under XRPN Ticker After $1B Token Purchase",
-          "name": "CoinGape · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTczN0lTZXgwd2Z2cUN1ajZnT2pTVkdmemdmTDV1amhYajdNdHhWUlQ1dzdBaDRMZXJua2E0ZTN3SXNPVDQyc2tsNkhaVEg4R3h4TUJaTnA2RTkxZjlwUzg5cnl1cGs3VEtzeEZ2YU1maGFMTFVZT3U2Sl92STFvVl9GMGNHYkx5S1pxeXhLeUtPaDFDeUc5NkxRU19uS0p5Q3otaE9R?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-30T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0b5f56a45de514",
-      "title": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut",
-      "published_at": "2025-10-30T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "SQ Magazine · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YXzNzN3FJQUhFdHVhZXBtY1ZodWF2Snhrd09QNGFwU3lSa0RRWlVUeUE3UmhZTUJyam5CV0t5TGhmNGQ4UGxzMHp3eUNzSmlpSnNkSkQwZjJKcFdpTjhHSVFSUUY?oc=5",
-      "excerpt": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut SQ Magazine",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-27T05:27:33Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Evernorth’s $1B XRP Treasury Goes Public in Landmark Nasdaq Debut",
-          "name": "SQ Magazine · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YXzNzN3FJQUhFdHVhZXBtY1ZodWF2Snhrd09QNGFwU3lSa0RRWlVUeUE3UmhZTUJyam5CV0t5TGhmNGQ4UGxzMHp3eUNzSmlpSnNkSkQwZjJKcFdpTjhHSVFSUUY?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-30T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "bcc4c76f547bcf",
-      "title": "What Is XRP ETF? SEC Approval Status, Launch Date & How to Invest Guide",
-      "published_at": "2025-10-30T06:36:29Z",
-      "date_only": false,
-      "entities": [
-        "XRP Ecosystem"
-      ],
-      "category": "Products",
-      "impact": "Low",
-      "score": 62,
-      "source": "MEXC · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaFB3R25yNEYxa3pKbTl2YXlxdkVUMHBacFhHVGVUMG85MkY5MDFOeGxiWFJqUlRBSnh3MmU1UGxiZnlkOHlJOURJaG5YbjM3WWVEZGVEZWFmM08yTGR4WDhSc3MzQU0yZlZwY2pmZVduYkthV3AtaHdFSHBqd3FCbU5QQkttcDA1aS1IVXJGNWxwamxWNzgzbjRXWTBmTmtBYVNuRE5ZVQ?oc=5",
-      "excerpt": "What Is XRP ETF? SEC Approval Status, Launch Date & How to Invest Guide MEXC",
-      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
-      "tags": [],
-      "added_at": "2026-10-26T21:54:59Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "What Is XRP ETF? SEC Approval Status, Launch Date & How to Invest Guide",
-          "name": "MEXC · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaFB3R25yNEYxa3pKbTl2YXlxdkVUMHBacFhHVGVUMG85MkY5MDFOeGxiWFJqUlRBSnh3MmU1UGxiZnlkOHlJOURJaG5YbjM3WWVEZGVEZWFmM08yTGR4WDhSc3MzQU0yZlZwY2pmZVduYkthV3AtaHdFSHBqd3FCbU5QQkttcDA1aS1IVXJGNWxwamxWNzgzbjRXWTBmTmtBYVNuRE5ZVQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-10-30T06:36:29Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
