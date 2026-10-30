@@ -13,7 +13,7 @@ def story(title, asset='XRPN', value=1, impact='Medium', age=1,
     return {
         'id': identifier or title, 'title': title,
         'published_at': published.isoformat().replace('+00:00', 'Z'),
-        'entities': ['Evernorth'] if asset == 'XRPN' else ['Lite Strategy'] if asset == 'LITS' else ['Hyperliquid Strategies'] if asset == 'PURR' else ['Strategy'],
+        'entities': [{'XRPN': 'Evernorth', 'MSTR': 'Strategy', 'LITS': 'Lite Strategy', 'PURR': 'Hyperliquid Strategies', 'SBET': 'SharpLink Gaming', 'FWDI': 'Forward Industries'}[asset]],
         'source_type': source_type, 'category': 'Treasury',
         'impact': impact, 'score': score,
         'url': 'https://example.com/' + str(len(title)),
@@ -143,7 +143,7 @@ class SentimentTests(unittest.TestCase):
             story('Evernorth XRP treasury neutral update', 'XRPN', value=0),
         ]
         result=aggregate_sentiment(events,AS_OF)
-        self.assertEqual(set(result),{'XRPN','MSTR','LITS','PURR'})
+        self.assertEqual(set(result),{'XRPN','MSTR','LITS','PURR','SBET','FWDI'})
         self.assertEqual(result['LITS']['stories'],2)
         self.assertGreater(result['LITS']['value'],0)
         self.assertLess(result['MSTR']['value'],0)
@@ -194,6 +194,42 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(s['stories'], 0)
         self.assertEqual(s['value'], 0)
 
+    def test_sbet_fwdi_sentiment_is_independent_and_preserves_downside(self):
+        results = aggregate_sentiment([
+            story('SharpLink earns material ETH staking income', 'SBET', value=2, impact='High'),
+            story('SharpLink routine shareholder presentation', 'SBET', value=0, impact='Low'),
+            story('Forward Industries SOL treasury custody loss', 'FWDI', value=-2, impact='High'),
+            story('Forward Industries appoints director', 'FWDI', value=1, impact='Low'),
+        ], AS_OF)
+        self.assertEqual(set(results), {'XRPN', 'MSTR', 'LITS', 'PURR', 'SBET', 'FWDI'})
+        self.assertGreater(results['SBET']['value'], 0)
+        self.assertLess(results['FWDI']['value'], 0)
+        self.assertEqual(results['SBET']['stories'], 2)
+        self.assertEqual(results['FWDI']['stories'], 2)
+        self.assertEqual(results['MSTR']['stories'], 0)
+
+    def test_new_treasury_duplicate_buyback_and_staking_coverage_counts_once(self):
+        for ticker, titles in (
+            ('SBET', ('SharpLink announces stock repurchase authorization', 'SBET buyback approved')),
+            ('FWDI', ('Forward Industries SOL staking revenue increases', 'FWDI earns higher staking income')),
+        ):
+            with self.subTest(ticker=ticker):
+                result = self.check([
+                    story(titles[0], ticker, value=1, identifier='issuer'),
+                    story(titles[1], ticker, value=1, identifier='syndicated'),
+                ], ticker=ticker)
+                self.assertEqual(result['stories'], 2)
+                self.assertEqual(result['directional_events'], 1)
+
+    def test_new_treasury_cards_report_no_stories_without_manufacturing_score(self):
+        for ticker in ('SBET', 'FWDI'):
+            with self.subTest(ticker=ticker):
+                result = self.check([], ticker=ticker)
+                self.assertEqual(result['stories'], 0)
+                self.assertEqual(result['value'], 0)
+                self.assertIn(result['coverage'], ('No coverage', 'Limited coverage'))
+
 
 if __name__ == '__main__':
     unittest.main()
+

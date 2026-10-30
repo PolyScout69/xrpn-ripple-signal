@@ -13,15 +13,15 @@ def score(title, entity='Evernorth', kind='Official', category='Adoption', excer
 class MoonMeterTests(unittest.TestCase):
     def test_seven_point_scale(self):
         self.assertEqual(score('Evernorth files for Chapter 11 bankruptcy')['value'],-3)
-        self.assertEqual(score('XRPL security breach and exploit', 'XRP Ecosystem')['value'],-2)
+        self.assertEqual(score('Ripple reports XRPL security breach and exploit', 'Ripple')['value'],-2)
         self.assertEqual(score('Evernorth announces $80m equity purchase facility')['value'],-1)
         self.assertEqual(moon_for_story({'title':'Strategy files Form 8-K reported items 7.01','entities':['Strategy'],'source_type':'SEC','category':'SEC filings'}),[])
         self.assertEqual(score('Strategy buys 1,000 bitcoin for treasury', 'Strategy')['value'],1)
-        self.assertEqual(score('SEC approves spot XRP ETF','XRP Ecosystem')['value'],3)
+        self.assertEqual(score('Ripple comments as SEC approves spot XRP ETF','Ripple')['value'],3)
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
-        for entity, asset in [('Ripple','XRP'),('XRP Ecosystem','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS'),('Hyperliquid Strategies','PURR')]:
+        for entity, asset in [('Ripple','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS'),('Hyperliquid Strategies','PURR'),('SharpLink Gaming','SBET'),('Forward Industries','FWDI')]:
             self.assertEqual(score('Routine update',entity)['asset'],asset)
         both=moon_for_story(dict(title='Ripple and XRPL cooperate on network',entities=['Ripple','XRP Ecosystem'],source_type='Official'))
         self.assertEqual([m['asset'] for m in both],['XRP'])
@@ -46,7 +46,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(m['value'],-3)
         self.assertIn('solvency',m['reason'])
         for title in ('ETF approval denied','Strategy reports new bitcoin treasury plan','Spot XRP ETF launch date'):
-            for ent in ['Ripple','Evernorth','XRP Ecosystem','Strategy']:
+            for ent in ['Ripple','Evernorth','Strategy','SharpLink Gaming','Forward Industries']:
                 v=score(title,ent)['value']
                 self.assertLessEqual(v,3)
                 self.assertGreaterEqual(v,-3)
@@ -91,7 +91,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share declines 12%','Strategy')['value'],-2)
 
     def test_xrp_extreme_if_true_score(self):
-        m=score('SEC approves spot XRP ETF with net inflows $2 billion','XRP Ecosystem','Official')
+        m=score('Ripple comments as SEC approves spot XRP ETF with net inflows $2 billion','Ripple','Official')
         self.assertEqual(m['value'],3)
         self.assertEqual(m['method'],'headline_if_true_v4')
 
@@ -189,4 +189,47 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual([x['asset'] for x in meters],['XRPN','XRP'])
         self.assertEqual(meters[0]['value'],-1)
 
+    def test_retired_ecosystem_and_generic_tokens_have_no_equity_rating(self):
+        for entities in (['XRP Ecosystem'], ['Ethereum'], ['Solana'], []):
+            self.assertEqual(moon_for_story({
+                'title': 'Network staking rewards increase and crypto prices rally',
+                'entities': entities, 'source_type': 'Media'}), [])
+
+    def test_sbet_fwdi_coin_backing_and_dilution_are_equity_specific(self):
+        for entity, ticker, coin in (('SharpLink Gaming', 'SBET', 'ETH'),
+                                     ('Forward Industries', 'FWDI', 'SOL')):
+            with self.subTest(ticker=ticker):
+                self.assertEqual(score(f'{entity} buys 10000 {coin} for treasury', entity)['value'], 1)
+                self.assertEqual(score(f'{entity} reports {coin} per diluted share rises 8%', entity)['value'], 2)
+                self.assertEqual(score(f'{entity} reports {coin} per fully diluted share increases 25% after dilution', entity)['value'], 3)
+                self.assertEqual(score(f'{entity} reports {coin} per fully diluted share declines 12%', entity)['value'], -2)
+                self.assertEqual(score(f'{entity} issues new {ticker} shares to acquire {coin}', entity)['value'], -1)
+                self.assertEqual(score(f'{entity} raises funds to buy more {coin}', entity)['value'], 0)
+                self.assertEqual(score(f'{entity} announces equity facility to expand staking', entity)['value'], -1)
+                self.assertEqual(score(f'{entity} general shareholder presentation', entity)['value'], 0)
+
+    def test_sbet_fwdi_staking_benefits_do_not_override_custody_risks(self):
+        for entity, ticker, coin in (('SharpLink Gaming', 'SBET', 'ETH'),
+                                     ('Forward Industries', 'FWDI', 'SOL')):
+            with self.subTest(ticker=ticker):
+                self.assertEqual(score(f'{entity} launches {coin} staking operation', entity)['value'], 1)
+                rewards = score(f'{entity} generates $2 million in {coin} staking rewards', entity)
+                self.assertEqual(rewards['asset'], ticker)
+                self.assertEqual(rewards['value'], 2)
+                self.assertIn('custody', rewards['reason'])
+                self.assertEqual(score(f'{entity} reports staking rewards but custody withdrawals frozen after exploit', entity)['value'], -2)
+                self.assertEqual(score(f'{entity} validator defaults despite growing staking income', entity)['value'], -2)
+                self.assertEqual(score(f'Rumour: {entity} files for bankruptcy after staking losses', entity, 'Media')['value'], -3)
+                self.assertEqual(score(f'{entity} plans to liquidate {coin} treasury', entity)['value'], -3)
+
+    def test_sbet_fwdi_buyback_authorization_is_not_executed_accretion(self):
+        for entity in ('SharpLink Gaming', 'Forward Industries'):
+            with self.subTest(entity=entity):
+                approved = score(f'{entity} announces $100 million stock repurchase authorization', entity)
+                self.assertEqual(approved['value'], 1)
+                self.assertIn('authorisation', approved['reason'])
+                self.assertEqual(score(f'{entity} repurchases common shares below NAV', entity)['value'], 2)
+                self.assertEqual(score(f'{entity} repurchases common shares', entity)['value'], 1)
+
 if __name__=='__main__':unittest.main()
+

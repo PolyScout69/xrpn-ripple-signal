@@ -11,7 +11,7 @@ scan=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(scan)
 
 class CollectorTests(unittest.TestCase):
-    def test_identifies_four_entities_without_false_positives(self):
+    def test_identifies_tracked_companies_without_false_positives(self):
         self.assertEqual(scan.identify_entities('Evernorth pharmacy benefit Cigna health services'),[])
         self.assertEqual(scan.identify_entities('Investment strategy for companies'),[])
         self.assertEqual(scan.identify_entities('Ripple effect of inflation on markets'),[])
@@ -24,9 +24,107 @@ class CollectorTests(unittest.TestCase):
         self.assertNotIn('Lite Strategy',scan.identify_entities('Litecoin price rises after halving'))
         self.assertEqual(scan.identify_entities('Lite Strategy partners with Strategy MSTR on digital assets'),
                          ['Strategy','Lite Strategy'])
-        self.assertIn('XRP Ecosystem',scan.identify_entities('XRP Ledger XRPL validators adopt new amendment'))
+        self.assertEqual(scan.identify_entities('XRP Ledger XRPL validators adopt new amendment'),[])
         self.assertNotIn('Ripple',scan.identify_entities('XRPL validators adopt new amendment'))
         self.assertIn('Ripple',scan.identify_entities('Ripple expands RLUSD bank payments'))
+
+    def test_sbet_fwdi_are_company_specific_and_keep_stock_tickers_distinct(self):
+        for headline in ('Sharplink Inc earns ETH staking rewards',
+                         'SharpLink Gaming (NASDAQ: SBET) expands Ethereum treasury',
+                         'SBET stock authorises a share repurchase'):
+            self.assertEqual(scan.identify_entities(headline),['SharpLink Gaming'])
+        for headline in ('Forward Industries Inc (NASDAQ: FWDI) increases Solana holdings',
+                         'FWDI reports SOL staking rewards'):
+            self.assertEqual(scan.identify_entities(headline),['Forward Industries'])
+        for headline in ('Ethereum staking adoption rises as ETH rallies',
+                         'Solana network validators increase SOL revenue',
+                         'Forward-looking strategy for Solana investors',
+                         'Ford Motor Company launches new vehicle',
+                         'BitMine adds ETH to its treasury'):
+            self.assertEqual(scan.identify_entities(headline),[])
+        self.assertEqual(scan.classify('Sharplink Increases ETH per Share'),'Treasury')
+        self.assertEqual(scan.classify('Forward Industries Reports SOL Staking Rewards'),'Treasury')
+
+    def test_retired_ecosystem_is_removed_from_archive_and_company_tags_survive(self):
+        network=self.story('XRP Ledger validators adopt new institutional tokenization amendment',
+                           entity='XRP Ecosystem',url='https://example.com/network')
+        mixed=self.story('Evernorth Holdings expands XRP treasury lending yield',
+                         entity='Evernorth',url='https://example.com/issuer')
+        mixed['entities']=['Evernorth','XRP Ecosystem']
+        mixed['tags']=['Treasury','XRP Ecosystem']
+        mixed['moon_meters']=[{'asset':'XRPN','value':1},{'asset':'XRP','value':2}]
+        ripple=self.story('Ripple partners with a bank on XRP Ledger settlement',
+                          entity='Ripple',url='https://example.com/ripple')
+        ripple['entities']=['Ripple','XRP Ecosystem']
+        merged,_=scan.merge_stories([network,mixed,ripple],[])
+        self.assertEqual(len(merged),2)
+        self.assertTrue(all('XRP Ecosystem' not in item['entities'] for item in merged))
+        evernorth=next(item for item in merged if item['id']==mixed['id'])
+        self.assertEqual(evernorth['entities'],['Evernorth'])
+        self.assertEqual(evernorth['tags'],['Treasury'])
+        self.assertEqual([meter['asset'] for meter in evernorth['moon_meters']],['XRPN'])
+        self.assertFalse(any(query.startswith(('"XRP Ledger"','"XRPL"','"XRP" ETF'))
+                             for query in scan.NEWS_QUERIES))
+
+    def test_sbet_issuer_widget_keeps_dated_release_identity(self):
+        from datetime import datetime,timezone
+        date=datetime.now(timezone.utc).strftime('%b %d, %Y')
+        first='https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=171901&m=rl'
+        second='https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=171902&m=rl'
+        def card(url,title,stamp):
+            return f'<div class="PressItem38"><div class="PressItem38Date">{stamp}</div><div class="PressItem38Headline"><a href="{url}">{title}</a></div><div class="PressItem38Body"></div></div>'
+        listing=card(first,'Sharplink Reports New ETH Staking Rewards',date)+card(
+            second,'Sharplink Announces Quarterly Earnings Conference Call',date)+card(
+            'https://example.com/untrusted','Unrelated sponsor announces new investment',date)+card(
+            first+'&undated=1','Sharplink Reports Ethereum Treasury Holdings','')
+        with patch.object(scan,'fetch',return_value=type('Response',(),{'text':listing})()):
+            rows=scan.fetch_sbet_news()
+        self.assertEqual(len(rows),2)
+        self.assertEqual({row['url'] for row in rows},{first,second})
+        self.assertNotEqual(rows[0]['id'],rows[1]['id'])
+        self.assertTrue(all(row['entities']==['SharpLink Gaming'] and row['source_id']=='sbet'
+                            and row['source_type']=='Official' for row in rows))
+
+    def test_fwdi_organization_rss_is_dated_primary_coverage(self):
+        from datetime import datetime,timezone
+        from email.utils import format_datetime
+        date=format_datetime(datetime.now(timezone.utc))
+        link='https://www.globenewswire.com/news-release/2026/10/01/forward-sol-treasury.html'
+        xml=f'<rss><channel><title>Forward Industries, Inc.</title><item><title>Forward Reports New SOL Staking Rewards</title><link>{link}</link><pubDate>{date}</pubDate><description>Forward Industries adds Solana to its treasury from validator income.</description></item><item><title>Undated issuer story is not current coverage</title><link>{link}?other=1</link></item></channel></rss>'
+        with patch.object(scan,'fetch',return_value=type('Response',(),{'text':xml})()):
+            rows=scan.fetch_fwdi_news()
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['entities'],['Forward Industries'])
+        self.assertEqual(rows[0]['source_id'],'fwdi')
+        self.assertEqual(rows[0]['source_type'],'Official')
+        self.assertEqual(rows[0]['url'],link)
+
+    def test_new_official_source_failures_are_not_reported_as_success(self):
+        with patch.object(scan,'fetch',side_effect=RuntimeError('Source unavailable')):
+            for reader in (scan.fetch_sbet_news,scan.fetch_fwdi_news):
+                with self.assertRaisesRegex(RuntimeError,'Source unavailable'):
+                    reader()
+        for reader,empty in ((scan.fetch_sbet_news,'<html>No releases</html>'),
+                             (scan.fetch_fwdi_news,'<rss><channel/></rss>')):
+            with patch.object(scan,'fetch',return_value=type('Response',(),{'text':empty})()):
+                with self.assertRaises(ValueError):
+                    reader()
+
+    def test_new_treasury_event_dedup_preserves_different_purchases_and_issuers(self):
+        first=self.story('Sharplink Acquires 1,000,000 ETH for Ethereum Treasury',
+                         entity='SharpLink Gaming',kind='Official',url='https://example.com/sbet-one')
+        syndicated=self.story('SharpLink Gaming Buys 1 Million ETH for Treasury',
+                              entity='SharpLink Gaming',url='https://example.com/sbet-syndicated')
+        different=self.story('Sharplink Acquires 20,000 ETH for Ethereum Treasury',
+                             entity='SharpLink Gaming',url='https://example.com/sbet-two')
+        forward=self.story('Forward Industries Buys 1 Million SOL for Treasury',
+                           entity='Forward Industries',url='https://example.com/fwdi-one')
+        holdings=self.story('Forward Industries Reports Holdings of 1 Million SOL',
+                            entity='Forward Industries',url='https://example.com/fwdi-holdings')
+        merged,_=scan.merge_stories([first,syndicated,different,forward,holdings],[])
+        self.assertEqual(len(merged),4)
+        original=next(row for row in merged if row['id']==first['id'])
+        self.assertEqual(len(original['coverage']),2)
 
     def test_sec_filing_entries_are_rejected_and_purged(self):
         no=scan.make_story(title='Strategy files Form 8-K',date=scan.timestamp_now(),url='https://www.sec.gov/Archives/edgar/data/1/abc',source='SEC EDGAR',source_type='SEC',source_id='sec_strategy',entities=['Strategy'],excerpt='Form 8-K filed',category='SEC filings')
@@ -273,7 +371,8 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('id="sentiment-card-lits"',homepage)
         self.assertIn("renderSentiment('LITS')",script)
         self.assertIn("'Lite Strategy':'LITS'",script)
-        self.assertIn("'lits', 'hypestrat', 'media'",script)
+        for source_id in ('lits','hypestrat','sbet','fwdi','media'):
+            self.assertIn("'"+source_id+"'",script)
         self.assertIn(".quote-icon-lits",css)
         self.assertIn("('lits','Lite Strategy official',fetch_lits_news)",scanner)
 
@@ -340,7 +439,8 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('https://www.tradingview.com/symbols/NASDAQ-PURR/',html)
         self.assertIn("renderSentiment('PURR')",app)
         self.assertIn("'Hyperliquid Strategies':'PURR'",app)
-        self.assertIn("'hypestrat', 'media'",app)
+        for source_id in ('hypestrat','sbet','fwdi','media'):
+            self.assertIn("'"+source_id+"'",app)
         self.assertIn(".stats-grid>#sentiment-card-purr{grid-column:1 / -1}",css)
         self.assertIn(".quote-icon-purr",css)
         self.assertIn("('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news)",scanner)
@@ -351,6 +451,22 @@ class CollectorTests(unittest.TestCase):
         self.assertTrue(scan.is_investor_news('Rumour: SWIFT to partner with Ripple for XRP settlement','Unconfirmed agreement'))
         self.assertTrue(scan.is_investor_news('Evernorth reportedly exploring XRP treasury lending yield','Potential revenue'))
         self.assertFalse(scan.is_investor_news('XRP price prediction by analyst predicts $100','Pure speculation'))
+
+    def test_quote_listing_metadata_is_not_an_article(self):
+        self.assertFalse(scan.is_investor_news(
+            'Sharplink, Inc. (SBET) Stock Price, News, Quote & History','Ethereum treasury stock'))
+        self.assertFalse(scan.is_investor_news('Forward Industries (FWDI) Stock Quote & News','Solana treasury'))
+        self.assertTrue(scan.is_investor_news('Evernorth Completes Nasdaq Listing for XRPN Shares','XRP treasury company'))
+
+    def test_routine_vesting_tax_withholding_is_not_material_news(self):
+        for headline in (
+            'Tax withholding covers 6,231 shares at $7.63 for Sharplink (SBET) executive Michael D. Camarda.',
+            'At $7.63 per share, Sharplink (SBET) CFO DeLucia has 1,592 shares withheld for vesting taxes.'):
+            self.assertFalse(scan.is_investor_news(headline,'Routine share settlement for vesting.'))
+        self.assertTrue(scan.is_investor_news(
+            'Sharplink Raises $425 Million to Expand Ethereum Treasury','ETH holdings and capital funding'))
+        self.assertTrue(scan.is_investor_news(
+            'Sharplink Announces Equity Facility for ETH Treasury Alongside Tax Withholding Disclosure','Material capital raise'))
 
     def test_url_safety(self):
         self.assertFalse(scan.canonical_url('javascript:alert(1)'))

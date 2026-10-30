@@ -10,12 +10,14 @@ import re
 
 ENTITY_ASSETS = {
     'Ripple': 'XRP',
-    'XRP Ecosystem': 'XRP',
     'Evernorth': 'XRPN',
     'Strategy': 'MSTR',
     'Lite Strategy': 'LITS',
     'Hyperliquid Strategies': 'PURR',
+    'SharpLink Gaming': 'SBET',
+    'Forward Industries': 'FWDI',
 }
+STOCK_ASSETS = ('MSTR', 'XRPN', 'LITS', 'PURR', 'SBET', 'FWDI')
 LABELS = {
     -3: 'Very bearish',
     -2: 'Bearish',
@@ -53,7 +55,7 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
     # mentions risks even when the underlying headline contains no such news.
     combined = re.sub(r'\s+', ' ', title + ' ' + excerpt)
     official = item.get('source_type') in ('Official', 'SEC')
-    stock = asset in ('MSTR', 'XRPN', 'LITS', 'PURR')
+    stock = asset in STOCK_ASSETS
     is_sec = item.get('source_type') == 'SEC'
 
     # Primary SEC entry titles list forms and item numbers, NOT what a filing
@@ -93,7 +95,7 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
 
     if _contains(combined, r'\b(?:ceo|cfo|chief executive) resigns?\b',
                  r'\bexecutive (?:departure|resignation)\b',
-                 r'\b(?:guidance|forecast) cut\b', r'\b(?:btc|xrp|ltc|litecoin) (?:sold|liquidated)\b'):
+                 r'\b(?:guidance|forecast) cut\b', r'\b(?:btc|xrp|ltc|litecoin|hype|eth|ether|ethereum|sol|solana) (?:sold|liquidated)\b'):
         return -1, 'Leadership, outlook or treasury reduction may be a headwind; materiality is not yet established.'
 
     # Reserve +3 for unambiguous, exceptional earnings evidence (not generic
@@ -122,9 +124,9 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
         return 2, 'Evidence of sustained commercial use or contracted business could improve economics.'
 
     if stock and _contains(combined,
-                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp|ltc|litecoin|hype)\b',
-                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp|ltc|litecoin|hype) (?:holdings|treasury|reserves)\b',
-                          r'\b(?:bitcoin|btc|xrp|ltc|litecoin|hype) per share (?:rises?|increases?)\b'):
+                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp|ltc|litecoin|hype|eth|ether|ethereum|sol|solana)\b',
+                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp|ltc|litecoin|hype|eth|ether|ethereum|sol|solana) (?:holdings|treasury|reserves)\b',
+                          r'\b(?:bitcoin|btc|xrp|ltc|litecoin|hype|eth|ether|ethereum|sol|solana) per share (?:rises?|increases?)\b'):
         return 1, 'Treasury growth could help if it is accretive per diluted share after funding and risk.'
 
     if asset == 'XRP':
@@ -163,7 +165,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     evidence = ('Unverified' if scenario == 'rumour' else
                 'Conditional' if scenario == 'assumption' else
                 'High' if official else 'Medium')
-    stock = asset in ('MSTR', 'XRPN', 'LITS', 'PURR')
+    stock = asset in STOCK_ASSETS
 
     # Filing indexes contain form names and item numbers, not the facts inside.
     if item.get('source_type') == 'SEC' and _contains(title,
@@ -186,10 +188,23 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
     # Material mark-to-market losses still matter to a coin-backed stock,
     # even where they are not realised cash losses. Do not treat a daily
     # stock-price move alone as a fresh operating catalyst.
-    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|ltc|litecoin|hype|hyperliquid|treasury)\b') and _contains(combined,
+    if stock and _contains(combined, r'\b(?:xrp|bitcoin|btc|ltc|litecoin|hype|hyperliquid|eth|ether|ethereum|sol|solana|treasury)\b') and _contains(combined,
                       r'\b(?:lose|lost|loss|drop|fall|down)\b') and _contains(combined,
                       r'\$\s*[\d,.]+\s*(?:million|m|billion|bn)\b'):
         return -2, 'If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.', evidence
+
+    if asset in ('SBET', 'FWDI'):
+        coin = r'(?:eth|ether|ethereum)' if asset == 'SBET' else r'(?:sol|solana)'
+        if _contains(combined,
+                     rf'\b(?:abandons?|ends?|exits?|liquidates?)\b.{{0,55}}\b{coin}\b.{{0,25}}\btreasury\b'):
+            return -3, f'If the issuer abandons its core crypto treasury strategy, the {asset} investment thesis could be severely impaired.', evidence
+        # Staking and custody failures take priority over yield or partnership
+        # language in the same report. Merely discussing a risk is not a loss.
+        if _contains(combined,
+                     r'\b(?:hack|exploit|breach|slashed|slashing loss)\b',
+                     r'\b(?:withdrawals?|custody assets?)\b.{0,35}\b(?:frozen|suspended|blocked)\b',
+                     r'\b(?:custodian|counterparty|validator)\b.{0,35}\b(?:defaults?|fails?|failure)\b'):
+            return -2, f'If the reported custody, counterparty or staking failure affects treasury assets, {asset} backing and access to funds could suffer.', evidence
 
     if stock and _contains(title, r'\b(?:registers?|registered|registration)\b') and _contains(title,
                          r'\bshares?\b') and _contains(title,r'\b(?:warrants?|issuance|new)\b'):
@@ -286,17 +301,19 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
 
     # Financing terms matter more than planned gross coin accumulation.
     if stock and _contains(title,
-           r'\bnew (?:xrpn |mstr |lits |purr )?(?:stock )?shares\b',
-           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr |lits |purr )?(?:stock )?shares\b'):
+           r'\bnew (?:xrpn |mstr |lits |purr |sbet |fwdi )?(?:stock )?shares\b',
+           r'\bfiling for [\d,.]+m? new (?:xrpn |mstr |lits |purr |sbet |fwdi )?(?:stock )?shares\b'):
         return -1, 'New shares may dilute holders even if the proceeds acquire more cryptocurrency; check the diluted share count.', evidence
-    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc|ltc|litecoin|hype)\b'):
+    if stock and _contains(title, r'\brais(?:e|es|ing) funds? to (?:buy|purchase) (?:more )?(?:xrp|bitcoin|btc|ltc|litecoin|hype|eth|ether|ethereum|sol|solana)\b'):
         return 0, 'Planned funding and buying alone do not establish net accretion or dilution per share.', evidence
 
     # Treasury-company signal: coins per diluted share, not total coins acquired.
     if stock:
         coin = ('xrp' if asset == 'XRPN' else
                 r'(?:ltc|litecoin)' if asset == 'LITS' else
-                'hype' if asset == 'PURR' else r'(?:bitcoin|btc)')
+                'hype' if asset == 'PURR' else
+                r'(?:eth|ether|ethereum)' if asset == 'SBET' else
+                r'(?:sol|solana)' if asset == 'FWDI' else r'(?:bitcoin|btc)')
         if _contains(combined, rf'\b{coin} per (?:(?:fully )?diluted )?share\b'):
             percent = re.search(r'\b(?:by |up |down )?(\d{1,3}(?:\.\d+)?)\s*%', combined)
             amount = float(percent.group(1)) if percent else None
@@ -318,6 +335,31 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
         if official and _contains(combined, r'\b(?:severe|massive) dilution (?:confirmed|completed)\b',
                           r'\bshares? issued at (?:a )?(?:deep|steep) discount\b'):
             return -2, 'Confirmed materially discounted issuance threatens per-share value.', evidence
+
+    if asset in ('SBET', 'FWDI'):
+        # Only company-tagged stories reach this branch. A token rally or a
+        # network staking headline cannot create an equity Moon Meter by itself.
+        fallback_score, fallback_reason = _assess(item, asset)
+        if fallback_score < 0:
+            return fallback_score, fallback_reason, evidence
+        repurchase = _contains(combined, r'\brepurchas\w*\b', r'\bbuy[\s-]?backs?\b', r'\bbought back\b')
+        if repurchase and _contains(combined, r'\b(?:shares?|stock|sbet|fwdi)\b'):
+            executed = _contains(combined,
+                r'\b(?:repurchased|repurchases|bought back)\b',
+                r'\bcompleted\b.{0,35}\b(?:repurchase|buy[\s-]?back)\b')
+            if not executed:
+                return 1, f'If the {asset} buyback plan is executed prudently below asset value, backing per share may improve; authorisation alone is not a completed repurchase.', evidence
+            if _contains(combined, r'\b(?:below|discount to)\b.{0,25}\b(?:nav|net asset value)\b'):
+                return 2, f'If completed repurchases below NAV improve net crypto backing per diluted share, {asset} shareholders could benefit.', evidence
+            return 1, 'Executed repurchases may improve per-share value, but price paid, funding and remaining treasury liquidity determine accretion.', evidence
+        staking_income = _contains(combined,
+            r'\bstaking (?:rewards?|revenue|income|yield)\b', r'\bvalidator (?:revenue|income|commissions?)\b')
+        if staking_income and _contains(combined,
+            r'\b(?:earns?|earned|generat\w*|receiv\w*|record|increas\w*|grew)\b'):
+            return 2, f'If recurring staking income exceeds fees, custody and validator risks, it could compound {asset} treasury backing; verify net income and diluted shares.', evidence
+        if _contains(combined, r'\b(?:staking|restaking|validator|liquid staking)\b') and _contains(combined,
+            r'\b(?:launch\w*|deploy\w*|stake[sd]?|partner\w*|announc\w*|operat\w*|activat\w*)\b'):
+            return 1, f'If the staking or validator deployment produces sustainable net yield after counterparty and lock-up risks, {asset} could benefit incrementally.', evidence
     if asset == 'XRP':
         if official and _contains(combined, r'\b(?:sec|regulator) approves? (?:spot )?xrp etf\b',
                                  r'\bspot xrp etf approved\b') and _contains(combined, r'\b(?:net|verified|confirmed) (?:fund )?inflows?\b'):
@@ -435,3 +477,4 @@ def moon_for_story(item: dict) -> list[dict]:
             'method': 'headline_if_true_v4',
         })
     return output
+

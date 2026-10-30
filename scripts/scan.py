@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Daily, source-first investor news scan for Evernorth, Ripple, XRPL, Strategy, Lite Strategy and Hyperliquid Strategies.
+"""Daily, source-first investor news scan for six crypto treasury issuers and Ripple.
 
-Sources: Ripple, Evernorth, Lite Strategy and Hyperliquid Strategies issuer news, plus targeted financial RSS.
+Sources: official issuer announcements plus company-specific financial RSS.
 Standalone SEC filing records are deliberately excluded from the feed and Moon Meter.
 Coverage is grouped by event. No language model invents summaries or ratings.
 
@@ -41,6 +41,12 @@ LITS_IR_URL = 'https://litestrategy.gcs-web.com/'
 LITS_IR_FALLBACK = 'https://kimbrxtherapeutics.gcs-web.com/press-releases'
 HYPESTRAT_WIRE = 'https://www.prnewswire.com/news/hyperliquid-strategies-inc/'
 HYPESTRAT_HOME = 'https://hypestrat.xyz/'
+# Public news-widget endpoints used by the companies' investor pages.
+# The B2i API parameter is a public website identifier, not a private token.
+SBET_NEWS_URL = 'https://www.b2i.us/b2i/LibraryFeed.asp?b=2597&api=Ex4Bw5Wv2&i=30&out=38&a=1'
+FWDI_NEWS_RSS = 'https://www.globenewswire.com/rssfeed/organization/OPQRMVxN84Rh7J5kh66nZA=='
+TRACKED_ENTITIES = ('Evernorth', 'Ripple', 'Strategy', 'Lite Strategy',
+                    'Hyperliquid Strategies', 'SharpLink Gaming', 'Forward Industries')
 MAX_AGE_DAYS = 365
 MAX_STORIES = 500
 REQUEST_TIMEOUT = 22
@@ -49,9 +55,6 @@ NEWS_QUERIES = [
     '"Evernorth Holdings" XRP financing treasury shares -Cigna -pharmacy',
     '"XRPN" partnership XRP treasury capital raise',
     '"Ripple Labs" OR "Ripple Treasury" OR "Ripple Custody" partnership OR launch OR banking',
-    '"XRP Ledger" XRPL adoption tokenization validators amendment',
-    '"XRPL" DeFi AMM lending validator network institution',
-    '"XRP" ETF approval institutional adoption regulation',
     '"Ripple" "XRP" (rumor OR rumour OR reportedly OR potential) (SWIFT OR bank OR partnership OR settlement OR ETF)',
     '"Evernorth" "XRPN" (rumor OR rumour OR reportedly OR exploring) (yield OR lending OR partnership OR treasury)',
     '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
@@ -63,6 +66,12 @@ NEWS_QUERIES = [
     '"Hyperliquid Strategies" "PURR" (buyback OR NAV OR validator OR yield OR partnership)',
     '"NASDAQ:PURR" (HYPE OR treasury OR share OR staking OR earnings)',
     'site:prnewswire.com/news-releases/ "Hyperliquid Strategies Inc" PURR',
+    '"Sharplink" (SBET OR Ethereum OR ETH) (treasury OR staking OR earnings OR shares OR buyback)',
+    '"SharpLink Gaming" (Ethereum OR ETH OR SBET)',
+    '"SBET" (treasury OR staking OR repurchase OR dilution)',
+    '"Forward Industries" (FWDI OR Solana OR SOL) (treasury OR validator OR staking OR shares OR earnings)',
+    '"Forward Industries" (buyback OR repurchase OR partnership OR yield)',
+    '"FWDI" (treasury OR Solana OR staking OR shares)',
     '"Strategy" "MSTR" bitcoin purchase treasury financing',
     '"Michael Saylor" "MSTR" bitcoin purchases treasury',
     '"Strategy" ("STRC" OR "STRK" OR "STRF") preferred shares dividends buyback',
@@ -92,7 +101,9 @@ TOPIC_HINTS = ('share','equity','offering','warrant',
     'acquir','purchas','repurchas','preferred','convertible','dividend','reserve','earnings',
     'etf','validator','amendment','amm','dex','defi','network',
     'litecoin','ltc','litvm','covered call','nav per share','option premium','voruciclib','zandelisib',
-    'hype','hyperliquid','purr','staking','validator commission','adjusted nav')
+    'hype','hyperliquid','purr','staking','validator commission','adjusted nav',
+    'sharplink','sbet','ethereum','ether treasury','eth per share',
+    'forward industries','fwdi','solana','sol per share')
 LOG = logging.getLogger('signal')
 
 
@@ -176,8 +187,8 @@ def canonical_url(url: str) -> str:
 
 
 def identify_entities(content: str, force: str | None = None) -> list[str]:
-    """Keep issuers distinct from unrelated Ledger-network developments."""
-    if force in ('Ripple', 'Evernorth', 'Strategy', 'XRP Ecosystem', 'Lite Strategy', 'Hyperliquid Strategies'):
+    """Match tracked companies; generic token/network headlines are not issuers."""
+    if force in TRACKED_ENTITIES:
         return [force]
     x = content.lower()
     # Strategy is an ordinary English noun; never match it alone.
@@ -192,6 +203,8 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
         re.search(r'\bhyperliquid strategies(?:\s+inc(?:orporated)?)?\b|\bhypestrat(?:egies)?\b', x)
         or re.search(r'\b(?:nasdaq\s*[:\-]?\s*purr|purr\s+(?:stock|shares|equity|common\s+stock)|(?:shares|stock|ticker)\s+(?:of\s+)?purr)\b',x)
     )
+    sharplink = bool(re.search(r'\bsharplink\b|\bsharp\s+link\s+gaming\b|\bsbet\b', x))
+    forward = bool(re.search(r'\bforward industries\b|\bfwdi\b', x))
     if lite_strategy and not re.search(r'\bmstr\b|\bmicrostrategy\b|\bmichael\s+saylor\b|\bstrc\b|\bstrk\b|\bstrf\b',x):
         strategy = False
     evernorth = bool('xrpn' in x or 'evernorth holdings' in x or ('evernorth' in x and ('xrp' in x or 'treasury' in x)))
@@ -202,19 +215,14 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
         'ripple labs', 'ripple treasury', 'ripple payments', 'ripple custody', 'rlusd',
         'partnership', 'partners', 'payment', 'bank', 'acquir', 'license', 'licence',
         'company', 'enterprise', 'custody', 'product', 'launch', 'settlement', 'prime')))
-    # Network and token coverage is its own entity even when it mentions Ripple.
-    ecosystem = bool(re.search(r'\bxrp ledger\b|\bxrpl\b|\bxrp ecosystem\b|\bxrp etf\b', x)
-        or ('xrp' in x and any(v in x for v in (
-            'validator', 'amendment', 'amm', 'defi', 'dex', 'network', 'tokeniz',
-            'tokenis', 'spot etf', 'ledger adoption', 'rwa', 'on-chain'))))
     result = []
     if evernorth: result.append('Evernorth')
     if ripple: result.append('Ripple')
-    if ecosystem: result.append('XRP Ecosystem')
     if strategy: result.append('Strategy')
     if lite_strategy: result.append('Lite Strategy')
     if hypestrat: result.append('Hyperliquid Strategies')
-    # XRP ecosystem content should not be swallowed by Ripple-only categorisation.
+    if sharplink: result.append('SharpLink Gaming')
+    if forward: result.append('Forward Industries')
     return result
 
 
@@ -227,7 +235,9 @@ def classify(title: str, excerpt: str = '', force_sec: bool = False) -> str:
     if any(p in title_low for p in ('equity facility','capital raise','share sale','stock offering','shares issued','share issuance','warrant','ipo','nasdaq listing','business combination','shareholder vote','merger','funding round','at-the-market','atm program','preferred stock','convertible notes','buyback','repurchase')):
         return 'Capital markets'
     if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','litecoin treasury','ltc treasury','ltc per share','litecoin backing per share','ltc holdings','litecoin holdings','covered call options','option premium',
-            'hype treasury','hype per share','hype holdings','hyperliquid treasury','staking revenue','staking yield','validator commissions')):
+            'hype treasury','hype per share','hype holdings','hyperliquid treasury','staking revenue','staking yield','validator commissions',
+            'ethereum treasury','ether treasury','eth treasury','eth per share','eth holdings','ethereum holdings',
+            'solana treasury','sol treasury','sol per share','sol holdings','solana holdings','staking rewards')):
         return 'Treasury'
     if any(p in title_low for p in ('regulation','regulatory','sec lawsuit','court rules','license approved','licence','legislation','digital asset policy')):
         return 'Regulation'
@@ -250,9 +260,9 @@ def score_story(title: str, category: str, source_type: str, entities: list[str]
     score={'SEC':84,'Official':72,'Media':54,'News':54}.get(source_type,50)
     bonus={'SEC filings':10,'Capital markets':14,'Treasury':11,'Partnerships':8,'Products':8,'Regulation':10,'Adoption':6,'Leadership':4}.get(category,0)
     score+=bonus
-    if any(e in entities for e in ('Evernorth','Strategy','Lite Strategy','Hyperliquid Strategies')):score+=5
+    if any(e in entities for e in TRACKED_ENTITIES if e != 'Ripple'):score+=5
     if any(k in x for k in ('equity facility','dilution','material agreement','financing','s-1','10-k','10-q','share offering','bitcoin purchase','repurchase','preferred stock')):score+=8
-    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','litecoin','ltc','litvm','covered call','hype','hyperliquid','staking','validator')):score+=3
+    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','litecoin','ltc','litvm','covered call','hype','hyperliquid','staking','validator','ethereum','solana')):score+=3
     score=min(99,score)
     return ('High' if score>=83 else 'Medium' if score>=66 else 'Low'),score
 
@@ -261,10 +271,10 @@ def investor_angle(category: str) -> str:
     return {
       'SEC filings':'Primary regulatory disclosure. Review the full filing for material agreements, risk factors, governance changes and potential effects on share count.',
       'Capital markets':'Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.',
-      'Treasury':'Track XRP, BTC, LTC or HYPE holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
+      'Treasury':'Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
       'Partnerships':'A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.',
       'Products':'A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.',
-      'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.',
+      'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.',
       'Regulation':'A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.',
       'Leadership':'A senior appointment may influence execution, risk controls and strategy. Track subsequent measurable results.',
     }.get(category,'Check the original report for financial significance, implementation status and risks.')
@@ -579,6 +589,66 @@ def fetch_hypestrat_news() -> list[dict]:
     return stories
 
 
+def fetch_sbet_news() -> list[dict]:
+    """Read the official Sharplink investor-page B2i press-release widget.
+
+    Its archive provides publication dates and stable HTML release links.
+    Keep the release's ID and company query parameters: they identify the
+    article, unlike optional marketing parameters removed by canonical_url.
+    """
+    soup=BeautifulSoup(fetch(SBET_NEWS_URL).text,'html.parser')
+    stories=[]
+    seen=set()
+    for card in soup.select('.PressItem38')[:30]:
+        anchor=card.select_one('.PressItem38Headline a[href]')
+        date_node=card.select_one('.PressItem38Date')
+        if anchor is None or date_node is None:
+            continue
+        url=canonical_url(urllib.parse.urljoin(SBET_NEWS_URL,anchor['href']))
+        host=urllib.parse.urlsplit(url).hostname
+        if host not in ('www.pressviewer.com','pressviewer.com','www.b2i.us','b2i.us',
+                        'www.sharplink.com','sharplink.com') or url in seen:
+            continue
+        title=plain_text(anchor.get_text(' ',strip=True),230)
+        date=extract_date(date_node.get_text(' ',strip=True))
+        if not date:
+            continue
+        body=card.select_one('.PressItem38Body')
+        excerpt=plain_text(body.get_text(' ',strip=True),235) if body else ''
+        item=make_story(title=title,date=date,url=url,
+                        source='Sharplink investor relations',source_type='Official',
+                        source_id='sbet',entities=['SharpLink Gaming'],
+                        excerpt=excerpt or 'Issuer announcement: '+title,date_only=True)
+        if item:
+            stories.append(item)
+            seen.add(url)
+    if not stories:
+        raise ValueError('Sharplink official news widget yielded no usable dated release links.')
+    return stories
+
+
+def fetch_fwdi_news() -> list[dict]:
+    """Read the issuer-specific GlobeNewswire RSS embedded on Forward's IR page."""
+    stories=[]
+    for entry in rss_items(fetch(FWDI_NEWS_RSS).text):
+        url=canonical_url(entry['url'])
+        if urllib.parse.urlsplit(url).hostname not in (
+                'www.globenewswire.com','globenewswire.com',
+                'www.forwardindustries.com','forwardindustries.com'):
+            continue
+        # This organization feed is the company's own release channel.
+        # Do not require "Industries" in abbreviated issuer headlines.
+        item=make_story(title=entry['title'],date=entry['date'],url=url,
+                        source='Forward Industries / GlobeNewswire',source_type='Official',
+                        source_id='fwdi',entities=['Forward Industries'],
+                        excerpt=entry['excerpt'] or entry['title'])
+        if item:
+            stories.append(item)
+    if not stories:
+        raise ValueError('Forward Industries official RSS yielded no usable dated release links.')
+    return stories
+
+
 def rss_items(xml_text: str) -> list[dict]:
     root=ET.fromstring(xml_text)
     result=[]
@@ -597,6 +667,19 @@ def rss_items(xml_text: str) -> list[dict]:
 
 def is_investor_news(title: str, excerpt: str) -> bool:
     text=(title+' '+excerpt).lower()
+    headline=title.lower()
+    # Search indexes also return persistent quote landing pages as "news".
+    # The template wording is distinct from an actual exchange-listing event.
+    if re.search(r'\b(?:stock|share) price\b.{0,45}\bquote\b.{0,20}\b(?:history|historical)\b',headline):
+        return False
+    if re.search(r'\b(?:stock|share) (?:price|quote)\s*[,|:/&–-]\s*(?:news|quote|chart|historical)\b',headline):
+        return False
+    # Routine share withholding to settle an executive's vesting taxes is
+    # filing-derived administrative noise, not a new treasury investment.
+    withholding=bool(re.search(r'\btax[\s-]+withhold(?:ing|ings)?\b|\bwithheld\b.{0,55}\b(?:tax|taxes|vesting)\b|\bvesting\b.{0,45}\b(?:tax|taxes|withhold\w*)\b',headline))
+    material=bool(re.search(r'\b(?:capital raise|equity facility|share offering|public offering|private placement|treasury (?:purchase|acquisition|funding)|staking (?:revenue|yield|rewards))\b|\brais(?:e|es|ed|ing)\b.{0,35}\b(?:million|billion|funds?|capital)\b',headline))
+    if withholding and not material:
+        return False
     if any(term in text for term in NEGATIVE_MEDIA):return False
     if any(v in text for v in ('binance square', 'price forecast', 'massive price rally', 'exclusive price prediction')):return False
     if ('cigna' in text or 'pharmacy' in text or 'health services' in text) and not 'xrpn' in text:return False
@@ -738,6 +821,25 @@ def event_key(item: dict) -> str:
     stamp = (item.get('published_at') or '')[:7]
     amount = re.search(r'\$?\s*(\d+(?:\.\d+)?)\s*(?:million|mn|m)\b', title)
     amount_key = ((amount.group(1) + 'm') if amount else '')
+    # Treasury updates repeat frequently. A disclosed token amount and the
+    # reporting week separate a new purchase from recycled media coverage.
+    for issuer, key, coin in (
+            ('SharpLink Gaming','sbet',r'(?:eth|ether|ethereum)'),
+            ('Forward Industries','fwdi',r'(?:sol|solana)')):
+        if issuer not in entities:
+            continue
+        token_amount=re.search(r'\b(\d[\d,.]*(?:\s*(?:million|billion|m|b))?)\s+'+coin+r'\b',title)
+        if token_amount:
+            action=('purchase' if re.search(r'\b(?:acquir\w*|purchas\w*|buys?|bought)\b',title)
+                    else 'holdings' if re.search(r'\b(?:holdings?|holds?|held|reserve\w*)\b',title)
+                    else 'staking' if re.search(r'\b(?:staking|staked|rewards?)\b',title) else '')
+            if action:
+                raw=re.sub(r'[,\s]','',token_amount.group(1))
+                number=re.match(r'(\d+(?:\.\d+)?)(million|billion|m|b)?$',raw)
+                if number:
+                    multiplier={'million':1e6,'m':1e6,'billion':1e9,'b':1e9}.get(number.group(2),1)
+                    quantity=format(float(number.group(1))*multiplier,'.12g')
+                    return key+':'+action+':'+quantity+':'+_news_week(item['published_at'])
     # These issuer-specific one-off announcements can be worded very
     # differently by different publishers; their economic event is the same.
     if 'Hyperliquid Strategies' in entities:
@@ -776,7 +878,7 @@ def event_key(item: dict) -> str:
     if 'Ripple' in entities and re.search(r'\bocc\b|\boffice of the comptroller\b',title):
         if 'bank' in title and ('final approval' in title or 'receives approval' in title):
             return 'ripple:occ-final-trust-bank-approval:'+stamp
-    if 'arf' in title and ('Ripple' in entities or 'XRP Ecosystem' in entities) and any(v in title for v in ('rlusd','payment','liquidity','partner','xrp ledger','xrpl','lending')):
+    if 'arf' in title and 'Ripple' in entities and any(v in title for v in ('rlusd','payment','liquidity','partner','xrp ledger','xrpl','lending')):
         return 'ripple:arf-rlusd-liquidity:'+stamp
     if 'Strategy' in entities and any(v in title for v in ('acquir','purchas','buys','bitcoin holdings','btc holdings')):
         btc = re.search(r'(\d[\d,]*)\s*(?:btc|bitcoin)', title)
@@ -858,12 +960,19 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
     existing_ids={x.get('id') for x in old if publishable(x)}
     candidates=[dict(x) for x in [*old,*incoming] if publishable(x) and is_recent(x.get('published_at'))]
     for item in candidates:
+        previous_entities=item.get('entities') or []
+        # Retired network-only coverage must not survive through the archive.
+        # Preserve valid company tags on a joint company/network report.
+        item['entities']=[entity for entity in previous_entities if entity in TRACKED_ENTITIES]
         if item.get('source_type') in ('Media','News') and not is_investor_news(item.get('title',''),item.get('excerpt','')):
             item['rejected_as_noise']=True
         if item.get('source_type') in ('Media','News'):
             found=identify_entities((item.get('title') or '')+' '+(item.get('excerpt') or ''))
             if found: item['entities']=found
-    candidates=[item for item in candidates if not item.get('rejected_as_noise')]
+        item['tags']=[tag for tag in (item.get('tags') or []) if str(tag).casefold()!='xrp ecosystem']
+        if item['entities'] != previous_entities and 'moon_meters' in item:
+            item['moon_meters']=moon_for_story(item)
+    candidates=[item for item in candidates if item.get('entities') and not item.get('rejected_as_noise')]
     candidates.sort(key=priority,reverse=True)
     consolidated=[]
     for item in candidates:
@@ -901,7 +1010,9 @@ def main() -> int:
         ('evernorth','Evernorth official',fetch_evernorth_news),
         ('lits','Lite Strategy official',fetch_lits_news),
         ('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news),
-        ('media','Issuer and XRP ecosystem news',fetch_media_news),
+        ('sbet','Sharplink official',fetch_sbet_news),
+        ('fwdi','Forward Industries official',fetch_fwdi_news),
+        ('media','Company-specific financial news',fetch_media_news),
     )
     for key,name,reader in sources:
         try:
@@ -930,12 +1041,12 @@ def main() -> int:
             item['impact']='Medium'
     sentiment_30d = aggregate_sentiment(items, stamp)
     out={
-      'name':'Signal | Evernorth · Ripple · XRP ecosystem · Strategy · Lite Strategy · Hyperliquid Strategies', 'version':2,
+      'name':'Signal | Evernorth · Ripple · Strategy · Lite Strategy · Hyperliquid Strategies · SharpLink Gaming · Forward Industries', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
               'schedule_utc':['09:15','14:35','23:35'],
               'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],
               'new_items':new_count,
-              'source_note':'Automated scan of issuer releases and ecosystem news; standalone filing records excluded.'},
+              'source_note':'Automated scan of issuer releases and company-specific financial news; standalone filing records excluded.'},
       'sources':statuses,'sentiment_30d':sentiment_30d,'items':items,
     }
     DATA_PATH.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
