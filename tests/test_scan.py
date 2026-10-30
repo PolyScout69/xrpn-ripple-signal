@@ -4,6 +4,7 @@ import json
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('scan',ROOT/'scripts/scan.py')
@@ -478,7 +479,22 @@ class CollectorTests(unittest.TestCase):
         self.assertIn("'Hyperliquid Strategies':'PURR'",app)
         for source_id in ('hypestrat','sbet','fwdi','media'):
             self.assertIn("'"+source_id+"'",app)
-        self.assertIn(".stats-grid>#sentiment-card-purr{grid-column:1 / -1}",css)
+        soup=BeautifulSoup(html,'html.parser')
+        expected_order=['MSTR','XRPN','SBET','PURR','FWDI','LITS']
+        quote_order=[card.select_one('tv-single-ticker')['symbol'].split(':')[-1]
+                     for card in soup.select('.market-pulse-grid > .quote-card')]
+        sentiment_cards=soup.select('.stats-grid > .moon-sentiment-card')
+        sentiment_order=[card.select_one('.sentiment-ticker').get_text(strip=True)
+                         for card in sentiment_cards]
+        self.assertEqual(quote_order,expected_order)
+        self.assertEqual(sentiment_order,quote_order)
+        crypto_by_ticker={'MSTR':'btc','XRPN':'xrp','SBET':'eth',
+                          'PURR':'hype','FWDI':'sol','LITS':'ltc'}
+        for ticker,card in zip(sentiment_order,sentiment_cards):
+            logo=card.select_one('.sentiment-asset img')
+            self.assertIsNotNone(logo)
+            self.assertEqual(logo['src'],'assets/crypto/'+crypto_by_ticker[ticker]+'.svg')
+            self.assertTrue(logo.get('alt','').strip())
         self.assertIn(".quote-icon-purr",css)
         self.assertIn("('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news)",scanner)
 
