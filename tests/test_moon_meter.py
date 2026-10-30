@@ -21,7 +21,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
-        for entity, asset in [('Ripple','XRP'),('XRP Ecosystem','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS')]:
+        for entity, asset in [('Ripple','XRP'),('XRP Ecosystem','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS'),('Hyperliquid Strategies','PURR')]:
             self.assertEqual(score('Routine update',entity)['asset'],asset)
         both=moon_for_story(dict(title='Ripple and XRPL cooperate on network',entities=['Ripple','XRP Ecosystem'],source_type='Official'))
         self.assertEqual([m['asset'] for m in both],['XRP'])
@@ -154,6 +154,34 @@ class MoonMeterTests(unittest.TestCase):
                                'Lite Strategy','Official')['value'],3)
         self.assertEqual(score('Lite Strategy general shareholder presentation',
                                'Lite Strategy','Media')['value'],0)
+
+    def test_purr_capital_allocation_and_staking_scenarios(self):
+        self.assertEqual(
+            score('Hyperliquid Strategies Inc Announces Increase of Stock Repurchase Program to $100 Million',
+                  'Hyperliquid Strategies','Official')['value'],1)
+        self.assertEqual(
+            score('Hyperliquid Strategies and Unit Labs Announce Validator on Hyperliquid',
+                  'Hyperliquid Strategies','Official')['value'],1)
+        self.assertEqual(
+            score('Hyperliquid Strategies reports $9.5 million staking revenue and validator commissions on HYPE holdings',
+                  'Hyperliquid Strategies','Official')['value'],2)
+        self.assertEqual(
+            score('Hyperliquid Strategies buys 1000000 HYPE for treasury',
+                  'Hyperliquid Strategies','Media')['value'],1)
+
+    def test_purr_hype_per_share_and_downside(self):
+        self.assertEqual(
+            score('Hyperliquid Strategies reports HYPE per fully diluted share increases 25% after dilution',
+                  'Hyperliquid Strategies','Official')['value'],3)
+        self.assertEqual(
+            score('Hyperliquid Strategies issues new PURR shares to acquire HYPE',
+                  'Hyperliquid Strategies','Official')['value'],-1)
+        self.assertEqual(
+            score('Hyperliquid Strategies plans to liquidate HYPE treasury',
+                  'Hyperliquid Strategies','Media')['value'],-3)
+        self.assertEqual(
+            score('Hyperliquid Strategies general company presentation',
+                  'Hyperliquid Strategies','Media')['value'],0)
 
     def test_merged_articles_recompute_once_per_asset(self):
         item={'title':'Evernorth announces equity facility','excerpt':'May issue additional shares','entities':['Evernorth','Ripple','XRP Ecosystem'],'source_type':'Official'}
