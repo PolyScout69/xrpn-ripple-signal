@@ -122,9 +122,9 @@ def _assess(item: dict, asset: str) -> tuple[int, str]:
         return 2, 'Evidence of sustained commercial use or contracted business could improve economics.'
 
     if stock and _contains(combined,
-                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp|ltc|litecoin)\b',
-                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp|ltc|litecoin) (?:holdings|treasury|reserves)\b',
-                          r'\b(?:bitcoin|btc|xrp|ltc|litecoin) per share (?:rises?|increases?)\b'):
+                          r'\b(?:buys?|purchases?|acquires?|adds?) (?:\d[\d,.]* )?(?:more )?(?:bitcoin|btc|xrp|ltc|litecoin|hype)\b',
+                          r'\b(?:increases?|boosts?|expands?) (?:its )?(?:bitcoin|btc|xrp|ltc|litecoin|hype) (?:holdings|treasury|reserves)\b',
+                          r'\b(?:bitcoin|btc|xrp|ltc|litecoin|hype) per share (?:rises?|increases?)\b'):
         return 1, 'Treasury growth could help if it is accretive per diluted share after funding and risk.'
 
     if asset == 'XRP':
@@ -249,7 +249,7 @@ def _assess_v2(item: dict, asset: str) -> tuple[int | None, str, str]:
         if _contains(combined, r'\bstaking revenue\b',r'\bvalidator commissions?\b') and _contains(combined,
             r'\b(?:9\.5\s*million|[1-9]\d?\.\d\s*million|material|record|grew|increased|earns?|generated)\b'):
             return 2, 'If material recurring HYPE staking and validator income is sustainable after costs and risks, PURR could benefit.', evidence
-        if _contains(combined,r'\b(?:launch(?:es|ed)?|operat\w*|activat\w*)\b') and _contains(combined,
+        if _contains(combined,r'\b(?:launch(?:es|ed)?|announc\w*|operat\w*|activat\w*)\b') and _contains(combined,
             r'\bvalidator\b',r'\bstaking\b'):
             return 1, 'If the HYPE validator or staking operation generates reliable net yield, it could incrementally compound the treasury.', evidence
         if _contains(combined,r'\b(?:hype|hyperliquid)\b') and _contains(combined,
