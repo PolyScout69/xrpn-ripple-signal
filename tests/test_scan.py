@@ -1,4 +1,4 @@
-"""Network-free regression tests for four entities, filing exclusion and clustering."""
+"""Network-free issuer classification, filing exclusion and event-clustering regressions."""
 import importlib.util
 import json
 import unittest
@@ -273,9 +273,77 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('id="sentiment-card-lits"',homepage)
         self.assertIn("renderSentiment('LITS')",script)
         self.assertIn("'Lite Strategy':'LITS'",script)
-        self.assertIn("'lits', 'media'",script)
+        self.assertIn("'lits', 'hypestrat', 'media'",script)
         self.assertIn(".quote-icon-lits",css)
         self.assertIn("('lits','Lite Strategy official',fetch_lits_news)",scanner)
+
+
+    def test_purr_ticker_and_hype_token_are_not_confused(self):
+        self.assertEqual(
+            scan.identify_entities('Hyperliquid Strategies Inc (NASDAQ: PURR) earns HYPE staking yield'),
+            ['Hyperliquid Strategies'])
+        self.assertEqual(
+            scan.identify_entities('PURR stock expands HYPE treasury buyback plan'),
+            ['Hyperliquid Strategies'])
+        self.assertNotIn('Hyperliquid Strategies',
+                         scan.identify_entities('HYPE token rallies on Hyperliquid network activity'))
+        self.assertNotIn('Hyperliquid Strategies',
+                         scan.identify_entities('PURR meme coin launches on Hyperliquid'))
+        self.assertNotIn('Hyperliquid Strategies',
+                         scan.identify_entities('Hyperion DeFi expands HYPE treasury'))
+        self.assertEqual(scan.classify('Hyperliquid Strategies Reports HYPE Treasury Staking Revenue'),'Treasury')
+
+    def test_hypestrat_official_press_release_archive(self):
+        """Primary release links and dates load without network dependence."""
+        from datetime import datetime, timezone
+        date=datetime.now(timezone.utc).strftime('%B %d, %Y')
+        title='Hyperliquid Strategies Inc Announces Increase of Stock Repurchase Program to $100 Million'
+        url='https://www.prnewswire.com/news-releases/hyperliquid-strategies-inc-announces-increase-of-stock-repurchase-program-to-100-million-302918312.html'
+        listing=f'<div><time>{date}</time><a href="{url}">{title}</a></div>'
+        article=f'<h1>{title}</h1><time>{date}</time><p>Hyperliquid Strategies Inc, Nasdaq PURR, is expanding its common stock repurchase authorisation from $30 million to $100 million as part of its HYPE treasury management strategy.</p>'
+        class Fake:
+            def __init__(self,txt):self.text=txt
+        def fake_fetch(target):
+            return Fake(article if target==url else listing)
+        with patch.object(scan,'fetch',side_effect=fake_fetch):
+            rows=scan.fetch_hypestrat_news()
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['entities'],['Hyperliquid Strategies'])
+        self.assertEqual(rows[0]['source_type'],'Official')
+        self.assertEqual(rows[0]['source_id'],'hypestrat')
+        self.assertEqual(rows[0]['url'],url)
+
+    def test_hypestrat_duplicate_buyback_news_keeps_source_links(self):
+        main=self.story('Hyperliquid Strategies Inc Increases Stock Repurchase Program to $100 Million',
+                        entity='Hyperliquid Strategies',kind='Official',
+                        url='https://example.com/purr-issuer')
+        other=self.story('PURR Buyback Raised to $100M by Hyperliquid Strategies',
+                         entity='Hyperliquid Strategies',kind='Media',
+                         url='https://example.com/purr-media')
+        merger=self.story('Lite Strategy Announces 20 Million LTC Treasury Shares',
+                          entity='Lite Strategy',kind='Media',
+                          url='https://example.com/lits-other')
+        merged,_=scan.merge_stories([main,other,merger],[])
+        self.assertEqual(len(merged),2)
+        related=next(x for x in merged if 'Hyperliquid Strategies' in x['entities'])
+        self.assertEqual(related['source_type'],'Official')
+        self.assertEqual(len(related['coverage']),2)
+
+    def test_purr_appears_in_quote_filter_and_sentiment_ui(self):
+        html=(ROOT/'index.html').read_text(encoding='utf-8')
+        app=(ROOT/'app.js').read_text(encoding='utf-8')
+        css=(ROOT/'styles.css').read_text(encoding='utf-8')
+        scanner=(ROOT/'scripts/scan.py').read_text(encoding='utf-8')
+        for token in ('<tv-single-ticker symbol="NASDAQ:PURR"', 'id="sentiment-card-purr"',
+                      'data-entity="Hyperliquid Strategies"','class="sentiment-ticker">PURR</strong>'):
+            self.assertIn(token,html)
+        self.assertIn('https://www.tradingview.com/symbols/NASDAQ-PURR/',html)
+        self.assertIn("renderSentiment('PURR')",app)
+        self.assertIn("'Hyperliquid Strategies':'PURR'",app)
+        self.assertIn("'hypestrat', 'media'",app)
+        self.assertIn(".stats-grid>#sentiment-card-purr{grid-column:1 / -1}",css)
+        self.assertIn(".quote-icon-purr",css)
+        self.assertIn("('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news)",scanner)
 
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
