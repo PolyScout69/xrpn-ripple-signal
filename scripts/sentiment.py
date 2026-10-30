@@ -18,7 +18,7 @@ IMPACT_WEIGHTS = {'High': 4.5, 'Medium': 2.25, 'Low': 1.0}
 SOURCE_WEIGHTS = {'Official': 1.15, 'SEC': 1.15, 'Media': 1.0, 'News': 1.0}
 SCENARIO_WEIGHTS = {'reported': 1.0, 'assumption': 0.90, 'rumour': 0.72}
 NEUTRAL_DAMPENING = 0.08
-ASSETS = ('XRPN', 'MSTR', 'LITS')
+ASSETS = ('XRPN', 'MSTR', 'LITS', 'PURR')
 LABELS = {-3: 'Very bearish', -2: 'Bearish', -1: 'Slightly bearish',
            0: 'Neutral', 1: 'Slightly bullish', 2: 'Bullish', 3: 'Very bullish'}
 
@@ -30,15 +30,18 @@ EVENT_FAMILIES = (
     ('lits-repurchase', r'\b(?:lite strategy|lits)\b.*\b(?:repurchas\w*|buy[ -]?back\w*)\b|\b(?:repurchas\w*|buy[ -]?back\w*)\b.*\b(?:ltc|litecoin|lits)\b'),
     ('ltc-options-yield', r'\b(?:ltc|litecoin|treasury)\b.*\b(?:covered calls?|option premiums?)\b|\b(?:covered calls?|option premiums?)\b.*\b(?:ltc|litecoin|treasury)\b'),
     ('litvm-investment', r'\blitvm\b'),
+    ('purr-buyback', r'\b(?:hyperliquid strategies|purr)\b.{0,110}\b(?:repurchas\w*|buy[\s-]?back\w*)\b|\b(?:repurchas\w*|buy[\s-]?back\w*)\b.{0,110}\b(?:purr|hyperliquid strategies)\b'),
+    ('purr-staking', r'\b(?:hype|hyperliquid)\b.{0,80}\b(?:staking|validator|yield)\b|\b(?:staking|validator|yield)\b.{0,80}\b(?:hype|hyperliquid)\b'),
+    ('hype-per-share', r'\bhype\s+(?:backing\s+)?per\s+(?:fully diluted\s+|diluted\s+)?share\b'),
     ('ltc-per-share', r'\b(?:ltc|litecoin)\s+(?:backing\s+)?per\s+(?:fully diluted\s+|diluted\s+)?share\b'),
     ('share-registration', r'\b11\.?5\s*m(?:illion)?\b.*\bshares?\b|\bregister\w*.*\bshares?\b.*\bwarrants?\b'),
     ('shareholder-approval', r'\b(?:shareholder|merger) (?:vote|approval)\b|\bshareholders? approve\b|\bmerger vote\b'),
     ('merger-complete', r'\bcomplet\w*\b.*\b(?:business combination|merger)\b'),
     ('treasury-yield', r'\bxrp\b.*\b(?:yield|lending|earn interest|put[s]?\s+(?:its\s+)?\w+\s+to work)\b|\b(?:yield|lending)\b.*\bxrp\b|\b(?:treasury|xrp)\b.*\b(?:coinbase|kraken|bitgo)\b'),
-    ('per-share-target', r'\b(?:xrp|bitcoin|btc|ltc|litecoin)\s+per\s+(?:fully diluted\s+|diluted\s+)?share\b'),
+    ('per-share-target', r'\b(?:xrp|bitcoin|btc|ltc|litecoin|hype)\s+per\s+(?:fully diluted\s+|diluted\s+)?share\b'),
     ('nasdaq-debut', r'\b(?:nasdaq|go(?:es|ing)? public)\b.*\b(?:debut|list(?:ed|ing)?|begins trading)\b'),
     ('uphold-access', r'\buphold\b.*\b(?:list|access|stock)\b'),
-    ('treasury-drawdown', r'\b(?:treasury|xrp|bitcoin|btc|litecoin|ltc)\b.*\b(?:loss|loses?|lost|drops?|down)\b'),
+    ('treasury-drawdown', r'\b(?:treasury|xrp|bitcoin|btc|litecoin|ltc|hype)\b.*\b(?:loss|loses?|lost|drops?|down)\b'),
     ('preferred-repurchase',
      r'\b(?:repurchas\w*|redeem\w*|buybacks?)\b.{0,100}\b(?:preferred|strc|strk|strf)\b'
      r'|\b(?:preferred|strc|strk|strf)\b.{0,100}\b(?:repurchas\w*|redeem\w*|buybacks?)\b'),
@@ -100,7 +103,7 @@ def _rounded_score(raw, directional_count):
 
 
 def aggregate_sentiment(items: list[dict], as_of: str | datetime) -> dict:
-    """Produce XRPN/MSTR/LITS 30-day directional scores and an audit-friendly breakdown.
+    """Produce XRPN/MSTR/LITS/PURR 30-day directional scores and an audit-friendly breakdown.
 
     Weight = materiality (4.5/2.25/1) × half-life decay (17 days)
              × source/specificity × scenario × exceptional-score multiplier.

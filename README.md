@@ -2,19 +2,28 @@
 
 **Live dashboard:** https://polyscout69.github.io/xrpn-ripple-signal/
 
-Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **XRP Ecosystem (XRPL)**, **Strategy (MSTR)**, and **Lite Strategy (LITS)**.
+Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **XRP Ecosystem (XRPL)**, **Strategy (MSTR)**, **Lite Strategy (LITS)**, and **Hyperliquid Strategies (PURR)**.
 
 ## Sources and publishing
 
 - **Three times daily, at approximately 09:15, 14:35 and 23:35 UTC**, GitHub Actions runs `scripts/scan.py`, updates `data/news.json`, and deploys GitHub Pages. The 09:15 scan focuses on early UK and continental European announcements after their opening release window, the 14:35 scan catches US pre-market/early-session headlines, and the 23:35 scan captures US market-close and evening releases. Scans run every day, including weekends. GitHub Actions schedules can start late during platform congestion and use fixed UTC hours (so local times vary with daylight saving). Pushes to `main` and manual dispatches also run the workflow.
-- Signal monitors official Ripple, Evernorth and Lite Strategy releases, plus targeted business and ecosystem news covering XRPN, MSTR and LITS. Lite Strategy specialises in LTC treasury accumulation, covered calls and share repurchases; generic Litecoin headlines are not automatically labelled LITS.
+- Signal monitors official Ripple, Evernorth, Lite Strategy and Hyperliquid Strategies releases, plus targeted business and ecosystem news covering XRPN, MSTR, LITS and PURR. Lite Strategy specialises in LTC treasury accumulation, covered calls and share repurchases; generic Litecoin headlines are not automatically labelled LITS.
 - **Standalone SEC filing records are intentionally excluded** from news cards, source monitoring and the Moon Meter. A news report about material financing, partnerships, regulation or other events may still appear, but standalone filing entries do not.
 - Multiple publications of the same event are grouped with additional source links.
-- Source Health reflects **four** channels: Ripple official, Evernorth official, Lite Strategy official, and issuer/ecosystem news. Lite Strategy's GCS-Web investor-relations archive has a verified alternate company archive address if one domain is inaccessible; a source outage is displayed rather than silently reported as successful.
+- Source Health reflects **five** channels: Ripple official, Evernorth official, Lite Strategy official, Hyperliquid Strategies official, and issuer/ecosystem news. Lite Strategy's GCS-Web investor-relations archive has a verified alternate company archive address if one domain is inaccessible; a source outage is displayed rather than silently reported as successful.
 
 ## Lite Strategy (LITS) treasury coverage
 
 Lite Strategy, Inc. (Nasdaq: LITS, formerly MEI Pharma) uses **Litecoin (LTC)** as its principal crypto reserve asset. Signal monitors its issuer releases (including its investor-relations archive), LITS-specific reporting, share count, LTC per diluted share, covered-call/option premium income, buybacks, LitVM-related strategic investments and significant financing or treasury risks. Moon Meters are **LITS stock** scenarios, not predictions of Litecoin token returns. The website uses the same TradingView widget for LITS as for XRPN and MSTR; quotes may be delayed. The 30-day LITS Moon Sentiment card shows **No coverage** rather than manufacturing a neutral sentiment if no dated, eligible stories are available.
+
+## Hyperliquid Strategies (PURR) treasury coverage
+
+[Hyperliquid Strategies Inc](https://hypestrat.xyz/) is a Nasdaq-listed **HYPE treasury company**, ticker **PURR**. It is a separate public-company investment, **not stock in Hyperliquid Labs or ownership of the HYPE protocol**. Signal monitors issuer releases via its [official PR Newswire archive](https://www.prnewswire.com/news/hyperliquid-strategies-inc/), plus targeted PURR reporting. Material topics include HYPE tokens held and **HYPE per diluted PURR share**, staking and validator income, custody and withdrawal controls, institutional partnerships, equity facilities, dilution, stock repurchases, governance and financial results.
+
+- The **PURR share price** uses the same delayed TradingView Nasdaq quote widget and daily % change as XRPN/MSTR/LITS. The company-specific link points to `NASDAQ:PURR`.
+- **PURR Moon Meter** scores potential if-true impacts on *PURR equity*, not direct price moves in HYPE. A buyback authorization is different from an executed, NAV-accretive repurchase; generic HYPE market headlines are not automatically attributed to PURR.
+- **PURR Moon Sentiment** aggregates last-30-day company-specific events with the existing impact, freshness, source and duplicate discounting. Limited/no coverage is labelled instead of manufacturing certainty.
+- The mobile sentiment layout keeps XRPN full width above MSTR/LITS side-by-side, with PURR on its own full-width row below. Stock quote cards stack one per row on small phones.
 
 ## Top Investor Signal — ranked recent developments
 
@@ -29,11 +38,11 @@ The algorithm favours high-impact **new** information and does not arbitrarily b
 
 ## Homepage share-price widgets
 
-The top of the homepage shows **XRPN (Evernorth)**, **MSTR (Strategy)** and **LITS (Lite Strategy)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:XRPN`, `NASDAQ:MSTR` and `NASDAQ:LITS`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
+The top of the homepage shows **XRPN (Evernorth)**, **MSTR (Strategy)**, **LITS (Lite Strategy)** and **PURR (Hyperliquid Strategies)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:XRPN`, `NASDAQ:MSTR`, `NASDAQ:LITS` and `NASDAQ:PURR`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
 
-## Moon Sentiment — XRPN, MSTR and LITS, 30 days
+## Moon Sentiment — XRPN, MSTR, LITS and PURR, 30 days
 
-The three sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for XRPN, MSTR and LITS, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
+The four sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for XRPN, MSTR, LITS and PURR, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
 
 The calculation runs during each of the three daily news scans and publishes `sentiment_30d` into `data/news.json`, including the rounded −3 to +3 score, raw score, source counts and top contributing stories. If a new snapshot is delayed, the site shows a clearly labelled **provisional** calculation from the previous published Moon Meter values. **A 0 headline is not a negative vote**: neutral articles only add 8% of their normal weight to the denominator. Only evidence with a signed directional Moon Meter contributes directly to the numerator.
 
@@ -53,7 +62,7 @@ The `scripts/moon_meter.py` headline rules now recognise the potential if-true e
 
 ## Moon Meter (−3 to +3)
 
-The Moon Meter is a calibrated **IF-TRUE scenario gauge**, scoring the potential directional impact on **XRP**, **XRPN**, **MSTR** or **LITS** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
+The Moon Meter is a calibrated **IF-TRUE scenario gauge**, scoring the potential directional impact on **XRP**, **XRPN**, **MSTR**, **LITS** or **PURR** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
 
 ## Run locally
 

@@ -13,7 +13,7 @@ def story(title, asset='XRPN', value=1, impact='Medium', age=1,
     return {
         'id': identifier or title, 'title': title,
         'published_at': published.isoformat().replace('+00:00', 'Z'),
-        'entities': ['Evernorth'] if asset == 'XRPN' else ['Lite Strategy'] if asset == 'LITS' else ['Strategy'],
+        'entities': ['Evernorth'] if asset == 'XRPN' else ['Lite Strategy'] if asset == 'LITS' else ['Hyperliquid Strategies'] if asset == 'PURR' else ['Strategy'],
         'source_type': source_type, 'category': 'Treasury',
         'impact': impact, 'score': score,
         'url': 'https://example.com/' + str(len(title)),
@@ -143,7 +143,7 @@ class SentimentTests(unittest.TestCase):
             story('Evernorth XRP treasury neutral update', 'XRPN', value=0),
         ]
         result=aggregate_sentiment(events,AS_OF)
-        self.assertEqual(set(result),{'XRPN','MSTR','LITS'})
+        self.assertEqual(set(result),{'XRPN','MSTR','LITS','PURR'})
         self.assertEqual(result['LITS']['stories'],2)
         self.assertGreater(result['LITS']['value'],0)
         self.assertLess(result['MSTR']['value'],0)
@@ -154,6 +154,36 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(result['stories'],0)
         self.assertEqual(result['value'],0)
         self.assertEqual(result['coverage'],'Limited coverage')
+
+    def test_purr_sentiment_is_independent_and_materiality_weighted(self):
+        results=aggregate_sentiment([
+            story('Hyperliquid Strategies HYPE validator generates significant staking yield',
+                  'PURR',value=2,impact='High'),
+            story('Hyperliquid Strategies PURR minor administrative issue',
+                  'PURR',value=-1,impact='Low'),
+            story('Lite Strategy Litecoin treasury report', 'LITS',value=2,impact='High'),
+            story('Strategy holds Bitcoin in custody','MSTR',value=0)
+        ],AS_OF)
+        self.assertGreater(results['PURR']['value'],0)
+        self.assertEqual(results['PURR']['stories'],2)
+        self.assertEqual(results['LITS']['stories'],1)
+        self.assertEqual(results['MSTR']['value'],0)
+
+    def test_purr_buyback_articles_count_as_one_catalyst(self):
+        results=self.check([
+            story('Hyperliquid Strategies Inc raises stock repurchase authorization to $100 million',
+                  'PURR',value=1,identifier='purr-issuer'),
+            story('PURR buys back more shares as Hyperliquid Strategies approves $100m buyback',
+                  'PURR',value=1,identifier='purr-publisher'),
+        ],ticker='PURR')
+        self.assertEqual(results['stories'],2)
+        self.assertEqual(results['directional_events'],1)
+
+    def test_no_recent_purr_news_is_explicitly_low_coverage(self):
+        result=self.check([],ticker='PURR')
+        self.assertEqual(result['stories'],0)
+        self.assertEqual(result['value'],0)
+        self.assertIn(result['coverage'],('No coverage','Limited coverage'))
 
     def test_insufficient_and_sec_entries_excluded(self):
         bad = story('Unrated hypothetical', value=0)
