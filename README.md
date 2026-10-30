@@ -23,7 +23,8 @@ Lite Strategy, Inc. (Nasdaq: LITS, formerly MEI Pharma) uses **Litecoin (LTC)** 
 - The **PURR share price** uses the same delayed TradingView Nasdaq quote widget and daily % change as XRPN/MSTR/LITS. The company-specific link points to `NASDAQ:PURR`.
 - **PURR Moon Meter** scores potential if-true impacts on *PURR equity*, not direct price moves in HYPE. A buyback authorization is different from an executed, NAV-accretive repurchase; generic HYPE market headlines are not automatically attributed to PURR.
 - **PURR Moon Sentiment** aggregates last-30-day company-specific events with the existing impact, freshness, source and duplicate discounting. Limited/no coverage is labelled instead of manufacturing certainty.
-- The mobile sentiment layout keeps XRPN full width above MSTR/LITS side-by-side, with PURR on its own full-width row below and SBET/FWDI side by side underneath. Stock quote cards stack one per row on small phones.
+- Market Pulse and Moon Sentiment share the order **MSTR, XRPN, SBET, PURR, FWDI, LITS**. Mobile sentiment cards form MSTR/XRPN, SBET/PURR and FWDI/LITS pairs in that reading order; stock quotes stack one per row on small phones.
+- Each sentiment card shows its underlying crypto logo: BTC, XRP, ETH, HYPE, SOL or LTC. SVGs are served locally; source and licence details are preserved in `assets/crypto/SOURCES.md`.
 
 ## SharpLink (SBET) and Forward Industries (FWDI)
 
@@ -52,7 +53,7 @@ The top of the homepage shows **XRPN (Evernorth)**, **MSTR (Strategy)**, **LITS 
 
 ## Moon Sentiment — XRPN, MSTR, LITS, PURR, SBET and FWDI, 30 days
 
-The six sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for XRPN, MSTR, LITS, PURR, SBET and FWDI, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
+The six sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for MSTR, XRPN, SBET, PURR, FWDI and LITS, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
 
 The calculation runs during each of the three daily news scans and publishes `sentiment_30d` into `data/news.json`, including the rounded −3 to +3 score, raw score, source counts and top contributing stories. If a new snapshot is delayed, the site shows a clearly labelled **provisional** calculation from the previous published Moon Meter values. **A 0 headline is not a negative vote**: neutral articles only add 8% of their normal weight to the denominator. Only evidence with a signed directional Moon Meter contributes directly to the numerator.
 
