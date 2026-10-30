@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-30T19:41:52Z",
+    "ran_at": "2026-10-30T19:55:32Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 8,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,50 +23,50 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "hypestrat": {
       "name": "Hyperliquid Strategies official",
       "status": "ok",
       "items_seen": 12,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Fetched 12 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Fetched 22 matching items."
     },
     "fwdi": {
       "name": "Forward Industries official",
       "status": "degraded",
       "items_seen": 16,
-      "checked_at": "2026-10-30T19:41:52Z",
+      "checked_at": "2026-10-30T19:55:32Z",
       "message": "Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete. Fetched 16 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 601,
-      "checked_at": "2026-10-30T19:41:52Z",
-      "message": "Fetched 601 matching items."
+      "items_seen": 631,
+      "checked_at": "2026-10-30T19:55:32Z",
+      "message": "Fetched 631 matching items."
     }
   },
   "sentiment_30d": {
@@ -75,7 +75,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 48,
       "independent_events": 44,
       "directional_events": 19,
@@ -135,9 +135,9 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.92,
+      "raw_score": 0.94,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 40,
       "independent_events": 35,
       "directional_events": 5,
@@ -148,15 +148,15 @@
       "coverage": "Limited coverage",
       "drivers": [
         {
-          "id": "49b5310ae161fe",
-          "title": "Strategy Buys $0 Bitcoin, Repurchases $205M in STRC as Saylor Reveals $5.1B Cash Holdings",
+          "id": "a1aa777b2097fa",
+          "title": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC",
           "value": 2,
           "impact": "Medium",
-          "published_at": "2026-10-27T14:35:57Z",
+          "published_at": "2026-10-30T02:37:34Z",
           "reports": 3,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxObmJDb0hhM1VCVVVDTWc5em5HSUFVTkpqLWp4VzQ5NndGX0ZJeVRJemxhREFKSWdmQ2pfZTkyTUpxMllTNVhocDVlanVvbHlnd0hfbnI4MVVJT2xvbndYYllUTU82SGpPOXhiOF94NjVwYkpHcENZZUN4ZEZ6V2VaazJTTy1odzNiNXhCV0FYc2RmRlpm?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYUNUT2p5am0yTGxSRnVraXVXNmltUEgzR0gwNlpUaUJyYnRJZVEtYzdmOGlDQjNHbnVpMmRaU21TTTltcTBNMExlZUQ0YWN6ZENfbjRsV0xuaXpaTk9WTXk4VnR0VmUyamRJMHZQYXdVZmxGVENLdUdjb3U3S2h0TXMySHNscGxHb2NUUmV2bERHNVZrTUJhbVdqdzByVkt5T1lYbUlaaXJtMnVfNG82NmRQdw?oc=5"
         },
         {
           "id": "c99511c44bba6a",
@@ -188,7 +188,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 2,
       "independent_events": 2,
       "directional_events": 0,
@@ -205,7 +205,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.34,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 14,
       "independent_events": 13,
       "directional_events": 2,
@@ -234,7 +234,7 @@
       "label": "Bearish",
       "raw_score": -1.39,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 29,
       "independent_events": 29,
       "directional_events": 3,
@@ -274,7 +274,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.45,
       "window_days": 30,
-      "as_of": "2026-10-30T19:41:52Z",
+      "as_of": "2026-10-30T19:55:32Z",
       "stories": 18,
       "independent_events": 17,
       "directional_events": 4,
@@ -511,6 +511,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "a1aa777b2097fa",
+      "title": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC",
+      "published_at": "2026-10-30T02:37:34Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CoinMarketCap · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYUNUT2p5am0yTGxSRnVraXVXNmltUEgzR0gwNlpUaUJyYnRJZVEtYzdmOGlDQjNHbnVpMmRaU21TTTltcTBNMExlZUQ0YWN6ZENfbjRsV0xuaXpaTk9WTXk4VnR0VmUyamRJMHZQYXdVZmxGVENLdUdjb3U3S2h0TXMySHNscGxHb2NUUmV2bERHNVZrTUJhbVdqdzByVkt5T1lYbUlaaXJtMnVfNG82NmRQdw?oc=5",
+      "excerpt": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC CoinMarketCap",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-30T19:55:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC",
+          "name": "CoinMarketCap · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYUNUT2p5am0yTGxSRnVraXVXNmltUEgzR0gwNlpUaUJyYnRJZVEtYzdmOGlDQjNHbnVpMmRaU21TTTltcTBNMExlZUQ0YWN6ZENfbjRsV0xuaXpaTk9WTXk4VnR0VmUyamRJMHZQYXdVZmxGVENLdUdjb3U3S2h0TXMySHNscGxHb2NUUmV2bERHNVZrTUJhbVdqdzByVkt5T1lYbUlaaXJtMnVfNG82NmRQdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-30T02:37:34Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -2783,48 +2825,6 @@
       ]
     },
     {
-      "id": "a1aa777b2097fa",
-      "title": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC",
-      "published_at": "2026-10-26T09:18:19Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 73,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYUNUT2p5am0yTGxSRnVraXVXNmltUEgzR0gwNlpUaUJyYnRJZVEtYzdmOGlDQjNHbnVpMmRaU21TTTltcTBNMExlZUQ0YWN6ZENfbjRsV0xuaXpaTk9WTXk4VnR0VmUyamRJMHZQYXdVZmxGVENLdUdjb3U3S2h0TXMySHNscGxHb2NUUmV2bERHNVZrTUJhbVdqdzByVkt5T1lYbUlaaXJtMnVfNG82NmRQdw?oc=5",
-      "excerpt": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC CoinMarketCap",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Spends $139M on STRC Buyback, Bitcoin Frozen at 845,050 BTC",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYUNUT2p5am0yTGxSRnVraXVXNmltUEgzR0gwNlpUaUJyYnRJZVEtYzdmOGlDQjNHbnVpMmRaU21TTTltcTBNMExlZUQ0YWN6ZENfbjRsV0xuaXpaTk9WTXk4VnR0VmUyamRJMHZQYXdVZmxGVENLdUdjb3U3S2h0TXMySHNscGxHb2NUUmV2bERHNVZrTUJhbVdqdzByVkt5T1lYbUlaaXJtMnVfNG82NmRQdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T09:18:19Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
       "id": "eeed91c8b60e73",
       "title": "SharpLink Reports $734M Loss Despite Growing Ethereum Treasury",
       "published_at": "2026-10-26T02:42:48Z",
@@ -4874,6 +4874,20 @@
           "title": "Strategy Expands Buyback Program to $3B After Spending Nine Times More on STRC Than Bitcoin",
           "name": "Coinpaper · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQWFYSUI3VmgzRWxiY091QXRuZW1uXzJFbWpUSndiRHhvWllvTTBGTzdZNlZYTnlZeVN0TDNIbDI5bmJTb3BhZnRGNXhrRTRWMWFYUjRvUnB2azctLUNveE9Zam1MMk5ncnBpQ1BPa2phSzNtcFhvWW9oWVhOVE1hcUVMUVNvRVQzNHJ5SDY1Wks2YlpjcHBFSjZ0dVI0SThzcXVyMk1XN19hV3o1alVyUGlKbUlrMWpqRmtz?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-19T07:00:00Z"
+        },
+        {
+          "title": "Strategy Raises Its Preferred Buyback Cap to $3 Billion After Another $193 Million STRC Week",
+          "name": "unchainedcrypto.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRzJ4Mkh0Y1dQbzQtQ1FqRUtMeTh3dGtwX18taGl3MFotX0VsaG8xR1Z0eEZyOUNlXzhfRWdpLVRHLTRYcmJnTk9ta2E2OUpzS0dFY1E1clhGTXdoWkk2dzNNRVRoeXFTMy1xVW5uUm9NRmtLT0ViVXMyUXg4VmlOYTFZemppVzgwdGJCVFpmTHhDVWtaMFBKYTdrQzZPa0gzTDRKWTRROHdNYWRyUzI2dGFhWjlpSnpSejB3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-19T12:39:00Z"
+        },
+        {
+          "title": "Strategy buys 267 Bitcoin as Saylor raises STRC buyback limit to $3 billion",
+          "name": "Crypto News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsY1hxclFrdUMtbW5rdGd5eml4Q28yV0xTcUZzQnhkbEpwQjZXeVNabk90V25nMElGY0VWVnF2UVV3MnhpU291RW1rNlRIdWdtUHgtUXdCc0pxRzhXaEdFMWNRYnRxV1gwNTU0QS1pMzdsVS1uTGgyNg?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-19T07:00:00Z"
         }
@@ -10888,6 +10902,20 @@
           "title": "Strategy CEO Phong Le Reveals the One Mistake Behind STRC's 25% Collapse",
           "name": "Yahoo Finance · via Google News",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcHVYektCNUs0MjJyUll0SlFwMmNEeFYtaXdnUExIc09JT25Na0kyOGJuTmtmQkhRVXJ5Z1h0WkxPV1ZVb1FmTVQ4UFVPUEdXNi11WmYybmloWktSTXN4TWJ1QmlGWUQtNHdpTGEwdC1DN3VieFhaNWJObW1lb2xpckVLaFp2X2dmeERab2lub0lCd1BJOXhkTlVR?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-22T07:00:00Z"
+        },
+        {
+          "title": "Strategy CEO Phong Le Reveals the One Mistake Behind STRC's 25% Collapse",
+          "name": "BeInCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE52UVBYanB5aG00WHZtSW43elpGODVTQmNNZTE3V3J6NW92Zk1QWlluQ3Z1UldtQkZoU0dvVHdldEl0SzQyVkRBdFpaWl92aXF6YkwwN09FYjRvamdlQUpqV0lWSEt4czd2RGpjMFNoY0g?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-22T07:00:00Z"
+        },
+        {
+          "title": "Strategy CEO Phong Le Reveals the One Mistake Behind STRC's 25% Collapse",
+          "name": "Bitget · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4wY0gxMGYzNXVuR1FHMlozczNqVVhEb2NfVlg3b1ZBUlIwYlFYMUZqaGxmU2lPTUg0RkE1VnlIN01VaDFjeW0xZ2ctN3piRU9aRjhhaDFNTXRDVzY2VlHSAWNBVV95cUxQM19RS3pSRmpUeHRSWFkwUmtJWENUR0RmQUxDbXBoQlcwV3htTUd6WG9YUlE1dllJcnFZX0E3aUpFd3lQOEFsYmtaR2c1dWlTcUdLVTl6WkdWcmZsWDM4VkhsSnc?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-22T07:00:00Z"
         }
@@ -17169,6 +17197,13 @@
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ3Z2RWp3N0xWNy02WXdsWkdVX0JIV1JaeUFidkxJYkFxTmxXVmk1MWIwOFdndkloYXgySWVHRW9hZk50dTkzZmZOZXhNclctU0xUVHN6YTFvdWF1c1NjM3o1QXNXdWRGWk1PZzRhWlFLd0FnVTZhSkl1OEhiOEJPRnBtRGJkRnhBTlpOTGNOamdOb0c3QzRKZXFWbWVUUHdEaElCWDFsUEowZzREWEtXVXFB?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-03T07:00:00Z"
+        },
+        {
+          "title": "Strategy Sells 1,638 Bitcoin for $104.7M to Fund STRC Stock and Dividends",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUFAxYnlMMmk4bG0xS0UyUkZFU1RlZkR6MWFlcHZ4UG9CeGMxeXJpUDdoUExsTE9Id1UwRUlLOFZPSDhGNzBfbE5YXzlnRTUwdHBPTENFbEVlUHF6U3VlSmlBUnRJX29CZmg5M3dZMzkwamx6eFFjYW9QTW5ocXhYbEVZNDJqV1BLVDNJZnJKSW5BbWVDRXhMQU5TNkhvSXhhNWoxX0o1NDI2UQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-03T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -21630,6 +21665,13 @@
           "title": "'Still adding dots': Michael Saylor's Strategy buys another 1,587 bitcoin for $100 million as total holdings reach 846,842 BTC",
           "name": "The Block · via Google News",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNXzNaVXlKdzJqQVFJVnhIa252QzBXZ1VadHc1M3ppM0tXWGNReUdVZkxwc0FNWWpSX2tleTh3MHVCOFBScjN6VDc3Z1dKcjRkYmlZcXV1Zms5eXRfTHB3S3M0RnZ2MUUzVkNYSE1jVDlvQWpmSWJ0T2cxa2J1eThydVlLMXJBNHluX0lrMlRHLWFTeTF6UVNqOGhjX0VXUVhrOVBmNHNxYTNrc3JNZDk0N1NGSjBKcnc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-15T07:00:00Z"
+        },
+        {
+          "title": "MSTR Stock Forecast as Michael Saylor's Strategy Buys 1,587 Bitcoin for $105M",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObW5YOS04dWFKeWIyMmtLb3lkeFoxUzFjSnJTLVRIZklnc2ZlU0l4OVNSbXp6ZzdFdkJJWHRaRzRQT1lnT0VxczJYa3hqVHRzek9FaU8xaUJzYlkzVG1VX2ZPRjhfblI1WjJQZUVvUExpMTN5RldiZjNnVWhvNkVvUGp0TERNSHJoNzdqYi12UTBnZEk5djRkSkl5dUE1SmtYMmJFZA?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-15T07:00:00Z"
         }
