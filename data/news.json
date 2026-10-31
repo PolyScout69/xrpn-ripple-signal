@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-31T02:39:25Z",
+    "ran_at": "2026-10-31T15:20:56Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 5,
+    "new_items": 6,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,66 +23,66 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "hypestrat": {
       "name": "Hyperliquid Strategies official",
       "status": "ok",
       "items_seen": 12,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Fetched 12 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Fetched 22 matching items."
     },
     "fwdi": {
       "name": "Forward Industries official",
       "status": "degraded",
       "items_seen": 16,
-      "checked_at": "2026-10-31T02:39:25Z",
+      "checked_at": "2026-10-31T15:20:56Z",
       "message": "Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete. Fetched 16 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 634,
-      "checked_at": "2026-10-31T02:39:25Z",
-      "message": "Fetched 634 matching items."
+      "items_seen": 524,
+      "checked_at": "2026-10-31T15:20:56Z",
+      "message": "Fetched 524 matching items."
     }
   },
   "sentiment_30d": {
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.1,
+      "raw_score": 1.06,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
-      "stories": 48,
-      "independent_events": 44,
-      "directional_events": 19,
-      "distinct_catalysts": 15,
-      "bullish_events": 15,
+      "as_of": "2026-10-31T15:20:56Z",
+      "stories": 44,
+      "independent_events": 41,
+      "directional_events": 17,
+      "distinct_catalysts": 14,
+      "bullish_events": 13,
       "bearish_events": 4,
-      "neutral_events": 25,
+      "neutral_events": 24,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -135,16 +135,16 @@
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.94,
+      "raw_score": 0.95,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
-      "stories": 40,
-      "independent_events": 35,
+      "as_of": "2026-10-31T15:20:56Z",
+      "stories": 39,
+      "independent_events": 34,
       "directional_events": 5,
       "distinct_catalysts": 2,
       "bullish_events": 4,
       "bearish_events": 1,
-      "neutral_events": 30,
+      "neutral_events": 29,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -188,7 +188,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
+      "as_of": "2026-10-31T15:20:56Z",
       "stories": 2,
       "independent_events": 2,
       "directional_events": 0,
@@ -205,7 +205,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.32,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
+      "as_of": "2026-10-31T15:20:56Z",
       "stories": 15,
       "independent_events": 14,
       "directional_events": 2,
@@ -232,16 +232,16 @@
     "SBET": {
       "value": -2,
       "label": "Bearish",
-      "raw_score": -1.38,
+      "raw_score": -1.39,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
-      "stories": 30,
-      "independent_events": 30,
+      "as_of": "2026-10-31T15:20:56Z",
+      "stories": 28,
+      "independent_events": 28,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 27,
+      "neutral_events": 25,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -272,29 +272,18 @@
     "FWDI": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.01,
+      "raw_score": 0.39,
       "window_days": 30,
-      "as_of": "2026-10-31T02:39:25Z",
-      "stories": 19,
-      "independent_events": 18,
-      "directional_events": 5,
-      "distinct_catalysts": 5,
-      "bullish_events": 4,
+      "as_of": "2026-10-31T15:20:56Z",
+      "stories": 17,
+      "independent_events": 16,
+      "directional_events": 3,
+      "distinct_catalysts": 3,
+      "bullish_events": 2,
       "bearish_events": 1,
       "neutral_events": 13,
       "coverage": "Moderate coverage",
       "drivers": [
-        {
-          "id": "9a6a0c93aac85b",
-          "title": "FWDI: SOL per fully diluted share rose 33.4% as treasury and yield strategies scaled",
-          "value": 3,
-          "impact": "High",
-          "published_at": "2026-10-01T07:00:00Z",
-          "reports": 1,
-          "scenario": "reported",
-          "reason": "If realised, 20%+ growth in coin holdings per diluted share would be exceptionally accretive.",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcnpnTjNDc3gwTmw1ZTNjN3BqTC1vNmk3bVp0QndjbkJ5X1VuMlBOSUlsdXNISnJqMGJ0dkR5ZUtvd2dsSzgwUGc4ZmZoZmc2SjhDM0ZfX1djcmk2TXlaMENrTXRCVE9na1VtS2FUMlR5b1VmOHo1OEliQUFET1ZFa01XSzVXWTZnbjVVTFc0M1dOTl9ENHM5clhfcU1XRDdjZnkyc2NSZU9paWM4ZDFUeFJvWExlU0hkREd6Q1hJWFVEdExEcUs3YXFwdFd6LXJkc0VmZXFmUFppeXFhYzh3SU40dTl2bDBQU2dKbk9weGtGeTRMNzhIdQ?oc=5"
-        },
         {
           "id": "2d634fcaac977d",
           "title": "Forward Industries Grows SOL Holdings by 949K to 8.5 Million SOL in Fiscal Fourth Quarter, Increasing SOL per Share to 0.0806",
@@ -2951,9 +2940,9 @@
       ]
     },
     {
-      "id": "607e1af307b66d",
+      "id": "26b7a90a6b4f59",
       "title": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses",
-      "published_at": "2026-10-24T17:06:08Z",
+      "published_at": "2026-10-24T17:08:27Z",
       "date_only": false,
       "entities": [
         "Hyperliquid Strategies"
@@ -2961,20 +2950,34 @@
       "category": "Capital markets",
       "impact": "Medium",
       "score": 76,
-      "source": "Yahoo Finance · via Google News",
+      "source": "Stocktwits · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcUJEckk0UGpwclRkczZnQ2x6Sm1DOEVncWItbnBEZzVXMWxuM19mZThSRG52ZEhuYXUyelJrdTl1aVZfVzBPSXRuZVFQeTN3YlZvSE85enQ4eXUxcXRPZ0RZZjFzc3NELWVjZndGb1JFcnFVSXJxWFNkUnJHVUpaWkJCakNWY1VwREJxOVdjVmJfTUlwOVlHaU56d0tQRFJwb3ByenE5VXZSdw?oc=5",
-      "excerpt": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMkx6emhFQkJJclU1c1BZTDlfNFJWVlUwQ193elJfWldOckM5V21yQWZpTzdnM2k1MXI5ZUt3VjNNWHBKektGTlRjazgzUVFVSmZQNjRLbnFKNjd2bGJiMW9wVHpEbjIyRFgwWF9QcTFZbm9xYm5QN2VkMTBRRFFaTnptQWw3MEVieURwVmZLTXJTS1FYa1VBQXhUZVdrYUhiNFlYTXQ5bXVQWlQyUVd5RHAwSzZuLXZINWhhT1ExTGdSMFRILUhlcmMwTEpHMkxnRmlfQlZBRFBKVi1P?oc=5",
+      "excerpt": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses Stocktwits",
       "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
       "tags": [],
-      "added_at": "2026-10-30T17:27:26Z",
+      "added_at": "2026-10-31T15:21:08Z",
       "verified_seed": false,
       "coverage": [
         {
           "title": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses",
+          "name": "Stocktwits · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMkx6emhFQkJJclU1c1BZTDlfNFJWVlUwQ193elJfWldOckM5V21yQWZpTzdnM2k1MXI5ZUt3VjNNWHBKektGTlRjazgzUVFVSmZQNjRLbnFKNjd2bGJiMW9wVHpEbjIyRFgwWF9QcTFZbm9xYm5QN2VkMTBRRFFaTnptQWw3MEVieURwVmZLTXJTS1FYa1VBQXhUZVdrYUhiNFlYTXQ5bXVQWlQyUVd5RHAwSzZuLXZINWhhT1ExTGdSMFRILUhlcmMwTEpHMkxnRmlfQlZBRFBKVi1P?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-24T17:08:27Z"
+        },
+        {
+          "title": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses",
           "name": "Yahoo Finance · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcUJEckk0UGpwclRkczZnQ2x6Sm1DOEVncWItbnBEZzVXMWxuM19mZThSRG52ZEhuYXUyelJrdTl1aVZfVzBPSXRuZVFQeTN3YlZvSE85enQ4eXUxcXRPZ0RZZjFzc3NELWVjZndGb1JFcnFVSXJxWFNkUnJHVUpaWkJCakNWY1VwREJxOVdjVmJfTUlwOVlHaU56d0tQRFJwb3ByenE5VXZSdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-24T17:06:08Z"
+        },
+        {
+          "title": "Hyperliquid Strategies Expands PURR Stock Buyback As HYPE Extends Monthly Losses",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNTk9yWFR6cXBkbGZ3NFQ2OWloUkFJNm9XajFwbXlLTU5lZnlWTDVoSmFGbTZyZEd3SE1vVkZmRHlMQWNfYUJRMkJJWEpWSkk2WXUyb3pSbmRXVFMzXzVWT05XRkFueEpkcFhnX21qaThTblhBRW84X28wZjNuMlRmZ090b0ZISU1uMTZEeVMyXzRzZ0ZVTTlDQWRfS09neXlRQWRZTDhYcFROX2RXU3JKeHRpT0lWbmhMM2l0bzVnNDM4bU1qZXdvXy15TmRCVW94WVktRWRrTQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-24T17:06:08Z"
         }
@@ -11277,6 +11280,48 @@
       ]
     },
     {
+      "id": "d23ae68812869a",
+      "title": "Evernorth Lines Up $30 Million Convertible Note to Expand XRP Treasury After SPAC Merger",
+      "published_at": "2026-09-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Evernorth"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 76,
+      "source": "BigGo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBxSTVYMXVENzZxT05yLWd1TktlWlV6b3BHQjNVSjJlekJnOU1xX1FvYzZVelJ2eUhDeFhDR2c3b1NjY1pzUDh1V1poUWpkRzU4NlFoWGYwVjJqa2hRRWZieTk1MmQ0Y2RYbmFzbGxQWUMzTVc3dGc?oc=5",
+      "excerpt": "Evernorth Lines Up $30 Million Convertible Note to Expand XRP Treasury After SPAC Merger BigGo Finance",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-10-31T15:21:04Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Evernorth Lines Up $30 Million Convertible Note to Expand XRP Treasury After SPAC Merger",
+          "name": "BigGo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBxSTVYMXVENzZxT05yLWd1TktlWlV6b3BHQjNVSjJlekJnOU1xX1FvYzZVelJ2eUhDeFhDR2c3b1NjY1pzUDh1V1poUWpkRzU4NlFoWGYwVjJqa2hRRWZieTk1MmQ0Y2RYbmFzbGxQWUMzTVc3dGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRPN",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "931c1d9bbd5be4",
       "title": "Forward Industries adds 357K Solana; treasury hits 8.16M",
       "published_at": "2026-09-21T07:00:00Z",
@@ -12948,6 +12993,13 @@
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRXpPTWI0N213NEp2VThxVUdQTXNJcUJIX3U4b3VOVHVkWXlvY1NEb1JVZ09kYnduVUh6SmRJQnFJbWNEQzhKSl9jS3Z0WER1WjhZUE5pdVVCaUJ1eFRlMUxMQjNpSHdXRG9IcUwxeW0yd25FZlBkMEtnY3dBdGtOaG1FUQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-07T07:00:00Z"
+        },
+        {
+          "title": "Hyperliquid Strategies Soared by 94% in August. Should Investors Forget Bitcoin and Buy This Stock Instead?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQTBLX3dTdUtYZGI0SF9wLVU5UjEyUlI3dUE5QUtSU1FqdzcwaTd1LWRsZTRWQzFiXzh5WE4zd1NXMmg5NWh5d1Z3dTNvVHhVYzZkVEFiWEV3bVI3MERaS1FncXowWXRVV2NaZnlNXzljajRnUkhHZHgtUGJWdG40YTcwUmJudWNiWER5LWRoMTNJbnUzdERzRW5pNmV5TGVEOXpGb0FRZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-07T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -13783,6 +13835,48 @@
       ]
     },
     {
+      "id": "a07c0fc82bdb17",
+      "title": "PURR Stock Jumps 11% After Hyperliquid Treasury Firm Reports Annual Results",
+      "published_at": "2026-08-28T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Hyperliquid Strategies"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbGxqLXkwVUdnbFhTMU9MdzFuTUJwV1hDTVUzTUNmV0dOQ3dQUm5HMzVHYW5nanE2bFdCQ3g0bU1JZm1qWkptMnJpMHVJZFN6OGNwOG9Lb0RTMFNoRkg4NEFrY1ZtOGhPXzlrN2VVS0VRelpTV2dtdDFGVk5YaGc3LW5iZGp0SVBxVnJCLVJLTlR4OFc3dV9FclVtUlk?oc=5",
+      "excerpt": "PURR Stock Jumps 11% After Hyperliquid Treasury Firm Reports Annual Results Yahoo Finance",
+      "why_it_matters": "Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-31T15:21:08Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "PURR Stock Jumps 11% After Hyperliquid Treasury Firm Reports Annual Results",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbGxqLXkwVUdnbFhTMU9MdzFuTUJwV1hDTVUzTUNmV0dOQ3dQUm5HMzVHYW5nanE2bFdCQ3g0bU1JZm1qWkptMnJpMHVJZFN6OGNwOG9Lb0RTMFNoRkg4NEFrY1ZtOGhPXzlrN2VVS0VRelpTV2dtdDFGVk5YaGc3LW5iZGp0SVBxVnJCLVJLTlR4OFc3dV9FclVtUlk?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-28T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "PURR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "59b4ef18097977",
       "title": "An XRP treasury company backed by Ripple is a shareholder vote away from Nasdaq",
       "published_at": "2026-08-28T07:00:00Z",
@@ -14227,6 +14321,48 @@
           "title": "Hyperliquid Strategies reports $305.5M net income for fiscal 2026",
           "name": "Investing.com · via Google News",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSmM4VmNhWExrNUtGWHVHYU9XSklIZzhIdkhMbXVVOVdUd1BTTXZ1WFRqRm9qeHNMLXZldl9BcVItRFMyLS1PYkFkVkU1eHNaT0FQY0tZSlFUUzRQUWxmamZtazJreUtoN0c2NlRlYldLUVlPc3VLNDFYOWs5Q2NyN0ZsWF9ERVNLNUR6TnVwQlJCdE1TOHhjdnA4Q2t6a3dRWHByMDFLQkxxWlYzVkl5VkxpWFRRTHlNZ2tveg?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-27T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "PURR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "08f1e73152da6d",
+      "title": "Hyperliquid Strategies Shares Rise After Reporting $1.9B HYPE Position",
+      "published_at": "2026-08-27T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Hyperliquid Strategies"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdkg4b0lOY2FqT1JSeGVqZll2MFl5djhKQ3dFQUhzYjVUbmVoOGJhcFFOTV9sVjFVbTRxT3JDamxDM3hvVjByUlJwMTVVeTdzcHg5bUhvZXJnazBCUHBIem1XOW9kYVd6Wmx1UTl2WnlrYVZiaEROdWNXZG5aRHRPbXJ0YlRLX3hxclhSUDBfdlFIeEhiS28tQlVydGNHa1RQREc0UWN3TVl6YXFodFE?oc=5",
+      "excerpt": "Hyperliquid Strategies Shares Rise After Reporting $1.9B HYPE Position Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T15:21:08Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Hyperliquid Strategies Shares Rise After Reporting $1.9B HYPE Position",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdkg4b0lOY2FqT1JSeGVqZll2MFl5djhKQ3dFQUhzYjVUbmVoOGJhcFFOTV9sVjFVbTRxT3JDamxDM3hvVjByUlJwMTVVeTdzcHg5bUhvZXJnazBCUHBIem1XOW9kYVd6Wmx1UTl2WnlrYVZiaEROdWNXZG5aRHRPbXJ0YlRLX3hxclhSUDBfdlFIeEhiS28tQlVydGNHa1RQREc0UWN3TVl6YXFodFE?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-27T07:00:00Z"
         }
@@ -14990,6 +15126,13 @@
           "title": "Hyperliquid Strategies Inc Announces Webcast to Discuss Results for the Fiscal Year Ended June 30, 2026",
           "name": "Moomoo · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWHZmSlZVSC1INjBWR21lYU9NeGpGNDFGcG1NaGJ0aWRWY29uOE9xMzVwWk5ORkxGaVA4OVZHU0wtdXl2Q3RyeEhrVzhFajZNaE45UW1nYVVJM3FvRHRZQWM2bVRVSzBXSUdxRloxdDc5QnIwQThlZXVzbTB2Nl9oVms3Ui00U1NDbjlMQjExUTc4d19Xekt0R0UzdXRLRDZqLUE1R2Z1V0NfV0JWS2EyU1Zycw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-19T07:00:00Z"
+        },
+        {
+          "title": "Hyperliquid Strategies Inc Announces Webcast to Discuss Results for the Fiscal Year Ended June 30, 2026",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUkhHdGlPcTk0cDhvejNtbU5waUFiTWtIdm1MMUg2aUpiWXI4UVVmaXJUeGtRZ1hsUTF2UnlrOExhRWdoMnAzM191Tkk3Qm9YWHVXNk54YUFDUlVKWjl0cWt4ZElfVHBLYk1QZnFWQnFzTWNISzNna3d6dmo3akxKbGpxdjkzYTNvbERUN2RzY0xFRjJ6Mkw0TllHYzd1TVBtRFE4Y1RrVUpFWmpwalE?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-19T07:00:00Z"
         }
@@ -18508,6 +18651,48 @@
       ]
     },
     {
+      "id": "126e89bdfabd12",
+      "title": "Strategy (MSTR) Stock Could Be 43% Undervalued As Bitcoin Sales Fund Dividends",
+      "published_at": "2026-07-16T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTExoa3E3M2UtSUpOejdqd3lyVkloMW1HWHo0ZF9GOEduX1ByVXFrYlM2UXB4d25XQkUzQ3I4Vk1YQi1QTmUzZ2s2TFhRcEs3M19UOWdiUXBzVEJvb1FCbWJTLTY2VXdDNWxyRzNuZEVyX0hkQTZZckVUQ2hFM055UWpIX1RyR0hwU1ZwcVp4RVA5QS1PUEZySQ?oc=5",
+      "excerpt": "Strategy (MSTR) Stock Could Be 43% Undervalued As Bitcoin Sales Fund Dividends Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T15:21:11Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Stock Could Be 43% Undervalued As Bitcoin Sales Fund Dividends",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTExoa3E3M2UtSUpOejdqd3lyVkloMW1HWHo0ZF9GOEduX1ByVXFrYlM2UXB4d25XQkUzQ3I4Vk1YQi1QTmUzZ2s2TFhRcEs3M19UOWdiUXBzVEJvb1FCbWJTLTY2VXdDNWxyRzNuZEVyX0hkQTZZckVUQ2hFM055UWpIX1RyR0hwU1ZwcVp4RVA5QS1PUEZySQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-16T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b70c4783622b17",
       "title": "Forward Industries Announces Appointment of Michael Ashe to Board of Directors",
       "published_at": "2026-07-15T20:05:00Z",
@@ -19483,6 +19668,13 @@
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbW9JbHRrcVRmQlp2eF9GYUg4YVZFTklGMjdldHZKU3ZfaF9MU0Ryb2lFU3FiVFVFSTY5S1NFci1kTFJHZmd0WGNMWnUyZE5tYkNGZ3NnUHVfMml2bE5rem4xTjhFRmxOX1pOQTVpTEF2RHQ3d3lmN2xKX3ZLdDBZelB3aWs2Y2ZYVVdGZmZteVhDLXZ2eG13OF9BYy1KS2M?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-02T07:00:00Z"
+        },
+        {
+          "title": "Michael Saylor Just Changed the Rules for MSTR — And Investors May Not Like It",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPS3JmdjZhUWk4aExra0x0b3Q5eFcxMTZseFNxblg4UmRqbVBaUy1oZmpLenU2WGdkQU9OdHIyWkFZblRNam1aZzJ5cVlod3VESEx1dldQcHhjS3R0eXI0WUpOWE1jVUhMcFpCTjNFWUdZR1liTWkwdDB1TEpXUjNyMzNQbWpjcDRaaVhabVJPUy1YajlwQ3JFamhIQk8yc3JIanhwbnk2NHZ2UG8tYzJSbGw3ZjBrN2ZwdG9WTw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-02T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -20089,6 +20281,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c20dedd88f4145",
+      "title": "MicroStrategy’s New Bitcoin Sale Authorization Puts Altcoin Traders On Edge",
+      "published_at": "2026-06-30T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbU5WdU5mM0QtZmtuZ01oMTN1WURSTTFIaW1NNUdFX0VTM3drSmd4V2FMb3BnRlprSVZOeG5wZW8xcTR3YVlQbk00THgwcGdXN2Q2QkwzeXBtbnlkTC1PVmc1andxalF4V2Z5b01reFY4VFhIU0xYeUpuU1JlRHAxWDJrYlN1RTVLaUJfSmplajdHc1dqbUlYYjlhOFowWDJPaC1pNHNoUVEyT0FDSVZ1RDhQR0toZjlpSVdiZ1ZmWEQwSmhuQ2FFMF9DNk1lZw?oc=5",
+      "excerpt": "MicroStrategy’s New Bitcoin Sale Authorization Puts Altcoin Traders On Edge TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T15:21:06Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy’s New Bitcoin Sale Authorization Puts Altcoin Traders On Edge",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbU5WdU5mM0QtZmtuZ01oMTN1WURSTTFIaW1NNUdFX0VTM3drSmd4V2FMb3BnRlprSVZOeG5wZW8xcTR3YVlQbk00THgwcGdXN2Q2QkwzeXBtbnlkTC1PVmc1andxalF4V2Z5b01reFY4VFhIU0xYeUpuU1JlRHAxWDJrYlN1RTVLaUJfSmplajdHc1dqbUlYYjlhOFowWDJPaC1pNHNoUVEyT0FDSVZ1RDhQR0toZjlpSVdiZ1ZmWEQwSmhuQ2FFMF9DNk1lZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-30T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -22978,216 +23212,6 @@
       "moon_meters": [
         {
           "asset": "XRPN",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "d12a5d8b0f8970",
-      "title": "Michael Saylor's Bitcoin Treasury Firm Strategy Sells 32 BTC for $2.5M",
-      "published_at": "2026-06-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYjQzREY5ck5zNnpxS2Y4Q3NxZlFuemcxQjZBQ1N4ZlpzeS1FeldLOVZFWTdoaFNhaGplVGI1d3o3QXJTTVNnWEwyc0RGNWRZWUdNYnZsMG1Qckt1R3NWaUpaUm5pVEJTOEJmOXlQbWxHOVJ6ZUhsdzBvWm5DUVFURzlIUTZieTk0ZDVZemtrOWMxN2FBSmFadHdCMVQ4Vkpta1lkeg?oc=5",
-      "excerpt": "Michael Saylor's Bitcoin Treasury Firm Strategy Sells 32 BTC for $2.5M Yahoo Finance",
-      "why_it_matters": "Track XRP or BTC purchases, holdings per diluted share, funding costs, custody and counterparty risk. Gross coin purchases do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor's Bitcoin Treasury Firm Strategy Sells 32 BTC for $2.5M",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYjQzREY5ck5zNnpxS2Y4Q3NxZlFuemcxQjZBQ1N4ZlpzeS1FeldLOVZFWTdoaFNhaGplVGI1d3o3QXJTTVNnWEwyc0RGNWRZWUdNYnZsMG1Qckt1R3NWaUpaUm5pVEJTOEJmOXlQbWxHOVJ6ZUhsdzBvWm5DUVFURzlIUTZieTk0ZDVZemtrOWMxN2FBSmFadHdCMVQ4Vkpta1lkeg?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "6435bbb00bf58a",
-      "title": "Michael Saylor’s Strategy Sells 32 Bitcoin For $2.5 Million For The First Time Since 2022",
-      "published_at": "2026-06-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUDJ0dXBiM3FfblNodDlSV3RRSV9rb19oZXNiZmFBOGNWTHlkR3VhZGwzYkd4Ymd5cUw0WVVWdFRobHBpb3NoRUtRMElfNlBXTDZCNGNYNDZtWXp4YVY3TnlJSlBTT1E1R055NzRNZU1YWEdLbWdsMl9yM3FONHZla0lOQXFKZzVxRmVlY1ZidGpxQk95UlJmTlI3VEhCdw?oc=5",
-      "excerpt": "Michael Saylor’s Strategy Sells 32 Bitcoin For $2.5 Million For The First Time Since 2022 Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor’s Strategy Sells 32 Bitcoin For $2.5 Million For The First Time Since 2022",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUDJ0dXBiM3FfblNodDlSV3RRSV9rb19oZXNiZmFBOGNWTHlkR3VhZGwzYkd4Ymd5cUw0WVVWdFRobHBpb3NoRUtRMElfNlBXTDZCNGNYNDZtWXp4YVY3TnlJSlBTT1E1R055NzRNZU1YWEdLbWdsMl9yM3FONHZla0lOQXFKZzVxRmVlY1ZidGpxQk95UlJmTlI3VEhCdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "5f879d651b2d6e",
-      "title": "Michael Saylor's Strategy sells 32 bitcoin for $2.5 million as total holdings drop to 843,706 BTC",
-      "published_at": "2026-06-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV3lEVXM2V1RNN2hJYlR0N3hJZGhlSkVLd3UxMU9FTlFTckZhMGlYVzhRZ0ZsMHdiSEVYajdiRmNEREdQRjNDVzVWdWJRTHZ4RTZYMnlSTGxGbHBrcDk0TTNPVDFWT284OGFkQWhzOTk2Q2ZIVXNhOHI0eG1hMWZCVllFSnVWY2pQRFo4OHExTWhzWDIwQ2JIU2RB?oc=5",
-      "excerpt": "Michael Saylor's Strategy sells 32 bitcoin for $2.5 million as total holdings drop to 843,706 BTC The Block",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor's Strategy sells 32 bitcoin for $2.5 million as total holdings drop to 843,706 BTC",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV3lEVXM2V1RNN2hJYlR0N3hJZGhlSkVLd3UxMU9FTlFTckZhMGlYVzhRZ0ZsMHdiSEVYajdiRmNEREdQRjNDVzVWdWJRTHZ4RTZYMnlSTGxGbHBrcDk0TTNPVDFWT284OGFkQWhzOTk2Q2ZIVXNhOHI0eG1hMWZCVllFSnVWY2pQRFo4OHExTWhzWDIwQ2JIU2RB?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": -2,
-          "label": "Bearish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0aad0b2a73052c",
-      "title": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact'",
-      "published_at": "2026-06-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxORFhSWGQwV1Q4bkd2VzhSWEloSnBtODc5a051TjFCeG9rZUFXUFU2OF9aSTNvQ2FlLTdFZ0duakwtSDh0UC1kV0hRN1NnWWgzc3YyNXl0SFh2QUN2elcza1JFWGpqNEd5RkxXWWZnQUd4QUJyQUFDRUJBTHRnOE9YblhGX2JqV1BwcU9jbXY5SWI1cFh2bkc2Nm9SRzRiNVFWS25paV9sRjdFUUtGQ2ViMzE1b3dyZ2FuWkhjaUJEZTJDcTE4VEpiU3NXWXd1anNBOUdmaHhab0wzS2NVS1VTcXl4NGlVUkhHZThoenNZNDNiTE9ZWkdsZTZJZVdDY0EyOUpKUA?oc=5",
-      "excerpt": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact' TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:05:34Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor’s Strategy Falls After Mizuho Cuts Bitcoin Forecast, Trims MSTR Target – 'Crypto Winter Remains Intact'",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxORFhSWGQwV1Q4bkd2VzhSWEloSnBtODc5a051TjFCeG9rZUFXUFU2OF9aSTNvQ2FlLTdFZ0duakwtSDh0UC1kV0hRN1NnWWgzc3YyNXl0SFh2QUN2elcza1JFWGpqNEd5RkxXWWZnQUd4QUJyQUFDRUJBTHRnOE9YblhGX2JqV1BwcU9jbXY5SWI1cFh2bkc2Nm9SRzRiNVFWS25paV9sRjdFUUtGQ2ViMzE1b3dyZ2FuWkhjaUJEZTJDcTE4VEpiU3NXWXd1anNBOUdmaHhab0wzS2NVS1VTcXl4NGlVUkhHZThoenNZNDNiTE9ZWkdsZTZJZVdDY0EyOUpKUA?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "cb61b10747ba16",
-      "title": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs",
-      "published_at": "2026-06-01T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 63,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTFpbFhnTWQtdmF0VkxQVUVsb3J6VWE2ZjVQRU5kVlhXTk1YMU42UmFKQVRvbG5vQzlwN1FpNFV6S1A2UjliVC1ZLTR4UTVHdjJ0RF90MS1GQU9DajV0Tm8taFJqVHpCaXVXeEg1VS10TjZ6dmJXaU1BM1MwVTNFMVF1LVJBYmZ4RXBxZ0xEZEUzcDN1a0c1ZDdKODRWWUJLeDgyZjBNMHRkS1VjMThJZ21YVW0yMDhGV0UwSEM2VlM?oc=5",
-      "excerpt": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-26T22:39:27Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple’s Growing Bank List: The Over 500 Institutions With XRP IDs",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTFpbFhnTWQtdmF0VkxQVUVsb3J6VWE2ZjVQRU5kVlhXTk1YMU42UmFKQVRvbG5vQzlwN1FpNFV6S1A2UjliVC1ZLTR4UTVHdjJ0RF90MS1GQU9DajV0Tm8taFJqVHpCaXVXeEg1VS10TjZ6dmJXaU1BM1MwVTNFMVF1LVJBYmZ4RXBxZ0xEZEUzcDN1a0c1ZDdKODRWWUJLeDgyZjBNMHRkS1VjMThJZ21YVW0yMDhGV0UwSEM2VlM?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-01T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
