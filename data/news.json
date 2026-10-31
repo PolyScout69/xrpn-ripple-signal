@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "partial",
-    "ran_at": "2026-10-30T20:22:02Z",
+    "ran_at": "2026-10-31T02:39:25Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 5,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,50 +23,50 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Fetched 20 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "error",
       "items_seen": 0,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Lite Strategy IR release archive unavailable or has no linked releases."
     },
     "hypestrat": {
       "name": "Hyperliquid Strategies official",
       "status": "ok",
       "items_seen": 12,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Fetched 12 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Fetched 22 matching items."
     },
     "fwdi": {
       "name": "Forward Industries official",
       "status": "degraded",
       "items_seen": 16,
-      "checked_at": "2026-10-30T20:22:02Z",
+      "checked_at": "2026-10-31T02:39:25Z",
       "message": "Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete. Fetched 16 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 728,
-      "checked_at": "2026-10-30T20:22:02Z",
-      "message": "Fetched 728 matching items."
+      "items_seen": 634,
+      "checked_at": "2026-10-31T02:39:25Z",
+      "message": "Fetched 634 matching items."
     }
   },
   "sentiment_30d": {
@@ -75,7 +75,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
+      "as_of": "2026-10-31T02:39:25Z",
       "stories": 48,
       "independent_events": 44,
       "directional_events": 19,
@@ -137,7 +137,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.94,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
+      "as_of": "2026-10-31T02:39:25Z",
       "stories": 40,
       "independent_events": 35,
       "directional_events": 5,
@@ -188,7 +188,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
+      "as_of": "2026-10-31T02:39:25Z",
       "stories": 2,
       "independent_events": 2,
       "directional_events": 0,
@@ -203,16 +203,16 @@
     "PURR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.34,
+      "raw_score": 1.32,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
-      "stories": 14,
-      "independent_events": 13,
+      "as_of": "2026-10-31T02:39:25Z",
+      "stories": 15,
+      "independent_events": 14,
       "directional_events": 2,
       "distinct_catalysts": 1,
       "bullish_events": 2,
       "bearish_events": 0,
-      "neutral_events": 11,
+      "neutral_events": 12,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -232,16 +232,16 @@
     "SBET": {
       "value": -2,
       "label": "Bearish",
-      "raw_score": -1.39,
+      "raw_score": -1.38,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
-      "stories": 29,
-      "independent_events": 29,
+      "as_of": "2026-10-31T02:39:25Z",
+      "stories": 30,
+      "independent_events": 30,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 26,
+      "neutral_events": 27,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -272,18 +272,29 @@
     "FWDI": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.45,
+      "raw_score": 1.01,
       "window_days": 30,
-      "as_of": "2026-10-30T20:22:02Z",
-      "stories": 18,
-      "independent_events": 17,
-      "directional_events": 4,
-      "distinct_catalysts": 4,
-      "bullish_events": 3,
+      "as_of": "2026-10-31T02:39:25Z",
+      "stories": 19,
+      "independent_events": 18,
+      "directional_events": 5,
+      "distinct_catalysts": 5,
+      "bullish_events": 4,
       "bearish_events": 1,
       "neutral_events": 13,
       "coverage": "Moderate coverage",
       "drivers": [
+        {
+          "id": "9a6a0c93aac85b",
+          "title": "FWDI: SOL per fully diluted share rose 33.4% as treasury and yield strategies scaled",
+          "value": 3,
+          "impact": "High",
+          "published_at": "2026-10-01T07:00:00Z",
+          "reports": 1,
+          "scenario": "reported",
+          "reason": "If realised, 20%+ growth in coin holdings per diluted share would be exceptionally accretive.",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcnpnTjNDc3gwTmw1ZTNjN3BqTC1vNmk3bVp0QndjbkJ5X1VuMlBOSUlsdXNISnJqMGJ0dkR5ZUtvd2dsSzgwUGc4ZmZoZmc2SjhDM0ZfX1djcmk2TXlaMENrTXRCVE9na1VtS2FUMlR5b1VmOHo1OEliQUFET1ZFa01XSzVXWTZnbjVVTFc0M1dOTl9ENHM5clhfcU1XRDdjZnkyc2NSZU9paWM4ZDFUeFJvWExlU0hkREd6Q1hJWFVEdExEcUs3YXFwdFd6LXJkc0VmZXFmUFppeXFhYzh3SU40dTl2bDBQU2dKbk9weGtGeTRMNzhIdQ?oc=5"
+        },
         {
           "id": "2d634fcaac977d",
           "title": "Forward Industries Grows SOL Holdings by 949K to 8.5 Million SOL in Fiscal Fourth Quarter, Increasing SOL per Share to 0.0806",
@@ -316,17 +327,6 @@
           "scenario": "reported",
           "reason": "If the FWDI buyback plan is executed prudently below asset value, backing per share may improve; authorisation alone is not a completed repurchase.",
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVnYxZi0tWlVvY3pNNW9zRHNxX21GVE1XVExiLVZ0dV9IcDUwcmZiSkROQXJsX2VOQTRreHlFLThxSGpsWUVXb0VBOFlxeGhTN0FCRk1LdnRTNkNFTDJxakh6eTFlZ0JxZTVFNHRSWXVoTHFIcE5kcFljYTlvV1hWWk5hd1BRa2tWU0VmWlRJaS1XYURqbUYtSGZ1alRxZ3JwVnQ2eFlmZjJLTnlkWjdSWVhCSDI?oc=5"
-        },
-        {
-          "id": "3ebbecabcfc859",
-          "title": "Forward Industries boosts SOL holdings to 8.5M, NAV rises to $870M",
-          "value": 1,
-          "impact": "Medium",
-          "published_at": "2026-10-01T07:00:00Z",
-          "reports": 1,
-          "scenario": "reported",
-          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObl9CaF9wVXE1VXg0NURsaWJ5UTFFU21IdmJMOXhHTnBzX2VlZ3dnYVhOckFrdkpibWlGSXVmR3NKcU9KY0RrRHNJbkU0SjdFS3ZoX0JIMzM3Sk41V1ByUGVfOVJ4cGpXb2ZUQnBYazVOUXlXRUdzMlJkUXVkR2xoYmwzdk1ZN1l1Y1ItcGlyd0JpQV95dTBySzQzODFHTFI0TWZzUElOeFdxb2UyWXY5VjE5UnVwMElmcnd5dkZUa0Q0TC1n?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v2"
@@ -5334,6 +5334,48 @@
       ]
     },
     {
+      "id": "68128b003fc98b",
+      "title": "Is Sharplink (SBET) Trading At A Premium To Its Sales?",
+      "published_at": "2026-10-16T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcFgzNGFhbHVBNzV2dWtaTzFtMlp6RkhuUmp0NXdCeEExZFNESGpCbVRaVEdQemN2aUlsZkxqS2R2ZFdQZDhsRjRKaGwxUVhaRW1lOWE3czd2c1RHVFJpOHlHdDlwaDFrdkxkNmZFeko3MHM0eDRUbzhtdWg2ZnVnWEIzbHlGZVV3ZXlWMUxPYVZ4MFpWQjFrcno1cmtPMHIxUFpF?oc=5",
+      "excerpt": "Is Sharplink (SBET) Trading At A Premium To Its Sales? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T02:39:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Is Sharplink (SBET) Trading At A Premium To Its Sales?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcFgzNGFhbHVBNzV2dWtaTzFtMlp6RkhuUmp0NXdCeEExZFNESGpCbVRaVEdQemN2aUlsZkxqS2R2ZFdQZDhsRjRKaGwxUVhaRW1lOWE3czd2c1RHVFJpOHlHdDlwaDFrdkxkNmZFeko3MHM0eDRUbzhtdWg2ZnVnWEIzbHlGZVV3ZXlWMUxPYVZ4MFpWQjFrcno1cmtPMHIxUFpF?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-16T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "27c525e3948f5a",
       "title": "MicroStrategy (Strategy) Spends $16 Billion to Support STRC Price Amid Liquidity Strain",
       "published_at": "2026-10-16T05:45:32Z",
@@ -8418,6 +8460,48 @@
       ]
     },
     {
+      "id": "b147f935298bc9",
+      "title": "PURR jumps as traders appear to lean into Hyperliquid exposure | PURR Stock News",
+      "published_at": "2026-10-05T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Hyperliquid Strategies"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Quiver Quantitative · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeXE0QVpzWHFsMExPSUJ1WTJXU0lIVXlQVkRMajRmYlJLNHNKb1JXN0tIOTFhYUNWOV9KeDhiNXZ3NXpDSzlvZTRTLXR5d284TG5pN1NGdzVIQktmc0pIOFFOVlljckFmX1RlakpKSF9sWFZERmFpZ0hfb1BrTk9RTTFxcG8wXzFYenpMeUQ5NTBfYmtsVW1pQlMxYw?oc=5",
+      "excerpt": "PURR jumps as traders appear to lean into Hyperliquid exposure | PURR Stock News Quiver Quantitative",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T02:39:47Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "PURR jumps as traders appear to lean into Hyperliquid exposure | PURR Stock News",
+          "name": "Quiver Quantitative · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeXE0QVpzWHFsMExPSUJ1WTJXU0lIVXlQVkRMajRmYlJLNHNKb1JXN0tIOTFhYUNWOV9KeDhiNXZ3NXpDSzlvZTRTLXR5d284TG5pN1NGdzVIQktmc0pIOFFOVlljckFmX1RlakpKSF9sWFZERmFpZ0hfb1BrTk9RTTFxcG8wXzFYenpMeUQ5NTBfYmtsVW1pQlMxYw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "PURR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "31be62092b46d5",
       "title": "Sharplink Stakes $200m of ETH Through Lido, Holds wstETH at Anchorage",
       "published_at": "2026-10-04T18:00:54Z",
@@ -9118,6 +9202,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "9a6a0c93aac85b",
+      "title": "FWDI: SOL per fully diluted share rose 33.4% as treasury and yield strategies scaled",
+      "published_at": "2026-10-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Forward Industries"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 73,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcnpnTjNDc3gwTmw1ZTNjN3BqTC1vNmk3bVp0QndjbkJ5X1VuMlBOSUlsdXNISnJqMGJ0dkR5ZUtvd2dsSzgwUGc4ZmZoZmc2SjhDM0ZfX1djcmk2TXlaMENrTXRCVE9na1VtS2FUMlR5b1VmOHo1OEliQUFET1ZFa01XSzVXWTZnbjVVTFc0M1dOTl9ENHM5clhfcU1XRDdjZnkyc2NSZU9paWM4ZDFUeFJvWExlU0hkREd6Q1hJWFVEdExEcUs3YXFwdFd6LXJkc0VmZXFmUFppeXFhYzh3SU40dTl2bDBQU2dKbk9weGtGeTRMNzhIdQ?oc=5",
+      "excerpt": "FWDI: SOL per fully diluted share rose 33.4% as treasury and yield strategies scaled TradingView",
+      "why_it_matters": "Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-10-31T02:39:49Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "FWDI: SOL per fully diluted share rose 33.4% as treasury and yield strategies scaled",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNcnpnTjNDc3gwTmw1ZTNjN3BqTC1vNmk3bVp0QndjbkJ5X1VuMlBOSUlsdXNISnJqMGJ0dkR5ZUtvd2dsSzgwUGc4ZmZoZmc2SjhDM0ZfX1djcmk2TXlaMENrTXRCVE9na1VtS2FUMlR5b1VmOHo1OEliQUFET1ZFa01XSzVXWTZnbjVVTFc0M1dOTl9ENHM5clhfcU1XRDdjZnkyc2NSZU9paWM4ZDFUeFJvWExlU0hkREd6Q1hJWFVEdExEcUs3YXFwdFd6LXJkc0VmZXFmUFppeXFhYzh3SU40dTl2bDBQU2dKbk9weGtGeTRMNzhIdQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "FWDI",
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If realised, 20%+ growth in coin holdings per diluted share would be exceptionally accretive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -12157,6 +12283,13 @@
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUDJuWjNqbFpZN1ZIYXdRTk9aZXI0UC00OHdTU0Z1Q091ekVaTTBUTHM5Q0l6al9FeXAzeV83dEJJa3NTeTlKYldQVWI1SVptN0ZnajFEM1J6RWtXSGtQeFNrQ1ZhdmdjSDlzT1REMEE2TURNa1d2YktEWmhobERHSTNSSEZDNW9kaVkyQVphS3p3NWd3Z2dsa2JHNEppLXdW?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-11T07:00:00Z"
+        },
+        {
+          "title": "Bitmine Surges 8% on Ethereum Strength After Cantor Fitzgerald Doubles Its Target, SharpLink Advances 9%, Strategy Gains 4%",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPemN4ODV3YldjcDUxb1FRWXc1OWV4bXZwVEhOWTMtbDJaNG92V0xpd0V6OTBxM3lRN0RZUEtWQkRWQW9Kb0hNUF8zS2FBOU5BUlpFTmpvNFBiYnpSVEhHMmtCU2JMdzNjRlNXRWtwaUM1eUxrVjRWQ3VQT2Q4MVJHaHBfdHBRUFpETTVnT012dEJQQV9mcHNOOHUwQnlVU2ZibW51TTBzMHdvTXhsQnlMMzJjT0lhcTNvVktGLTVfN1o3ZXlkLV9JNWRZVVFvakVaaDdIMGxWdFJXUVMxT19rREpueFJibmw0WllRUDk1ckgwUHB1?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-11T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14563,6 +14696,90 @@
       "moon_meters": [
         {
           "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0b14a3c4f38a1e",
+      "title": "Hyperliquid Strategies (PURR) On Trump Backed U.S. Path But Valuation Still Hard To Read",
+      "published_at": "2026-08-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Hyperliquid Strategies"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbFZpZ2hOOFJ6OXpfUllmcU8wVHJzLWFPR2hMSXdrb3FSM3pwLW1OWUtRakpacmhTRnRKaVNCejVyMm05Z0FUbmpqd21Lb2ExOHBCdi1XUEM4eC15MWJOQndGQzVLNV80d0hZOUg1cUxKd0VraC1COEtoeHdocURWRXY4Mnp3SXNUQ0ZTYlZrUS1hdUFhOXlnVTJjM0dXQzFZQ1Zsbm1wRGc?oc=5",
+      "excerpt": "Hyperliquid Strategies (PURR) On Trump Backed U.S. Path But Valuation Still Hard To Read Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T02:39:47Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Hyperliquid Strategies (PURR) On Trump Backed U.S. Path But Valuation Still Hard To Read",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbFZpZ2hOOFJ6OXpfUllmcU8wVHJzLWFPR2hMSXdrb3FSM3pwLW1OWUtRakpacmhTRnRKaVNCejVyMm05Z0FUbmpqd21Lb2ExOHBCdi1XUEM4eC15MWJOQndGQzVLNV80d0hZOUg1cUxKd0VraC1COEtoeHdocURWRXY4Mnp3SXNUQ0ZTYlZrUS1hdUFhOXlnVTJjM0dXQzFZQ1Zsbm1wRGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "PURR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0c4013b6491ab8",
+      "title": "Why Hyperliquid Strategies (PURR) Is Up 58.4% After Trump-Backed Push For Compliant Hyperliquid Entry",
+      "published_at": "2026-08-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Hyperliquid Strategies"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPS2xqNlhHYmxZeWVzNXdQT2kyX3F4WHkxZ2ZHSzFoR2FmVXBQOE0zdXBCYXhHa3dISTY5TmlRMWpqUWtvYVN6MFA5UVNDX2RpVkgwZWI2aUpVNUZvZnZ0LU1GWjFiVTNKcmdaR2hXellGYzRtTFBpam93NXFJVnVseGRsSUxEYkt3UFpTdXpONnJFSFZpUTU4a3gzVkxVbTFH?oc=5",
+      "excerpt": "Why Hyperliquid Strategies (PURR) Is Up 58.4% After Trump-Backed Push For Compliant Hyperliquid Entry Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-10-31T02:39:47Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Hyperliquid Strategies (PURR) Is Up 58.4% After Trump-Backed Push For Compliant Hyperliquid Entry",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPS2xqNlhHYmxZeWVzNXdQT2kyX3F4WHkxZ2ZHSzFoR2FmVXBQOE0zdXBCYXhHa3dISTY5TmlRMWpqUWtvYVN6MFA5UVNDX2RpVkgwZWI2aUpVNUZvZnZ0LU1GWjFiVTNKcmdaR2hXellGYzRtTFBpam93NXFJVnVseGRsSUxEYkt3UFpTdXpONnJFSFZpUTU4a3gzVkxVbTFH?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "PURR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -22971,223 +23188,6 @@
       "moon_meters": [
         {
           "asset": "XRP",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "e41a12a3acca78",
-      "title": "'Ethereum Wins The Scoreboard,' Says SharpLink CEO, Comparing ETH's Long Game To Bezos's Amazon Bet",
-      "published_at": "2026-05-31T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOeU1lMmdLYUtBSFNLNHotZU9PajFXeUlzNjI3NjVsVE44TGNuMlZqUDBvbDFCWXo3V01iVjFUa1JZdXJWcm9YS2wzaF90OGJFUi1ud3ctUUZFaFJPemJSTUVWaHNrQ1Y4c2NROUUxYk5VeHNPOXBJNkw3V2cxei1FbzBPdTNPSU5sc2M4OGI2OVdzU3pzWGQxclRJYTFoNFJfU3lUYlJGYw?oc=5",
-      "excerpt": "'Ethereum Wins The Scoreboard,' Says SharpLink CEO, Comparing ETH's Long Game To Bezos's Amazon Bet Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:31Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "'Ethereum Wins The Scoreboard,' Says SharpLink CEO, Comparing ETH's Long Game To Bezos's Amazon Bet",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOeU1lMmdLYUtBSFNLNHotZU9PajFXeUlzNjI3NjVsVE44TGNuMlZqUDBvbDFCWXo3V01iVjFUa1JZdXJWcm9YS2wzaF90OGJFUi1ud3ctUUZFaFJPemJSTUVWaHNrQ1Y4c2NROUUxYk5VeHNPOXBJNkw3V2cxei1FbzBPdTNPSU5sc2M4OGI2OVdzU3pzWGQxclRJYTFoNFJfU3lUYlJGYw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-31T07:00:00Z"
-        },
-        {
-          "title": "'Ethereum Wins The Scoreboard,' Says SharpLink CEO, Comparing ETH's Long Game To Bezos's Amazon Bet",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNcm1Ba2lNM1YyY0RXU2lfU0lLVkdPTXdheHM5czFlelh2cTJaazRNRzBaejBDbno2VlhmNWJ0eUthcU9oYkZKNDVmT2JwbDlJNDkxSS10WVFsTG1pX2ZCZE10R2pXVG1tR1Jybjk0NURnNXpya2NaSnlSNlo4TzVFSmhJM3pNNnF5TXE3a3M1Q3htMkdmZURGbTl1RUQ2alBFeUJ5VTVxUnNsSHhra3Y0c3BKU3VaUGhfQmNSZDZELXVDOXlwdW1CT01DbU1CTkhiMUhYMXZsSjdyR1RxZmt0a1Y2ZG1XMmtyLW1leQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-31T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "5f0d1ce509f11a",
-      "title": "Strategy's Michael Saylor teases BTC buy with 'working better' tweet",
-      "published_at": "2026-05-31T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOWDNiMncwb2s1RTlROXdTdW5ya2ptXzNaR0dSYmtUSXFrNWg2cmt6OTE5ZHBjSHRLWHptVFZHTGlST2ZDdXlqejQ0REM1RDZ4UjhvNU5RRTNlaEc3ZVhEWVN4eGI0QTIzUElsSEd1TXZIdkJLd1FhVzdBUHNJX2tJc293X0FGNi12dHRqR0tCN0otbllKd2U1YnlFX0xQQk03bW00cGdvVlZxSVI4TXVteWI4UTQwVkQydHo3WjgtWG5LbjJLQUNZV05n?oc=5",
-      "excerpt": "Strategy's Michael Saylor teases BTC buy with 'working better' tweet TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy's Michael Saylor teases BTC buy with 'working better' tweet",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOWDNiMncwb2s1RTlROXdTdW5ya2ptXzNaR0dSYmtUSXFrNWg2cmt6OTE5ZHBjSHRLWHptVFZHTGlST2ZDdXlqejQ0REM1RDZ4UjhvNU5RRTNlaEc3ZVhEWVN4eGI0QTIzUElsSEd1TXZIdkJLd1FhVzdBUHNJX2tJc293X0FGNi12dHRqR0tCN0otbllKd2U1YnlFX0xQQk03bW00cGdvVlZxSVI4TXVteWI4UTQwVkQydHo3WjgtWG5LbjJLQUNZV05n?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-31T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "a95d56aa364494",
-      "title": "Peter Schiff: MicroStrategy’s ‘Smart’ Debt Buyback Just Torched 60% of Its Safety Net",
-      "published_at": "2026-05-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 73,
-      "source": "24/7 Wall St. · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQenRkdFdScFlzaThpV1hNbTNHanVXZnJNY0NTVXpwa1hDV1MxNlREalJxR0VQeDVSbmw1blpBTERpazVxdVlFTVJNM25zbjU2alVEbWltUWtsWC1OLWU2RDlaZ05yaXpQWlVvOGZBdEo0cGo2MU5zVnhwNWZoZjhSd3ZFWHVLTXotQjFOSjhYTTdvNXBSa0t3VnZBU3pMdE9yOXdCeFRIQ1MxeTVyR2EwUTliYm5LX2tpc1FQOVZ6N3YtZw?oc=5",
-      "excerpt": "Peter Schiff: MicroStrategy’s ‘Smart’ Debt Buyback Just Torched 60% of Its Safety Net 24/7 Wall St.",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-28T02:31:52Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Peter Schiff: MicroStrategy’s ‘Smart’ Debt Buyback Just Torched 60% of Its Safety Net",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQenRkdFdScFlzaThpV1hNbTNHanVXZnJNY0NTVXpwa1hDV1MxNlREalJxR0VQeDVSbmw1blpBTERpazVxdVlFTVJNM25zbjU2alVEbWltUWtsWC1OLWU2RDlaZ05yaXpQWlVvOGZBdEo0cGo2MU5zVnhwNWZoZjhSd3ZFWHVLTXotQjFOSjhYTTdvNXBSa0t3VnZBU3pMdE9yOXdCeFRIQ1MxeTVyR2EwUTliYm5LX2tpc1FQOVZ6N3YtZw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f0f107aea8c3d2",
-      "title": "Michael Saylor Has Kept Bitcoin Afloat. What Happens Now as Strategy Prepares to Sell?",
-      "published_at": "2026-05-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "24/7 Wall St. · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMDRnaHg2OVJtYk02eE1tQzJJSXpHZmhIUnU5MDJBaHFfeUFwNnhWek5pbzNibUh0LUh3TTVwbElBSjc4bDFlWVY4d3owVU1tTjgzaUdQUmVHc3FLS1RTcTFVSGhLQ0lNcWZTdHFJeG9KQ3pzaUJhUXpyaEdiOGhDejlKbmhBTXFWNnZlaUtnbmwzUjhVeFp2bGx5VDc4R0pPVHRFWTlTTW5IX1lXUG1uTzdYN2laaXI3QWVEOTNuNHBQUmNRcTQ0?oc=5",
-      "excerpt": "Michael Saylor Has Kept Bitcoin Afloat. What Happens Now as Strategy Prepares to Sell? 24/7 Wall St.",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into XRP price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-27T08:02:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor Has Kept Bitcoin Afloat. What Happens Now as Strategy Prepares to Sell?",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMDRnaHg2OVJtYk02eE1tQzJJSXpHZmhIUnU5MDJBaHFfeUFwNnhWek5pbzNibUh0LUh3TTVwbElBSjc4bDFlWVY4d3owVU1tTjgzaUdQUmVHc3FLS1RTcTFVSGhLQ0lNcWZTdHFJeG9KQ3pzaUJhUXpyaEdiOGhDejlKbmhBTXFWNnZlaUtnbmwzUjhVeFp2bGx5VDc4R0pPVHRFWTlTTW5IX1lXUG1uTzdYN2laaXI3QWVEOTNuNHBQUmNRcTQ0?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "8aa83a71045789",
-      "title": "Sharplink Gaming stock hits 52-week low at $5.83",
-      "published_at": "2026-05-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Investing.com · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeXJKa2tDUnJiTnJhd19VNWpwTXExOTgyZTJHVXlNRDZpdnAxZUVjSGVjZkFWSFo3MjkyS291UE5QY3dhaWZuc2sxNHQ0eUJsMVRaaGFHcHZSN2RnSEJiajFjNy0xODg2cmN5YkNKOGl5NDBQUnZwM1F3eWstb1Q2UElNck9SMzZFQUpDbW5wdWhnTVRLSXNndkF3V283dWJOTGdYMg?oc=5",
-      "excerpt": "Sharplink Gaming stock hits 52-week low at $5.83 Investing.com",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:32Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink Gaming stock hits 52-week low at $5.83",
-          "name": "Investing.com · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNeXJKa2tDUnJiTnJhd19VNWpwTXExOTgyZTJHVXlNRDZpdnAxZUVjSGVjZkFWSFo3MjkyS291UE5QY3dhaWZuc2sxNHQ0eUJsMVRaaGFHcHZSN2RnSEJiajFjNy0xODg2cmN5YkNKOGl5NDBQUnZwM1F3eWstb1Q2UElNck9SMzZFQUpDbW5wdWhnTVRLSXNndkF3V283dWJOTGdYMg?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-05-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
