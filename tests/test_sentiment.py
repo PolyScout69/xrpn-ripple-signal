@@ -13,7 +13,7 @@ def story(title, asset='XRPN', value=1, impact='Medium', age=1,
     return {
         'id': identifier or title, 'title': title,
         'published_at': published.isoformat().replace('+00:00', 'Z'),
-        'entities': [{'XRPN': 'Evernorth', 'MSTR': 'Strategy', 'LITS': 'Lite Strategy', 'PURR': 'Hyperliquid Strategies', 'SBET': 'SharpLink Gaming', 'FWDI': 'Forward Industries'}[asset]],
+        'entities': [{'XRPN': 'Evernorth', 'MSTR': 'Strategy', 'SBET': 'SharpLink Gaming'}[asset]],
         'source_type': source_type, 'category': 'Treasury',
         'impact': impact, 'score': score,
         'url': 'https://example.com/' + str(len(title)),
@@ -135,56 +135,6 @@ class SentimentTests(unittest.TestCase):
         ])
         self.assertEqual(s['value'], 3)
 
-    def test_lits_is_separate_from_mstr_and_xrpn(self):
-        events=[
-            story('Lite Strategy repurchases 13% of LTC-backed shares', 'LITS', value=3, impact='High'),
-            story('Lite Strategy dilution raises risk to LTC holders', 'LITS', value=-1, impact='Low'),
-            story('Strategy bitcoin reserve hit by severe loss', 'MSTR', value=-3, impact='High'),
-            story('Evernorth XRP treasury neutral update', 'XRPN', value=0),
-        ]
-        result=aggregate_sentiment(events,AS_OF)
-        self.assertEqual(set(result),{'XRPN','MSTR','LITS','PURR','SBET','FWDI'})
-        self.assertEqual(result['LITS']['stories'],2)
-        self.assertGreater(result['LITS']['value'],0)
-        self.assertLess(result['MSTR']['value'],0)
-        self.assertEqual(result['XRPN']['value'],0)
-
-    def test_lits_no_recent_stories_has_limited_coverage(self):
-        result=self.check([],ticker='LITS')
-        self.assertEqual(result['stories'],0)
-        self.assertEqual(result['value'],0)
-        self.assertEqual(result['coverage'],'Limited coverage')
-
-    def test_purr_sentiment_is_independent_and_materiality_weighted(self):
-        results=aggregate_sentiment([
-            story('Hyperliquid Strategies HYPE validator generates significant staking yield',
-                  'PURR',value=2,impact='High'),
-            story('Hyperliquid Strategies PURR minor administrative issue',
-                  'PURR',value=-1,impact='Low'),
-            story('Lite Strategy Litecoin treasury report', 'LITS',value=2,impact='High'),
-            story('Strategy holds Bitcoin in custody','MSTR',value=0)
-        ],AS_OF)
-        self.assertGreater(results['PURR']['value'],0)
-        self.assertEqual(results['PURR']['stories'],2)
-        self.assertEqual(results['LITS']['stories'],1)
-        self.assertEqual(results['MSTR']['value'],0)
-
-    def test_purr_buyback_articles_count_as_one_catalyst(self):
-        results=self.check([
-            story('Hyperliquid Strategies Inc raises stock repurchase authorization to $100 million',
-                  'PURR',value=1,identifier='purr-issuer'),
-            story('PURR buys back more shares as Hyperliquid Strategies approves $100m buyback',
-                  'PURR',value=1,identifier='purr-publisher'),
-        ],ticker='PURR')
-        self.assertEqual(results['stories'],2)
-        self.assertEqual(results['directional_events'],1)
-
-    def test_no_recent_purr_news_is_explicitly_low_coverage(self):
-        result=self.check([],ticker='PURR')
-        self.assertEqual(result['stories'],0)
-        self.assertEqual(result['value'],0)
-        self.assertIn(result['coverage'],('No coverage','Limited coverage'))
-
     def test_insufficient_and_sec_entries_excluded(self):
         bad = story('Unrated hypothetical', value=0)
         bad['moon_meters'][0]['value'] = None
@@ -194,41 +144,58 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(s['stories'], 0)
         self.assertEqual(s['value'], 0)
 
-    def test_sbet_fwdi_sentiment_is_independent_and_preserves_downside(self):
+    def test_three_company_sentiment_stays_independent_and_ordered(self):
         results = aggregate_sentiment([
             story('SharpLink earns material ETH staking income', 'SBET', value=2, impact='High'),
             story('SharpLink routine shareholder presentation', 'SBET', value=0, impact='Low'),
-            story('Forward Industries SOL treasury custody loss', 'FWDI', value=-2, impact='High'),
-            story('Forward Industries appoints director', 'FWDI', value=1, impact='Low'),
+            story('Strategy Bitcoin treasury custody loss', 'MSTR', value=-2, impact='High'),
+            story('Strategy appoints director', 'MSTR', value=1, impact='Low'),
+            story('Evernorth routine shareholder update', 'XRPN', value=0),
         ], AS_OF)
-        self.assertEqual(set(results), {'XRPN', 'MSTR', 'LITS', 'PURR', 'SBET', 'FWDI'})
+        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET'])
         self.assertGreater(results['SBET']['value'], 0)
-        self.assertLess(results['FWDI']['value'], 0)
+        self.assertLess(results['MSTR']['value'], 0)
         self.assertEqual(results['SBET']['stories'], 2)
-        self.assertEqual(results['FWDI']['stories'], 2)
+        self.assertEqual(results['MSTR']['stories'], 2)
+        self.assertEqual(results['XRPN']['value'], 0)
+
+    def test_removed_issuers_and_archived_meter_values_cannot_reenter_sentiment(self):
+        retired = ('Lite Strategy', 'Hyperliquid Strategies', 'Forward Industries')
+        archived = story('Retired issuer treasury announcement', 'MSTR', value=3)
+        archived['entities'] = list(retired)
+        # Even a stale active-asset meter must not count without its issuer.
+        archived['moon_meters'].extend({'asset': ticker, 'value': 3}
+                                      for ticker in ('LITS', 'PURR', 'FWDI'))
+        results = aggregate_sentiment([archived], AS_OF)
+        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET'])
+        self.assertTrue(all(result['stories'] == 0 for result in results.values()))
+        mixed = story('SharpLink joint company announcement', 'SBET', value=1)
+        mixed['entities'].extend(retired)
+        mixed['moon_meters'].extend(archived['moon_meters'])
+        results = aggregate_sentiment([mixed], AS_OF)
+        self.assertEqual(results['SBET']['stories'], 1)
         self.assertEqual(results['MSTR']['stories'], 0)
 
-    def test_new_treasury_duplicate_buyback_and_staking_coverage_counts_once(self):
-        for ticker, titles in (
-            ('SBET', ('SharpLink announces stock repurchase authorization', 'SBET buyback approved')),
-            ('FWDI', ('Forward Industries SOL staking revenue increases', 'FWDI earns higher staking income')),
+    def test_sbet_duplicate_buyback_and_staking_coverage_counts_once(self):
+        for titles in (
+            ('SharpLink announces stock repurchase authorization', 'SBET buyback approved'),
+            ('SharpLink ETH staking revenue increases', 'SBET earns higher staking income'),
         ):
-            with self.subTest(ticker=ticker):
+            with self.subTest(titles=titles):
                 result = self.check([
-                    story(titles[0], ticker, value=1, identifier='issuer'),
-                    story(titles[1], ticker, value=1, identifier='syndicated'),
-                ], ticker=ticker)
+                    story(titles[0], 'SBET', value=1, identifier='issuer'),
+                    story(titles[1], 'SBET', value=1, identifier='syndicated'),
+                ], ticker='SBET')
                 self.assertEqual(result['stories'], 2)
                 self.assertEqual(result['directional_events'], 1)
 
-    def test_new_treasury_cards_report_no_stories_without_manufacturing_score(self):
-        for ticker in ('SBET', 'FWDI'):
+    def test_three_treasury_cards_report_no_stories_without_manufacturing_score(self):
+        for ticker in ('MSTR', 'XRPN', 'SBET'):
             with self.subTest(ticker=ticker):
                 result = self.check([], ticker=ticker)
                 self.assertEqual(result['stories'], 0)
                 self.assertEqual(result['value'], 0)
                 self.assertIn(result['coverage'], ('No coverage', 'Limited coverage'))
-
 
 if __name__ == '__main__':
     unittest.main()

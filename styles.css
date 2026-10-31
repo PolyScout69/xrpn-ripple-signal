@@ -197,34 +197,31 @@
 }
 
 
-/* Lite Strategy LITS: stock quote and Moon Sentiment accents. */
-.ticker-l{background:#2b3e2f;color:#b9e8a0;border-color:#51745e}
-.entity-label.lits{color:#bfe5a3}
-.quote-icon-lits{background:#29452c;color:#c8efab;border-color:#547959}
-.quote-card-lits{background:linear-gradient(135deg,#1d2b21,#121f29 60%,#14212a);border-color:#456249}
+/* Three treasury companies: desktop rows and responsive reading order. */
 .market-pulse-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .quote-card-top{flex-wrap:wrap}
 @media(min-width:821px){
-  /* Two activity counters above six sentiment indicators in two rows. */
+  /* Two activity counters above three sentiment indicators in one row. */
   .stats-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
   .stats-grid>.stat-card:not(.moon-sentiment-card){grid-column:span 6}
   .stats-grid>.moon-sentiment-card{grid-column:span 4}
 }
 @media(min-width:821px) and (max-width:1150px){
   .stats-grid>.moon-sentiment-card{grid-column:span 6}
+  .stats-grid>#sentiment-card-mstr{grid-column:1 / -1}
 }
 @media(min-width:641px) and (max-width:1150px){
   .market-pulse-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .market-pulse-grid>.quote-card:last-child{grid-column:auto}
+  .market-pulse-grid>.quote-card-mstr{grid-column:1 / -1}
 }
 @media(max-width:820px){
-  /* Sentiment cards follow the same reading order as Market Pulse. */
+  /* MSTR leads at full width; XRPN and SBET share the following row. */
   .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats-grid>.stat-card{grid-column:span 1}
+  .stats-grid>#sentiment-card-mstr{grid-column:1 / -1}
 }
 @media(max-width:640px){
   .market-pulse-grid{grid-template-columns:minmax(0,1fr)}
-  .market-pulse-grid>.quote-card:last-child{grid-column:auto}
 }
 
 
@@ -254,18 +251,8 @@
 }
 
 
-/* PURR — Hyperliquid Strategies' Nasdaq share ticker and HYPE treasury. */
-.ticker-p{background:#183e3b;color:#9beed5;border-color:#396e65}
-.entity-label.hypestrat{color:#a6e8d8}
-.quote-icon-purr{background:#193e3a;color:#a2f1df;border-color:#3e7166}
-.quote-card-purr{background:linear-gradient(145deg,#102a29,#101f28 68%,#151d27);border-color:#335c56}
-
-
-/* SBET / ETH and FWDI / SOL: company-specific accents. */
+/* SBET / ETH: company-specific accents. */
 .ticker-sbet,.quote-icon-sbet{background:#303153;color:#cac7ff;border-color:#5a5792}
 .entity-label.sbet{color:#c4c0ff}
-.ticker-fwdi,.quote-icon-fwdi{background:#263c41;color:#a0ebdc;border-color:#4d756f}
-.entity-label.fwdi{color:#a0ebdc}
 .quote-card-sbet{background:linear-gradient(135deg,#24243b,#151e2c 65%);border-color:#504f75}
-.quote-card-fwdi{background:linear-gradient(135deg,#1c3232,#131f2b 65%);border-color:#3d6660}
 @media(min-width:821px){.sidebar{overflow-y:auto;scrollbar-width:thin}}

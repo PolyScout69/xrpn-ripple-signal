@@ -8,9 +8,11 @@
   // Keep in sync with .github/workflows/daily-scan.yml and scripts/scan.py.
   // European morning, US morning and US after-hours news cycles (UTC).
   const SCAN_TIMES_UTC = [{hour:9,minute:15},{hour:14,minute:35},{hour:23,minute:35}];
-  const MOON_ASSETS = {Ripple:'XRP', Evernorth:'XRPN', Strategy:'MSTR', 'Lite Strategy':'LITS', 'Hyperliquid Strategies':'PURR', 'SharpLink Gaming':'SBET', 'Forward Industries':'FWDI'};
-  const DEFAULT_SOURCES = ['evernorth', 'ripple', 'lits', 'hypestrat', 'sbet', 'fwdi', 'media'];
-  const SOURCE_NAMES = {sbet:'SharpLink official', fwdi:'Forward Industries official', media:'Company investor news'};
+  const MOON_ASSETS = {Strategy:'MSTR', Evernorth:'XRPN', 'SharpLink Gaming':'SBET', Ripple:'XRP'};
+  const TREASURY_ASSETS = ['MSTR', 'XRPN', 'SBET'];
+  const RETIRED_COMPANY_TAGS = new Set(['xrp ecosystem','lite strategy','lits','hyperliquid strategies','purr','forward industries','fwdi','litecoin','ltc','hype','solana','sol']);
+  const DEFAULT_SOURCES = ['evernorth', 'sbet', 'ripple', 'media'];
+  const SOURCE_NAMES = {sbet:'SharpLink official', media:'Company investor news'};
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
   let toastTimer;
 
@@ -34,7 +36,7 @@
   function entityLabel(item) {
     const names=(item.entities||[]);
     if (!names.length) return `<span class="entity-label">OTHER</span>`;
-    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='Strategy'?'strategy':name==='Lite Strategy'?'lits':name==='Hyperliquid Strategies'?'hypestrat':name==='SharpLink Gaming'?'sbet':name==='Forward Industries'?'fwdi':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
+    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='Strategy'?'strategy':name==='SharpLink Gaming'?'sbet':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
   }
   function coverageHTML(item) {
     const links=(item.coverage||[]).filter(link=>link && link.url && safeUrl(link.url)!=='#' && link.url!==item.url).slice(0,48);
@@ -172,7 +174,7 @@
     $('crumb-view').textContent=state.view==='overview'?'OVERVIEW':VIEWS[state.view].toUpperCase();
     document.querySelectorAll('[data-view]').forEach(btn=>{const active=btn.dataset.view===state.view;btn.classList.toggle('is-active',active);btn.setAttribute('aria-current',active?'page':'false');});
     document.querySelectorAll('[data-entity]').forEach(btn=>btn.classList.toggle('selected',btn.dataset.entity===state.entity));
-    $('saved-nav-count').textContent=state.saved.size;
+    $('saved-nav-count').textContent=state.data.items.filter(item=>state.saved.has(item.id)).length;
     $('high-nav-count').textContent=state.data.items.filter(x=>x.impact==='High'&&recent(x,30)).length;
     $('category-select').value=state.category;
     $('impact-select').value=state.impact;
@@ -191,27 +193,17 @@
     const events=new Map();
     const families=[
       ['equity',/equity (?:purchase )?facility|cantor.*facility/],
-      ['lits-buyback',/(?:lite strategy|lits).*(?:repurchas|buy[ -]?back)|(?:repurchas|buy[ -]?back).*(?:ltc|litecoin|lits)/],
-      ['litecoin-yield',/(?:ltc|litecoin|treasury).*(?:covered calls?|option premiums?)|(?:covered calls?|option premiums?).*(?:ltc|litecoin|treasury)/],
-      ['litvm',/litvm/],
-      ['purr-buyback',/(?:hyperliquid strategies|purr).*(?:repurchas|buy[\s-]?back)|(?:repurchas|buy[\s-]?back).*(?:purr|hyperliquid strategies)/],
-      ['purr-staking',/(?:hype|hyperliquid).*(?:staking|validator|yield)|(?:staking|validator|yield).*(?:hype|hyperliquid)/],
       ['sbet-buyback',/\b(?:sharplink|sharp link|sbet)\b.{0,110}\b(?:repurchas\w*|buy[\s-]?back\w*)\b|\b(?:repurchas\w*|buy[\s-]?back\w*)\b.{0,110}\b(?:sharplink|sharp link|sbet)\b/],
-      ['fwdi-buyback',/\b(?:forward industries|fwdi)\b.{0,110}\b(?:repurchas\w*|buy[\s-]?back\w*)\b|\b(?:repurchas\w*|buy[\s-]?back\w*)\b.{0,110}\b(?:forward industries|fwdi)\b/],
       ['eth-staking',/\b(?:eth|ether|ethereum|sharplink|sbet)\b.{0,80}\b(?:staking|restaking|validator|yield)\b|\b(?:staking|restaking|validator|yield)\b.{0,80}\b(?:eth|ether|ethereum|sharplink|sbet)\b/],
-      ['sol-staking',/\b(?:sol|solana|forward industries|fwdi)\b.{0,80}\b(?:staking|validator|yield)\b|\b(?:staking|validator|yield)\b.{0,80}\b(?:sol|solana|forward industries|fwdi)\b/],
       ['eth-purchase',/\b(?:acquir|buy|buys|bought|purchas)\w*\b.*\b(?:eth|ether|ethereum)\b/],
-      ['sol-purchase',/\b(?:acquir|buy|buys|bought|purchas)\w*\b.*\b(?:sol|solana)\b/],
-      ['hype-per-share',/hype(?: backing)? per (?:fully diluted |diluted )?share/],
-      ['ltc-per-share',/(?:ltc|litecoin)(?: backing)? per (?:fully diluted |diluted )?share/],
       ['warrants',/11\.?5\s*m(?:illion)?.*shares|register.*shares.*warrant/],
       ['vote',/(?:shareholder|merger) (?:vote|approval)|shareholders? approve/],
       ['merger',/complet.*(?:business combination|merger)/],
       ['yield',/(?:xrp.*(?:yield|lending)|(?:yield|lending).*xrp|(?:treasury|xrp).*(?:coinbase|kraken|bitgo))/],
-      ['pershare',/(?:xrp|bitcoin|btc|ltc|litecoin|hype|eth|ether|ethereum|sol|solana) per (?:fully diluted |diluted )?share/],
+      ['pershare',/(?:xrp|bitcoin|btc|eth|ether|ethereum) per (?:fully diluted |diluted )?share/],
       ['listing',/(?:nasdaq|go(?:es|ing)? public).*(?:debut|list|begins trading)/],
       ['uphold',/uphold.*(?:list|stock|access)/],
-      ['drawdown',/(?:treasury|xrp|bitcoin|btc|ltc|litecoin|hype|eth|ether|ethereum|sol|solana).*(?:loss|loses?|lost|drop|down)/],
+      ['drawdown',/(?:treasury|xrp|bitcoin|btc|eth|ether|ethereum).*(?:loss|loses?|lost|drop|down)/],
       ['preferred',/(?:repurchas|redeem|buyback).*(?:preferred|strc|strk|strf)|(?:preferred|strc|strk|strf).*(?:repurchas|redeem|buyback)/],
       ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/]
     ];
@@ -313,12 +305,7 @@
     const items=state.data.items;
     $('stat-new').textContent=fmtNum(items.filter(i=>recent(i,1)).length);
     $('stat-high').textContent=fmtNum(items.filter(i=>i.impact==='High'&&recent(i,7)).length);
-    renderSentiment('XRPN');
-    renderSentiment('MSTR');
-    renderSentiment('LITS');
-    renderSentiment('PURR');
-    renderSentiment('SBET');
-    renderSentiment('FWDI');
+    TREASURY_ASSETS.forEach(renderSentiment);
     $('chart-total').textContent=fmtNum(items.filter(i=>recent(i,30)).length);
     renderChart(items);
   }
@@ -368,14 +355,21 @@
       // Drop legacy filing items and links from previously cached snapshots.
       data.items=data.items.filter(x=>x.category!=='SEC filings'&&x.source_type!=='SEC'&&!String(x.source_id||'').startsWith('sec_'));
       // Keep cached snapshots compatible with the current company watchlist.
-      // Retired network-only stories disappear; company stories retain valid tags.
+      // Retired company stories disappear; mixed stories retain active company tags.
       data.items=data.items.map(item=>{
         const entities=(item.entities||[]).filter(name=>Object.hasOwn(MOON_ASSETS,name));
         const assets=new Set(entities.map(name=>MOON_ASSETS[name]));
-        return {...item,entities,tags:(item.tags||[]).filter(tag=>tag!=='XRP Ecosystem'),
+        return {...item,entities,tags:(item.tags||[]).filter(tag=>!RETIRED_COMPANY_TAGS.has(String(tag).trim().toLowerCase())),
           moon_meters:(item.moon_meters||[]).filter(m=>assets.has(m.asset)),
           coverage:(item.coverage||[]).filter(c=>c.source_type!=='SEC'&&!/sec\.gov\/Archives\/edgar/i.test(c.url||''))};
       }).filter(item=>item.entities.length>0);
+      data.sources=Object.fromEntries(Object.entries(data.sources||{}).filter(([id])=>DEFAULT_SOURCES.includes(id)));
+      data.sentiment_30d=Object.fromEntries(Object.entries(data.sentiment_30d||{}).filter(([asset])=>TREASURY_ASSETS.includes(asset)));
+      if(data.scan.status!=='starter'){
+        const statuses=DEFAULT_SOURCES.map(id=>data.sources[id]?.status||'pending');
+        data.scan.status=statuses.every(status=>status==='ok')?'ok':statuses.some(status=>status==='ok'||status==='degraded')?'partial':'failed';
+      }
+      if(state.entity!=='All'&&!Object.hasOwn(MOON_ASSETS,state.entity))state.entity='All';
       state.data=data;renderAll();
       if(showFeedback)notify(previous!==data.scan.ran_at?'Latest published snapshot loaded':'Already showing the latest published snapshot');
     } catch(error) {

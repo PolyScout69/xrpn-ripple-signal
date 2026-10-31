@@ -21,7 +21,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
-        for entity, asset in [('Ripple','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('Lite Strategy','LITS'),('Hyperliquid Strategies','PURR'),('SharpLink Gaming','SBET'),('Forward Industries','FWDI')]:
+        for entity, asset in [('Ripple','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('SharpLink Gaming','SBET')]:
             self.assertEqual(score('Routine update',entity)['asset'],asset)
         both=moon_for_story(dict(title='Ripple and XRPL cooperate on network',entities=['Ripple','XRP Ecosystem'],source_type='Official'))
         self.assertEqual([m['asset'] for m in both],['XRP'])
@@ -46,7 +46,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(m['value'],-3)
         self.assertIn('solvency',m['reason'])
         for title in ('ETF approval denied','Strategy reports new bitcoin treasury plan','Spot XRP ETF launch date'):
-            for ent in ['Ripple','Evernorth','Strategy','SharpLink Gaming','Forward Industries']:
+            for ent in ['Ripple','Evernorth','Strategy','SharpLink Gaming']:
                 v=score(title,ent)['value']
                 self.assertLessEqual(v,3)
                 self.assertGreaterEqual(v,-3)
@@ -126,62 +126,9 @@ class MoonMeterTests(unittest.TestCase):
         result=score('Strategy STRC preferred stock market has hidden dependency on its own buybacks','Strategy','Media')
         self.assertEqual(result['value'],-1)
 
-    def test_generic_hype_does_not_become_plus_three(self):
+    def test_promotional_language_does_not_become_plus_three(self):
         self.assertEqual(score('Evernorth says something special is planned','Evernorth','Media')['value'],0)
         self.assertEqual(score('Ripple new product launch for RLUSD','Ripple','Media')['value'],1)
-
-    def test_lits_litecoin_share_buyback_and_yield(self):
-        buyback=score('Lite Strategy repurchases 13% of outstanding shares, increasing Litecoin backing per share',
-                      'Lite Strategy','Official')
-        self.assertEqual(buyback['asset'],'LITS')
-        self.assertEqual(buyback['value'],3)
-        earned=score('Lite Strategy generates $930,000 in LTC covered call option premiums',
-                     'Lite Strategy','Official')
-        self.assertEqual(earned['value'],2)
-        program=score('Lite Strategy launches covered call options treasury program for LTC',
-                      'Lite Strategy','Media')
-        self.assertEqual(program['value'],1)
-        ecosystem=score('Lite Strategy leads strategic investment in LitVM',
-                        'Lite Strategy','Media')
-        self.assertEqual(ecosystem['value'],1)
-
-    def test_lits_bearish_scenario_and_coin_per_share(self):
-        self.assertEqual(score('Lite Strategy plans to liquidate LTC treasury',
-                               'Lite Strategy','Media')['value'],-3)
-        self.assertEqual(score('Lite Strategy raises funds to buy more LTC',
-                               'Lite Strategy','Media')['value'],0)
-        self.assertEqual(score('Lite Strategy reports Litecoin per fully diluted share increases 25% after dilution',
-                               'Lite Strategy','Official')['value'],3)
-        self.assertEqual(score('Lite Strategy general shareholder presentation',
-                               'Lite Strategy','Media')['value'],0)
-
-    def test_purr_capital_allocation_and_staking_scenarios(self):
-        self.assertEqual(
-            score('Hyperliquid Strategies Inc Announces Increase of Stock Repurchase Program to $100 Million',
-                  'Hyperliquid Strategies','Official')['value'],1)
-        self.assertEqual(
-            score('Hyperliquid Strategies and Unit Labs Announce Validator on Hyperliquid',
-                  'Hyperliquid Strategies','Official')['value'],1)
-        self.assertEqual(
-            score('Hyperliquid Strategies reports $9.5 million staking revenue and validator commissions on HYPE holdings',
-                  'Hyperliquid Strategies','Official')['value'],2)
-        self.assertEqual(
-            score('Hyperliquid Strategies buys 1000000 HYPE for treasury',
-                  'Hyperliquid Strategies','Media')['value'],1)
-
-    def test_purr_hype_per_share_and_downside(self):
-        self.assertEqual(
-            score('Hyperliquid Strategies reports HYPE per fully diluted share increases 25% after dilution',
-                  'Hyperliquid Strategies','Official')['value'],3)
-        self.assertEqual(
-            score('Hyperliquid Strategies issues new PURR shares to acquire HYPE',
-                  'Hyperliquid Strategies','Official')['value'],-1)
-        self.assertEqual(
-            score('Hyperliquid Strategies plans to liquidate HYPE treasury',
-                  'Hyperliquid Strategies','Media')['value'],-3)
-        self.assertEqual(
-            score('Hyperliquid Strategies general company presentation',
-                  'Hyperliquid Strategies','Media')['value'],0)
 
     def test_merged_articles_recompute_once_per_asset(self):
         item={'title':'Evernorth announces equity facility','excerpt':'May issue additional shares','entities':['Evernorth','Ripple','XRP Ecosystem'],'source_type':'Official'}
@@ -195,41 +142,45 @@ class MoonMeterTests(unittest.TestCase):
                 'title': 'Network staking rewards increase and crypto prices rally',
                 'entities': entities, 'source_type': 'Media'}), [])
 
-    def test_sbet_fwdi_coin_backing_and_dilution_are_equity_specific(self):
-        for entity, ticker, coin in (('SharpLink Gaming', 'SBET', 'ETH'),
-                                     ('Forward Industries', 'FWDI', 'SOL')):
-            with self.subTest(ticker=ticker):
-                self.assertEqual(score(f'{entity} buys 10000 {coin} for treasury', entity)['value'], 1)
-                self.assertEqual(score(f'{entity} reports {coin} per diluted share rises 8%', entity)['value'], 2)
-                self.assertEqual(score(f'{entity} reports {coin} per fully diluted share increases 25% after dilution', entity)['value'], 3)
-                self.assertEqual(score(f'{entity} reports {coin} per fully diluted share declines 12%', entity)['value'], -2)
-                self.assertEqual(score(f'{entity} issues new {ticker} shares to acquire {coin}', entity)['value'], -1)
-                self.assertEqual(score(f'{entity} raises funds to buy more {coin}', entity)['value'], 0)
-                self.assertEqual(score(f'{entity} announces equity facility to expand staking', entity)['value'], -1)
-                self.assertEqual(score(f'{entity} general shareholder presentation', entity)['value'], 0)
+    def test_removed_companies_cannot_restore_archived_moon_meters(self):
+        retired = ['Lite Strategy', 'Hyperliquid Strategies', 'Forward Industries']
+        item = {'title': 'Treasury holdings and share buybacks update',
+                'entities': retired, 'source_type': 'Official',
+                'moon_meters': [{'asset': asset, 'value': 3} for asset in ('LITS', 'PURR', 'FWDI')]}
+        self.assertEqual(moon_for_story(item), [])
+        item['entities'] = ['Evernorth', *retired]
+        self.assertEqual([meter['asset'] for meter in moon_for_story(item)], ['XRPN'])
 
-    def test_sbet_fwdi_staking_benefits_do_not_override_custody_risks(self):
-        for entity, ticker, coin in (('SharpLink Gaming', 'SBET', 'ETH'),
-                                     ('Forward Industries', 'FWDI', 'SOL')):
-            with self.subTest(ticker=ticker):
-                self.assertEqual(score(f'{entity} launches {coin} staking operation', entity)['value'], 1)
-                rewards = score(f'{entity} generates $2 million in {coin} staking rewards', entity)
-                self.assertEqual(rewards['asset'], ticker)
-                self.assertEqual(rewards['value'], 2)
-                self.assertIn('custody', rewards['reason'])
-                self.assertEqual(score(f'{entity} reports staking rewards but custody withdrawals frozen after exploit', entity)['value'], -2)
-                self.assertEqual(score(f'{entity} validator defaults despite growing staking income', entity)['value'], -2)
-                self.assertEqual(score(f'Rumour: {entity} files for bankruptcy after staking losses', entity, 'Media')['value'], -3)
-                self.assertEqual(score(f'{entity} plans to liquidate {coin} treasury', entity)['value'], -3)
+    def test_sbet_coin_backing_and_dilution_are_equity_specific(self):
+        entity = 'SharpLink Gaming'
+        self.assertEqual(score('SharpLink buys 10000 ETH for treasury', entity)['value'], 1)
+        self.assertEqual(score('SharpLink reports ETH per diluted share rises 8%', entity)['value'], 2)
+        self.assertEqual(score('SharpLink reports ETH per fully diluted share increases 25% after dilution', entity)['value'], 3)
+        self.assertEqual(score('SharpLink reports ETH per fully diluted share declines 12%', entity)['value'], -2)
+        self.assertEqual(score('SharpLink issues new SBET shares to acquire ETH', entity)['value'], -1)
+        self.assertEqual(score('SharpLink raises funds to buy more ETH', entity)['value'], 0)
+        self.assertEqual(score('SharpLink announces equity facility to expand staking', entity)['value'], -1)
+        self.assertEqual(score('SharpLink general shareholder presentation', entity)['value'], 0)
 
-    def test_sbet_fwdi_buyback_authorization_is_not_executed_accretion(self):
-        for entity in ('SharpLink Gaming', 'Forward Industries'):
-            with self.subTest(entity=entity):
-                approved = score(f'{entity} announces $100 million stock repurchase authorization', entity)
-                self.assertEqual(approved['value'], 1)
-                self.assertIn('authorisation', approved['reason'])
-                self.assertEqual(score(f'{entity} repurchases common shares below NAV', entity)['value'], 2)
-                self.assertEqual(score(f'{entity} repurchases common shares', entity)['value'], 1)
+    def test_sbet_staking_benefits_do_not_override_custody_risks(self):
+        entity = 'SharpLink Gaming'
+        self.assertEqual(score('SharpLink launches ETH staking operation', entity)['value'], 1)
+        rewards = score('SharpLink generates $2 million in ETH staking rewards', entity)
+        self.assertEqual(rewards['asset'], 'SBET')
+        self.assertEqual(rewards['value'], 2)
+        self.assertIn('custody', rewards['reason'])
+        self.assertEqual(score('SharpLink reports staking rewards but custody withdrawals frozen after exploit', entity)['value'], -2)
+        self.assertEqual(score('SharpLink validator defaults despite growing staking income', entity)['value'], -2)
+        self.assertEqual(score('Rumour: SharpLink files for bankruptcy after staking losses', entity, 'Media')['value'], -3)
+        self.assertEqual(score('SharpLink plans to liquidate ETH treasury', entity)['value'], -3)
+
+    def test_sbet_buyback_authorization_is_not_executed_accretion(self):
+        entity = 'SharpLink Gaming'
+        approved = score('SharpLink announces $100 million stock repurchase authorization', entity)
+        self.assertEqual(approved['value'], 1)
+        self.assertIn('authorisation', approved['reason'])
+        self.assertEqual(score('SharpLink repurchases common shares below NAV', entity)['value'], 2)
+        self.assertEqual(score('SharpLink repurchases common shares', entity)['value'], 1)
 
 if __name__=='__main__':unittest.main()
 

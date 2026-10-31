@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Daily, source-first investor news scan for six crypto treasury issuers and Ripple.
+"""Daily, source-first investor news scan for Strategy, Evernorth, SharpLink Gaming and Ripple.
 
 Sources: official issuer announcements plus company-specific financial RSS.
 Standalone SEC filing records are deliberately excluded from the feed and Moon Meter.
@@ -37,17 +37,12 @@ from scripts.sentiment import aggregate_sentiment
 RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
 EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
-LITS_IR_URL = 'https://litestrategy.gcs-web.com/'
-LITS_IR_FALLBACK = 'https://kimbrxtherapeutics.gcs-web.com/press-releases'
-HYPESTRAT_WIRE = 'https://www.prnewswire.com/news/hyperliquid-strategies-inc/'
-HYPESTRAT_HOME = 'https://hypestrat.xyz/'
 # Public news-widget endpoints used by the companies' investor pages.
 # The B2i API parameter is a public website identifier, not a private token.
 SBET_NEWS_URL = 'https://www.b2i.us/b2i/LibraryFeed.asp?b=2597&api=Ex4Bw5Wv2&i=30&out=38&a=1'
-FWDI_NEWS_RSS = 'https://www.globenewswire.com/rssfeed/organization/OPQRMVxN84Rh7J5kh66nZA=='
-FWDI_SITEMAP = 'https://forwardindustries.com/sitemap.xml'
-TRACKED_ENTITIES = ('Evernorth', 'Ripple', 'Strategy', 'Lite Strategy',
-                    'Hyperliquid Strategies', 'SharpLink Gaming', 'Forward Industries')
+TRACKED_ENTITIES = ('Strategy', 'Evernorth', 'SharpLink Gaming', 'Ripple')
+RETIRED_TAGS = frozenset(('xrp ecosystem', 'lite strategy', 'lits', 'hyperliquid strategies',
+                          'purr', 'forward industries', 'fwdi', 'litecoin', 'ltc', 'hype', 'solana', 'sol'))
 MAX_AGE_DAYS = 365
 MAX_STORIES = 500
 REQUEST_TIMEOUT = 22
@@ -60,19 +55,9 @@ NEWS_QUERIES = [
     '"Evernorth" "XRPN" (rumor OR rumour OR reportedly OR exploring) (yield OR lending OR partnership OR treasury)',
     '"Strategy Inc" "MSTR" bitcoin treasury acquisitions capital',
     '"MicroStrategy" "MSTR" bitcoin preferred STRC earnings',
-    '"Lite Strategy" (LITS OR Litecoin OR LTC) (treasury OR earnings OR buyback OR yield OR partnership)',
-    '"Lite Strategy" (Litecoin OR LTC OR LITS)',
-    '"LITS" (treasury OR Litecoin OR repurchase OR covered call OR LitVM)',
-    '"Hyperliquid Strategies Inc" (PURR OR HYPE) (treasury OR staking OR repurchase OR earnings OR shares)',
-    '"Hyperliquid Strategies" "PURR" (buyback OR NAV OR validator OR yield OR partnership)',
-    '"NASDAQ:PURR" (HYPE OR treasury OR share OR staking OR earnings)',
-    'site:prnewswire.com/news-releases/ "Hyperliquid Strategies Inc" PURR',
     '"Sharplink" (SBET OR Ethereum OR ETH) (treasury OR staking OR earnings OR shares OR buyback)',
     '"SharpLink Gaming" (Ethereum OR ETH OR SBET)',
     '"SBET" (treasury OR staking OR repurchase OR dilution)',
-    '"Forward Industries" (FWDI OR Solana OR SOL) (treasury OR validator OR staking OR shares OR earnings)',
-    '"Forward Industries" (buyback OR repurchase OR partnership OR yield)',
-    '"FWDI" (treasury OR Solana OR staking OR shares)',
     '"Strategy" "MSTR" bitcoin purchase treasury financing',
     '"Michael Saylor" "MSTR" bitcoin purchases treasury',
     '"Strategy" ("STRC" OR "STRK" OR "STRF") preferred shares dividends buyback',
@@ -101,12 +86,9 @@ TOPIC_HINTS = ('share','equity','offering','warrant',
     'mstr','microstrategy','saylor','strc','strk','strf',
     'acquir','purchas','repurchas','preferred','convertible','dividend','reserve','earnings',
     'etf','validator','amendment','amm','dex','defi','network',
-    'litecoin','ltc','litvm','covered call','nav per share','option premium','voruciclib','zandelisib',
-    'hype','hyperliquid','purr','staking','validator commission','adjusted nav',
-    'sharplink','sbet','ethereum','ether treasury','eth per share',
-    'forward industries','fwdi','solana','sol per share')
+    'covered call','nav per share','option premium','staking','validator commission','adjusted nav',
+    'sharplink','sbet','ethereum','ether treasury','eth per share')
 LOG = logging.getLogger('signal')
-SOURCE_WARNINGS: dict[str,str] = {}
 
 
 def session_factory() -> requests.Session:
@@ -193,22 +175,14 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
     if force in TRACKED_ENTITIES:
         return [force]
     x = content.lower()
-    # Strategy is an ordinary English noun; never match it alone.
-    strategy = bool(re.search(r'\bmicrostrategy\b|\bmstr\b|\bstrategy inc\b|\bstrategy incorporated\b|\bstrategy\s*\(nasdaq', x)) or bool(re.search(r'\bstrategy\b', x) and any(v in x for v in ('btc yield','strc','strf','strk','michael saylor','bitcoin treasury company','bitcoin acquisitions')))
-    if 'michael saylor' in x and any(v in x for v in ('bitcoin', 'mstr', 'treasury', 'strategy')):
+    # Strategy is an ordinary English noun. Strip the retired issuer's name
+    # before matching so Lite Strategy, Inc. cannot be mistaken for MSTR,
+    # while a story mentioning both companies still retains real MSTR news.
+    strategy_text=re.sub(r'\blite\s+strategy(?:\s*,?\s*(?:inc\.?|incorporated))?', ' ', x)
+    strategy = bool(re.search(r'\bmicrostrategy\b|\bmstr\b|\bstrategy inc\b|\bstrategy incorporated\b|\bstrategy\s*\(nasdaq', strategy_text)) or bool(re.search(r'\bstrategy\b', strategy_text) and any(v in strategy_text for v in ('btc yield','strc','strf','strk','michael saylor','bitcoin treasury company','bitcoin acquisitions')))
+    if 'michael saylor' in strategy_text and any(v in strategy_text for v in ('bitcoin', 'mstr', 'treasury', 'strategy')):
         strategy = True
-    # "Lite Strategy, Inc." must not be mistaken for Strategy (MSTR).
-    lite_strategy = bool(re.search(r'\blite\s+strategy\b|\blits\b',x))
-    # PURR is a Nasdaq equity; bare HYPE is a token and bare PURR can refer
-    # to unrelated tokens. Require explicit issuer or stock context.
-    hypestrat = bool(
-        re.search(r'\bhyperliquid strategies(?:\s+inc(?:orporated)?)?\b|\bhypestrat(?:egies)?\b', x)
-        or re.search(r'\b(?:nasdaq\s*[:\-]?\s*purr|purr\s+(?:stock|shares|equity|common\s+stock)|(?:shares|stock|ticker)\s+(?:of\s+)?purr)\b',x)
-    )
     sharplink = bool(re.search(r'\bsharplink\b|\bsharp\s+link\s+gaming\b|\bsbet\b', x))
-    forward = bool(re.search(r'\bforward industries\b|\bfwdi\b', x))
-    if lite_strategy and not re.search(r'\bmstr\b|\bmicrostrategy\b|\bmichael\s+saylor\b|\bstrc\b|\bstrk\b|\bstrf\b',x):
-        strategy = False
     evernorth = bool('xrpn' in x or 'evernorth holdings' in x or ('evernorth' in x and ('xrp' in x or 'treasury' in x)))
     if any(v in x for v in ('pharmacy', 'cigna', 'health services')) and not any(v in x for v in ('xrpn', 'xrp treasury', 'digital asset treasury')):
         evernorth = False
@@ -221,10 +195,7 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
     if evernorth: result.append('Evernorth')
     if ripple: result.append('Ripple')
     if strategy: result.append('Strategy')
-    if lite_strategy: result.append('Lite Strategy')
-    if hypestrat: result.append('Hyperliquid Strategies')
     if sharplink: result.append('SharpLink Gaming')
-    if forward: result.append('Forward Industries')
     return result
 
 
@@ -236,10 +207,8 @@ def classify(title: str, excerpt: str = '', force_sec: bool = False) -> str:
         return 'SEC filings'
     if any(p in title_low for p in ('equity facility','capital raise','share sale','stock offering','shares issued','share issuance','warrant','ipo','nasdaq listing','business combination','shareholder vote','merger','funding round','at-the-market','atm program','preferred stock','convertible notes','buyback','repurchase')):
         return 'Capital markets'
-    if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','litecoin treasury','ltc treasury','ltc per share','litecoin backing per share','ltc holdings','litecoin holdings','covered call options','option premium',
-            'hype treasury','hype per share','hype holdings','hyperliquid treasury','staking revenue','staking yield','validator commissions',
-            'ethereum treasury','ether treasury','eth treasury','eth per share','eth holdings','ethereum holdings',
-            'solana treasury','sol treasury','sol per share','sol holdings','solana holdings','staking rewards')):
+    if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','covered call options','option premium','staking revenue','staking yield','validator commissions',
+            'ethereum treasury','ether treasury','eth treasury','eth per share','eth holdings','ethereum holdings','staking rewards')):
         return 'Treasury'
     if any(p in title_low for p in ('regulation','regulatory','sec lawsuit','court rules','license approved','licence','legislation','digital asset policy')):
         return 'Regulation'
@@ -264,7 +233,7 @@ def score_story(title: str, category: str, source_type: str, entities: list[str]
     score+=bonus
     if any(e in entities for e in TRACKED_ENTITIES if e != 'Ripple'):score+=5
     if any(k in x for k in ('equity facility','dilution','material agreement','financing','s-1','10-k','10-q','share offering','bitcoin purchase','repurchase','preferred stock')):score+=8
-    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','litecoin','ltc','litvm','covered call','hype','hyperliquid','staking','validator','ethereum','solana')):score+=3
+    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','covered call','staking','validator','ethereum')):score+=3
     score=min(99,score)
     return ('High' if score>=83 else 'Medium' if score>=66 else 'Low'),score
 
@@ -273,7 +242,7 @@ def investor_angle(category: str) -> str:
     return {
       'SEC filings':'Primary regulatory disclosure. Review the full filing for material agreements, risk factors, governance changes and potential effects on share count.',
       'Capital markets':'Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.',
-      'Treasury':'Track XRP, BTC, ETH, HYPE, SOL or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
+      'Treasury':'Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
       'Partnerships':'A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.',
       'Products':'A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.',
       'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.',
@@ -457,140 +426,6 @@ def fetch_evernorth_news() -> list[dict]:
     return stories
 
 
-def fetch_lits_news() -> list[dict]:
-    """Scan company-issued Lite Strategy (NASDAQ:LITS) news on its IR archive.
-
-    The principal GCS-Web host occasionally blocks bots, so its verified
-    historic IR host is tried as a fallback. Missing dates are never guessed.
-    """
-    links={}
-    responded=0
-    for homepage in (LITS_IR_URL,LITS_IR_FALLBACK):
-        try:
-            soup=BeautifulSoup(fetch(homepage).text,'html.parser')
-            responded+=1
-        except Exception as exc:
-            LOG.warning('Lite Strategy IR page unavailable %s: %s',homepage,exc)
-            continue
-        for anchor in soup.find_all('a',href=True):
-            url=urllib.parse.urljoin(homepage,anchor['href'])
-            p=urllib.parse.urlsplit(url)
-            if (p.hostname not in ('litestrategy.gcs-web.com','investor.litestrategy.com',
-                                   'kimbrxtherapeutics.gcs-web.com')
-                    or '/news-releases/news-release-details/' not in p.path):
-                continue
-            url=canonical_url(url)
-            title=plain_text(anchor.get_text(' ',strip=True),230)
-            if len(title)<18 or title.lower().startswith(('read more','pdf version','details')):
-                title=''
-            date=extract_date(news_context(anchor))
-            previous=links.get(url)
-            if previous is None or (title and not previous[0]) or (date and not previous[1]):
-                links[url]=(title,date)
-    if not links:
-        raise ValueError('Lite Strategy IR release archive unavailable or has no linked releases.')
-    stories=[]
-    for url,(title,date) in list(links.items())[:18]:
-        lead=''
-        try:
-            article=BeautifulSoup(fetch(url).text,'html.parser')
-            heading=article.find('h1')
-            if heading and len(heading.get_text(' ',strip=True))>=18:
-                title=plain_text(heading.get_text(' ',strip=True),230)
-            if not date:
-                for meta in article.find_all('meta'):
-                    key=(meta.get('property') or meta.get('name') or '').lower()
-                    if key in ('article:published_time','date','pubdate','datepublished','dc.date'):
-                        date=normalize_date(meta.get('content',''))
-                        if date:break
-            if not date:
-                for tag in article.find_all('time'):
-                    date=normalize_date(tag.get('datetime','')) or extract_date(tag.get_text(' ',strip=True))
-                    if date:break
-            if not date:
-                date=extract_date(article.get_text(' ',strip=True)[:2200])
-            for para in article.find_all('p'):
-                x=plain_text(para.get_text(' ',strip=True),230)
-                if len(x)>=70 and 'forward-looking statements' not in x.lower():
-                    lead=x
-                    break
-        except Exception as exc:
-            LOG.warning('Lite Strategy press-release detail unavailable %s: %s',url,exc)
-        if not title or not date:
-            continue
-        if 'Lite Strategy' not in identify_entities(title+' '+lead):
-            continue
-        item=make_story(title=title,date=date,url=url,source='Lite Strategy investor relations',
-                        source_type='Official',source_id='lits',entities=['Lite Strategy'],
-                        excerpt=lead or title,date_only=True)
-        if item:stories.append(item)
-    if not stories:
-        raise ValueError('Lite Strategy IR releases found, but no usable dated stories.')
-    return stories
-
-
-
-def fetch_hypestrat_news() -> list[dict]:
-    """Scan primary Nasdaq PURR issuer releases via its PR Newswire archive."""
-    soup=BeautifulSoup(fetch(HYPESTRAT_WIRE).text,'html.parser')
-    candidates={}
-    for anchor in soup.find_all('a',href=True):
-        url=urllib.parse.urljoin(HYPESTRAT_WIRE,anchor['href'])
-        parsed=urllib.parse.urlsplit(url)
-        if (parsed.hostname not in ('www.prnewswire.com','prnewswire.com')
-                or '/news-releases/' not in parsed.path):
-            continue
-        title=plain_text(anchor.get_text(' ',strip=True),230)
-        if len(title)<24 or not re.search(r'\bhyperliquid strategies\b',title,re.I):
-            continue
-        safe=canonical_url(url)
-        if safe and safe not in candidates:
-            candidates[safe]=(title,extract_date(news_context(anchor)))
-    if not candidates:
-        raise ValueError('Hyperliquid Strategies newswire yielded no issuer release links.')
-    stories=[]
-    for url,(fallback_title,date) in list(candidates.items())[:16]:
-        title=fallback_title
-        lead=''
-        try:
-            article=BeautifulSoup(fetch(url).text,'html.parser')
-            heading=article.find('h1')
-            if heading:
-                heading_text=plain_text(heading.get_text(' ',strip=True),230)
-                if len(heading_text)>=24:
-                    title=heading_text
-            if not date:
-                for meta in article.find_all('meta'):
-                    key=(meta.get('property') or meta.get('name') or '').lower()
-                    if key in ('article:published_time','date','pubdate','datepublished','dc.date'):
-                        date=normalize_date(meta.get('content',''))
-                        if date:break
-            if not date:
-                for el in article.find_all('time'):
-                    date=normalize_date(el.get('datetime','')) or extract_date(el.get_text(' ',strip=True))
-                    if date:break
-            if not date:
-                date=extract_date(article.get_text(' ',strip=True)[:3500])
-            for p in article.find_all('p'):
-                t=plain_text(p.get_text(' ',strip=True),240)
-                if 75<=len(t)<=240 and 'forward-looking statements' not in t.lower():
-                    lead=t
-                    break
-        except Exception as exc:
-            LOG.debug('Hyperliquid Strategies release detail unavailable %s: %s',url,exc)
-        if not date or not re.search(r'\bhyperliquid strategies\b',title,re.I):
-            continue
-        story=make_story(title=title,date=date,url=url,
-            source='Hyperliquid Strategies / PR Newswire',
-            source_type='Official',source_id='hypestrat',
-            entities=['Hyperliquid Strategies'],
-            excerpt=lead or title,date_only=True)
-        if story:stories.append(story)
-    if not stories:
-        raise ValueError('Hyperliquid Strategies newswire releases lacked dated issuer stories.')
-    return stories
-
-
 def fetch_sbet_news() -> list[dict]:
     """Read the official Sharplink investor-page B2i press-release widget.
 
@@ -627,95 +462,6 @@ def fetch_sbet_news() -> list[dict]:
     if not stories:
         raise ValueError('Sharplink official news widget yielded no usable dated release links.')
     return stories
-
-
-def fetch_fwdi_rss() -> list[dict]:
-    """Read the issuer-specific GlobeNewswire RSS embedded on Forward's IR page."""
-    stories=[]
-    for entry in rss_items(fetch(FWDI_NEWS_RSS).text):
-        url=canonical_url(entry['url'])
-        if urllib.parse.urlsplit(url).hostname not in (
-                'www.globenewswire.com','globenewswire.com',
-                'www.forwardindustries.com','forwardindustries.com'):
-            continue
-        # This organization feed is the company's own release channel.
-        # Do not require "Industries" in abbreviated issuer headlines.
-        item=make_story(title=entry['title'],date=entry['date'],url=url,
-                        source='Forward Industries / GlobeNewswire',source_type='Official',
-                        source_id='fwdi',entities=['Forward Industries'],
-                        excerpt=entry['excerpt'] or entry['title'])
-        if item:
-            stories.append(item)
-    if not stories:
-        raise ValueError('Forward Industries official RSS yielded no usable dated release links.')
-    return stories
-
-
-def fetch_fwdi_site_news() -> list[dict]:
-    """Read up to 16 first-party releases when the syndicator feed is unavailable.
-
-    Forward publishes complete press releases under /insights/. Its sitemap
-    lists current releases first but supplies no lastmod, so preserve issuer
-    document order and always obtain publication dates from each article.
-    The bounded archive is a fallback and is not claimed to be exhaustive.
-    """
-    root=ET.fromstring(fetch(FWDI_SITEMAP).text)
-    links=[]
-    for entry in root.findall('.//{*}url'):
-        url=canonical_url((entry.findtext('{*}loc') or '').strip())
-        parsed=urllib.parse.urlsplit(url)
-        if (parsed.hostname in ('forwardindustries.com','www.forwardindustries.com')
-                and parsed.path.startswith('/insights/') and url not in links):
-            links.append(url)
-    if not links:
-        raise ValueError('Company sitemap yielded no first-party release links.')
-    stories=[]
-    consecutive_errors=0
-    for url in links[:16]:
-        try:
-            article=BeautifulSoup(fetch(url).text,'html.parser')
-            heading=article.select_one('[data-framer-name="Article Hero"] h1') or article.find('h1')
-            date_node=article.select_one('time[datetime]')
-            title=plain_text(heading.get_text(' ',strip=True),230) if heading else ''
-            date=normalize_date(date_node.get('datetime','')) if date_node else None
-            if not title or not date:
-                continue
-            paragraphs=article.select('[data-framer-name="Article Wrapper"] [data-framer-component-type="RichTextContainer"] p')
-            lead=next((plain_text(p.get_text(' ',strip=True),235) for p in paragraphs
-                       if len(p.get_text(' ',strip=True))>=70
-                       and 'forward-looking statements' not in p.get_text(' ',strip=True).lower()),'')
-            item=make_story(title=title,date=date,url=url,
-                            source='Forward Industries official site',source_type='Official',
-                            source_id='fwdi',entities=['Forward Industries'],
-                            excerpt=lead or 'Issuer announcement: '+title,date_only=True)
-            if item:
-                stories.append(item)
-            consecutive_errors=0
-        except Exception as exc:
-            LOG.warning('Forward Industries archive article unavailable %s: %s',url,exc)
-            consecutive_errors+=1
-            if consecutive_errors>=3:
-                break
-    if not stories:
-        raise ValueError('Company archive yielded no usable dated issuer announcements.')
-    return stories
-
-
-def fetch_fwdi_news() -> list[dict]:
-    """Use the issuer RSS, then its independently published first-party archive."""
-    SOURCE_WARNINGS.pop('fwdi',None)
-    errors=[]
-    for name,reader in (('GlobeNewswire RSS',fetch_fwdi_rss),
-                        ('company archive',fetch_fwdi_site_news)):
-        try:
-            stories=reader()
-            if name=='company archive':
-                SOURCE_WARNINGS['fwdi']='Company archive fallback used after GlobeNewswire RSS failed; coverage may be incomplete.'
-            return stories
-        except Exception as exc:
-            errors.append(f'{name}: {exc}')
-            LOG.warning('Forward Industries %s unavailable: %s',name,exc)
-    raise ValueError('Forward Industries official sources unavailable. '+'; '.join(errors))
 
 
 def rss_items(xml_text: str) -> list[dict]:
@@ -892,11 +638,8 @@ def event_key(item: dict) -> str:
     amount_key = ((amount.group(1) + 'm') if amount else '')
     # Treasury updates repeat frequently. A disclosed token amount and the
     # reporting week separate a new purchase from recycled media coverage.
-    for issuer, key, coin in (
-            ('SharpLink Gaming','sbet',r'(?:eth|ether|ethereum)'),
-            ('Forward Industries','fwdi',r'(?:sol|solana)')):
-        if issuer not in entities:
-            continue
+    if 'SharpLink Gaming' in entities:
+        coin=r'(?:eth|ether|ethereum)'
         token_amount=re.search(r'\b(\d[\d,.]*(?:\s*(?:million|billion|m|b))?)\s+'+coin+r'\b',title)
         if token_amount:
             action=('purchase' if re.search(r'\b(?:acquir\w*|purchas\w*|buys?|bought)\b',title)
@@ -908,25 +651,9 @@ def event_key(item: dict) -> str:
                 if number:
                     multiplier={'million':1e6,'m':1e6,'billion':1e9,'b':1e9}.get(number.group(2),1)
                     quantity=format(float(number.group(1))*multiplier,'.12g')
-                    return key+':'+action+':'+quantity+':'+_news_week(item['published_at'])
+                    return 'sbet:'+action+':'+quantity+':'+_news_week(item['published_at'])
     # These issuer-specific one-off announcements can be worded very
     # differently by different publishers; their economic event is the same.
-    if 'Hyperliquid Strategies' in entities:
-        if re.search(r'\b(?:100|100\.0)\s*(?:m|million)\b',title) and re.search(
-                r'\b(?:repurchas\w*|buy[\s-]?back)\b',title):
-            return 'hypestrat:100m-buyback-authorisation:'+stamp
-        if 'validator' in title and any(w in title for w in ('unit labs','unit','staking')):
-            return 'hypestrat:validator-unit:'+stamp
-    if 'Lite Strategy' in entities:
-        if 'proof of time' in title:
-            return 'lits:proof-of-time:'+stamp
-        if 'results' in title and any(k in title for k in ('fiscal year','annual','fiscal 2026')):
-            return 'lits:annual-results:'+stamp
-        if 'litvm' in title and any(k in title for k in ('invest','partners')):
-            return 'lits:litvm-investment:'+stamp
-        if any(k in title for k in ('repurchas','buyback','buy-back')) and any(
-                k in title for k in ('litecoin','ltc','lits')):
-            return 'lits:share-repurchase:'+_news_week(item['published_at'])
     if 'Evernorth' in entities:
         # Distinct publisher headlines for the same shareholder approval of
         # the Armada business combination are one event (not the later closing).
@@ -1030,17 +757,16 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
     candidates=[dict(x) for x in [*old,*incoming] if publishable(x) and is_recent(x.get('published_at'))]
     for item in candidates:
         previous_entities=item.get('entities') or []
-        # Retired network-only coverage must not survive through the archive.
-        # Preserve valid company tags on a joint company/network report.
+        # Remove retired issuers and standalone network coverage from the archive.
+        # A joint report remains visible whenever an active company is covered.
         item['entities']=[entity for entity in previous_entities if entity in TRACKED_ENTITIES]
         if item.get('source_type') in ('Media','News') and not is_investor_news(item.get('title',''),item.get('excerpt','')):
             item['rejected_as_noise']=True
         if item.get('source_type') in ('Media','News'):
             found=identify_entities((item.get('title') or '')+' '+(item.get('excerpt') or ''))
             if found: item['entities']=found
-        item['tags']=[tag for tag in (item.get('tags') or []) if str(tag).casefold()!='xrp ecosystem']
-        if item['entities'] != previous_entities and 'moon_meters' in item:
-            item['moon_meters']=moon_for_story(item)
+        item['tags']=[tag for tag in (item.get('tags') or []) if str(tag).strip().casefold() not in RETIRED_TAGS]
+        item['why_it_matters']=investor_angle(item.get('category',''))
     candidates=[item for item in candidates if item.get('entities') and not item.get('rejected_as_noise')]
     candidates.sort(key=priority,reverse=True)
     consolidated=[]
@@ -1064,13 +790,16 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
             duplicate['entities']=sorted(set(duplicate.get('entities',[]))|set(item.get('entities',[])))
     consolidated.sort(key=lambda x:(x.get('published_at',''),x.get('score',0)),reverse=True)
     current=consolidated[:MAX_STORIES]
+    # Refresh meters after entity merging, including stale assets on otherwise
+    # unchanged archived stories. Removed tickers cannot survive normalisation.
+    for item in current:
+        item['moon_meters']=moon_for_story(item)
     added=sum(1 for x in current if x.get('id') not in existing_ids)
     return current,added
 
 
 def main() -> int:
     logging.basicConfig(level=logging.INFO,format='%(levelname)s %(message)s')
-    SOURCE_WARNINGS.clear()
     previous=json.loads(DATA_PATH.read_text(encoding='utf-8'))
     stamp=timestamp_now()
     statuses={}
@@ -1078,25 +807,20 @@ def main() -> int:
     sources=(
         ('ripple','Ripple press centre',fetch_ripple_press),
         ('evernorth','Evernorth official',fetch_evernorth_news),
-        ('lits','Lite Strategy official',fetch_lits_news),
-        ('hypestrat','Hyperliquid Strategies official',fetch_hypestrat_news),
         ('sbet','Sharplink official',fetch_sbet_news),
-        ('fwdi','Forward Industries official',fetch_fwdi_news),
         ('media','Company-specific financial news',fetch_media_news),
     )
     for key,name,reader in sources:
         try:
             stories=reader()
             incoming.extend(stories)
-            warning=SOURCE_WARNINGS.get(key)
-            statuses[key]={'name':name,'status':'degraded' if warning else 'ok','items_seen':len(stories),'checked_at':stamp,'message':(warning+' ' if warning else '')+f'Fetched {len(stories)} matching items.'}
+            statuses[key]={'name':name,'status':'ok','items_seen':len(stories),'checked_at':stamp,'message':f'Fetched {len(stories)} matching items.'}
             LOG.info('%s: %s items',name,len(stories))
         except Exception as exc:
             statuses[key]={'name':name,'status':'error','items_seen':0,'checked_at':stamp,'message':str(exc)[:240]}
             LOG.warning('%s: %s',name,exc)
     ready=sum(1 for x in statuses.values() if x['status']=='ok')
-    usable=sum(1 for x in statuses.values() if x['status'] in ('ok','degraded'))
-    status='live' if ready==len(sources) else 'partial' if usable else 'failed'
+    status='live' if ready==len(sources) else 'partial' if ready else 'failed'
     items,new_count=merge_stories(previous.get('items',[]),incoming)
     # Rate all visible stories, including previously collected items and clustered sources.
     for item in items:
@@ -1113,7 +837,7 @@ def main() -> int:
             item['impact']='Medium'
     sentiment_30d = aggregate_sentiment(items, stamp)
     out={
-      'name':'Signal | Evernorth · Ripple · Strategy · Lite Strategy · Hyperliquid Strategies · SharpLink Gaming · Forward Industries', 'version':2,
+      'name':'Signal | Strategy · Evernorth · SharpLink Gaming · Ripple', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
               'schedule_utc':['09:15','14:35','23:35'],
               'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],

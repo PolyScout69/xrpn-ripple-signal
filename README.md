@@ -2,39 +2,35 @@
 
 **Live dashboard:** https://polyscout69.github.io/xrpn-ripple-signal/
 
-Independent investor news for **Evernorth Holdings (XRPN)**, **Ripple**, **Strategy (MSTR)**, **Lite Strategy (LITS)**, **Hyperliquid Strategies (PURR)**, **SharpLink Gaming (SBET)**, and **Forward Industries (FWDI)**.
+Independent investor news for **Strategy (MSTR)**, **Evernorth Holdings (XRPN)**, **SharpLink Gaming (SBET)** and the private operating company **Ripple**.
 
 ## Sources and publishing
 
 - **Three times daily, at approximately 09:15, 14:35 and 23:35 UTC**, GitHub Actions runs `scripts/scan.py`, updates `data/news.json`, and deploys GitHub Pages. The 09:15 scan focuses on early UK and continental European announcements after their opening release window, the 14:35 scan catches US pre-market/early-session headlines, and the 23:35 scan captures US market-close and evening releases. Scans run every day, including weekends. GitHub Actions schedules can start late during platform congestion and use fixed UTC hours (so local times vary with daylight saving). Pushes to `main` and manual dispatches also run the workflow. Queued scans check out the current `main` head when they start, so a completed scan's snapshot commit is not overwritten by a stale queued checkout.
-- Signal monitors official Ripple, Evernorth, Lite Strategy, Hyperliquid Strategies, SharpLink and Forward Industries releases, plus targeted company news covering XRPN, MSTR, LITS, PURR, SBET and FWDI. Lite Strategy specialises in LTC treasury accumulation, covered calls and share repurchases; generic Litecoin headlines are not automatically labelled LITS.
+- Signal monitors official Evernorth, SharpLink and Ripple releases, plus targeted company news covering MSTR, XRPN and SBET. Generic token-market headlines are not automatically attributed to a treasury company.
 - **Standalone SEC filing records are intentionally excluded** from news cards, source monitoring and the Moon Meter. A news report about material financing, partnerships, regulation or other events may still appear, but standalone filing entries do not.
 - Multiple publications of the same event are grouped with additional source links.
-- Source Health reflects **seven** channels: Ripple official, Evernorth official, Lite Strategy official, Hyperliquid Strategies official, SharpLink official, Forward Industries official, and company investor news. Lite Strategy's GCS-Web investor-relations archive has a verified alternate company archive address if one domain is inaccessible; a source outage is displayed rather than silently reported as successful.
+- Source Health reflects **four** channels: Evernorth official, SharpLink official, Ripple official and company investor news. Source outages are displayed rather than silently reported as successful. Strategy coverage comes through targeted company reporting.
 
-## Lite Strategy (LITS) treasury coverage
+## Treasury company coverage
 
-Lite Strategy, Inc. (Nasdaq: LITS, formerly MEI Pharma) uses **Litecoin (LTC)** as its principal crypto reserve asset. Signal monitors its issuer releases (including its investor-relations archive), LITS-specific reporting, share count, LTC per diluted share, covered-call/option premium income, buybacks, LitVM-related strategic investments and significant financing or treasury risks. Moon Meters are **LITS stock** scenarios, not predictions of Litecoin token returns. The website uses the same TradingView widget for LITS as for XRPN and MSTR; quotes may be delayed. The 30-day LITS Moon Sentiment card shows **No coverage** rather than manufacturing a neutral sentiment if no dated, eligible stories are available.
+The treasury watchlist, quote widgets, sentiment cards, sidebar and company filters use this order:
 
-## Hyperliquid Strategies (PURR) treasury coverage
+| Company | Nasdaq share ticker | Underlying crypto |
+| --- | --- | --- |
+| Strategy | MSTR | Bitcoin (BTC) |
+| Evernorth Holdings | XRPN | XRP |
+| SharpLink Gaming / Sharplink, Inc. | SBET | Ethereum (ETH) |
 
-[Hyperliquid Strategies Inc](https://hypestrat.xyz/) is a Nasdaq-listed **HYPE treasury company**, ticker **PURR**. It is a separate public-company investment, **not stock in Hyperliquid Labs or ownership of the HYPE protocol**. Signal monitors issuer releases via its [official PR Newswire archive](https://www.prnewswire.com/news/hyperliquid-strategies-inc/), plus targeted PURR reporting. Material topics include HYPE tokens held and **HYPE per diluted PURR share**, staking and validator income, custody and withdrawal controls, institutional partnerships, equity facilities, dilution, stock repurchases, governance and financial results.
-
-- The **PURR share price** uses the same delayed TradingView Nasdaq quote widget and daily % change as XRPN/MSTR/LITS. The company-specific link points to `NASDAQ:PURR`.
-- **PURR Moon Meter** scores potential if-true impacts on *PURR equity*, not direct price moves in HYPE. A buyback authorization is different from an executed, NAV-accretive repurchase; generic HYPE market headlines are not automatically attributed to PURR.
-- **PURR Moon Sentiment** aggregates last-30-day company-specific events with the existing impact, freshness, source and duplicate discounting. Limited/no coverage is labelled instead of manufacturing certainty.
-- Market Pulse and Moon Sentiment share the order **MSTR, XRPN, SBET, PURR, FWDI, LITS**. Mobile sentiment cards form MSTR/XRPN, SBET/PURR and FWDI/LITS pairs in that reading order; stock quotes stack one per row on small phones.
-- Each sentiment card shows its underlying crypto logo: BTC, XRP, ETH, HYPE, SOL or LTC. SVGs are served locally; source and licence details are preserved in `assets/crypto/SOURCES.md`.
-
-## SharpLink (SBET) and Forward Industries (FWDI)
+Ripple follows the three listed companies in the sidebar and filters. It remains a private operating-company news source, without a stock-price or stock-sentiment card. XRP-related company news remains under Ripple and Evernorth.
 
 **SharpLink Gaming**, now branded **Sharplink, Inc.**, is tracked as **SBET / ETH**. Its [official investor page](https://www.sharplink.com/investors) publishes a public b2i press-release archive. Signal reads the dated archive and links to the original HTML releases; the release ID stays in each URL so distinct announcements are not merged. Company-specific media searches include the old and current names plus SBET.
 
-**Forward Industries, Inc.** is tracked as **FWDI / SOL**. Signal reads the issuer's GlobeNewswire RSS channel embedded in its [official investor page](https://forwardindustries.com/investors), together with company-specific media searches. If the syndicator is unavailable, it reads up to 16 dated first-party `/insights/` releases from the company sitemap and marks Source Health as **Partial** because the bounded archive may lag the RSS. Previously verified releases remain in the merged archive. The ordinary word “Forward” and the former FORD symbol do not qualify a story on their own.
+Each treasury company has a Nasdaq USD quote widget, company filter, article Moon Meters and 30-day Moon Sentiment. Ratings assess company equity using developments such as crypto per diluted share, treasury acquisitions, staking income where relevant, share issuance, executed buybacks, custody and counterparty risks. Generic crypto-market stories do not qualify on their own. Authorising a buyback is distinct from executing an accretive repurchase; staking deployment is distinct from income already earned.
 
-Both companies have Nasdaq USD quote widgets, entity filters, article Moon Meters, 30-day Moon Sentiment and Source Health entries. Ratings assess the stock: ETH or SOL per diluted share, treasury acquisitions, staking income, share issuance, executed buybacks, custody and counterparty risks. Generic Ethereum and Solana stories are not automatically assigned to either company. Authorising a buyback is distinct from executing an accretive repurchase; staking deployment is distinct from income already earned.
+On desktop above 1150px, Market Pulse and Moon Sentiment each show **MSTR, XRPN, SBET** in one row. At narrower widths, sentiment shows MSTR at full width followed by an XRPN/SBET pair. Quote cards use that same arrangement from 641px to 1150px and stack one per row at 640px and below. Each sentiment card shows its underlying BTC, XRP or ETH logo. SVGs are served locally; source and licence details are preserved in `assets/crypto/SOURCES.md`.
 
-The separate **XRP Ecosystem** channel has been retired, including standalone XRP/XRPL/ETF discovery queries and its navigation/filter labels. Company-specific XRP news remains under Ripple and Evernorth. On archive refresh, network-only stories are removed, valid company tags are retained, and article Moon Meters and sentiment are recalculated. The browser also filters legacy snapshots so a delayed refresh cannot restore the retired category.
+The separate **XRP Ecosystem** channel has been retired, including standalone XRP/XRPL/ETF discovery queries and its navigation/filter labels. On archive refresh, stories outside the current company watchlist are removed, valid company tags are retained, and article Moon Meters and sentiment are recalculated. The browser also filters legacy snapshots so a delayed refresh cannot restore removed companies or categories.
 
 ## Top Investor Signal — ranked recent developments
 
@@ -49,11 +45,11 @@ The algorithm favours high-impact **new** information and does not arbitrarily b
 
 ## Homepage share-price widgets
 
-The top of the homepage shows **XRPN (Evernorth)**, **MSTR (Strategy)**, **LITS (Lite Strategy)**, **PURR (Hyperliquid Strategies)**, **SBET (SharpLink)** and **FWDI (Forward Industries)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:XRPN`, `NASDAQ:MSTR`, `NASDAQ:LITS`, `NASDAQ:PURR`, `NASDAQ:SBET` and `NASDAQ:FWDI`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
+The top of the homepage shows **MSTR (Strategy)**, **XRPN (Evernorth)** and **SBET (SharpLink)** in separate compact USD quote widgets, including each stock's **daily percentage change**. These are the official free [TradingView Single Ticker](https://www.tradingview.com/widget-docs/widgets/tickers/single-ticker/) web components, configured for `NASDAQ:MSTR`, `NASDAQ:XRPN` and `NASDAQ:SBET`; no paid API key is required. Quotes are fetched in the visitor's browser independently of the three daily news scans. TradingView supplies **delayed US stock quotes** in public widgets; do not label them real-time Nasdaq prices. A direct link to each stock page remains available if the third-party widget cannot load. The widget may issue requests to TradingView and follows TradingView's third-party privacy practices.
 
-## Moon Sentiment — XRPN, MSTR, LITS, PURR, SBET and FWDI, 30 days
+## Moon Sentiment — MSTR, XRPN and SBET, 30 days
 
-The six sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for MSTR, XRPN, SBET, PURR, FWDI and LITS, replacing the old **Treasury News** and **Source Coverage** cards. Individual Moon Meters remain visible on every story; source-health remains available in its existing monitoring panel.
+The three sentiment cards of the homepage score **weighted 30-day Moon Sentiment** for MSTR, XRPN and SBET. Individual Moon Meters remain visible on every story; source health remains available in its monitoring panel.
 
 The calculation runs during each of the three daily news scans and publishes `sentiment_30d` into `data/news.json`, including the rounded −3 to +3 score, raw score, source counts and top contributing stories. If a new snapshot is delayed, the site shows a clearly labelled **provisional** calculation from the previous published Moon Meter values. **A 0 headline is not a negative vote**: neutral articles only add 8% of their normal weight to the denominator. Only evidence with a signed directional Moon Meter contributes directly to the numerator.
 
@@ -73,7 +69,7 @@ The `scripts/moon_meter.py` headline rules now recognise the potential if-true e
 
 ## Moon Meter (−3 to +3)
 
-The Moon Meter is a calibrated **IF-TRUE scenario gauge**, scoring the potential directional impact on **XRP**, **XRPN**, **MSTR**, **LITS**, **PURR**, **SBET** or **FWDI** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
+The Moon Meter is a calibrated **IF-TRUE scenario gauge**, scoring the potential directional impact on **MSTR**, **XRPN**, **SBET** or **XRP** if a published report, rumour or forward-looking assumption were to prove true. Scores run from −3 (very bearish) to +3 (very bullish). A +3 does **not** mean a rumour is likely true, nor predict a price move. Each meter independently shows whether its source is a **reported development**, **assumption** or **unverified rumour**. A neutral 0 means no clear impact even if true; **Not rated (—)** is reserved for headlines too thin to assess. Investor-news impact is separate from price direction. Pure price-target speculation remains filtered out.
 
 ## Run locally
 
