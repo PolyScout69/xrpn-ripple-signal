@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-01T16:02:48Z",
+    "ran_at": "2026-11-01T19:03:55Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 15,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,29 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-01T16:02:48Z",
+      "checked_at": "2026-11-01T19:03:55Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-01T16:02:48Z",
+      "checked_at": "2026-11-01T19:03:55Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-01T16:02:48Z",
+      "checked_at": "2026-11-01T19:03:55Z",
       "message": "Fetched 22 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 297,
-      "checked_at": "2026-11-01T16:02:48Z",
-      "message": "Fetched 297 matching items."
+      "items_seen": 377,
+      "checked_at": "2026-11-01T19:03:55Z",
+      "message": "Fetched 377 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,7 +54,7 @@
       "label": "Neutral",
       "raw_score": 0.24,
       "window_days": 30,
-      "as_of": "2026-11-01T16:02:48Z",
+      "as_of": "2026-11-01T19:03:55Z",
       "stories": 41,
       "independent_events": 36,
       "directional_events": 6,
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.03,
       "window_days": 30,
-      "as_of": "2026-11-01T16:02:48Z",
+      "as_of": "2026-11-01T19:03:55Z",
       "stories": 41,
       "independent_events": 38,
       "directional_events": 16,
@@ -178,7 +178,7 @@
       "label": "Bearish",
       "raw_score": -1.41,
       "window_days": 30,
-      "as_of": "2026-11-01T16:02:48Z",
+      "as_of": "2026-11-01T19:03:55Z",
       "stories": 27,
       "independent_events": 27,
       "directional_events": 3,
@@ -7306,6 +7306,13 @@
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPN1RDRGlhZHpGNGhvUEoyakR4SVVLNUE5TFZZTExzWkVLRHdlaEhQZ3hPakFWdnZWVnl0azhUbTN1WjFRVWE0YkF0RXdnOV9lemFjVUVRbkJaQmhHLU1qejhKRXJXVTFkdmhWd0M3OXBwLWVwck9ZTFMxN3l4YVV5OQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-02T07:00:00Z"
+        },
+        {
+          "title": "Evernorth Clears Shareholder Vote Ahead of Nasdaq Debut With 473M XRP Treasury",
+          "name": "CoinCodex · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSlQ5Njh2SVNENXF5Mkt4a0IxUjEtUk01RXpqdm5EdmRpTzBLaXJwT3F6bVJ4VVNTNVFMRVA5eEhhZU5sNHpBcm9kX1JnUU1Xc0ZnamtXMDZLMkJ3Y0NOS1FXdGU1M1lBZ0xnQnlVSnprVWlaVk9senVwTXBaVWpuOFBKRTF0cUl6M3dIdlREUUplVTllVzloelBoUFk1Uy01XzNkZ0lmdC15QTdYWGpqMHp0aWpwZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-02T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -10088,6 +10095,48 @@
           "title": "SettleMint Integrates Ripple Custody into Digital Asset Lifecycle Platform",
           "name": "Finovate · via Google News",
           "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUmsxNVhsNnlHYnA5VkxoeWVONjVMYWVyUUtZenhFVDdySW4zWVNSVWd0ZFFPZU5zb1M0UUd6bnBuQjc4X3MzdjhxT2M1VVVCNHdHMlJXVHkzV0dLNThyVlBVVU5pWktTZVlNWnNBM0hNMzlrc3NmVld2d0xzb2wtOGs2dFpnbXdxdnRwZnpsdjlGcHhkbXlvQnpqcjc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "a9e092fb2f777d",
+      "title": "Ripple Lands New Partnership to Boost Digital Asset Services in Asia",
+      "published_at": "2026-09-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 62,
+      "source": "U.Today · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUlh6MWd6WEl5a1lkRExQTXA1UEI2NXd0MFB3SE1YemRlYnZxV3B3MVBza29BSGdLMUJuOEQ3dFhqSFRTNFJhZ0RkSUFhS3hPNEZXMG1tRXd5WE92cVlrZjc5QXRETS1DQjVuTUhJa0dEWGFXV25CSUVpWE9FN2twcXpvZVlENDZNSGJlV9IBkgFBVV95cUxOUFQxQ2s2V2JQMkg0YnNtdWdHVVRqUVlxaDhTaUhFREVJQ29oNzJCd1NqVWF4cGZhc18xOGtGN3pXcnpua3p0Y2ZQbS1hWmJRRnI0ZnJzZER6V09WTnRhVUZwRWxZZDR5cjNPdGZSa3FJSVNyV2RCUE5SS1RJZGhyeFVPUkhDTXlwT1RLTldDbWFJZw?oc=5",
+      "excerpt": "Ripple Lands New Partnership to Boost Digital Asset Services in Asia U.Today",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Lands New Partnership to Boost Digital Asset Services in Asia",
+          "name": "U.Today · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUlh6MWd6WEl5a1lkRExQTXA1UEI2NXd0MFB3SE1YemRlYnZxV3B3MVBza29BSGdLMUJuOEQ3dFhqSFRTNFJhZ0RkSUFhS3hPNEZXMG1tRXd5WE92cVlrZjc5QXRETS1DQjVuTUhJa0dEWGFXV25CSUVpWE9FN2twcXpvZVlENDZNSGJlV9IBkgFBVV95cUxOUFQxQ2s2V2JQMkg0YnNtdWdHVVRqUVlxaDhTaUhFREVJQ29oNzJCd1NqVWF4cGZhc18xOGtGN3pXcnpua3p0Y2ZQbS1hWmJRRnI0ZnJzZER6V09WTnRhVUZwRWxZZDR5cjNPdGZSa3FJSVNyV2RCUE5SS1RJZGhyeFVPUkhDTXlwT1RLTldDbWFJZw?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-01T07:00:00Z"
         }
@@ -13471,6 +13520,13 @@
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOa2Y5aWdhMmVHU052NXF1Qld3NlNvcTFqRGJvWHNweEN4ZVJzZmtoc0V0ZTBEMHJJS19rQTVPS2FxSUlTZVJTbHRZQlBoTHNNVzhpejJiRUVaM1pMR25yTUhNbXZJczRRSl9VbHZwdE9uZVlnbE9vcExFeWVXNFgxc3FGRHVHU0F1dGFZMjZIWlg0UHNDMHlmVmVRYXhfZw?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-27T07:00:00Z"
+        },
+        {
+          "title": "Strategy Climbs 3%, BitMine Surges 7%, SharpLink Rises 5% as Crypto Stocks Bounce Back Toward $65K Bitcoin",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPaHByRVNXem0xLVJOQ0NzcDd2VERiVV9JTEp4Z0ZscURBZHFETTVTZzNRS29QLUp4VlBxMzhyMk90Tk5wTnFoTGg3TXlxSFMyTW94anVhQUZDNlpKMnVuV1U3a0V3OG82aExEMkd4am5ucjRIM0Z0UTg1QV9uLXNxc3R4QWFxNUpYWVdjNHNoQ0VjQnQxaU9Qc1ZqWWpCMl9mdzBHNFlJZFBnMTBVQUdUdFZrcEpxS2ZmTjhmdThjd3c3d3F3aWI2UnI2aGFObEVRVXoyMmNEekFaX1l5?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-27T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -15134,6 +15190,13 @@
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdndkb3g1THNHMzFaY2oxTGdpejNSSFVTRkJoblptUWJTVTllRkVLQXgtejBZWDJuN18ySEszTzJDZjh0MVRYTHM4Q2Z1MW1rT3h4cFlMeXMwblUtaS02aVprR2tta01GdFFJWmRxWlozanVNMFZKZkcyLVlKUW9jSnRWNmZ6ZUtMcWxhRW1tcUdEajNGeVBEUmVuY1dBWFE?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-29T07:00:00Z"
+        },
+        {
+          "title": "Ethereum Price to $95K? Bullish Robert Kiyosaki Call Resurfaces as SharpLink Buys More ETH",
+          "name": "CCN.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPVEFFT2xXaHd2eXJubHNidmgwd2RwcDRHY3hob2RYeDd6UDdLVkVYc3dPSU9Xb24tU1BvRFU2QzhHcm5KbVdZZGhybzZjSmZqWEtmTF9QZHlYUlgtQmt5Uy16QkZUMVpvamFiMXRvYXpfUjdtS2Y0eUIyTmhiV09lSVdETzVuc252ZzNLTHMzOA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-29T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -15362,6 +15425,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "54962bd2f8db23",
+      "title": "SharpLink Restarts Ethereum Purchases While Institutional Demand Weakens",
+      "published_at": "2026-06-26T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yellow.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9PSnZqU2FVblV6R1lNdjQzYnpEbW9fNlI4cV9pYlRYSjZKN2htNXU1blgtZk9BZjZyd2x1YlJBWGFDdXNNWmxhVzdSNzNwajRmajBZb3NnN295R3V6RmQ2VDRvcHZMc28?oc=5",
+      "excerpt": "SharpLink Restarts Ethereum Purchases While Institutional Demand Weakens Yellow.com",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:03Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SharpLink Restarts Ethereum Purchases While Institutional Demand Weakens",
+          "name": "Yellow.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9PSnZqU2FVblV6R1lNdjQzYnpEbW9fNlI4cV9pYlRYSjZKN2htNXU1blgtZk9BZjZyd2x1YlJBWGFDdXNNWmxhVzdSNzNwajRmajBZb3NnN295R3V6RmQ2VDRvcHZMc28?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-26T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -16674,8 +16779,8 @@
       "published_at": "2026-06-02T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Strategy",
-        "SharpLink Gaming"
+        "SharpLink Gaming",
+        "Strategy"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -16700,7 +16805,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -16710,7 +16815,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -17385,8 +17490,8 @@
       "published_at": "2026-05-23T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Strategy",
-        "SharpLink Gaming"
+        "SharpLink Gaming",
+        "Strategy"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -17418,7 +17523,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -17428,7 +17533,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -19134,6 +19239,48 @@
       ]
     },
     {
+      "id": "6d96509fecd661",
+      "title": "American Airlines Confirms Ripple Treasury Has Exceeded Their Expectations",
+      "published_at": "2026-04-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Bitget · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1RajJtQXZJUFBQTGswMDNVY29Db0VIM2NhbUdlaGcxaW03Z1ZJd0xOcHVkbi1wblhTMGk1QkhFeXVxcEFuaF9SNHlhWlprYXJiUk9GX0NTZ0JQOWx1VUE?oc=5",
+      "excerpt": "American Airlines Confirms Ripple Treasury Has Exceeded Their Expectations Bitget",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "American Airlines Confirms Ripple Treasury Has Exceeded Their Expectations",
+          "name": "Bitget · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1RajJtQXZJUFBQTGswMDNVY29Db0VIM2NhbUdlaGcxaW03Z1ZJd0xOcHVkbi1wblhTMGk1QkhFeXVxcEFuaF9SNHlhWlprYXJiUk9GX0NTZ0JQOWx1VUE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "87826862e3523c",
       "title": "Is Strategy's STRC Stock a Buy for Dividend Income, or Is It a Trap?",
       "published_at": "2026-04-21T07:00:00Z",
@@ -19344,6 +19491,48 @@
       ]
     },
     {
+      "id": "4ad292d929d971",
+      "title": "Ripple and Kyobo Life Insurance Partner to Pioneer Korea's First Tokenised Government Bond Settlement on Blockchain",
+      "published_at": "2026-04-15T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Partnerships",
+      "impact": "Low",
+      "score": 65,
+      "source": "Ripple · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUhGQ21MWkhzaTU4MGN3cTUwQkZqWU9pZ0F1bmdXMy1SMkNzQnYxQmFFVHQtOEYzWEtMclZmbWFtQTR0QlJuUnNvU3JWd3ZwZWtTbS1NNlJ3eWdxR3hScE9ibHNOWG92S2NMRERHQ2FoTFI2WHF2Q2ZvZkFGRmVacldGZXV2RzVRRzhIbkdYUjQ1djI1VWJmNGxIR1Z3cXJFZXJVUEJVUldSYXRoS0xCOTQwR2V4UEd2Qy1SZHY4NnIybC1GanpqYmEtZ25RYVJYck0wS3RYc0liU01xTktzUjdB?oc=5",
+      "excerpt": "Ripple and Kyobo Life Insurance Partner to Pioneer Korea's First Tokenised Government Bond Settlement on Blockchain Ripple",
+      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple and Kyobo Life Insurance Partner to Pioneer Korea's First Tokenised Government Bond Settlement on Blockchain",
+          "name": "Ripple · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUhGQ21MWkhzaTU4MGN3cTUwQkZqWU9pZ0F1bmdXMy1SMkNzQnYxQmFFVHQtOEYzWEtMclZmbWFtQTR0QlJuUnNvU3JWd3ZwZWtTbS1NNlJ3eWdxR3hScE9ibHNOWG92S2NMRERHQ2FoTFI2WHF2Q2ZvZkFGRmVacldGZXV2RzVRRzhIbkdYUjQ1djI1VWJmNGxIR1Z3cXJFZXJVUEJVUldSYXRoS0xCOTQwR2V4UEd2Qy1SZHY4NnIybC1GanpqYmEtZ25RYVJYck0wS3RYc0liU01xTktzUjdB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-15T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "ebbd54a03d119b",
       "title": "Ripple Custody is the Foundation of Institutional Digital Asset Adoption",
       "published_at": "2026-04-15T07:00:00Z",
@@ -19423,6 +19612,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0b14ac3ae5e9c3",
+      "title": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem",
+      "published_at": "2026-04-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcEJFZWVhSFFoY2tpZWVySmx6dU5vcHhZUkZHZkhOb0k3dEYxMFlTd0xhTTMySzdOdmRxdlFwSGxoZUNYZXktS1VSdkRLeXdyZGVNR0RQYWQ2WE5YLUVtMnoyZk9Cb05SWEdZSEdRQXVianZ6WHhLZ2RQSUhtQTAzTDh1ckJON29CV3ZQZGdYMFJwdw?oc=5",
+      "excerpt": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem Coinpaper",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcEJFZWVhSFFoY2tpZWVySmx6dU5vcHhZUkZHZkhOb0k3dEYxMFlTd0xhTTMySzdOdmRxdlFwSGxoZUNYZXktS1VSdkRLeXdyZGVNR0RQYWQ2WE5YLUVtMnoyZk9Cb05SWEdZSEdRQXVianZ6WHhLZ2RQSUhtQTAzTDh1ckJON29CV3ZQZGdYMFJwdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -19687,6 +19918,48 @@
       ]
     },
     {
+      "id": "31fc118decf404",
+      "title": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury",
+      "published_at": "2026-04-10T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQM0pTa21LNktSRFpWOVFCZEpUbGtEelI0SFhBSk9IaWRMWW1LeUZXN2dfZGNSOFFROFMxbGlnTU1acG5Gb0FUbEVjMHQ1SlJiYUdVVjVrNEk1Y0dBLV9ObUxSTDRCTkFRWnlhcHNyMjR0UE5wR0FGSVNPOWtHRzFqSmdhZ1R3WWZNc0ZrcDEyWERPdGdUR0tiVDN3MExtdmZiUUtzWVc4em43MG5INlVxSWItWWNJOEJxVTBMTkdOMDdRSU44TkE?oc=5",
+      "excerpt": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury Coinpaper",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQM0pTa21LNktSRFpWOVFCZEpUbGtEelI0SFhBSk9IaWRMWW1LeUZXN2dfZGNSOFFROFMxbGlnTU1acG5Gb0FUbEVjMHQ1SlJiYUdVVjVrNEk1Y0dBLV9ObUxSTDRCTkFRWnlhcHNyMjR0UE5wR0FGSVNPOWtHRzFqSmdhZ1R3WWZNc0ZrcDEyWERPdGdUR0tiVDN3MExtdmZiUUtzWVc4em43MG5INlVxSWItWWNJOEJxVTBMTkdOMDdRSU44TkE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-10T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "653f3de81fec6f",
       "title": "Strategy's (MSTR) Bitcoin Ambition Is Reshaping Corporate Finance. Everyone Else Is Falling Behind",
       "published_at": "2026-04-09T19:42:38Z",
@@ -19855,9 +20128,51 @@
       ]
     },
     {
+      "id": "bb2c58de88f232",
+      "title": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook",
+      "published_at": "2026-04-07T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 68,
+      "source": "디지털투데이 · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYmdaLXhuLUllNkVLT2RMQm15ZTAtbDhtREcwNTM5UTlNQ0hNdTZwRGtWVGcyVTAySzNIYk5LWF95Uy1nUEh1bEFOWUticXUtYW5Ra0hDYmFNMzhjbTNCQ3FlM1B6M1dXRUY1Q05TNGZPUTdzclBRV1YzdlRSTVpKaWxVODhxRWhtU2JDNDJJdEVvSlF2YzRpUFZrLXlRWUNsNTY2djdlMThHcUNPcVpJV1Z0MFVGQ1hScXRKVWRzeUFCYnU5QlZRYmljTlo?oc=5",
+      "excerpt": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook 디지털투데이",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook",
+          "name": "디지털투데이 · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYmdaLXhuLUllNkVLT2RMQm15ZTAtbDhtREcwNTM5UTlNQ0hNdTZwRGtWVGcyVTAySzNIYk5LWF95Uy1nUEh1bEFOWUticXUtYW5Ra0hDYmFNMzhjbTNCQ3FlM1B6M1dXRUY1Q05TNGZPUTdzclBRV1YzdlRSTVpKaWxVODhxRWhtU2JDNDJJdEVvSlF2YzRpUFZrLXlRWUNsNTY2djdlMThHcUNPcVpJV1Z0MFVGQ1hScXRKVWRzeUFCYnU5QlZRYmljTlo?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-07T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "ae8d7c55c1bd3b",
       "title": "SBET Stock Dips Despite Bullish Call Amid Crypto Selloff – Analyst Flags ‘Unique Position’ Against BMNR, ETHM",
-      "published_at": "2026-04-06T07:00:00Z",
+      "published_at": "2026-04-07T07:00:00Z",
       "date_only": false,
       "entities": [
         "SharpLink Gaming"
@@ -19872,7 +20187,7 @@
       "excerpt": "SBET Stock Dips Despite Bullish Call Amid Crypto Selloff – Analyst Flags ‘Unique Position’ Against BMNR, ETHM Stocktwits",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
+      "added_at": "2026-11-01T19:04:03Z",
       "verified_seed": false,
       "coverage": [
         {
@@ -19880,7 +20195,7 @@
           "name": "Stocktwits · via Google News",
           "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcEV2VjVlNGdESGZyT1FmaF9lLWxCOC1tVzZ5SWwyM3NuX09ZcFNRQ2dHX0xZcXFualpaN0RyTllFWmE2Ukw1UWdCcEU0WEFsZjFQdWJUb0xmbUY3YkNiNFZ6U1VSb3BkeHZ2SmJobXM3c29ZeDlZN3UzRFI2NFRET21lQ3llYXhCZEpqN0MwWk81RlVDUDNRUndQRlRIckoyT2xabV82aUtmQ0ZVdnVrbFFqSHdXc1d3X0ZDUzdKdFRKLWYwcVlV?oc=5",
           "source_type": "Media",
-          "published_at": "2026-04-06T07:00:00Z"
+          "published_at": "2026-04-07T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -19892,6 +20207,223 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "8c1843db8265fb",
+      "title": "Ripple Joins SWIFT Messaging Network and Banking Tools: Key Details",
+      "published_at": "2026-04-03T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 63,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZWRhWjNNMFQ0WWo5cVNkc0dQTmc5aWt1Z1NuX0l2R1R6LU93N0l2NmZCbmZFOElFU1ZnTlNKY0cydVpMTVEzYUZlMDdGV0hQZXBXMGVlcTdMSWw1NHVvalNkQy02dzFFNVVPLUhmeXpWTjFQVG56LXlpOTNBbTlZZ1puRFM2Q2xpdVlPQkVGVGN2bFVGVFRERy13?oc=5",
+      "excerpt": "Ripple Joins SWIFT Messaging Network and Banking Tools: Key Details Coinpaper",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Joins SWIFT Messaging Network and Banking Tools: Key Details",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZWRhWjNNMFQ0WWo5cVNkc0dQTmc5aWt1Z1NuX0l2R1R6LU93N0l2NmZCbmZFOElFU1ZnTlNKY0cydVpMTVEzYUZlMDdGV0hQZXBXMGVlcTdMSWw1NHVvalNkQy02dzFFNVVPLUhmeXpWTjFQVG56LXlpOTNBbTlZZ1puRFM2Q2xpdVlPQkVGVGN2bFVGVFRERy13?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-03T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Ripple business or RLUSD news may have only indirect, unquantified effects on XRP.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "fee9b5813c2ba6",
+      "title": "XRP News: Ripple Treasury Just Went Onchain — Could This Be the Missing Link Between Ripple's Infrastructure and XRP?",
+      "published_at": "2026-04-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOcVc4SlBiQXJYTWtXRG1ab0htbThHckMwS1JaQVJTTlY4OXVHaTRJU2prd2dyTVkzZ3psSHZOakJIM2VPcE14R3E3Y3pwdmZYeHR3eGlqT2tjNno3N0Z1c3ZobHlkbk5MaUd0S0lGcFJ0ZXk4bUo5ZTdYdnYzRmNDWm9PVTliMEhIQWV5VTB4aWFGUWZseGZUVG5nSlVCVV9UdTVKYTJKLVBrTWtiZDViVEhJQm5RLW5oNlVFZVpEdVQ4SkNlN3ZKOUI0UHlYUnd5UUQwa21JcENOLUtRWlR4OWdoN2FuWWRTZnZJbA?oc=5",
+      "excerpt": "XRP News: Ripple Treasury Just Went Onchain — Could This Be the Missing Link Between Ripple's Infrastructure and XRP? 24/7 Wall St.",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "XRP News: Ripple Treasury Just Went Onchain — Could This Be the Missing Link Between Ripple's Infrastructure and XRP?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOcVc4SlBiQXJYTWtXRG1ab0htbThHckMwS1JaQVJTTlY4OXVHaTRJU2prd2dyTVkzZ3psSHZOakJIM2VPcE14R3E3Y3pwdmZYeHR3eGlqT2tjNno3N0Z1c3ZobHlkbk5MaUd0S0lGcFJ0ZXk4bUo5ZTdYdnYzRmNDWm9PVTliMEhIQWV5VTB4aWFGUWZseGZUVG5nSlVCVV9UdTVKYTJKLVBrTWtiZDViVEhJQm5RLW5oNlVFZVpEdVQ4SkNlN3ZKOUI0UHlYUnd5UUQwa21JcENOLUtRWlR4OWdoN2FuWWRTZnZJbA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-02T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "d2c8c23f5ee8a6",
+      "title": "Ripple Treasury puts XRP and RLUSD inside corporate finance for the first time",
+      "published_at": "2026-04-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM2hsQnZZOUNNY3NtWVBXekJKVzRXNjBJZEstcEFRN2ozQXBoYXM4TXEyYmdTbnctZEUzRTgyYkxUWnVyZ1lFUG53cXNuVEJzTUhDZ3EwbDZuRUVYS1lqd1NUNEpGMDhqQXpTOUJZQnVwZTRrUGZfcEFaMEd2VGhoOUtfVV9HTVBjT19WQVhyYl9qWGdDdWlBYl9IbmhpVGpzUW1ibE5jSVVZWWo3Q08wLUkycDB4OG1LcTctcG8tOGI?oc=5",
+      "excerpt": "Ripple Treasury puts XRP and RLUSD inside corporate finance for the first time CoinDesk",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury puts XRP and RLUSD inside corporate finance for the first time",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM2hsQnZZOUNNY3NtWVBXekJKVzRXNjBJZEstcEFRN2ozQXBoYXM4TXEyYmdTbnctZEUzRTgyYkxUWnVyZ1lFUG53cXNuVEJzTUhDZ3EwbDZuRUVYS1lqd1NUNEpGMDhqQXpTOUJZQnVwZTRrUGZfcEFaMEd2VGhoOUtfVV9HTVBjT19WQVhyYl9qWGdDdWlBYl9IbmhpVGpzUW1ibE5jSVVZWWo3Q08wLUkycDB4OG1LcTctcG8tOGI?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-02T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "716861cbfda9c0",
+      "title": "Ripple Treasury launches first Treasury Management System",
+      "published_at": "2026-04-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "tmgm.com · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYjVtY25fN0t3QmJPcEVxc3Bmb2pQaHYtbGgxbk0wYUItRmY0TFltTTJGUnJHU2Z4NTRrVUttUkN1eGQzSnpVQ19Eamk2MjZnWHVib2UtZUFhb2dYYS01VmNVQVpKZVA0R2U1cUFtcXB5WUVTaWQySHZ4dnJFaEZqeHJHMHg2YWdnNWtYa3NYZm1lZDlTa016a0VjWURiWEVXcWN4R2JDVGNkWjBBaGpxNkU5YWhrb3lHQzhXYVVkaHN5bGll?oc=5",
+      "excerpt": "Ripple Treasury launches first Treasury Management System tmgm.com",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury launches first Treasury Management System",
+          "name": "tmgm.com · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYjVtY25fN0t3QmJPcEVxc3Bmb2pQaHYtbGgxbk0wYUItRmY0TFltTTJGUnJHU2Z4NTRrVUttUkN1eGQzSnpVQ19Eamk2MjZnWHVib2UtZUFhb2dYYS01VmNVQVpKZVA0R2U1cUFtcXB5WUVTaWQySHZ4dnJFaEZqeHJHMHg2YWdnNWtYa3NYZm1lZDlTa016a0VjWURiWEVXcWN4R2JDVGNkWjBBaGpxNkU5YWhrb3lHQzhXYVVkaHN5bGll?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-02T07:00:00Z"
+        },
+        {
+          "title": "Ripple Treasury Launches the First Treasury Management System With Native Digital Asset Capabilities",
+          "name": "FinTech Weekly · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcHJxM2JQc2JpYm5KSlNMemItdXRMRHQxUWQ3S2FhcHB4dmplNU9vR1k1MG5zckRsdEkwODIteVlCWHVWTHFtVjFqVEVQWm9qUWh5Ml9UZlctc0FtUU1fajlTbjBWNm4xc1Y4VzFVTUdQY0FQanlZOHIzeWhPb2swOWNzWXRITFVqaGdnUUQtOGI5OC1Ua204?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "99daab45f2a616",
+      "title": "Ripple's Treasury Play Opens Door To $12.5T Payment Pipeline",
+      "published_at": "2026-04-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Startup Fortune · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOa25CTEExRDc2MkdEOC1yT2ZrZnNwZENFVzlva1kzQWd5SEF3d29xd1phRk4yVUZmQ1FJT1lkUFRoRzFUYmJVQkozY1QxUGQ1dzM2dDZram1Gd0t2M3Rhem82emw4UkExUmdXUDlsU2RTNnVhNjc5cWpwX1F0djBWVk8tWGVJYi1KR3RtVlpn?oc=5",
+      "excerpt": "Ripple's Treasury Play Opens Door To $12.5T Payment Pipeline Startup Fortune",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple's Treasury Play Opens Door To $12.5T Payment Pipeline",
+          "name": "Startup Fortune · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOa25CTEExRDc2MkdEOC1yT2ZrZnNwZENFVzlva1kzQWd5SEF3d29xd1phRk4yVUZmQ1FJT1lkUFRoRzFUYmJVQkozY1QxUGQ1dzM2dDZram1Gd0t2M3Rhem82emw4UkExUmdXUDlsU2RTNnVhNjc5cWpwX1F0djBWVk8tWGVJYi1KR3RtVlpn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -20996,6 +21528,48 @@
       ]
     },
     {
+      "id": "40ae6dbb7d6f69",
+      "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
+      "published_at": "2026-02-20T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Medium",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
+      "excerpt": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger TradingView",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-02-20T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "6f19807907e7d4",
       "title": "Ethereum Firm Sharplink Holds 867K ETH Worth $1.68B",
       "published_at": "2026-02-20T02:44:16Z",
@@ -21602,6 +22176,48 @@
       ]
     },
     {
+      "id": "bef71f61f761a7",
+      "title": "Ripple Debuts 'Ripple Treasury' Following $1 Billion Acquisition",
+      "published_at": "2026-01-28T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWVpXR1NtNUhTOXdiWGF6YnhyS2lnUHhtUGdUUHlranJJellQV0pEV1ZTUmFBdFctS2RMV2drRkRMRS1MSWtROHVpS2IwVXVza05rcXpMOWdWMVZjSTZBRW42TFF0cnlTQm5kN1diSHMxdzVTNS10Zmd6T0tXQS1UcGhFZ2ZPQXJ2WjYwbkd3?oc=5",
+      "excerpt": "Ripple Debuts 'Ripple Treasury' Following $1 Billion Acquisition Yahoo Finance",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Debuts 'Ripple Treasury' Following $1 Billion Acquisition",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWVpXR1NtNUhTOXdiWGF6YnhyS2lnUHhtUGdUUHlranJJellQV0pEV1ZTUmFBdFctS2RMV2drRkRMRS1MSWtROHVpS2IwVXVza05rcXpMOWdWMVZjSTZBRW42TFF0cnlTQm5kN1diSHMxdzVTNS10Zmd6T0tXQS1UcGhFZ2ZPQXJ2WjYwbkd3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-28T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "5cf05e62aa6170",
       "title": "Here’s when XRP price is seen to surge by 80% after Ripple Treasury launch",
       "published_at": "2026-01-28T08:00:00Z",
@@ -21681,6 +22297,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "f800fdc19439e1",
+      "title": "Ripple Treasury Officially Announced",
+      "published_at": "2026-01-27T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "U.Today · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1BcnRGSnJBRjN6cllDY01RcVNyY1RvWVZmSTdiRGR4ajRZTVo3UUdSYjJHT2pRbno2ZFVfalBmWFJHRTBEMjN2VURiSmRCRmwwUHZ5M1BvS3hxdU9VanJtaHJn0gFnQVVfeXFMT3FyWXQ0VzBVQkVtdWJ1RVZRb3dxdjROVE5lcnQ1T2RKTkNqLTFjOEszS1FEVFJIVjFaUkpfNHJzLVd0MU1fbjVDVXdqblBmNjJ5bGJ2ajZSNklSQVBnODZURTY1RW5MOA?oc=5",
+      "excerpt": "Ripple Treasury Officially Announced U.Today",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-01T19:04:01Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury Officially Announced",
+          "name": "U.Today · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1BcnRGSnJBRjN6cllDY01RcVNyY1RvWVZmSTdiRGR4ajRZTVo3UUdSYjJHT2pRbno2ZFVfalBmWFJHRTBEMjN2VURiSmRCRmwwUHZ5M1BvS3hxdU9VanJtaHJn0gFnQVVfeXFMT3FyWXQ0VzBVQkVtdWJ1RVZRb3dxdjROVE5lcnQ1T2RKTkNqLTFjOEszS1FEVFJIVjFaUkpfNHJzLVd0MU1fbjVDVXdqblBmNjJ5bGJ2ajZSNklSQVBnODZURTY1RW5MOA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-27T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -21933,650 +22591,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "bde597f95e5fa0",
-      "title": "Strategy (MSTR) Is Down 7.4% After Leveraged $2.13 Billion Bitcoin Buy - Has The Bull Case Changed?",
-      "published_at": "2026-01-21T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBHQUdnekF1QXhkVUU3UzU1OExUZ0RmMmpqLS14OXF4ZFlRYUNEa3pKdWlyZ3l0TzY5NmhUdG14bE1QV21VMWJFRFQ3amsyLTJqdmhJVklfa3g0QnBqd0xVeGluMWV4Ry1PZG1jaXRZVUpDNFduTnBB?oc=5",
-      "excerpt": "Strategy (MSTR) Is Down 7.4% After Leveraged $2.13 Billion Bitcoin Buy - Has The Bull Case Changed? Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:55Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy (MSTR) Is Down 7.4% After Leveraged $2.13 Billion Bitcoin Buy - Has The Bull Case Changed?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBHQUdnekF1QXhkVUU3UzU1OExUZ0RmMmpqLS14OXF4ZFlRYUNEa3pKdWlyZ3l0TzY5NmhUdG14bE1QV21VMWJFRFQ3amsyLTJqdmhJVklfa3g0QnBqd0xVeGluMWV4Ry1PZG1jaXRZVUpDNFduTnBB?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-21T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": -2,
-          "label": "Bearish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0a31279391a697",
-      "title": "DXC to integrate Ripple Custody, RLUSD stablecoin into core banking",
-      "published_at": "2026-01-21T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 63,
-      "source": "Ledger Insights · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOVFFBQk1hc2NPTzB2WkxyVnk2a2RGNFNZdlE0RWN0T01aRUFyc0x1MG1tRGlpSVdxT0V4TmJNbGxKVGNUT2t5RG9vMHJJN1AyREl2U0xESjRsTFoybkhNdGpQNUM1bXpNWnBBZkZ2eS1PSXZKVlZMZ0FxZWY3TmIwSDVJSm9tM0ZJR052QVFnRVlQMURLTXNNZEZ3NDdPMkE?oc=5",
-      "excerpt": "DXC to integrate Ripple Custody, RLUSD stablecoin into core banking Ledger Insights",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:52Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "DXC to integrate Ripple Custody, RLUSD stablecoin into core banking",
-          "name": "Ledger Insights · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOVFFBQk1hc2NPTzB2WkxyVnk2a2RGNFNZdlE0RWN0T01aRUFyc0x1MG1tRGlpSVdxT0V4TmJNbGxKVGNUT2t5RG9vMHJJN1AyREl2U0xESjRsTFoybkhNdGpQNUM1bXpNWnBBZkZ2eS1PSXZKVlZMZ0FxZWY3TmIwSDVJSm9tM0ZJR052QVFnRVlQMURLTXNNZEZ3NDdPMkE?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-21T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "2341c0551e3198",
-      "title": "Is MSTR’s Bitcoin Treasury Strategy No Longer Working?",
-      "published_at": "2026-01-20T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "24/7 Wall St. · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQU0J6MzFidzdZdmJ3YUZvRDNubXkxUlBEQlBuVFNFOFNPbDRpSENTcEQwUlQ0UDZWWTlGYkdqWWowX3dRbW55ZTFkSjFCXzFBUUdoM29ZQVI4Y2RjQXhMLW9NVVNRS0MtWEZnM2FhOUtkU0p3eTZ6VkxTOEJZMnlQUWw4OTNYb1pqbVhaTWtYTTM4V3lKRzZyQ1RURjM?oc=5",
-      "excerpt": "Is MSTR’s Bitcoin Treasury Strategy No Longer Working? 24/7 Wall St.",
-      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:55Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Is MSTR’s Bitcoin Treasury Strategy No Longer Working?",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQU0J6MzFidzdZdmJ3YUZvRDNubXkxUlBEQlBuVFNFOFNPbDRpSENTcEQwUlQ0UDZWWTlGYkdqWWowX3dRbW55ZTFkSjFCXzFBUUdoM29ZQVI4Y2RjQXhMLW9NVVNRS0MtWEZnM2FhOUtkU0p3eTZ6VkxTOEJZMnlQUWw4OTNYb1pqbVhaTWtYTTM4V3lKRzZyQ1RURjM?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-20T08:00:00Z"
-        },
-        {
-          "title": "Is MSTR’s Bitcoin Treasury Strategy No Longer Working?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZldRR2ZrdTFwckJDMndpdnRZeWNqb3NCTzJuVjN6WWFLdEN0RE9VNVdIMmVfeW5pMkdfNmJsUHlucHNObGIyMTlHeDdQNHF3aW54RmdtdjBoajA1Y1hkN3NYY1RuS2NiSng0cTh1M3c5WHBLSVdELUhrYmlqV0EwUWgwNloyQQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-20T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "7380a766b8ebab",
-      "title": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN)",
-      "published_at": "2026-01-19T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "Seeking Alpha · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMmhsdlo2ZEt1Y29LcFpMSGJZU3NwV0syOUhpenFKc3FYTXJNNTBRbTJkOHBiMXZ0dWxMWVdWSEJqTmM1Vm5PYlZBNElKMXNrOVJUcXhfb2hpR0xkQ252dV9tSjE2LTBkVWtuSDVZMHAtV21hNmVSSjg2LWstQ3NoWDFobm9Hb1o1ZzVtMm53?oc=5",
-      "excerpt": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN) Seeking Alpha",
-      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-11-01T02:29:44Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "XRP Treasury Play: Armada Acquisition Corp. II (NASDAQ:XRPN)",
-          "name": "Seeking Alpha · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMmhsdlo2ZEt1Y29LcFpMSGJZU3NwV0syOUhpenFKc3FYTXJNNTBRbTJkOHBiMXZ0dWxMWVdWSEJqTmM1Vm5PYlZBNElKMXNrOVJUcXhfb2hpR0xkQ252dV9tSjE2LTBkVWtuSDVZMHAtV21hNmVSSjg2LWstQ3NoWDFobm9Hb1o1ZzVtMm53?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-19T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the proposed relationship produces material treasury or commercial value per share, XRPN could benefit.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f9fd60fbc8866c",
-      "title": "STRC preferred stock plays growing role in Strategy’s bitcoin accumulation",
-      "published_at": "2026-01-13T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "CoinDesk · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOY2tuX3JFZjYxc2tkYkx2RXdMbzR3RUl2amhLZFZ4bk1zWXZ0akZxaW13RkpJMDhoTGN2RDBMNXZ3TFdPcTgtNGY0ZV9Kb1FpTFY1NjFzR0VzdmhINXpKdmRrOEs2azhHb2V0Vk53amVLQ1FIRjgwLVQ1SjNYQWxsWjZZazVmOGtFWWRiM1NZVFB2aC05LTlqU1g1Vy0zUHJORU5RRWZoQmVIWk9DeXJZdEN5M3dPZjF6Ni1jX0ZqaUpyUUtqZFRCa0FR?oc=5",
-      "excerpt": "STRC preferred stock plays growing role in Strategy’s bitcoin accumulation CoinDesk",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "STRC preferred stock plays growing role in Strategy’s bitcoin accumulation",
-          "name": "CoinDesk · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOY2tuX3JFZjYxc2tkYkx2RXdMbzR3RUl2amhLZFZ4bk1zWXZ0akZxaW13RkpJMDhoTGN2RDBMNXZ3TFdPcTgtNGY0ZV9Kb1FpTFY1NjFzR0VzdmhINXpKdmRrOEs2azhHb2V0Vk53amVLQ1FIRjgwLVQ1SjNYQWxsWjZZazVmOGtFWWRiM1NZVFB2aC05LTlqU1g1Vy0zUHJORU5RRWZoQmVIWk9DeXJZdEN5M3dPZjF6Ni1jX0ZqaUpyUUtqZFRCa0FR?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-13T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "04f14f422f89f2",
-      "title": "How SharpLink Plans to Grow in 2026 After Amassing Nearly $3 Billion in Ethereum",
-      "published_at": "2026-01-13T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmJRdm9GaXh5LXZMamNWQmZ0Q0FNT1QzRHF2TG5rSUNPak1OdzF0Z0pPbzlpeU1UbktiNXVFNVpDNTk0Z3dKM1lmZ25TWm9MOERfVWVvX3VqRk1uOUM5SGxXeGdkeUxiU2VNS2ptUGgwM1ctU2NsZG53QjdxWUlMcGczZXJNVkk?oc=5",
-      "excerpt": "How SharpLink Plans to Grow in 2026 After Amassing Nearly $3 Billion in Ethereum Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "How SharpLink Plans to Grow in 2026 After Amassing Nearly $3 Billion in Ethereum",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmJRdm9GaXh5LXZMamNWQmZ0Q0FNT1QzRHF2TG5rSUNPak1OdzF0Z0pPbzlpeU1UbktiNXVFNVpDNTk0Z3dKM1lmZ25TWm9MOERfVWVvX3VqRk1uOUM5SGxXeGdkeUxiU2VNS2ptUGgwM1ctU2NsZG53QjdxWUlMcGczZXJNVkk?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-13T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Conditional",
-          "scenario": "assumption",
-          "if_true": true,
-          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "9d02de29d787e6",
-      "title": "'Big orange': Michael Saylor's Strategy buys another 13,627 bitcoin for $1.25 billion following MSCI indexing decision",
-      "published_at": "2026-01-12T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMlFEdVdERnZZQjhPZENXd19EeFlxc3ZET2c1cmh6cS1sd0UtTXoxLXp5emNsdVc4bnVrc0tjWkRTZE9xVzZSaWtnWVZmVnZSLTl0TzJ2MGY0S0NLM0JVSjFKQlRWcHdjNnppMVBLRmRXU2o3Zmh4MHJnQVloN1J4ZDJ0SlY2Q1FtNExXTDM2RE1lY1pJblppOGUxdmxzNDBoYXhLcDZvYTFFOGtKbkZ4a0NDTkFYaFFQOHNsVzVZWVhQUjYw?oc=5",
-      "excerpt": "'Big orange': Michael Saylor's Strategy buys another 13,627 bitcoin for $1.25 billion following MSCI indexing decision The Block",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "'Big orange': Michael Saylor's Strategy buys another 13,627 bitcoin for $1.25 billion following MSCI indexing decision",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMlFEdVdERnZZQjhPZENXd19EeFlxc3ZET2c1cmh6cS1sd0UtTXoxLXp5emNsdVc4bnVrc0tjWkRTZE9xVzZSaWtnWVZmVnZSLTl0TzJ2MGY0S0NLM0JVSjFKQlRWcHdjNnppMVBLRmRXU2o3Zmh4MHJnQVloN1J4ZDJ0SlY2Q1FtNExXTDM2RE1lY1pJblppOGUxdmxzNDBoYXhLcDZvYTFFOGtKbkZ4a0NDTkFYaFFQOHNsVzVZWVhQUjYw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-12T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "3f0685f21617b2",
-      "title": "How Investors Are Reacting To SharpLink Gaming (SBET) Deploying US$170 Million Ethereum Into Linea DeFi Strategy",
-      "published_at": "2026-01-11T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOS0lIb2tXNGp5b2J6dVh2U2NoZ1dDaVJ1cEU4cXNkcVNGU1hhM2FYaHhHUnRFV1JhVFB5QnFqMlV6MjJ2c0N2MmtDeXZ4NWg2WDQ4U1UyMmlOc0czQm41dHNsMnVCREZ5cWNyMHVFenRsaWUyUVR3MnJKaUdOMjVBN2ZCNnFCeUFxdjV2aHJQTQ?oc=5",
-      "excerpt": "How Investors Are Reacting To SharpLink Gaming (SBET) Deploying US$170 Million Ethereum Into Linea DeFi Strategy Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "How Investors Are Reacting To SharpLink Gaming (SBET) Deploying US$170 Million Ethereum Into Linea DeFi Strategy",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOS0lIb2tXNGp5b2J6dVh2U2NoZ1dDaVJ1cEU4cXNkcVNGU1hhM2FYaHhHUnRFV1JhVFB5QnFqMlV6MjJ2c0N2MmtDeXZ4NWg2WDQ4U1UyMmlOc0czQm41dHNsMnVCREZ5cWNyMHVFenRsaWUyUVR3MnJKaUdOMjVBN2ZCNnFCeUFxdjV2aHJQTQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-11T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "468c5c4d94c4f5",
-      "title": "Sharplink Rakes in $33M From Ether Staking as “100% ETH” Bet Pays Off",
-      "published_at": "2026-01-09T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR3BiX3ZvQXB1TUktSE4xc0pqRUZCTHhYWl9ENS15UEpGbld6OU9TSzdnN0xCbVcwQjZ0UVZ0Zm5zUUR4NGlxVEx1MGR2MWRKcEY5dkwzMjBhMTlXZVJLcVl0Tk5RMnRpT0llWXQ3bnk3SmF5bTlKRTdNV0ZvbHFJTlBuYkRjcF9IaEJhWTNnejA2ZUpsRUhvTUIyZXdGZUlWQTRVOHhOSGttTVowaVd6eDRidUJlYTN1bTZtYTZQUkxtT0dp?oc=5",
-      "excerpt": "Sharplink Rakes in $33M From Ether Staking as “100% ETH” Bet Pays Off TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink Rakes in $33M From Ether Staking as “100% ETH” Bet Pays Off",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR3BiX3ZvQXB1TUktSE4xc0pqRUZCTHhYWl9ENS15UEpGbld6OU9TSzdnN0xCbVcwQjZ0UVZ0Zm5zUUR4NGlxVEx1MGR2MWRKcEY5dkwzMjBhMTlXZVJLcVl0Tk5RMnRpT0llWXQ3bnk3SmF5bTlKRTdNV0ZvbHFJTlBuYkRjcF9IaEJhWTNnejA2ZUpsRUhvTUIyZXdGZUlWQTRVOHhOSGttTVowaVd6eDRidUJlYTN1bTZtYTZQUkxtT0dp?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-09T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "49dcd45cdd6f48",
-      "title": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption",
-      "published_at": "2026-01-09T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Partnerships",
-      "impact": "Medium",
-      "score": 62,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT3QwN0xFYVZRMWlGdWdKdUNacVBwbC15VXJPblducU5mNlpTUE9MNjFHR2ZjaFdDVDlqNUFUYnN3NDZwdTdkZnh5Vk5udE95Vl9hVnZnM1VFME9GTEZSVE9KQXBmTHladVhSQUt0XzN5anFEVWdJZVlpamRIenRyZWFIUGFYOFpWeEs4eTBLM2NKWUhJY2J5SWpXb3lRUnJzdjhsOExIQjJWVFhKbXk5WURtY1oySTBtNnBkR2N6NHc?oc=5",
-      "excerpt": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption TradingView",
-      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
-      "tags": [],
-      "added_at": "2026-10-31T18:41:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple-Backed Firm Enters Major Partnership to Boost XRP Adoption",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT3QwN0xFYVZRMWlGdWdKdUNacVBwbC15VXJPblducU5mNlpTUE9MNjFHR2ZjaFdDVDlqNUFUYnN3NDZwdTdkZnh5Vk5udE95Vl9hVnZnM1VFME9GTEZSVE9KQXBmTHladVhSQUt0XzN5anFEVWdJZVlpamRIenRyZWFIUGFYOFpWeEs4eTBLM2NKWUhJY2J5SWpXb3lRUnJzdjhsOExIQjJWVFhKbXk5WURtY1oySTBtNnBkR2N6NHc?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-09T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "9ee3afbb37629a",
-      "title": "Evernorth and Doppler Finance Collaborate to Power Institutional XRP Infrastructure",
-      "published_at": "2026-01-08T12:00:00Z",
-      "date_only": true,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Partnerships",
-      "impact": "High",
-      "score": 88,
-      "source": "Evernorth official site",
-      "source_type": "Official",
-      "source_id": "evernorth",
-      "url": "https://www.evernorth.xyz/press-release-01-08-2026",
-      "excerpt": "Issuer announcement: Evernorth and Doppler Finance Collaborate to Power Institutional XRP Infrastructure",
-      "why_it_matters": "A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:50Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Evernorth and Doppler Finance Collaborate to Power Institutional XRP Infrastructure",
-          "name": "Evernorth official site",
-          "url": "https://www.evernorth.xyz/press-release-01-08-2026",
-          "source_type": "Official",
-          "published_at": "2026-01-08T12:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Potential operational opportunity, but revenue and per-share value remain unquantified.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "8c9f2b42d8f2b6",
-      "title": "SharpLink Vs. Bitmine: Why I Prefer A $1.5B Buyback Over 50 Billion Shares Of Dilution",
-      "published_at": "2026-01-06T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Seeking Alpha · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbEFwa3hRWXB5ODBQYXA4aXpFQml1WERIX2QxX1VzNF9zX3dDMTJ5cHpGMkJ0RmtxUzVIX0tqYUloT3VPLUNPSzhnZ0l1VV81Yld1SnludlZueF93SEJrVVhYODFXS3R5Q0pyMHo1akwzQUR6VTBlQ0lsNFNNSTJ2cTMxdFM2V2RXR0lmVVg1Sm1nNEZsdnB5c2szeWtuZy1za1I5QXJxZ2xtQnQxVDNIOEtWa3BvbExKTVN5VXRZWF9hQQ?oc=5",
-      "excerpt": "SharpLink Vs. Bitmine: Why I Prefer A $1.5B Buyback Over 50 Billion Shares Of Dilution Seeking Alpha",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink Vs. Bitmine: Why I Prefer A $1.5B Buyback Over 50 Billion Shares Of Dilution",
-          "name": "Seeking Alpha · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbEFwa3hRWXB5ODBQYXA4aXpFQml1WERIX2QxX1VzNF9zX3dDMTJ5cHpGMkJ0RmtxUzVIX0tqYUloT3VPLUNPSzhnZ0l1VV81Yld1SnludlZueF93SEJrVVhYODFXS3R5Q0pyMHo1akwzQUR6VTBlQ0lsNFNNSTJ2cTMxdFM2V2RXR0lmVVg1Sm1nNEZsdnB5c2szeWtuZy1za1I5QXJxZ2xtQnQxVDNIOEtWa3BvbExKTVN5VXRZWF9hQQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-06T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": -1,
-          "label": "Slightly bearish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Potential issuance or dilution weighs on per-share value; proceeds and accretion may offset it.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "c0e34ca2ccb2be",
-      "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
-      "published_at": "2026-01-05T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
-      "excerpt": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC The Block",
-      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:55Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-05T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "5f79483b93eac3",
-      "title": "MSTR Leverages STRC to Amplify Bitcoin Exposure as Preferred Stock Hits $100",
-      "published_at": "2026-01-04T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd3lvSi1hS3l6WjljOEJVTGZMY1RGN0pOWThlOFBRd3RXaUFEMVZKaVY3VGFVWFA2NVhqVWs2OFN3ZDVNYlFjODE3ZVVRdlpBdm5Va3h5TVVaRUt6dVRZSGlueDlnS0F1OU9IWWEwT3VIV0VfRlJhT21VUlQxTU1zYVdEcFBHWGpO?oc=5",
-      "excerpt": "MSTR Leverages STRC to Amplify Bitcoin Exposure as Preferred Stock Hits $100 Yahoo Finance",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "MSTR Leverages STRC to Amplify Bitcoin Exposure as Preferred Stock Hits $100",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd3lvSi1hS3l6WjljOEJVTGZMY1RGN0pOWThlOFBRd3RXaUFEMVZKaVY3VGFVWFA2NVhqVWs2OFN3ZDVNYlFjODE3ZVVRdlpBdm5Va3h5TVVaRUt6dVRZSGlueDlnS0F1OU9IWWEwT3VIV0VfRlJhT21VUlQxTU1zYVdEcFBHWGpO?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-01-04T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "302ce809fe5289",
-      "title": "Sharplink CEO Predicts Ethereum TVL Will 10x During 2026",
-      "published_at": "2025-12-29T03:15:27Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZGxiUnBuU09vcElyNnI0LTFzYTNFY1B2SUVGaG5ZeXkzZEJaNVphRGhudVhmTHV2LTZQY1ptaUpqUVBvRXBIWkxFMzE2OUZITFhTN1hLRkZzdmlZbUdvb3F1REJJbzB2TkdlcHpjOC1kZGNSMC05d1hWeVY5SV9tWU5ZUVZXNi1aZFRWT3dLSTNnM3Vuem9vVlpLbW1DRGNTZzlRekVza19CZw?oc=5",
-      "excerpt": "Sharplink CEO Predicts Ethereum TVL Will 10x During 2026 CoinMarketCap",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink CEO Predicts Ethereum TVL Will 10x During 2026",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZGxiUnBuU09vcElyNnI0LTFzYTNFY1B2SUVGaG5ZeXkzZEJaNVphRGhudVhmTHV2LTZQY1ptaUpqUVBvRXBIWkxFMzE2OUZITFhTN1hLRkZzdmlZbUdvb3F1REJJbzB2TkdlcHpjOC1kZGNSMC05d1hWeVY5SV9tWU5ZUVZXNi1aZFRWT3dLSTNnM3Vuem9vVlpLbW1DRGNTZzlRekVza19CZw?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-12-29T03:15:27Z"
-        },
-        {
-          "title": "Ethereum's TVL could skyrocket '10X' in 2026: Sharplink CEO",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZ08yNzVFQTVjRzVobDdwNDZrcWtZV2F2emQ1RjRHSzRxWEtVTHMtMWhxQVJsWkhkdERKc2ViblFlaHltLW1aRXNDQzgwNWtxTmtFOFdQcC1tLW9VVXl4MzlfVmFORWxUSGtkWDgzNEQyUGRXX1UyWkFiZllKN1R0SHNfXzJNal8weGFfWDJYT0V0N2hOTVdGSGttRFFtVWp1MGh5UWtFQkNYSm9NX2dJSm5kWkRuUmxWeTI5cw?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-12-26T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
