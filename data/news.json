@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-01T02:29:38Z",
+    "ran_at": "2026-11-01T16:02:48Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 10,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,29 +23,29 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-01T02:29:38Z",
+      "checked_at": "2026-11-01T16:02:48Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-01T02:29:38Z",
+      "checked_at": "2026-11-01T16:02:48Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-01T02:29:38Z",
+      "checked_at": "2026-11-01T16:02:48Z",
       "message": "Fetched 22 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 329,
-      "checked_at": "2026-11-01T02:29:38Z",
-      "message": "Fetched 329 matching items."
+      "items_seen": 297,
+      "checked_at": "2026-11-01T16:02:48Z",
+      "message": "Fetched 297 matching items."
     }
   },
   "sentiment_30d": {
@@ -54,7 +54,7 @@
       "label": "Neutral",
       "raw_score": 0.24,
       "window_days": 30,
-      "as_of": "2026-11-01T02:29:38Z",
+      "as_of": "2026-11-01T16:02:48Z",
       "stories": 41,
       "independent_events": 36,
       "directional_events": 6,
@@ -116,14 +116,14 @@
       "label": "Slightly bullish",
       "raw_score": 1.03,
       "window_days": 30,
-      "as_of": "2026-11-01T02:29:38Z",
-      "stories": 44,
-      "independent_events": 41,
+      "as_of": "2026-11-01T16:02:48Z",
+      "stories": 41,
+      "independent_events": 38,
       "directional_events": 16,
       "distinct_catalysts": 13,
       "bullish_events": 12,
       "bearish_events": 4,
-      "neutral_events": 25,
+      "neutral_events": 22,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -176,16 +176,16 @@
     "SBET": {
       "value": -2,
       "label": "Bearish",
-      "raw_score": -1.39,
+      "raw_score": -1.41,
       "window_days": 30,
-      "as_of": "2026-11-01T02:29:38Z",
-      "stories": 28,
-      "independent_events": 28,
+      "as_of": "2026-11-01T16:02:48Z",
+      "stories": 27,
+      "independent_events": 27,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 25,
+      "neutral_events": 24,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -1376,6 +1376,13 @@
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOeVdaQ1VfTFdYMkZWQWJxUk1fVHN4Z0dKMjlpV21POHo5bWM0cUkzRHZEQlVxVXVKS2NkVjhwdVo3U3dkY0VRSW0wT19iR0wzRlVWWDZ5UjdOVmwtM0lZZFlZZE5Na29sZ016R0NiSUM2d0d5OHRXNXI5QnQwd0xfakhZTQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-26T17:22:11Z"
+        },
+        {
+          "title": "Strategy Pauses Bitcoin Buying, Repurchases $204.9M in STRC: What It Means for BTC",
+          "name": "TechBullion · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPSWRDMGtUamdQUWhmMk53Rl9WaHZ3aE13eTZJRW16blBuSUVRT3BtOFI3bEo0aDFWS0VnV1Y4LS1ZdUdLemZZX0NVcmk5OUhjMmV2dURadGk2alhWSTBPNXRHN1ItX3BJNHRMZTEwX2Nzbm45alJnRWpZZjRhZUxvcmt5bzkyX1dlTjdtalgtNWxBYkxjYjZ1NmhXSkY5VDFIdnZScDBWcw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-26T16:56:34Z"
         }
       ],
       "moon_meters": [
@@ -12689,6 +12696,48 @@
       ]
     },
     {
+      "id": "1f061849256765",
+      "title": "Strategy (MSTR) Sells More Bitcoin, Is The Stock A Bargain?",
+      "published_at": "2026-08-05T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTlVjZUcwWlVoWU1YR1M4UDAtOUxhUTBZRUpJX1VGOWk0ZEI5NXFUZUNuZ0N4Vi03U1VXTTQ2SlRNeWo4dnhxcGdJX3NtbE5tcnY1Mmdtbkd4cDBhcEdib0hpOHlvOFpZV2x6azlrUGdqNFJXNjlVbXdpaXBhRmVVSkx3MWpHd191T1dfdkRYMThfYk9LeVR1UU9JN0JjQQ?oc=5",
+      "excerpt": "Strategy (MSTR) Sells More Bitcoin, Is The Stock A Bargain? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-01T16:02:55Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Sells More Bitcoin, Is The Stock A Bargain?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTlVjZUcwWlVoWU1YR1M4UDAtOUxhUTBZRUpJX1VGOWk0ZEI5NXFUZUNuZ0N4Vi03U1VXTTQ2SlRNeWo4dnhxcGdJX3NtbE5tcnY1Mmdtbkd4cDBhcEdib0hpOHlvOFpZV2x6azlrUGdqNFJXNjlVbXdpaXBhRmVVSkx3MWpHd191T1dfdkRYMThfYk9LeVR1UU9JN0JjQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-05T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "b5dad3e8253038",
       "title": "Strategy Taps Bitcoin Reserves to Service Preferred Stock as STRC Trades Below Par",
       "published_at": "2026-08-04T07:00:00Z",
@@ -16625,8 +16674,8 @@
       "published_at": "2026-06-02T07:00:00Z",
       "date_only": false,
       "entities": [
-        "SharpLink Gaming",
-        "Strategy"
+        "Strategy",
+        "SharpLink Gaming"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -16651,7 +16700,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -16661,7 +16710,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -17512,6 +17561,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "74aa9d1a63a255",
+      "title": "Michael Saylor Says Strategy Could Start Selling Bitcoin. For Now, It's Still Buying.",
+      "published_at": "2026-05-18T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Investopedia · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ1VFODZRb0VSc3pzWWQtTjFweldKTDV6b1BwZ0MxZW95MjdKalk0N1BQTGpWdWNEaGlGLWFZb1NyRGszMERQMHVaWXM3LUJ2eUl0YnlIUS0zVmZHTHRRN3dvYnlkTXBmT2FlVFZVVFJ5V0ZIZEY5MUcyWmczc3RkZ3ZoaE0zUWw2SWU4eVBwbm9JUFZrdDkwdkVVb3hwNWYxRkhXMXRIWkk3ZWxyb2Z1Wkw5dUs1TWhPd2hn?oc=5",
+      "excerpt": "Michael Saylor Says Strategy Could Start Selling Bitcoin. For Now, It's Still Buying. Investopedia",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-01T16:02:55Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor Says Strategy Could Start Selling Bitcoin. For Now, It's Still Buying.",
+          "name": "Investopedia · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZ1VFODZRb0VSc3pzWWQtTjFweldKTDV6b1BwZ0MxZW95MjdKalk0N1BQTGpWdWNEaGlGLWFZb1NyRGszMERQMHVaWXM3LUJ2eUl0YnlIUS0zVmZHTHRRN3dvYnlkTXBmT2FlVFZVVFJ5V0ZIZEY5MUcyWmczc3RkZ3ZoaE0zUWw2SWU4eVBwbm9JUFZrdDkwdkVVb3hwNWYxRkhXMXRIWkk3ZWxyb2Z1Wkw5dUs1TWhPd2hn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-18T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -22480,90 +22571,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "20a19c46ec5930",
-      "title": "SharpLink Appoints Joseph Chalom as Sole CEO and Member of the Board; Rob Phythian Steps Down Following Company's Planned Transition",
-      "published_at": "2025-12-17T12:00:00Z",
-      "date_only": true,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Leadership",
-      "impact": "Medium",
-      "score": 81,
-      "source": "Sharplink investor relations",
-      "source_type": "Official",
-      "source_id": "sbet",
-      "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=160561&m=rl&g=1772",
-      "excerpt": "Issuer announcement: SharpLink Appoints Joseph Chalom as Sole CEO and Member of the Board; Rob Phythian Steps Down Following Company's Planned Transition",
-      "why_it_matters": "A senior appointment may influence execution, risk controls and strategy. Track subsequent measurable results.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:51Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink Appoints Joseph Chalom as Sole CEO and Member of the Board; Rob Phythian Steps Down Following Company's Planned Transition",
-          "name": "Sharplink investor relations",
-          "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=160561&m=rl&g=1772",
-          "source_type": "Official",
-          "published_at": "2025-12-17T12:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "9a5e05ccd9cf8f",
-      "title": "Strategy Buys $980M In Bitcoin But One Crucial MSTR Metric Turned Red",
-      "published_at": "2025-12-15T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNSDJ0TUVtY281cHRUU0kzRUdzWk5GTnJCbFltVW5QNlJKZEM5T2h1NW9iY3d1a1RlQ1A0QXNaUE1qcDA0TV96OVRzcV94TGtsZ013N0cwUTlhanAzanlQUUZvZThDb3dNSHpQajZaVlZ5TUp6THNEanpVYmo4YjNJSVRR?oc=5",
-      "excerpt": "Strategy Buys $980M In Bitcoin But One Crucial MSTR Metric Turned Red Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:55Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Buys $980M In Bitcoin But One Crucial MSTR Metric Turned Red",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNSDJ0TUVtY281cHRUU0kzRUdzWk5GTnJCbFltVW5QNlJKZEM5T2h1NW9iY3d1a1RlQ1A0QXNaUE1qcDA0TV96OVRzcV94TGtsZ013N0cwUTlhanAzanlQUUZvZThDb3dNSHpQajZaVlZ5TUp6THNEanpVYmo4YjNJSVRR?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-12-15T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
