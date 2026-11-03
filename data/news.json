@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-03T19:50:07Z",
+    "ran_at": "2026-11-03T20:34:24Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-03T19:50:07Z",
+      "checked_at": "2026-11-03T20:34:24Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-03T19:50:07Z",
+      "checked_at": "2026-11-03T20:34:24Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-03T19:50:07Z",
+      "checked_at": "2026-11-03T20:34:24Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-03T19:50:07Z",
+      "checked_at": "2026-11-03T20:34:24Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 433,
-      "checked_at": "2026-11-03T19:50:07Z",
-      "message": "Fetched 433 matching items."
+      "items_seen": 431,
+      "checked_at": "2026-11-03T20:34:24Z",
+      "message": "Fetched 431 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.04,
       "window_days": 30,
-      "as_of": "2026-11-03T19:50:07Z",
+      "as_of": "2026-11-03T20:34:24Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-11-03T19:50:07Z",
+      "as_of": "2026-11-03T20:34:24Z",
       "stories": 43,
       "independent_events": 40,
       "directional_events": 18,
@@ -185,7 +185,7 @@
       "label": "Bearish",
       "raw_score": -1.37,
       "window_days": 30,
-      "as_of": "2026-11-03T19:50:07Z",
+      "as_of": "2026-11-03T20:34:24Z",
       "stories": 28,
       "independent_events": 28,
       "directional_events": 3,
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-03T19:50:07Z",
+      "as_of": "2026-11-03T20:34:24Z",
       "stories": 1,
       "independent_events": 1,
       "directional_events": 0,
