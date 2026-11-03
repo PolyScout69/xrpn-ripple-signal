@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-03T19:46:32Z",
+    "ran_at": "2026-11-03T19:50:07Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 11,
+    "new_items": 1,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-03T19:46:32Z",
+      "checked_at": "2026-11-03T19:50:07Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-03T19:46:32Z",
+      "checked_at": "2026-11-03T19:50:07Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-03T19:46:32Z",
+      "checked_at": "2026-11-03T19:50:07Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-03T19:46:32Z",
+      "checked_at": "2026-11-03T19:50:07Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 479,
-      "checked_at": "2026-11-03T19:46:32Z",
-      "message": "Fetched 479 matching items."
+      "items_seen": 433,
+      "checked_at": "2026-11-03T19:50:07Z",
+      "message": "Fetched 433 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.04,
       "window_days": 30,
-      "as_of": "2026-11-03T19:46:32Z",
+      "as_of": "2026-11-03T19:50:07Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-11-03T19:46:32Z",
+      "as_of": "2026-11-03T19:50:07Z",
       "stories": 43,
       "independent_events": 40,
       "directional_events": 18,
@@ -185,7 +185,7 @@
       "label": "Bearish",
       "raw_score": -1.37,
       "window_days": 30,
-      "as_of": "2026-11-03T19:46:32Z",
+      "as_of": "2026-11-03T19:50:07Z",
       "stories": 28,
       "independent_events": 28,
       "directional_events": 3,
@@ -211,7 +211,7 @@
           "title": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue",
           "value": -2,
           "impact": "Medium",
-          "published_at": "2026-10-21T06:45:01Z",
+          "published_at": "2026-10-21T07:00:00Z",
           "reports": 1,
           "scenario": "reported",
           "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
@@ -225,14 +225,14 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-03T19:46:32Z",
-      "stories": 2,
-      "independent_events": 2,
+      "as_of": "2026-11-03T19:50:07Z",
+      "stories": 1,
+      "independent_events": 1,
       "directional_events": 0,
       "distinct_catalysts": 0,
       "bullish_events": 0,
       "bearish_events": 0,
-      "neutral_events": 2,
+      "neutral_events": 1,
       "coverage": "Limited coverage",
       "drivers": [],
       "method": "impact_decay_dedup_v2"
@@ -572,48 +572,6 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "9222e5e3ef25d6",
-      "title": "Lite Strategy, Inc. (LITS) Stock Price History & Data",
-      "published_at": "2026-10-31T18:42:12Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Traders Union · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83WGlFNlB5R3VGVjhZVWYtc09zU1hTc1hkVU55TUxBOFhBZ051SG9XeS1jZUE1ZXhTM0l1ZDg3S2Y5dXJrMWFjc1lBN05uX3JMbzJaQmE4QzFURkxlVlcxOEo3dGJLWVRDRWVJ?oc=5",
-      "excerpt": "Lite Strategy, Inc. (LITS) Stock Price History & Data Traders Union",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:46:42Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Lite Strategy, Inc. (LITS) Stock Price History & Data",
-          "name": "Traders Union · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83WGlFNlB5R3VGVjhZVWYtc09zU1hTc1hkVU55TUxBOFhBZ051SG9XeS1jZUE1ZXhTM0l1ZDg3S2Y5dXJrMWFjc1lBN05uX3JMbzJaQmE4QzFURkxlVlcxOEo3dGJLWVRDRWVJ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-31T18:42:12Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -3805,6 +3763,48 @@
       ]
     },
     {
+      "id": "14dce725f135b8",
+      "title": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue",
+      "published_at": "2026-10-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TOKENPOST · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WeGpnNzllRjE3UkVvVzNGdENpemZ3OXh6dUNRajdWLThXMkY4NWtHQXE4M05Edy1wcUJqWDJkeGR1QnJOQmZid1Fpci1wM19xN3E2SEhpVW4?oc=5",
+      "excerpt": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue TOKENPOST",
+      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-03T19:50:15Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue",
+          "name": "TOKENPOST · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WeGpnNzllRjE3UkVvVzNGdENpemZ3OXh6dUNRajdWLThXMkY4NWtHQXE4M05Edy1wcUJqWDJkeGR1QnJOQmZid1Fpci1wM19xN3E2SEhpVW4?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": -2,
+          "label": "Bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "4d3c84c844c2f9",
       "title": "Sharplink Gaming (NASDAQ:SBET) Shares Up 7.7% - Should You Buy?",
       "published_at": "2026-10-21T07:00:00Z",
@@ -3842,48 +3842,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "14dce725f135b8",
-      "title": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue",
-      "published_at": "2026-10-21T06:45:01Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 73,
-      "source": "tokenpost.com · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WeGpnNzllRjE3UkVvVzNGdENpemZ3OXh6dUNRajdWLThXMkY4NWtHQXE4M05Edy1wcUJqWDJkeGR1QnJOQmZid1Fpci1wM19xN3E2SEhpVW4?oc=5",
-      "excerpt": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue tokenpost.com",
-      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:31Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink's $394.3 million Q2 Loss Dwarfs Ether Staking Revenue",
-          "name": "tokenpost.com · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WeGpnNzllRjE3UkVvVzNGdENpemZ3OXh6dUNRajdWLThXMkY4NWtHQXE4M05Edy1wcUJqWDJkeGR1QnJOQmZid1Fpci1wM19xN3E2SEhpVW4?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-21T06:45:01Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": -2,
-          "label": "Bearish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -14762,6 +14720,13 @@
           "url": "https://rss.globenewswire.com/news-release/2026/07/30/3336043/0/en/lite-strategy-repurchases-13-of-outstanding-shares-since-december-increasing-litecoin-backing-per-share.html",
           "source_type": "Official",
           "published_at": "2026-07-30T12:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Repurchases 13% of Outstanding Shares Since December, Increasing Litecoin Backing Per Share",
+          "name": "GlobeNewswire · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPUzQ3MUpGSlVpeS1xdTZSeVZMNDFId3ZNbUs5SFRTdzM4bVJIM0pRcHo3MXlaMHhhazBuM1l1N2FVbzZ0enNKcUs2dUpWMXhtOHctSlVYVktQZXRudVg2MmxMclp3aHhfWnNHUEx5YXA2a2pZZlROMk1qTFJGS3N3YVRrRi1fVUF6dTF1QmFUSm04WnhKVjlTd0NTZnZRYmdZUWp3ZXpsM2IxTE1OTEx6NFl0RThHTHIzZnhtQlN1bjlSZTRBaHNBU2RCV3JkUGpTa05nemRPVkhPT0RweW5MUEpoOUkwZndxYzlKSXViY1BaTmg3alQyMDNiaW1KSG1fc2lKYjR3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-30T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -22737,6 +22702,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "664d6e589cfe2e",
+      "title": "Nakamoto (NAKA), Sharplink (SBET), and Strive (ASST) viewed positively at Cowen",
+      "published_at": "2026-04-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTHVIOU5lNTREbDZweS1QcGNFMjBDRjBjTV9JTkR1T0FBNFFJWksxbUlod2hMSGVDcWhsVWk1VElLYVJrR2ZNbFFzU1pHWWZEdVNYOXQtVk0tdTN3RlN1ZVFaR2ZkVVVpbDlkNG5sSWxKVTZ2UElzZFpfcUt2VmJFNzdFalA1aDVCcHpuYktIUlZmVF92SGRKbkwzODR0RGNtMzVoUDhuYnBuWTV2NEZEaGx3?oc=5",
+      "excerpt": "Nakamoto (NAKA), Sharplink (SBET), and Strive (ASST) viewed positively at Cowen CoinDesk",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:50:15Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Nakamoto (NAKA), Sharplink (SBET), and Strive (ASST) viewed positively at Cowen",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTHVIOU5lNTREbDZweS1QcGNFMjBDRjBjTV9JTkR1T0FBNFFJWksxbUlod2hMSGVDcWhsVWk1VElLYVJrR2ZNbFFzU1pHWWZEdVNYOXQtVk0tdTN3RlN1ZVFaR2ZkVVVpbDlkNG5sSWxKVTZ2UElzZFpfcUt2VmJFNzdFalA1aDVCcHpuYktIUlZmVF92SGRKbkwzODR0RGNtMzVoUDhuYnBuWTV2NEZEaGx3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
