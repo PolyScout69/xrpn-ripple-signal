@@ -498,6 +498,68 @@ class CollectorTests(unittest.TestCase):
         self.assertFalse(scan.is_investor_news('Strategy (MSTR) Stock Quote & News','Bitcoin treasury'))
         self.assertTrue(scan.is_investor_news('Evernorth Completes Nasdaq Listing for XRPN Shares','XRP treasury company'))
 
+    def test_static_quote_estimates_and_chart_templates_are_not_news(self):
+        for headline in (
+            'Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News',
+            'Lite Strategy, Inc. (LITS) Seasonal returns chart',
+            'Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates',
+            'Lite Strategy, Inc. Estimates – NASDAQ:LITS',
+            'Strategy, Inc. Estimates – NASDAQ:MSTR',
+        ):
+            with self.subTest(headline=headline):
+                self.assertFalse(scan.is_investor_news(headline,'Company earnings and treasury stock information'))
+        for headline in (
+            'Lite Strategy Beats Earnings Estimates on Treasury Income',
+            'Strategy Raises Earnings Estimates – NASDAQ:MSTR',
+            'Lite Strategy Announces Quarterly Earnings Date',
+        ):
+            self.assertTrue(scan.is_investor_news(headline,'Company earnings update'))
+
+    def test_lits_routine_option_grants_do_not_hide_treasury_income_or_financing(self):
+        for headline in (
+            'A director receives 100,000 options with a $1.19 exercise price at Lite Strategy (LITS).',
+            '600,000 options awarded to Lite Strategy (LITS) CEO Justin J. File carry a $1.19 exercise price.',
+            'A 100,000-option annual grant at Lite Strategy (LITS) gives director Joshua Riezman 25% immediate vesting.',
+        ):
+            with self.subTest(headline=headline):
+                self.assertFalse(scan.is_investor_news(headline,'LTC treasury company'))
+        for headline in (
+            'Lite Strategy Earns Covered-Call Option Premiums on Its LTC Treasury',
+            'LITS Raises $100 Million for Litecoin Treasury Alongside CEO Option Grant',
+            'Lite Strategy Reports Financial Results Including Director Option Awards',
+        ):
+            self.assertTrue(scan.is_investor_news(headline,'LTC treasury company'))
+
+    def test_recycled_earnings_period_uses_publication_date_and_keeps_current_developments(self):
+        old='LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain'
+        self.assertFalse(scan.is_investor_news(old,'LTC treasury stock','2026-10-30T12:00:00Z'))
+        self.assertTrue(scan.is_investor_news(old,'LTC treasury stock','2025-02-01T12:00:00Z'))
+        self.assertTrue(scan.is_investor_news(old,'LTC treasury stock'))
+        for headline in (
+            'LITS Q4 2026 Earnings: Loss Per Share Narrows',
+            'Lite Strategy Restates Q4 2024 Earnings After Accounting Review',
+            'Lite Strategy Compares Q4 2024 Earnings with Current Treasury Results',
+            'Lite Strategy Q4 2024 and Q4 2026 Earnings Comparison',
+        ):
+            self.assertTrue(scan.is_investor_news(headline,'LTC treasury company','2026-10-30T12:00:00Z'))
+
+    def test_rss_and_archive_both_remove_recycled_earnings_and_static_pages(self):
+        from xml.sax.saxutils import escape
+        from datetime import datetime,timezone
+        current_year=datetime.now(timezone.utc).year
+        old=f'LITS Q4 {current_year-3} Earnings: Loss Per Share Nearly Double Consensus'
+        static='Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News'
+        real=f'Lite Strategy Reports Fiscal Year {current_year} Financial Results'
+        rows=[self.story(title,entity='Lite Strategy',url=f'https://example.com/noise-{i}')
+              for i,title in enumerate((old,static,real))]
+        xml='<rss><channel>'+''.join(
+            '<item><title>'+escape(row['title'])+'</title><pubDate>'+row['published_at']+
+            '</pubDate><link>'+row['url']+'</link><source>Publisher</source></item>' for row in rows
+        )+'</channel></rss>'
+        self.assertEqual([row['title'] for row in scan.parse_google_news(xml)],[real])
+        merged,_=scan.merge_stories(rows,[])
+        self.assertEqual([row['title'] for row in merged],[real])
+
     def test_routine_vesting_tax_withholding_is_not_material_news(self):
         for headline in (
             'Tax withholding covers 6,231 shares at $7.63 for Sharplink (SBET) executive Michael D. Camarda.',

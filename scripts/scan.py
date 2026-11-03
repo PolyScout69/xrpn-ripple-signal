@@ -39,6 +39,7 @@ EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
 LITS_IR_URL = 'https://litestrategy.gcs-web.com/'
 LITS_IR_FALLBACK = 'https://kimbrxtherapeutics.gcs-web.com/press-releases'
+LITS_WIRE_URL = 'https://rss.globenewswire.com/en/search/organization/Lite%2520Strategy%CE%B4%2520Inc%C2%A7'
 # Public news-widget endpoints used by the companies' investor pages.
 # The B2i API parameter is a public website identifier, not a private token.
 SBET_NEWS_URL = 'https://www.b2i.us/b2i/LibraryFeed.asp?b=2597&api=Ex4Bw5Wv2&i=30&out=38&a=1'
@@ -435,11 +436,48 @@ def fetch_evernorth_news() -> list[dict]:
     return stories
 
 
+def fetch_lits_wire_news() -> list[dict]:
+    """Read the issuer's own distributor archive when the IR hosts are unavailable."""
+    try:
+        soup=BeautifulSoup(fetch(LITS_WIRE_URL).text,'html.parser')
+    except Exception as exc:
+        raise ValueError('Lite Strategy official archive unavailable on issuer and wire sources.') from exc
+    stories=[]
+    for block in soup.select('.newsLink')[:20]:
+        issuer=block.select_one('.date-source a.sourceLink')
+        if not issuer or re.sub(r'[^a-z0-9]+',' ',issuer.get_text(' ',strip=True).lower()).strip()!='lite strategy inc':
+            continue
+        link=block.select_one('.mainLink a[href*="/news-release/"]')
+        published=block.select_one('.date-source > span')
+        if not link or not published:
+            continue
+        url=urllib.parse.urljoin(LITS_WIRE_URL,link.get('href',''))
+        parsed=urllib.parse.urlsplit(url)
+        if parsed.hostname not in ('rss.globenewswire.com','www.globenewswire.com','globenewswire.com') or '/news-release/' not in parsed.path:
+            continue
+        date=extract_date(published.get_text(' ',strip=True))
+        title=plain_text(link.get_text(' ',strip=True),230)
+        summary=block.select_one('.newsTxt')
+        excerpt=plain_text(summary.get_text(' ',strip=True),235) if summary else title
+        if not date or 'Lite Strategy' not in identify_entities(title+' '+excerpt):
+            continue
+        story=make_story(title=title,date=date,url=url,source='Lite Strategy / GlobeNewswire',
+                         source_type='Official',source_id='lits',entities=['Lite Strategy'],
+                         excerpt=excerpt,date_only=True)
+        if story:
+            stories.append(story)
+    if not stories:
+        raise ValueError('Lite Strategy official archive has no linked releases with a verified issuer and date.')
+    LOG.info('Lite Strategy: using official GlobeNewswire distributor archive (%s releases).',len(stories))
+    return stories
+
+
 def fetch_lits_news() -> list[dict]:
     """Scan company-issued Lite Strategy (NASDAQ:LITS) news on its IR archive.
 
-    The principal GCS-Web host occasionally blocks bots, so its verified
-    historic IR host is tried as a fallback. Missing dates are never guessed.
+    The principal and historic IR hosts may be unavailable to scheduled jobs.
+    The issuer's GlobeNewswire archive supplies an independent official fallback.
+    Missing dates are never guessed.
     """
     links={}
     for homepage in (LITS_IR_URL,LITS_IR_FALLBACK):
@@ -466,7 +504,7 @@ def fetch_lits_news() -> list[dict]:
             links[url]=(title or (previous[0] if previous else ''),
                         date or (previous[1] if previous else None))
     if not links:
-        raise ValueError('Lite Strategy IR release archive unavailable or has no linked releases.')
+        return fetch_lits_wire_news()
     stories=[]
     for url,(title,date) in list(links.items())[:18]:
         lead=''
@@ -503,7 +541,7 @@ def fetch_lits_news() -> list[dict]:
                         excerpt=lead or title,date_only=True)
         if item:stories.append(item)
     if not stories:
-        raise ValueError('Lite Strategy IR releases found, but no usable dated stories.')
+        return fetch_lits_wire_news()
     return stories
 
 
@@ -561,7 +599,27 @@ def rss_items(xml_text: str) -> list[dict]:
     return result
 
 
-def is_investor_news(title: str, excerpt: str) -> bool:
+def recycled_earnings_period(headline: str, published_at: str | None) -> bool:
+    """Reject an old period-only earnings headline given a much newer RSS date.
+
+    Allow a full year after the named year's end, accommodating fiscal-year
+    timing and delayed reporting. Explicit restatements, investigations and
+    comparisons are current developments about old accounts, not recycled news.
+    """
+    date=normalize_date(published_at)
+    if not date or not re.search(r'\b(?:earnings|results)\b',headline):
+        return False
+    periods=re.findall(r'\b(?:q[1-4]|(?:fiscal|financial)\s+year|fy)\s*(20\d{2})\b',headline)
+    years=set(re.findall(r'\b20\d{2}\b',headline))
+    if not periods or len(years)!=1:
+        return False
+    if re.search(r'\b(?:restat\w*|amend\w*|revis\w*|correct\w*|delay\w*|overdue|investigat\w*|litigat\w*|lawsuit|compar\w*|versus|vs|histor\w*|retrospect\w*)\b',headline):
+        return False
+    period_end=datetime(int(periods[0])+1,1,1,tzinfo=timezone.utc)
+    return datetime.fromisoformat(date.replace('Z','+00:00')) > period_end+timedelta(days=366)
+
+
+def is_investor_news(title: str, excerpt: str, published_at: str | None = None) -> bool:
     text=(title+' '+excerpt).lower()
     headline=title.lower()
     # Search indexes also return persistent quote landing pages as "news".
@@ -570,11 +628,29 @@ def is_investor_news(title: str, excerpt: str) -> bool:
         return False
     if re.search(r'\b(?:stock|share) (?:price|quote)\s*[,|:/&–-]\s*(?:news|quote|chart|historical)\b',headline):
         return False
+    if any(re.search(pattern,headline) for pattern in (
+            r'\b(?:stock|share) price today\b.{0,80}\b(?:live chart|chart\s*&\s*news|quote)\b',
+            r'\bseasonal returns? chart\b',
+            r'\bearnings date\s*[,|:/&–-]\s*reports?\s+(?:and|&)\s+estimates?\b')):
+        return False
+    if (re.search(r'\bestimates\s*[-–—|:]\s*(?:nasdaq|nyse|amex)\s*:\s*[a-z0-9.]+\s*$',headline)
+            and not re.search(r'\b(?:rais\w*|cuts?|beat\w*|miss\w*|revis\w*|reports?|announc\w*|update\w*|lower\w*|lifts?)\b',headline)):
+        return False
     # Routine share withholding to settle an executive's vesting taxes is
     # filing-derived administrative noise, not a new treasury investment.
     withholding=bool(re.search(r'\btax[\s-]+withhold(?:ing|ings)?\b|\bwithheld\b.{0,55}\b(?:tax|taxes|vesting)\b|\bvesting\b.{0,45}\b(?:tax|taxes|withhold\w*)\b',headline))
-    material=bool(re.search(r'\b(?:capital raise|equity facility|share offering|public offering|private placement|treasury (?:purchase|acquisition|funding)|staking (?:revenue|yield|rewards))\b|\brais(?:e|es|ed|ing)\b.{0,35}\b(?:million|billion|funds?|capital)\b',headline))
+    material=bool(re.search(r'\b(?:capital raise|equity facility|share offering|public offering|private placement|treasury (?:purchase|acquisition|funding|income)|staking (?:revenue|yield|rewards)|covered[\s-]calls?|options? premiums?|earnings|financial results)\b|\brais(?:e|es|ed|ing)\b.{0,35}\b(?:million|billion|funds?|capital)\b',headline))
     if withholding and not material:
+        return False
+    # Small employee/director option grants are compensation notices. Keep
+    # treasury option income, actual results and material financing coverage.
+    lits_compensation=(re.search(r'\blite\s+strategy\b|\blits\b',headline)
+        and re.search(r'\boptions?\b',headline)
+        and re.search(r'\b(?:grants?|granted|awards?|awarded|receives?|received|vesting|exercise price|compensation)\b',headline)
+        and re.search(r'\b(?:director|ceo|cfo|executive|officer|board|employee)\b',headline))
+    if lits_compensation and not material:
+        return False
+    if recycled_earnings_period(headline,published_at):
         return False
     if any(term in text for term in NEGATIVE_MEDIA):return False
     if any(v in text for v in ('binance square', 'price forecast', 'massive price rally', 'exclusive price prediction')):return False
@@ -590,7 +666,7 @@ def parse_google_news(xml_text: str) -> list[dict]:
         if raw_title.endswith(' - '+publisher):raw_title=raw_title[:-(len(publisher)+3)]
         excerpt=plain_text(entry['excerpt'],210)
         entities=identify_entities(raw_title+' '+excerpt)
-        if not entities or not is_investor_news(raw_title,excerpt):continue
+        if not entities or not is_investor_news(raw_title,excerpt,entry['date']):continue
         category=classify(raw_title,excerpt)
         # Google's RSS hyperlinks are a gateway to the publisher, not the original URL.
         story=make_story(title=raw_title,date=entry['date'],url=entry['url'],source=publisher+' · via Google News',source_type='Media',source_id='media',entities=entities,excerpt=excerpt or raw_title,category=category)
@@ -856,7 +932,8 @@ def merge_stories(old: list[dict], incoming: list[dict]) -> tuple[list[dict],int
         # Remove retired issuers and standalone network coverage from the archive.
         # A joint report remains visible whenever an active company is covered.
         item['entities']=[entity for entity in previous_entities if entity in TRACKED_ENTITIES]
-        if item.get('source_type') in ('Media','News') and not is_investor_news(item.get('title',''),item.get('excerpt','')):
+        if item.get('source_type') in ('Media','News') and not is_investor_news(
+                item.get('title',''),item.get('excerpt',''),item.get('published_at')):
             item['rejected_as_noise']=True
         if item.get('source_type') in ('Media','News'):
             found=identify_entities((item.get('title') or '')+' '+(item.get('excerpt') or ''))
