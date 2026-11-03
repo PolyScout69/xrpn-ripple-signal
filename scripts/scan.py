@@ -630,6 +630,7 @@ def is_investor_news(title: str, excerpt: str, published_at: str | None = None) 
         return False
     if any(re.search(pattern,headline) for pattern in (
             r'\b(?:stock|share) price today\b.{0,80}\b(?:live chart|chart\s*&\s*news|quote)\b',
+            r'\b(?:stock|share) price history\s*(?:&|and)\s*data\s*$',
             r'\bseasonal returns? chart\b',
             r'\bearnings date\s*[,|:/&–-]\s*reports?\s+(?:and|&)\s+estimates?\b')):
         return False

@@ -501,6 +501,7 @@ class CollectorTests(unittest.TestCase):
     def test_static_quote_estimates_and_chart_templates_are_not_news(self):
         for headline in (
             'Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News',
+            'Lite Strategy, Inc. (LITS) Stock Price History & Data',
             'Lite Strategy, Inc. (LITS) Seasonal returns chart',
             'Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates',
             'Lite Strategy, Inc. Estimates – NASDAQ:LITS',
