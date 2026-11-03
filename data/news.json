@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-03T03:59:13Z",
+    "ran_at": "2026-11-03T17:04:40Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 3,
+    "new_items": 11,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,45 +23,45 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-03T03:59:13Z",
+      "checked_at": "2026-11-03T17:04:40Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-03T03:59:13Z",
+      "checked_at": "2026-11-03T17:04:40Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-03T03:59:13Z",
+      "checked_at": "2026-11-03T17:04:40Z",
       "message": "Fetched 22 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 290,
-      "checked_at": "2026-11-03T03:59:13Z",
-      "message": "Fetched 290 matching items."
+      "items_seen": 292,
+      "checked_at": "2026-11-03T17:04:40Z",
+      "message": "Fetched 292 matching items."
     }
   },
   "sentiment_30d": {
     "MSTR": {
-      "value": 1,
-      "label": "Slightly bullish",
-      "raw_score": 0.38,
+      "value": 0,
+      "label": "Neutral",
+      "raw_score": 0.03,
       "window_days": 30,
-      "as_of": "2026-11-03T03:59:13Z",
-      "stories": 42,
-      "independent_events": 37,
-      "directional_events": 7,
-      "distinct_catalysts": 3,
-      "bullish_events": 5,
-      "bearish_events": 2,
-      "neutral_events": 30,
+      "as_of": "2026-11-03T17:04:40Z",
+      "stories": 47,
+      "independent_events": 42,
+      "directional_events": 9,
+      "distinct_catalysts": 5,
+      "bullish_events": 6,
+      "bearish_events": 3,
+      "neutral_events": 33,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -74,6 +74,17 @@
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRkk4WjYxZFFaYk03aldNTURESDZqSExSTXJ0RU1fRzNxSmFxcDlPTHIxVjRBbHFhWTc0dFM4eFctSXBwSExnRjA4QWp1VEljUGxFbVVvMUk0RUhyWjBnR1NzXy02YU5Jc0ZieENidEtzeFJZQy05Z2FGd1VDbW5wdGZtS00?oc=5"
+        },
+        {
+          "id": "5e82b8ddd683da",
+          "title": "Is Strategy (MSTR) Still Doubling Down On Bitcoin With A $65 Million Move?",
+          "value": -2,
+          "impact": "Medium",
+          "published_at": "2026-11-03T10:08:42Z",
+          "reports": 1,
+          "scenario": "reported",
+          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQSGhoeW1BNl9yODVQNFFRWWl4N2hTTTFOZXQ1aVFsR3NSa3VGRm5xSTVZaGVCbnFWNld3VGotNUJ6RWZEQ3ZEWTJkaUVuTXZlZjcza0M1UlVZLWhEY3FERXJ1S01SZlVKQUtTY2VmLVVEV3pmdmRBQkU4b0Y2LUxubUQtVDFNTTZreThkWks2bEd1ZFBndDJ2dU5pVE9CUHM?oc=5"
         },
         {
           "id": "oct26equity",
@@ -96,17 +107,6 @@
           "scenario": "reported",
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVQyZmRTSWIxeFg1Y0k5Sk1TQV85blh4UnJDZzJmQ3Rmd2d1T2xKamdyWlpIdVpaRHhwQ2ItbGNRc1VQcUdOVl9OMHhjS2duQzBDVktsR21neG1KaG00VTdJR0NLQjFUWFhBSFMySEhKUzVnQnRYYVh4SGxJaXN0NWU1eWY2VFFqajhZN3JZYmIzbmtydEpwZzNiUTJ3aTd4LTFnWUhNQzNxaFpsQ2RNS2NTNjRuMTV2b2plbnBtdXZnM2podWlEamhlMmlBMVhZOUtn?oc=5"
-        },
-        {
-          "id": "cf53629d4e1d85",
-          "title": "Strategy’s $150 million-a-day STRC market has a hidden dependency on its own buybacks",
-          "value": -1,
-          "impact": "Medium",
-          "published_at": "2026-10-09T07:00:00Z",
-          "reports": 1,
-          "scenario": "reported",
-          "reason": "If STRC liquidity or its market price depends materially on issuer buybacks, financing fragility could weigh on MSTR.",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb2RrSzl3VHB6YU9jQ1JMTmNsR2FlTy1zZzJSOWxvTUJzNkhSZ0lHNWlHRTNXSzVUN3dBeGVqMFplS3YwUVRVdVRIMEdpX1Z5MS05aWFoZEMyRERDVUtibS1kbTNGMlFLdmpqNXQzNURfU1B6SXdhcmpiS3lLaUphRFhwMGdjaFJjRDJPeDJ4NHZxV0U5LVJ1U0ZLbjhidDZILXhPQ1hudTJwcktu?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v2"
@@ -116,7 +116,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.07,
       "window_days": 30,
-      "as_of": "2026-11-03T03:59:13Z",
+      "as_of": "2026-11-03T17:04:40Z",
       "stories": 42,
       "independent_events": 39,
       "directional_events": 17,
@@ -178,7 +178,7 @@
       "label": "Bearish",
       "raw_score": -1.38,
       "window_days": 30,
-      "as_of": "2026-11-03T03:59:13Z",
+      "as_of": "2026-11-03T17:04:40Z",
       "stories": 28,
       "independent_events": 28,
       "directional_events": 3,
@@ -215,6 +215,48 @@
     }
   },
   "items": [
+    {
+      "id": "5e82b8ddd683da",
+      "title": "Is Strategy (MSTR) Still Doubling Down On Bitcoin With A $65 Million Move?",
+      "published_at": "2026-11-03T10:08:42Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQSGhoeW1BNl9yODVQNFFRWWl4N2hTTTFOZXQ1aVFsR3NSa3VGRm5xSTVZaGVCbnFWNld3VGotNUJ6RWZEQ3ZEWTJkaUVuTXZlZjcza0M1UlVZLWhEY3FERXJ1S01SZlVKQUtTY2VmLVVEV3pmdmRBQkU4b0Y2LUxubUQtVDFNTTZreThkWks2bEd1ZFBndDJ2dU5pVE9CUHM?oc=5",
+      "excerpt": "Is Strategy (MSTR) Still Doubling Down On Bitcoin With A $65 Million Move? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:49Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Is Strategy (MSTR) Still Doubling Down On Bitcoin With A $65 Million Move?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQSGhoeW1BNl9yODVQNFFRWWl4N2hTTTFOZXQ1aVFsR3NSa3VGRm5xSTVZaGVCbnFWNld3VGotNUJ6RWZEQ3ZEWTJkaUVuTXZlZjcza0M1UlVZLWhEY3FERXJ1S01SZlVKQUtTY2VmLVVEV3pmdmRBQkU4b0Y2LUxubUQtVDFNTTZreThkWks2bEd1ZFBndDJ2dU5pVE9CUHM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T10:08:42Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": -2,
+          "label": "Bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "16adbf20cfed59",
       "title": "STRC nears $100 as Strategy discloses $208M share buyback",
@@ -258,6 +300,48 @@
       ]
     },
     {
+      "id": "18095b77469788",
+      "title": "Michael Saylor keeps buying bitcoin. Here's how Strategy funds it",
+      "published_at": "2026-11-02T17:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWlE5WEJkRXZDNTZjOWFRZHhiRUlCUjJnaEU3NmpodmM3bkxPVFV2bW81TTZERkFBYWhpci1tcENQc2NfNjgwcEV5MmZSQzc0X2kzMHBOeFcyLWxzQWU1Q2pqam04cXNjZ1Vua0dkNktNSlczTmV2M01rUTZzZUhaV2JwY1B0QVppcmNCQUZNZVZqa3BlbW05dWd0VGx0d25LYmJKTVliUGNoT1dOblZV?oc=5",
+      "excerpt": "Michael Saylor keeps buying bitcoin. Here's how Strategy funds it Yahoo Finance Strategy Makes Its Largest Bitcoin Purchase Since September, Keeps Buying Back More STRC TradingView 'We found room for even more…",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor keeps buying bitcoin. Here's how Strategy funds it",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWlE5WEJkRXZDNTZjOWFRZHhiRUlCUjJnaEU3NmpodmM3bkxPVFV2bW81TTZERkFBYWhpci1tcENQc2NfNjgwcEV5MmZSQzc0X2kzMHBOeFcyLWxzQWU1Q2pqam04cXNjZ1Vua0dkNktNSlczTmV2M01rUTZzZUhaV2JwY1B0QVppcmNCQUZNZVZqa3BlbW05dWd0VGx0d25LYmJKTVliUGNoT1dOblZV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-02T17:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "08f492ea91e7c1",
       "title": "Sharplink Gaming (SBET) Projected to Post Quarterly Earnings on Monday",
       "published_at": "2026-11-02T15:25:38Z",
@@ -289,6 +373,132 @@
       "moon_meters": [
         {
           "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "8397731ada111c",
+      "title": "Strategy (MSTR) Adds 811 Bitcoin, Strive (ASST) Follows Suit With 124 as Both Keep Stacking",
+      "published_at": "2026-11-02T13:50:53Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBkeldENjlJZDQxY0pyeEhzX01Ob1pZU05ZZ3pWRXplcmQ0QUJmdEFvUW03X3NocFlGNzRnYUdpc2t4bVJ0eE1pdEh4QVRVczdGVE5TVi1uUmxSVjdpX1oySHZuM0M5UkpKWmdHWDRaMFk5TW01QlJITkZ5UHVQcFU?oc=5",
+      "excerpt": "Strategy (MSTR) Adds 811 Bitcoin, Strive (ASST) Follows Suit With 124 as Both Keep Stacking Bitcoin Magazine",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Adds 811 Bitcoin, Strive (ASST) Follows Suit With 124 as Both Keep Stacking",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBkeldENjlJZDQxY0pyeEhzX01Ob1pZU05ZZ3pWRXplcmQ0QUJmdEFvUW03X3NocFlGNzRnYUdpc2t4bVJ0eE1pdEh4QVRVczdGVE5TVi1uUmxSVjdpX1oySHZuM0M5UkpKWmdHWDRaMFk5TW01QlJITkZ5UHVQcFU?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-02T13:50:53Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "4e52fc508fa03f",
+      "title": "Strategy's Michael Saylor Blames These 3 Factors for Bitcoin's Recent Sluggish Performance. The Most Important Is Treasury Yields.",
+      "published_at": "2026-11-02T11:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Motley Fool · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMU5CS196cnBFOThNOENDR292bmtueUxqOEZrY1p2RXBibEhoMGhlS1djRXNPTDdfeDF3UTVFUUJUMjlWd3BIX3lzTk9HZ21CS2cwcFBuQlhuZXU0ZzZKaVI3OUxrTVpyS3FNYi1rVTZVU1JBT3otYXhiNVRoMzBGYmp3RlJWQVZ4aFdCUGVtU2NBeEduR2k4dA?oc=5",
+      "excerpt": "Strategy's Michael Saylor Blames These 3 Factors for Bitcoin's Recent Sluggish Performance. The Most Important Is Treasury Yields. The Motley Fool",
+      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy's Michael Saylor Blames These 3 Factors for Bitcoin's Recent Sluggish Performance. The Most Important Is Treasury Yields.",
+          "name": "The Motley Fool · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMU5CS196cnBFOThNOENDR292bmtueUxqOEZrY1p2RXBibEhoMGhlS1djRXNPTDdfeDF3UTVFUUJUMjlWd3BIX3lzTk9HZ21CS2cwcFBuQlhuZXU0ZzZKaVI3OUxrTVpyS3FNYi1rVTZVU1JBT3otYXhiNVRoMzBGYmp3RlJWQVZ4aFdCUGVtU2NBeEduR2k4dA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-02T11:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "168403c0e7e369",
+      "title": "Michael Saylor says Strategy can thrive without Bitcoin or equity",
+      "published_at": "2026-11-01T07:13:41Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Crypto Briefing · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaXRBMTVZWS16Ukh5dmhfSmFydzlQd0RaanNhbTNJTXQxZFNJVmlZVUlLZUxOa2NLTDJZdzlfZ2F3eV93ZDVFM1EtZUNBWEdlcTBJdEttXzFPTVRzc2owNVRZNzJqeDlFNDJsREZvenZ2MDhiZUdmZm13dVBiOWc4TU5WU0NXRTZj?oc=5",
+      "excerpt": "Michael Saylor says Strategy can thrive without Bitcoin or equity Crypto Briefing",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:50Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor says Strategy can thrive without Bitcoin or equity",
+          "name": "Crypto Briefing · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaXRBMTVZWS16Ukh5dmhfSmFydzlQd0RaanNhbTNJTXQxZFNJVmlZVUlLZUxOa2NLTDJZdzlfZ2F3eV93ZDVFM1EtZUNBWEdlcTBJdEttXzFPTVRzc2owNVRZNzJqeDlFNDJsREZvenZ2MDhiZUdmZm13dVBiOWc4TU5WU0NXRTZj?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-01T07:13:41Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -7019,6 +7229,13 @@
           "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
           "name": "TradingView · via Google News",
           "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOdmJNcHFCb3Zua0NrZUxENHJtc3ViV1lFa1FYR3I1MGhPV0dBUjFoNDd6YWtkQUhnM21aOWJvQVJqRDlEa1htRXA4VDBOZjZNMk9rWndYRkg2MWNSS2FHWnZPYkx6MTd3WklZU2JxWDNHVVFXb2szOHk0QVlYSTQwYWwtcUFmcXZhWWtITThDcnJ2RUk3aWp3UVFJX0J1M2x6QkJlemJBX05sQTBnVmVpR0NRcjVuTzF2cHhqQ1FUZGpSSjFySVNOQmt0OGQzTW5JeElZYmdzenAxbTRBOXZYNU5xci1GV3N1WllDanJkZ09yMlZ2UUE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-05T07:00:00Z"
+        },
+        {
+          "title": "Michael Saylor’s Strategy Forecasts $20.9B Q3 Digital-Asset Gain As MSTR Bitcoin Stack Hits 848,000 BTC",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNU3hCczA5bUlVMDFQRlVwQ3ItNHI4Vmd0RFpnOWgxU29oNjZSb0YzcXVub3hpU29la0QzWHkyRS1ZelZfWEJ5bjRqeVBISm5JSnVydGJib2NZVUl3eERYSGNGMWFlT2dsZ21TWjNqdzNLNHRndXRramM4SzZYUjZaV1g0RS1yUTg1UXBscHJPdFdQdmplZXpMNjNPem12TjNUUHQw?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-05T07:00:00Z"
         }
@@ -14019,6 +14236,48 @@
       ]
     },
     {
+      "id": "571fb191ba57b2",
+      "title": "Ex-Goldman Credit Veteran Says Markets May Be Mispricing MicroStrategy’s STRC by 13%",
+      "published_at": "2026-07-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRFlIamlVcHd4Z3lwT3dyc1NOLXBXMnhwWjdrOFpyaEdSalljZVJadHNLNHU3SUw1d1RSbjMzWlpaSmM4YTdnZlZNeVltU2hzSTRtTEc5NF9abnptVVBUVzZEdk00NU1sdXJ5cFUwRGU4VnlRNlNZQ19aV2dRV2c3SUtFYnJuSGY5OHhQcFZOV2MwbE5YY1VwS3Bpdw?oc=5",
+      "excerpt": "Ex-Goldman Credit Veteran Says Markets May Be Mispricing MicroStrategy’s STRC by 13% Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ex-Goldman Credit Veteran Says Markets May Be Mispricing MicroStrategy’s STRC by 13%",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRFlIamlVcHd4Z3lwT3dyc1NOLXBXMnhwWjdrOFpyaEdSalljZVJadHNLNHU3SUw1d1RSbjMzWlpaSmM4YTdnZlZNeVltU2hzSTRtTEc5NF9abnptVVBUVzZEdk00NU1sdXJ5cFUwRGU4VnlRNlNZQ19aV2dRV2c3SUtFYnJuSGY5OHhQcFZOV2MwbE5YY1VwS3Bpdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "ff2518cf1738ef",
       "title": "Michael Saylor’s Bitcoin Treasury Company Strategy Is Falling Apart",
       "published_at": "2026-07-16T07:00:00Z",
@@ -17304,8 +17563,8 @@
       "published_at": "2026-06-02T07:00:00Z",
       "date_only": false,
       "entities": [
-        "SharpLink Gaming",
-        "Strategy"
+        "Strategy",
+        "SharpLink Gaming"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -17330,7 +17589,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -17340,7 +17599,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -18154,6 +18413,48 @@
       ]
     },
     {
+      "id": "96fd87ef4d8dc1",
+      "title": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying?",
+      "published_at": "2026-05-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVJ1bkhia3AzcncxWGpxR1pqNWE0OFFXX2FWZEN1bFpTVzV4YnZTa3pCaGNQbmhGNzEwMEVSMjR2SmVFcVpSWEZ4WGFsVEo1VnVWV2dGSGNBOWFDemhMcDc1UUtUWV92dDc2WDNqRVhJUVRFajdMWFdlWm1VQUh5MmVJS2JSNkZxR3FVVkZvTGZGbDJFenRXZUFhd2ZTb0pwSUt4Y0VYVGs4UFNqNXItVXNpZnVHTkJJ?oc=5",
+      "excerpt": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying? 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Is MSTR Stock Down 58% YoY Despite Strategy’s Relentless Bitcoin Buying?",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVVJ1bkhia3AzcncxWGpxR1pqNWE0OFFXX2FWZEN1bFpTVzV4YnZTa3pCaGNQbmhGNzEwMEVSMjR2SmVFcVpSWEZ4WGFsVEo1VnVWV2dGSGNBOWFDemhMcDc1UUtUWV92dDc2WDNqRVhJUVRFajdMWFdlWm1VQUh5MmVJS2JSNkZxR3FVVkZvTGZGbDJFenRXZUFhd2ZTb0pwSUt4Y0VYVGs4UFNqNXItVXNpZnVHTkJJ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "7372c212e107da",
       "title": "MSTR Stock Forecast: Strategy Buys 24,869 Bitcoin for $2B to Hit 843,738 BTC Holdings",
       "published_at": "2026-05-18T07:00:00Z",
@@ -18563,6 +18864,48 @@
       "moon_meters": [
         {
           "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "f17d13c390c8cb",
+      "title": "Forget MicroStrategy. The Company Taking a Cut Every Time Bitcoin Traders Panic Is Up 7% This Year and Pays a $5 Dividend",
+      "published_at": "2026-05-14T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "24/7 Wall St. · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQeV84NUxIczM1UFdvOExuRV8xWUJxQTZWWjljNFEtc0R3bV9tVUZJRHNlU3JIeFRnWEpkdlJGdHBKNmF5Q0p4MXNKZmJVZFdLZUJaZ0dzS0FmbnhtSVNacXpkT05tMkszdURvdXVxcURFdkhDMVZvZk1rQ1J1VkJSVFhyLXRzVUhWSnlHWE9MNHJBUTJXNS1udk5sekotVjJaSGVOTFU5MkRfRE9YU0hFWFdzV29RU1dOR1FzcmN2ZU1yZVJoWGZKN0dUbl9LZG43a2h4akJETVRXbE1NTFE4X1Q4MVJaR2UwSlU5QlVKUGVzNk1B?oc=5",
+      "excerpt": "Forget MicroStrategy. The Company Taking a Cut Every Time Bitcoin Traders Panic Is Up 7% This Year and Pays a $5 Dividend 24/7 Wall St.",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Forget MicroStrategy. The Company Taking a Cut Every Time Bitcoin Traders Panic Is Up 7% This Year and Pays a $5 Dividend",
+          "name": "24/7 Wall St. · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQeV84NUxIczM1UFdvOExuRV8xWUJxQTZWWjljNFEtc0R3bV9tVUZJRHNlU3JIeFRnWEpkdlJGdHBKNmF5Q0p4MXNKZmJVZFdLZUJaZ0dzS0FmbnhtSVNacXpkT05tMkszdURvdXVxcURFdkhDMVZvZk1rQ1J1VkJSVFhyLXRzVUhWSnlHWE9MNHJBUTJXNS1udk5sekotVjJaSGVOTFU5MkRfRE9YU0hFWFdzV29RU1dOR1FzcmN2ZU1yZVJoWGZKN0dUbl9LZG43a2h4akJETVRXbE1NTFE4X1Q4MVJaR2UwSlU5QlVKUGVzNk1B?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-14T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -19778,6 +20121,48 @@
       ]
     },
     {
+      "id": "ac400e4e1b60c8",
+      "title": "Peter Schiff Warns of a “Death Spiral” in MicroStrategy’s Bitcoin Strategy",
+      "published_at": "2026-04-26T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUktZSmJUMGlGSWt1VDhaUWFuUnlLbFNGNy1HU0tEWjh2X0VldGRKVE1FdTFCR1BseWFQS1lya3paVVV2YVE0X09IX3ozMU4xQ1BYTUszQVdHYUliejJoTE94MHYyS3FjZGFLN3NDVmVTU3Q3Z0U3T2VxNm9NSnVkM1NmNC11cURVN080Nk5zLThYdnNsdkw3VU1DLWs?oc=5",
+      "excerpt": "Peter Schiff Warns of a “Death Spiral” in MicroStrategy’s Bitcoin Strategy Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Peter Schiff Warns of a “Death Spiral” in MicroStrategy’s Bitcoin Strategy",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUktZSmJUMGlGSWt1VDhaUWFuUnlLbFNGNy1HU0tEWjh2X0VldGRKVE1FdTFCR1BseWFQS1lya3paVVV2YVE0X09IX3ozMU4xQ1BYTUszQVdHYUliejJoTE94MHYyS3FjZGFLN3NDVmVTU3Q3Z0U3T2VxNm9NSnVkM1NmNC11cURVN080Nk5zLThYdnNsdkw3VU1DLWs?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-26T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "68c8c0530587d7",
       "title": "Selling The Furniture To Pay The Rent: The Unsustainable Reality Of Strategy Inc Preferred",
       "published_at": "2026-04-25T07:00:00Z",
@@ -20151,6 +20536,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "c634521af9c305",
+      "title": "MSTR Stock Fails to Recover Despite Michael Saylor’s Strategy $2.54 Billion Bitcoin Buy",
+      "published_at": "2026-04-20T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Coinpaper · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbXZzZTZfaTZmTVQyR0dvdHdCTUJfaXpJLXY3OTh1ZnhweGFfYk4wM2t3SWZUNVM2dTFZOThQaEc4TVVXam9La0hJSVlaZmpxaXFySXppNnF1MlhRTW9pQ2dLRXpLQzFCS0FlWnZzNkFpLUpiYU85LWdQSXNRTnpITGRtTVpka0o1T0lRV2J6ZlBPc0JxbnR4ZmJUOWk5c3VDdDlFclZZdFJrVlRIcWg1LXlhY2VpMGFZ?oc=5",
+      "excerpt": "MSTR Stock Fails to Recover Despite Michael Saylor’s Strategy $2.54 Billion Bitcoin Buy Coinpaper",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Fails to Recover Despite Michael Saylor’s Strategy $2.54 Billion Bitcoin Buy",
+          "name": "Coinpaper · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbXZzZTZfaTZmTVQyR0dvdHdCTUJfaXpJLXY3OTh1ZnhweGFfYk4wM2t3SWZUNVM2dTFZOThQaEc4TVVXam9La0hJSVlaZmpxaXFySXppNnF1MlhRTW9pQ2dLRXpLQzFCS0FlWnZzNkFpLUpiYU85LWdQSXNRTnpITGRtTVpka0o1T0lRV2J6ZlBPc0JxbnR4ZmJUOWk5c3VDdDlFclZZdFJrVlRIcWg1LXlhY2VpMGFZ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-20T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -21262,6 +21689,48 @@
       ]
     },
     {
+      "id": "f7b138e6f07749",
+      "title": "Strategy Holds STRC Dividend Payment At 11.5%",
+      "published_at": "2026-04-01T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUmxFV2c3RUlJczRlY1RnTDlENFpSWkdvT2pITU52akM1WmxGOWFZZnllM3ZWSDRKbDlHNDNjSmJ0MUhFMG16aTEtblczNFBOcmY1VjFCU2NkZEs4VnN6VEtyS2ppaGZ2bWdxdEdiTGxpZlBNMmI2ZEljY3g1azUyM2plaTFMRWxGTTMtSU8wWWpxRnFYeXpyZXBXWDl1VjNtVGdR?oc=5",
+      "excerpt": "Strategy Holds STRC Dividend Payment At 11.5% Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T17:04:48Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Holds STRC Dividend Payment At 11.5%",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUmxFV2c3RUlJczRlY1RnTDlENFpSWkdvT2pITU52akM1WmxGOWFZZnllM3ZWSDRKbDlHNDNjSmJ0MUhFMG16aTEtblczNFBOcmY1VjFCU2NkZEs4VnN6VEtyS2ppaGZ2bWdxdEdiTGxpZlBNMmI2ZEljY3g1azUyM2plaTFMRWxGTTMtSU8wWWpxRnFYeXpyZXBXWDl1VjNtVGdR?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-01T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "a9a63bb64030cb",
       "title": "XRP Price Rises 3.2% On Ripple's Convera Partnership",
       "published_at": "2026-04-01T07:00:00Z",
@@ -22188,468 +22657,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "ee46836521fd9a",
-      "title": "MSTR Stock: Strategy Buys $1.28B Bitcoin, Holdings Hit 738K BTC",
-      "published_at": "2026-03-09T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Coinpaper · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbGdoeVhFRFNwa29idDB3R1lFdTkycE5SVUFFQ3c2QWhKN1FpdEIwOWRTUnhnNkp1Yll5Q1BjVWk4S09yeHM5dHloTmNHbXhrb0hORWQwRlJjM3lRMW9oY0lUVE4xT2JsYmlhYXItUVJyOEFGOE41bGE2RUNrMmpMTmlKdzVtbm5JTlp4Wg?oc=5",
-      "excerpt": "MSTR Stock: Strategy Buys $1.28B Bitcoin, Holdings Hit 738K BTC Coinpaper",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "MSTR Stock: Strategy Buys $1.28B Bitcoin, Holdings Hit 738K BTC",
-          "name": "Coinpaper · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbGdoeVhFRFNwa29idDB3R1lFdTkycE5SVUFFQ3c2QWhKN1FpdEIwOWRTUnhnNkp1Yll5Q1BjVWk4S09yeHM5dHloTmNHbXhrb0hORWQwRlJjM3lRMW9oY0lUVE4xT2JsYmlhYXItUVJyOEFGOE41bGE2RUNrMmpMTmlKdzVtbm5JTlp4Wg?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-09T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "2fae7fd85c21dd",
-      "title": "Is the MSTR Bubble Bursting? Assessing Strategy’s BTC Holdings Amid Massive Share Dilution",
-      "published_at": "2026-03-04T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 78,
-      "source": "TradingKey · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUGJfeEo3ZkNDQTdDVUNwdlpWOVgwZ0hraVUtME1rdTZEODRkWTUybG9DamV5d0t2YTd2RzBGelFORHVIT2pqZXpTMDVfT1FmM0pUdFdXUDFaVExidmdkVGRsend6VU9ac2U4T0JYaXV4V3BLaktWQy04NHFBV25oRmY0ZFl6aXNTZTM0NGF5OW9XLUF5T3E4WlM0dWhlNmRyRUJuSUhtTEI5MzlK?oc=5",
-      "excerpt": "Is the MSTR Bubble Bursting? Assessing Strategy’s BTC Holdings Amid Massive Share Dilution TradingKey",
-      "why_it_matters": "Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Is the MSTR Bubble Bursting? Assessing Strategy’s BTC Holdings Amid Massive Share Dilution",
-          "name": "TradingKey · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUGJfeEo3ZkNDQTdDVUNwdlpWOVgwZ0hraVUtME1rdTZEODRkWTUybG9DamV5d0t2YTd2RzBGelFORHVIT2pqZXpTMDVfT1FmM0pUdFdXUDFaVExidmdkVGRsend6VU9ac2U4T0JYaXV4V3BLaktWQy04NHFBV25oRmY0ZFl6aXNTZTM0NGF5OW9XLUF5T3E4WlM0dWhlNmRyRUJuSUhtTEI5MzlK?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-04T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": null,
-          "label": "Not rated",
-          "confidence": "Insufficient",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Speculative market commentary, not a verified company or network development.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "c05d6b96838002",
-      "title": "Michael Saylor's Strategy buys 3,015 bitcoin for $204 million as total holdings top 720,000 BTC",
-      "published_at": "2026-03-02T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWJHWTh6Tm1oRXRqRGZLeFYyQm9hcWVNYldUTTViZm1BeDFsbFVfVDUxV1RYUDd5OHVUVEtOSHJHY04xWjI5VXV0Q3NGZmdKRE5aTkZsLWgzWWg2U1lYU1ZVcVR2SkpvNEk5RjBoSGRsLTZBbmpONmJJWlp2NUJLMGlobTFtRlhUbUxtX0FEQXhVUHEwMHBlRk1aRzZZMDh4UWZ0b3Naa0hBN1E?oc=5",
-      "excerpt": "Michael Saylor's Strategy buys 3,015 bitcoin for $204 million as total holdings top 720,000 BTC The Block",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Michael Saylor's Strategy buys 3,015 bitcoin for $204 million as total holdings top 720,000 BTC",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWJHWTh6Tm1oRXRqRGZLeFYyQm9hcWVNYldUTTViZm1BeDFsbFVfVDUxV1RYUDd5OHVUVEtOSHJHY04xWjI5VXV0Q3NGZmdKRE5aTkZsLWgzWWg2U1lYU1ZVcVR2SkpvNEk5RjBoSGRsLTZBbmpONmJJWlp2NUJLMGlobTFtRlhUbUxtX0FEQXhVUHEwMHBlRk1aRzZZMDh4UWZ0b3Naa0hBN1E?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-02T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "497a77b9c52734",
-      "title": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend",
-      "published_at": "2026-03-01T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "CoinDesk · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRzlkMldFakw0UWlyRWdXaENKLUp4VUxBUm1mQU5PcWJ0bFdpUGswYWpzT2JweGg5TU5DT3Q5XzlqeWNxaVVyV2RQcVRNbUtjejk4N3NuQkg0aDlLTklmNk1HenFHcXU2NG9XNDhMRVRUU0h6SDY5ME82TUhGNXJwdllQd1RpQ291NDFCS2NhY3hQTkxReVlxbHk5UmVpUTJMRmZLZVVURThQNEtiM2NlWGYwd2UwRFBiTHo3TnJQYXM?oc=5",
-      "excerpt": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend CoinDesk",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend",
-          "name": "CoinDesk · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRzlkMldFakw0UWlyRWdXaENKLUp4VUxBUm1mQU5PcWJ0bFdpUGswYWpzT2JweGg5TU5DT3Q5XzlqeWNxaVVyV2RQcVRNbUtjejk4N3NuQkg0aDlLTklmNk1HenFHcXU2NG9XNDhMRVRUU0h6SDY5ME82TUhGNXJwdllQd1RpQ291NDFCS2NhY3hQTkxReVlxbHk5UmVpUTJMRmZLZVVURThQNEtiM2NlWGYwd2UwRFBiTHo3TnJQYXM?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-01T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "1af4b79ecf25d7",
-      "title": "MicroStrategy Boosts STRC Dividend to 11.50% as Bitcoin Drawdown Pressures MSTR",
-      "published_at": "2026-03-01T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOczNaRHJuRU9XZ3J0ZlhmeEQ5dnlVS2pfazNIYmQxTGctbW5jY0lKRUdLanZId0FhT1k4MFJkQVBmZDdMejVLNThTRWVRcUpOMl9oOXQ1ZEtqSnczYy10b3NjRVUzUGhnLWFQcVQ4Qk5XWmFZd1BDMDRiOWJnNTZoUjdvajd5aDYtbE1j?oc=5",
-      "excerpt": "MicroStrategy Boosts STRC Dividend to 11.50% as Bitcoin Drawdown Pressures MSTR Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "MicroStrategy Boosts STRC Dividend to 11.50% as Bitcoin Drawdown Pressures MSTR",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOczNaRHJuRU9XZ3J0ZlhmeEQ5dnlVS2pfazNIYmQxTGctbW5jY0lKRUdLanZId0FhT1k4MFJkQVBmZDdMejVLNThTRWVRcUpOMl9oOXQ1ZEtqSnczYy10b3NjRVUzUGhnLWFQcVQ4Qk5XWmFZd1BDMDRiOWJnNTZoUjdvajd5aDYtbE1j?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-01T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "4ea584deddafea",
-      "title": "Strategy boosts monthly STRC preferred dividend to 11.5% for March 2026",
-      "published_at": "2026-03-01T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOajBCWFdRT0JxUFg3YkQxTHNic3lBX0lzTG1oQTRya0JRNi1LOVR0bnRWa05sdnhpUFhBeXp5eEhmTllOd1JhVHVxM01qS0FKRG1IMWE4aE9PaFc2NFFnajJLTndRc1cwR09zblRjdXUwOTgxVWVJdmx5alNtYmxwY29FTEVZTjNyYklQSTJNZUhaMzUzV2UwQk5TVFVuMnlWUnE2QS02MEJVcDBEUUxPa2FJVlNPMjF0ZTVuUE9WSHpyM3VqS2hITUFZM1lQTFU?oc=5",
-      "excerpt": "Strategy boosts monthly STRC preferred dividend to 11.5% for March 2026 TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy boosts monthly STRC preferred dividend to 11.5% for March 2026",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOajBCWFdRT0JxUFg3YkQxTHNic3lBX0lzTG1oQTRya0JRNi1LOVR0bnRWa05sdnhpUFhBeXp5eEhmTllOd1JhVHVxM01qS0FKRG1IMWE4aE9PaFc2NFFnajJLTndRc1cwR09zblRjdXUwOTgxVWVJdmx5alNtYmxwY29FTEVZTjNyYklQSTJNZUhaMzUzV2UwQk5TVFVuMnlWUnE2QS02MEJVcDBEUUxPa2FJVlNPMjF0ZTVuUE9WSHpyM3VqS2hITUFZM1lQTFU?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-03-01T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "54d889bf01da9b",
-      "title": "Sharplink to Host Full Year 2025 Earnings Conference Call and Webcast on March 9, 2026 at 8:30 A.M. E.T.",
-      "published_at": "2026-02-25T12:00:00Z",
-      "date_only": true,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "High",
-      "score": 83,
-      "source": "Sharplink investor relations",
-      "source_type": "Official",
-      "source_id": "sbet",
-      "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=162726&m=rl&g=1772",
-      "excerpt": "Issuer announcement: Sharplink to Host Full Year 2025 Earnings Conference Call and Webcast on March 9, 2026 at 8:30 A.M. E.T.",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:51Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink to Host Full Year 2025 Earnings Conference Call and Webcast on March 9, 2026 at 8:30 A.M. E.T.",
-          "name": "Sharplink investor relations",
-          "url": "https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=162726&m=rl&g=1772",
-          "source_type": "Official",
-          "published_at": "2026-02-25T12:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "High",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "41adb46080424f",
-      "title": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved?",
-      "published_at": "2026-02-24T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 63,
-      "source": "24/7 Wall St. · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZi1qR0cxX01RZDA1MWRuZlRHYk0zWjFIdU0tQ1owRVFMM1FMSlh1N1c3WlJzUk9nV0YwUGp2elJJSldMSTB1SGpHemFnX1A3SjA2Ti1VWGFhMnN6UV9vM2xXbDhOR3FGam9TaGFybTRYUnBIWGx4SEw4SmU4ZnNWWkQwWmlYeFhHMXYzMzVmSTk1Z2pPVFZnR2lmZEVTSmNLM0JwdU5nTVpLZHpMdWV2MXVNcGVlVkdf?oc=5",
-      "excerpt": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved? 24/7 Wall St.",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T18:41:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Deutsche Bank Adopts Ripple’s Rails, But XRP Is Down 30%: Why Hasn’t XRP Moved?",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZi1qR0cxX01RZDA1MWRuZlRHYk0zWjFIdU0tQ1owRVFMM1FMSlh1N1c3WlJzUk9nV0YwUGp2elJJSldMSTB1SGpHemFnX1A3SjA2Ti1VWGFhMnN6UV9vM2xXbDhOR3FGam9TaGFybTRYUnBIWGx4SEw4SmU4ZnNWWkQwWmlYeFhHMXYzMzVmSTk1Z2pPVFZnR2lmZEVTSmNLM0JwdU5nTVpLZHpMdWV2MXVNcGVlVkdf?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-02-24T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f1c9ce97596cad",
-      "title": "'If it's not going to zero, it's going to a million': Michael Saylor's Strategy buys another 592 bitcoin for $40M",
-      "published_at": "2026-02-23T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQSWgtdVFJODhIOHROclZpek1obkJsaDEzT1ByVkVON05jNTR6UUd0TWhkNnNHTUlZMlRFdWJrSEhGMzNlWGZWcllpU3lVdHlJNS1EbTF0TjdmaXBBNmp6RHRMZVNGMVY1aEtHei1hUlpPZTZxOG1VQkN5QXA3OFpTQVh4U0l5VTJnX3RFSmxWMU1mQjZnWVpFSnhDTEdFMWtEa0xQMlkxREE2Rl9HX0FiWFhVSWpqdUd5NmZTTFZsZjk4LV8tSTdlYXBnTnk3ZU0zY3RBeUNQd2QxNmJPdF8w?oc=5",
-      "excerpt": "'If it's not going to zero, it's going to a million': Michael Saylor's Strategy buys another 592 bitcoin for $40M The Block",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-01T02:29:48Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "'If it's not going to zero, it's going to a million': Michael Saylor's Strategy buys another 592 bitcoin for $40M",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQSWgtdVFJODhIOHROclZpek1obkJsaDEzT1ByVkVON05jNTR6UUd0TWhkNnNHTUlZMlRFdWJrSEhGMzNlWGZWcllpU3lVdHlJNS1EbTF0TjdmaXBBNmp6RHRMZVNGMVY1aEtHei1hUlpPZTZxOG1VQkN5QXA3OFpTQVh4U0l5VTJnX3RFSmxWMU1mQjZnWVpFSnhDTEdFMWtEa0xQMlkxREE2Rl9HX0FiWFhVSWpqdUd5NmZTTFZsZjk4LV8tSTdlYXBnTnk3ZU0zY3RBeUNQd2QxNmJPdF8w?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-02-23T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "40ae6dbb7d6f69",
-      "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
-      "published_at": "2026-02-20T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Products",
-      "impact": "Medium",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
-      "excerpt": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger TradingView",
-      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
-      "tags": [],
-      "added_at": "2026-11-01T19:04:01Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple Exec Reveals Launch of Tokenized Properties Trading on XRP Ledger",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVV9pSHpYN3hlOXFiNGlBdDgzTWkteFdWTDhGUjZCRTBEU0pYb1dQcEV0Ty05SWt3OS1RcXlPdkNveHJEV3l3VDNuVXZjUVNIZE9YWjVHQnhsRE4yRUJjekdickdWY2V1XzhiOEczLXhiMWwwU2pjLUt0RjhCRnEwSElyLXBOTGtIYnlNSGFESnBYWndMMVFFT0Rkcld5Ny1zQUJnelUyU2FoUzdaUDgtOXZkalpxOTBHOGRHTEZNdXpGM2VLU09KRE5n?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-02-20T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If implemented at scale, direct XRP/XRPL adoption could increase utility and potential token demand.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "6f19807907e7d4",
-      "title": "Ethereum Firm Sharplink Holds 867K ETH Worth $1.68B",
-      "published_at": "2026-02-20T02:44:16Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTW11cG9SbG9aWGthVEFOX1BwVk1nSDJ4aTNVZ2pyTzNzVUh6MjFfX1FUTGE4RFJiOWFSVmtqdGxqSHdkcVdSR0x5bkV6WlNHQmcxdTJ0U0NJZXFaTE8zdk9nbWNScEh4NjdGd0RBODRIa3VsNEl6My1BS244THVFajVMT2xUTUs4dm1DT3pPeU9JYkVxOUFlcjlkRWhuQQ?oc=5",
-      "excerpt": "Ethereum Firm Sharplink Holds 867K ETH Worth $1.68B CoinMarketCap",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ethereum Firm Sharplink Holds 867K ETH Worth $1.68B",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTW11cG9SbG9aWGthVEFOX1BwVk1nSDJ4aTNVZ2pyTzNzVUh6MjFfX1FUTGE4RFJiOWFSVmtqdGxqSHdkcVdSR0x5bkV6WlNHQmcxdTJ0U0NJZXFaTE8zdk9nbWNScEh4NjdGd0RBODRIa3VsNEl6My1BS244THVFajVMT2xUTUs4dm1DT3pPeU9JYkVxOUFlcjlkRWhuQQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-02-20T02:44:16Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
