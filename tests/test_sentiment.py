@@ -13,7 +13,7 @@ def story(title, asset='XRPN', value=1, impact='Medium', age=1,
     return {
         'id': identifier or title, 'title': title,
         'published_at': published.isoformat().replace('+00:00', 'Z'),
-        'entities': [{'XRPN': 'Evernorth', 'MSTR': 'Strategy', 'SBET': 'SharpLink Gaming'}[asset]],
+        'entities': [{'XRPN': 'Evernorth', 'MSTR': 'Strategy', 'SBET': 'SharpLink Gaming', 'LITS': 'Lite Strategy'}[asset]],
         'source_type': source_type, 'category': 'Treasury',
         'impact': impact, 'score': score,
         'url': 'https://example.com/' + str(len(title)),
@@ -144,30 +144,33 @@ class SentimentTests(unittest.TestCase):
         self.assertEqual(s['stories'], 0)
         self.assertEqual(s['value'], 0)
 
-    def test_three_company_sentiment_stays_independent_and_ordered(self):
+    def test_four_company_sentiment_stays_independent_and_ordered(self):
         results = aggregate_sentiment([
             story('SharpLink earns material ETH staking income', 'SBET', value=2, impact='High'),
             story('SharpLink routine shareholder presentation', 'SBET', value=0, impact='Low'),
             story('Strategy Bitcoin treasury custody loss', 'MSTR', value=-2, impact='High'),
             story('Strategy appoints director', 'MSTR', value=1, impact='Low'),
             story('Evernorth routine shareholder update', 'XRPN', value=0),
+            story('Lite Strategy earns Litecoin covered-call income', 'LITS', value=2, impact='High'),
         ], AS_OF)
-        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET'])
+        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET', 'LITS'])
         self.assertGreater(results['SBET']['value'], 0)
         self.assertLess(results['MSTR']['value'], 0)
         self.assertEqual(results['SBET']['stories'], 2)
         self.assertEqual(results['MSTR']['stories'], 2)
         self.assertEqual(results['XRPN']['value'], 0)
+        self.assertGreater(results['LITS']['value'], 0)
+        self.assertEqual(results['LITS']['stories'], 1)
 
     def test_removed_issuers_and_archived_meter_values_cannot_reenter_sentiment(self):
-        retired = ('Lite Strategy', 'Hyperliquid Strategies', 'Forward Industries')
+        retired = ('Hyperliquid Strategies', 'Forward Industries')
         archived = story('Retired issuer treasury announcement', 'MSTR', value=3)
         archived['entities'] = list(retired)
         # Even a stale active-asset meter must not count without its issuer.
         archived['moon_meters'].extend({'asset': ticker, 'value': 3}
                                       for ticker in ('LITS', 'PURR', 'FWDI'))
         results = aggregate_sentiment([archived], AS_OF)
-        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET'])
+        self.assertEqual(list(results), ['MSTR', 'XRPN', 'SBET', 'LITS'])
         self.assertTrue(all(result['stories'] == 0 for result in results.values()))
         mixed = story('SharpLink joint company announcement', 'SBET', value=1)
         mixed['entities'].extend(retired)
@@ -175,6 +178,7 @@ class SentimentTests(unittest.TestCase):
         results = aggregate_sentiment([mixed], AS_OF)
         self.assertEqual(results['SBET']['stories'], 1)
         self.assertEqual(results['MSTR']['stories'], 0)
+        self.assertEqual(results['LITS']['stories'], 0)
 
     def test_sbet_duplicate_buyback_and_staking_coverage_counts_once(self):
         for titles in (
@@ -189,8 +193,24 @@ class SentimentTests(unittest.TestCase):
                 self.assertEqual(result['stories'], 2)
                 self.assertEqual(result['directional_events'], 1)
 
-    def test_three_treasury_cards_report_no_stories_without_manufacturing_score(self):
-        for ticker in ('MSTR', 'XRPN', 'SBET'):
+    def test_lits_duplicate_buyback_yield_and_per_share_coverage_counts_once(self):
+        for titles in (
+            ('Lite Strategy announces stock repurchase authorization', 'LITS buyback approved'),
+            ('Lite Strategy earns Litecoin covered-call income', 'LITS receives higher option premiums'),
+            ('Lite Strategy reports LTC backing per diluted share rises', 'LTC per fully diluted share grows at LITS'),
+            ('Lite Strategy buys 10000 LTC', 'LITS purchases Litecoin for treasury'),
+            ('Lite Strategy announces LitVM investment', 'LITS invests in LitVM'),
+        ):
+            with self.subTest(titles=titles):
+                result = self.check([
+                    story(titles[0], 'LITS', value=1, identifier='issuer'),
+                    story(titles[1], 'LITS', value=1, identifier='syndicated'),
+                ], ticker='LITS')
+                self.assertEqual(result['stories'], 2)
+                self.assertEqual(result['directional_events'], 1)
+
+    def test_four_treasury_cards_report_no_stories_without_manufacturing_score(self):
+        for ticker in ('MSTR', 'XRPN', 'SBET', 'LITS'):
             with self.subTest(ticker=ticker):
                 result = self.check([], ticker=ticker)
                 self.assertEqual(result['stories'], 0)

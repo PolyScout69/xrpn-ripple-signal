@@ -197,28 +197,25 @@
 }
 
 
-/* Three treasury companies: desktop rows and responsive reading order. */
-.market-pulse-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+/* Four treasury companies, in the same order for quotes and sentiment. */
+.ticker-l{background:#2b3e2f;color:#b9e8a0;border-color:#51745e}
+.entity-label.lits{color:#bfe5a3}
+.quote-icon-lits{background:#29452c;color:#c8efab;border-color:#547959}
+.quote-card-lits{background:linear-gradient(135deg,#1d2b21,#121f29 60%,#14212a);border-color:#456249}
+.market-pulse-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 .quote-card-top{flex-wrap:wrap}
 @media(min-width:821px){
-  /* Two activity counters above three sentiment indicators in one row. */
   .stats-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
   .stats-grid>.stat-card:not(.moon-sentiment-card){grid-column:span 6}
-  .stats-grid>.moon-sentiment-card{grid-column:span 4}
-}
-@media(min-width:821px) and (max-width:1150px){
   .stats-grid>.moon-sentiment-card{grid-column:span 6}
-  .stats-grid>#sentiment-card-mstr{grid-column:1 / -1}
 }
-@media(min-width:641px) and (max-width:1150px){
-  .market-pulse-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .market-pulse-grid>.quote-card-mstr{grid-column:1 / -1}
+@media(min-width:1500px){
+  .market-pulse-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .stats-grid>.moon-sentiment-card{grid-column:span 3}
 }
 @media(max-width:820px){
-  /* MSTR leads at full width; XRPN and SBET share the following row. */
   .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats-grid>.stat-card{grid-column:span 1}
-  .stats-grid>#sentiment-card-mstr{grid-column:1 / -1}
 }
 @media(max-width:640px){
   .market-pulse-grid{grid-template-columns:minmax(0,1fr)}

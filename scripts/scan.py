@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Daily, source-first investor news scan for Strategy, Evernorth, SharpLink Gaming and Ripple.
+"""Daily, source-first investor news scan for four crypto treasury issuers and Ripple.
 
 Sources: official issuer announcements plus company-specific financial RSS.
 Standalone SEC filing records are deliberately excluded from the feed and Moon Meter.
@@ -37,12 +37,14 @@ from scripts.sentiment import aggregate_sentiment
 RIPPLE_PRESS_URL = 'https://ripple.com/press-releases/'
 EVERNORTH_HOME = 'https://www.evernorth.xyz/'
 EVERNORTH_WIRE = 'https://www.prnewswire.com/news/evernorth-holdings-inc./'
+LITS_IR_URL = 'https://litestrategy.gcs-web.com/'
+LITS_IR_FALLBACK = 'https://kimbrxtherapeutics.gcs-web.com/press-releases'
 # Public news-widget endpoints used by the companies' investor pages.
 # The B2i API parameter is a public website identifier, not a private token.
 SBET_NEWS_URL = 'https://www.b2i.us/b2i/LibraryFeed.asp?b=2597&api=Ex4Bw5Wv2&i=30&out=38&a=1'
-TRACKED_ENTITIES = ('Strategy', 'Evernorth', 'SharpLink Gaming', 'Ripple')
-RETIRED_TAGS = frozenset(('xrp ecosystem', 'lite strategy', 'lits', 'hyperliquid strategies',
-                          'purr', 'forward industries', 'fwdi', 'litecoin', 'ltc', 'hype', 'solana', 'sol'))
+TRACKED_ENTITIES = ('Strategy', 'Evernorth', 'SharpLink Gaming', 'Lite Strategy', 'Ripple')
+RETIRED_TAGS = frozenset(('xrp ecosystem', 'hyperliquid strategies',
+                          'purr', 'forward industries', 'fwdi', 'hype', 'solana', 'sol'))
 MAX_AGE_DAYS = 365
 MAX_STORIES = 500
 REQUEST_TIMEOUT = 22
@@ -58,6 +60,9 @@ NEWS_QUERIES = [
     '"Sharplink" (SBET OR Ethereum OR ETH) (treasury OR staking OR earnings OR shares OR buyback)',
     '"SharpLink Gaming" (Ethereum OR ETH OR SBET)',
     '"SBET" (treasury OR staking OR repurchase OR dilution)',
+    '"Lite Strategy" (LITS OR Litecoin OR LTC) (treasury OR earnings OR buyback OR yield OR partnership)',
+    '"Lite Strategy" (Litecoin OR LTC OR LITS)',
+    '"LITS" (treasury OR Litecoin OR repurchase OR covered call OR LitVM)',
     '"Strategy" "MSTR" bitcoin purchase treasury financing',
     '"Michael Saylor" "MSTR" bitcoin purchases treasury',
     '"Strategy" ("STRC" OR "STRK" OR "STRF") preferred shares dividends buyback',
@@ -87,6 +92,7 @@ TOPIC_HINTS = ('share','equity','offering','warrant',
     'acquir','purchas','repurchas','preferred','convertible','dividend','reserve','earnings',
     'etf','validator','amendment','amm','dex','defi','network',
     'covered call','nav per share','option premium','staking','validator commission','adjusted nav',
+    'litecoin','ltc','lits','litvm',
     'sharplink','sbet','ethereum','ether treasury','eth per share')
 LOG = logging.getLogger('signal')
 
@@ -175,13 +181,14 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
     if force in TRACKED_ENTITIES:
         return [force]
     x = content.lower()
-    # Strategy is an ordinary English noun. Strip the retired issuer's name
+    # Strategy is an ordinary English noun. Strip the separate issuer's name
     # before matching so Lite Strategy, Inc. cannot be mistaken for MSTR,
     # while a story mentioning both companies still retains real MSTR news.
     strategy_text=re.sub(r'\blite\s+strategy(?:\s*,?\s*(?:inc\.?|incorporated))?', ' ', x)
     strategy = bool(re.search(r'\bmicrostrategy\b|\bmstr\b|\bstrategy inc\b|\bstrategy incorporated\b|\bstrategy\s*\(nasdaq', strategy_text)) or bool(re.search(r'\bstrategy\b', strategy_text) and any(v in strategy_text for v in ('btc yield','strc','strf','strk','michael saylor','bitcoin treasury company','bitcoin acquisitions')))
     if 'michael saylor' in strategy_text and any(v in strategy_text for v in ('bitcoin', 'mstr', 'treasury', 'strategy')):
         strategy = True
+    lite_strategy = bool(re.search(r'\blite\s+strategy\b|\blits\b', x))
     sharplink = bool(re.search(r'\bsharplink\b|\bsharp\s+link\s+gaming\b|\bsbet\b', x))
     evernorth = bool('xrpn' in x or 'evernorth holdings' in x or ('evernorth' in x and ('xrp' in x or 'treasury' in x)))
     if any(v in x for v in ('pharmacy', 'cigna', 'health services')) and not any(v in x for v in ('xrpn', 'xrp treasury', 'digital asset treasury')):
@@ -196,6 +203,7 @@ def identify_entities(content: str, force: str | None = None) -> list[str]:
     if ripple: result.append('Ripple')
     if strategy: result.append('Strategy')
     if sharplink: result.append('SharpLink Gaming')
+    if lite_strategy: result.append('Lite Strategy')
     return result
 
 
@@ -208,7 +216,8 @@ def classify(title: str, excerpt: str = '', force_sec: bool = False) -> str:
     if any(p in title_low for p in ('equity facility','capital raise','share sale','stock offering','shares issued','share issuance','warrant','ipo','nasdaq listing','business combination','shareholder vote','merger','funding round','at-the-market','atm program','preferred stock','convertible notes','buyback','repurchase')):
         return 'Capital markets'
     if any(p in title_low for p in ('xrp treasury','treasury deployment','xrp per share','lending protocol','liquidity report','yield strateg','bitcoin treasury','btc yield','btc purchase','bitcoin purchase','acquires bitcoin','buys bitcoin','btc holdings','bitcoin holdings','bitcoin per share','covered call options','option premium','staking revenue','staking yield','validator commissions',
-            'ethereum treasury','ether treasury','eth treasury','eth per share','eth holdings','ethereum holdings','staking rewards')):
+            'ethereum treasury','ether treasury','eth treasury','eth per share','eth holdings','ethereum holdings','staking rewards',
+            'litecoin treasury','ltc treasury','ltc per share','litecoin per share','ltc backing per share','litecoin backing per share','ltc holdings','litecoin holdings')):
         return 'Treasury'
     if any(p in title_low for p in ('regulation','regulatory','sec lawsuit','court rules','license approved','licence','legislation','digital asset policy')):
         return 'Regulation'
@@ -233,7 +242,7 @@ def score_story(title: str, category: str, source_type: str, entities: list[str]
     score+=bonus
     if any(e in entities for e in TRACKED_ENTITIES if e != 'Ripple'):score+=5
     if any(k in x for k in ('equity facility','dilution','material agreement','financing','s-1','10-k','10-q','share offering','bitcoin purchase','repurchase','preferred stock')):score+=8
-    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','covered call','staking','validator','ethereum')):score+=3
+    if any(k in x for k in ('institutional','bank','xrpl','xrp ledger','strategic','treasury','settlement','covered call','staking','validator','ethereum','litecoin','ltc','litvm')):score+=3
     score=min(99,score)
     return ('High' if score>=83 else 'Medium' if score>=66 else 'Low'),score
 
@@ -242,7 +251,7 @@ def investor_angle(category: str) -> str:
     return {
       'SEC filings':'Primary regulatory disclosure. Review the full filing for material agreements, risk factors, governance changes and potential effects on share count.',
       'Capital markets':'Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.',
-      'Treasury':'Track BTC, XRP or ETH holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
+      'Treasury':'Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.',
       'Partnerships':'A strategic relationship can expand distribution, but announced plans do not confirm revenue, usage or completed integration.',
       'Products':'A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.',
       'Adoption':'Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.',
@@ -423,6 +432,78 @@ def fetch_evernorth_news() -> list[dict]:
             seen.add(safe_url)
     if not stories:
         raise ValueError('Company/newswire sites responded but no dated, linked issuer announcements could be extracted.')
+    return stories
+
+
+def fetch_lits_news() -> list[dict]:
+    """Scan company-issued Lite Strategy (NASDAQ:LITS) news on its IR archive.
+
+    The principal GCS-Web host occasionally blocks bots, so its verified
+    historic IR host is tried as a fallback. Missing dates are never guessed.
+    """
+    links={}
+    for homepage in (LITS_IR_URL,LITS_IR_FALLBACK):
+        try:
+            soup=BeautifulSoup(fetch(homepage).text,'html.parser')
+        except Exception as exc:
+            LOG.warning('Lite Strategy IR page unavailable %s: %s',homepage,exc)
+            continue
+        for anchor in soup.find_all('a',href=True):
+            url=urllib.parse.urljoin(homepage,anchor['href'])
+            p=urllib.parse.urlsplit(url)
+            if (p.hostname not in ('litestrategy.gcs-web.com','investor.litestrategy.com',
+                                   'kimbrxtherapeutics.gcs-web.com')
+                    or '/news-releases/news-release-details/' not in p.path):
+                continue
+            url=canonical_url(url)
+            if not url:
+                continue
+            title=plain_text(anchor.get_text(' ',strip=True),230)
+            if len(title)<18 or title.lower().startswith(('read more','pdf version','details')):
+                title=''
+            date=extract_date(news_context(anchor))
+            previous=links.get(url)
+            links[url]=(title or (previous[0] if previous else ''),
+                        date or (previous[1] if previous else None))
+    if not links:
+        raise ValueError('Lite Strategy IR release archive unavailable or has no linked releases.')
+    stories=[]
+    for url,(title,date) in list(links.items())[:18]:
+        lead=''
+        try:
+            article=BeautifulSoup(fetch(url).text,'html.parser')
+            heading=article.find('h1')
+            if heading and len(heading.get_text(' ',strip=True))>=18:
+                title=plain_text(heading.get_text(' ',strip=True),230)
+            if not date:
+                for meta in article.find_all('meta'):
+                    key=(meta.get('property') or meta.get('name') or '').lower()
+                    if key in ('article:published_time','date','pubdate','datepublished','dc.date'):
+                        date=normalize_date(meta.get('content',''))
+                        if date:break
+            if not date:
+                for tag in article.find_all('time'):
+                    date=normalize_date(tag.get('datetime','')) or extract_date(tag.get_text(' ',strip=True))
+                    if date:break
+            if not date:
+                date=extract_date(article.get_text(' ',strip=True)[:2200])
+            for para in article.find_all('p'):
+                x=plain_text(para.get_text(' ',strip=True),230)
+                if len(x)>=70 and 'forward-looking statements' not in x.lower():
+                    lead=x
+                    break
+        except Exception as exc:
+            LOG.warning('Lite Strategy press-release detail unavailable %s: %s',url,exc)
+        if not title or not date:
+            continue
+        if 'Lite Strategy' not in identify_entities(title+' '+lead):
+            continue
+        item=make_story(title=title,date=date,url=url,source='Lite Strategy investor relations',
+                        source_type='Official',source_id='lits',entities=['Lite Strategy'],
+                        excerpt=lead or title,date_only=True)
+        if item:stories.append(item)
+    if not stories:
+        raise ValueError('Lite Strategy IR releases found, but no usable dated stories.')
     return stories
 
 
@@ -638,8 +719,10 @@ def event_key(item: dict) -> str:
     amount_key = ((amount.group(1) + 'm') if amount else '')
     # Treasury updates repeat frequently. A disclosed token amount and the
     # reporting week separate a new purchase from recycled media coverage.
-    if 'SharpLink Gaming' in entities:
-        coin=r'(?:eth|ether|ethereum)'
+    for entity,ticker,coin in (('SharpLink Gaming','sbet',r'(?:eth|ether|ethereum)'),
+                              ('Lite Strategy','lits',r'(?:ltc|litecoin)')):
+        if entity not in entities:
+            continue
         token_amount=re.search(r'\b(\d[\d,.]*(?:\s*(?:million|billion|m|b))?)\s+'+coin+r'\b',title)
         if token_amount:
             action=('purchase' if re.search(r'\b(?:acquir\w*|purchas\w*|buys?|bought)\b',title)
@@ -651,9 +734,22 @@ def event_key(item: dict) -> str:
                 if number:
                     multiplier={'million':1e6,'m':1e6,'billion':1e9,'b':1e9}.get(number.group(2),1)
                     quantity=format(float(number.group(1))*multiplier,'.12g')
-                    return 'sbet:'+action+':'+quantity+':'+_news_week(item['published_at'])
+                    return ticker+':'+action+':'+quantity+':'+_news_week(item['published_at'])
     # These issuer-specific one-off announcements can be worded very
     # differently by different publishers; their economic event is the same.
+    if 'Lite Strategy' in entities:
+        if 'proof of time' in title:
+            return 'lits:proof-of-time:'+stamp
+        if 'results' in title and any(k in title for k in ('fiscal year','annual','fiscal 2026')):
+            return 'lits:annual-results:'+stamp
+        if 'litvm' in title and any(k in title for k in ('invest','partners')):
+            return 'lits:litvm-investment:'+stamp
+        if re.search(r'\b(?:repurchas\w*|buy[\s-]?back\w*|bought back)\b',title) and re.search(
+                r'\b(?:shares?|stock|lits)\b',title):
+            authorization=bool(re.search(r'\b(?:authori[sz]\w*|approv\w*|program|plans?)\b',title))
+            executed=bool(re.search(r'\b(?:repurchased|repurchases|bought back|completed)\b',title))
+            action='executed' if executed else 'authorization' if authorization else 'report'
+            return 'lits:share-repurchase:'+action+':'+amount_key+':'+_news_week(item['published_at'])
     if 'Evernorth' in entities:
         # Distinct publisher headlines for the same shareholder approval of
         # the Armada business combination are one event (not the later closing).
@@ -808,6 +904,7 @@ def main() -> int:
         ('ripple','Ripple press centre',fetch_ripple_press),
         ('evernorth','Evernorth official',fetch_evernorth_news),
         ('sbet','Sharplink official',fetch_sbet_news),
+        ('lits','Lite Strategy official',fetch_lits_news),
         ('media','Company-specific financial news',fetch_media_news),
     )
     for key,name,reader in sources:
@@ -837,7 +934,7 @@ def main() -> int:
             item['impact']='Medium'
     sentiment_30d = aggregate_sentiment(items, stamp)
     out={
-      'name':'Signal | Strategy · Evernorth · SharpLink Gaming · Ripple', 'version':2,
+      'name':'Signal | Strategy · Evernorth · SharpLink Gaming · Lite Strategy · Ripple', 'version':2,
       'scan':{'status':status,'ran_at':stamp,'starter_as_of':previous.get('scan',{}).get('starter_as_of'),
               'schedule_utc':['09:15','14:35','23:35'],
               'schedule_focus':['European morning announcements','US pre-market and early session','US after-market and evening'],
