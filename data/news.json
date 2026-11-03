@@ -2,8 +2,8 @@
   "name": "Signal | Strategy · Evernorth · SharpLink Gaming · Lite Strategy · Ripple",
   "version": 2,
   "scan": {
-    "status": "partial",
-    "ran_at": "2026-11-03T19:38:58Z",
+    "status": "live",
+    "ran_at": "2026-11-03T19:46:32Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 22,
+    "new_items": 11,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-03T19:38:58Z",
+      "checked_at": "2026-11-03T19:46:32Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-03T19:38:58Z",
+      "checked_at": "2026-11-03T19:46:32Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-03T19:38:58Z",
+      "checked_at": "2026-11-03T19:46:32Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
-      "status": "error",
-      "items_seen": 0,
-      "checked_at": "2026-11-03T19:38:58Z",
-      "message": "Lite Strategy IR release archive unavailable or has no linked releases."
+      "status": "ok",
+      "items_seen": 9,
+      "checked_at": "2026-11-03T19:46:32Z",
+      "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 283,
-      "checked_at": "2026-11-03T19:38:58Z",
-      "message": "Fetched 283 matching items."
+      "items_seen": 479,
+      "checked_at": "2026-11-03T19:46:32Z",
+      "message": "Fetched 479 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.04,
       "window_days": 30,
-      "as_of": "2026-11-03T19:38:58Z",
+      "as_of": "2026-11-03T19:46:32Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-11-03T19:38:58Z",
+      "as_of": "2026-11-03T19:46:32Z",
       "stories": 43,
       "independent_events": 40,
       "directional_events": 18,
@@ -183,16 +183,16 @@
     "SBET": {
       "value": -2,
       "label": "Bearish",
-      "raw_score": -1.39,
+      "raw_score": -1.37,
       "window_days": 30,
-      "as_of": "2026-11-03T19:38:58Z",
-      "stories": 27,
-      "independent_events": 27,
+      "as_of": "2026-11-03T19:46:32Z",
+      "stories": 28,
+      "independent_events": 28,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 24,
+      "neutral_events": 25,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -225,14 +225,14 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-03T19:38:58Z",
-      "stories": 9,
-      "independent_events": 9,
+      "as_of": "2026-11-03T19:46:32Z",
+      "stories": 2,
+      "independent_events": 2,
       "directional_events": 0,
       "distinct_catalysts": 0,
       "bullish_events": 0,
       "bearish_events": 0,
-      "neutral_events": 9,
+      "neutral_events": 2,
       "coverage": "Limited coverage",
       "drivers": [],
       "method": "impact_decay_dedup_v2"
@@ -326,6 +326,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b5a100458cb827",
+      "title": "Sharplink Gaming Q3 2026 Earnings Date and Estimates",
+      "published_at": "2026-11-02T18:28:01Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "MarketBeat · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVnlHUm5MOFNEMWxmVmV4VXdPbGJRWUh0ZmRNMFRraVJXcU9GN0JaUW9rdXM4RVFtWjFqaXRPS3NrUWY1NktScHJfbFBpakdiTWdpUjE0TU1ReDNwN1lUODBYZHpNUllHTmdqYmJ6SGVJUkc1VE5uMXpZUEtZZHhyTHFZOE92WGhw?oc=5",
+      "excerpt": "Sharplink Gaming Q3 2026 Earnings Date and Estimates MarketBeat",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Sharplink Gaming Q3 2026 Earnings Date and Estimates",
+          "name": "MarketBeat · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVnlHUm5MOFNEMWxmVmV4VXdPbGJRWUh0ZmRNMFRraVJXcU9GN0JaUW9rdXM4RVFtWjFqaXRPS3NrUWY1NktScHJfbFBpakdiTWdpUjE0TU1ReDNwN1lUODBYZHpNUllHTmdqYmJ6SGVJUkc1VE5uMXpZUEtZZHhyTHFZOE92WGhw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-02T18:28:01Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -541,9 +583,9 @@
       ]
     },
     {
-      "id": "48dc1aeb8ad3fc",
-      "title": "Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News",
-      "published_at": "2026-10-31T18:42:28Z",
+      "id": "9222e5e3ef25d6",
+      "title": "Lite Strategy, Inc. (LITS) Stock Price History & Data",
+      "published_at": "2026-10-31T18:42:12Z",
       "date_only": false,
       "entities": [
         "Lite Strategy"
@@ -554,68 +596,19 @@
       "source": "Traders Union · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBtTzdCNm03RnQtWjllWlgyZEktNnFCaFEyd1FWMzl3eWY4dXJCNENPSjF5QmE4UEpWRXYzZ25Bb3A3anRmWHhRWGVncXhBNklHMGd3aHJCNDc4VVhRSmg0Ug?oc=5",
-      "excerpt": "Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News Traders Union",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83WGlFNlB5R3VGVjhZVWYtc09zU1hTc1hkVU55TUxBOFhBZ051SG9XeS1jZUE1ZXhTM0l1ZDg3S2Y5dXJrMWFjc1lBN05uX3JMbzJaQmE4QzFURkxlVlcxOEo3dGJLWVRDRWVJ?oc=5",
+      "excerpt": "Lite Strategy, Inc. (LITS) Stock Price History & Data Traders Union",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
+      "added_at": "2026-11-03T19:46:42Z",
       "verified_seed": false,
       "coverage": [
-        {
-          "title": "Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News",
-          "name": "Traders Union · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBtTzdCNm03RnQtWjllWlgyZEktNnFCaFEyd1FWMzl3eWY4dXJCNENPSjF5QmE4UEpWRXYzZ25Bb3A3anRmWHhRWGVncXhBNklHMGd3aHJCNDc4VVhRSmg0Ug?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-31T18:42:28Z"
-        },
         {
           "title": "Lite Strategy, Inc. (LITS) Stock Price History & Data",
           "name": "Traders Union · via Google News",
           "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83WGlFNlB5R3VGVjhZVWYtc09zU1hTc1hkVU55TUxBOFhBZ051SG9XeS1jZUE1ZXhTM0l1ZDg3S2Y5dXJrMWFjc1lBN05uX3JMbzJaQmE4QzFURkxlVlcxOEo3dGJLWVRDRWVJ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-31T18:42:12Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0bdd885e012b4b",
-      "title": "Lite Strategy, Inc. (LITS) Seasonal returns chart",
-      "published_at": "2026-10-31T01:11:31Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance UK · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBqUG1FQ1ZkaVBGS3B2T2FGQjJvdzZSbkVPYlNHUWlhSVRXenVzVXBFWERxeElhSmZOMWhrQWVIOFpYTTV6S01IS2QtMWxPVTBZY0RqaGkwd2xXM1BPQ1VFZnB3?oc=5",
-      "excerpt": "Lite Strategy, Inc. (LITS) Seasonal returns chart Yahoo Finance UK",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Lite Strategy, Inc. (LITS) Seasonal returns chart",
-          "name": "Yahoo Finance UK · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBqUG1FQ1ZkaVBGS3B2T2FGQjJvdzZSbkVPYlNHUWlhSVRXenVzVXBFWERxeElhSmZOMWhrQWVIOFpYTTV6S01IS2QtMWxPVTBZY0RqaGkwd2xXM1BPQ1VFZnB3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-31T01:11:31Z"
         }
       ],
       "moon_meters": [
@@ -915,48 +908,6 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "f501a8b969abc2",
-      "title": "Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates",
-      "published_at": "2026-10-29T18:46:38Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Traders Union · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NZWlDUVZ1OGlTOTN0ZWZQM1NWMDlOc1dyWDY1dk9mNy1wZGhXZGJqaXJPclZTaXJDZmFQdjFuZnp5OERPMFRKQmRGNEExTTdSVC1wX3RNOUlqSFhyLThN?oc=5",
-      "excerpt": "Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates Traders Union",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates",
-          "name": "Traders Union · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NZWlDUVZ1OGlTOTN0ZWZQM1NWMDlOc1dyWDY1dk9mNy1wZGhXZGJqaXJPclZTaXJDZmFQdjFuZnp5OERPMFRKQmRGNEExTTdSVC1wX3RNOUlqSFhyLThN?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-29T18:46:38Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -2431,146 +2382,6 @@
       ]
     },
     {
-      "id": "e5d90bcec17b7c",
-      "title": "A director receives 100,000 options with a $1.19 exercise price at Lite Strategy (LITS).",
-      "published_at": "2026-10-26T21:44:32Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Stock Titan · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU3ExX05kZy1xQ1p5N3E1UUFmaDVYVU1IR0JqUDExZTAzZlA3VUs4aU1nYkdsdjBuR2VuamRtelZvVDlfUU1yR3JnRFFRNnJ5NkExVTFJaXJQOU10SkZaTTJxNmNmclktTVhNeXNqWG8wbUl1OUdLaUNWSkVjNjdZckY1dWxVSVRIWGV2a2IzWUo1MGUxUFBnemVMT1dpNUpTMHRENlhWMVlvQ09MNXdfOA?oc=5",
-      "excerpt": "A director receives 100,000 options with a $1.19 exercise price at Lite Strategy (LITS). Stock Titan",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "A director receives 100,000 options with a $1.19 exercise price at Lite Strategy (LITS).",
-          "name": "Stock Titan · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU3ExX05kZy1xQ1p5N3E1UUFmaDVYVU1IR0JqUDExZTAzZlA3VUs4aU1nYkdsdjBuR2VuamRtelZvVDlfUU1yR3JnRFFRNnJ5NkExVTFJaXJQOU10SkZaTTJxNmNmclktTVhNeXNqWG8wbUl1OUdLaUNWSkVjNjdZckY1dWxVSVRIWGV2a2IzWUo1MGUxUFBnemVMT1dpNUpTMHRENlhWMVlvQ09MNXdfOA?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T21:44:32Z"
-        },
-        {
-          "title": "A 100,000-option director grant at Lite Strategy (LITS) carries a $1.19 exercise price.",
-          "name": "Stock Titan · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQ1B1bGdzWUtYcmUzSUwwREtrel91U3RIVER0RmU5eG5RSjBPYlFPWHo0TzUzY3VqV0RrTjVxWl93Y1M1NFpuTTNzUk83N3hvcTlVTVhobFctOXh1WU9uMGZFQUFOYnIyanRCQURKWExPbnJHanpjdV9GV2FscWY1Z09xOWxQYTQ4Nm1tZXNvNnhEdVRUSlZNZmhHQlJ5MmZSTlpCUkxmVmowNVJZeDBWXw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T21:14:17Z"
-        },
-        {
-          "title": "An annual grant gives Lite Strategy (LITS) director James P. Flynn 100,000 options with a $1.19 exercise price.",
-          "name": "Stock Titan · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaFZLWU02VTVQaDRMYjFfSi0tRkJzUHpQVTUyN25WX2FiWUNQcENUWXBFN0NnLVNPX0pyeGlmQ2ROZjNveHdKWDdYd3R1ejFhb2lBelhMRXZhVE5vNDNXNm81NkFOSEVFZWRQR2NObUJEMGhGMks0eE1Ka2dtRDl4UTNvYmxWbTd3blEzTWs4MlI0WmI1dTVxWnNiekJlcjJreDdHTDAxeldXWERzTUZQbw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T21:14:01Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "5e9210226d8d86",
-      "title": "600,000 options awarded to Lite Strategy (LITS) CEO Justin J. File carry a $1.19 exercise price.",
-      "published_at": "2026-10-26T21:14:39Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Stock Titan · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaE42NjZTQktweGNLZldEUTM1Ykg3R0FRMFIyYzNVVHFXb3ZSN2ZUUWw4SXJWb3NRemNhbnlJbHpXVUZOYkhYNG9DcnQ2cEIzRjdfVGZNLTM4ek9pSUFxakpISGZfQ2FNVDBTVHdLS1VZMWg0RDJ6Q3lOeTRpRUZrRGJvdE1KaDFrNzdoaTFzaVVQMGNORHJGQjFNWW1IZ2YtU21MQjJDUjd5aVk4dkI0eA?oc=5",
-      "excerpt": "600,000 options awarded to Lite Strategy (LITS) CEO Justin J. File carry a $1.19 exercise price. Stock Titan",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "600,000 options awarded to Lite Strategy (LITS) CEO Justin J. File carry a $1.19 exercise price.",
-          "name": "Stock Titan · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaE42NjZTQktweGNLZldEUTM1Ykg3R0FRMFIyYzNVVHFXb3ZSN2ZUUWw4SXJWb3NRemNhbnlJbHpXVUZOYkhYNG9DcnQ2cEIzRjdfVGZNLTM4ek9pSUFxakpISGZfQ2FNVDBTVHdLS1VZMWg0RDJ6Q3lOeTRpRUZrRGJvdE1KaDFrNzdoaTFzaVVQMGNORHJGQjFNWW1IZ2YtU21MQjJDUjd5aVk4dkI0eA?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T21:14:39Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "65a5471c6cda17",
-      "title": "A 100,000-option annual grant at Lite Strategy (LITS) gives director Joshua Riezman 25% immediate vesting.",
-      "published_at": "2026-10-26T21:13:41Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Stock Titan · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSWdYUUo5bE1HWTBFcE5yN1RJVEVMSllxX3lIZ3I1MjNTZ2FVQXo3dFl0WlpibUhWWHVyWGxvYWJrVzZWRDdRa25hc1NPMFhBbng1eUhlVTFPZlpidHYzbmFpc2tfQzdYNnBtbnNCaExCN0pOTmZLZVRIdjkyNFZKcDZWNklSOWNhZUFYVHF1YmZLRTE5S3N0WlU0cmdWWE53NEhGZm9ZR3RLLTBnRHJueQ?oc=5",
-      "excerpt": "A 100,000-option annual grant at Lite Strategy (LITS) gives director Joshua Riezman 25% immediate vesting. Stock Titan",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "A 100,000-option annual grant at Lite Strategy (LITS) gives director Joshua Riezman 25% immediate vesting.",
-          "name": "Stock Titan · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSWdYUUo5bE1HWTBFcE5yN1RJVEVMSllxX3lIZ3I1MjNTZ2FVQXo3dFl0WlpibUhWWHVyWGxvYWJrVzZWRDdRa25hc1NPMFhBbng1eUhlVTFPZlpidHYzbmFpc2tfQzdYNnBtbnNCaExCN0pOTmZLZVRIdjkyNFZKcDZWNklSOWNhZUFYVHF1YmZLRTE5S3N0WlU0cmdWWE53NEhGZm9ZR3RLLTBnRHJueQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-26T21:13:41Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
       "id": "e552e995c9ceb5",
       "title": "Ripple Treasury SVP Unveils Always-On AI Treasury: What It Means for XRP Ecosystem",
       "published_at": "2026-10-26T20:54:02Z",
@@ -3279,48 +3090,6 @@
       ]
     },
     {
-      "id": "f574cc0d752413",
-      "title": "Lite Strategy, Inc. Estimates – NASDAQ:LITS",
-      "published_at": "2026-10-24T04:34:10Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "TradingView · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1jOGo2eFFfTlROdC1KMEYxRE1yTHJTbnE2bHZhenMyZkRmeVhfZ25xOXFWX2tYNjJyRXdMWjVGQXd1dDRwLUJkVkpDOTRscXduYmdQVURoYk81RVlfUG5zN2ZLU25hN0g5ek9RbERBeXU4WVd3RGJTdw?oc=5",
-      "excerpt": "Lite Strategy, Inc. Estimates – NASDAQ:LITS TradingView",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Lite Strategy, Inc. Estimates – NASDAQ:LITS",
-          "name": "TradingView · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1jOGo2eFFfTlROdC1KMEYxRE1yTHJTbnE2bHZhenMyZkRmeVhfZ25xOXFWX2tYNjJyRXdMWjVGQXd1dDRwLUJkVkpDOTRscXduYmdQVURoYk81RVlfUG5zN2ZLU25hN0g5ek9RbERBeXU4WVd3RGJTdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-24T04:34:10Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
       "id": "3a1a01aef29704",
       "title": "Ripple Custody added Canton support on October 5: What it means for the Canton price",
       "published_at": "2026-10-23T16:33:50Z",
@@ -3896,43 +3665,50 @@
       ]
     },
     {
-      "id": "54dfcdc3060ee5",
-      "title": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Strong Earnings Momentum",
-      "published_at": "2026-10-21T21:33:06Z",
+      "id": "648180e1bd885c",
+      "title": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate",
+      "published_at": "2026-10-21T17:36:06Z",
       "date_only": false,
       "entities": [
-        "Lite Strategy"
+        "SharpLink Gaming"
       ],
       "category": "Adoption",
       "impact": "Low",
       "score": 65,
-      "source": "https://www.dars.gov.et/ · via Google News",
+      "source": "TradingView · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPb0VZdlJCNnlrMzhVLWFRMnlWSVU2LVQ2eWNObEh4dU1seWpIVHliTkhTSVNXYzJFTFNRMWxJZ0ZhSkJCb2pzMDIyWk9LQWtxSEFwOWFYZEhvanI1OEJiN0hYSGpnTmRhVEtFeURJaWFRSC01NlBCWkJfZDZvOXhNRWlnZkxYQUZnaGJORTFfWnlWNTJjNUtJdHAtZWF0RllpaWVrMy1TODRMYUhkSE1NY2lXWHFYQTJydGc3NlJsSG5Idw?oc=5",
-      "excerpt": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Strong Earnings Momentum https://www.dars.gov.et/",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQb2JnVHljWDNNM3plamNGLUJKOFhUZVdaOS1weDZsR19sclMtUWpMbFBlTWMzZGI5UG5ZX2RzTDR6cERyWjZYNlpkNndUdGU1RmdYNFZCcEpPd3R3cGh2dk9saC1rZzVyX0FOSS1hYlAtdEZ5bUxnLU9jTFdzMUdYZzhwZlRpbFBoSmJTVnByamQyRi1QaG9TcVktb0t0TFk1V254NFRQUkpiV21IZjdEdnFYemViOWhhWGN6RFB6ZGMyTDR0NS1iNDlmUV9HclExaElNdWU3dHhLcktjRGhhWjZkc2ZXVHRyVFZDMTIzZTFJTVk?oc=5",
+      "excerpt": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate TradingView",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
+      "added_at": "2026-11-03T19:46:41Z",
       "verified_seed": false,
       "coverage": [
         {
-          "title": "LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain - Strong Earnings Momentum",
-          "name": "https://www.dars.gov.et/ · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPb0VZdlJCNnlrMzhVLWFRMnlWSVU2LVQ2eWNObEh4dU1seWpIVHliTkhTSVNXYzJFTFNRMWxJZ0ZhSkJCb2pzMDIyWk9LQWtxSEFwOWFYZEhvanI1OEJiN0hYSGpnTmRhVEtFeURJaWFRSC01NlBCWkJfZDZvOXhNRWlnZkxYQUZnaGJORTFfWnlWNTJjNUtJdHAtZWF0RllpaWVrMy1TODRMYUhkSE1NY2lXWHFYQTJydGc3NlJsSG5Idw?oc=5",
+          "title": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQb2JnVHljWDNNM3plamNGLUJKOFhUZVdaOS1weDZsR19sclMtUWpMbFBlTWMzZGI5UG5ZX2RzTDR6cERyWjZYNlpkNndUdGU1RmdYNFZCcEpPd3R3cGh2dk9saC1rZzVyX0FOSS1hYlAtdEZ5bUxnLU9jTFdzMUdYZzhwZlRpbFBoSmJTVnByamQyRi1QaG9TcVktb0t0TFk1V254NFRQUkpiV21IZjdEdnFYemViOWhhWGN6RFB6ZGMyTDR0NS1iNDlmUV9HclExaElNdWU3dHhLcktjRGhhWjZkc2ZXVHRyVFZDMTIzZTFJTVk?oc=5",
           "source_type": "Media",
-          "published_at": "2026-10-21T21:33:06Z"
+          "published_at": "2026-10-21T17:36:06Z"
+        },
+        {
+          "title": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPX1FCekJWVmNZUWZKSlJJRjZuSnJ0SjdmVVd1U2RKRk5NTlQtaGcxUnBZUXM3dmptN3ZIV1JzQ0RYWXlHQVRSUEdBRzhCYkQ4cXBMbjJueWJ0R2ZWRU5wMWE4Um9UUmhOLTMxVGltTG5TVnVZVXZxa0kxMkp6a0M0VnlaM2ZrdmJNTTNJdnRMREp3UU0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-21T07:00:00Z"
         }
       ],
       "moon_meters": [
         {
-          "asset": "LITS",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
+          "confidence": "Conditional",
+          "scenario": "assumption",
           "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -4024,48 +3800,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Planned funding and buying alone do not establish net accretion or dilution per share.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "ebeb5525e64e79",
-      "title": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate",
-      "published_at": "2026-10-21T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPX1FCekJWVmNZUWZKSlJJRjZuSnJ0SjdmVVd1U2RKRk5NTlQtaGcxUnBZUXM3dmptN3ZIV1JzQ0RYWXlHQVRSUEdBRzhCYkQ4cXBMbjJueWJ0R2ZWRU5wMWE4Um9UUmhOLTMxVGltTG5TVnVZVXZxa0kxMkp6a0M0VnlaM2ZrdmJNTTNJdnRMREp3UU0?oc=5",
-      "excerpt": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:31Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink CEO Says Mag 7 Stocks Could Be Tokenized ‘Sooner Than We Think’ Despite CLARITY Act Stalemate",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPX1FCekJWVmNZUWZKSlJJRjZuSnJ0SjdmVVd1U2RKRk5NTlQtaGcxUnBZUXM3dmptN3ZIV1JzQ0RYWXlHQVRSUEdBRzhCYkQ4cXBMbjJueWJ0R2ZWRU5wMWE4Um9UUmhOLTMxVGltTG5TVnVZVXZxa0kxMkp6a0M0VnlaM2ZrdmJNTTNJdnRMREp3UU0?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-21T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Conditional",
-          "scenario": "assumption",
-          "if_true": true,
-          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6108,6 +5842,13 @@
           "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcnp0NVRHUlFhTnRjcDJIbTZGeDV6WUdpTUR1SVJsUGNNbThRcVlONDRwNmRIWXF3STRkOHBiUkswY2FIb3VWVjNvdmI4QkswV0oyRS1MWjltOU9GZG1lLU13ZFRWdF84QXBULTg5Tl96UHV6dXdpVy1rYUF2SnoyMXdpX1NQQWxHYUFxb2s2YzdKSEpFRW8wN1Rkdy1qSWhRNDNDdXFBS0w4SVhPN2lSOExOdWVPcG85MUFSa3ZyMWpDWFhzY3h1ck12SzlhTzc1ek9paHotNWQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-14T02:52:20Z"
+        },
+        {
+          "title": "Lite Strategy Marks 15 Years of Litecoin with Launch of \"Proof of Time\" Public Industry Archive",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/10/13/3380049/0/en/lite-strategy-marks-15-years-of-litecoin-with-launch-of-proof-of-time-public-industry-archive.html",
+          "source_type": "Official",
+          "published_at": "2026-10-13T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -8842,6 +8583,13 @@
           "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPanpUbUloOGNyM0lLNG9jRGFBblF4NmZoVFRWcm9TMUprc2FFMklkSE51ZmZKcVBjTDBWLVFBaU9Pak5hMzRSV3F0TFJLck1qOVdneVFVelREb3pCalFvc0UyU0l6REQ1SUZNT0xEejRBejhuQkxpVERpanpoeGhiWnN3ZHp0SXA4d3Bpb1kxTW5BQkkycFY2M2EzWERDcW1VN09ZTGln?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-29T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Reports Fiscal Year 2026 Financial Results",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/09/29/3370840/0/en/lite-strategy-reports-fiscal-year-2026-financial-results.html",
+          "source_type": "Official",
+          "published_at": "2026-09-29T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -9302,48 +9050,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "c8f0e04ba87891",
-      "title": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity",
-      "published_at": "2026-09-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Lite Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "dars.gov.et · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ3hqRVBBdnhXTUJ3cm54SU5BTVJZZmZSdU1pU3h4LTBUSGt1anI0bF9Hdm9IRzd6VHlhelk5M0VnMmc3NERtMEhiRk5vQUR6TFU3NDQ4SnoyQzdTX2pYOVF1ekZOSElOV19mQ0ZVanhhWmNodkJVNnptN3BoT1Vpd0w2MmtlcFd3Ni0weTdNM0UybEpfMnpjcGlQWGc2ZnJoVkZNYkg1TVk?oc=5",
-      "excerpt": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity dars.gov.et",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:07Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "LITS Q4 2024 Earnings: Wider-Than-Expected Loss Pressures Shares - Return On Equity",
-          "name": "dars.gov.et · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ3hqRVBBdnhXTUJ3cm54SU5BTVJZZmZSdU1pU3h4LTBUSGt1anI0bF9Hdm9IRzd6VHlhelk5M0VnMmc3NERtMEhiRk5vQUR6TFU3NDQ4SnoyQzdTX2pYOVF1ekZOSElOV19mQ0ZVanhhWmNodkJVNnptN3BoT1Vpd0w2MmtlcFd3Ni0weTdNM0UybEpfMnpjcGlQWGc2ZnJoVkZNYkg1TVk?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-09-28T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "LITS",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -10812,6 +10518,13 @@
           "title": "Lite Strategy to Present at the 28th Annual H.C. Wainwright Global Investment Conference in New York",
           "name": "Lite Strategy investor relations",
           "url": "https://kimbrxtherapeutics.gcs-web.com/news-releases/news-release-details/lite-strategy-present-28th-annual-hc-wainwright-global",
+          "source_type": "Official",
+          "published_at": "2026-09-10T12:00:00Z"
+        },
+        {
+          "title": "Lite Strategy to Present at the 28th Annual H.C. Wainwright Global Investment Conference in New York",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/09/10/3359568/0/en/lite-strategy-to-present-at-the-28th-annual-h-c-wainwright-global-investment-conference-in-new-york.html",
           "source_type": "Official",
           "published_at": "2026-09-10T12:00:00Z"
         }
@@ -13740,6 +13453,13 @@
           "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVkM3Ukl2ZldpelNvZlVyajF3Tm0xWmZ3T2FtLU5Rc010dXQ1Wl92NW5CYnBZQ0xEZHdqZ0k0T2ZJb3JNWHJqWUlHLTIxTU1td3lPTElvUnJxbTdpT3l6eG5UR3h2WXhpRHBlX3Z6eEJlbTdlUEI2VjNKeEVtNUMzRHBWck53WlZXUG5VR0hFTmJtMnhjancwVXhlS1ZlSnlSMS15eHhfajNQYkU2R3hoclpKd1FDRzFpU2lJalo4OTVYZHZnOTJ3REpHRmVTbUZz?oc=5",
           "source_type": "Media",
           "published_at": "2026-08-10T07:00:00Z"
+        },
+        {
+          "title": "SharpLink posts $1B loss as its $1.7B Ethereum treasury could take 90 days to fully convert to cash",
+          "name": "CryptoSlate · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVVpWS1JwTGxHUmFuOTZ4T2NtMDd5THpWVHhwMDBCWF9hSnJRRW1WRzc2MUdjNWtSNGxUVEc0QWIxNUlHczBkYjc0eGFvRzNjaWF1MU12NnRpSTJFNHhmcHFiRFRWN3loWGN0OVZ1T1A4eFZPQ0g0VlJxM3dScHNZTENFM1ZENzlFSzVmYzZHcWFOUXZnTGVrSmlrMEtiNFdQT3lpenVDLVVBT1Jhc1RYSHhCMm9NYi1oM1RBTTdfTQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-10T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14053,6 +13773,48 @@
       "moon_meters": [
         {
           "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "6c9897c622acf1",
+      "title": "Sharplink Gaming Q2 2026 Earnings Results and Report",
+      "published_at": "2026-08-08T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "MarketBeat · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUG5oWUluNUVVNGVOd2NxNXZwQ1BpMHQ1UWQyX2ZEYmtkMTgxSExJanVOTWJ4Mkk1S1JrVTBLRFJXSTRXOVVDT0d2b0JCVnEybzBDMmVvSURqVGlqNUxoSk5LSHE4cGVhdWFPajl0TUVuUVYyNGlkX2dncVBLRnc4SkhISFJQTlU?oc=5",
+      "excerpt": "Sharplink Gaming Q2 2026 Earnings Results and Report MarketBeat",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Sharplink Gaming Q2 2026 Earnings Results and Report",
+          "name": "MarketBeat · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUG5oWUluNUVVNGVOd2NxNXZwQ1BpMHQ1UWQyX2ZEYmtkMTgxSExJanVOTWJ4Mkk1S1JrVTBLRFJXSTRXOVVDT0d2b0JCVnEybzBDMmVvSURqVGlqNUxoSk5LSHE4cGVhdWFPajl0TUVuUVYyNGlkX2dncVBLRnc4SkhISFJQTlU?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-08T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -14993,6 +14755,13 @@
           "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBlcDBFdTc3VlBLeUQ2RlpDS3ZYSGhzMGpMTm9POXA1d1F3MVoySk5NcVNJNGlHQXJyUFZSQXFCTWRWcDlfUXpXcXFyNGtIeUstNk9zVjZSN282T2NmQXlWc0VBYjFfdFZtSXBNaUFrTnhZNzh3NllLbDg2WQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-31T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Repurchases 13% of Outstanding Shares Since December, Increasing Litecoin Backing Per Share",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/07/30/3336043/0/en/lite-strategy-repurchases-13-of-outstanding-shares-since-december-increasing-litecoin-backing-per-share.html",
+          "source_type": "Official",
+          "published_at": "2026-07-30T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -16735,6 +16504,48 @@
       ]
     },
     {
+      "id": "7c7c7136ff5deb",
+      "title": "Is Bitcoin heading for $65K? Sharplink buys $16M ETH: Market Moves",
+      "published_at": "2026-07-02T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNY0tyTVVna1NzdDNzbWpWV19ac0lTaGJTTjNIa2RKdlVFbVYwRFVXbGNvVHlTZTFFRHJYNEI5XzBOd3lGSUc3LXU1My0tRmJJNVVHOG5fc0lxMXpxT2EyLVQ0dXdsX0xGOTVRR1AwMWtMWmRnMUZ1NHZHRjAtS0xSLWR0UGkzOWZMRkxYVlduaEFzWTMzM0ZwMFliV2J1NThRcGM1bTZRc24zUmY4NmNUNUlNTkFjWFctM0k0X295c01INmJ6?oc=5",
+      "excerpt": "Is Bitcoin heading for $65K? Sharplink buys $16M ETH: Market Moves TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Is Bitcoin heading for $65K? Sharplink buys $16M ETH: Market Moves",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNY0tyTVVna1NzdDNzbWpWV19ac0lTaGJTTjNIa2RKdlVFbVYwRFVXbGNvVHlTZTFFRHJYNEI5XzBOd3lGSUc3LXU1My0tRmJJNVVHOG5fc0lxMXpxT2EyLVQ0dXdsX0xGOTVRR1AwMWtMWmRnMUZ1NHZHRjAtS0xSLWR0UGkzOWZMRkxYVlduaEFzWTMzM0ZwMFliV2J1NThRcGM1bTZRc24zUmY4NmNUNUlNTkFjWFctM0k0X295c01INmJ6?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-02T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "eb1132e8f537fc",
       "title": "Ethereum Institutional Launches as Independent Non-Profit to Bring Institutional Finance Onchain at Scale",
       "published_at": "2026-07-01T12:00:00Z",
@@ -17463,48 +17274,6 @@
       ]
     },
     {
-      "id": "037fa5671503aa",
-      "title": "Sharplink Buys 5,000 ETH In First Purchase Since October",
-      "published_at": "2026-06-26T18:37:59Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUDJmYmVjSENKVS1oRUNCOGI5Qjdyb3hxN01UY1JfcGE4amxxTXJjOGxycU1fWHd3SG0ycjczXzBRQkl3bERIeVN1Y3lMU2NEVkZCbXcxZ0huNEdkWFloSDVMNmRzZ2xNbEtzQzc5ODVLZ3U2eXFOT1Ria0ppUmlBdHpFWTdwR1QtM1ltYTVPbEExcm9peGlDYWhn?oc=5",
-      "excerpt": "Sharplink Buys 5,000 ETH In First Purchase Since October CoinMarketCap",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:32Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Sharplink Buys 5,000 ETH In First Purchase Since October",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUDJmYmVjSENKVS1oRUNCOGI5Qjdyb3hxN01UY1JfcGE4amxxTXJjOGxycU1fWHd3SG0ycjczXzBRQkl3bERIeVN1Y3lMU2NEVkZCbXcxZ0huNEdkWFloSDVMNmRzZ2xNbEtzQzc5ODVLZ3U2eXFOT1Ria0ppUmlBdHpFWTdwR1QtM1ltYTVPbEExcm9peGlDYWhn?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-06-26T18:37:59Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
       "id": "d014a3529c4e65",
       "title": "Ethereum treasury firm Sharplink buys ether for the first time in eight months",
       "published_at": "2026-06-26T07:00:00Z",
@@ -17668,6 +17437,55 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "fc7dcc517a4d66",
+      "title": "Sharplink buys Ethereum for first time in 8 months, adding 5,000 ETH: onchain analyst",
+      "published_at": "2026-06-25T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "The Block · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdUxHeGR0RlZ4TW9xWEVnTXR3Y0ZDUGdPUWxOTU1LU0JNUUhFaHRaT181V05Hdkt2YXN3am9qSTZJbHd6Z1NwMzgxY3JpTktkLVY3TnVzNGpPTENtX255aGRxN1lfMVI0YmhYS0Q1RTlnRUoxbFNlRkg0MVpfNnA2VDdoQWhqZi1rczA3cm1mOGRNQQ?oc=5",
+      "excerpt": "Sharplink buys Ethereum for first time in 8 months, adding 5,000 ETH: onchain analyst The Block",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Sharplink buys Ethereum for first time in 8 months, adding 5,000 ETH: onchain analyst",
+          "name": "The Block · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdUxHeGR0RlZ4TW9xWEVnTXR3Y0ZDUGdPUWxOTU1LU0JNUUhFaHRaT181V05Hdkt2YXN3am9qSTZJbHd6Z1NwMzgxY3JpTktkLVY3TnVzNGpPTENtX255aGRxN1lfMVI0YmhYS0Q1RTlnRUoxbFNlRkg0MVpfNnA2VDdoQWhqZi1rczA3cm1mOGRNQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-25T07:00:00Z"
+        },
+        {
+          "title": "Sharplink Buys 5,000 ETH In First Purchase Since October",
+          "name": "CoinMarketCap · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUDJmYmVjSENKVS1oRUNCOGI5Qjdyb3hxN01UY1JfcGE4amxxTXJjOGxycU1fWHd3SG0ycjczXzBRQkl3bERIeVN1Y3lMU2NEVkZCbXcxZ0huNEdkWFloSDVMNmRzZ2xNbEtzQzc5ODVLZ3U2eXFOT1Ria0ppUmlBdHpFWTdwR1QtM1ltYTVPbEExcm9peGlDYWhn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-26T18:37:59Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -18133,6 +17951,13 @@
           "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNcEUxUmJTZTU3YzVfS2tmbUpPbzVwd253M2hiWmp3UGJlQ1dTR1o0a1FlTkVEV1p3a3pQSWltM2diXy1mWnRKc25wc0U0Nmp1cDJqRUJhbTh6N0VfTnNPWnNZazJkbnNqSVlvLUpxMFBMNUI0Wm95NlBxMmFEamhpOXpVajdzZEE3VGVkaVFUN3l1cno1cEtSN0pod3l5eHNscEJIaHdxY1V2ejJnLU9hSnBpWVdGWE9iUWtVR0RGdVFKVnBVR3JlR2JVUDhYYnhWSXRaaWhXaFd5Q0E?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-19T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy to Attend Panel at Litecoin Foundation Summit in Amsterdam",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/06/19/3314726/0/en/lite-strategy-to-attend-panel-at-litecoin-foundation-summit-in-amsterdam.html",
+          "source_type": "Official",
+          "published_at": "2026-06-19T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -18245,6 +18070,13 @@
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWEZWaEZOWllka0RndDdWRHpZMzlaWEtFYzlQaTJMV3NlZ1pQQ25YMWpadDJZZUJVTFdJWURob0F4TjhRT0ZxLUpIR0JfeW9SMHFvSVM3bU9XSVlGUVhOck10dDZmMnNwOEJKbTh5WFFBN3hMd05RUHROY1JQYkFUZnA1NWNKQUJISGZSVVR3N2I2aUhnXzY1MVBpOTlHUUlYV3dCVmE4eEgwMTU0Nkl6TzdnLTAzXzZCNXdUY09n?oc=5",
           "source_type": "Media",
           "published_at": "2026-06-18T07:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Leads Strategic Investment in LitVM",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/06/18/3314172/0/en/lite-strategy-leads-strategic-investment-in-litvm.html",
+          "source_type": "Official",
+          "published_at": "2026-06-18T12:00:00Z"
         }
       ],
       "moon_meters": [
@@ -19148,8 +18980,8 @@
       "published_at": "2026-06-02T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Strategy",
-        "SharpLink Gaming"
+        "SharpLink Gaming",
+        "Strategy"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -19174,7 +19006,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -19184,7 +19016,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -19642,6 +19474,13 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOeU1lMmdLYUtBSFNLNHotZU9PajFXeUlzNjI3NjVsVE44TGNuMlZqUDBvbDFCWXo3V01iVjFUa1JZdXJWcm9YS2wzaF90OGJFUi1ud3ctUUZFaFJPemJSTUVWaHNrQ1Y4c2NROUUxYk5VeHNPOXBJNkw3V2cxei1FbzBPdTNPSU5sc2M4OGI2OVdzU3pzWGQxclRJYTFoNFJfU3lUYlJGYw?oc=5",
           "source_type": "Media",
           "published_at": "2026-05-31T07:00:00Z"
+        },
+        {
+          "title": "'Ethereum Wins The Scoreboard,' Says SharpLink CEO, Comparing ETH's Long Game To Bezos's Amazon Bet",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNcm1Ba2lNM1YyY0RXU2lfU0lLVkdPTXdheHM5czFlelh2cTJaazRNRzBaejBDbno2VlhmNWJ0eUthcU9oYkZKNDVmT2JwbDlJNDkxSS10WVFsTG1pX2ZCZE10R2pXVG1tR1Jybjk0NURnNXpya2NaSnlSNlo4TzVFSmhJM3pNNnF5TXE3a3M1Q3htMkdmZURGbTl1RUQ2alBFeUJ5VTVxUnNsSHhra3Y0c3BKU3VaUGhfQmNSZDZELXVDOXlwdW1CT01DbU1CTkhiMUhYMXZsSjdyR1RxZmt0a1Y2ZG1XMmtyLW1leQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-31T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -19752,6 +19591,13 @@
           "title": "Sharplink $SBET to join Russell 2000 and Russell 3000 indexes on June 29, 2026",
           "name": "Crypto Briefing · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPWnNXU1J2SHRGRkRlZTE1QnZ1MVd4dGw4b2ktczB4VXdoTjdQd2d3dDBnQ0hNNHcxQ0RJd1dMQ2VaMTdrNW5WeE1fX2l5SGdYb3VvdmR1S193R3BmY2ROVU9VVGRXVjIwZnY5MDVzWGhCdmZZU3N0cHg2MnhhS3FnSnJ3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-26T07:00:00Z"
+        },
+        {
+          "title": "Sharplink $SBET to join Russell 2000 and Russell 3000 indexes on June 29, 2026",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9hNHZicTNuN3JmWWllSU9na3RiT2FfeFVscHdYT2xISlZJc3dCNkVTelJkZTVVNFBSbWRZSDFtMGlTR2gyLUxOSnRjaFNJTXI0WG1TTzRuUlE?oc=5",
           "source_type": "Media",
           "published_at": "2026-05-26T07:00:00Z"
         }
@@ -19901,8 +19747,8 @@
       "published_at": "2026-05-23T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Strategy",
-        "SharpLink Gaming"
+        "SharpLink Gaming",
+        "Strategy"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -19934,7 +19780,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -19944,7 +19790,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -20526,6 +20372,13 @@
           "title": "Lite Strategy Reports Fiscal 2026 Third Quarter Results",
           "name": "Lite Strategy investor relations",
           "url": "https://kimbrxtherapeutics.gcs-web.com/news-releases/news-release-details/lite-strategy-reports-fiscal-2026-third-quarter-results",
+          "source_type": "Official",
+          "published_at": "2026-05-13T12:00:00Z"
+        },
+        {
+          "title": "Lite Strategy Reports Fiscal 2026 Third Quarter Results",
+          "name": "Lite Strategy / GlobeNewswire",
+          "url": "https://rss.globenewswire.com/news-release/2026/05/13/3294003/0/en/lite-strategy-reports-fiscal-2026-third-quarter-results.html",
           "source_type": "Official",
           "published_at": "2026-05-13T12:00:00Z"
         }
@@ -22831,6 +22684,216 @@
           "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9xd0w1bVRzbUZLSzVYUXN3TmlMb2FvTW0ta091b21MY05GY2RDWG01VnN5dXNnV3NQQ0JHZU9oZVhtUGQ1bHVNdWowWXJ3eUlPY1JqbHFiSW9YcC1UUlNNNnBWbGZ0WFBnZHY2cVRiazJ4bEpnZU9HS1VKaTU?oc=5",
           "source_type": "Media",
           "published_at": "2026-04-09T19:42:38Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "6cf1722259f1ad",
+      "title": "Ripple Treasury launches the first treasury management system with native digital asset capabilities",
+      "published_at": "2026-04-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Digital Banker · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeXpNQ0FQMlZUNW1SN2lneElXb2s5blZXdUJpX2xpU0RBdnhoWm5HbVAtWjFnX3JMN1Rzd1dkbW92bWRidzV5Y0FlV21LNXZmVE9BRVlVcU1iUHVOU2g2aVVkejl6MUNmNTVmMlRIV3dBOVNQWmJqRXZZcE91STFnTmFlVEc4UTBxWW5NWHYzUDFJOUtrODNLVG9pOFVEZGM3NklWd3BOeVhVb2pWUUZUN2U4WGx5RzlscWVHMEx2bm1LSFNSQTZCcFRB?oc=5",
+      "excerpt": "Ripple Treasury launches the first treasury management system with native digital asset capabilities The Digital Banker",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:39Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury launches the first treasury management system with native digital asset capabilities",
+          "name": "The Digital Banker · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeXpNQ0FQMlZUNW1SN2lneElXb2s5blZXdUJpX2xpU0RBdnhoWm5HbVAtWjFnX3JMN1Rzd1dkbW92bWRidzV5Y0FlV21LNXZmVE9BRVlVcU1iUHVOU2g2aVVkejl6MUNmNTVmMlRIV3dBOVNQWmJqRXZZcE91STFnTmFlVEc4UTBxWW5NWHYzUDFJOUtrODNLVG9pOFVEZGM3NklWd3BOeVhVb2pWUUZUN2U4WGx5RzlscWVHMEx2bm1LSFNSQTZCcFRB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "bb2c58de88f232",
+      "title": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook",
+      "published_at": "2026-04-07T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "High",
+      "score": 68,
+      "source": "디지털투데이 · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYmdaLXhuLUllNkVLT2RMQm15ZTAtbDhtREcwNTM5UTlNQ0hNdTZwRGtWVGcyVTAySzNIYk5LWF95Uy1nUEh1bEFOWUticXUtYW5Ra0hDYmFNMzhjbTNCQ3FlM1B6M1dXRUY1Q05TNGZPUTdzclBRV1YzdlRSTVpKaWxVODhxRWhtU2JDNDJJdEVvSlF2YzRpUFZrLXlRWUNsNTY2djdlMThHcUNPcVpJV1Z0MFVGQ1hScXRKVWRzeUFCYnU5QlZRYmljTlo?oc=5",
+      "excerpt": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook 디지털투데이",
+      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:39Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury joins SWIFT partner program, reviving XRP hopes and Garlinghouse outlook",
+          "name": "디지털투데이 · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYmdaLXhuLUllNkVLT2RMQm15ZTAtbDhtREcwNTM5UTlNQ0hNdTZwRGtWVGcyVTAySzNIYk5LWF95Uy1nUEh1bEFOWUticXUtYW5Ra0hDYmFNMzhjbTNCQ3FlM1B6M1dXRUY1Q05TNGZPUTdzclBRV1YzdlRSTVpKaWxVODhxRWhtU2JDNDJJdEVvSlF2YzRpUFZrLXlRWUNsNTY2djdlMThHcUNPcVpJV1Z0MFVGQ1hScXRKVWRzeUFCYnU5QlZRYmljTlo?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-07T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 3,
+          "label": "Very bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "A major financial-network integration using XRP, if realised, could transform adoption and demand.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "ae8d7c55c1bd3b",
+      "title": "SBET Stock Dips Despite Bullish Call Amid Crypto Selloff – Analyst Flags ‘Unique Position’ Against BMNR, ETHM",
+      "published_at": "2026-04-07T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Stocktwits · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcEV2VjVlNGdESGZyT1FmaF9lLWxCOC1tVzZ5SWwyM3NuX09ZcFNRQ2dHX0xZcXFualpaN0RyTllFWmE2Ukw1UWdCcEU0WEFsZjFQdWJUb0xmbUY3YkNiNFZ6U1VSb3BkeHZ2SmJobXM3c29ZeDlZN3UzRFI2NFRET21lQ3llYXhCZEpqN0MwWk81RlVDUDNRUndQRlRIckoyT2xabV82aUtmQ0ZVdnVrbFFqSHdXc1d3X0ZDUzdKdFRKLWYwcVlV?oc=5",
+      "excerpt": "SBET Stock Dips Despite Bullish Call Amid Crypto Selloff – Analyst Flags ‘Unique Position’ Against BMNR, ETHM Stocktwits",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:41Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SBET Stock Dips Despite Bullish Call Amid Crypto Selloff – Analyst Flags ‘Unique Position’ Against BMNR, ETHM",
+          "name": "Stocktwits · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcEV2VjVlNGdESGZyT1FmaF9lLWxCOC1tVzZ5SWwyM3NuX09ZcFNRQ2dHX0xZcXFualpaN0RyTllFWmE2Ukw1UWdCcEU0WEFsZjFQdWJUb0xmbUY3YkNiNFZ6U1VSb3BkeHZ2SmJobXM3c29ZeDlZN3UzRFI2NFRET21lQ3llYXhCZEpqN0MwWk81RlVDUDNRUndQRlRIckoyT2xabV82aUtmQ0ZVdnVrbFFqSHdXc1d3X0ZDUzdKdFRKLWYwcVlV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-07T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "61c14ff2d1f25b",
+      "title": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt",
+      "published_at": "2026-04-03T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 68,
+      "source": "CoinGape · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR0VzUUtfVkdFdTc5OGdSYW9NcDZiVFNnemU3V0ZlQ1g3cVYyLTBmcnVob0NMWHVPMHIzbFVJcDY1QnFabVJCZmFLalJ2N2M0R19MdEZPMW12ZjJ3MHpHTnpucEEtTTVTRUhFZV9MN2pSSkJkUkRDbFBIQU95UldweHdvRW1BVDJITmNXcGI5VQ?oc=5",
+      "excerpt": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt CoinGape",
+      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:39Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt",
+          "name": "CoinGape · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR0VzUUtfVkdFdTc5OGdSYW9NcDZiVFNnemU3V0ZlQ1g3cVYyLTBmcnVob0NMWHVPMHIzbFVJcDY1QnFabVJCZmFLalJ2N2M0R19MdEZPMW12ZjJ3MHpHTnpucEEtTTVTRUhFZV9MN2pSSkJkUkRDbFBIQU95UldweHdvRW1BVDJITmNXcGI5VQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-03T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "99290f1decb918",
+      "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
+      "published_at": "2026-04-03T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
+      "excerpt": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-03T19:46:40Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-03T07:00:00Z"
         }
       ],
       "moon_meters": [
