@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-04T03:07:57Z",
+    "ran_at": "2026-11-04T17:15:51Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-04T03:07:57Z",
+      "checked_at": "2026-11-04T17:15:51Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
-      "items_seen": 20,
-      "checked_at": "2026-11-04T03:07:57Z",
-      "message": "Fetched 20 matching items."
+      "items_seen": 18,
+      "checked_at": "2026-11-04T17:15:51Z",
+      "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-04T03:07:57Z",
+      "checked_at": "2026-11-04T17:15:51Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
-      "items_seen": 12,
-      "checked_at": "2026-11-04T03:07:57Z",
-      "message": "Fetched 12 matching items."
+      "items_seen": 9,
+      "checked_at": "2026-11-04T17:15:51Z",
+      "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 521,
-      "checked_at": "2026-11-04T03:07:57Z",
-      "message": "Fetched 521 matching items."
+      "items_seen": 225,
+      "checked_at": "2026-11-04T17:15:51Z",
+      "message": "Fetched 225 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,14 +61,14 @@
       "label": "Neutral",
       "raw_score": 0.04,
       "window_days": 30,
-      "as_of": "2026-11-04T03:07:57Z",
-      "stories": 49,
-      "independent_events": 44,
+      "as_of": "2026-11-04T17:15:51Z",
+      "stories": 46,
+      "independent_events": 43,
       "directional_events": 9,
       "distinct_catalysts": 5,
       "bullish_events": 6,
       "bearish_events": 3,
-      "neutral_events": 35,
+      "neutral_events": 34,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -121,16 +121,16 @@
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.09,
+      "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-04T03:07:57Z",
-      "stories": 43,
-      "independent_events": 40,
+      "as_of": "2026-11-04T17:15:51Z",
+      "stories": 42,
+      "independent_events": 39,
       "directional_events": 18,
       "distinct_catalysts": 15,
       "bullish_events": 14,
       "bearish_events": 4,
-      "neutral_events": 22,
+      "neutral_events": 21,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -181,18 +181,18 @@
       "method": "impact_decay_dedup_v2"
     },
     "SBET": {
-      "value": -2,
-      "label": "Bearish",
-      "raw_score": -1.37,
+      "value": -1,
+      "label": "Slightly bearish",
+      "raw_score": -1.33,
       "window_days": 30,
-      "as_of": "2026-11-04T03:07:57Z",
-      "stories": 28,
-      "independent_events": 28,
+      "as_of": "2026-11-04T17:15:51Z",
+      "stories": 29,
+      "independent_events": 29,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 25,
+      "neutral_events": 26,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-04T03:07:57Z",
+      "as_of": "2026-11-04T17:15:51Z",
       "stories": 2,
       "independent_events": 2,
       "directional_events": 0,
@@ -242,7 +242,7 @@
     {
       "id": "c9167daca8158b",
       "title": "MSTR Stock Jumps 5% as Strategy Begins Daily STRC Dividends at 12% Annual Rate",
-      "published_at": "2026-11-03T21:14:24Z",
+      "published_at": "2026-11-03T21:14:46Z",
       "date_only": false,
       "entities": [
         "Strategy"
@@ -257,7 +257,7 @@
       "excerpt": "MSTR Stock Jumps 5% as Strategy Begins Daily STRC Dividends at 12% Annual Rate Cryptonews.net",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-11-04T03:08:11Z",
+      "added_at": "2026-11-04T17:16:00Z",
       "verified_seed": false,
       "coverage": [
         {
@@ -265,7 +265,7 @@
           "name": "Cryptonews.net · via Google News",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1PaHo0NDVGWTNGUm9NRTdKRDR6a2NDZ0xGMHh0SVhVQllpYS1CX200TVItbzlnOUJnRkQxWUpGUmRBYmlyVi1FbVR3bUI4bTVJMzVoakZGbVo?oc=5",
           "source_type": "Media",
-          "published_at": "2026-11-03T21:14:24Z"
+          "published_at": "2026-11-03T21:14:46Z"
         }
       ],
       "moon_meters": [
@@ -313,6 +313,48 @@
       "moon_meters": [
         {
           "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "0618d71d04e0d1",
+      "title": "SharpLink Adds 10K $ETH as Buyback Expands",
+      "published_at": "2026-11-03T17:25:41Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "CoinMarketCap · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWGM4ckNnQllBQUVLeTVTeDRlaGlTbG0wQ0lxb21WU3JWUmROcmdVQzJUaVJPa2lMWTN2bFBqNEJOQXJJeXVKRmNBTUpIUFA2N0xtTG55T1dwOGowM3ZBakdUcmdyWk02a0xaRG03Zm5famVtOTM0QjdfYUpHSFpoX1F1ZlF0NmVjYXVYelJidw?oc=5",
+      "excerpt": "SharpLink Adds 10K $ETH as Buyback Expands CoinMarketCap",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-11-04T17:15:58Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "SharpLink Adds 10K $ETH as Buyback Expands",
+          "name": "CoinMarketCap · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWGM4ckNnQllBQUVLeTVTeDRlaGlTbG0wQ0lxb21WU3JWUmROcmdVQzJUaVJPa2lMWTN2bFBqNEJOQXJJeXVKRmNBTUpIUFA2N0xtTG55T1dwOGowM3ZBakdUcmdyWk02a0xaRG03Zm5famVtOTM0QjdfYUpHSFpoX1F1ZlF0NmVjYXVYelJidw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T17:25:41Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -16679,48 +16721,6 @@
       ]
     },
     {
-      "id": "0618d71d04e0d1",
-      "title": "SharpLink Adds 10K $ETH as Buyback Expands",
-      "published_at": "2026-07-01T02:29:19Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 73,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWGM4ckNnQllBQUVLeTVTeDRlaGlTbG0wQ0lxb21WU3JWUmROcmdVQzJUaVJPa2lMWTN2bFBqNEJOQXJJeXVKRmNBTUpIUFA2N0xtTG55T1dwOGowM3ZBakdUcmdyWk02a0xaRG03Zm5famVtOTM0QjdfYUpHSFpoX1F1ZlF0NmVjYXVYelJidw?oc=5",
-      "excerpt": "SharpLink Adds 10K $ETH as Buyback Expands CoinMarketCap",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-30T19:24:31Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink Adds 10K $ETH as Buyback Expands",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWGM4ckNnQllBQUVLeTVTeDRlaGlTbG0wQ0lxb21WU3JWUmROcmdVQzJUaVJPa2lMWTN2bFBqNEJOQXJJeXVKRmNBTUpIUFA2N0xtTG55T1dwOGowM3ZBakdUcmdyWk02a0xaRG03Zm5famVtOTM0QjdfYUpHSFpoX1F1ZlF0NmVjYXVYelJidw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-07-01T02:29:19Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
       "id": "7b3ae9313c7897",
       "title": "Sharplink Acquires 10,000 ETH, Bringing Total ETH Holdings to 886,725; Repurchases Over 2.1 Million Shares of Common Stock",
       "published_at": "2026-06-30T12:00:00Z",
@@ -19029,8 +19029,8 @@
       "published_at": "2026-06-02T07:00:00Z",
       "date_only": false,
       "entities": [
-        "SharpLink Gaming",
-        "Strategy"
+        "Strategy",
+        "SharpLink Gaming"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -19055,7 +19055,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -19065,7 +19065,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Conditional",
@@ -19733,6 +19733,13 @@
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZFFPSmVRZHZJc2gwRUJMZzVrcldqTFNEOWFfN0thTE9rV3ZOTzNhRXdnWnhObTZGN2xpdWxCX1owRlM5QlhMX0drSlFDOG9HMTBJeGdvX1ZWc0ZGazcwUjVWX0JuWU9WVDRidlRHSTh3Wl9WLVdlYlVzdGVwS2ZSRFFsSGJTZjNHR2ljNlBraWVRbG00MlNMeDNPWDF2VzFkWjVmRw?oc=5",
           "source_type": "Media",
           "published_at": "2026-05-25T07:00:00Z"
+        },
+        {
+          "title": "Bitcoin News Today: Saylor Moves to MicroStrategy 2.0 with Treasury Bonds as the Company Stops Buying BTC",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQaHVOU1ZKeFZnX3RBU1ZOSUMxdlRCQzFuN3JIczM2aWFrTnhucjdzaU42VW1ZMHJpU01nMGs4MGVOTWNmYlJFOXZVcVFCSUFUb3JrMzNNQzJFcWRQbXpBcUpqSlBHaFhCMlZEX1IwaE5LZWZBOUJYQXd5RVJIMWdJTWtJOFp2UlM2YjhMalZVblZKUi1RYTI1ZURMckNHeUNhc1h4QUthN2I1ZEtVWV8yN2JQdjlNRlVRWnc1N0lNV2NUdFczWS1WR3ZXVEJZZ3RYdGxPXzVzLS1YdDZmMEFTMFFXek9nbmJGbERoV3NwMUsxRXh1Mk83ZQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-25T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -19796,8 +19803,8 @@
       "published_at": "2026-05-23T07:00:00Z",
       "date_only": false,
       "entities": [
-        "SharpLink Gaming",
-        "Strategy"
+        "Strategy",
+        "SharpLink Gaming"
       ],
       "category": "Adoption",
       "impact": "Medium",
@@ -19829,7 +19836,7 @@
       ],
       "moon_meters": [
         {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -19839,7 +19846,7 @@
           "method": "headline_if_true_v4"
         },
         {
-          "asset": "MSTR",
+          "asset": "SBET",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
