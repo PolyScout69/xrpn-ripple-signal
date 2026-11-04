@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-03T20:34:24Z",
+    "ran_at": "2026-11-04T03:07:57Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 0,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 5,
-      "checked_at": "2026-11-03T20:34:24Z",
+      "checked_at": "2026-11-04T03:07:57Z",
       "message": "Fetched 5 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 20,
-      "checked_at": "2026-11-03T20:34:24Z",
+      "checked_at": "2026-11-04T03:07:57Z",
       "message": "Fetched 20 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-03T20:34:24Z",
+      "checked_at": "2026-11-04T03:07:57Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
-      "items_seen": 9,
-      "checked_at": "2026-11-03T20:34:24Z",
-      "message": "Fetched 9 matching items."
+      "items_seen": 12,
+      "checked_at": "2026-11-04T03:07:57Z",
+      "message": "Fetched 12 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 431,
-      "checked_at": "2026-11-03T20:34:24Z",
-      "message": "Fetched 431 matching items."
+      "items_seen": 521,
+      "checked_at": "2026-11-04T03:07:57Z",
+      "message": "Fetched 521 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,14 +61,14 @@
       "label": "Neutral",
       "raw_score": 0.04,
       "window_days": 30,
-      "as_of": "2026-11-03T20:34:24Z",
-      "stories": 48,
-      "independent_events": 43,
+      "as_of": "2026-11-04T03:07:57Z",
+      "stories": 49,
+      "independent_events": 44,
       "directional_events": 9,
       "distinct_catalysts": 5,
       "bullish_events": 6,
       "bearish_events": 3,
-      "neutral_events": 34,
+      "neutral_events": 35,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.09,
       "window_days": 30,
-      "as_of": "2026-11-03T20:34:24Z",
+      "as_of": "2026-11-04T03:07:57Z",
       "stories": 43,
       "independent_events": 40,
       "directional_events": 18,
@@ -185,7 +185,7 @@
       "label": "Bearish",
       "raw_score": -1.37,
       "window_days": 30,
-      "as_of": "2026-11-03T20:34:24Z",
+      "as_of": "2026-11-04T03:07:57Z",
       "stories": 28,
       "independent_events": 28,
       "directional_events": 3,
@@ -225,20 +225,104 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-03T20:34:24Z",
-      "stories": 1,
-      "independent_events": 1,
+      "as_of": "2026-11-04T03:07:57Z",
+      "stories": 2,
+      "independent_events": 2,
       "directional_events": 0,
       "distinct_catalysts": 0,
       "bullish_events": 0,
       "bearish_events": 0,
-      "neutral_events": 1,
+      "neutral_events": 2,
       "coverage": "Limited coverage",
       "drivers": [],
       "method": "impact_decay_dedup_v2"
     }
   },
   "items": [
+    {
+      "id": "c9167daca8158b",
+      "title": "MSTR Stock Jumps 5% as Strategy Begins Daily STRC Dividends at 12% Annual Rate",
+      "published_at": "2026-11-03T21:14:24Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Cryptonews.net · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1PaHo0NDVGWTNGUm9NRTdKRDR6a2NDZ0xGMHh0SVhVQllpYS1CX200TVItbzlnOUJnRkQxWUpGUmRBYmlyVi1FbVR3bUI4bTVJMzVoakZGbVo?oc=5",
+      "excerpt": "MSTR Stock Jumps 5% as Strategy Begins Daily STRC Dividends at 12% Annual Rate Cryptonews.net",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-04T03:08:11Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSTR Stock Jumps 5% as Strategy Begins Daily STRC Dividends at 12% Annual Rate",
+          "name": "Cryptonews.net · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1PaHo0NDVGWTNGUm9NRTdKRDR6a2NDZ0xGMHh0SVhVQllpYS1CX200TVItbzlnOUJnRkQxWUpGUmRBYmlyVi1FbVR3bUI4bTVJMzVoakZGbVo?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T21:14:24Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "fc46e8b7ca1b4d",
+      "title": "Our Focus is Centered on Growing Real Activity Around the Litecoin Ecosystem: CEO of Lite Strategy",
+      "published_at": "2026-11-03T20:41:52Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "AlphaStreet · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOG1tYV9KQnRuZ1ZLQWc1X3BBc2tvZFRCNXQydTl6azdGM0VlcXBDd2kzNEV1NkpxcVIwQ29YckNtSTJHa1ZaM1ZIVVVRMjdrX1ZQZGpMNXQzMk9kQVBkNEswcTBLMjZ4Q3p2ejB6Nm9odlBKTTYyOGU4Qkxva1M0UWU1aWhUT2p5R0dZUkFadlpTdzlBU20taEVKUFZ0dENaRUtNeFdjLWphQ2x5UjdVZTVEcXFaT0hxR3A3NjhsWWJqcnhhQ1HSAcYBQVVfeXFMUDhtbWFfSkJ0bmdWS0FnNV9wQXNrb2RUQjV0MnU5ems3RjNFZXFwQ3dpMzRFdTZKcXFSMENvWHJDbUkyR2tWWjNWSFVVUTI3a19WUGRqTDV0MzJPZEFQZDRLMHEwSzI2eEN6dnowejZvaHZQSk02MjhlOEJMb2tTNFFlNWloVE9qeUdHWVJBWnZaU3c5QVNtLWhFSlBWdHRDWkVLTXhXYy1qYUNseVI3VWU1RHFxWk9IcUdwNzY4bFlianJ4YUNR?oc=5",
+      "excerpt": "Our Focus is Centered on Growing Real Activity Around the Litecoin Ecosystem: CEO of Lite Strategy AlphaStreet",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-04T03:08:09Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Our Focus is Centered on Growing Real Activity Around the Litecoin Ecosystem: CEO of Lite Strategy",
+          "name": "AlphaStreet · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOG1tYV9KQnRuZ1ZLQWc1X3BBc2tvZFRCNXQydTl6azdGM0VlcXBDd2kzNEV1NkpxcVIwQ29YckNtSTJHa1ZaM1ZIVVVRMjdrX1ZQZGpMNXQzMk9kQVBkNEswcTBLMjZ4Q3p2ejB6Nm9odlBKTTYyOGU4Qkxva1M0UWU1aWhUT2p5R0dZUkFadlpTdzlBU20taEVKUFZ0dENaRUtNeFdjLWphQ2x5UjdVZTVEcXFaT0hxR3A3NjhsWWJqcnhhQ1HSAcYBQVVfeXFMUDhtbWFfSkJ0bmdWS0FnNV9wQXNrb2RUQjV0MnU5ems3RjNFZXFwQ3dpMzRFdTZKcXFSMENvWHJDbUkyR2tWWjNWSFVVUTI3a19WUGRqTDV0MzJPZEFQZDRLMHEwSzI2eEN6dnowejZvaHZQSk02MjhlOEJMb2tTNFFlNWloVE9qeUdHWVJBWnZaU3c5QVNtLWhFSlBWdHRDWkVLTXhXYy1qYUNseVI3VWU1RHFxWk9IcUdwNzY4bFlianJ4YUNR?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T20:41:52Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "8ad17c9e459cfb",
       "title": "Strategy Buys 811 Bitcoin for $65.5 Million, Repurchases $208 Million in STRC",
@@ -22822,90 +22906,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "61c14ff2d1f25b",
-      "title": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt",
-      "published_at": "2026-04-03T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 68,
-      "source": "CoinGape · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR0VzUUtfVkdFdTc5OGdSYW9NcDZiVFNnemU3V0ZlQ1g3cVYyLTBmcnVob0NMWHVPMHIzbFVJcDY1QnFabVJCZmFLalJ2N2M0R19MdEZPMW12ZjJ3MHpHTnpucEEtTTVTRUhFZV9MN2pSSkJkUkRDbFBIQU95UldweHdvRW1BVDJITmNXcGI5VQ?oc=5",
-      "excerpt": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt CoinGape",
-      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-11-03T19:46:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple Treasury Finally Joins SWIFT Program After Years of Doubt",
-          "name": "CoinGape · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR0VzUUtfVkdFdTc5OGdSYW9NcDZiVFNnemU3V0ZlQ1g3cVYyLTBmcnVob0NMWHVPMHIzbFVJcDY1QnFabVJCZmFLalJ2N2M0R19MdEZPMW12ZjJ3MHpHTnpucEEtTTVTRUhFZV9MN2pSSkJkUkRDbFBIQU95UldweHdvRW1BVDJITmNXcGI5VQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-03T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "99290f1decb918",
-      "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
-      "published_at": "2026-04-03T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
-      "excerpt": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio? Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-03T19:46:40Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "MicroStrategy’s MSTR vs. STRC: Which Bitcoin Strategy Fits Your Portfolio?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObVZ3ejRIcDZ4WXRJMFdoZXdadGd6aWhDa2d6WGpMUk5FUXRmejVxSFBLX2J0VDgzRnc4WXB3VnViZ2V1X0lHRkZNenR0QXA4aHo0WDdTMDZYTXluT1hGNENhQTZUMmpLa0wweUFLS2xvOVVJQXNjTVZSRklRa1RJSy14SThJal9uazk5NWhBa21LWjF2Wm52S1g5T2ZZWjRI?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-03T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
