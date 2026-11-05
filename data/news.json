@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-05T17:25:21Z",
+    "ran_at": "2026-11-05T21:10:18Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 3,
-      "checked_at": "2026-11-05T17:25:21Z",
+      "checked_at": "2026-11-05T21:10:18Z",
       "message": "Fetched 3 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-05T17:25:21Z",
+      "checked_at": "2026-11-05T21:10:18Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-05T17:25:21Z",
+      "checked_at": "2026-11-05T21:10:18Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-05T17:25:21Z",
+      "checked_at": "2026-11-05T21:10:18Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 205,
-      "checked_at": "2026-11-05T17:25:21Z",
-      "message": "Fetched 205 matching items."
+      "items_seen": 207,
+      "checked_at": "2026-11-05T21:10:18Z",
+      "message": "Fetched 207 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,26 +61,26 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-05T17:25:21Z",
-      "stories": 48,
-      "independent_events": 44,
+      "as_of": "2026-11-05T21:10:18Z",
+      "stories": 47,
+      "independent_events": 43,
       "directional_events": 9,
       "distinct_catalysts": 5,
       "bullish_events": 6,
       "bearish_events": 3,
-      "neutral_events": 35,
+      "neutral_events": 34,
       "coverage": "Moderate coverage",
       "drivers": [
         {
-          "id": "0e74c69c58cc34",
-          "title": "Strategy’s STRC Reclaims $100 After $2.25 Billion in Buybacks",
+          "id": "c1366c131bc1c9",
+          "title": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks",
           "value": 2,
           "impact": "Medium",
-          "published_at": "2026-11-05T07:55:50Z",
+          "published_at": "2026-11-05T17:00:00Z",
           "reports": 2,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVkgxUjNHdzF6d3ZwWUFjY1JTS09VT1AxWU11ZFJVTnM2NEQwU3hqUWs1ZGdnWkhnZkh3UHJoNzVycW0yaVlaRDdwckNSMzV5QWs5YmpPOUFna1JlM2U3V3pQMS1KY2JVQ1MySTl4aXI0VW5zTWFUclZEbnhQTFZVN2k5el9NQmxzbVZyeUxpRmNtVmhtRV92WE5SNGt2QQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBFRU1IdXJQdlFGTU0yWDRHTUtvYmpVc0NHN1VTWGVjdkVRV1FPMkV1OFFLcmpTN2U5YWZzVi1JRi0yUEpXQzloTGhiaUJ3SGRJOTcwdFpVc1ppNVJuSEltZlJSVnFWZHFwMHEyMnlaQU1xQVBwRXoxcU1mT3c?oc=5"
         },
         {
           "id": "5e82b8ddd683da",
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-05T17:25:21Z",
+      "as_of": "2026-11-05T21:10:18Z",
       "stories": 41,
       "independent_events": 38,
       "directional_events": 18,
@@ -185,7 +185,7 @@
       "label": "Slightly bearish",
       "raw_score": -1.33,
       "window_days": 30,
-      "as_of": "2026-11-05T17:25:21Z",
+      "as_of": "2026-11-05T21:10:18Z",
       "stories": 29,
       "independent_events": 29,
       "directional_events": 3,
@@ -225,14 +225,14 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-05T17:25:21Z",
-      "stories": 2,
-      "independent_events": 2,
+      "as_of": "2026-11-05T21:10:18Z",
+      "stories": 3,
+      "independent_events": 3,
       "directional_events": 0,
       "distinct_catalysts": 0,
       "bullish_events": 0,
       "bearish_events": 0,
-      "neutral_events": 2,
+      "neutral_events": 3,
       "coverage": "Limited coverage",
       "drivers": [],
       "method": "impact_decay_dedup_v2"
@@ -240,9 +240,9 @@
   },
   "items": [
     {
-      "id": "0e74c69c58cc34",
-      "title": "Strategy’s STRC Reclaims $100 After $2.25 Billion in Buybacks",
-      "published_at": "2026-11-05T07:55:50Z",
+      "id": "c1366c131bc1c9",
+      "title": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks",
+      "published_at": "2026-11-05T17:00:00Z",
       "date_only": false,
       "entities": [
         "Strategy"
@@ -250,58 +250,37 @@
       "category": "Capital markets",
       "impact": "Medium",
       "score": 73,
-      "source": "The Crypto Times · via Google News",
+      "source": "TronWeekly · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVkgxUjNHdzF6d3ZwWUFjY1JTS09VT1AxWU11ZFJVTnM2NEQwU3hqUWs1ZGdnWkhnZkh3UHJoNzVycW0yaVlaRDdwckNSMzV5QWs5YmpPOUFna1JlM2U3V3pQMS1KY2JVQ1MySTl4aXI0VW5zTWFUclZEbnhQTFZVN2k5el9NQmxzbVZyeUxpRmNtVmhtRV92WE5SNGt2QQ?oc=5",
-      "excerpt": "Strategy’s STRC Reclaims $100 After $2.25 Billion in Buybacks The Crypto Times",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBFRU1IdXJQdlFGTU0yWDRHTUtvYmpVc0NHN1VTWGVjdkVRV1FPMkV1OFFLcmpTN2U5YWZzVi1JRi0yUEpXQzloTGhiaUJ3SGRJOTcwdFpVc1ppNVJuSEltZlJSVnFWZHFwMHEyMnlaQU1xQVBwRXoxcU1mT3c?oc=5",
+      "excerpt": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks TronWeekly",
       "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
       "tags": [],
-      "added_at": "2026-11-05T17:25:33Z",
+      "added_at": "2026-11-05T21:10:28Z",
       "verified_seed": false,
       "coverage": [
+        {
+          "title": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks",
+          "name": "TronWeekly · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBFRU1IdXJQdlFGTU0yWDRHTUtvYmpVc0NHN1VTWGVjdkVRV1FPMkV1OFFLcmpTN2U5YWZzVi1JRi0yUEpXQzloTGhiaUJ3SGRJOTcwdFpVc1ppNVJuSEltZlJSVnFWZHFwMHEyMnlaQU1xQVBwRXoxcU1mT3c?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-05T17:00:00Z"
+        },
         {
           "title": "Strategy’s STRC Reclaims $100 After $2.25 Billion in Buybacks",
           "name": "The Crypto Times · via Google News",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVkgxUjNHdzF6d3ZwWUFjY1JTS09VT1AxWU11ZFJVTnM2NEQwU3hqUWs1ZGdnWkhnZkh3UHJoNzVycW0yaVlaRDdwckNSMzV5QWs5YmpPOUFna1JlM2U3V3pQMS1KY2JVQ1MySTl4aXI0VW5zTWFUclZEbnhQTFZVN2k5el9NQmxzbVZyeUxpRmNtVmhtRV92WE5SNGt2QQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-11-05T07:55:50Z"
-        }
-      ],
-      "moon_meters": [
+        },
         {
-          "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "9aa28f5f3f37fe",
-      "title": "Bitcoin Giant Strategy's STRC Hits $100 for First Time Since May After Daily Dividend Shift",
-      "published_at": "2026-11-04T23:01:25Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Bitcoin News · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQ0VtT3FrZ0ZET1V4dkRFQVpHeE9Cb2EyWmEyenpfNW1sOFhnUXBSVENqUk9RUTZBUkxzckxJNXU0NkVGSV92d1VsanF1bVhTLWhiTmFPZHZhY3lkQWRDZ1BnUUJ6azlRUXJ1dzJnN0Q3RU01NmVkMlhwTlVQbHdyeHYtRTl1dnBqeWZ5bUM2MTR0VnhhZGFUQ2dCS0FOa2ZuR0JR?oc=5",
-      "excerpt": "Bitcoin Giant Strategy's STRC Hits $100 for First Time Since May After Daily Dividend Shift Bitcoin News",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-05T17:25:33Z",
-      "verified_seed": false,
-      "coverage": [
+          "title": "Strategy's STRC Touches $100 Par After $2.25B in Buybacks",
+          "name": "FinanceFeeds · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQmVVT3V0OGlHU1hXS3hYNUxURlhTek45RXVWLTBuSElvS3dKVEV3UlNEUkRkb0x2dEpoUXk0V19ncnowNzhRdThEa1ZUcVJ0TTg5QjNMZWJpc0xUalBxUTE2TUMtdlQ4RU1BcXlyX3hPQ1RaZWp5dTItYk9BbjRrNjBsMWJiMkZUVUxDOGs0Tng3ODJJeGgyOV83aWwzSWFFRHlyYjVNaDBYX0kzR0ZuRkdxSm5EWDF3Mnc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-05T05:56:34Z"
+        },
         {
           "title": "Bitcoin Giant Strategy's STRC Hits $100 for First Time Since May After Daily Dividend Shift",
           "name": "Bitcoin News · via Google News",
@@ -313,12 +292,12 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Conditional",
-          "scenario": "assumption",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
           "if_true": true,
-          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -6421,6 +6400,48 @@
       ]
     },
     {
+      "id": "bea06abdc7f499",
+      "title": "LITS: Lite Strategy, Inc. Latest Stock Price, Analysis, News and Trading Ideas",
+      "published_at": "2026-10-13T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Stocktwits · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBFaTdFc0lUOTIwRVlCRjJrTEJyWGFOQkFqVEtvZ0UwTUZBRUN4OE1EZUhXY3pZTWJwRjhHUWFBZzhwWDh2TUFQa3pn?oc=5",
+      "excerpt": "LITS: Lite Strategy, Inc. Latest Stock Price, Analysis, News and Trading Ideas Stocktwits",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-05T21:10:27Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "LITS: Lite Strategy, Inc. Latest Stock Price, Analysis, News and Trading Ideas",
+          "name": "Stocktwits · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBFaTdFc0lUOTIwRVlCRjJrTEJyWGFOQkFqVEtvZ0UwTUZBRUN4OE1EZUhXY3pZTWJwRjhHUWFBZzhwWDh2TUFQa3pn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-13T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "d80c458b717dc6",
       "title": "Evernorth Names Hugo Jeandesboz Chief Investment Officer",
       "published_at": "2026-10-12T12:00:00Z",
@@ -8646,6 +8667,13 @@
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc3Rxb1pWTlJBYm5TUF9qbnhsRmtNS0pLR3pxSHRwc0k1UXZCUlE3TkVHMFkwMjNqRFBzS0xKM1hoRVlHX2t6aWhEdnM3ckQtUVB3LUJPWC12UVFXclAxc08tVlBCNjVXUDl2cXJkTkJiTXNzOGVtTGdlckdfWWJWWmRKdk95Sy1VaG9YWjFCY3QtV0hKT2lwa1ozWXJ6R01acG9v0gGjAUFVX3lxTE9zdHFvWlZOUkFiblNQX2pueGxGa01LSktHenFIdHBzSTVRdkJSUTdORUcwWTAyM2pEUHNLTEozWGhFWUdfa3ppaER2czdyRC1RUHctQk9YLXZRUVdyUDFzTy1WUEI2NVdQOXZxcmROQmJNc3M4ZW1MZ2VyR19ZYlZaZEp2T3lLLVVob1haMUJjdC1XSEpPaXBrWjNZcnpHTVpwb28?oc=5",
           "source_type": "Media",
           "published_at": "2026-09-29T22:08:25Z"
+        },
+        {
+          "title": "Lite Strategy (LITS): Litecoin Treasury Strategy Enters the Execution Test",
+          "name": "AlphaStreet · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc3Rxb1pWTlJBYm5TUF9qbnhsRmtNS0pLR3pxSHRwc0k1UXZCUlE3TkVHMFkwMjNqRFBzS0xKM1hoRVlHX2t6aWhEdnM3ckQtUVB3LUJPWC12UVFXclAxc08tVlBCNjVXUDl2cXJkTkJiTXNzOGVtTGdlckdfWWJWWmRKdk95Sy1VaG9YWjFCY3QtV0hKT2lwa1ozWXJ6R01acG9v0gGoAUFVX3lxTE01TnoyZmhFX3NrSENnNDBMYmJ1RWVvOW51WDRDeWpOVnc0MHB2cG83di1LVnM5dmE2djU3RENQdXRBd2hyQW1mWVIxUVFxNGk5eklXcnRHVE51UVBhWGR6b3BYamx6U0w1alI3a0RoMFJnU1NwaGRxaEwxTjZ5VERQZFN6YkJWVkFVa3d0R2JBZ0VLTjlMbWdoU1U1cTBrcjZvbV8tV0pYUA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-09-29T07:00:00Z"
         }
       ],
       "moon_meters": [
