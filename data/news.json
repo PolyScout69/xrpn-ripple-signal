@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-05T21:10:18Z",
+    "ran_at": "2026-11-06T03:35:14Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 3,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 3,
-      "checked_at": "2026-11-05T21:10:18Z",
+      "checked_at": "2026-11-06T03:35:14Z",
       "message": "Fetched 3 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-05T21:10:18Z",
+      "checked_at": "2026-11-06T03:35:14Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 22,
-      "checked_at": "2026-11-05T21:10:18Z",
+      "checked_at": "2026-11-06T03:35:14Z",
       "message": "Fetched 22 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-05T21:10:18Z",
+      "checked_at": "2026-11-06T03:35:14Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 207,
-      "checked_at": "2026-11-05T21:10:18Z",
-      "message": "Fetched 207 matching items."
+      "items_seen": 212,
+      "checked_at": "2026-11-06T03:35:14Z",
+      "message": "Fetched 212 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,14 +61,14 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-05T21:10:18Z",
+      "as_of": "2026-11-06T03:35:14Z",
       "stories": 47,
-      "independent_events": 43,
+      "independent_events": 42,
       "directional_events": 9,
       "distinct_catalysts": 5,
       "bullish_events": 6,
       "bearish_events": 3,
-      "neutral_events": 34,
+      "neutral_events": 33,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -77,7 +77,7 @@
           "value": 2,
           "impact": "Medium",
           "published_at": "2026-11-05T17:00:00Z",
-          "reports": 2,
+          "reports": 3,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBFRU1IdXJQdlFGTU0yWDRHTUtvYmpVc0NHN1VTWGVjdkVRV1FPMkV1OFFLcmpTN2U5YWZzVi1JRi0yUEpXQzloTGhiaUJ3SGRJOTcwdFpVc1ppNVJuSEltZlJSVnFWZHFwMHEyMnlaQU1xQVBwRXoxcU1mT3c?oc=5"
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-05T21:10:18Z",
+      "as_of": "2026-11-06T03:35:14Z",
       "stories": 41,
       "independent_events": 38,
       "directional_events": 18,
@@ -185,7 +185,7 @@
       "label": "Slightly bearish",
       "raw_score": -1.33,
       "window_days": 30,
-      "as_of": "2026-11-05T21:10:18Z",
+      "as_of": "2026-11-06T03:35:14Z",
       "stories": 29,
       "independent_events": 29,
       "directional_events": 3,
@@ -225,20 +225,104 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-05T21:10:18Z",
-      "stories": 3,
-      "independent_events": 3,
+      "as_of": "2026-11-06T03:35:14Z",
+      "stories": 5,
+      "independent_events": 5,
       "directional_events": 0,
       "distinct_catalysts": 0,
       "bullish_events": 0,
       "bearish_events": 0,
-      "neutral_events": 3,
+      "neutral_events": 5,
       "coverage": "Limited coverage",
       "drivers": [],
       "method": "impact_decay_dedup_v2"
     }
   },
   "items": [
+    {
+      "id": "e6719f61d0a044",
+      "title": "Lite Strategy Q1 2027 Earnings Results and Report",
+      "published_at": "2026-11-05T22:07:39Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "MarketBeat · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUjJNX0JLWTdMUDc0UGtXd19naTVFYWVBY2x3QkhSS0lyTFVyZGw0NUcxZmk1SEw0RnZpd1BIYXhzNmFDZ2U1T05RV2cxV05vekhQWGp5LVc0aEE1WThudXpnTUNyQ0thUTJXOUcxdExnWkVBbGR1NnczQnpQSGZaRTVCQQ?oc=5",
+      "excerpt": "Lite Strategy Q1 2027 Earnings Results and Report MarketBeat",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-06T03:35:22Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Lite Strategy Q1 2027 Earnings Results and Report",
+          "name": "MarketBeat · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUjJNX0JLWTdMUDc0UGtXd19naTVFYWVBY2x3QkhSS0lyTFVyZGw0NUcxZmk1SEw0RnZpd1BIYXhzNmFDZ2U1T05RV2cxV05vekhQWGp5LVc0aEE1WThudXpnTUNyQ0thUTJXOUcxdExnWkVBbGR1NnczQnpQSGZaRTVCQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-05T22:07:39Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "52b9ecb55bcd89",
+      "title": "LITS: LTC fair-value gains drove a $16.0M profit as treasury operations expanded",
+      "published_at": "2026-11-05T21:06:35Z",
+      "date_only": false,
+      "entities": [
+        "Lite Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNSGRfYURVVGNFSE1Jd2tZR0c1b2NTNlZGTTRIZFVWR1FIN3g3LV9NVGphSWhGYURDNDFlcnVrVGNUdS1ESlI2NEhWalVweGlUdDRzMVI5QUFVbjBVT25YTGVxc1ZHYnVaVWJBVUZiRnVkUzhrVm9OVU5ybGVTU1dnTWNZOXZkUUVkbHBhNXBjNUZkblF5OVFMS0ZINzNRRm5oM2w5eFhyZXAyc2RHb3NqNmUxUFc3bnA4YXVRd3QyZDhNSWRSR2lQYXV1VFFMWGtHSzZNZzVmZjFuNGJFY185UkFZMlUtUmFhVUVMY3ZTTkd2d1E?oc=5",
+      "excerpt": "LITS: LTC fair-value gains drove a $16.0M profit as treasury operations expanded TradingView",
+      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-06T03:35:23Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "LITS: LTC fair-value gains drove a $16.0M profit as treasury operations expanded",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNSGRfYURVVGNFSE1Jd2tZR0c1b2NTNlZGTTRIZFVWR1FIN3g3LV9NVGphSWhGYURDNDFlcnVrVGNUdS1ESlI2NEhWalVweGlUdDRzMVI5QUFVbjBVT25YTGVxc1ZHYnVaVWJBVUZiRnVkUzhrVm9OVU5ybGVTU1dnTWNZOXZkUUVkbHBhNXBjNUZkblF5OVFMS0ZINzNRRm5oM2w5eFhyZXAyc2RHb3NqNmUxUFc3bnA4YXVRd3QyZDhNSWRSR2lQYXV1VFFMWGtHSzZNZzVmZjFuNGJFY185UkFZMlUtUmFhVUVMY3ZTTkd2d1E?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-05T21:06:35Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "LITS",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "c1366c131bc1c9",
       "title": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks",
@@ -298,6 +382,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "1c6e6fd9f90d2d",
+      "title": "Strategy’s STRC Hits $100 Par for First Time Since May After Over $2 Billion in Buybacks",
+      "published_at": "2026-11-04T18:29:01Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydms5dlRSMUxnb0lpNG9yNUdmaWxxbjBtQldFZDNQM1hZd05SVlU1S0cxUlpyeUxVTnBLYmRuaktmWVJIVVFOeVA0NWsxOTRYN2V6UVgteFJ2TmVkakJ5VUMyS1RJMlNFZTVkQnhTT0dEQQ?oc=5",
+      "excerpt": "Strategy’s STRC Hits $100 Par for First Time Since May After Over $2 Billion in Buybacks Bitcoin Magazine",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-11-06T03:35:24Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy’s STRC Hits $100 Par for First Time Since May After Over $2 Billion in Buybacks",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydms5dlRSMUxnb0lpNG9yNUdmaWxxbjBtQldFZDNQM1hZd05SVlU1S0cxUlpyeUxVTnBLYmRuaktmWVJIVVFOeVA0NWsxOTRYN2V6UVgteFJ2TmVkakJ5VUMyS1RJMlNFZTVkQnhTT0dEQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-04T18:29:01Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -22808,139 +22934,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "30ef7c3220f3a7",
-      "title": "TD Cowen Bets Big on Crypto Treasuries: ASST, SBET, and NAKA Rally as Bitcoin Reclaims $73,000",
-      "published_at": "2026-04-10T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQekU3N1VzYVFKaU55UFJyWmxCb1QxblB4aVNnMjN1c2tMaHBtUllPU2lZUUZhOGc1QUpBZ3ppdmdZOF9DOVBweHIyVGV5eWJydkptTkpxa0k0ckx6WHB6M3V2RnVod21yNi1sYU8xMmFVZG0tR3h0NE1NMTlMSnB6NFhiOW9qVzIxakd6OXBOS00tZ1E?oc=5",
-      "excerpt": "TD Cowen Bets Big on Crypto Treasuries: ASST, SBET, and NAKA Rally as Bitcoin Reclaims $73,000 Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-01T02:29:47Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "TD Cowen Bets Big on Crypto Treasuries: ASST, SBET, and NAKA Rally as Bitcoin Reclaims $73,000",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQekU3N1VzYVFKaU55UFJyWmxCb1QxblB4aVNnMjN1c2tMaHBtUllPU2lZUUZhOGc1QUpBZ3ppdmdZOF9DOVBweHIyVGV5eWJydkptTkpxa0k0ckx6WHB6M3V2RnVod21yNi1sYU8xMmFVZG0tR3h0NE1NMTlMSnB6NFhiOW9qVzIxakd6OXBOS00tZ1E?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-10T07:00:00Z"
-        },
-        {
-          "title": "TD Cowen Bets Big on Crypto Treasuries: ASST, SBET, and NAKA Rally as Bitcoin Reclaims $73,000",
-          "name": "24/7 Wall St. · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSHUzZ2JLMU9qLWx1M2dfM0dVNWMxdVEwZUlZclhGXzJDV0hsWG9rNlFqb3FNRmNxMmRyQUk1ZVRtbHU3ZmFwTVZJUHJUeEdDWkZmSU96RXlFWmJmYVN4bDl3SjUycHpZWEVzeGdkM2J5MTFqZ2VUV3RMVFE5WE1VMndxajFWcVNlZnRHUWZvOFRkcl8tNm9vUjBsUWRtWmdTUWVtdldpOGx2Z3dERGlXQ2ZyX09CakNWWlZvNjZlRlNBWUM2UHR6TkF6NVdqZw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-10T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "31fc118decf404",
-      "title": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury",
-      "published_at": "2026-04-10T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 63,
-      "source": "Coinpaper · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQM0pTa21LNktSRFpWOVFCZEpUbGtEelI0SFhBSk9IaWRMWW1LeUZXN2dfZGNSOFFROFMxbGlnTU1acG5Gb0FUbEVjMHQ1SlJiYUdVVjVrNEk1Y0dBLV9ObUxSTDRCTkFRWnlhcHNyMjR0UE5wR0FGSVNPOWtHRzFqSmdhZ1R3WWZNc0ZrcDEyWERPdGdUR0tiVDN3MExtdmZiUUtzWVc4em43MG5INlVxSWItWWNJOEJxVTBMTkdOMDdRSU44TkE?oc=5",
-      "excerpt": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury Coinpaper",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-01T19:04:01Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Coca-Cola and American Airlines Among Top Companies Eyeing Onchain Payments Through Ripple Treasury",
-          "name": "Coinpaper · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQM0pTa21LNktSRFpWOVFCZEpUbGtEelI0SFhBSk9IaWRMWW1LeUZXN2dfZGNSOFFROFMxbGlnTU1acG5Gb0FUbEVjMHQ1SlJiYUdVVjVrNEk1Y0dBLV9ObUxSTDRCTkFRWnlhcHNyMjR0UE5wR0FGSVNPOWtHRzFqSmdhZ1R3WWZNc0ZrcDEyWERPdGdUR0tiVDN3MExtdmZiUUtzWVc4em43MG5INlVxSWItWWNJOEJxVTBMTkdOMDdRSU44TkE?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-10T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "653f3de81fec6f",
-      "title": "Strategy's (MSTR) Bitcoin Ambition Is Reshaping Corporate Finance. Everyone Else Is Falling Behind",
-      "published_at": "2026-04-09T19:42:38Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Bitcoin Magazine · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9xd0w1bVRzbUZLSzVYUXN3TmlMb2FvTW0ta091b21MY05GY2RDWG01VnN5dXNnV3NQQ0JHZU9oZVhtUGQ1bHVNdWowWXJ3eUlPY1JqbHFiSW9YcC1UUlNNNnBWbGZ0WFBnZHY2cVRiazJ4bEpnZU9HS1VKaTU?oc=5",
-      "excerpt": "Strategy's (MSTR) Bitcoin Ambition Is Reshaping Corporate Finance. Everyone Else Is Falling Behind Bitcoin Magazine",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:55Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy's (MSTR) Bitcoin Ambition Is Reshaping Corporate Finance. Everyone Else Is Falling Behind",
-          "name": "Bitcoin Magazine · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9xd0w1bVRzbUZLSzVYUXN3TmlMb2FvTW0ta091b21MY05GY2RDWG01VnN5dXNnV3NQQ0JHZU9oZVhtUGQ1bHVNdWowWXJ3eUlPY1JqbHFiSW9YcC1UUlNNNnBWbGZ0WFBnZHY2cVRiazJ4bEpnZU9HS1VKaTU?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-09T19:42:38Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
