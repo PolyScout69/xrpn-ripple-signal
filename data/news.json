@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-06T03:35:14Z",
+    "ran_at": "2026-11-06T16:46:50Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 3,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 3,
-      "checked_at": "2026-11-06T03:35:14Z",
+      "checked_at": "2026-11-06T16:46:50Z",
       "message": "Fetched 3 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-06T03:35:14Z",
+      "checked_at": "2026-11-06T16:46:50Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
-      "items_seen": 22,
-      "checked_at": "2026-11-06T03:35:14Z",
-      "message": "Fetched 22 matching items."
+      "items_seen": 21,
+      "checked_at": "2026-11-06T16:46:50Z",
+      "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-06T03:35:14Z",
+      "checked_at": "2026-11-06T16:46:50Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 212,
-      "checked_at": "2026-11-06T03:35:14Z",
-      "message": "Fetched 212 matching items."
+      "items_seen": 213,
+      "checked_at": "2026-11-06T16:46:50Z",
+      "message": "Fetched 213 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,14 +61,14 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-06T03:35:14Z",
-      "stories": 47,
-      "independent_events": 42,
+      "as_of": "2026-11-06T16:46:50Z",
+      "stories": 48,
+      "independent_events": 43,
       "directional_events": 9,
       "distinct_catalysts": 5,
       "bullish_events": 6,
       "bearish_events": 3,
-      "neutral_events": 33,
+      "neutral_events": 34,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -123,14 +123,14 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-06T03:35:14Z",
-      "stories": 41,
-      "independent_events": 38,
-      "directional_events": 18,
+      "as_of": "2026-11-06T16:46:50Z",
+      "stories": 39,
+      "independent_events": 36,
+      "directional_events": 17,
       "distinct_catalysts": 15,
-      "bullish_events": 14,
+      "bullish_events": 13,
       "bearish_events": 4,
-      "neutral_events": 20,
+      "neutral_events": 19,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -183,16 +183,16 @@
     "SBET": {
       "value": -1,
       "label": "Slightly bearish",
-      "raw_score": -1.33,
+      "raw_score": -1.35,
       "window_days": 30,
-      "as_of": "2026-11-06T03:35:14Z",
-      "stories": 29,
-      "independent_events": 29,
+      "as_of": "2026-11-06T16:46:50Z",
+      "stories": 27,
+      "independent_events": 27,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 26,
+      "neutral_events": 24,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-06T03:35:14Z",
+      "as_of": "2026-11-06T16:46:50Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
@@ -4611,6 +4611,48 @@
       "moon_meters": [
         {
           "asset": "XRPN",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b070ad396c1357",
+      "title": "What Is Strategy (MSTR)? The Bitcoin Treasury Company",
+      "published_at": "2026-10-20T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPR1VHamF0R0dGNDJTZ3AyQTk5VWs5VHdMOTZ2U2tKV1Bsc3o5eHJiMnhLdFRvc3lrT0JKVU1ibmtqOVp4cWhqTjV5UGl4anhqY1dlRzlxd1dtWlVXLTJOX0U0VVB0b1hITHUwTi1zX1lseDE2MlJxdm9QYXplajVxYkgtb09SdC05eTg3VA?oc=5",
+      "excerpt": "What Is Strategy (MSTR)? The Bitcoin Treasury Company Yahoo Finance",
+      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-06T16:47:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "What Is Strategy (MSTR)? The Bitcoin Treasury Company",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPR1VHamF0R0dGNDJTZ3AyQTk5VWs5VHdMOTZ2U2tKV1Bsc3o5eHJiMnhLdFRvc3lrT0JKVU1ibmtqOVp4cWhqTjV5UGl4anhqY1dlRzlxd1dtWlVXLTJOX0U0VVB0b1hITHUwTi1zX1lseDE2MlJxdm9QYXplajVxYkgtb09SdC05eTg3VA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-20T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
@@ -12498,6 +12540,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "002762e9e05fc9",
+      "title": "With Bitcoin Rallying, Strategy (MSTR) Just Flipped From a $13 Billion Loss to a $1.4 Billion Gain. Should Investors Buy the Rally?",
+      "published_at": "2026-08-21T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWFNvSXdOUk9XRHpLVW1vcWlocTUtYXIxQ0xYNDdVc3RSMTE1S1YyNXlEMTR2VHJFUTdkOGVqR3VEamlCS3dZcVg3ZzdlOVduVnk4d3FmNi1raFJjLUtJY0N1eGpYUlV2RXAwekJMb0d5bDBnOXVEUDVCZlZxZkwtZFNoQkROTk55cFdGREtWSWNiTlhXV19GaGs3UFJRZzhNNGc?oc=5",
+      "excerpt": "With Bitcoin Rallying, Strategy (MSTR) Just Flipped From a $13 Billion Loss to a $1.4 Billion Gain. Should Investors Buy the Rally? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-06T16:47:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "With Bitcoin Rallying, Strategy (MSTR) Just Flipped From a $13 Billion Loss to a $1.4 Billion Gain. Should Investors Buy the Rally?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWFNvSXdOUk9XRHpLVW1vcWlocTUtYXIxQ0xYNDdVc3RSMTE1S1YyNXlEMTR2VHJFUTdkOGVqR3VEamlCS3dZcVg3ZzdlOVduVnk4d3FmNi1raFJjLUtJY0N1eGpYUlV2RXAwekJMb0d5bDBnOXVEUDVCZlZxZkwtZFNoQkROTk55cFdGREtWSWNiTlhXV19GaGs3UFJRZzhNNGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-08-21T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": -2,
+          "label": "Bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -22856,90 +22940,6 @@
           "scenario": "assumption",
           "if_true": true,
           "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "fcb4e3f772a6d2",
-      "title": "XRP Price Sticky As Evernorth Plans Nasdaq Listing",
-      "published_at": "2026-04-10T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 73,
-      "source": "MarketForces Africa · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSTl5Y09keDJQd213cnZKaXltTHQ0X3FacUZ0NkhTR3h6S01wOWNmakExRDNSODh3V3BKejgzWUNLMkdVMkZkOGUtb3JQemROZlEwSWlfN2pDcU5HaVNnODRRMzVXY2x6MFhYcEhtdkh2VDZvbjl3TzVtUmQ4c2kzR09FWQ?oc=5",
-      "excerpt": "XRP Price Sticky As Evernorth Plans Nasdaq Listing MarketForces Africa",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:52Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "XRP Price Sticky As Evernorth Plans Nasdaq Listing",
-          "name": "MarketForces Africa · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSTl5Y09keDJQd213cnZKaXltTHQ0X3FacUZ0NkhTR3h6S01wOWNmakExRDNSODh3V3BKejgzWUNLMkdVMkZkOGUtb3JQemROZlEwSWlfN2pDcU5HaVNnODRRMzVXY2x6MFhYcEhtdkh2VDZvbjl3TzVtUmQ4c2kzR09FWQ?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-10T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If completed, public-market access and XRP treasury exposure could broaden the investor base.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "b57791a9053f27",
-      "title": "TD Cowen Initiates SharpLink With a Buy: Is This Crypto Sports Betting Play the Next Big Thing?",
-      "published_at": "2026-04-10T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNGxoRWJoaGZCdTNUWXZMNG9sNl9DOXhvTnh0eEpITWJyU0ZReXlfX2dZcWhjVWRTZ3JyZGRteVlubFdtN3dVZV9EWWpNR19qaFV4RHdVM2pUT3BWd2NRRjFFUzc2WHRteDBHaDZFQ1VlUndQOGt4RGlYVU5DVlhDM2NkUXpJM0dUQmtEUkM1RGxMQnZiZ1NLODdRMWhYZw?oc=5",
-      "excerpt": "TD Cowen Initiates SharpLink With a Buy: Is This Crypto Sports Betting Play the Next Big Thing? Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "TD Cowen Initiates SharpLink With a Buy: Is This Crypto Sports Betting Play the Next Big Thing?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNGxoRWJoaGZCdTNUWXZMNG9sNl9DOXhvTnh0eEpITWJyU0ZReXlfX2dZcWhjVWRTZ3JyZGRteVlubFdtN3dVZV9EWWpNR19qaFV4RHdVM2pUT3BWd2NRRjFFUzc2WHRteDBHaDZFQ1VlUndQOGt4RGlYVU5DVlhDM2NkUXpJM0dUQmtEUkM1RGxMQnZiZ1NLODdRMWhYZw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-10T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
