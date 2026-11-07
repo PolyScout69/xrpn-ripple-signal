@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-06T20:30:01Z",
+    "ran_at": "2026-11-07T03:03:51Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 0,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 4,
-      "checked_at": "2026-11-06T20:30:01Z",
+      "checked_at": "2026-11-07T03:03:51Z",
       "message": "Fetched 4 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-06T20:30:01Z",
+      "checked_at": "2026-11-07T03:03:51Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 21,
-      "checked_at": "2026-11-06T20:30:01Z",
+      "checked_at": "2026-11-07T03:03:51Z",
       "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-06T20:30:01Z",
+      "checked_at": "2026-11-07T03:03:51Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 214,
-      "checked_at": "2026-11-06T20:30:01Z",
-      "message": "Fetched 214 matching items."
+      "items_seen": 218,
+      "checked_at": "2026-11-07T03:03:51Z",
+      "message": "Fetched 218 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-06T20:30:01Z",
+      "as_of": "2026-11-07T03:03:51Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-06T20:30:01Z",
+      "as_of": "2026-11-07T03:03:51Z",
       "stories": 39,
       "independent_events": 36,
       "directional_events": 17,
@@ -183,16 +183,16 @@
     "SBET": {
       "value": -1,
       "label": "Slightly bearish",
-      "raw_score": -1.35,
+      "raw_score": -1.31,
       "window_days": 30,
-      "as_of": "2026-11-06T20:30:01Z",
-      "stories": 27,
-      "independent_events": 27,
+      "as_of": "2026-11-07T03:03:51Z",
+      "stories": 29,
+      "independent_events": 29,
       "directional_events": 3,
       "distinct_catalysts": 2,
       "bullish_events": 0,
       "bearish_events": 3,
-      "neutral_events": 24,
+      "neutral_events": 26,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-06T20:30:01Z",
+      "as_of": "2026-11-07T03:03:51Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
@@ -239,6 +239,90 @@
     }
   },
   "items": [
+    {
+      "id": "35495f934c111b",
+      "title": "Sharplink Gaming Q3 2026 Earnings Results and Report",
+      "published_at": "2026-11-06T22:37:59Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "MarketBeat · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOVl2LVNfRW1ITFpNaVE3dW1pekt6Y1NvNXVVemhpNWJuMHlUcUpXSEJ3ZzZDVVJXd2k5dnNMZTJZZ0c4VmRveUJVTjk2dnltZmg4QllxcC05WTlXaVJZWFZYRnRLM1RYNEtkZkpvSUVCLXJPTzRvSG04NzlQVUEzT0RMdjBnSjZE?oc=5",
+      "excerpt": "Sharplink Gaming Q3 2026 Earnings Results and Report MarketBeat",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-07T03:03:58Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Sharplink Gaming Q3 2026 Earnings Results and Report",
+          "name": "MarketBeat · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOVl2LVNfRW1ITFpNaVE3dW1pekt6Y1NvNXVVemhpNWJuMHlUcUpXSEJ3ZzZDVVJXd2k5dnNMZTJZZ0c4VmRveUJVTjk2dnltZmg4QllxcC05WTlXaVJZWFZYRnRLM1RYNEtkZkpvSUVCLXJPTzRvSG04NzlQVUEzT0RMdjBnSjZE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-06T22:37:59Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "727580fc790627",
+      "title": "A $677M paper crypto gain feeds into Sharplink (SBET)'s Q3 earnings.",
+      "published_at": "2026-11-06T21:31:40Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Stock Titan · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSzBGZTNJTHIxNXZONVJIY1BwSG9RMmVKeDg0VHhST1NlYjJseTN5VERSdGhVVGthU21FNFpsU2VGSmMtdVE2SC1LLXFRYUczNkNMOWtUTDJWSmQxcEcwMXh1UzBDbjdMaVJtdzFsMVc0MEJZeHZnRC1HSTQyaW9LX0REMEJNWVMzbmxDNUVmSnU4eU5UeTlJTVRQa3dLeUlBRGpMU2ZNNkxVZw?oc=5",
+      "excerpt": "A $677M paper crypto gain feeds into Sharplink (SBET)'s Q3 earnings. Stock Titan",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-07T03:03:58Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "A $677M paper crypto gain feeds into Sharplink (SBET)'s Q3 earnings.",
+          "name": "Stock Titan · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSzBGZTNJTHIxNXZONVJIY1BwSG9RMmVKeDg0VHhST1NlYjJseTN5VERSdGhVVGthU21FNFpsU2VGSmMtdVE2SC1LLXFRYUczNkNMOWtUTDJWSmQxcEcwMXh1UzBDbjdMaVJtdzFsMVc0MEJZeHZnRC1HSTQyaW9LX0REMEJNWVMzbmxDNUVmSnU4eU5UeTlJTVRQa3dLeUlBRGpMU2ZNNkxVZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-06T21:31:40Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "e6719f61d0a044",
       "title": "Lite Strategy Q1 2027 Earnings Results and Report",
@@ -22863,90 +22947,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "23c02723f3efcd",
-      "title": "SharpLink Gets a Lift from TD Cowen ‘Buy’ Rating",
-      "published_at": "2026-04-13T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Casino.org · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZlRWTWlZQU1EblNhMUQyR05OREpOa2lXVjRhVFYzOWZvMXdGV1l2cHotY2gwVk1uTWNiX05DYkt2N3ZrOXBiaWU3R2NyakVmbzBScFJRNFU1YlNfLTU5T2Y4Y0FhWjRsSS0tZ1ZUWlpYQUJORjkwSjBhY0JvMXlKUw?oc=5",
-      "excerpt": "SharpLink Gets a Lift from TD Cowen ‘Buy’ Rating Casino.org",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SharpLink Gets a Lift from TD Cowen ‘Buy’ Rating",
-          "name": "Casino.org · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZlRWTWlZQU1EblNhMUQyR05OREpOa2lXVjRhVFYzOWZvMXdGV1l2cHotY2gwVk1uTWNiX05DYkt2N3ZrOXBiaWU3R2NyakVmbzBScFJRNFU1YlNfLTU5T2Y4Y0FhWjRsSS0tZ1ZUWlpYQUJORjkwSjBhY0JvMXlKUw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "e2e4b8b7b912b8",
-      "title": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed",
-      "published_at": "2026-04-13T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Regulation",
-      "impact": "Low",
-      "score": 64,
-      "source": "디지털투데이 · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEpodGtHdUM4ZlpmVFliZVBjN0ZjckZLQmF6TFNtbDhOREV0eGVLZ1FpdHNTSmgtTGlLRzZLQUxuQklIWWFIQUdWU0pFMEdxYWJPNVZzUm05Y09VQ19NeGUwOVpqSzFRckd4MmRTRVEzUERaSG1yX25JNFM5bEczVEttNWY3VzdVQXpsRzltalAxY0Y0WTM3N3RBUk1YRzY3ZE01T1ZjODFTMWJBOWpVZ05kQ3NCSnkydkwwYkt0SUZvdDMteTNZREltQlBsUVFYTEpJRFZpMGNvM3c?oc=5",
-      "excerpt": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed 디지털투데이",
-      "why_it_matters": "A change in regulation could affect eligibility and adoption. Verify the original ruling, rule or company disclosure before acting.",
-      "tags": [],
-      "added_at": "2026-10-31T18:41:39Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Japan financial sector expands Ripple payment network; XRP potential as SWIFT alternative reaffirmed",
-          "name": "디지털투데이 · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEpodGtHdUM4ZlpmVFliZVBjN0ZjckZLQmF6TFNtbDhOREV0eGVLZ1FpdHNTSmgtTGlLRzZLQUxuQklIWWFIQUdWU0pFMEdxYWJPNVZzUm05Y09VQ19NeGUwOVpqSzFRckd4MmRTRVEzUERaSG1yX25JNFM5bEczVEttNWY3VzdVQXpsRzltalAxY0Y0WTM3N3RBUk1YRzY3ZE01T1ZjODFTMWJBOWpVZ05kQ3NCSnkydkwwYkt0SUZvdDMteTNZREltQlBsUVFYTEpJRFZpMGNvM3c?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Conditional",
-          "scenario": "assumption",
-          "if_true": true,
-          "reason": "IF THE ASSUMPTION HOLDS: Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
