@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-07T03:03:51Z",
+    "ran_at": "2026-11-07T15:40:26Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -22,37 +22,37 @@
     "ripple": {
       "name": "Ripple press centre",
       "status": "ok",
-      "items_seen": 4,
-      "checked_at": "2026-11-07T03:03:51Z",
-      "message": "Fetched 4 matching items."
+      "items_seen": 6,
+      "checked_at": "2026-11-07T15:40:26Z",
+      "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-07T03:03:51Z",
+      "checked_at": "2026-11-07T15:40:26Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 21,
-      "checked_at": "2026-11-07T03:03:51Z",
+      "checked_at": "2026-11-07T15:40:26Z",
       "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-07T03:03:51Z",
+      "checked_at": "2026-11-07T15:40:26Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 218,
-      "checked_at": "2026-11-07T03:03:51Z",
-      "message": "Fetched 218 matching items."
+      "items_seen": 215,
+      "checked_at": "2026-11-07T15:40:26Z",
+      "message": "Fetched 215 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-07T03:03:51Z",
+      "as_of": "2026-11-07T15:40:26Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-07T03:03:51Z",
+      "as_of": "2026-11-07T15:40:26Z",
       "stories": 39,
       "independent_events": 36,
       "directional_events": 17,
@@ -183,16 +183,16 @@
     "SBET": {
       "value": -1,
       "label": "Slightly bearish",
-      "raw_score": -1.31,
+      "raw_score": -1.22,
       "window_days": 30,
-      "as_of": "2026-11-07T03:03:51Z",
-      "stories": 29,
-      "independent_events": 29,
-      "directional_events": 3,
+      "as_of": "2026-11-07T15:40:26Z",
+      "stories": 30,
+      "independent_events": 30,
+      "directional_events": 2,
       "distinct_catalysts": 2,
       "bullish_events": 0,
-      "bearish_events": 3,
-      "neutral_events": 26,
+      "bearish_events": 2,
+      "neutral_events": 28,
       "coverage": "Limited coverage",
       "drivers": [
         {
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-07T03:03:51Z",
+      "as_of": "2026-11-07T15:40:26Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
@@ -239,6 +239,90 @@
     }
   },
   "items": [
+    {
+      "id": "4c5cbe53190242",
+      "title": "How Revenue Growth And Nine Month Losses At Sharplink (SBET) Have Changed Its Investment Story",
+      "published_at": "2026-11-07T13:14:08Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance Singapore · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTlFxa1d6R1ZoZHg2WWx3c1NmTEw2Ni1KZ2otUi15ZUNMVFV3ZUVVeE9LMUk1ZFdIQjZQc1Iyd2Y1bnVwd3g0N2dFWllRelp0UGRpMW5XOWJjX0ZpNGc1UTNVZXVacEt6Q0RtUi1QMGdyVUFRSVl4UEhXRGhldUJQeDh4RGFRdHJl?oc=5",
+      "excerpt": "How Revenue Growth And Nine Month Losses At Sharplink (SBET) Have Changed Its Investment Story Yahoo Finance Singapore",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-07T15:40:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "How Revenue Growth And Nine Month Losses At Sharplink (SBET) Have Changed Its Investment Story",
+          "name": "Yahoo Finance Singapore · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTlFxa1d6R1ZoZHg2WWx3c1NmTEw2Ni1KZ2otUi15ZUNMVFV3ZUVVeE9LMUk1ZFdIQjZQc1Iyd2Y1bnVwd3g0N2dFWllRelp0UGRpMW5XOWJjX0ZpNGc1UTNVZXVacEt6Q0RtUi1QMGdyVUFRSVl4UEhXRGhldUJQeDh4RGFRdHJl?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-07T13:14:08Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "4fd3de0cdff0fe",
+      "title": "Should Strong Quarterly Profit Require Action From SharpLink (SBET) Investors?",
+      "published_at": "2026-11-07T04:40:15Z",
+      "date_only": false,
+      "entities": [
+        "SharpLink Gaming"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Simply Wall St · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNnJDVTdoa0NtNUZDUFdwS2Fwa2tsRUtjdWxKRVI1SGE4eHZsQnFoZ0FicDRIUWQ3YmRGNDVrZXRtakhfR2ItR2M4WjVza1RrZEpLdDF6RTYzNnlMblBHSXZPSDhBQ3JKUjN5Y1FiMk5zREQya0NSV2RfT1VDME9kLWxHcjR2aXlKT3dESTIzb2pfM2RLLXo1cjFUN3F3bmN0aF9MaHBBdWRzWHR6MVJjQzNYN3oxR1RYUFRQVWFKRlE1Y1QzdFZJemlPMERlRzZnbmsxeklfZGY0d9IB3wFBVV95cUxNeE44bUhabDVPQ21jNDl3TVp0MlI1OGxJX2poRFJULUVsN00yRnlLcEptUThqeW15amRUOXZPZE11ZUk1RVptY3QtVlRCTENFYXlYYVQyTlIzVm1zc3lKUnRaWVYyeXFEMHppQ0FXbTdMTEhlRF9lNWd5QTBHaDFoTTZFTkpFbW16ZkR6TWdEQ1JzRmk0QktpT09MLWk2N0hIakFEVVNFSExjR3JPLWFvbzVleDI4eERCZmFuelJhTmljazN4aFoxWTdUbnMzdXZKVTBMVXh3Mkx5MjloRTBV?oc=5",
+      "excerpt": "Should Strong Quarterly Profit Require Action From SharpLink (SBET) Investors? Simply Wall St",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-07T15:40:34Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Should Strong Quarterly Profit Require Action From SharpLink (SBET) Investors?",
+          "name": "Simply Wall St · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNnJDVTdoa0NtNUZDUFdwS2Fwa2tsRUtjdWxKRVI1SGE4eHZsQnFoZ0FicDRIUWQ3YmRGNDVrZXRtakhfR2ItR2M4WjVza1RrZEpLdDF6RTYzNnlMblBHSXZPSDhBQ3JKUjN5Y1FiMk5zREQya0NSV2RfT1VDME9kLWxHcjR2aXlKT3dESTIzb2pfM2RLLXo1cjFUN3F3bmN0aF9MaHBBdWRzWHR6MVJjQzNYN3oxR1RYUFRQVWFKRlE1Y1QzdFZJemlPMERlRzZnbmsxeklfZGY0d9IB3wFBVV95cUxNeE44bUhabDVPQ21jNDl3TVp0MlI1OGxJX2poRFJULUVsN00yRnlLcEptUThqeW15amRUOXZPZE11ZUk1RVptY3QtVlRCTENFYXlYYVQyTlIzVm1zc3lKUnRaWVYyeXFEMHppQ0FXbTdMTEhlRF9lNWd5QTBHaDFoTTZFTkpFbW16ZkR6TWdEQ1JzRmk0QktpT09MLWk2N0hIakFEVVNFSExjR3JPLWFvbzVleDI4eERCZmFuelJhTmljazN4aFoxWTdUbnMzdXZKVTBMVXh3Mkx5MjloRTBV?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-07T04:40:15Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "SBET",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "35495f934c111b",
       "title": "Sharplink Gaming Q3 2026 Earnings Results and Report",
@@ -22857,90 +22941,6 @@
       "moon_meters": [
         {
           "asset": "SBET",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "0b14ac3ae5e9c3",
-      "title": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem",
-      "published_at": "2026-04-13T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Ripple"
-      ],
-      "category": "Treasury",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Coinpaper · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcEJFZWVhSFFoY2tpZWVySmx6dU5vcHhZUkZHZkhOb0k3dEYxMFlTd0xhTTMySzdOdmRxdlFwSGxoZUNYZXktS1VSdkRLeXdyZGVNR0RQYWQ2WE5YLUVtMnoyZk9Cb05SWEdZSEdRQXVianZ6WHhLZ2RQSUhtQTAzTDh1ckJON29CV3ZQZGdYMFJwdw?oc=5",
-      "excerpt": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem Coinpaper",
-      "why_it_matters": "Track BTC, XRP, ETH or LTC holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
-      "tags": [],
-      "added_at": "2026-11-01T19:04:01Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "SWIFT Becomes Strategic Partner in Ripple Treasury Ecosystem",
-          "name": "Coinpaper · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcEJFZWVhSFFoY2tpZWVySmx6dU5vcHhZUkZHZkhOb0k3dEYxMFlTd0xhTTMySzdOdmRxdlFwSGxoZUNYZXktS1VSdkRLeXdyZGVNR0RQYWQ2WE5YLUVtMnoyZk9Cb05SWEdZSEdRQXVianZ6WHhLZ2RQSUhtQTAzTDh1ckJON29CV3ZQZGdYMFJwdw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "3532ec577b0804",
-      "title": "'Think bigger': Michael Saylor's Strategy buys another 13,927 bitcoin for $1 billion as holdings reach 780,897 BTC",
-      "published_at": "2026-04-13T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "The Block · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcG1DR3dRNzRmQlZ4X2wwSXRoS0tfTkMyeG9JVlhsVHBCUkdQTGZHZXFCX3ZralVsNE1VaHRnclpONlJCd0VpOWRkME0zUjZ4ZlNRNkgxQ1hXdjBYbFZaaGpkTjRuZlBHWWFET3JGOEZRVEpVVGtObDlTdkMyaFlJMU11WUpPeWplLVFUcy04TjdqQURMNFJqQWpnSVpSdjBrXzFDc1ltOUhORzVkNDBsRw?oc=5",
-      "excerpt": "'Think bigger': Michael Saylor's Strategy buys another 13,927 bitcoin for $1 billion as holdings reach 780,897 BTC The Block",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:53Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "'Think bigger': Michael Saylor's Strategy buys another 13,927 bitcoin for $1 billion as holdings reach 780,897 BTC",
-          "name": "The Block · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcG1DR3dRNzRmQlZ4X2wwSXRoS0tfTkMyeG9JVlhsVHBCUkdQTGZHZXFCX3ZralVsNE1VaHRnclpONlJCd0VpOWRkME0zUjZ4ZlNRNkgxQ1hXdjBYbFZaaGpkTjRuZlBHWWFET3JGOEZRVEpVVGtObDlTdkMyaFlJMU11WUpPeWplLVFUcy04TjdqQURMNFJqQWpnSVpSdjBrXzFDc1ltOUhORzVkNDBsRw?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
