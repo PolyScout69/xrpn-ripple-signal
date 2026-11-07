@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-07T15:40:26Z",
+    "ran_at": "2026-11-07T18:58:52Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-07T15:40:26Z",
+      "checked_at": "2026-11-07T18:58:52Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-07T15:40:26Z",
+      "checked_at": "2026-11-07T18:58:52Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 21,
-      "checked_at": "2026-11-07T15:40:26Z",
+      "checked_at": "2026-11-07T18:58:52Z",
       "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-07T15:40:26Z",
+      "checked_at": "2026-11-07T18:58:52Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 215,
-      "checked_at": "2026-11-07T15:40:26Z",
-      "message": "Fetched 215 matching items."
+      "items_seen": 216,
+      "checked_at": "2026-11-07T18:58:52Z",
+      "message": "Fetched 216 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-07T15:40:26Z",
+      "as_of": "2026-11-07T18:58:52Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-07T15:40:26Z",
+      "as_of": "2026-11-07T18:58:52Z",
       "stories": 39,
       "independent_events": 36,
       "directional_events": 17,
@@ -185,7 +185,7 @@
       "label": "Slightly bearish",
       "raw_score": -1.22,
       "window_days": 30,
-      "as_of": "2026-11-07T15:40:26Z",
+      "as_of": "2026-11-07T18:58:52Z",
       "stories": 30,
       "independent_events": 30,
       "directional_events": 2,
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-07T15:40:26Z",
+      "as_of": "2026-11-07T18:58:52Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
@@ -18611,6 +18611,48 @@
       ]
     },
     {
+      "id": "2f96cae1153a11",
+      "title": "Strategy Sells Shares to Buy Bitcoin. What This Means for MSTR Stock.",
+      "published_at": "2026-06-19T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeGxrNU5ucFpMVk9RbVBoT3U5ZGN0TXVrd19mRHlUVzdGTEN1THZZNXRJSmhuVW1VdnhZLTV1WE1XWVpESl9vd1l5RmJsMmpvY3pHM2NDMTRVS2h0X0FncXc5VldlNVpIdWFHazFpRUFMYzJ0QlBkbUJSVTBFRUM3bW5xVExzWXlnZENKYTdpRFFZbXZyZW44bFBRbENGeWM?oc=5",
+      "excerpt": "Strategy Sells Shares to Buy Bitcoin. What This Means for MSTR Stock. Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-07T18:59:02Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Sells Shares to Buy Bitcoin. What This Means for MSTR Stock.",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeGxrNU5ucFpMVk9RbVBoT3U5ZGN0TXVrd19mRHlUVzdGTEN1THZZNXRJSmhuVW1VdnhZLTV1WE1XWVpESl9vd1l5RmJsMmpvY3pHM2NDMTRVS2h0X0FncXc5VldlNVpIdWFHazFpRUFMYzJ0QlBkbUJSVTBFRUM3bW5xVExzWXlnZENKYTdpRFFZbXZyZW44bFBRbENGeWM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-06-19T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "4da31b6190da78",
       "title": "Lite Strategy Leads Strategic Investment in LitVM",
       "published_at": "2026-06-18T12:00:00Z",
@@ -22868,79 +22910,37 @@
       ]
     },
     {
-      "id": "ebbd54a03d119b",
-      "title": "Ripple Custody is the Foundation of Institutional Digital Asset Adoption",
+      "id": "dfe266126d3833",
+      "title": "MicroStrategy Reports $1.3 Billion ‘Bitcoin Gain’ in April, But is It Actual Profit?",
       "published_at": "2026-04-15T07:00:00Z",
       "date_only": false,
       "entities": [
-        "Ripple"
+        "Strategy"
       ],
       "category": "Adoption",
       "impact": "Low",
-      "score": 63,
-      "source": "Ripple · via Google News",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
       "source_type": "Media",
       "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQeUg1VW5Ia2VTc0xxbHh4enFlczF1cnZYM0V0WnNtRHhTX2JvVmNsMnVNTVlSUHN0ZFVLWDlHbTB2T3N2VVhuYmpFWmhZckYySXQ4a1o1ZXBqOFhUbnFFS3NhZTQxemMxdDVVQnUwQW9LUmpqMmVMcFNCSmJpQmx1OGpidXRGcXlRbzhQa2JUMnJvOUZpMWxRSGtxMjV3WHlRLTlv?oc=5",
-      "excerpt": "Ripple Custody is the Foundation of Institutional Digital Asset Adoption Ripple",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNVRaWnc0ZEw1RGNkZnNkc0x4WFlGaUJ1UHVnX2ZGNVdtYWtvY05ubGxfTUFjUWlUV1J3UlM5Z1lyMkJEZFBQd29WX1VtdE55NGk2MnRuT1VXemtjOEVQcFlJbXhfUnZsTW9zbkNENWZSeE5UUzZhUnJ1M1dBSW1KcjFaakRkMnloTUpqSzNvRE5NbEdRQlM2RnFvU1lJRnc?oc=5",
+      "excerpt": "MicroStrategy Reports $1.3 Billion ‘Bitcoin Gain’ in April, But is It Actual Profit? Yahoo Finance",
       "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
       "tags": [],
-      "added_at": "2026-10-31T17:02:52Z",
+      "added_at": "2026-11-07T18:59:00Z",
       "verified_seed": false,
       "coverage": [
         {
-          "title": "Ripple Custody is the Foundation of Institutional Digital Asset Adoption",
-          "name": "Ripple · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQeUg1VW5Ia2VTc0xxbHh4enFlczF1cnZYM0V0WnNtRHhTX2JvVmNsMnVNTVlSUHN0ZFVLWDlHbTB2T3N2VVhuYmpFWmhZckYySXQ4a1o1ZXBqOFhUbnFFS3NhZTQxemMxdDVVQnUwQW9LUmpqMmVMcFNCSmJpQmx1OGpidXRGcXlRbzhQa2JUMnJvOUZpMWxRSGtxMjV3WHlRLTlv?oc=5",
+          "title": "MicroStrategy Reports $1.3 Billion ‘Bitcoin Gain’ in April, But is It Actual Profit?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNVRaWnc0ZEw1RGNkZnNkc0x4WFlGaUJ1UHVnX2ZGNVdtYWtvY05ubGxfTUFjUWlUV1J3UlM5Z1lyMkJEZFBQd29WX1VtdE55NGk2MnRuT1VXemtjOEVQcFlJbXhfUnZsTW9zbkNENWZSeE5UUzZhUnJ1M1dBSW1KcjFaakRkMnloTUpqSzNvRE5NbEdRQlM2RnFvU1lJRnc?oc=5",
           "source_type": "Media",
           "published_at": "2026-04-15T07:00:00Z"
         }
       ],
       "moon_meters": [
         {
-          "asset": "XRP",
-          "value": 1,
-          "label": "Slightly bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "740e133973a49a",
-      "title": "Should New Analyst Coverage of SharpLink’s Dual Sports Betting and Ethereum Model Require Action From SBET Investors?",
-      "published_at": "2026-04-13T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "SharpLink Gaming"
-      ],
-      "category": "Adoption",
-      "impact": "Medium",
-      "score": 68,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOS2hZR1hmemw5WVJjdGVJcnNKdWdIN3dvWEhrb3NxVUVuQld6enB1aFFuQng3VFhMY282TWRxYmtPSkc5V0RERlQ3WHc3d3p2OWlLRS1DeTJsWE4tRzI1Q3hsbHVfaUxKaXp4dk9ZQkJLRGhKV2k1TGlSN0xtVzVMcXNuc0xBcVlvakNjbjNWNjNNRXhUbmVLX0xudmhOcHA4R0c2RWV3?oc=5",
-      "excerpt": "Should New Analyst Coverage of SharpLink’s Dual Sports Betting and Ethereum Model Require Action From SBET Investors? Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-10-31T17:02:54Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Should New Analyst Coverage of SharpLink’s Dual Sports Betting and Ethereum Model Require Action From SBET Investors?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOS2hZR1hmemw5WVJjdGVJcnNKdWdIN3dvWEhrb3NxVUVuQld6enB1aFFuQng3VFhMY282TWRxYmtPSkc5V0RERlQ3WHc3d3p2OWlLRS1DeTJsWE4tRzI1Q3hsbHVfaUxKaXp4dk9ZQkJLRGhKV2k1TGlSN0xtVzVMcXNuc0xBcVlvakNjbjNWNjNNRXhUbmVLX0xudmhOcHA4R0c2RWV3?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-04-13T07:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "SBET",
+          "asset": "MSTR",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
