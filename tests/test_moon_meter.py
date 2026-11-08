@@ -21,7 +21,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(score('Strategy reports Bitcoin per fully diluted share increases 25% after dilution','Strategy')['value'],3)
 
     def test_asset_routing(self):
-        for entity, asset in [('Ripple','XRP'),('Evernorth','XRPN'),('Strategy','MSTR'),('SharpLink Gaming','SBET'),('Lite Strategy','LITS')]:
+        for entity, asset in [('Ripple','XRP'),('Evernorth','XRPN'),('Strategy','MSTR')]:
             self.assertEqual(score('Routine update',entity)['asset'],asset)
         both=moon_for_story(dict(title='Ripple and XRPL cooperate on network',entities=['Ripple','XRP Ecosystem'],source_type='Official'))
         self.assertEqual([m['asset'] for m in both],['XRP'])
@@ -46,7 +46,7 @@ class MoonMeterTests(unittest.TestCase):
         self.assertEqual(m['value'],-3)
         self.assertIn('solvency',m['reason'])
         for title in ('ETF approval denied','Strategy reports new bitcoin treasury plan','Spot XRP ETF launch date'):
-            for ent in ['Ripple','Evernorth','Strategy','SharpLink Gaming','Lite Strategy']:
+            for ent in ['Ripple','Evernorth','Strategy']:
                 v=score(title,ent)['value']
                 self.assertLessEqual(v,3)
                 self.assertGreaterEqual(v,-3)
@@ -143,86 +143,13 @@ class MoonMeterTests(unittest.TestCase):
                 'entities': entities, 'source_type': 'Media'}), [])
 
     def test_removed_companies_cannot_restore_archived_moon_meters(self):
-        retired = ['Hyperliquid Strategies', 'Forward Industries']
+        retired = ['SharpLink Gaming', 'Lite Strategy', 'Hyperliquid Strategies', 'Forward Industries']
         item = {'title': 'Treasury holdings and share buybacks update',
                 'entities': retired, 'source_type': 'Official',
-                'moon_meters': [{'asset': asset, 'value': 3} for asset in ('LITS', 'PURR', 'FWDI')]}
+                'moon_meters': [{'asset': asset, 'value': 3} for asset in ('SBET', 'LITS', 'PURR', 'FWDI', 'MSTR', 'XRPN', 'XRP')]}
         self.assertEqual(moon_for_story(item), [])
         item['entities'] = ['Evernorth', *retired]
         self.assertEqual([meter['asset'] for meter in moon_for_story(item)], ['XRPN'])
-
-    def test_sbet_coin_backing_and_dilution_are_equity_specific(self):
-        entity = 'SharpLink Gaming'
-        self.assertEqual(score('SharpLink buys 10000 ETH for treasury', entity)['value'], 1)
-        self.assertEqual(score('SharpLink reports ETH per diluted share rises 8%', entity)['value'], 2)
-        self.assertEqual(score('SharpLink reports ETH per fully diluted share increases 25% after dilution', entity)['value'], 3)
-        self.assertEqual(score('SharpLink reports ETH per fully diluted share declines 12%', entity)['value'], -2)
-        self.assertEqual(score('SharpLink issues new SBET shares to acquire ETH', entity)['value'], -1)
-        self.assertEqual(score('SharpLink raises funds to buy more ETH', entity)['value'], 0)
-        self.assertEqual(score('SharpLink announces equity facility to expand staking', entity)['value'], -1)
-        self.assertEqual(score('SharpLink general shareholder presentation', entity)['value'], 0)
-
-    def test_sbet_staking_benefits_do_not_override_custody_risks(self):
-        entity = 'SharpLink Gaming'
-        self.assertEqual(score('SharpLink launches ETH staking operation', entity)['value'], 1)
-        rewards = score('SharpLink generates $2 million in ETH staking rewards', entity)
-        self.assertEqual(rewards['asset'], 'SBET')
-        self.assertEqual(rewards['value'], 2)
-        self.assertIn('custody', rewards['reason'])
-        self.assertEqual(score('SharpLink reports staking rewards but custody withdrawals frozen after exploit', entity)['value'], -2)
-        self.assertEqual(score('SharpLink validator defaults despite growing staking income', entity)['value'], -2)
-        self.assertEqual(score('Rumour: SharpLink files for bankruptcy after staking losses', entity, 'Media')['value'], -3)
-        self.assertEqual(score('SharpLink plans to liquidate ETH treasury', entity)['value'], -3)
-
-    def test_sbet_buyback_authorization_is_not_executed_accretion(self):
-        entity = 'SharpLink Gaming'
-        approved = score('SharpLink announces $100 million stock repurchase authorization', entity)
-        self.assertEqual(approved['value'], 1)
-        self.assertIn('authorisation', approved['reason'])
-        self.assertEqual(score('SharpLink repurchases common shares below NAV', entity)['value'], 2)
-        self.assertEqual(score('SharpLink repurchases common shares', entity)['value'], 1)
-
-    def test_lits_coin_backing_and_dilution_are_equity_specific(self):
-        entity = 'Lite Strategy'
-        self.assertEqual(score('Lite Strategy buys 10000 Litecoin for treasury', entity)['value'], 1)
-        self.assertEqual(score('Lite Strategy reports LTC backing per diluted share rises 8%', entity)['value'], 2)
-        self.assertEqual(score('Lite Strategy reports LTC per fully diluted share increases 25% after dilution', entity)['value'], 3)
-        self.assertEqual(score('Lite Strategy reports a 25% increase in LTC per fully diluted share', entity)['value'], 3)
-        self.assertEqual(score('Lite Strategy reports LTC per fully diluted share declines 12%', entity)['value'], -2)
-        self.assertEqual(score('Lite Strategy reports LTC per fully diluted share declines 45%', entity)['value'], -3)
-        self.assertEqual(score('Lite Strategy issues new LITS shares to acquire LTC', entity)['value'], -1)
-        self.assertEqual(score('Lite Strategy raises funds to buy more Litecoin', entity)['value'], 0)
-        self.assertEqual(score('Lite Strategy routine shareholder presentation', entity)['value'], 0)
-
-    def test_lits_buyback_authorization_is_not_executed_accretion(self):
-        entity = 'Lite Strategy'
-        approved = score('Lite Strategy announces $100 million stock repurchase authorization', entity)
-        self.assertEqual(approved['value'], 1)
-        self.assertIn('authorisation', approved['reason'])
-        self.assertEqual(score('Lite Strategy authorizes share buyback to increase LTC per fully diluted share by 25%', entity)['value'], 1)
-        self.assertEqual(score('Lite Strategy repurchases common shares below NAV', entity)['value'], 2)
-        self.assertEqual(score('Lite Strategy repurchases common shares', entity)['value'], 1)
-        # The percentage of shares bought back is not a quantified increase in
-        # the LTC-per-share denominator, and cannot alone justify +3.
-        self.assertEqual(score('Lite Strategy repurchases 25% of outstanding shares; LTC per fully diluted share rises', entity)['value'], 1)
-
-    def test_lits_yield_cannot_override_financing_or_custody_risks(self):
-        entity = 'Lite Strategy'
-        earned = score('Lite Strategy generates $1.5 million in Litecoin covered-call income', entity)
-        self.assertEqual(earned['asset'], 'LITS')
-        self.assertEqual(earned['value'], 2)
-        self.assertIn('cap upside', earned['reason'])
-        self.assertEqual(score('Lite Strategy plans covered calls for LTC treasury yield', entity)['value'], 1)
-        self.assertEqual(score('Lite Strategy announces equity facility alongside Litecoin covered-call income', entity)['value'], -1)
-        self.assertEqual(score('Lite Strategy reports LTC treasury loss of $20 million despite yield income', entity)['value'], -2)
-        self.assertEqual(score('Lite Strategy earns Litecoin yield but custody withdrawals frozen after exploit', entity)['value'], -2)
-        self.assertEqual(score('Lite Strategy counterparty defaults despite Litecoin lending income', entity)['value'], -2)
-        self.assertEqual(score('Lite Strategy plans to liquidate Litecoin treasury', entity)['value'], -3)
-
-    def test_lits_litvm_investment_has_conditional_not_extreme_upside(self):
-        result = score('Lite Strategy plans to invest in LitVM', 'Lite Strategy')
-        self.assertEqual(result['value'], 1)
-        self.assertEqual(result['scenario'], 'assumption')
 
 if __name__=='__main__':unittest.main()
 

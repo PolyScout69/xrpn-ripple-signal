@@ -8,11 +8,11 @@
   // Keep in sync with .github/workflows/daily-scan.yml and scripts/scan.py.
   // European morning, US morning and US after-hours news cycles (UTC).
   const SCAN_TIMES_UTC = [{hour:9,minute:15},{hour:14,minute:35},{hour:23,minute:35}];
-  const MOON_ASSETS = {Strategy:'MSTR', Evernorth:'XRPN', 'SharpLink Gaming':'SBET', 'Lite Strategy':'LITS', Ripple:'XRP'};
-  const TREASURY_ASSETS = ['MSTR', 'XRPN', 'SBET', 'LITS'];
-  const RETIRED_COMPANY_TAGS = new Set(['xrp ecosystem','hyperliquid strategies','purr','forward industries','fwdi','hype','solana','sol']);
-  const DEFAULT_SOURCES = ['evernorth', 'sbet', 'lits', 'ripple', 'media'];
-  const SOURCE_NAMES = {sbet:'SharpLink official', lits:'Lite Strategy official', media:'Company investor news'};
+  const MOON_ASSETS = {Strategy:'MSTR', Evernorth:'XRPN', Ripple:'XRP'};
+  const TREASURY_ASSETS = ['MSTR', 'XRPN'];
+  const RETIRED_COMPANY_TAGS = new Set(['xrp ecosystem','hyperliquid strategies','purr','forward industries','fwdi','hype','solana','sol','sharplink gaming','sharplink','sharp link gaming','sharp link','sbet','ethereum','ether','eth','lite strategy','lits','litecoin','ltc','litvm']);
+  const DEFAULT_SOURCES = ['evernorth', 'ripple', 'media'];
+  const SOURCE_NAMES = {media:'Company investor news'};
   const state = { data: null, view: 'overview', entity: 'All', impact: 'All', moon: 'All', category: 'All', days: 30, sort: 'latest', query: '', saved: loadSet(STORAGE_SAVED), read: loadSet(STORAGE_READ), filtered: [] };
   let toastTimer;
 
@@ -36,7 +36,7 @@
   function entityLabel(item) {
     const names=(item.entities||[]);
     if (!names.length) return `<span class="entity-label">OTHER</span>`;
-    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='Strategy'?'strategy':name==='SharpLink Gaming'?'sbet':name==='Lite Strategy'?'lits':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
+    return names.map(name=>`<span class="entity-label ${name==='Ripple'?'ripple':name==='Strategy'?'strategy':''}">${esc(name.toUpperCase())}</span>`).join('<span class="tag-slash">/</span>');
   }
   function coverageHTML(item) {
     const links=(item.coverage||[]).filter(link=>link && link.url && safeUrl(link.url)!=='#' && link.url!==item.url).slice(0,48);
@@ -193,24 +193,16 @@
     const events=new Map();
     const families=[
       ['equity',/equity (?:purchase )?facility|cantor.*facility/],
-      ['lits-repurchase',/\b(?:lite strategy|lits)\b.*\b(?:repurchas\w*|buy[\s-]?back\w*)\b|\b(?:repurchas\w*|buy[\s-]?back\w*)\b.*\b(?:ltc|litecoin|lits)\b/],
-      ['ltc-options-yield',/\b(?:ltc|litecoin|lits|lite strategy)\b.*\b(?:covered[ -]calls?|options? premiums?)\b|\b(?:covered[ -]calls?|options? premiums?)\b.*\b(?:ltc|litecoin|lits|lite strategy)\b/],
-      ['litvm-investment',/\blitvm\b/],
-      ['ltc-per-share',/\b(?:ltc|litecoin)\s+(?:backing\s+)?per\s+(?:fully diluted\s+|diluted\s+)?share\b/],
-      ['sbet-buyback',/\b(?:sharplink|sharp link|sbet)\b.{0,110}\b(?:repurchas\w*|buy[\s-]?back\w*)\b|\b(?:repurchas\w*|buy[\s-]?back\w*)\b.{0,110}\b(?:sharplink|sharp link|sbet)\b/],
-      ['eth-staking',/\b(?:eth|ether|ethereum|sharplink|sbet)\b.{0,80}\b(?:staking|restaking|validator|yield)\b|\b(?:staking|restaking|validator|yield)\b.{0,80}\b(?:eth|ether|ethereum|sharplink|sbet)\b/],
-      ['eth-purchase',/\b(?:acquir|buy|buys|bought|purchas)\w*\b.*\b(?:eth|ether|ethereum)\b/],
       ['warrants',/11\.?5\s*m(?:illion)?.*shares|register.*shares.*warrant/],
       ['vote',/(?:shareholder|merger) (?:vote|approval)|shareholders? approve/],
       ['merger',/complet.*(?:business combination|merger)/],
       ['yield',/(?:xrp.*(?:yield|lending)|(?:yield|lending).*xrp|(?:treasury|xrp).*(?:coinbase|kraken|bitgo))/],
-      ['pershare',/(?:xrp|bitcoin|btc|eth|ether|ethereum|ltc|litecoin)(?: backing)? per (?:fully diluted |diluted )?share/],
+      ['pershare',/(?:xrp|bitcoin|btc)(?: backing)? per (?:fully diluted |diluted )?share/],
       ['listing',/(?:nasdaq|go(?:es|ing)? public).*(?:debut|list|begins trading)/],
       ['uphold',/uphold.*(?:list|stock|access)/],
-      ['drawdown',/(?:treasury|xrp|bitcoin|btc|eth|ether|ethereum|ltc|litecoin).*(?:loss|loses?|lost|drop|down)/],
+      ['drawdown',/(?:treasury|xrp|bitcoin|btc).*(?:loss|loses?|lost|drop|down)/],
       ['preferred',/(?:repurchas|redeem|buyback).*(?:preferred|strc|strk|strf)|(?:preferred|strc|strk|strf).*(?:repurchas|redeem|buyback)/],
-      ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/],
-      ['ltc-purchase',/\b(?:acquir|buy|buys|bought|purchas)\w*\b.*\b(?:ltc|litecoin)\b/]
+      ['btc',/(?:acquir|buys?|purchas).*(?:bitcoin|btc)/]
     ];
     const weekCode=(stamp)=>{
       const d=new Date(stamp);

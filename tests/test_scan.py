@@ -13,168 +13,136 @@ spec.loader.exec_module(scan)
 
 class CollectorTests(unittest.TestCase):
     def test_identifies_tracked_companies_without_false_positives(self):
-        self.assertEqual(scan.identify_entities('Evernorth pharmacy benefit Cigna health services'),[])
-        self.assertEqual(scan.identify_entities('Investment strategy for companies'),[])
-        self.assertEqual(scan.identify_entities('Ripple effect of inflation on markets'),[])
+        for headline in ('Evernorth pharmacy benefit Cigna health services',
+                         'Investment strategy for companies',
+                         'Ripple effect of inflation on markets',
+                         'XRP Ledger XRPL validators adopt new amendment'):
+            self.assertEqual(scan.identify_entities(headline),[])
         self.assertIn('Evernorth',scan.identify_entities('Evernorth Holdings XRPN issues new equity'))
         self.assertIn('Strategy',scan.identify_entities('Strategy Inc (NASDAQ: MSTR) purchases bitcoin'))
         self.assertIn('Strategy',scan.identify_entities('MicroStrategy MSTR STRC preferred dividend'))
-        self.assertEqual(scan.identify_entities('Lite Strategy Inc (NASDAQ: LITS) builds LTC treasury'),['Lite Strategy'])
-        self.assertEqual(scan.identify_entities('Lite Strategy announces Litecoin buybacks'),['Lite Strategy'])
-        self.assertNotIn('Lite Strategy',scan.identify_entities('Strategy Inc (MSTR) buys Bitcoin'))
-        self.assertNotIn('Lite Strategy',scan.identify_entities('Litecoin price rises after halving'))
-        self.assertEqual(scan.identify_entities('Lite Strategy partners with Strategy MSTR on digital assets'),
-                         ['Strategy','Lite Strategy'])
-        self.assertEqual(scan.identify_entities('XRP Ledger XRPL validators adopt new amendment'),[])
-        self.assertNotIn('Ripple',scan.identify_entities('XRPL validators adopt new amendment'))
         self.assertIn('Ripple',scan.identify_entities('Ripple expands RLUSD bank payments'))
+        self.assertEqual(scan.classify('Strategy Increases Bitcoin per Share'),'Treasury')
+        self.assertEqual(scan.classify('Evernorth Reports XRP Treasury Holdings'),'Treasury')
 
     def test_retired_issuers_do_not_route_but_joint_active_company_news_survives(self):
         for headline in (
+                'Lite Strategy Inc (NASDAQ: LITS) builds LTC treasury',
+                'Lite Strategy, Inc. announces Litecoin buybacks',
+                'Lite Strategy Incorporated earns covered-call option premiums',
+                'LITS stock announces a treasury expansion',
+                'Sharplink Inc earns ETH staking rewards',
+                'SharpLink Gaming (NASDAQ: SBET) expands Ethereum treasury',
+                'SBET stock authorises a share repurchase',
                 'Hyperliquid Strategies Inc (NASDAQ: PURR) earns HYPE staking yield',
-                'PURR stock expands its HYPE treasury',
-                'Forward Industries (NASDAQ: FWDI) reports SOL staking rewards'):
-            self.assertEqual(scan.identify_entities(headline),[])
+                'Forward Industries (NASDAQ: FWDI) reports SOL staking rewards',
+                'Ethereum staking adoption rises as ETH rallies',
+                'Litecoin network adoption rises',
+                'Forward-looking strategy for Solana investors'):
+            with self.subTest(headline=headline):
+                self.assertEqual(scan.identify_entities(headline),[])
         cases={
-            'Lite Strategy partners with Strategy Inc on a capital raise':['Strategy','Lite Strategy'],
-            'Evernorth and Forward Industries announce institutional treasury partnership':['Evernorth'],
-            'SharpLink Gaming and Hyperliquid Strategies announce staking partnership':['SharpLink Gaming'],
-            'Ripple partners with Forward Industries on custody services':['Ripple'],
+            'Lite Strategy partners with Strategy Inc on a capital raise':['Strategy'],
+            'Lite Strategy, Inc. and MicroStrategy MSTR discuss digital asset treasury custody':['Strategy'],
+            'Evernorth Holdings and SharpLink Gaming announce treasury partnership':['Evernorth'],
+            'Ripple partners with Lite Strategy on custody services':['Ripple'],
         }
         for headline,expected in cases.items():
             self.assertEqual(scan.identify_entities(headline),expected)
-        self.assertEqual(set(scan.TRACKED_ENTITIES),{'Strategy','Evernorth','SharpLink Gaming','Lite Strategy','Ripple'})
-        self.assertFalse(any(term in query for query in scan.NEWS_QUERIES
-                             for term in ('PURR','Hyperliquid Strategies','FWDI','Forward Industries')))
+        self.assertEqual(set(scan.TRACKED_ENTITIES),{'Strategy','Evernorth','Ripple'})
+        self.assertFalse(any(term.casefold() in query.casefold() for query in scan.NEWS_QUERIES
+                             for term in ('PURR','Hyperliquid Strategies','FWDI','Forward Industries',
+                                          'LITS','Lite Strategy','Litecoin','SBET','Sharplink','Ethereum')))
+        self.assertEqual(scan.identify_entities('Routine treasury update',force='Lite Strategy'),[])
+        self.assertEqual(scan.identify_entities('Routine treasury update',force='SharpLink Gaming'),[])
+        self.assertNotIn('ETH',scan.investor_angle('Treasury'))
+        self.assertNotIn('LTC',scan.investor_angle('Treasury'))
 
     def test_retired_archive_stories_tags_and_stale_meters_are_removed(self):
         old=[]
-        for entity,ticker,title in (
-                ('Hyperliquid Strategies','PURR','Hyperliquid Strategies expands HYPE treasury'),
-                ('Forward Industries','FWDI','Forward Industries increases SOL holdings')):
-            row=self.story(title,entity=entity,url='https://example.com/'+ticker)
+        for entity,ticker,title,kind in (
+                ('Lite Strategy','LITS','Lite Strategy Inc increases LTC holdings per share','Official'),
+                ('SharpLink Gaming','SBET','Sharplink earns ETH staking revenue','Media'),
+                ('Hyperliquid Strategies','PURR','Hyperliquid Strategies expands HYPE treasury','Media'),
+                ('Forward Industries','FWDI','Forward Industries increases SOL holdings','Official')):
+            row=self.story(title,entity=entity,kind=kind,url='https://example.com/'+ticker)
             row['moon_meters']=[{'asset':ticker,'value':2}]
             old.append(row)
-        joint=self.story('Sharplink and Forward Industries announce institutional staking partnership',
-                         entity='SharpLink Gaming',url='https://example.com/joint')
-        joint['entities']=['SharpLink Gaming','Forward Industries']
-        joint['tags']=['SBET','Treasury','FWDI','Forward Industries','SOL']
-        joint['moon_meters']=[{'asset':'SBET','value':1},{'asset':'FWDI','value':2}]
+        joint=self.story('Strategy Inc and Lite Strategy announce an institutional custody partnership',
+                         entity='Strategy',url='https://example.com/joint')
+        joint['entities']=['Strategy','Lite Strategy']
+        joint['tags']=['MSTR','Treasury','LITS','Lite Strategy','LTC','Litecoin','LitVM',
+                       'SBET','SharpLink Gaming','Sharplink','Sharp Link','ETH','Ethereum','Ether']
+        joint['moon_meters']=[{'asset':'MSTR','value':1},{'asset':'LITS','value':3},{'asset':'SBET','value':3}]
+        official_joint=self.story('Sharplink and Evernorth Holdings announce XRP treasury funding partnership',
+                                  entity='SharpLink Gaming',kind='Official',url='https://example.com/official-joint')
+        official_joint['tags']=['SBET','ETH','XRPN']
         stale=self.story('Strategy adds Bitcoin to its treasury',entity='Strategy',url='https://example.com/mstr')
-        stale['moon_meters']=[{'asset':'MSTR','value':1},{'asset':'LITS','value':3}]
-        lits=self.story('Lite Strategy Inc increases LTC holdings per share',entity='Lite Strategy',
-                        kind='Official',url='https://example.com/lits')
-        lits['tags']=['LITS','Lite Strategy','LTC','Litecoin','FWDI']
+        stale['moon_meters']=[{'asset':'MSTR','value':1},{'asset':'LITS','value':3},{'asset':'SBET','value':3}]
         ripple=self.story('Ripple expands institutional XRP payments',entity='Ripple',url='https://example.com/ripple')
-        merged,_=scan.merge_stories(old+[joint,stale,lits,ripple],[])
-        self.assertEqual({row['id'] for row in merged},{joint['id'],stale['id'],lits['id'],ripple['id']})
+        merged,new_count=scan.merge_stories(old+[joint,official_joint,stale,ripple],[])
+        self.assertEqual({row['id'] for row in merged},{joint['id'],official_joint['id'],stale['id'],ripple['id']})
+        self.assertEqual(new_count,0)
         result=next(row for row in merged if row['id']==joint['id'])
-        self.assertEqual(result['entities'],['SharpLink Gaming'])
-        self.assertEqual(result['tags'],['SBET','Treasury'])
-        self.assertEqual([meter['asset'] for meter in result['moon_meters']],['SBET'])
-        result=next(row for row in merged if row['id']==stale['id'])
-        self.assertEqual([meter['asset'] for meter in result['moon_meters']],['MSTR'])
-        result=next(row for row in merged if row['id']==lits['id'])
-        self.assertEqual(result['tags'],['LITS','Lite Strategy','LTC','Litecoin'])
-        self.assertEqual([meter['asset'] for meter in result['moon_meters']],['LITS'])
-        self.assertTrue(all(meter['asset'] not in ('PURR','FWDI')
-                            for row in merged for meter in row['moon_meters']))
+        self.assertEqual(result['entities'],['Strategy'])
+        self.assertEqual(result['tags'],['MSTR','Treasury'])
+        result=next(row for row in merged if row['id']==official_joint['id'])
+        self.assertEqual(result['entities'],['Evernorth'])
+        self.assertEqual(result['tags'],['XRPN'])
+        for row in merged:
+            self.assertEqual(row['moon_meters'],scan.moon_for_story(row))
+            self.assertTrue(all(meter['asset'] in ('MSTR','XRPN','XRP') for meter in row['moon_meters']))
+        self.assertEqual([meter['asset'] for meter in next(row for row in merged if row['id']==stale['id'])['moon_meters']],['MSTR'])
 
     def test_scan_publishes_only_active_source_health_and_sentiment_assets(self):
         data_path=Mock()
-        data_path.read_text.return_value=json.dumps({'items':[]})
+        data_path.read_text.return_value=json.dumps({'items':[],'sources':{'sbet':{},'lits':{}}})
         with patch.object(scan,'DATA_PATH',data_path), \
-                patch.object(scan,'fetch',side_effect=AssertionError('Unexpected network request')), \
                 patch.object(scan,'fetch_ripple_press',return_value=[]), \
                 patch.object(scan,'fetch_evernorth_news',return_value=[]), \
-                patch.object(scan,'fetch_sbet_news',return_value=[]), \
-                patch.object(scan,'fetch_lits_news',return_value=[]), \
                 patch.object(scan,'fetch_media_news',return_value=[]):
             self.assertEqual(scan.main(),0)
         published=json.loads(data_path.write_text.call_args.args[0])
-        self.assertEqual(set(published['sources']),{'ripple','evernorth','sbet','lits','media'})
-        self.assertEqual(list(published['sentiment_30d']),['MSTR','XRPN','SBET','LITS'])
+        self.assertEqual(set(published['sources']),{'ripple','evernorth','media'})
+        self.assertEqual(list(published['sentiment_30d']),['MSTR','XRPN'])
         self.assertEqual(published['scan']['schedule_utc'],['09:15','14:35','23:35'])
         self.assertEqual(published['scan']['status'],'live')
 
-    def test_sharplink_is_company_specific_and_keeps_stock_ticker_distinct(self):
-        for headline in ('Sharplink Inc earns ETH staking rewards',
-                         'SharpLink Gaming (NASDAQ: SBET) expands Ethereum treasury',
-                         'SBET stock authorises a share repurchase'):
-            self.assertEqual(scan.identify_entities(headline),['SharpLink Gaming'])
-        for headline in ('Ethereum staking adoption rises as ETH rallies',
-                         'Solana network validators increase SOL revenue',
-                         'Forward-looking strategy for Solana investors',
-                         'Ford Motor Company launches new vehicle',
-                         'BitMine adds ETH to its treasury'):
-            self.assertEqual(scan.identify_entities(headline),[])
-        self.assertEqual(scan.classify('Sharplink Increases ETH per Share'),'Treasury')
+    def test_active_source_failures_remain_visible_and_keep_retained_archive(self):
+        story=self.story('Strategy Inc buys 100 BTC for its treasury',entity='Strategy')
+        for all_failed in (False,True):
+            data_path=Mock()
+            data_path.read_text.return_value=json.dumps({'items':[story]})
+            failure=RuntimeError('Source unavailable')
+            with patch.multiple(scan,DATA_PATH=data_path,
+                    fetch_ripple_press=Mock(side_effect=failure),
+                    fetch_evernorth_news=Mock(side_effect=failure if all_failed else None,return_value=[]),
+                    fetch_media_news=Mock(side_effect=failure if all_failed else None,return_value=[])):
+                self.assertEqual(scan.main(),1 if all_failed else 0)
+            published=json.loads(data_path.write_text.call_args.args[0])
+            self.assertEqual(published['scan']['status'],'failed' if all_failed else 'partial')
+            self.assertEqual(set(published['sources']),{'ripple','evernorth','media'})
+            self.assertEqual(published['sources']['ripple']['status'],'error')
+            self.assertIn('Source unavailable',published['sources']['ripple']['message'])
+            self.assertEqual([row['id'] for row in published['items']],[story['id']])
 
-    def test_lits_company_and_treasury_terms_do_not_capture_generic_litecoin_news(self):
-        for headline in ('Lite Strategy, Inc. announces Litecoin treasury expansion',
-                         'LITS stock reports covered-call option premiums',
-                         'Lite Strategy Incorporated reports LTC backing per share'):
-            self.assertEqual(scan.identify_entities(headline),['Lite Strategy'])
-        for headline in ('Litecoin network adoption rises',
-                         'LTC prices jump as new validators arrive'):
-            self.assertEqual(scan.identify_entities(headline),[])
-        for headline in ('Lite Strategy Increases LTC per Share',
-                         'LITS reports Litecoin backing per share',
-                         'Lite Strategy Reports Litecoin Holdings'):
-            self.assertEqual(scan.classify(headline),'Treasury')
+    def test_rss_discards_retired_only_issuers_and_keeps_joint_company_reports(self):
+        from xml.sax.saxutils import escape
+        titles=(
+            'Lite Strategy Inc expands its Litecoin treasury',
+            'Sharplink Inc announces ETH staking rewards',
+            'Lite Strategy partners with Strategy Inc on custody services',
+            'Evernorth Holdings and Sharplink announce XRP treasury partnership',
+        )
+        xml='<rss><channel>'+''.join(
+            '<item><title>'+escape(title)+'</title><pubDate>'+scan.timestamp_now()+
+            '</pubDate><link>https://example.com/report-'+str(index)+
+            '</link><source>Publisher</source></item>' for index,title in enumerate(titles)
+        )+'</channel></rss>'
+        rows=scan.parse_google_news(xml)
+        self.assertEqual([row['title'] for row in rows],list(titles[2:]))
+        self.assertEqual([row['entities'] for row in rows],[['Strategy'],['Evernorth']])
 
-    def test_lits_issuer_archive_uses_dated_fallback_links(self):
-        from datetime import datetime,timezone
-        date=datetime.now(timezone.utc).strftime('%B %d, %Y')
-        url='https://kimbrxtherapeutics.gcs-web.com/news-releases/news-release-details/lite-strategy-results'
-        title='Lite Strategy Reports Quarterly Financial Results'
-        listing=f'<div><span>{date}</span><a href="{url}">{title}</a><a href="{url}">Read More</a></div>'
-        listing+='<a href="https://example.com/news-releases/news-release-details/sponsor">Unrelated sponsor announcement</a>'
-        def response(address):
-            if address==scan.LITS_IR_URL:
-                raise RuntimeError('Primary IR temporarily unavailable')
-            if address==scan.LITS_IR_FALLBACK:
-                return Mock(text=listing)
-            if address==url:
-                raise RuntimeError('Detail temporarily unavailable')
-            raise AssertionError('Unexpected URL: '+address)
-        with patch.object(scan,'fetch',side_effect=response):
-            rows=scan.fetch_lits_news()
-        self.assertEqual(len(rows),1)
-        self.assertEqual(rows[0]['title'],title)
-        self.assertEqual(rows[0]['url'],url)
-        self.assertEqual(rows[0]['entities'],['Lite Strategy'])
-        self.assertEqual(rows[0]['source_id'],'lits')
-        self.assertEqual(rows[0]['source_type'],'Official')
-        self.assertEqual(rows[0]['published_at'],scan.normalize_date(date,date_only=True))
-
-    def test_lits_details_require_actual_dates_and_company_identity(self):
-        base='https://litestrategy.gcs-web.com/news-releases/news-release-details/'
-        titles={'current':'Lite Strategy Announces Litecoin Treasury Income',
-                'undated':'Lite Strategy Announces a New Treasury Update',
-                'legacy':'MEI Pharma Reports Oncology Study Results'}
-        listing=''.join(f'<div><a href="{base}{slug}">{title}</a></div>' for slug,title in titles.items())
-        stamp=scan.timestamp_now()
-        def response(address):
-            if address in (scan.LITS_IR_URL,scan.LITS_IR_FALLBACK):
-                return Mock(text=listing)
-            slug=address.removeprefix(base)
-            if slug not in titles:
-                raise AssertionError('Unexpected URL: '+address)
-            meta='' if slug=='undated' else f'<meta property="article:published_time" content="{stamp}">'
-            return Mock(text=f'{meta}<h1>{titles[slug]}</h1>')
-        with patch.object(scan,'fetch',side_effect=response):
-            rows=scan.fetch_lits_news()
-        self.assertEqual([row['url'] for row in rows],[base+'current'])
-        self.assertEqual(rows[0]['published_at'],scan.normalize_date(stamp,date_only=True))
-
-    def test_lits_source_failures_are_not_reported_as_success(self):
-        with patch.object(scan,'fetch',side_effect=RuntimeError('Source unavailable')):
-            with self.assertRaisesRegex(ValueError,'archive unavailable'):
-                scan.fetch_lits_news()
-        with patch.object(scan,'fetch',return_value=Mock(text='<html>No releases</html>')):
-            with self.assertRaisesRegex(ValueError,'no linked releases'):
-                scan.fetch_lits_news()
 
     def test_retired_ecosystem_is_removed_from_archive_and_company_tags_survive(self):
         network=self.story('XRP Ledger validators adopt new institutional tokenization amendment',
@@ -197,66 +165,21 @@ class CollectorTests(unittest.TestCase):
         self.assertFalse(any(query.startswith(('"XRP Ledger"','"XRPL"','"XRP" ETF'))
                              for query in scan.NEWS_QUERIES))
 
-    def test_sbet_issuer_widget_keeps_dated_release_identity(self):
-        from datetime import datetime,timezone
-        date=datetime.now(timezone.utc).strftime('%b %d, %Y')
-        first='https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=171901&m=rl'
-        second='https://www.pressviewer.com/profiles/investor/NewsPrint.asp?v=6&b=2597&ID=171902&m=rl'
-        def card(url,title,stamp):
-            return f'<div class="PressItem38"><div class="PressItem38Date">{stamp}</div><div class="PressItem38Headline"><a href="{url}">{title}</a></div><div class="PressItem38Body"></div></div>'
-        listing=card(first,'Sharplink Reports New ETH Staking Rewards',date)+card(
-            second,'Sharplink Announces Quarterly Earnings Conference Call',date)+card(
-            'https://example.com/untrusted','Unrelated sponsor announces new investment',date)+card(
-            first+'&undated=1','Sharplink Reports Ethereum Treasury Holdings','')
-        with patch.object(scan,'fetch',return_value=type('Response',(),{'text':listing})()):
-            rows=scan.fetch_sbet_news()
-        self.assertEqual(len(rows),2)
-        self.assertEqual({row['url'] for row in rows},{first,second})
-        self.assertNotEqual(rows[0]['id'],rows[1]['id'])
-        self.assertTrue(all(row['entities']==['SharpLink Gaming'] and row['source_id']=='sbet'
-                            and row['source_type']=='Official' for row in rows))
-
-
-    def test_sbet_source_failures_are_not_reported_as_success(self):
-        with patch.object(scan,'fetch',side_effect=RuntimeError('Source unavailable')):
-            with self.assertRaisesRegex(RuntimeError,'Source unavailable'):
-                scan.fetch_sbet_news()
-        with patch.object(scan,'fetch',return_value=type('Response',(),{'text':'<html>No releases</html>'})()):
-            with self.assertRaises(ValueError):
-                scan.fetch_sbet_news()
-
 
     def test_treasury_event_dedup_preserves_different_purchases_and_issuers(self):
-        first=self.story('Sharplink Acquires 1,000,000 ETH for Ethereum Treasury',
-                         entity='SharpLink Gaming',kind='Official',url='https://example.com/sbet-one')
-        syndicated=self.story('SharpLink Gaming Buys 1 Million ETH for Treasury',
-                              entity='SharpLink Gaming',url='https://example.com/sbet-syndicated')
-        different=self.story('Sharplink Acquires 20,000 ETH for Ethereum Treasury',
-                             entity='SharpLink Gaming',url='https://example.com/sbet-two')
-        strategy=self.story('Strategy Buys 1,000 BTC for Treasury',
-                            entity='Strategy',url='https://example.com/mstr-one')
-        holdings=self.story('Sharplink Reports Holdings of 1 Million ETH',
-                            entity='SharpLink Gaming',url='https://example.com/sbet-holdings')
-        merged,_=scan.merge_stories([first,syndicated,different,strategy,holdings],[])
-        self.assertEqual(len(merged),4)
+        first=self.story('Strategy Inc Acquires 1,000 BTC for Its Treasury',
+                         entity='Strategy',kind='Official',url='https://example.com/mstr-one')
+        syndicated=self.story('MicroStrategy Buys 1000 Bitcoin for Treasury',
+                              entity='Strategy',url='https://example.com/mstr-syndicated')
+        different=self.story('Strategy Inc Acquires 200 BTC for Its Treasury',
+                             entity='Strategy',url='https://example.com/mstr-two')
+        evernorth=self.story('Evernorth Holdings Buys XRP for Treasury',
+                            entity='Evernorth',url='https://example.com/xrpn-one')
+        merged,_=scan.merge_stories([first,syndicated,different,evernorth],[])
+        self.assertEqual(len(merged),3)
         original=next(row for row in merged if row['id']==first['id'])
         self.assertEqual(len(original['coverage']),2)
 
-    def test_lits_repeated_coverage_keeps_purchases_and_buyback_execution_distinct(self):
-        titles=(
-            'Lite Strategy Acquires 100,000 LTC for Its Treasury',
-            'LITS Buys 100000 Litecoin for Treasury',
-            'Lite Strategy Purchases 20,000 LTC',
-            'Lite Strategy Reports Holdings of 100,000 LTC',
-            'Lite Strategy Authorizes $10 Million Share Repurchase Program',
-            'LITS Approves $10 Million Stock Buyback',
-            'Lite Strategy Repurchases $10 Million of Shares',
-        )
-        rows=[self.story(title,entity='Lite Strategy',url=f'https://example.com/lits-{i}')
-              for i,title in enumerate(titles)]
-        merged,_=scan.merge_stories(rows,[])
-        self.assertEqual(len(merged),5)
-        self.assertEqual(sorted(len(row['coverage']) for row in merged),[1,1,1,2,2])
 
     def test_sec_filing_entries_are_rejected_and_purged(self):
         no=scan.make_story(title='Strategy files Form 8-K',date=scan.timestamp_now(),url='https://www.sec.gov/Archives/edgar/data/1/abc',source='SEC EDGAR',source_type='SEC',source_id='sec_strategy',entities=['Strategy'],excerpt='Form 8-K filed',category='SEC filings')
@@ -446,7 +369,7 @@ class CollectorTests(unittest.TestCase):
         script=(ROOT/'app.js').read_text(encoding='utf-8')
         css=(ROOT/'styles.css').read_text(encoding='utf-8')
         scanner=(ROOT/'scripts/scan.py').read_text(encoding='utf-8')
-        for asset in ('mstr','xrpn','sbet','lits'):
+        for asset in ('mstr','xrpn'):
             self.assertIn('id="sentiment-card-'+asset+'"',html)
             self.assertIn('id="sentiment-'+asset+'-value"',html)
         self.assertNotIn('id="stat-treasury"',html)
@@ -459,11 +382,11 @@ class CollectorTests(unittest.TestCase):
         self.assertIn('.slice(0,48)',script)
 
 
-    def test_four_treasury_quotes_sentiment_cards_and_crypto_logos(self):
+    def test_two_treasury_quotes_sentiment_cards_and_crypto_logos(self):
         html=(ROOT/'index.html').read_text(encoding='utf-8')
         app=(ROOT/'app.js').read_text(encoding='utf-8')
         soup=BeautifulSoup(html,'html.parser')
-        expected_order=['MSTR','XRPN','SBET','LITS']
+        expected_order=['MSTR','XRPN']
         quote_order=[card.select_one('tv-single-ticker')['symbol'].split(':')[-1]
                      for card in soup.select('.market-pulse-grid > .quote-card')]
         sentiment_cards=soup.select('.stats-grid > .moon-sentiment-card')
@@ -471,19 +394,19 @@ class CollectorTests(unittest.TestCase):
                          for card in sentiment_cards]
         self.assertEqual(quote_order,expected_order)
         self.assertEqual(sentiment_order,expected_order)
-        crypto_by_ticker={'MSTR':'btc','XRPN':'xrp','SBET':'eth','LITS':'ltc'}
+        crypto_by_ticker={'MSTR':'btc','XRPN':'xrp'}
         for ticker,card in zip(sentiment_order,sentiment_cards):
             logo=card.select_one('.sentiment-asset img')
             self.assertIsNotNone(logo)
             self.assertEqual(logo['src'],'assets/crypto/'+crypto_by_ticker[ticker]+'.svg')
             self.assertTrue(logo.get('alt','').strip())
         filters={button['data-entity'] for button in soup.select('button[data-entity]')}
-        self.assertEqual(filters,{'All','Strategy','Evernorth','SharpLink Gaming','Lite Strategy','Ripple'})
+        self.assertEqual(filters,{'All','Strategy','Evernorth','Ripple'})
         for ticker in expected_order:
             self.assertIn('https://www.tradingview.com/symbols/NASDAQ-'+ticker+'/',html)
         import re
         default_sources=re.search(r'const DEFAULT_SOURCES = \[(.*?)\];',app).group(1)
-        self.assertEqual(set(re.findall(r"'([^']+)'",default_sources)),{'evernorth','ripple','sbet','lits','media'})
+        self.assertEqual(set(re.findall(r"'([^']+)'",default_sources)),{'evernorth','ripple','media'})
 
     def test_no_price_hype(self):
         self.assertFalse(scan.is_investor_news('XRP price prediction huge rally','Could hit $100'))
@@ -494,64 +417,64 @@ class CollectorTests(unittest.TestCase):
 
     def test_quote_listing_metadata_is_not_an_article(self):
         self.assertFalse(scan.is_investor_news(
-            'Sharplink, Inc. (SBET) Stock Price, News, Quote & History','Ethereum treasury stock'))
+            'Evernorth Holdings, Inc. (XRPN) Stock Price, News, Quote & History','XRP treasury stock'))
         self.assertFalse(scan.is_investor_news('Strategy (MSTR) Stock Quote & News','Bitcoin treasury'))
         self.assertTrue(scan.is_investor_news('Evernorth Completes Nasdaq Listing for XRPN Shares','XRP treasury company'))
 
     def test_static_quote_estimates_and_chart_templates_are_not_news(self):
         for headline in (
-            'Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News',
-            'Lite Strategy, Inc. (LITS) Stock Price History & Data',
-            'Lite Strategy, Inc. (LITS) Seasonal returns chart',
-            'Lite Strategy, Inc. (LITS) Earnings Date, Reports and Estimates',
-            'Lite Strategy, Inc. Estimates – NASDAQ:LITS',
+            'Strategy, Inc. Stock Price Today | MSTR Live Chart & News',
+            'Strategy, Inc. (MSTR) Stock Price History & Data',
+            'Strategy, Inc. (MSTR) Seasonal returns chart',
+            'Strategy, Inc. (MSTR) Earnings Date, Reports and Estimates',
+            'Strategy, Inc. Estimates – NASDAQ:MSTR',
             'Strategy, Inc. Estimates – NASDAQ:MSTR',
         ):
             with self.subTest(headline=headline):
                 self.assertFalse(scan.is_investor_news(headline,'Company earnings and treasury stock information'))
         for headline in (
-            'Lite Strategy Beats Earnings Estimates on Treasury Income',
+            'Strategy Inc Beats Earnings Estimates on Treasury Income',
             'Strategy Raises Earnings Estimates – NASDAQ:MSTR',
-            'Lite Strategy Announces Quarterly Earnings Date',
+            'Strategy Inc Announces Quarterly Earnings Date',
         ):
             self.assertTrue(scan.is_investor_news(headline,'Company earnings update'))
 
-    def test_lits_routine_option_grants_do_not_hide_treasury_income_or_financing(self):
+    def test_routine_option_grants_do_not_hide_treasury_income_or_financing(self):
         for headline in (
-            'A director receives 100,000 options with a $1.19 exercise price at Lite Strategy (LITS).',
-            '600,000 options awarded to Lite Strategy (LITS) CEO Justin J. File carry a $1.19 exercise price.',
-            'A 100,000-option annual grant at Lite Strategy (LITS) gives director Joshua Riezman 25% immediate vesting.',
+            'A director receives 100,000 options with a $1.19 exercise price at Strategy Inc (MSTR).',
+            '600,000 options awarded to Strategy Inc (MSTR) CEO carry a $1.19 exercise price.',
+            'A 100,000-option annual grant at Strategy Inc (MSTR) gives director 25% immediate vesting.',
         ):
             with self.subTest(headline=headline):
-                self.assertFalse(scan.is_investor_news(headline,'LTC treasury company'))
+                self.assertFalse(scan.is_investor_news(headline,'BTC treasury company'))
         for headline in (
-            'Lite Strategy Earns Covered-Call Option Premiums on Its LTC Treasury',
-            'LITS Raises $100 Million for Litecoin Treasury Alongside CEO Option Grant',
-            'Lite Strategy Reports Financial Results Including Director Option Awards',
+            'Strategy Inc Earns Covered-Call Option Premiums on Its BTC Treasury',
+            'MSTR Raises $100 Million for Bitcoin Treasury Alongside CEO Option Grant',
+            'Strategy Inc Reports Financial Results Including Director Option Awards',
         ):
-            self.assertTrue(scan.is_investor_news(headline,'LTC treasury company'))
+            self.assertTrue(scan.is_investor_news(headline,'BTC treasury company'))
 
     def test_recycled_earnings_period_uses_publication_date_and_keeps_current_developments(self):
-        old='LITS Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain'
-        self.assertFalse(scan.is_investor_news(old,'LTC treasury stock','2026-10-30T12:00:00Z'))
-        self.assertTrue(scan.is_investor_news(old,'LTC treasury stock','2025-02-01T12:00:00Z'))
-        self.assertTrue(scan.is_investor_news(old,'LTC treasury stock'))
+        old='MSTR Q4 2024 Earnings: Loss Per Share Nearly Double Consensus Despite 4.2% Stock Gain'
+        self.assertFalse(scan.is_investor_news(old,'BTC treasury stock','2026-10-30T12:00:00Z'))
+        self.assertTrue(scan.is_investor_news(old,'BTC treasury stock','2025-02-01T12:00:00Z'))
+        self.assertTrue(scan.is_investor_news(old,'BTC treasury stock'))
         for headline in (
-            'LITS Q4 2026 Earnings: Loss Per Share Narrows',
-            'Lite Strategy Restates Q4 2024 Earnings After Accounting Review',
-            'Lite Strategy Compares Q4 2024 Earnings with Current Treasury Results',
-            'Lite Strategy Q4 2024 and Q4 2026 Earnings Comparison',
+            'MSTR Q4 2026 Earnings: Loss Per Share Narrows',
+            'Strategy Inc Restates Q4 2024 Earnings After Accounting Review',
+            'Strategy Inc Compares Q4 2024 Earnings with Current Treasury Results',
+            'Strategy Inc Q4 2024 and Q4 2026 Earnings Comparison',
         ):
-            self.assertTrue(scan.is_investor_news(headline,'LTC treasury company','2026-10-30T12:00:00Z'))
+            self.assertTrue(scan.is_investor_news(headline,'BTC treasury company','2026-10-30T12:00:00Z'))
 
     def test_rss_and_archive_both_remove_recycled_earnings_and_static_pages(self):
         from xml.sax.saxutils import escape
         from datetime import datetime,timezone
         current_year=datetime.now(timezone.utc).year
-        old=f'LITS Q4 {current_year-3} Earnings: Loss Per Share Nearly Double Consensus'
-        static='Lite Strategy, Inc. Stock Price Today | LITS Live Chart & News'
-        real=f'Lite Strategy Reports Fiscal Year {current_year} Financial Results'
-        rows=[self.story(title,entity='Lite Strategy',url=f'https://example.com/noise-{i}')
+        old=f'MSTR Q4 {current_year-3} Earnings: Loss Per Share Nearly Double Consensus'
+        static='Strategy, Inc. Stock Price Today | MSTR Live Chart & News'
+        real=f'Strategy Inc Reports Fiscal Year {current_year} Financial Results'
+        rows=[self.story(title,entity='Strategy',url=f'https://example.com/noise-{i}')
               for i,title in enumerate((old,static,real))]
         xml='<rss><channel>'+''.join(
             '<item><title>'+escape(row['title'])+'</title><pubDate>'+row['published_at']+
@@ -563,13 +486,13 @@ class CollectorTests(unittest.TestCase):
 
     def test_routine_vesting_tax_withholding_is_not_material_news(self):
         for headline in (
-            'Tax withholding covers 6,231 shares at $7.63 for Sharplink (SBET) executive Michael D. Camarda.',
-            'At $7.63 per share, Sharplink (SBET) CFO DeLucia has 1,592 shares withheld for vesting taxes.'):
+            'Tax withholding covers 6,231 shares at $7.63 for Evernorth Holdings (XRPN) executive.',
+            'At $7.63 per share, Evernorth Holdings (XRPN) CFO has 1,592 shares withheld for vesting taxes.'):
             self.assertFalse(scan.is_investor_news(headline,'Routine share settlement for vesting.'))
         self.assertTrue(scan.is_investor_news(
-            'Sharplink Raises $425 Million to Expand Ethereum Treasury','ETH holdings and capital funding'))
+            'Evernorth Holdings Raises $425 Million to Expand XRP Treasury','XRP holdings and capital funding'))
         self.assertTrue(scan.is_investor_news(
-            'Sharplink Announces Equity Facility for ETH Treasury Alongside Tax Withholding Disclosure','Material capital raise'))
+            'Evernorth Holdings Announces Equity Facility for XRP Treasury Alongside Tax Withholding Disclosure','Material capital raise'))
 
     def test_url_safety(self):
         self.assertFalse(scan.canonical_url('javascript:alert(1)'))
