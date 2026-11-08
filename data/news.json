@@ -2,8 +2,8 @@
   "name": "Signal | Strategy · Evernorth · SharpLink Gaming · Lite Strategy · Ripple",
   "version": 2,
   "scan": {
-    "status": "live",
-    "ran_at": "2026-11-08T02:38:51Z",
+    "status": "partial",
+    "ran_at": "2026-11-08T15:59:03Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -21,54 +21,54 @@
   "sources": {
     "ripple": {
       "name": "Ripple press centre",
-      "status": "ok",
-      "items_seen": 6,
-      "checked_at": "2026-11-08T02:38:51Z",
-      "message": "Fetched 6 matching items."
+      "status": "error",
+      "items_seen": 0,
+      "checked_at": "2026-11-08T15:59:03Z",
+      "message": "Ripple press articles found, but dates/details could not be extracted."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-08T02:38:51Z",
+      "checked_at": "2026-11-08T15:59:03Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 21,
-      "checked_at": "2026-11-08T02:38:51Z",
+      "checked_at": "2026-11-08T15:59:03Z",
       "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-08T02:38:51Z",
+      "checked_at": "2026-11-08T15:59:03Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
-      "status": "ok",
-      "items_seen": 218,
-      "checked_at": "2026-11-08T02:38:51Z",
-      "message": "Fetched 218 matching items."
+      "status": "error",
+      "items_seen": 0,
+      "checked_at": "2026-11-08T15:59:03Z",
+      "message": "All Google News RSS requests failed."
     }
   },
   "sentiment_30d": {
     "MSTR": {
       "value": 0,
       "label": "Neutral",
-      "raw_score": 0.06,
+      "raw_score": 0.12,
       "window_days": 30,
-      "as_of": "2026-11-08T02:38:51Z",
-      "stories": 48,
-      "independent_events": 43,
-      "directional_events": 9,
+      "as_of": "2026-11-08T15:59:03Z",
+      "stories": 45,
+      "independent_events": 40,
+      "directional_events": 8,
       "distinct_catalysts": 5,
       "bullish_events": 6,
-      "bearish_events": 3,
-      "neutral_events": 34,
+      "bearish_events": 2,
+      "neutral_events": 32,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -121,14 +121,14 @@
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 1.1,
+      "raw_score": 1.03,
       "window_days": 30,
-      "as_of": "2026-11-08T02:38:51Z",
-      "stories": 39,
-      "independent_events": 36,
-      "directional_events": 17,
-      "distinct_catalysts": 15,
-      "bullish_events": 13,
+      "as_of": "2026-11-08T15:59:03Z",
+      "stories": 37,
+      "independent_events": 35,
+      "directional_events": 16,
+      "distinct_catalysts": 14,
+      "bullish_events": 12,
       "bearish_events": 4,
       "neutral_events": 19,
       "coverage": "Broad coverage",
@@ -185,7 +185,7 @@
       "label": "Slightly bearish",
       "raw_score": -1.22,
       "window_days": 30,
-      "as_of": "2026-11-08T02:38:51Z",
+      "as_of": "2026-11-08T15:59:03Z",
       "stories": 30,
       "independent_events": 30,
       "directional_events": 2,
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-08T02:38:51Z",
+      "as_of": "2026-11-08T15:59:03Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
