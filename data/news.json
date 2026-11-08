@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-07T18:58:52Z",
+    "ran_at": "2026-11-08T02:38:51Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 0,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,36 +23,36 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-07T18:58:52Z",
+      "checked_at": "2026-11-08T02:38:51Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-07T18:58:52Z",
+      "checked_at": "2026-11-08T02:38:51Z",
       "message": "Fetched 18 matching items."
     },
     "sbet": {
       "name": "Sharplink official",
       "status": "ok",
       "items_seen": 21,
-      "checked_at": "2026-11-07T18:58:52Z",
+      "checked_at": "2026-11-08T02:38:51Z",
       "message": "Fetched 21 matching items."
     },
     "lits": {
       "name": "Lite Strategy official",
       "status": "ok",
       "items_seen": 9,
-      "checked_at": "2026-11-07T18:58:52Z",
+      "checked_at": "2026-11-08T02:38:51Z",
       "message": "Fetched 9 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 216,
-      "checked_at": "2026-11-07T18:58:52Z",
-      "message": "Fetched 216 matching items."
+      "items_seen": 218,
+      "checked_at": "2026-11-08T02:38:51Z",
+      "message": "Fetched 218 matching items."
     }
   },
   "sentiment_30d": {
@@ -61,7 +61,7 @@
       "label": "Neutral",
       "raw_score": 0.06,
       "window_days": 30,
-      "as_of": "2026-11-07T18:58:52Z",
+      "as_of": "2026-11-08T02:38:51Z",
       "stories": 48,
       "independent_events": 43,
       "directional_events": 9,
@@ -123,7 +123,7 @@
       "label": "Slightly bullish",
       "raw_score": 1.1,
       "window_days": 30,
-      "as_of": "2026-11-07T18:58:52Z",
+      "as_of": "2026-11-08T02:38:51Z",
       "stories": 39,
       "independent_events": 36,
       "directional_events": 17,
@@ -185,7 +185,7 @@
       "label": "Slightly bearish",
       "raw_score": -1.22,
       "window_days": 30,
-      "as_of": "2026-11-07T18:58:52Z",
+      "as_of": "2026-11-08T02:38:51Z",
       "stories": 30,
       "independent_events": 30,
       "directional_events": 2,
@@ -225,7 +225,7 @@
       "label": "Neutral",
       "raw_score": 0.0,
       "window_days": 30,
-      "as_of": "2026-11-07T18:58:52Z",
+      "as_of": "2026-11-08T02:38:51Z",
       "stories": 5,
       "independent_events": 5,
       "directional_events": 0,
@@ -6552,6 +6552,13 @@
           "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ENnNKNkpuWGxaV1FnWmZMSHZNQU1aVi1tVUt1RUdrLXB1QS1VTHlnZElMOF9YNHhaWWoxLTZjd0o0YWkzSHhOeXd4eDc2Y2hucmpFRUZVN0w1WjZieFVkMmZhZ05yN05qMlc3UUxEd3ptTy1DU3c?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-13T07:00:00Z"
+        },
+        {
+          "title": "Strategy Adds 250 BTC to Holdings as STRC Buybacks Accelerate",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQckhsT19KSm12OW4yQmhWczVEaHhiOWZCTGFJak5sOTJrYm9UYjJTb1BENFh2UHd5MTVIMzJmQTdUQlpaQkNFYnpBMC15aDc2c0RCWE51MFVaendwQXpyS3pyOURVNF93WTRERUl3N0kxMDF6bUZVMngwUHEzSEFNVnQ0a1dJdWgtQXN1QW5iQXFfOWRMNUxRMHRjYw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-10-12T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -21970,6 +21977,13 @@
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBqeFJMdlUtRTlJUDUwbXM1dUREb3BWX2RscDYwa2p2UkZINElHOWJhZFVzSFpWTmVnTXY3OHVIRkdqYk9RcWVRZGRkWkxyTkZMZkNZRXJtNkhqUEt6V3RqMzRrMWRiM1hNOXRFT2UzTWUtME0?oc=5",
           "source_type": "Media",
           "published_at": "2026-05-03T18:12:58Z"
+        },
+        {
+          "title": "MicroStrategy Pauses Bitcoin Buys Ahead of May 5 Q1 Earnings",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQWVnZXJUV29qZmQwV3htano2cFRkcGxoVE1zSFN1RldnRU15WUlVNlVjaTFZc0lNNXBDWjRNTF9WY2QwU1RJTW13QnU5MFhfNFU5WnYzUzVUYWNzeEVUX0c4Z1p2UVl3b3cybWxKeGotTVBNVkxncmQ1anpjYWFidkpoWk9IWk9sQkRuM2JGempyREtMUEJOU19ubmJjS29sTmdkVUhhWQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-03T07:00:00Z"
         }
       ],
       "moon_meters": [
