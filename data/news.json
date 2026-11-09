@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-09T02:54:36Z",
+    "ran_at": "2026-11-09T19:50:09Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 0,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,50 +23,50 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-09T02:54:36Z",
+      "checked_at": "2026-11-09T19:50:09Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-09T02:54:36Z",
+      "checked_at": "2026-11-09T19:50:09Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 121,
-      "checked_at": "2026-11-09T02:54:36Z",
-      "message": "Fetched 121 matching items."
+      "items_seen": 116,
+      "checked_at": "2026-11-09T19:50:09Z",
+      "message": "Fetched 116 matching items."
     }
   },
   "sentiment_30d": {
     "MSTR": {
       "value": 0,
       "label": "Neutral",
-      "raw_score": 0.12,
+      "raw_score": 0.31,
       "window_days": 30,
-      "as_of": "2026-11-09T02:54:36Z",
-      "stories": 46,
-      "independent_events": 41,
-      "directional_events": 8,
-      "distinct_catalysts": 5,
-      "bullish_events": 6,
+      "as_of": "2026-11-09T19:50:09Z",
+      "stories": 48,
+      "independent_events": 43,
+      "directional_events": 10,
+      "distinct_catalysts": 6,
+      "bullish_events": 8,
       "bearish_events": 2,
       "neutral_events": 33,
       "coverage": "Moderate coverage",
       "drivers": [
         {
-          "id": "c1366c131bc1c9",
-          "title": "Strategy STRC Hits $100 After $2.25 Billion In Buybacks",
+          "id": "ef88e894877ba6",
+          "title": "Strategy buys 1,036 Bitcoin, repurchases $188M in STRC",
           "value": 2,
           "impact": "Medium",
-          "published_at": "2026-11-05T17:00:00Z",
-          "reports": 3,
+          "published_at": "2026-11-09T13:50:00Z",
+          "reports": 1,
           "scenario": "reported",
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
-          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBFRU1IdXJQdlFGTU0yWDRHTUtvYmpVc0NHN1VTWGVjdkVRV1FPMkV1OFFLcmpTN2U5YWZzVi1JRi0yUEpXQzloTGhiaUJ3SGRJOTcwdFpVc1ppNVJuSEltZlJSVnFWZHFwMHEyMnlaQU1xQVBwRXoxcU1mT3c?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9lUlJidjRXb19ZSjMwYjFxazVXdXhqaWJMUDZsd2pQcEpzME9VUDBLMmk2NWxReVRPNUstRk9nX1ptOEw4Q2NRZWV0eG9IeEZTZG9vUThhUG5HRFR2VGpTRzdyYW1zLWNGMWk4SFRxdTZaYUZDeGlMcGU5aw?oc=5"
         },
         {
           "id": "5e82b8ddd683da",
@@ -91,15 +91,15 @@
           "url": "https://www.globenewswire.com/news-release/2026/10/26/3388042/0/en/evernorth-secures-committed-equity-facility-for-approximately-80-million-to-support-xrp-treasury-growth.html"
         },
         {
-          "id": "c99511c44bba6a",
-          "title": "Strategy stock (MSTR) gains as company adds 267 BTC, raises buyback programme to $3B",
+          "id": "d612053b1530ea",
+          "title": "Strategy Adds 1,036 BTC But STRC Is Where the Money Went",
           "value": 1,
-          "impact": "Medium",
-          "published_at": "2026-10-19T15:06:54Z",
+          "impact": "Low",
+          "published_at": "2026-11-09T13:18:14Z",
           "reports": 1,
           "scenario": "reported",
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOVQyZmRTSWIxeFg1Y0k5Sk1TQV85blh4UnJDZzJmQ3Rmd2d1T2xKamdyWlpIdVpaRHhwQ2ItbGNRc1VQcUdOVl9OMHhjS2duQzBDVktsR21neG1KaG00VTdJR0NLQjFUWFhBSFMySEhKUzVnQnRYYVh4SGxJaXN0NWU1eWY2VFFqajhZN3JZYmIzbmtydEpwZzNiUTJ3aTd4LTFnWUhNQzNxaFpsQ2RNS2NTNjRuMTV2b2plbnBtdXZnM2podWlEamhlMmlBMVhZOUtn?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOZ2trcm9UVllYQ2ZHRnhBWVl2V2c2djF2RGVHOTE5V0FUdkVPQXhmSXBkMHlIR0ZHUVE4R3RXa3Y3S05BeE92cEJWYk9iRDM2b1k0M3dkS2tmZE1MZy1MQS1hZUtHakRoSWpxalNHSUloYnMweGtzM3NDUmx1RFhNbFJB?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v2"
@@ -107,14 +107,14 @@
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.96,
+      "raw_score": 0.92,
       "window_days": 30,
-      "as_of": "2026-11-09T02:54:36Z",
-      "stories": 36,
-      "independent_events": 34,
-      "directional_events": 14,
-      "distinct_catalysts": 12,
-      "bullish_events": 10,
+      "as_of": "2026-11-09T19:50:09Z",
+      "stories": 35,
+      "independent_events": 33,
+      "directional_events": 13,
+      "distinct_catalysts": 11,
+      "bullish_events": 9,
       "bearish_events": 4,
       "neutral_events": 20,
       "coverage": "Broad coverage",
@@ -168,6 +168,97 @@
     }
   },
   "items": [
+    {
+      "id": "ef88e894877ba6",
+      "title": "Strategy buys 1,036 Bitcoin, repurchases $188M in STRC",
+      "published_at": "2026-11-09T13:50:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "Crypto News · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9lUlJidjRXb19ZSjMwYjFxazVXdXhqaWJMUDZsd2pQcEpzME9VUDBLMmk2NWxReVRPNUstRk9nX1ptOEw4Q2NRZWV0eG9IeEZTZG9vUThhUG5HRFR2VGpTRzdyYW1zLWNGMWk4SFRxdTZaYUZDeGlMcGU5aw?oc=5",
+      "excerpt": "Strategy buys 1,036 Bitcoin, repurchases $188M in STRC Crypto News",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-11-09T19:50:15Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy buys 1,036 Bitcoin, repurchases $188M in STRC",
+          "name": "Crypto News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9lUlJidjRXb19ZSjMwYjFxazVXdXhqaWJMUDZsd2pQcEpzME9VUDBLMmk2NWxReVRPNUstRk9nX1ptOEw4Q2NRZWV0eG9IeEZTZG9vUThhUG5HRFR2VGpTRzdyYW1zLWNGMWk4SFRxdTZaYUZDeGlMcGU5aw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T13:50:00Z"
+        },
+        {
+          "title": "Strategy Adds 1,036 Bitcoin as STRC Buybacks Take More Capital",
+          "name": "FinanceFeeds · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNkNDWnJlQ2tLZUVIM19iYlFIQUdNOTM2ZXZDNkl2MUJOUjFISGIwaXk4d20wbWtIa0ZpZUxzV05DcmZod19HQkhON1RwN2RoY1Zaa2ZxSEV3V3VpY0otZE9ZSW85X0RJbGlrTzh4enBIQ1JIUXRicXB2aXZTSFZMaVV2cV9WMFdYNDhuR2swbmE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T16:48:01Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "d612053b1530ea",
+      "title": "Strategy Adds 1,036 BTC But STRC Is Where the Money Went",
+      "published_at": "2026-11-09T13:18:14Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Coindoo · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOZ2trcm9UVllYQ2ZHRnhBWVl2V2c2djF2RGVHOTE5V0FUdkVPQXhmSXBkMHlIR0ZHUVE4R3RXa3Y3S05BeE92cEJWYk9iRDM2b1k0M3dkS2tmZE1MZy1MQS1hZUtHakRoSWpxalNHSUloYnMweGtzM3NDUmx1RFhNbFJB?oc=5",
+      "excerpt": "Strategy Adds 1,036 BTC But STRC Is Where the Money Went Coindoo",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-09T19:50:15Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Adds 1,036 BTC But STRC Is Where the Money Went",
+          "name": "Coindoo · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOZ2trcm9UVllYQ2ZHRnhBWVl2V2c2djF2RGVHOTE5V0FUdkVPQXhmSXBkMHlIR0ZHUVE4R3RXa3Y3S05BeE92cEJWYk9iRDM2b1k0M3dkS2tmZE1MZy1MQS1hZUtHakRoSWpxalNHSUloYnMweGtzM3NDUmx1RFhNbFJB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T13:18:14Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "810af36cf7b927",
       "title": "Saylor Hints at Fresh Bitcoin Buy as Strategy's STRC Preferred Returns to Par",
@@ -11294,6 +11385,13 @@
           "title": "Michael Saylor’s Bitcoin Treasury Company Strategy Is Falling Apart",
           "name": "Barchart.com · via Google News",
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRTFjZ3FORjhCdTZMdHVnQldLbUNiTlFKYWM2Uk5XUzYxck9uclNYVExqOWZCQjlXRTd4cWVEbi1KQnlRYjJ0MVNWV1dDbFJaRy1HbXFmQXRWcHNwS0E4SjZBbDJmWWZ6aDNqcmtTYmdPMEYtQ0hSQVkteGZVc3FpQzlDNWU1LTN1TzNqSENGNUNKdEVBdm5MRjJNWUhaVjQ5VThKR3pCWExFdFFub0Nr?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-16T07:00:00Z"
+        },
+        {
+          "title": "Michael Saylor’s Bitcoin Treasury Company Strategy Is Falling Apart",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaTdhWUhsdFc1ZDYtNk5rX1g4N0JmTWEyRGt0MHJ2T1B3bEtMUDNQaGk0ZWl4ZnlmV3ltZ195Yk4xTFBvajMyYUUwaXR2Zzd2WDJSN3E5a1V0enJzX3kyWHZPMDdNYWZyVnl4NlU1Rl95eFh0aVQwWHdDQ2pCSmwwTHZRbTFYdnNPTGIwVW1mWXg4azVIdUZGYXRzWDBiVExlSDZLNlY4OA?oc=5",
           "source_type": "Media",
           "published_at": "2026-07-16T07:00:00Z"
         }
