@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-10T04:45:01Z",
+    "ran_at": "2026-11-10T17:03:53Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 1,
+    "new_items": 6,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,38 +23,38 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-10T04:45:01Z",
+      "checked_at": "2026-11-10T17:03:53Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-10T04:45:01Z",
+      "checked_at": "2026-11-10T17:03:53Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 119,
-      "checked_at": "2026-11-10T04:45:01Z",
-      "message": "Fetched 119 matching items."
+      "items_seen": 129,
+      "checked_at": "2026-11-10T17:03:53Z",
+      "message": "Fetched 129 matching items."
     }
   },
   "sentiment_30d": {
     "MSTR": {
       "value": 0,
       "label": "Neutral",
-      "raw_score": 0.32,
+      "raw_score": 0.33,
       "window_days": 30,
-      "as_of": "2026-11-10T04:45:01Z",
-      "stories": 48,
-      "independent_events": 43,
+      "as_of": "2026-11-10T17:03:53Z",
+      "stories": 50,
+      "independent_events": 44,
       "directional_events": 10,
       "distinct_catalysts": 6,
       "bullish_events": 8,
       "bearish_events": 2,
-      "neutral_events": 33,
+      "neutral_events": 34,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -107,16 +107,16 @@
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.92,
+      "raw_score": 0.93,
       "window_days": 30,
-      "as_of": "2026-11-10T04:45:01Z",
-      "stories": 35,
-      "independent_events": 33,
+      "as_of": "2026-11-10T17:03:53Z",
+      "stories": 34,
+      "independent_events": 32,
       "directional_events": 13,
       "distinct_catalysts": 11,
       "bullish_events": 9,
       "bearish_events": 4,
-      "neutral_events": 20,
+      "neutral_events": 19,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -169,6 +169,48 @@
   },
   "items": [
     {
+      "id": "de5decf8264cbe",
+      "title": "Ripple Custody Gains Momentum as 37 European Banks Prepare Euro Stablecoin Launch",
+      "published_at": "2026-11-10T09:13:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "Hokanews · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9lbWZVN1B6eVhPN3oySElrQXMtQkpXQ0N3WnFFTlZObmpnT1JFTHpIekpjUlQ1dm5WWFhXTmQtOTRFeEJjSW5OdER5UTVNODN1b1pWRlBRQVVreFZKY0ZLZ0RTOVlfMjk4V2VSTmk0cXZVWDlKcVBmN2U0UWpFQQ?oc=5",
+      "excerpt": "Ripple Custody Gains Momentum as 37 European Banks Prepare Euro Stablecoin Launch Hokanews",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-11-10T17:03:58Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Custody Gains Momentum as 37 European Banks Prepare Euro Stablecoin Launch",
+          "name": "Hokanews · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9lbWZVN1B6eVhPN3oySElrQXMtQkpXQ0N3WnFFTlZObmpnT1JFTHpIekpjUlQ1dm5WWFhXTmQtOTRFeEJjSW5OdER5UTVNODN1b1pWRlBRQVVreFZKY0ZLZ0RTOVlfMjk4V2VSTmk0cXZVWDlKcVBmN2U0UWpFQQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-10T09:13:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "246161b5cc1b45",
       "title": "Peter Schiff says Strategy preferred stock STRC is 'dead', kept alive by buybacks",
       "published_at": "2026-11-10T01:24:59Z",
@@ -209,6 +251,20 @@
           "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNkNDWnJlQ2tLZUVIM19iYlFIQUdNOTM2ZXZDNkl2MUJOUjFISGIwaXk4d20wbWtIa0ZpZUxzV05DcmZod19HQkhON1RwN2RoY1Zaa2ZxSEV3V3VpY0otZE9ZSW85X0RJbGlrTzh4enBIQ1JIUXRicXB2aXZTSFZMaVV2cV9WMFdYNDhuR2swbmE?oc=5",
           "source_type": "Media",
           "published_at": "2026-11-09T16:48:01Z"
+        },
+        {
+          "title": "Strategy sells more stock to buy more bitcoin, repurchase more Stretch preferred (MSTR:NASDAQ)",
+          "name": "Seeking Alpha · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUnRrdFdmaWVKejVWclItR05TZ1IzU0VRa0M5X24tM09WSWs1bHhjR2cyU3phTURVZ1o3cU00d2JBR2pXQmJScWU4VkVGMkxpS3YtWUhYSk1FMDdCR1JZZFVRWVFqQUdNYzB5YkpBY2xDSEVfMGJMSWJYSXF1RFB5a2FWbGl4SDV3dU0xT19oVVRXNWo1VjEtVVN0clcwSE9Cem1XMVdWcHJYal91Q3BhdW9yYThLZVZE?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T14:26:00Z"
+        },
+        {
+          "title": "Strategy: Acquires 1,036 BTC, Repurchases $188M STRC",
+          "name": "Blockchain News · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZk91RlNRSjZIekNDLVRkdkhnNnJrc0VNM1hpRGVnQUg5MlNRSjJxT3VfOV9rUmJwVV9ZMURUNWZ6QmxQaUZ5bXlCQXl3TS1VOG0tS2lYNGVGcmc2NDlHZ2lpOXhuRV9hRjlraEtyZlBUY2RaOFdoczhHbXF3RU9HX1NmRGVXdlJ1VmZn?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T05:04:00Z"
         }
       ],
       "moon_meters": [
@@ -220,6 +276,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "94f153d8a99b93",
+      "title": "Strategy Buys $82M in Bitcoin as STRC Tokenized Stock Adds New Twist to Saylor’s BTC",
+      "published_at": "2026-11-09T14:47:34Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "TradingView · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSmxmMkxDRG05cjIyYW5Mb2tQTGgxaHNKRUFLWmlDMFJMNFdVZ3NTcklvQVRkSENibDdPX2hJWjEwejNwRFY3TTFFcmozSTlwam9aMDFxVV9PZFhFamdrekFqcVJ1clpTdEtTWDIxZE9ZYkVMZnJRY3ZBelJ4aVNhdHFWQ2xSWktEZGE1b3pEbUt1bm5TYXJzbXlSUkFwT3ZBdl9adW81SWt5R2tnV1pDMS1CQ1VvQmpaQ3Q1akFHUDQxRVBqSHpMN04ycFFIVXZ0WUdJX3JEX0ZvaUN0?oc=5",
+      "excerpt": "Strategy Buys $82M in Bitcoin as STRC Tokenized Stock Adds New Twist to Saylor’s BTC TradingView",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T17:04:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Buys $82M in Bitcoin as STRC Tokenized Stock Adds New Twist to Saylor’s BTC",
+          "name": "TradingView · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSmxmMkxDRG05cjIyYW5Mb2tQTGgxaHNKRUFLWmlDMFJMNFdVZ3NTcklvQVRkSENibDdPX2hJWjEwejNwRFY3TTFFcmozSTlwam9aMDFxVV9PZFhFamdrekFqcVJ1clpTdEtTWDIxZE9ZYkVMZnJRY3ZBelJ4aVNhdHFWQ2xSWktEZGE1b3pEbUt1bm5TYXJzbXlSUkFwT3ZBdl9adW81SWt5R2tnV1pDMS1CQ1VvQmpaQ3Q1akFHUDQxRVBqSHpMN04ycFFIVXZ0WUdJX3JEX0ZvaUN0?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T14:47:34Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -267,6 +365,48 @@
       ]
     },
     {
+      "id": "9fbae86aac7713",
+      "title": "'Connecting the dots': Michael Saylor's Strategy buys another 1,036 bitcoin for $82 million as holdings top 850,000 BTC",
+      "published_at": "2026-11-09T13:10:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Block · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYjdsVXhEam5McEh4S0Y4ZDZoejFDOEduaUZkb0U0UXRDQ01rOU40NlQwNEU0dzhuZzl0aXhwQVdpQUJTY3hlTzFLY2w0Nlp1dFZYQnVjUXJoOFF2VUU0NmJXSlpsY254N2J1Unh5aVlKdnBMVkN2bWo0NkprUHNVQnZTUXdtLUdqeE9WY0dQZzZ5aTEteVdoV0FEYnpENG44ZXBwXzVxVVVGYXM?oc=5",
+      "excerpt": "'Connecting the dots': Michael Saylor's Strategy buys another 1,036 bitcoin for $82 million as holdings top 850,000 BTC The Block",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T17:04:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "'Connecting the dots': Michael Saylor's Strategy buys another 1,036 bitcoin for $82 million as holdings top 850,000 BTC",
+          "name": "The Block · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYjdsVXhEam5McEh4S0Y4ZDZoejFDOEduaUZkb0U0UXRDQ01rOU40NlQwNEU0dzhuZzl0aXhwQVdpQUJTY3hlTzFLY2w0Nlp1dFZYQnVjUXJoOFF2VUU0NmJXSlpsY254N2J1Unh5aVlKdnBMVkN2bWo0NkprUHNVQnZTUXdtLUdqeE9WY0dQZzZ5aTEteVdoV0FEYnpENG44ZXBwXzVxVVVGYXM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T13:10:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "810af36cf7b927",
       "title": "Saylor Hints at Fresh Bitcoin Buy as Strategy's STRC Preferred Returns to Par",
       "published_at": "2026-11-08T15:25:00Z",
@@ -304,6 +444,69 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "326b0ccb997012",
+      "title": "Strategy Repurchases $208M in STRC Shares and Adds 811 BTC to Its Bitcoin Holdings",
+      "published_at": "2026-11-08T01:36:29Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "KuCoin · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbjIyd2FjT3o1X2RfbENBZjZsQi1faGlIV21iTFpJN2tCendrU053NnU4UFIySzhOanE0ZXh6S2V1T0pobFM4M3djZTl5a1lpWGUybmFINEpEWFNBLWxPS3pGb1pPcnlvc2xrMEtZb2NtQnJiMWx4R2N4c3N6a3RFUEVySjc?oc=5",
+      "excerpt": "Strategy Repurchases $208M in STRC Shares and Adds 811 BTC to Its Bitcoin Holdings KuCoin",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-11-10T17:04:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy Repurchases $208M in STRC Shares and Adds 811 BTC to Its Bitcoin Holdings",
+          "name": "KuCoin · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbjIyd2FjT3o1X2RfbENBZjZsQi1faGlIV21iTFpJN2tCendrU053NnU4UFIySzhOanE0ZXh6S2V1T0pobFM4M3djZTl5a1lpWGUybmFINEpEWFNBLWxPS3pGb1pPcnlvc2xrMEtZb2NtQnJiMWx4R2N4c3N6a3RFUEVySjc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-08T01:36:29Z"
+        },
+        {
+          "title": "Strategy Buys 811 Bitcoin for $65.5 Million, Repurchases $208 Million in STRC",
+          "name": "CoinCodex · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVTJ0bnZUSTNtSFh5ZGhBOXBsYUJOckJqbDBzbjJMMWZlenJrYXBpUm51THFnMU1tNmhzMzZPdUV4TmlWVVdWLUZDSkxJN2NqU21CNl9RSUdlaXlPdHBXM0Y0cFBWSlVDWGRmR0NHR0FFcjM3OGdmdTFJeG1id1ZzbG5neFFEWEIyckpzRzcyanRkWXljWkZPOWlLOHdWd3JJdmYzd0t4ZXpmenlkYm00?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T11:23:00Z"
+        },
+        {
+          "title": "STRC nears $100 as Strategy discloses $208M share buyback",
+          "name": "AMBCrypto · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRkk4WjYxZFFaYk03aldNTURESDZqSExSTXJ0RU1fRzNxSmFxcDlPTHIxVjRBbHFhWTc0dFM4eFctSXBwSExnRjA4QWp1VEljUGxFbVVvMUk0RUhyWjBnR1NzXy02YU5Jc0ZieENidEtzeFJZQy05Z2FGd1VDbW5wdGZtS00?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T02:30:14Z"
+        },
+        {
+          "title": "Strategy Adds 811 Bitcoin and Repurchases $208.2 Million of STRC",
+          "name": "TOKENPOST · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBPRzNjYmlBcDRzWktWVU1GVmY5WnIwcHE0WmZjWWpnSnNhUW93SXQ5dThQMkdRVS1RTWtKaHk1YS1aOWp5Wk5Tb0ZlNXdWVkx3UU5iVWROeDg?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-03T04:08:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 2,
+          "label": "Bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -493,62 +696,6 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "8ad17c9e459cfb",
-      "title": "Strategy Buys 811 Bitcoin for $65.5 Million, Repurchases $208 Million in STRC",
-      "published_at": "2026-11-03T11:23:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Capital markets",
-      "impact": "Medium",
-      "score": 81,
-      "source": "CoinCodex · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVTJ0bnZUSTNtSFh5ZGhBOXBsYUJOckJqbDBzbjJMMWZlenJrYXBpUm51THFnMU1tNmhzMzZPdUV4TmlWVVdWLUZDSkxJN2NqU21CNl9RSUdlaXlPdHBXM0Y0cFBWSlVDWGRmR0NHR0FFcjM3OGdmdTFJeG1id1ZzbG5neFFEWEIyckpzRzcyanRkWXljWkZPOWlLOHdWd3JJdmYzd0t4ZXpmenlkYm00?oc=5",
-      "excerpt": "Strategy Buys 811 Bitcoin for $65.5 Million, Repurchases $208 Million in STRC CoinCodex",
-      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
-      "tags": [],
-      "added_at": "2026-11-03T19:39:08Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Strategy Buys 811 Bitcoin for $65.5 Million, Repurchases $208 Million in STRC",
-          "name": "CoinCodex · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVTJ0bnZUSTNtSFh5ZGhBOXBsYUJOckJqbDBzbjJMMWZlenJrYXBpUm51THFnMU1tNmhzMzZPdUV4TmlWVVdWLUZDSkxJN2NqU21CNl9RSUdlaXlPdHBXM0Y0cFBWSlVDWGRmR0NHR0FFcjM3OGdmdTFJeG1id1ZzbG5neFFEWEIyckpzRzcyanRkWXljWkZPOWlLOHdWd3JJdmYzd0t4ZXpmenlkYm00?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-11-03T11:23:00Z"
-        },
-        {
-          "title": "STRC nears $100 as Strategy discloses $208M share buyback",
-          "name": "AMBCrypto · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRkk4WjYxZFFaYk03aldNTURESDZqSExSTXJ0RU1fRzNxSmFxcDlPTHIxVjRBbHFhWTc0dFM4eFctSXBwSExnRjA4QWp1VEljUGxFbVVvMUk0RUhyWjBnR1NzXy02YU5Jc0ZieENidEtzeFJZQy05Z2FGd1VDbW5wdGZtS00?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-11-03T02:30:14Z"
-        },
-        {
-          "title": "Strategy Adds 811 Bitcoin and Repurchases $208.2 Million of STRC",
-          "name": "TOKENPOST · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBPRzNjYmlBcDRzWktWVU1GVmY5WnIwcHE0WmZjWWpnSnNhUW93SXQ5dThQMkdRVS1RTWtKaHk1YS1aOWp5Wk5Tb0ZlNXdWVkx3UU5iVWROeDg?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-11-03T04:08:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 2,
-          "label": "Bullish",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -11596,6 +11743,48 @@
       ]
     },
     {
+      "id": "928bceab6b6ccd",
+      "title": "Michael Saylor's Strategy Has a New Approach to Buying and Selling Bitcoin. Here's the Most Likely Scenario for How It Works Out",
+      "published_at": "2026-07-14T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Motley Fool · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRWRLaFRVQnA4TTdqMVQ2N0tqYnp2TlhoTzhrTDMwRzd0ZTIxTkNiSXBRdnYzaTBfRUxHY205ZVhOcWgtUUxvUDJDZl82NW1Yb1pDZ1duYXcxcGd5elRUdVlHZDE0c0swYmhwblc3OV9UMDVpcFAxMDlFSFRDX2xnVlREa3E2Ny1YZ1VFNk1nQ3NVdw?oc=5",
+      "excerpt": "Michael Saylor's Strategy Has a New Approach to Buying and Selling Bitcoin. Here's the Most Likely Scenario for How It Works Out The Motley Fool",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T17:04:00Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy Has a New Approach to Buying and Selling Bitcoin. Here's the Most Likely Scenario for How It Works Out",
+          "name": "The Motley Fool · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRWRLaFRVQnA4TTdqMVQ2N0tqYnp2TlhoTzhrTDMwRzd0ZTIxTkNiSXBRdnYzaTBfRUxHY205ZVhOcWgtUUxvUDJDZl82NW1Yb1pDZ1duYXcxcGd5elRUdVlHZDE0c0swYmhwblc3OV9UMDVpcFAxMDlFSFRDX2xnVlREa3E2Ny1YZ1VFNk1nQ3NVdw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-07-14T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "3d01f4e4df99de",
       "title": "Strategy sells $467 million in MSTR shares, makes no bitcoin purchases as USD reserve hits $3 billion",
       "published_at": "2026-07-13T07:00:00Z",
@@ -16232,6 +16421,48 @@
           "scenario": "assumption",
           "if_true": true,
           "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "497a77b9c52734",
+      "title": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend",
+      "published_at": "2026-03-01T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Capital markets",
+      "impact": "Medium",
+      "score": 81,
+      "source": "CoinDesk · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRzlkMldFakw0UWlyRWdXaENKLUp4VUxBUm1mQU5PcWJ0bFdpUGswYWpzT2JweGg5TU5DT3Q5XzlqeWNxaVVyV2RQcVRNbUtjejk4N3NuQkg0aDlLTklmNk1HenFHcXU2NG9XNDhMRVRUU0h6SDY5ME82TUhGNXJwdllQd1RpQ291NDFCS2NhY3hQTkxReVlxbHk5UmVpUTJMRmZLZVVURThQNEtiM2NlWGYwd2UwRFBiTHo3TnJQYXM?oc=5",
+      "excerpt": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend CoinDesk",
+      "why_it_matters": "Capital access can fund growth or treasury purchases but financing may dilute equity holders or create fixed obligations. Check issuance prices, net proceeds, debt, and coin holdings per share.",
+      "tags": [],
+      "added_at": "2026-11-10T17:03:59Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) news: Company's Stretch preferred stock now paying 11.5% dividend",
+          "name": "CoinDesk · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRzlkMldFakw0UWlyRWdXaENKLUp4VUxBUm1mQU5PcWJ0bFdpUGswYWpzT2JweGg5TU5DT3Q5XzlqeWNxaVVyV2RQcVRNbUtjejk4N3NuQkg0aDlLTklmNk1HenFHcXU2NG9XNDhMRVRUU0h6SDY5ME82TUhGNXJwdllQd1RpQ291NDFCS2NhY3hQTkxReVlxbHk5UmVpUTJMRmZLZVVURThQNEtiM2NlWGYwd2UwRFBiTHo3TnJQYXM?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-03-01T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
