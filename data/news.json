@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-10T17:03:53Z",
+    "ran_at": "2026-11-10T20:57:16Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 6,
+    "new_items": 3,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-10T17:03:53Z",
+      "checked_at": "2026-11-10T20:57:16Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-10T17:03:53Z",
+      "checked_at": "2026-11-10T20:57:16Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 129,
-      "checked_at": "2026-11-10T17:03:53Z",
-      "message": "Fetched 129 matching items."
+      "items_seen": 127,
+      "checked_at": "2026-11-10T20:57:16Z",
+      "message": "Fetched 127 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,14 +47,14 @@
       "label": "Neutral",
       "raw_score": 0.33,
       "window_days": 30,
-      "as_of": "2026-11-10T17:03:53Z",
-      "stories": 50,
-      "independent_events": 44,
+      "as_of": "2026-11-10T20:57:16Z",
+      "stories": 52,
+      "independent_events": 45,
       "directional_events": 10,
       "distinct_catalysts": 6,
       "bullish_events": 8,
       "bearish_events": 2,
-      "neutral_events": 34,
+      "neutral_events": 35,
       "coverage": "Moderate coverage",
       "drivers": [
         {
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.93,
       "window_days": 30,
-      "as_of": "2026-11-10T17:03:53Z",
+      "as_of": "2026-11-10T20:57:16Z",
       "stories": 34,
       "independent_events": 32,
       "directional_events": 13,
@@ -168,6 +168,48 @@
     }
   },
   "items": [
+    {
+      "id": "04609452127b4a",
+      "title": "Strategy (NASDAQ: MSTR) Claims 3.4-Year Cash Runway As Bitcoin Slides Below Its $75,456 Cost Basis",
+      "published_at": "2026-11-10T20:18:56Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Foreign Policy Journal · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQm9hRDRTLS1GZHV2Z19tdVk2MmpYTloxbzVTMERXZGlCYUQycExRdTJJZ1g0TUJicW5jR1Bhb0M4UW92Rlh2Nmx6WC1RWkxhMHM1Qk5oYXctRXpCV3FxTUVTYmFSbFRJb0J1Y3BxQThpa1F0Vi1Bb0tJUGJhV2xJa0V3V2t3ZW12X216QlN0eE05cjQ1c3R6LVBBZU9fTm03TU1IUEdfX2hwd1o1dFVwMnJkSDJKQkt6aERDM3pZMkdQNzFUQVJ2QzlySEVUS2tlVlZ0VjQ2alZjUQ?oc=5",
+      "excerpt": "Strategy (NASDAQ: MSTR) Claims 3.4-Year Cash Runway As Bitcoin Slides Below Its $75,456 Cost Basis Foreign Policy Journal",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T20:57:24Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (NASDAQ: MSTR) Claims 3.4-Year Cash Runway As Bitcoin Slides Below Its $75,456 Cost Basis",
+          "name": "Foreign Policy Journal · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQm9hRDRTLS1GZHV2Z19tdVk2MmpYTloxbzVTMERXZGlCYUQycExRdTJJZ1g0TUJicW5jR1Bhb0M4UW92Rlh2Nmx6WC1RWkxhMHM1Qk5oYXctRXpCV3FxTUVTYmFSbFRJb0J1Y3BxQThpa1F0Vi1Bb0tJUGJhV2xJa0V3V2t3ZW12X216QlN0eE05cjQ1c3R6LVBBZU9fTm03TU1IUEdfX2hwd1o1dFVwMnJkSDJKQkt6aERDM3pZMkdQNzFUQVJ2QzlySEVUS2tlVlZ0VjQ2alZjUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-10T20:18:56Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "de5decf8264cbe",
       "title": "Ripple Custody Gains Momentum as 37 European Banks Prepare Euro Stablecoin Launch",
@@ -276,6 +318,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "If the preferred-share repurchase reduces financing obligations without undue cost, per-share economics could benefit.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "458932bae915ba",
+      "title": "Michael Saylor’s Strategy Makes Sizeable Bitcoin Buy, Adding $82,000,000 Worth of BTC Amid Top Crypto Asset’s Price Slide",
+      "published_at": "2026-11-09T22:23:53Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Daily Hodl · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNOFFEVFR6aWFsdlpZblhHclVvQmg2aVNWVU82cm1aX182OWhiUFRYc0V0eGR6dUlaUkM5TDFzNVVPdjJ1YmRqZ3QxLXlWS0Y5NEpQZ29qUTBWckpZZkZ6a0ZKSnNqcFkzSWRqMkNWcUdSbG43cndzTHdpTkFsOE9Mb1pfOFJPUm9jWUZDdUNsSkhWSjF6ck5GMHlHNTZUQnR4MUJ3RmZ4Qk1VZG0td1VuYkhkTUJnTlR5NzBPN2FtTHIzb0IyT2xFbDRoMG9odVhMTXNrbko3SHZ5ZmlHdE5yeEtBMNIB6AFBVV95cUxNY0JIWUZ2YkpQMVFCNml5X0xfay1Id282blJ3bzhtNkFJNmxwbllwNnptVndfTGh0bVRYOU9KLWdydlpKVl9ZYmRNOTBndW14RzRyWHFId3Z2TWxYeV9sdldKdDVIdHNqbUVHQmp2dXp1TVpJNzBfQktfQTNadnVLcHZ0OUdmX3B2dllvcnI1RlVZMUlCclo2Y3dEanU4ZTJ5MWtqb2NHaUtiVjgyLWpOSDZuRC1EUlhsM2NDS09ySW9SczVKY0FtdF9lSWg3YkNMVmtJbDlrby1hcXZVazZVQ01zMzlaR0cw?oc=5",
+      "excerpt": "Michael Saylor’s Strategy Makes Sizeable Bitcoin Buy, Adding $82,000,000 Worth of BTC Amid Top Crypto Asset’s Price Slide The Daily Hodl",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T20:57:24Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor’s Strategy Makes Sizeable Bitcoin Buy, Adding $82,000,000 Worth of BTC Amid Top Crypto Asset’s Price Slide",
+          "name": "The Daily Hodl · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNOFFEVFR6aWFsdlpZblhHclVvQmg2aVNWVU82cm1aX182OWhiUFRYc0V0eGR6dUlaUkM5TDFzNVVPdjJ1YmRqZ3QxLXlWS0Y5NEpQZ29qUTBWckpZZkZ6a0ZKSnNqcFkzSWRqMkNWcUdSbG43cndzTHdpTkFsOE9Mb1pfOFJPUm9jWUZDdUNsSkhWSjF6ck5GMHlHNTZUQnR4MUJ3RmZ4Qk1VZG0td1VuYkhkTUJnTlR5NzBPN2FtTHIzb0IyT2xFbDRoMG9odVhMTXNrbko3SHZ5ZmlHdE5yeEtBMNIB6AFBVV95cUxNY0JIWUZ2YkpQMVFCNml5X0xfay1Id282blJ3bzhtNkFJNmxwbllwNnptVndfTGh0bVRYOU9KLWdydlpKVl9ZYmRNOTBndW14RzRyWHFId3Z2TWxYeV9sdldKdDVIdHNqbUVHQmp2dXp1TVpJNzBfQktfQTNadnVLcHZ0OUdmX3B2dllvcnI1RlVZMUlCclo2Y3dEanU4ZTJ5MWtqb2NHaUtiVjgyLWpOSDZuRC1EUlhsM2NDS09ySW9SczVKY0FtdF9lSWg3YkNMVmtJbDlrby1hcXZVazZVQ01zMzlaR0cw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T22:23:53Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -391,6 +475,48 @@
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYjdsVXhEam5McEh4S0Y4ZDZoejFDOEduaUZkb0U0UXRDQ01rOU40NlQwNEU0dzhuZzl0aXhwQVdpQUJTY3hlTzFLY2w0Nlp1dFZYQnVjUXJoOFF2VUU0NmJXSlpsY254N2J1Unh5aVlKdnBMVkN2bWo0NkprUHNVQnZTUXdtLUdqeE9WY0dQZzZ5aTEteVdoV0FEYnpENG44ZXBwXzVxVVVGYXM?oc=5",
           "source_type": "Media",
           "published_at": "2026-11-09T13:10:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "16953772ab0a10",
+      "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
+      "published_at": "2026-11-09T05:02:54Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "CoinMarketCap · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
+      "excerpt": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin CoinMarketCap",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T20:57:24Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
+          "name": "CoinMarketCap · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T05:02:54Z"
         }
       ],
       "moon_meters": [
@@ -1609,48 +1735,6 @@
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOW5fSzZXQzl4S2RRb0FtdHBpbnFHU01tQTBRb19Ba3BBMjZYUkdaTUQyV1VvSmVXdUE1OWpuSElMcEdnRUtpRC1ISTROM21nbVl3NDF0MEstOTZrcy1QXzByWVZvMkw4Yk9HV1lTRHFoNUhJRzdFRXNXX2ItZmh0R181M1ZFR3Y4YmxFQTd1UjRuZkxqbXpsMlMweVN1NmVZellzc0RYbVN4UQ?oc=5",
           "source_type": "Media",
           "published_at": "2026-10-28T09:24:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "16953772ab0a10",
-      "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
-      "published_at": "2026-10-28T07:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Strategy"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "CoinMarketCap · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
-      "excerpt": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin CoinMarketCap",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-06T20:30:11Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Why Strategy Is Pouring Cash Into STRC Instead of More Bitcoin",
-          "name": "CoinMarketCap · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWWhmZ1FJdGlTYkNlUnIwTEVBTHA4bTNYeWxrRTNtTkVPaDRGRmtSSGNmOW43R2k0VEsySzdiVldpX0tfV2RRcS1QVkhpVnFJOHJNalRfRkZrMEJuQjd2dGttdnJWb0dmaFZpR3ZIVHBDYThvdk1RYlZJVVlhUFNTMXVzYXN3TGNxQ2RiQmRkVzBuOGc?oc=5",
-          "source_type": "Media",
-          "published_at": "2026-10-28T07:00:00Z"
         }
       ],
       "moon_meters": [
@@ -14755,6 +14839,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "93b7310df968ef",
+      "title": "Strategy (MSTR) Buys $43 Million More Bitcoin After Saylor Defends Potential BTC Sales",
+      "published_at": "2026-05-11T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQY3ZtcFllZEZSVldvd3I2SkhvbmJfb2NmN3R4ZDFqWmpJdUJpMjRjNkpoVXpDZGgtYTB5WXdlZWlURXJCQ3NLeUJEVG85UnplUTJRaHRNd2NLYi1HWTVBSi1hdm5TdVZQcF8xN0poTklDemo3LWJwWTVka0kzVXlOaQ?oc=5",
+      "excerpt": "Strategy (MSTR) Buys $43 Million More Bitcoin After Saylor Defends Potential BTC Sales Bitcoin Magazine",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-10T20:57:24Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Buys $43 Million More Bitcoin After Saylor Defends Potential BTC Sales",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQY3ZtcFllZEZSVldvd3I2SkhvbmJfb2NmN3R4ZDFqWmpJdUJpMjRjNkpoVXpDZGgtYTB5WXdlZWlURXJCQ3NLeUJEVG85UnplUTJRaHRNd2NLYi1HWTVBSi1hdm5TdVZQcF8xN0poTklDemo3LWJwWTVka0kzVXlOaQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-05-11T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Conditional",
+          "scenario": "assumption",
+          "if_true": true,
+          "reason": "IF THE ASSUMPTION HOLDS: No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
