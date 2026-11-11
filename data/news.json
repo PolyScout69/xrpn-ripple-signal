@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-10T20:57:16Z",
+    "ran_at": "2026-11-11T02:56:06Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -23,39 +23,39 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-10T20:57:16Z",
+      "checked_at": "2026-11-11T02:56:06Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-10T20:57:16Z",
+      "checked_at": "2026-11-11T02:56:06Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 127,
-      "checked_at": "2026-11-10T20:57:16Z",
-      "message": "Fetched 127 matching items."
+      "items_seen": 132,
+      "checked_at": "2026-11-11T02:56:06Z",
+      "message": "Fetched 132 matching items."
     }
   },
   "sentiment_30d": {
     "MSTR": {
-      "value": 0,
-      "label": "Neutral",
-      "raw_score": 0.33,
+      "value": 1,
+      "label": "Slightly bullish",
+      "raw_score": 0.37,
       "window_days": 30,
-      "as_of": "2026-11-10T20:57:16Z",
-      "stories": 52,
-      "independent_events": 45,
-      "directional_events": 10,
-      "distinct_catalysts": 6,
-      "bullish_events": 8,
+      "as_of": "2026-11-11T02:56:06Z",
+      "stories": 54,
+      "independent_events": 47,
+      "directional_events": 11,
+      "distinct_catalysts": 7,
+      "bullish_events": 9,
       "bearish_events": 2,
-      "neutral_events": 35,
-      "coverage": "Moderate coverage",
+      "neutral_events": 36,
+      "coverage": "Broad coverage",
       "drivers": [
         {
           "id": "246161b5cc1b45",
@@ -91,15 +91,15 @@
           "url": "https://www.globenewswire.com/news-release/2026/10/26/3388042/0/en/evernorth-secures-committed-equity-facility-for-approximately-80-million-to-support-xrp-treasury-growth.html"
         },
         {
-          "id": "d612053b1530ea",
-          "title": "Strategy Adds 1,036 BTC But STRC Is Where the Money Went",
+          "id": "b9e4b79378b3c1",
+          "title": "Strategy (MSTR) Adds 1,036 Bitcoin for $81.9 Million as Holdings Slip Below Cost",
           "value": 1,
           "impact": "Low",
-          "published_at": "2026-11-09T13:18:14Z",
+          "published_at": "2026-11-09T13:53:17Z",
           "reports": 1,
           "scenario": "reported",
           "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOZ2trcm9UVllYQ2ZHRnhBWVl2V2c2djF2RGVHOTE5V0FUdkVPQXhmSXBkMHlIR0ZHUVE4R3RXa3Y3S05BeE92cEJWYk9iRDM2b1k0M3dkS2tmZE1MZy1MQS1hZUtHakRoSWpxalNHSUloYnMweGtzM3NDUmx1RFhNbFJB?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jUjIzQUpoeUg2WldVTDFHdS1LLVoxRFJWVFMyUVVIVUdfcGQya25RNU1OaWphMnZWMGNpajBmdDE5eEJqX1RXbEgxSjBXOXhNR0pidzVLZzRNQWxjaUFEckQxYUswSkFod1dJaG9XMnJjcGszbHdsYk1XeEROZw?oc=5"
         }
       ],
       "method": "impact_decay_dedup_v2"
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.93,
       "window_days": 30,
-      "as_of": "2026-11-10T20:57:16Z",
+      "as_of": "2026-11-11T02:56:06Z",
       "stories": 34,
       "independent_events": 32,
       "directional_events": 13,
@@ -248,6 +248,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "85a41c7b0f2f1e",
+      "title": "Strategy (MSTR) Is Building A Global Bitcoin Bank",
+      "published_at": "2026-11-10T02:42:36Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 68,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPd1RNUlIxSmp3MDJJbzUxMTdqTFBUQksyT0FBRjJTaHZjWk5IV04tYVlwbm5mZ21jTEY1NFJtTTI4bEFLUWstdER4eGJFbjBKS1MwRzdwMllhR0QtWktRa0pmd2R5T0dpYlYwRWkyRnBkZ3o0OW81ZWNyLVJyVXY5UldTRE1lYUkzNnFJbEF3dUFLTFNpWHBiQjlHaDYySU9iYTNINA?oc=5",
+      "excerpt": "Strategy (MSTR) Is Building A Global Bitcoin Bank Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-11T02:56:11Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Is Building A Global Bitcoin Bank",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPd1RNUlIxSmp3MDJJbzUxMTdqTFBUQksyT0FBRjJTaHZjWk5IV04tYVlwbm5mZ21jTEY1NFJtTTI4bEFLUWstdER4eGJFbjBKS1MwRzdwMllhR0QtWktRa0pmd2R5T0dpYlYwRWkyRnBkZ3o0OW81ZWNyLVJyVXY5UldTRE1lYUkzNnFJbEF3dUFLTFNpWHBiQjlHaDYySU9iYTNINA?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-10T02:42:36Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -402,6 +444,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "b9e4b79378b3c1",
+      "title": "Strategy (MSTR) Adds 1,036 Bitcoin for $81.9 Million as Holdings Slip Below Cost",
+      "published_at": "2026-11-09T13:53:17Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jUjIzQUpoeUg2WldVTDFHdS1LLVoxRFJWVFMyUVVIVUdfcGQya25RNU1OaWphMnZWMGNpajBmdDE5eEJqX1RXbEgxSjBXOXhNR0pidzVLZzRNQWxjaUFEckQxYUswSkFod1dJaG9XMnJjcGszbHdsYk1XeEROZw?oc=5",
+      "excerpt": "Strategy (MSTR) Adds 1,036 Bitcoin for $81.9 Million as Holdings Slip Below Cost Bitcoin Magazine",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-11T02:56:12Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Adds 1,036 Bitcoin for $81.9 Million as Holdings Slip Below Cost",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5jUjIzQUpoeUg2WldVTDFHdS1LLVoxRFJWVFMyUVVIVUdfcGQya25RNU1OaWphMnZWMGNpajBmdDE5eEJqX1RXbEgxSjBXOXhNR0pidzVLZzRNQWxjaUFEckQxYUswSkFod1dJaG9XMnJjcGszbHdsYk1XeEROZw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-09T13:53:17Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Treasury growth could help if it is accretive per diluted share after funding and risk.",
           "method": "headline_if_true_v4"
         }
       ]
@@ -16162,6 +16246,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "6cf1722259f1ad",
+      "title": "Ripple Treasury launches the first treasury management system with native digital asset capabilities",
+      "published_at": "2026-04-09T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Ripple"
+      ],
+      "category": "Products",
+      "impact": "Low",
+      "score": 65,
+      "source": "The Digital Banker · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeXpNQ0FQMlZUNW1SN2lneElXb2s5blZXdUJpX2xpU0RBdnhoWm5HbVAtWjFnX3JMN1Rzd1dkbW92bWRidzV5Y0FlV21LNXZmVE9BRVlVcU1iUHVOU2g2aVVkejl6MUNmNTVmMlRIV3dBOVNQWmJqRXZZcE91STFnTmFlVEc4UTBxWW5NWHYzUDFJOUtrODNLVG9pOFVEZGM3NklWd3BOeVhVb2pWUUZUN2U4WGx5RzlscWVHMEx2bm1LSFNSQTZCcFRB?oc=5",
+      "excerpt": "Ripple Treasury launches the first treasury management system with native digital asset capabilities The Digital Banker",
+      "why_it_matters": "A product announcement can expand the offering; adoption, transaction volumes and commercial economics remain to be demonstrated.",
+      "tags": [],
+      "added_at": "2026-11-11T02:56:10Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Ripple Treasury launches the first treasury management system with native digital asset capabilities",
+          "name": "The Digital Banker · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeXpNQ0FQMlZUNW1SN2lneElXb2s5blZXdUJpX2xpU0RBdnhoWm5HbVAtWjFnX3JMN1Rzd1dkbW92bWRidzV5Y0FlV21LNXZmVE9BRVlVcU1iUHVOU2g2aVVkejl6MUNmNTVmMlRIV3dBOVNQWmJqRXZZcE91STFnTmFlVEc4UTBxWW5NWHYzUDFJOUtrODNLVG9pOFVEZGM3NklWd3BOeVhVb2pWUUZUN2U4WGx5RzlscWVHMEx2bm1LSFNSQTZCcFRB?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-09T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "XRP",
+          "value": 1,
+          "label": "Slightly bullish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "Assuming Ripple business expansion ultimately benefits XRP usage, the indirect upside could be positive.",
           "method": "headline_if_true_v4"
         }
       ]
