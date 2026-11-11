@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-11T02:56:06Z",
+    "ran_at": "2026-11-11T17:08:36Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 3,
+    "new_items": 2,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,38 +23,38 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-11T02:56:06Z",
+      "checked_at": "2026-11-11T17:08:36Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-11T02:56:06Z",
+      "checked_at": "2026-11-11T17:08:36Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 132,
-      "checked_at": "2026-11-11T02:56:06Z",
-      "message": "Fetched 132 matching items."
+      "items_seen": 119,
+      "checked_at": "2026-11-11T17:08:36Z",
+      "message": "Fetched 119 matching items."
     }
   },
   "sentiment_30d": {
     "MSTR": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.37,
+      "raw_score": 0.36,
       "window_days": 30,
-      "as_of": "2026-11-11T02:56:06Z",
+      "as_of": "2026-11-11T17:08:36Z",
       "stories": 54,
-      "independent_events": 47,
+      "independent_events": 48,
       "directional_events": 11,
       "distinct_catalysts": 7,
       "bullish_events": 9,
       "bearish_events": 2,
-      "neutral_events": 36,
+      "neutral_events": 37,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -107,16 +107,16 @@
     "XRPN": {
       "value": 1,
       "label": "Slightly bullish",
-      "raw_score": 0.93,
+      "raw_score": 0.88,
       "window_days": 30,
-      "as_of": "2026-11-11T02:56:06Z",
-      "stories": 34,
-      "independent_events": 32,
-      "directional_events": 13,
-      "distinct_catalysts": 11,
-      "bullish_events": 9,
+      "as_of": "2026-11-11T17:08:36Z",
+      "stories": 25,
+      "independent_events": 25,
+      "directional_events": 11,
+      "distinct_catalysts": 10,
+      "bullish_events": 7,
       "bearish_events": 4,
-      "neutral_events": 19,
+      "neutral_events": 14,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -168,6 +168,48 @@
     }
   },
   "items": [
+    {
+      "id": "14194899a90bc3",
+      "title": "Strategy’s STRC hit $100, but common stock still funded last week’s Bitcoin purchases",
+      "published_at": "2026-11-11T03:30:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 78,
+      "source": "CryptoSlate · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcGd3VF9MSkdxZExBZjVxemRRMldzZU9rR09oeElKZDBETDRXMkRQSkVJX2paRlZKSm05WU55SFZEeG5rbjIzc0NqNWc2TWFNcXJxeTgyLXVpWmJmZU8zRW1oWjVRXzJKSFB3eGVsNGV3ZUpiVzZVTUNCQ1R0NXB2STFkcDdMRTJjOV9MdDV4OFp2RUhiSUhfbEJyV2RjdXVoYU9VUnF6UUpBUQ?oc=5",
+      "excerpt": "Strategy’s STRC hit $100, but common stock still funded last week’s Bitcoin purchases CryptoSlate",
+      "why_it_matters": "Track BTC or XRP holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-11T17:08:44Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy’s STRC hit $100, but common stock still funded last week’s Bitcoin purchases",
+          "name": "CryptoSlate · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcGd3VF9MSkdxZExBZjVxemRRMldzZU9rR09oeElKZDBETDRXMkRQSkVJX2paRlZKSm05WU55SFZEeG5rbjIzc0NqNWc2TWFNcXJxeTgyLXVpWmJmZU8zRW1oWjVRXzJKSFB3eGVsNGV3ZUpiVzZVTUNCQ1R0NXB2STFkcDdMRTJjOV9MdDV4OFp2RUhiSUhfbEJyV2RjdXVoYU9VUnF6UUpBUQ?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-11T03:30:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "04609452127b4a",
       "title": "Strategy (NASDAQ: MSTR) Claims 3.4-Year Cash Runway As Bitcoin Slides Below Its $75,456 Cost Basis",
@@ -17487,6 +17529,48 @@
       ]
     },
     {
+      "id": "c0e34ca2ccb2be",
+      "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
+      "published_at": "2026-01-05T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Treasury",
+      "impact": "Medium",
+      "score": 73,
+      "source": "The Block · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
+      "excerpt": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC The Block",
+      "why_it_matters": "Track BTC or XRP holdings per diluted share, staking or option income, funding costs, custody and counterparty risk. Gross token holdings do not alone prove accretion.",
+      "tags": [],
+      "added_at": "2026-11-11T17:08:43Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Michael Saylor's Strategy kicks off 2026 with a $116 million bitcoin buy as its total treasury holdings hit 673,783 BTC",
+          "name": "The Block · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0FadXNOallna0tneGZ0Y2ZLUFNTM0pWcmRPWksxaUJXdWtvN1NnN2gwRm14b2pWTW5Ib2lpbGgxTnZMOU5GdF84bHRNdTg2U2FLa3ZjQlFrUk44WlF3aUZKd1ZfMjNnbElVSl85VEFPc2pwaG1aWmJYdDJDdnBuOVN6NDBDenY0QVh5WTF1VTZMdndpV3dOa1dFUkc5bzFfR0JJTllxSHh5aFU0ekZERWd3?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-01-05T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "9a5e05ccd9cf8f",
       "title": "Strategy Buys $980M In Bitcoin But One Crucial MSTR Metric Turned Red",
       "published_at": "2025-12-15T08:00:00Z",
@@ -17602,48 +17686,6 @@
       "moon_meters": [
         {
           "asset": "MSTR",
-          "value": 0,
-          "label": "Neutral",
-          "confidence": "Medium",
-          "scenario": "reported",
-          "if_true": true,
-          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
-          "method": "headline_if_true_v4"
-        }
-      ]
-    },
-    {
-      "id": "329385e6731706",
-      "title": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening?",
-      "published_at": "2025-11-11T08:00:00Z",
-      "date_only": false,
-      "entities": [
-        "Evernorth"
-      ],
-      "category": "Adoption",
-      "impact": "Low",
-      "score": 65,
-      "source": "Yahoo Finance · via Google News",
-      "source_type": "Media",
-      "source_id": "media",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObVZxUXBWXzY3YXltTjRidjk2QkNBUzlZS21Ea2paQmh3emI3Y2U0Ykx6eEhzOGMwQTh2YzZCZUxlVVlpdWFSc1ktWVdCaTZUWTNVVXZzYmIwQWQ2NVhCdVF0SjREN2hjRkFZblhEa0dXaUZfZ1hZcmYwcS03UTZnaDFST0VZZERZOWow?oc=5",
-      "excerpt": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening? Yahoo Finance",
-      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
-      "tags": [],
-      "added_at": "2026-11-08T16:56:23Z",
-      "verified_seed": false,
-      "coverage": [
-        {
-          "title": "Ripple News: Evernorth Holdings Linked XRP Coins on Move, What’s Happening?",
-          "name": "Yahoo Finance · via Google News",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObVZxUXBWXzY3YXltTjRidjk2QkNBUzlZS21Ea2paQmh3emI3Y2U0Ykx6eEhzOGMwQTh2YzZCZUxlVVlpdWFSc1ktWVdCaTZUWTNVVXZzYmIwQWQ2NVhCdVF0SjREN2hjRkFZblhEa0dXaUZfZ1hZcmYwcS03UTZnaDFST0VZZERZOWow?oc=5",
-          "source_type": "Media",
-          "published_at": "2025-11-11T08:00:00Z"
-        }
-      ],
-      "moon_meters": [
-        {
-          "asset": "XRPN",
           "value": 0,
           "label": "Neutral",
           "confidence": "Medium",
