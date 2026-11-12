@@ -1,6 +1,12 @@
 # Signal — investor intelligence
 
-**Live dashboard:** https://polyscout69.github.io/xrpn-ripple-signal/
+> **Project ended — 12 November 2026.** Automatic news scans and deployments have been stopped. The source code, final news snapshot, and Git history are retained for reference.
+
+## Archived documentation
+
+The following describes the dashboard while it was active; it is no longer maintained or automatically updated.
+
+**Former dashboard URL:** https://polyscout69.github.io/xrpn-ripple-signal/
 
 Independent investor news for **Strategy (MSTR)**, **Evernorth Holdings (XRPN)** and the private operating company **Ripple**.
 
