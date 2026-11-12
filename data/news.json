@@ -3,7 +3,7 @@
   "version": 2,
   "scan": {
     "status": "live",
-    "ran_at": "2026-11-11T21:29:50Z",
+    "ran_at": "2026-11-12T04:02:21Z",
     "starter_as_of": null,
     "schedule_utc": [
       "09:15",
@@ -15,7 +15,7 @@
       "US pre-market and early session",
       "US after-market and evening"
     ],
-    "new_items": 2,
+    "new_items": 3,
     "source_note": "Automated scan of issuer releases and company-specific financial news; standalone filing records excluded."
   },
   "sources": {
@@ -23,22 +23,22 @@
       "name": "Ripple press centre",
       "status": "ok",
       "items_seen": 6,
-      "checked_at": "2026-11-11T21:29:50Z",
+      "checked_at": "2026-11-12T04:02:21Z",
       "message": "Fetched 6 matching items."
     },
     "evernorth": {
       "name": "Evernorth official",
       "status": "ok",
       "items_seen": 18,
-      "checked_at": "2026-11-11T21:29:50Z",
+      "checked_at": "2026-11-12T04:02:21Z",
       "message": "Fetched 18 matching items."
     },
     "media": {
       "name": "Company-specific financial news",
       "status": "ok",
-      "items_seen": 123,
-      "checked_at": "2026-11-11T21:29:50Z",
-      "message": "Fetched 123 matching items."
+      "items_seen": 124,
+      "checked_at": "2026-11-12T04:02:21Z",
+      "message": "Fetched 124 matching items."
     }
   },
   "sentiment_30d": {
@@ -47,14 +47,14 @@
       "label": "Slightly bullish",
       "raw_score": 0.36,
       "window_days": 30,
-      "as_of": "2026-11-11T21:29:50Z",
-      "stories": 55,
-      "independent_events": 48,
+      "as_of": "2026-11-12T04:02:21Z",
+      "stories": 56,
+      "independent_events": 49,
       "directional_events": 11,
       "distinct_catalysts": 7,
       "bullish_events": 9,
       "bearish_events": 2,
-      "neutral_events": 37,
+      "neutral_events": 38,
       "coverage": "Broad coverage",
       "drivers": [
         {
@@ -109,7 +109,7 @@
       "label": "Slightly bullish",
       "raw_score": 0.88,
       "window_days": 30,
-      "as_of": "2026-11-11T21:29:50Z",
+      "as_of": "2026-11-12T04:02:21Z",
       "stories": 25,
       "independent_events": 25,
       "directional_events": 11,
@@ -168,6 +168,48 @@
     }
   },
   "items": [
+    {
+      "id": "d50d80fda1a39f",
+      "title": "MSCI Drops Strategy From Its US Index: Will $2.8 Billion in Forced Selling Hit MSTR?",
+      "published_at": "2026-11-11T22:07:41Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Yahoo Finance · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRDVTY0V6WjNzeFA2SXplOUJ4VTB1TW1oNzlJbjhhT3hfRUJ0MkRyd1RHYko0eDhaNUJiSlM1ZWFQUHpCbkRrTnF3SXZJUHdMZVJYOV9uc042ZHgwam9yZGtwNXFtOXRHOGlsNXZGVU5XWkJnU1h6Q3hPUVJVZFk0LUN3TTZNM3prUmVBLU1WX3JaOHpseTZQUw?oc=5",
+      "excerpt": "MSCI Drops Strategy From Its US Index: Will $2.8 Billion in Forced Selling Hit MSTR? Yahoo Finance",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-12T04:02:29Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "MSCI Drops Strategy From Its US Index: Will $2.8 Billion in Forced Selling Hit MSTR?",
+          "name": "Yahoo Finance · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRDVTY0V6WjNzeFA2SXplOUJ4VTB1TW1oNzlJbjhhT3hfRUJ0MkRyd1RHYko0eDhaNUJiSlM1ZWFQUHpCbkRrTnF3SXZJUHdMZVJYOV9uc042ZHgwam9yZGtwNXFtOXRHOGlsNXZGVU5XWkJnU1h6Q3hPUVJVZFk0LUN3TTZNM3prUmVBLU1WX3JaOHpseTZQUw?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-11-11T22:07:41Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
     {
       "id": "14194899a90bc3",
       "title": "Strategy’s STRC hit $100, but common stock still funded last week’s Bitcoin purchases",
@@ -16097,6 +16139,48 @@
       ]
     },
     {
+      "id": "04d472c694ccbe",
+      "title": "Strategy (MSTR) Makes $2.5B Bitcoin Buy, 3rd Largest To Date",
+      "published_at": "2026-04-20T07:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Low",
+      "score": 65,
+      "source": "Bitcoin Magazine · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBidWt2ZFpvVzhNNF9hVzJRRDNxU0t3dHRENWxaaGhpck9GUEM4dGIzMjlXb1RjR3RYcTg4VEVHTThkREpidmVQOHdEdG5lUXM4VElSQi04T25vQ1B1di1ScHJUQ1lJZERZUFJXN1A5ZkhnOWRyX2hr?oc=5",
+      "excerpt": "Strategy (MSTR) Makes $2.5B Bitcoin Buy, 3rd Largest To Date Bitcoin Magazine",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-12T04:02:29Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Strategy (MSTR) Makes $2.5B Bitcoin Buy, 3rd Largest To Date",
+          "name": "Bitcoin Magazine · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBidWt2ZFpvVzhNNF9hVzJRRDNxU0t3dHRENWxaaGhpck9GUEM4dGIzMjlXb1RjR3RYcTg4VEVHTThkREpidmVQOHdEdG5lUXM4VElSQi04T25vQ1B1di1ScHJUQ1lJZERZUFJXN1A5ZkhnOWRyX2hr?oc=5",
+          "source_type": "Media",
+          "published_at": "2026-04-20T07:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": 0,
+          "label": "Neutral",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
       "id": "610372be717efa",
       "title": "Why Michael Saylor's Strategy decided to make STRC's dividend bi-monthly",
       "published_at": "2026-04-18T07:00:00Z",
@@ -17706,6 +17790,48 @@
           "scenario": "reported",
           "if_true": true,
           "reason": "No clear asset-specific price catalyst established by this headline and summary.",
+          "method": "headline_if_true_v4"
+        }
+      ]
+    },
+    {
+      "id": "7a3ee06961b038",
+      "title": "Bitcoin’s biggest booster Michael Saylor fights to stave off an $8 billion collapse and being the first major crypto domino to fall",
+      "published_at": "2025-12-03T08:00:00Z",
+      "date_only": false,
+      "entities": [
+        "Strategy"
+      ],
+      "category": "Adoption",
+      "impact": "Medium",
+      "score": 65,
+      "source": "Fortune · via Google News",
+      "source_type": "Media",
+      "source_id": "media",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNcEF4TjlPcmdSLVh1dkZfMHRfYUE1ZnFhdjVjN3dxWTF4WTQ5b2Rla0xxdmxHQnFQbEhsUVpOVnI4clRhM29fTzctTF95STFZd3MyZjZ3a1VSdWNLSHpMWWdYekhxc0tKeGR2bXlHSmtxdkdFU3dfbWZmLUxNRXdaQ25RTFZFd3BWaXdhS2NHc2xjT1BJQ2xCUEJCaXhMR3o3MGRkbVV4dUNUakZVSVlOQTJheWFzUDk0bXRjaURVZ09YdkNHN3RlT0lqOEZsRHFuTjl0OVNUSE1WbklnSDgybVRwRlZnT0szdUl2cHNWQlBZOE0?oc=5",
+      "excerpt": "Bitcoin’s biggest booster Michael Saylor fights to stave off an $8 billion collapse and being the first major crypto domino to fall Fortune",
+      "why_it_matters": "Track active usage and measurable adoption. Network activity does not automatically translate into token price appreciation or company revenue.",
+      "tags": [],
+      "added_at": "2026-11-12T04:02:28Z",
+      "verified_seed": false,
+      "coverage": [
+        {
+          "title": "Bitcoin’s biggest booster Michael Saylor fights to stave off an $8 billion collapse and being the first major crypto domino to fall",
+          "name": "Fortune · via Google News",
+          "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNcEF4TjlPcmdSLVh1dkZfMHRfYUE1ZnFhdjVjN3dxWTF4WTQ5b2Rla0xxdmxHQnFQbEhsUVpOVnI4clRhM29fTzctTF95STFZd3MyZjZ3a1VSdWNLSHpMWWdYekhxc0tKeGR2bXlHSmtxdkdFU3dfbWZmLUxNRXdaQ25RTFZFd3BWaXdhS2NHc2xjT1BJQ2xCUEJCaXhMR3o3MGRkbVV4dUNUakZVSVlOQTJheWFzUDk0bXRjaURVZ09YdkNHN3RlT0lqOEZsRHFuTjl0OVNUSE1WbklnSDgybVRwRlZnT0szdUl2cHNWQlBZOE0?oc=5",
+          "source_type": "Media",
+          "published_at": "2025-12-03T08:00:00Z"
+        }
+      ],
+      "moon_meters": [
+        {
+          "asset": "MSTR",
+          "value": -2,
+          "label": "Bearish",
+          "confidence": "Medium",
+          "scenario": "reported",
+          "if_true": true,
+          "reason": "If the reported large treasury drawdown is correct, lower asset backing could materially affect shareholder value.",
           "method": "headline_if_true_v4"
         }
       ]
